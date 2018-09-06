@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=956;
+		nextID=964;
 	};
 	class MarkerIDProvider
 	{
-		nextID=14;
+		nextID=15;
 	};
 	class Camera
 	{
-		pos[]={12150.769,173.09926,12591.578};
-		dir[]={0.13909666,-0.6121949,0.77849281};
-		up[]={0.1077074,0.79057771,0.60280359};
-		aside[]={0.98450285,-4.0524174e-007,-0.17590682};
+		pos[]={12147.413,164.03383,12608.458};
+		dir[]={-0.18872464,-0.59184653,0.78377515};
+		up[]={-0.13858785,0.80591714,0.57556176};
+		aside[]={0.97231328,-2.8811337e-007,0.23412225};
 	};
 };
 binarizationWanted=0;
@@ -119,7 +119,7 @@ addons[]=
 	"ace_gforces",
 	"CFP_B_USSEALS_WDL",
 	"CUP_AirVehicles_AV8B",
-	"A3_Modules_F_Curator_Effects"
+	"acre_api"
 };
 class AddonsMetaData
 {
@@ -687,10 +687,10 @@ class AddonsMetaData
 		};
 		class Item90
 		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="acre_api";
+			name="ACRE2 - API";
+			author="ACRE2Team";
+			url="https://github.com/IDI-Systems/acre2";
 		};
 	};
 };
@@ -6745,8 +6745,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12153.67,159.22482,12604.441};
-				angles[]={0.013327583,1.9684066,0};
+				position[]={12153.67,159.22484,12604.442};
+				angles[]={0.013334315,1.9683998,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6756,7 +6756,6 @@ class Mission
 			};
 			id=20;
 			type="ACRE_RadioSupplyCrate";
-			atlOffset=-1.5258789e-005;
 		};
 		class Item7
 		{
@@ -7380,8 +7379,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12152.836,159.22034,12604.778};
-				angles[]={0.013327583,1.9193543,0};
+				position[]={12152.836,159.22035,12604.778};
+				angles[]={0.013334315,1.919356,0};
 			};
 			side="Empty";
 			flags=4;
@@ -7390,7 +7389,29 @@ class Mission
 			};
 			id=43;
 			type="ACE_Box_Misc";
-			atlOffset=-1.5258789e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""ACE_VMM3"",""ACE_VMH3""],[4,4]],[[""ACE_HandFlare_White"",""ACE_HandFlare_Red"",""ACE_HandFlare_Green"",""ACE_HandFlare_Yellow"",""ACE_M84"",""ACE_M14"",""ACE_HuntIR_M203"",""ACE_SpareBarrel"",""ACE_Chemlight_Orange"",""ACE_Chemlight_White"",""ACE_Chemlight_HiRed"",""ACE_Chemlight_HiYellow"",""ACE_Chemlight_HiOrange"",""ACE_Chemlight_HiWhite"",""ACE_Chemlight_IR""],[12,12,12,12,12,12,20,6,20,20,10,10,10,10,20]],[[""ACE_MX2A"",""ACE_Vector"",""ACE_Yardage450"",""ACE_muzzle_mzls_H"",""ACE_muzzle_mzls_B"",""ACE_muzzle_mzls_L"",""ACE_muzzle_mzls_smg_01"",""ACE_muzzle_mzls_smg_02"",""ACE_muzzle_mzls_338"",""ACE_muzzle_mzls_93mmg"",""ACE_HuntIR_monitor"",""ACE_acc_pointer_green"",""ACE_UAVBattery"",""ACE_wirecutter"",""ACE_MapTools"",""ACE_microDAGR"",""ACE_NVG_Gen1"",""ACE_NVG_Gen2"",""ACE_NVG_Gen4"",""ACE_NVG_Wide"",""ACE_optic_Hamr_2D"",""ACE_optic_Hamr_PIP"",""ACE_optic_Arco_2D"",""ACE_optic_Arco_PIP"",""ACE_optic_MRCO_2D"",""ACE_optic_SOS_2D"",""ACE_optic_SOS_PIP"",""ACE_optic_LRPS_2D"",""ACE_optic_LRPS_PIP"",""ACE_Altimeter"",""ACE_Sandbag_empty"",""ACE_SpottingScope"",""ACE_SpraypaintBlack"",""ACE_SpraypaintRed"",""ACE_SpraypaintBlue"",""ACE_SpraypaintGreen"",""ACE_EntrenchingTool"",""ACE_Tripod"",""ACE_IR_Strobe_Item"",""ACE_CableTie"",""ACE_Chemlight_Shield"",""ACE_DAGR"",""ACE_Clacker"",""ACE_M26_Clacker"",""ACE_DefusalKit"",""ACE_DeadManSwitch"",""ACE_Cellphone"",""ACE_Flashlight_MX991"",""ACE_Flashlight_KSF1"",""ACE_Flashlight_XL50"",""ACE_EarPlugs"",""ACE_Kestrel4500"",""ACE_ATragMX"",""ACE_RangeCard""],[6,6,4,2,2,2,2,2,5,5,5,4,6,4,12,10,6,6,6,6,2,2,2,2,2,2,2,2,2,6,50,2,5,5,5,5,50,2,12,12,12,6,12,6,12,6,10,12,12,12,12,6,6,6]],[[""ACE_NonSteerableParachute"",""ACE_TacticalLadder_Pack"",""ace_gunbag"",""ace_gunbag_Tan""],[4,3,3,3]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item19
 		{
@@ -11042,7 +11063,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="false";
+							value="true";
 						};
 					};
 				};
@@ -16433,59 +16454,6 @@ class Mission
 		};
 		class Item121
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={12154.739,158.9099,12618.502};
-				angles[]={6.2698507,0,0.013334315};
-			};
-			id=945;
-			type="ModuleRadio_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleRadio_F_Side";
-					expression="_this setVariable ['Side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleRadio_F_RscAttributeRadio";
-					expression="_this setVariable ['RscAttributeRadio',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="SentGenReinforcementsConfirmed";
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item122
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -16503,7 +16471,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{[this,""STAND_U1"",""ASIS""] call BIS_fnc_ambientAnim;" \n "" \n "this addAction [""Get vehicle keys"", ""addVehicleKeyWest.sqf"", nil];}";
+						init="call{[this,""STAND_U1"",""ASIS""] call BIS_fnc_ambientAnim;" \n "" \n "this addAction [""Get vehicle keys"", ""addVehicleKeyWest.sqf"",[],1.5,true,true,"""",""!('ACE_key_west' in items _this)"",3];}";
 						name="keymaster";
 						class Inventory
 						{
@@ -16599,6 +16567,134 @@ class Mission
 			{
 			};
 			id=955;
+		};
+		class Item122
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={12167.412,158.95798,12596.848};
+			};
+			id=957;
+			type="acre_api_basicMissionSetup";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="acre_api_basicMissionSetup_DefaultRadio";
+					expression="_this setVariable ['DefaultRadio',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="ACRE_SEM52";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acre_api_basicMissionSetup_BabelSetup";
+					expression="_this setVariable ['BabelSetup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="acre_api_basicMissionSetup_RadioSetup";
+					expression="_this setVariable ['RadioSetup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="acre_api_basicMissionSetup_DefaultRadio_Three";
+					expression="_this setVariable ['DefaultRadio_Three',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="acre_api_basicMissionSetup_DefaultRadio_Four";
+					expression="_this setVariable ['DefaultRadio_Four',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="acre_api_basicMissionSetup_DefaultRadio_Two";
+					expression="_this setVariable ['DefaultRadio_Two',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=6;
+			};
 		};
 	};
 	class Connections

@@ -1,11 +1,18 @@
+allowFunctionsRecompile = 1;
+
 class CfgFunctions
 {
 	class X11
 	{
+	    class Helper
+	    {
+			file = "Helper";
+			class sameSide {};
+	    }
 		class Scripts
 		{
 			file = "Scripts";
-			class eventHandler {};
+			class initEventHandlers {};
 			class addVehicleKeyWest {};
 			class initNpcs {};
 		}
@@ -14,7 +21,11 @@ class CfgFunctions
 			file = "NPCScripts";
 			class initKeymaster {};
 		}
-
+        class EventHandlers
+		{
+			file = "EventHandlers";
+			class onAiKilled {};
+		}
 	}
 }
 

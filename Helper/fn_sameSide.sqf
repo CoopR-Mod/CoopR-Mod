@@ -3,7 +3,14 @@ params[
     ["_second", sideUnknown, [objNull, sideEmpty]]
 ];
 
-_first = [_first, side _first] select (typeName _first == "OBJECT");
-_second = [_second, side _second] select (typeName _second == "OBJECT");
+if (typeName _first == "OBJECT") then
+{
+ _first = side _first;
+};
+
+if (typeName _second == "OBJECT") then
+{
+ _second = side _second;
+};
 
 _first == _second;

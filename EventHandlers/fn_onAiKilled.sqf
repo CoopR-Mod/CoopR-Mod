@@ -8,8 +8,7 @@ private _nameOfKiller = name _killer;
 private _isBlueOnBlue = [group _killer, group _unit] call X11_fnc_sameSide;
 
 if (_isBlueOnBlue and not _isSuicide) then {
-    [playerSide, "HQ"] commandChat "Du hast einen Kameraden auf den Gewissen. Ab ins Cafe Viereck!";
-    _killer setPos (getPos prison)
+    _killer call X11_fnc_punishRenegade;
 };
 
 

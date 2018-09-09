@@ -8,18 +8,18 @@ class EditorData
 	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=1048;
+		nextID=1050;
 	};
 	class MarkerIDProvider
 	{
-		nextID=20;
+		nextID=21;
 	};
 	class Camera
 	{
-		pos[]={12135.528,172.51276,12590.684};
-		dir[]={0.69009274,-0.34508818,0.63623387};
-		up[]={0.25372028,0.93855411,0.23391911};
-		aside[]={0.67787296,-1.3038516e-008,-0.73525572};
+		pos[]={12059.721,163.18996,12625.823};
+		dir[]={-0.16331905,-0.31555212,-0.93481153};
+		up[]={-0.054308567,0.94889075,-0.31085625};
+		aside[]={-0.9851386,-3.2043317e-008,0.17211068};
 	};
 };
 binarizationWanted=0;
@@ -4353,7 +4353,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=148;
+		items=149;
 		class Item0
 		{
 			dataType="Logic";
@@ -17511,7 +17511,7 @@ class Mission
 		class Item147
 		{
 			dataType="Trigger";
-			position[]={12049.88,158.85699,12604.601};
+			position[]={12049.521,158.85699,12604.26};
 			class Attributes
 			{
 				name="prison";
@@ -17519,6 +17519,23 @@ class Mission
 				sizeB=0;
 			};
 			id=1047;
+			type="EmptyDetector";
+		};
+		class Item148
+		{
+			dataType="Trigger";
+			position[]={12055.291,158.85699,12620.354};
+			angle=5.1056676;
+			class Attributes
+			{
+				name="escape_zone";
+				sizeA=10;
+				sizeB=20;
+				repeatable=1;
+				activationBy="WEST";
+				isRectangle=1;
+			};
+			id=1049;
 			type="EmptyDetector";
 		};
 	};

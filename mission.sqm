@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=1047;
+		nextID=1048;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12150.719,164.98541,12612.142};
-		dir[]={0.85705721,-0.47107047,0.20887098};
-		up[]={0.45768017,0.88207817,0.11154003};
-		aside[]={0.23678769,-4.4208718e-008,-0.97160459};
+		pos[]={12135.528,172.51276,12590.684};
+		dir[]={0.69009274,-0.34508818,0.63623387};
+		up[]={0.25372028,0.93855411,0.23391911};
+		aside[]={0.67787296,-1.3038516e-008,-0.73525572};
 	};
 };
 binarizationWanted=0;
@@ -1742,7 +1742,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=2;
+														value=0;
 													};
 												};
 												class Item1
@@ -2687,7 +2687,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=2;
+														value=0;
 													};
 												};
 												class Item1
@@ -4353,7 +4353,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=147;
+		items=148;
 		class Item0
 		{
 			dataType="Logic";
@@ -17507,6 +17507,19 @@ class Mission
 			type="flag_Germany";
 			id=1044;
 			atlOffset=10.583954;
+		};
+		class Item147
+		{
+			dataType="Trigger";
+			position[]={12049.88,158.85699,12604.601};
+			class Attributes
+			{
+				name="prison";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=1047;
+			type="EmptyDetector";
 		};
 	};
 	class Connections

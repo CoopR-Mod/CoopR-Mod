@@ -1,0 +1,21 @@
+class CfgFunctions
+{
+	class X11
+	{
+		class Scripts
+		{
+			file = "Scripts";
+			class eventHandler {};
+			class addVehicleKeyWest {};
+			class initNpcs {};
+		}
+        class NPCScripts
+		{
+			file = "NPCScripts";
+			class initKeymaster {};
+		}
+
+	}
+}
+
+

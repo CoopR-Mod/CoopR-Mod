@@ -4,11 +4,17 @@ params ["_renegade"];
 
 // set all prison relevant variables
 private _oldPosition =  getPos _renegade;
+private _allWeapons = weapons _renegade;
+private _allMagazines = magazines _renegade;
+
+{_renegade removeWeapon _x} forEach _allWeapons;
+{_renegade removeMagazine _x} forEach _allWeapons;
+
 _renegade setPos (getPos prison);
 _renegade setVariable ["isRenegade", true];
 _renegade setVariable ["prisonTimeStart", serverTime];
 
-[{call X11_fnc_checkIfPrisontimeOver}, 3, [_renegade, _oldPosition]] call CBA_fnc_addPerFrameHandler;
+[{call X11_fnc_checkIfPrisontimeOver}, 3, [_renegade, _oldPosition, _allWeapons, _allMagazines]] call CBA_fnc_addPerFrameHandler;
 
 systemChat format ["imprisoned at %1", _renegade getVariable "prisonTimeStart"];
 

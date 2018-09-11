@@ -1,3 +1,3 @@
-call X11_fnc_initEventHandlers;
-systemChat "...server initialized";
+call X11_fnc_initEventsServer;
 
+systemChat "...server initialized";

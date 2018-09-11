@@ -12,7 +12,8 @@ class CfgFunctions
 		class Scripts
 		{
 			file = "Scripts";
-			class initEventHandlers {};
+			class initEventsServer {};
+			class initEventsClient {};
 			class addVehicleKeyWest {};
 			class addPlayerActions {};
 			class addPlayerVariables {};

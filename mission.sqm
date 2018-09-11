@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=1;
 	class ItemIDProvider
 	{
 		nextID=1050;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12161.611,168.6127,12573.928};
-		dir[]={-0.4648076,-0.19551343,0.8636412};
-		up[]={-0.09267009,0.98069322,0.17218542};
-		aside[]={0.88064778,-1.1204975e-009,0.47396216};
+		pos[]={12654.868,867.1178,12756.152};
+		dir[]={-0.62579751,-0.70074308,-0.34275979};
+		up[]={-0.61457235,0.71343321,-0.33661216};
+		aside[]={-0.48042491,-9.0533285e-007,0.87713838};
 	};
 };
 binarizationWanted=0;
@@ -12476,8 +12476,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9082.1553,148.03342,5054.6118};
-				angles[]={5.8711653,0,6.1715889};
+				position[]={10317.589,261.00278,5730.9492};
+				angles[]={6.2111731,0,0.12205087};
 			};
 			id=797;
 			type="ALiVE_mil_cqb";
@@ -14689,7 +14689,7 @@ class Mission
 				class Item4
 				{
 					dataType="Waypoint";
-					position[]={12278.029,119.1617,13182.654};
+					position[]={12573.393,100.92019,13296.711};
 					class Effects
 					{
 					};
@@ -15404,13 +15404,14 @@ class Mission
 				class Item5
 				{
 					dataType="Waypoint";
-					position[]={10724.18,112.31489,9673.9834};
+					position[]={11273.916,123.87119,10461.492};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=892;
 					type="Move";
+					atlOffset=7.6293945e-006;
 				};
 				class Item6
 				{
@@ -17480,13 +17481,13 @@ class Mission
 		class Item144
 		{
 			dataType="Marker";
-			position[]={8633.7881,170.371,4564.1279};
+			position[]={9499.1914,86.873291,4378.6836};
 			name="marker_16";
 			type="CFP_MARKER_ISLAMIC_STATE";
 			a=4;
 			b=2;
 			id=1041;
-			atlOffset=-99.228302;
+			atlOffset=-118.79474;
 		};
 		class Item145
 		{

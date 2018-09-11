@@ -27,7 +27,7 @@ class CfgFunctions
         class EventHandlers
 		{
 			file = "EventHandlers";
-			class onAiKilled {};
+			class onKilled {};
 			class checkIfPrisontimeOver {};
 			class onEscape {};
 		}

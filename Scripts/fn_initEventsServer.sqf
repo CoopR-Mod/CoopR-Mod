@@ -4,9 +4,9 @@
 // regular events
 [{saveProfileNamespace; systemChat "...profile saved!"}, 60, []] call CBA_fnc_addPerFrameHandler;
 
-[X11_fnc_addOnKilledEH, 5, [allUnits]] call CBA_fnc_addPerFrameHandler;
+[{call X11_fnc_addOnKilledEH}, 5, []] call CBA_fnc_addPerFrameHandler;
 
 // trigger events
 escape_zone setTriggerStatements ["this", "call X11_fnc_onEscape", ""];
 
-systemChat "...events initialized";
+systemChat "...server events initialized";

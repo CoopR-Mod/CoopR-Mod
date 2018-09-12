@@ -30,7 +30,6 @@ class CfgFunctions
 			file = "EventHandlers";
 			class onKilled {};
 			class checkIfPrisontimeOver {};
-			class addOnKilledEH {};
 			class onEscape {};
 		}
 	}

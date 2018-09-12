@@ -14,6 +14,7 @@ private _isBlueOnBlue = [group _killer, group _unit] call X11_fnc_sameSide;
 // check if killer attacked same side
 if (_isBlueOnBlue and not _isSuicide) then {
   if (_playerIsKiller) exitWith {
+    [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
     _killer call X11_fnc_punishRenegade;
   }
 };
@@ -28,9 +29,9 @@ if (_sideKiller == east) then {
 
 if (_sideUnit == _badSide and (_unit call CBA_fnc_isPerson)) then {
  if (_playerIsKiller) exitWith {
-     private _currentReputation = profileNamespace getVariable ["Reputation", 0];
-     profileNamespace setVariable ["Reputation", _currentReputation + 20];
-     systemChat "You earned 10 Reputation Points for killing an enemy";
+    private _currentReputation = profileNamespace getVariable ["Reputation", 0];
+    profileNamespace setVariable ["Reputation", _currentReputation + 20];
+    [format ["%1 is receiving %2 rep pts for kill", _nameOfKiller, 20], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
  };
 };
 

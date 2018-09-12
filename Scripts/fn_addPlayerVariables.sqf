@@ -2,4 +2,5 @@ params ["_player"];
 
 _player setVariable ["isRenegade", false];
 
-systemChat "... player variables added";
+["player variables added", DEBUG_STR_CLIENT_INIT, DEBUG_CFG] call CBA_fnc_debug;
+

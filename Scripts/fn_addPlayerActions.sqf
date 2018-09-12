@@ -7,5 +7,5 @@ private _getReputationPoints = {
 
 _player addAction ["Show reputation", _getReputationPoints ,[],0.5];
 
-systemChat "... player actions added";
+["player actions added", DEBUG_STR_CLIENT_INIT, DEBUG_CFG] call CBA_fnc_debug;
 

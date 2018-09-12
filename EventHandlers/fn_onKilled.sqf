@@ -20,20 +20,18 @@ if (_isBlueOnBlue and not _isSuicide) then {
 };
 
 // determine which said is the bad one here
-if(_sideKiller == west) then{
-    _badSide = east;
-};
-if (_sideKiller == east) then {
-    _badSide = west;
-};
-
-if (_sideUnit == _badSide and (_unit call CBA_fnc_isPerson)) then {
- if (_playerIsKiller) exitWith {
-    private _currentReputation = profileNamespace getVariable ["Reputation", 0];
-    profileNamespace setVariable ["Reputation", _currentReputation + 20];
-    [format ["%1 is receiving %2 rep pts for kill", _nameOfKiller, 20], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
- };
-};
+//if(_sideKiller == west) then{
+    //_badSide = east;
+//};
+//if (_sideKiller == east) then {
+    //_badSide = west;
+//};
+//
+//if (_sideUnit == _badSide and (_unit call CBA_fnc_isPerson)) then {
+ //if (_playerIsKiller) exitWith {
+   // TODO: events for enemy kills
+ //};
+//};
 
 
 

@@ -7,4 +7,5 @@
 // trigger events
 escape_zone setTriggerStatements ["this", "call X11_fnc_onEscape", ""];
 
-["Server events initialized", DEBUG_STR_SERVER_INIT, DEBUG_CFG] call CBA_fnc_debug;
+[
+"Server events initialized", DEBUG_STR_SERVER_INIT, DEBUG_CFG] call CBA_fnc_debug;

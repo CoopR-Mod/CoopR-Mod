@@ -15,6 +15,7 @@ class CfgFunctions
 			class initEventsServer {};
 			class initEventsClient {};
 			class addVehicleKeyWest {};
+			class giveDogTags {};
 			class addPlayerActions {};
 			class addPlayerVariables {};
 			class initNpcs {};
@@ -24,6 +25,7 @@ class CfgFunctions
 		{
 			file = "NPCScripts";
 			class initKeymaster {};
+			class initReputationmaster {};
 		}
         class EventHandlers
 		{

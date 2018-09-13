@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_target", "_caller"];
 
 private _allDogTags = items _caller select {_x find "dogtag" > 0};

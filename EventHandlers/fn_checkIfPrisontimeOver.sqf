@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_args", "_handle"];
 
 private _renegade =  _args select 0;

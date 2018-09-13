@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_player"];
 
 _player setVariable ["isRenegade", false];

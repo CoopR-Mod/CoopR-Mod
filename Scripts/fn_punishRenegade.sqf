@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_renegade"];
 
 [playerSide, "HQ"] commandChat "Du hast einen Kameraden auf den Gewissen. Ab ins Cafe Viereck!";

@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_player"];
 
 private _getReputationPoints = {

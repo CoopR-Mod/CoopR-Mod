@@ -1,3 +1,5 @@
+#include "..\constants.hpp"
+
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 
 // workaround to get the actual killer unit. Something is screwing up the 'killed' handler
@@ -32,7 +34,3 @@ if (_isBlueOnBlue and not _isSuicide) then {
    // TODO: events for enemy kills
  //};
 //};
-
-
-
-

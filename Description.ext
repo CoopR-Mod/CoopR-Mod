@@ -18,7 +18,7 @@ class CfgFunctions
 	    }
 		class Scripts
 		{
-			file = "Scripts";
+      file = "Scripts";
 			class initEventsServer {};
 			class initEventsClient {};
 			class addPlayerActions {};
@@ -26,6 +26,12 @@ class CfgFunctions
 			class initNpcs {};
 			class punishRenegade {};
 			class saveReputation {};
+
+      class Profiles
+      {
+        file = "Profiles";
+        class createPlayer {};
+      }
 		}
         class NPCScripts
 		{

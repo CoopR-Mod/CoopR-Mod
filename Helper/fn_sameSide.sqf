@@ -1,4 +1,4 @@
-#include "..\constants.hpp"
+#include "..\global.hpp"
 
 params[
     ["_first", sideUnknown, [objNull, sideEmpty, grpNull]],

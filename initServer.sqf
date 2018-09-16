@@ -1,4 +1,4 @@
-#include "constants.hpp"
+#include "global.hpp"
 
 // debug setup
 DEBUG_CFG = [false, true, false];

@@ -1,4 +1,4 @@
-#include "..\constants.hpp"
+#include "..\global.hpp"
 
 player addAction ["Show reputation", { [_this select 0, clientOwner] remoteExecCall ["X11_fnc_showReputation", 2]; } ,[],0.5];
 

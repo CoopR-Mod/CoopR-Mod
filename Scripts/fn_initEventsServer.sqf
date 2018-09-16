@@ -1,4 +1,4 @@
-#include "..\constants.hpp"
+#include "..\global.hpp"
 
 // VCOM AI stealing workaround
 [{{Driver _x setvariable ["NOAI",true];} foreach (vehicles select {_x isKindOf 'air'});}, 1, []] call CBA_fnc_addPerFrameHandler;

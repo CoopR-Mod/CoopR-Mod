@@ -3,19 +3,19 @@ allowFunctionsRecompile = 1;
 class CfgFunctions
 {
 	class X11
-	{
-	    class Helper
+    {
+    class Helper
 	    {
 			file = "Helper";
 			class sameSide {};
 	    }
-	    class Actions
+    class Actions
 	    {
 			file = "Actions";
 			class addVehicleKeyWest {};
 			class giveDogTags {};
 			class showReputation {};
-	    }
+    }
 		class Scripts
 		{
 			file = "Scripts";
@@ -27,15 +27,16 @@ class CfgFunctions
 			class punishRenegade {};
 			class saveReputation {};
 		}
-        class NPCScripts
+    class NPCScripts
 		{
 			file = "NPCScripts";
 			class initKeymaster {};
 			class initReputationmaster {};
 		}
-        class EventHandlers
+    class EventHandlers
 		{
 			file = "EventHandlers";
+      class addRandomIntelItem();
 			class onKilled {};
 			class checkIfPrisontimeOver {};
 			class onEscape {};

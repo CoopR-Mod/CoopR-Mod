@@ -5,5 +5,3 @@
 #define DEBUG_STR_PLAYER_ACTION "PLAYER ACTION"
 
 #define REP_PER_DOGTAG 5
-
-#define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]

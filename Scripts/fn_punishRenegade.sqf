@@ -1,4 +1,4 @@
-#include "..\constants.hpp"
+#include "constants.hpp"
 
 params ["_renegade"];
 

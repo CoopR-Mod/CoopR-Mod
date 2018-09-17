@@ -1,4 +1,4 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 params ["_args", "_handle"];
 

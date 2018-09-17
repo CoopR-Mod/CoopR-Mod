@@ -1,4 +1,4 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 params ["_target", "_caller"];
 

@@ -1,10 +1,10 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 [intelmaster,"STAND_U1","ASIS"] call BIS_fnc_ambientAnim;
 
 hasIntelItem = {
-  "ItemMap" in items _this or "ItemRadio" in items _this;
-}
+  ("ItemMap" in items _this) or ("ItemRadio" in items _this);
+};
 
 intelmaster addAction ["Deliver Intel", {call X11_fnc_deliverIntel},[],1.5,true,true,"","call hasIntelItem;",3];
 

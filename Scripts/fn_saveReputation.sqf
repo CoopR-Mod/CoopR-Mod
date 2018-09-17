@@ -1,4 +1,4 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 params ["_player", "_reputation"];
 

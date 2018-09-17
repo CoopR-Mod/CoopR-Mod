@@ -1,4 +1,4 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 player setVariable ["isRenegade", false];
 

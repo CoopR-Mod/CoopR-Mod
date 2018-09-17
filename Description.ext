@@ -36,7 +36,7 @@ class CfgFunctions
     class EventHandlers
 		{
 			file = "EventHandlers";
-      class addRandomIntelItem();
+            class addRandomIntelItem {};
 			class onKilled {};
 			class checkIfPrisontimeOver {};
 			class onEscape {};

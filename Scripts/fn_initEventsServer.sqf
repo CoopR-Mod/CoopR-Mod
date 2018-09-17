@@ -1,8 +1,8 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 #include "constants.hpp"
 
 // VCOM AI stealing workaround
-[{{Driver _x setvariable ["NOAI",true];} foreach (vehicles select {_x isKindOf 'air'});}, 1, []] call CBA_fnc_addPerFrameHandler;
+[{{driver _x setVariable ["NOAI",true];} forEach (vehicles select {_x isKindOf 'air'});}, 1, []] call CBA_fnc_addPerFrameHandler;
 
 // regular events
 ["CAManBase", "killed", {call X11_fnc_onKilled}] call CBA_fnc_addClassEventHandler;

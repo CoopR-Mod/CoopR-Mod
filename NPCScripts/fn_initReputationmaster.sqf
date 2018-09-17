@@ -1,4 +1,4 @@
-#include "..\global.hpp"
+#include "..\globals.hpp"
 
 // visuals
 [repmaster,"STAND_U1","ASIS"] call BIS_fnc_ambientAnim;

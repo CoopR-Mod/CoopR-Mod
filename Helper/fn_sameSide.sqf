@@ -5,11 +5,11 @@ params[
     ["_second", sideUnknown, [objNull, sideEmpty, grpNull]]
 ];
 
-if (typeName _first isEqualTo "OBJECT" or typeName _first == "GROUP" ) then {
+if (_first isEqualType "OBJECT" or _first isEqualType "GROUP" ) then {
  _first = side _first;
 };
 
-if (typeName _second isEqualTo "OBJECT" or typeName _second isEqualTo "GROUP") then {
+if (_second isEqualType "OBJECT" or _second isEqualType "GROUP") then {
  _second = side _second;
 };
 

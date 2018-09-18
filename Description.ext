@@ -32,6 +32,7 @@ class CfgFunctions
 			file = "NPCScripts";
 			class initKeymaster {};
 			class initReputationmaster {};
+			class initIntelmaster {};
 		}
     class EventHandlers
 		{

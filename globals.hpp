@@ -5,3 +5,4 @@
 #define DEBUG_STR_PLAYER_ACTION "PLAYER ACTION"
 
 #define INSURGENT_FACTION "cfp_o_is_base"
+#define INTEL_ITEMS_WHITELIST ["CUP_item_Kostey_photos", "CUP_item_Cobalt_File", "CUP_item_Kostey_notebook", "CUP_item_Moscow_Bombing_File"];

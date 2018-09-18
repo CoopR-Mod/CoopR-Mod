@@ -2,11 +2,24 @@
 
 params ["_target", "_caller"];
 
-private _allRadios = items _caller select {_x find "ItemRadio" > 0};
-private _allMaps = items _caller select {_x find "ItemMap" > 0};
+private _intelItemsCount = 0;
+private _items = items _caller;
 
+{ private _item = _x;
+ { private _whiteListedItem = _x;
+
+    if(_item isEqualTo _whiteListedItem) then{
+     _intelItemsCount = _intelItemsCount + 1;
+     _caller removeItem _item;
+    };
+
+ } forEach INTEL_ITEMS_WHITELIST;
+} forEach _items;
+
+if(_intelItemsCount <= 0) exitWith {
+    _target commandChat "Wow Klasse! Du hast ganze 0 Dokumente dabei...";
+};
 
 _target commandChat "Gute Arbeit Soldat. Weitermachen.";
-
-["%1 delivered intel", DEBUG_STR_PLAYER_ACTION, DEBUG_CFG] call CBA_fnc_debug;
+[format ["%1 delivered %2 intel items", name _caller, _intelItemsCount], DEBUG_STR_PLAYER_ACTION, DEBUG_CFG] call CBA_fnc_debug;
 

@@ -15,6 +15,7 @@ class CfgFunctions
 			class addVehicleKeyWest {};
 			class giveDogTags {};
 			class showReputation {};
+			class deliverIntel {};
     }
 		class Scripts
 		{

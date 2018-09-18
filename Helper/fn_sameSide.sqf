@@ -4,6 +4,7 @@ params[
     ["_first", sideUnknown, [objNull, sideEmpty, grpNull]],
     ["_second", sideUnknown, [objNull, sideEmpty, grpNull]]
 ];
+
 if (_first isEqualTypeAny [objNull, grpNull]) then {
  _first = side _first;
 };

@@ -7,4 +7,4 @@ repmaster switchMove "Acts_C_in1_briefing";
 
 repmaster addAction ["Give dogtags", {call X11_fnc_giveDogTags},[],1.5,true,true,"","true",3];
 
-["keymaster initialized", DEBUG_STR_NPC_INIT, DEBUG_CFG] call CBA_fnc_debug;
+["reputationmaster initialized", DEBUG_STR_NPC_INIT, DEBUG_CFG] call CBA_fnc_debug;

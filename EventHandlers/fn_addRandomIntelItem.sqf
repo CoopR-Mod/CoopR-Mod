@@ -3,13 +3,16 @@
 
 params ["_entity"];
 
-private _randomNum = random [0,10,5];
+private _randomNum = floor (random [0,10,5]);
 
-if(_randomNum == 5){
-
+if(_randomNum isEqualTo 5) exitWith {
   private _randomIntelItem = selectRandom INTEL_ITEMS_WHITELIST;
-  _entity addItem _randomIntelItem;
-  [format ["unit has received an intel item: %1", typeOf _randomIntelItem], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+  private _hasAdded = [_entity, _randomIntelItem] call CBA_fnc_addItem;
 
+  if(not _hasAdded) exitWith{
+      [format ["could not add item intel item: %1", _randomIntelItem], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+  };
+
+  [format ["unit has received an intel item: %1", _randomIntelItem], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
 };
 

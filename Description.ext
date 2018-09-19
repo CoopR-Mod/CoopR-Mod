@@ -1,60 +1,51 @@
 allowFunctionsRecompile = 1;
 
-class CfgFunctions
-{
-	class X11
-    {
-    class Helper
-	    {
-			file = "Helper";
-			class sameSide {};
-	    }
-    class Actions
-	    {
-			file = "Actions";
-			class addVehicleKeyWest {};
-			class giveDogTags {};
-			class showReputation {};
-			class deliverIntel {};
-    }
-		class Scripts
-		{
-      file = "Scripts";
-			class initEventsServer {};
-			class initEventsClient {};
-			class addPlayerActions {};
-			class addPlayerVariables {};
-			class initNpcs {};
-			class punishRenegade {};
-			class saveReputation {};
-
-      class Profiles
-      {
-        file = "Profiles";
-        class createPlayer {};
-        class addRegisterAction {};
-        class login {};
-        class playerLogin {};
-        class getPlayerProfile {};
-        class registerPlayer {};
-      }
-		}
-    class NPCScripts
-		{
-			file = "NPCScripts";
-			class initKeymaster {};
-			class initReputationmaster {};
-			class initIntelmaster {};
-		}
-    class EventHandlers
-		{
-			file = "EventHandlers";
+class CfgFunctions {
+    class X11 {
+        class Helper {
+            file = "Helper";
+            class sameSide {};
+        }
+        class Actions {
+            file = "Actions";
+            class addVehicleKeyWest {};
+            class giveDogTags {};
+            class showReputation {};
+            class deliverIntel {};
+        }
+        class Scripts {
+            file = "Scripts";
+            class initEventsServer {};
+            class initEventsClient {};
+            class addPlayerActions {};
+            class addPlayerVariables {};
+            class initNpcs {};
+            class punishRenegade {};
+            class saveReputation {};
+        }
+        class Profiles {
+            file = "Profiles";
+            class createPlayerProfile {};
+            class addRegisterAction {};
+            class login {};
+            class playerLogin {};
+            class getPlayerProfile {};
+            class registerPlayer {};
+        }
+        class NPCScripts {
+            file = "NPCScripts";
+            class initKeymaster {};
+            class initReputationmaster {};
+            class initIntelmaster {};
+        }
+        class EventHandlers {
+            file = "EventHandlers";
             class addRandomIntelItem {};
-			class onKilled {};
-			class checkIfPrisontimeOver {};
-			class onEscape {};
-		}
-	}
+            class onKilled {};
+            class checkIfPrisontimeOver {};
+            class onEscape {};
+        }
+    }
 }
 
 

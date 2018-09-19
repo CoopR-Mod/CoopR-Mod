@@ -10,3 +10,4 @@
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
+#define KEY_PLAYER_LOGGEDIN "dpl_is_logged_in"

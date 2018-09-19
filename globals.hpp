@@ -4,6 +4,4 @@
 #define DEBUG_STR_EVENT "EVENT"
 #define DEBUG_STR_PLAYER_ACTION "PLAYER ACTION"
 
-#define REP_PER_DOGTAG 5
-
-#define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
+#define INSURGENT_FACTION "cfp_o_is_base"

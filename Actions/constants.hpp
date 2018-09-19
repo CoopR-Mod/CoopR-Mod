@@ -1,0 +1,1 @@
+#define REP_PER_DOGTAG 5

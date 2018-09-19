@@ -1,16 +1,15 @@
-#include "..\constants.hpp"
+#include "..\globals.hpp"
 
 params[
     ["_first", sideUnknown, [objNull, sideEmpty, grpNull]],
     ["_second", sideUnknown, [objNull, sideEmpty, grpNull]]
 ];
-
-if (typeName _first == "OBJECT" or typeName _first == "GROUP" ) then {
+if (_first isEqualTypeAny [objNull, grpNull]) then {
  _first = side _first;
 };
 
-if (typeName _second == "OBJECT" or typeName _second == "GROUP") then {
+if (_second isEqualTypeAny [objNull, grpNull]) then {
  _second = side _second;
 };
 
-_first == _second;
+_first isEqualTo _second;

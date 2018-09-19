@@ -1,4 +1,4 @@
-#include "..\constants.hpp"
+#include "..\globals.hpp"
 
 _player addEventHandler ["Respawn", {call X11_fnc_addPlayerActions}];
 

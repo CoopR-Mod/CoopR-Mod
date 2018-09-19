@@ -1,7 +1,9 @@
 #include "..\globals.hpp"
 
-player addAction ["Show reputation", { [_this select 0, clientOwner] remoteExec ["X11_fnc_showReputation", 2]; } , [], 0.5];
-player addAction ["Login", { [getPlayerUID player, clientOwner] remoteExec X11_fnc_playerLogin;} , [], 0.5, true, true,"", "_this getVariable [KEY_PLAYER_LOGGEDIN, 0]"];
+private _loginCondition = format ["!(_this getVariable ['%1', false])", KEY_PLAYER_LOGGEDIN];
+
+player addAction ["Show reputation", { [player, clientOwner] remoteExec ["X11_fnc_showReputation", 2]; } , [], 0.5];
+player addAction ["Login", { [getPlayerUID player, clientOwner] remoteExec ["X11_fnc_playerLogin", 2];} , [], 0.5, true, true,"", _loginCondition];
 
 ["player actions added", DEBUG_STR_CLIENT_INIT, DEBUG_CFG] call CBA_fnc_debug;
 

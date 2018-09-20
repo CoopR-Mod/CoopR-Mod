@@ -5,6 +5,9 @@
 #define DEBUG_STR_NPC_INIT "NPC INIT"
 #define DEBUG_STR_EVENT "EVENT"
 #define DEBUG_STR_PLAYER_ACTION "PLAYER ACTION"
+#define DEBUG_STR_INTEL "INTEL"
+
+#define REP_PER_DOGTAG 5
 #define REP_PER_DOGTAG 5
 
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
@@ -14,3 +17,4 @@
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_is_logged_in"
+#define KEY_INTEL_PROGRESS "dpl_intel_progess"

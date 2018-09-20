@@ -12,6 +12,7 @@ class CfgFunctions {
             class giveDogTags {};
             class showReputation {};
             class deliverIntel {};
+            class updateIntelProgress {};
         }
         class Scripts {
             file = "Scripts";

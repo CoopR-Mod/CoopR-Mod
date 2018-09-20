@@ -7,7 +7,7 @@
 // regular events
 ["CAManBase", "killed", {call X11_fnc_onKilled}] call CBA_fnc_addClassEventHandler;
 //TODO: change to IS_O
-[INSURGENT_FACTION, "init", {call X11_fnc_addRandomIntelItem}] call CBA_fnc_addClassEventHandler;
+[INSURGENT_CLASS, "init", {call X11_fnc_addRandomIntelItem}] call CBA_fnc_addClassEventHandler;
 // trigger events
 escape_zone setTriggerStatements ["this", "call X11_fnc_onEscape", ""];
 

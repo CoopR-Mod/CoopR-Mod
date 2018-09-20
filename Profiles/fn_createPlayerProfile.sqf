@@ -3,6 +3,7 @@
 
 params ["_playerId", "_playerName", "_classType", "_reputation", "_money"];
 
+//TODO renegade key missing
 private _statsHash = [[KEY_UID, _playerId],
                       [KEY_NAME, _playerName],
                       [KEY_CLASS, _classType],

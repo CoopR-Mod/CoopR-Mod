@@ -23,7 +23,7 @@ class CfgFunctions {
             class addPlayerVariables {};
             class initNpcs {};
             class punishRenegade {};
-            class saveReputation {};
+            class updateReputation {};
         }
         class Profiles {
             file = "Profiles";

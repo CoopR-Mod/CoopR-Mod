@@ -5,7 +5,6 @@ params ["_renegade"];
 
 [playerSide, "HQ"] commandChat "Du hast einen Kameraden auf den Gewissen. Ab ins Cafe Viereck!";
 
-// set all prison relevant variables
 private _oldPosition =  getPos _renegade;
 private _savedLoadout = getUnitLoadout _renegade;
 private _currentServerTime = serverTime;

@@ -15,5 +15,5 @@ player setVariable [KEY_CLASS, _class];
 player setVariable [KEY_REPUTATION, _reputation];
 player setVariable [KEY_MONEY, _money];
 
-["stored variables saved in player namespace"], DEBUG_STR_PROFILES, DEBUG_CFG] call CBA_fnc_debug;
+["stored variables saved in player namespace", DEBUG_STR_PROFILES, DEBUG_CFG] call CBA_fnc_debug;
 [format ["player with id %1 logged in", getPlayerUID player], DEBUG_STR_PROFILES, DEBUG_CFG] call CBA_fnc_debug;

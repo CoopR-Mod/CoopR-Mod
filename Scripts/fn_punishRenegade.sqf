@@ -17,9 +17,10 @@ _renegade setUnitLoadout EMPTY_LOADOUT;
 _renegade setPos (getPos prison);
 
 ["mark player as 'renegade'", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
-_renegade setVariable ["isRenegade", true];
-_renegade setVariable ["prisonTimeStart", _currentServerTime ];
-["mark player as 'renegade'", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+_renegade setVariable [KEY_IS_RENEGADE, true];
+_renegade setVariable [KEY_PRISON_START, _currentServerTime ];
+
+[_renegade, -30] call X11_fnc_updateReputation;
 
 [{call X11_fnc_checkIfPrisontimeOver}, 3, [_renegade, _oldPosition, _savedLoadout]] call CBA_fnc_addPerFrameHandler;
 

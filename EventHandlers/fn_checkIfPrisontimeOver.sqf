@@ -6,14 +6,14 @@ private _renegade =  _args select 0;
 private _oldPosition =  _args select 1;
 private _savedLoadout =  _args select 2;
 
-private _maxPrisonTimeInSec = 1 * 60; // 1 minute
-private _prisonStartTime = _renegade getVariable "prisonTimeStart";
+private _maxPrisonTimeInSec = PRISON_TIME_IN_MIN * 60;
+private _prisonStartTime = _renegade getVariable KEY_PRISON_START;
 
 if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec) then
 {
     ["prison time has been served out", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
 
-    _renegade setVariable ["isRenegade", false];
+    _renegade setVariable [KEY_IS_RENEGADE, false];
     _renegade setPos _oldPosition;
     ["teleport arrested player back to old position", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
 

@@ -13,3 +13,4 @@
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_is_logged_in"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
+#define KEY_REGISTERED "dpl_registered"

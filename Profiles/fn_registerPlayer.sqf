@@ -1,4 +1,5 @@
 #include "..\globals.hpp"
+#include "constants.hpp"
 
 params ["_player"];
 
@@ -14,5 +15,7 @@ private _statsHash = [_uid, name _player, "dpl_class_medic", 0, 500] call X11_fn
 
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _playerProfiles];
 saveProfileNamespace;
+
+_player setVariable [KEY_REGISTERED, true];
 
 ["new player profile has been set", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;

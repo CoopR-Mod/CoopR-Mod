@@ -24,6 +24,7 @@ class CfgFunctions {
             class initNpcs {};
             class punishRenegade {};
             class updateReputation {};
+            class syncPlayersToServer {};
         }
         class Profiles {
             file = "Profiles";
@@ -33,6 +34,7 @@ class CfgFunctions {
             class playerLogin {};
             class getPlayerProfile {};
             class registerPlayer {};
+            class getPlayerAsHash {};
         }
         class NPCScripts {
             file = "NPCScripts";

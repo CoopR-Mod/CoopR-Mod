@@ -14,3 +14,10 @@
 #define KEY_PLAYER_LOGGEDIN "dpl_is_logged_in"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
 #define KEY_REGISTERED "dpl_registered"
+
+#define KEY_REPUTATION "reputation"
+#define KEY_MONEY "money"
+#define KEY_CLASS "class"
+#define KEY_NAME "playerName"
+#define KEY_UID "playerId"
+#define KEY_IS_RENEGADE "dpl_player_renegade"

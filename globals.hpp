@@ -21,3 +21,4 @@
 #define KEY_NAME "playerName"
 #define KEY_UID "playerId"
 #define KEY_IS_RENEGADE "dpl_player_renegade"
+#define KEY_PRISON_START "dpl_prison_start"

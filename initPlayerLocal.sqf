@@ -6,7 +6,6 @@ params ["_player", "_JIP"];
 call X11_fnc_initNpcs;
 call X11_fnc_initEventsClient;
 call X11_fnc_addPlayerActions;
-call X11_fnc_addPlayerVariables;
 
 // server
 [getPlayerUID player, clientOwner] remoteExec ["X11_fnc_playerLogin", 2];

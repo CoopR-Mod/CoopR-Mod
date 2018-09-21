@@ -1,9 +1,14 @@
 #include "..\globals.hpp"
 #include "constants.hpp"
 
-params ["_playerId", "_playerName", "_classType", "_reputation", "_money", "_renegade", "_prisonStart"];
+params [["_playerId", 0],
+        ["_playerName","<NoName>" ],
+        ["_classType","<None>" ],
+        ["_reputation", 0],
+        ["_money", 0],
+        ["_renegade", false],
+        ["_prisonStart", 0]];
 
-//TODO add default values !!
 private _statsHash = [[KEY_UID, _playerId],
                       [KEY_NAME, _playerName],
                       [KEY_CLASS, _classType],

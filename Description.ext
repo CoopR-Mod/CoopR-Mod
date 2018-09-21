@@ -29,7 +29,6 @@ class CfgFunctions {
         class Profiles {
             file = "Profiles";
             class createPlayerProfile {};
-            class addRegisterAction {};
             class login {};
             class playerLogin {};
             class getPlayerProfile {};

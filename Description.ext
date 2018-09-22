@@ -8,6 +8,14 @@ class CfgFunctions {
             class checkFreedom {};
             class onEscape {};
         }
+        class Reputation {
+            file = "Reputation\Client";
+            class tradeDogtags {};
+            class updateReputation {};
+            class showReputation {};
+            class initReputationmaster {};
+        }
+
         class Helper {
             file = "Helper";
             class sameSide {};
@@ -15,8 +23,6 @@ class CfgFunctions {
         class Actions {
             file = "Actions";
             class addVehicleKeyWest {};
-            class giveDogTags {};
-            class showReputation {};
             class showIntelProgress {};
             class deliverIntel {};
             class updateIntelProgress {};
@@ -27,7 +33,6 @@ class CfgFunctions {
             class initEventsClient {};
             class addPlayerActions {};
             class initNpcs {};
-            class updateReputation {};
             class syncPlayersToServer {};
         }
         class Profiles {
@@ -42,7 +47,6 @@ class CfgFunctions {
         class NPCScripts {
             file = "NPCScripts";
             class initKeymaster {};
-            class initReputationmaster {};
             class initIntelmaster {};
         }
         class EventHandlers {

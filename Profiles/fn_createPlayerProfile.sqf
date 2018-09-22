@@ -7,14 +7,14 @@ params [["_playerId", 0],
         ["_reputation", 0],
         ["_money", 0],
         ["_renegade", false],
-        ["_position", 0],
-        ["_prisonStart", 0]];
+        ["_prisonStart", 0],
+        ["_position", []]];
 
 private _statsHash = [[KEY_UID, _playerId],
                       [KEY_NAME, _playerName],
                       [KEY_CLASS, _classType],
                       [KEY_REPUTATION, _reputation],
-                      [KEY_MONEY, _money]]
+                      [KEY_MONEY, _money],
                       [KEY_IS_RENEGADE, _renegade],
                       [KEY_POSITION, _prisonStart],
                       [KEY_PRISON_START, _prisonStart]];

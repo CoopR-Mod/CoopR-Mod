@@ -7,8 +7,6 @@
 #define DEBUG_STR_PLAYER_ACTION "DPL - PLAYER ACTION"
 #define DEBUG_STR_INTEL "DPL - INTEL"
 
-#define INSURGENT_CLASS "cfp_o_is_base"
-#define INTEL_ITEMS_WHITELIST ["CUP_item_Kostey_photos", "CUP_item_Cobalt_File", "CUP_item_Kostey_notebook", "CUP_item_Moscow_Bombing_File"];
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"

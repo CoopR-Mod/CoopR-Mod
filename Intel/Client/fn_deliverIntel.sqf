@@ -1,4 +1,5 @@
-#include "..\globals.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 params ["_target", "_caller"];
 
@@ -20,7 +21,7 @@ if(_intelItemsCount <= 0) exitWith {
     _target commandChat "Wow Klasse! Du hast ganze 0 Dokumente dabei...";
 };
 
-[intelItemsCount] remoteExec ["X11_fnc_updateIntelProgress", 2];
+[_intelItemsCount] remoteExec ["X11_fnc_updateIntelProgress", 2];
 _target commandChat "Gute Arbeit Soldat. Weitermachen.";
-[format ["%1 delivered %2 intel items", name _caller, _intelItemsCount], DEBUG_STR_PLAYER_ACTION, DEBUG_CFG] call CBA_fnc_debug;
+[format ["%1 delivered %2 intel items", name _caller, _intelItemsCount], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

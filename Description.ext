@@ -2,6 +2,17 @@ allowFunctionsRecompile = 1;
 
 class CfgFunctions {
     class X11 {
+        class Intel_Server {
+            file = "Intel\Server";
+            class showIntelProgress {};
+            class addRandomIntelItem {};
+            class updateIntelProgress {};
+        }
+        class Intel_Client {
+            file = "Intel\Client";
+            class deliverIntel {};
+            class initIntelmaster {};
+        }
         class Prison {
             file = "Prison\Server";
             class punishTeamkill {};
@@ -23,9 +34,6 @@ class CfgFunctions {
         class Actions {
             file = "Actions";
             class addVehicleKeyWest {};
-            class showIntelProgress {};
-            class deliverIntel {};
-            class updateIntelProgress {};
         }
         class Scripts {
             file = "Scripts";
@@ -47,11 +55,9 @@ class CfgFunctions {
         class NPCScripts {
             file = "NPCScripts";
             class initKeymaster {};
-            class initIntelmaster {};
         }
         class EventHandlers {
             file = "EventHandlers";
-            class addRandomIntelItem {};
             class onKilled {};
         }
     }

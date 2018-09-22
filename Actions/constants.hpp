@@ -1,1 +1,0 @@
-#define PROGRESS_PER_ITEM 5

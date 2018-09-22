@@ -1,8 +1,9 @@
-#include "..\globals.hpp"
-#include "constants.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 // VCOM AI stealing workaround
 [{{driver _x setVariable ["NOAI",true];} forEach (vehicles select {_x isKindOf 'air'});}, 1, []] call CBA_fnc_addPerFrameHandler;
+
 [{call X11_fnc_syncPlayersToServer;},  SYNC_RATE_MIN * 60] call CBA_fnc_addPerFrameHandler;
 
 // regular events
@@ -12,4 +13,4 @@
 // trigger events
 escape_zone setTriggerStatements ["this", "call X11_fnc_onEscape", ""];
 
-["server events initialized", DEBUG_STR_SERVER_INIT, DEBUG_CFG] call CBA_fnc_debug;
+["server events initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

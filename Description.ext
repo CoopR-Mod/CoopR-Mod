@@ -2,6 +2,18 @@ allowFunctionsRecompile = 1;
 
 class CfgFunctions {
     class X11 {
+        class Init_Server {
+            file = "Init\Server";
+            class initEventsServer {};
+        }
+        class Init_Client {
+            file = "Init\Client";
+            class addVehicleKeyWest {};
+            class initEventsClient {};
+            class addPlayerActions {};
+            class initKeymaster {};
+            class initNpcs {};
+        }
         class Intel_Server {
             file = "Intel\Server";
             class showIntelProgress {};
@@ -31,16 +43,8 @@ class CfgFunctions {
             file = "Helper";
             class sameSide {};
         }
-        class Actions {
-            file = "Actions";
-            class addVehicleKeyWest {};
-        }
         class Scripts {
             file = "Scripts";
-            class initEventsServer {};
-            class initEventsClient {};
-            class addPlayerActions {};
-            class initNpcs {};
             class syncPlayersToServer {};
         }
         class Profiles {
@@ -51,10 +55,6 @@ class CfgFunctions {
             class getPlayerProfile {};
             class registerPlayer {};
             class mapPlayerToHash {};
-        }
-        class NPCScripts {
-            file = "NPCScripts";
-            class initKeymaster {};
         }
         class EventHandlers {
             file = "EventHandlers";

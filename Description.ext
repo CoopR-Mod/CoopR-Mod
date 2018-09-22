@@ -32,7 +32,7 @@ class CfgFunctions {
             class playerLogin {};
             class getPlayerProfile {};
             class registerPlayer {};
-            class getPlayerAsHash {};
+            class mapPlayerToHash {};
         }
         class NPCScripts {
             file = "NPCScripts";

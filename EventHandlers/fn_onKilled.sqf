@@ -17,7 +17,7 @@ private _isBlueOnBlue = [group _killer, group _unit] call X11_fnc_sameSide;
 if (_isBlueOnBlue and not _isSuicide) then {
   if (_playerIsKiller) exitWith {
     [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
-    _killer call X11_fnc_punishRenegade;
+    _killer call X11_fnc_punishTeamkill;
   }
 };
 

@@ -1,5 +1,5 @@
-#include "..\globals.hpp"
-#include "constants.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 params ["_args", "_handle"];
 
@@ -12,15 +12,15 @@ private _prisonStartTime = _renegade getVariable KEY_PRISON_START;
 
 if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec) then
 {
-    ["prison time has been served out", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+    ["prison time has been served out", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
     _renegade setVariable [KEY_IS_RENEGADE, false];
     _renegade setPos _oldPosition;
-    ["teleport arrested player back to old position", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+    ["teleport arrested player back to old position", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
     _renegade setUnitLoadout _savedLoadout;
-    ["arrested player reequipped", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+    ["arrested player reequipped", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
     _handle call CBA_fnc_removePerFrameHandler;
-    ["prison time check EH removed", DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+    ["prison time check EH removed", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 };

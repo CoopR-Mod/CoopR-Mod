@@ -2,6 +2,12 @@ allowFunctionsRecompile = 1;
 
 class CfgFunctions {
     class X11 {
+        class Prison {
+            file = "Prison\Server";
+            class punishTeamkill {};
+            class checkFreedom {};
+            class onEscape {};
+        }
         class Helper {
             file = "Helper";
             class sameSide {};
@@ -21,7 +27,6 @@ class CfgFunctions {
             class initEventsClient {};
             class addPlayerActions {};
             class initNpcs {};
-            class punishRenegade {};
             class updateReputation {};
             class syncPlayersToServer {};
         }
@@ -44,8 +49,6 @@ class CfgFunctions {
             file = "EventHandlers";
             class addRandomIntelItem {};
             class onKilled {};
-            class checkIfPrisontimeOver {};
-            class onEscape {};
         }
     }
 }

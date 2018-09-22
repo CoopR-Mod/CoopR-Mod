@@ -16,7 +16,7 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_REPUTATION, _reputation],
                       [KEY_MONEY, _money],
                       [KEY_IS_RENEGADE, _renegade],
-                      [KEY_POSITION, _prisonStart],
+                      [KEY_POSITION, _position],
                       [KEY_PRISON_START, _prisonStart]];
 
 [format ["player profile created: %1", _statsHash], DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;

@@ -1,5 +1,5 @@
 #include "..\globals.hpp"
-include "constants.hpp"
+#include "constants.hpp"
 
 params ["_player", "_clientOwnerId"];
 

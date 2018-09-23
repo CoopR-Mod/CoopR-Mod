@@ -9,5 +9,5 @@ if (is3DENMultiplayer) then {
 
 call X11_fnc_initEventsServer;
 
-["server initialized", DEBUG_STR_SERVER_INIT, DEBUG_CFG] call CBA_fnc_debug;
+["server initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

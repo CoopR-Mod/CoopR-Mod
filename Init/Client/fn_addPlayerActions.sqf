@@ -1,4 +1,4 @@
-include "..\..\globals.hpp"
+#include "..\..\globals.hpp"
 #include "..\constants.hpp"
 
 private _condition = format ["(_this getVariable ['%1', false])", KEY_PLAYER_LOGGEDIN];

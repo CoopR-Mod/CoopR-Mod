@@ -43,6 +43,17 @@ class CfgFunctions {
             class showReputation {};
             class initReputationmaster {};
         }
+        class Lobby_Client {
+            file = "Lobby\Client";
+            class spawnAtOldPosition {};
+            class spawnInLobby {};
+            class login {};
+            class postLogin {};
+        }
+        class Lobby_Server {
+            file = "Lobby\Server";
+            class playerLogin {};
+        }
 
         class Helper {
             file = "Helper";
@@ -55,15 +66,12 @@ class CfgFunctions {
         class Profiles_Server {
             file = "Profiles\Server";
             class createPlayerProfile {};
-            class playerLogin {};
             class getPlayerProfile {};
             class registerPlayer {};
             class mapPlayerToHash {};
         }
         class Profiles_Client {
             file = "Profiles\Client";
-            class login {};
-            class postLogin {};
         }
         class EventHandlers {
             file = "EventHandler\Server";

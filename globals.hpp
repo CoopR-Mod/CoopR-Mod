@@ -7,6 +7,8 @@
 #define DEBUG_STR_PLAYER_ACTION "DPL - PLAYER ACTION"
 #define DEBUG_STR_INTEL "DPL - INTEL"
 
+#define SERVER 2
+
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"

@@ -1,10 +1,10 @@
-#include "..\globals.hpp"
-#include "constants.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
-["start syncing player profiles...", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+["start syncing player profiles...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
 {
-    ["syncing player profile to server...", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+    ["syncing player profile to server...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     private _player = _x;
     private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];
 
@@ -18,12 +18,12 @@ private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] 
         // add player profile to hash of profiles
         [_playerProfiles, _uid, _playerHash] call CBA_fnc_hashSet;
 
-        [format ["player %1 synced", name _player], DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+        [format ["player %1 synced", name _player], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     }
 
 } forEach allPlayers;
 
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _playerProfiles];
 saveProfileNamespace;
-["... syncing done.", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+["... syncing done.", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

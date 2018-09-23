@@ -43,8 +43,8 @@ class CfgFunctions {
             file = "Helper";
             class sameSide {};
         }
-        class Scripts {
-            file = "Scripts";
+        class Core {
+            file = "Core\Server";
             class syncPlayersToServer {};
         }
         class Profiles {

@@ -1,5 +1,5 @@
-#include "..\globals.hpp"
-#include "constants.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 params [["_playerId", 0],
         ["_playerName","<NoName>" ],
@@ -19,7 +19,7 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_POSITION, _position],
                       [KEY_PRISON_START, _prisonStart]];
 
-[format ["player profile created: %1", _statsHash], DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+[format ["player profile created: %1", _statsHash], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 [_statsHash, []] call CBA_fnc_hashCreate;
 

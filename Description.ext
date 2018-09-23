@@ -47,14 +47,17 @@ class CfgFunctions {
             file = "Core\Server";
             class syncPlayersToServer {};
         }
-        class Profiles {
-            file = "Profiles";
+        class Profiles_Server {
+            file = "Profiles\Server";
             class createPlayerProfile {};
-            class login {};
             class playerLogin {};
             class getPlayerProfile {};
             class registerPlayer {};
             class mapPlayerToHash {};
+        }
+        class Profiles_Client {
+            file = "Profiles\Client";
+            class login {};
         }
         class EventHandlers {
             file = "EventHandler\Server";

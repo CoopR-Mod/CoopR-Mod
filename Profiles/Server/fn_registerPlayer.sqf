@@ -1,5 +1,5 @@
-#include "..\globals.hpp"
-#include "constants.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 params ["_player", "_clientOwnerId"];
 
@@ -16,11 +16,11 @@ private _statsHash = [_uid, name _player, "dpl_class_medic", 0, 500, false, 0] c
 // add player profile to hash of profiles
 [_playerProfiles, _uid, _statsHash] call CBA_fnc_hashSet;
 
-["new player added to profiles hash", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+["new player added to profiles hash", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _playerProfiles];
 saveProfileNamespace;
 
 _player setVariable [KEY_REGISTERED, true];
 
-["new player profile has been set", DEBUG_STR_SERVER_SIDE, DEBUG_CFG] call CBA_fnc_debug;
+["new player profile has been set", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

@@ -3,12 +3,8 @@
 params ["_player", "_JIP"];
 
 // local
-call X11_fnc_initNpcs;
 call X11_fnc_initEventsClient;
-call X11_fnc_addPlayerActions;
-
-// server
-[getPlayerUID player, clientOwner] remoteExec ["X11_fnc_playerLogin", SERVER];
+call X11_fnc_spawnInLobby;
 
 ["client initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

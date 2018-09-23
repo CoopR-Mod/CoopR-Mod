@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class Camera
 	{
-		pos[]={13095.505,22.591988,10000.949};
+		pos[]={13120.979,43.85651,9979.875};
 		dir[]={-0.60482687,-0.48267999,0.63342077};
 		up[]={-0.33333704,0.87579381,0.34909579};
 		aside[]={0.72324753,3.7252903e-009,0.69059879};
@@ -14347,7 +14347,7 @@ class Mission
 			};
 			id=1035;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=0.057006836;
 		};
 		class Item121
 		{
@@ -14364,6 +14364,7 @@ class Mission
 			};
 			id=1036;
 			type="Land_New_WiredFence_10m_F";
+			atlOffset=0.056991577;
 		};
 		class Item122
 		{
@@ -14380,6 +14381,7 @@ class Mission
 			};
 			id=1037;
 			type="Land_New_WiredFence_10m_F";
+			atlOffset=0.056991577;
 		};
 		class Item123
 		{
@@ -14396,6 +14398,7 @@ class Mission
 			};
 			id=1038;
 			type="Land_New_WiredFence_5m_F";
+			atlOffset=0.056991577;
 		};
 		class Item124
 		{
@@ -14440,6 +14443,7 @@ class Mission
 			};
 			id=1047;
 			type="EmptyDetector";
+			atlOffset=0.056991577;
 		};
 		class Item128
 		{
@@ -14457,6 +14461,7 @@ class Mission
 			};
 			id=1049;
 			type="EmptyDetector";
+			atlOffset=0.056991577;
 		};
 		class Item129
 		{
@@ -14607,7 +14612,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={13063.048,6.138,10031.464};
-			angle=3.5722172;
+			angle=3.5722167;
 			class Attributes
 			{
 				name="lobby";

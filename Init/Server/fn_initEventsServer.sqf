@@ -11,6 +11,6 @@
 [INSURGENT_CLASS, "init", {call X11_fnc_addRandomIntelItem}] call CBA_fnc_addClassEventHandler;
 
 // trigger events
-escape_zone setTriggerStatements ["this", "call X11_fnc_onEscape", ""];
+escape_zone setTriggerStatements ["this", "call X11_fnc_onOutbreak", ""];
 
 ["server events initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

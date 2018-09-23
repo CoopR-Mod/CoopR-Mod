@@ -25,11 +25,16 @@ class CfgFunctions {
             class deliverIntel {};
             class initIntelmaster {};
         }
-        class Prison {
+        class Prison_Server {
             file = "Prison\Server";
             class punishTeamkill {};
             class checkFreedom {};
-            class onEscape {};
+            class onOutbreak {};
+            class makePrisoner {};
+        }
+        class Prison_Client {
+            file = "Prison\Client";
+            class checkPrisonRefugee {};
         }
         class Reputation {
             file = "Reputation\Client";
@@ -58,6 +63,7 @@ class CfgFunctions {
         class Profiles_Client {
             file = "Profiles\Client";
             class login {};
+            class postLogin {};
         }
         class EventHandlers {
             file = "EventHandler\Server";

@@ -9,15 +9,12 @@ private _oldPosition =  getPos _renegade;
 private _savedLoadout = getUnitLoadout _renegade;
 private _currentServerTime = serverTime;
 
-["Remove current loadout from player", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-_renegade setUnitLoadout EMPTY_LOADOUT;
-
-["teleport player to prison area", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-_renegade setPos (getPos prison);
+_renegade call X11_fnc_makePrisoner;
 
 ["mark player as 'renegade'", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 _renegade setVariable [KEY_IS_RENEGADE, true];
-_renegade setVariable [KEY_PRISON_START, _currentServerTime ];
+_renegade setVariable [KEY_PRISON_START, _currentServerTime];
+_renegade setVariable [KEY_PRISON_FREE_POSITION, _oldPosition];
 
 [_renegade, -30] call X11_fnc_updateReputation;
 

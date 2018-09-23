@@ -2,12 +2,17 @@
 #include "..\constants.hpp"
 
 ["start syncing player profiles...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+private _allPlayers = allPlayers;
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
+
+[format ["found %1 players", count _allPlayers], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+
 {
     ["syncing player profile to server...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     private _player = _x;
     private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];
 
+    [format ["%1's login state is: %2", name _player, _isLoggedIn], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     // skip if not logged in
     if(_isLoggedIn) then {
 

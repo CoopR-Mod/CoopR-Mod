@@ -1,7 +1,7 @@
 #include "globals.hpp"
 
 // debug setup
-DEBUG_CFG = [false, true, false];
+DEBUG_CFG = [true, true, true];
 
 if (is3DENMultiplayer) then {
     DEBUG_CFG = [true, true, false];

@@ -2,7 +2,7 @@
 #include "..\constants.hpp"
 
 _onRespawn = {
-    player setVariable [KEY_PLAYER_LOGGEDIN, false];
+    player setVariable [KEY_PLAYER_LOGGEDIN, false, true];
 
     [player] spawn {sleep 0.1; call X11_fnc_spawnInLobby };
 };

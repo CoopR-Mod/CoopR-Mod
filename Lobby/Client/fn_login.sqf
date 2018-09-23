@@ -34,7 +34,7 @@ player setVariable [KEY_POSITION, _position];
 
 ["stored variables saved in player namespace", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_PLAYER_LOGGEDIN, true];
+player setVariable [KEY_PLAYER_LOGGEDIN, true, true];
 [format ["player with id %1 logged in", getPlayerUID player], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 call X11_fnc_postLogin;

@@ -7,7 +7,7 @@ params ["_playerUID", "_clientOwnerId"];
 private _foundPlayerProfile = _playerUID call X11_fnc_getPlayerProfile;
 
 if(_foundPlayerProfile isEqualTo false) exitWith{
-    systemChat "||Deployed|| profile not found. please register yourself";
+    [format ["||Deployed|| profile not found. please register yourself"]] remoteExec ["systemChat", _clientOwnerId];
 };
 
 [format ["player with id %1 is logging in", _playerUID], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

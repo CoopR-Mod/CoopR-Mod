@@ -8,6 +8,7 @@ params ["_renegade"];
 private _oldPosition =  getPos _renegade;
 private _savedLoadout = getUnitLoadout _renegade;
 private _currentServerTime = serverTime;
+private _clientOwnerId = owner _renegade;
 
 _renegade call X11_fnc_makePrisoner;
 
@@ -16,7 +17,7 @@ _renegade setVariable [KEY_IS_RENEGADE, true];
 _renegade setVariable [KEY_PRISON_START, _currentServerTime];
 _renegade setVariable [KEY_PRISON_FREE_POSITION, _oldPosition];
 
-[_renegade, -30] call X11_fnc_updateReputation;
+[-30] remoteExec ["X11_fnc_updateReputation", _clientOwnerId];
 
 [{call X11_fnc_checkFreedom}, 3, [_renegade, _oldPosition, _savedLoadout]] call CBA_fnc_addPerFrameHandler;
 

@@ -57,7 +57,7 @@ class CfgFunctions {
             class mapPlayerToHash {};
         }
         class EventHandlers {
-            file = "EventHandlers";
+            file = "EventHandler\Server";
             class onKilled {};
         }
     }

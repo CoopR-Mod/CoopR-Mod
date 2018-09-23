@@ -1,4 +1,5 @@
-#include "..\globals.hpp"
+#include "..\..\globals.hpp"
+#include "..\constants.hpp"
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 
@@ -16,21 +17,7 @@ private _isBlueOnBlue = [group _killer, group _unit] call X11_fnc_sameSide;
 // check if killer attacked same side
 if (_isBlueOnBlue and not _isSuicide) then {
   if (_playerIsKiller) exitWith {
-    [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_STR_EVENT, DEBUG_CFG] call CBA_fnc_debug;
+    [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     _killer call X11_fnc_punishTeamkill;
   }
 };
-
-// determine which said is the bad one here
-//if(_sideKiller == west) then{
-    //_badSide = east;
-//};
-//if (_sideKiller == east) then {
-    //_badSide = west;
-//};
-//
-//if (_sideUnit == _badSide and (_unit call CBA_fnc_isPerson)) then {
- //if (_playerIsKiller) exitWith {
-   // TODO: events for enemy kills
- //};
-//};

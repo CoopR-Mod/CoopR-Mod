@@ -32,6 +32,9 @@ player setVariable [KEY_PRISON_FREE_POSITION, _prisonPosition];
 player setVariable [KEY_POSITION, _position];
 [format ["variable %1: %2", KEY_POSITION, _position], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
+player setVariable [KEY_LOADOUT, _loadout];
+[format ["variable %1: %2", KEY_LOADOUT, _loadout], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+
 ["stored variables saved in player namespace", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_PLAYER_LOGGEDIN, true, true];

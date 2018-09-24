@@ -3,6 +3,7 @@
 
 private _oldPos = player getVariable [KEY_POSITION, 0];
 private _prisonTime = player getVariable [KEY_PRISON_START, 0];
+private _loadout = player getVariable [KEY_LOADOUT, []];
 
 call X11_fnc_initNpcs;
 call X11_fnc_addPlayerActions;
@@ -12,6 +13,8 @@ if(count _oldPos > 0) then {
 } else {
    player setPos (getPos respawn_hq);
 };
+
+player setUnitLoadout _loadout;
 
 call X11_fnc_checkPrisonRefugee;
 

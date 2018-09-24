@@ -13,5 +13,15 @@ private _renegade = _player getVariable [KEY_IS_RENEGADE, false];
 private _prisonTime = _player getVariable [KEY_PRISON_START, 0];
 private _prisonPosition = _player getVariable [KEY_PRISON_FREE_POSITION, 0];
 private _position = getPos _player;
+private _loadout = getUnitLoadout _player;
 
-[_uid, _name, _class, _reputation, _money, _renegade, _prisonTime, _position, _prisonPosition] call X11_fnc_createPlayerProfile;
+[_uid,
+ _name,
+ _class,
+ _reputation,
+ _money,
+ _renegade,
+ _prisonTime,
+ _position,
+ _prisonPosition,
+ _loadout] call X11_fnc_createPlayerProfile;

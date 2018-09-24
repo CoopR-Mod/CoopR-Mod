@@ -9,7 +9,8 @@ params [["_playerId", 0],
         ["_renegade", false],
         ["_prisonStart", 0],
         ["_position", []],
-        ["_prisonPosition", []]];
+        ["_prisonPosition", []],
+        ["_loadout", []]];
 
 private _statsHash = [[KEY_UID, _playerId],
                       [KEY_NAME, _playerName],
@@ -19,7 +20,8 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_IS_RENEGADE, _renegade],
                       [KEY_POSITION, _position],
                       [KEY_PRISON_START, _prisonStart],
-                      [KEY_PRISON_FREE_POSITION, _prisonPosition]];
+                      [KEY_PRISON_FREE_POSITION, _prisonPosition]],
+                      [KEY_LOADOUT, _loadout]];
 
 [format ["player profile created: %1", _statsHash], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

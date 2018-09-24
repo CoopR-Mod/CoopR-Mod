@@ -16,3 +16,6 @@
 #define KEY_PRISON_START "dpl_profile_prison_start"
 #define KEY_PRISON_FREE_POSITION "dpl_profile_prison_position"
 #define KEY_POSITION "dpl_profile_position"
+#define KEY_LOADOUT "dpl_profile_loadout"
+
+#define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]

@@ -11,10 +11,13 @@ private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] 
     ["syncing player profile to server...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     private _player = _x;
     private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];
+    private _isRenegade = _player getVariable [KEY_IS_RENEGADE, false];
 
     [format ["%1's login state is: %2", name _player, _isLoggedIn], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    [format ["%1's prison state is: %2", name _player, _isRenegade], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+
     // skip if not logged in
-    if(_isLoggedIn) then {
+    if(_isLoggedIn and not _isRenegade) then {
 
         // get the actual player stats
         private _playerHash = _player call X11_fnc_mapPlayerToHash;

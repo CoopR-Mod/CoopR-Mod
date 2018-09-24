@@ -13,6 +13,8 @@ if(_alreadyRegistered)exitWith {
 private _uid = getPlayerUID _player;
 // create new player (stats hash)
 private _statsHash = [_uid, name _player, "dpl_class_medic", 0, 500, false, 0] call X11_fnc_createPlayerProfile;
+// add new player loadout (did not want to write a helluva parameter overkill above)
+[_statsHash, KEY_LOADOUT, NEW_PLAYER_LOADOUT] call CBA_fnc_hashSet;
 // add player profile to hash of profiles
 [_playerProfiles, _uid, _statsHash] call CBA_fnc_hashSet;
 

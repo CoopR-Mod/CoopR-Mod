@@ -62,6 +62,7 @@ class CfgFunctions {
         class Core {
             file = "Core\Server";
             class syncPlayersToServer {};
+            class syncPlayerToServer {};
         }
         class Profiles_Server {
             file = "Profiles\Server";

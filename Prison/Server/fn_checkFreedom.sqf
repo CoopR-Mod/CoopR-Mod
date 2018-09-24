@@ -6,12 +6,12 @@ params ["_args", "_handle"];
 private _renegade =  _args select 0;
 
 private _maxPrisonTimeInSec = PRISON_TIME_IN_MIN * 60;
-private _prisonStartTime = _renegade getVariable KEY_PRISON_START;
+private _prisonStartTime = _renegade getVariable [KEY_PRISON_START, 0];
 
 if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec) then
 {
     private _oldPosition =  _args select 1;
-    private _savedLoadout =  _args select 2;
+    private _savedLoadout =  _renegade getVariable [KEY_LOADOUT, []];
 
     ["prison time has been served out", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

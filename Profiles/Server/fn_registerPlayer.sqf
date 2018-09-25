@@ -4,10 +4,10 @@
 params ["_player", "_clientOwnerId"];
 
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
-private _alreadyRegistered  = _player getVariable [KEY_REGISTERED, false];
+private _alreadyRegistered  = [_playerProfiles, getPlayerUID _player] call CBA_fnc_hashHasKey;
 
-if(_alreadyRegistered)exitWith {
-    [format ["||Deployed|| already registered this session. Please login."]] remoteExec ["systemChat", _clientOwnerId];
+if(_alreadyRegistered) exitWith {
+    [format ["||Deployed|| already registered with this SteamID. Please login."]] remoteExec ["systemChat", _clientOwnerId];
 };
 
 private _uid = getPlayerUID _player;

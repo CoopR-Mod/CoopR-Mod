@@ -3,8 +3,7 @@
 
 _onRespawn = {
     player setVariable [KEY_PLAYER_LOGGEDIN, false, true];
-
-    [player] spawn {sleep 0.1; call X11_fnc_spawnInLobby };
+    [player] spawn {sleep 0.5; call X11_fnc_spawnInLobby };
 };
 
 player addEventHandler ["Respawn", _onRespawn];

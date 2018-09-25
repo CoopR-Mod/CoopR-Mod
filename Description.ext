@@ -1,5 +1,8 @@
 allowFunctionsRecompile = 1;
 
+#include "define.hpp"
+#include "dialogs.hpp"
+
 class CfgFunctions {
     class X11 {
         class Init_Server {
@@ -49,6 +52,7 @@ class CfgFunctions {
             class spawnInLobby {};
             class login {};
             class postLogin {};
+            class showLoginDialog {};
         }
         class Lobby_Server {
             file = "Lobby\Server";

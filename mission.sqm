@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=14;
+		nextID=15;
 	};
 	class Camera
 	{
@@ -14347,7 +14347,7 @@ class Mission
 			};
 			id=1035;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=0.057006836;
+			atlOffset=1.5258789e-005;
 		};
 		class Item121
 		{
@@ -14364,7 +14364,6 @@ class Mission
 			};
 			id=1036;
 			type="Land_New_WiredFence_10m_F";
-			atlOffset=0.056991577;
 		};
 		class Item122
 		{
@@ -14381,7 +14380,6 @@ class Mission
 			};
 			id=1037;
 			type="Land_New_WiredFence_10m_F";
-			atlOffset=0.056991577;
 		};
 		class Item123
 		{
@@ -14398,7 +14396,6 @@ class Mission
 			};
 			id=1038;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=0.056991577;
 		};
 		class Item124
 		{
@@ -14443,7 +14440,6 @@ class Mission
 			};
 			id=1047;
 			type="EmptyDetector";
-			atlOffset=0.056991577;
 		};
 		class Item128
 		{
@@ -14461,7 +14457,6 @@ class Mission
 			};
 			id=1049;
 			type="EmptyDetector";
-			atlOffset=0.056991577;
 		};
 		class Item129
 		{

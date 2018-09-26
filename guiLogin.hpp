@@ -2,16 +2,13 @@ class X11_Login_Dialog{
   idd = 1101;
   movingEnabled = false;
 
-  class controls{
+  class Backgrounds {}
 
-    ////////////////////////////////////////////////////////
-    // GUI EDITOR OUTPUT START (by xetra11, v1.063, #Fusori)
-    ////////////////////////////////////////////////////////
+  class Controls{
 
     class X11_rscPicture: RscPicture
     {
         idc = 1200;
-        text = "#(argb,8,8,3)color(1,1,1,1)";
         x = 0.448438 * safezoneW + safezoneX;
         y = 0.312916 * safezoneH + safezoneY;
         w = 0.113437 * safezoneW;
@@ -38,19 +35,20 @@ class X11_Login_Dialog{
     class X11_rscButton_Reset: RscButton
     {
         idc = 1602;
-
         text = "Reset Profile"; //--- ToDo: Localize;
         x = 0.474219 * safezoneW + safezoneX;
         y = 0.533015 * safezoneH + safezoneY;
         w = 0.061875 * safezoneW;
         h = 0.0440197 * safezoneH;
     };
-    ////////////////////////////////////////////////////////
-    // GUI EDITOR OUTPUT END
-    ////////////////////////////////////////////////////////
-
-    }
+  }
 }
+
+
+
+
+
+
 
 
 /* #Fusori

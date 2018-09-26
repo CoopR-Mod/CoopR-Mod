@@ -14,8 +14,6 @@ private _loggedIn =  player getVariable [KEY_PLAYER_LOGGEDIN, false];
 
 [format ["show display for player %1", player], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-ctrlSetFocus _loginButton;
-
 _loginHandler = {
     params ["_control"];
     ctrlParent _control closeDisplay 0;
@@ -30,7 +28,7 @@ _resetHandler = {
     [player, clientOwner, true] remoteExec ["X11_fnc_registerPlayer", SERVER];
 };
 
-_loginDisplay displayAddEventHandler ["KeyDown", "true"];
+// _loginDisplay displayAddEventHandler ["KeyDown", "true"];
 
 _loginButton ctrlAddEventHandler ["MouseButtonDown", _loginHandler];
 _registerButton ctrlAddEventHandler ["MouseButtonDown", _registerHandler];

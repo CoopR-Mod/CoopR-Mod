@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1079;
+		nextID=1081;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=18;
+		nextID=20;
 	};
 	class Camera
 	{
@@ -4356,7 +4356,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=135;
+		items=136;
 		class Item0
 		{
 			dataType="Logic";
@@ -14366,7 +14366,7 @@ class Mission
 			};
 			id=1035;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=0.057006836;
+			atlOffset=1.5258789e-005;
 		};
 		class Item121
 		{
@@ -14383,7 +14383,6 @@ class Mission
 			};
 			id=1036;
 			type="Land_New_WiredFence_10m_F";
-			atlOffset=0.056991577;
 		};
 		class Item122
 		{
@@ -14400,7 +14399,6 @@ class Mission
 			};
 			id=1037;
 			type="Land_New_WiredFence_10m_F";
-			atlOffset=0.056991577;
 		};
 		class Item123
 		{
@@ -14417,7 +14415,6 @@ class Mission
 			};
 			id=1038;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=0.056991577;
 		};
 		class Item124
 		{
@@ -14462,7 +14459,6 @@ class Mission
 			};
 			id=1047;
 			type="EmptyDetector";
-			atlOffset=0.056991577;
 		};
 		class Item128
 		{
@@ -14480,7 +14476,6 @@ class Mission
 			};
 			id=1049;
 			type="EmptyDetector";
-			atlOffset=0.056991577;
 		};
 		class Item129
 		{
@@ -15047,6 +15042,36 @@ class Mission
 				name="blu_tf";
 			};
 			id=1072;
+		};
+		class Item135
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12956.72,5.9921761,10131.735};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=1080;
+					type="B_Soldier_A_F";
+					atlOffset=-1.9073486e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1079;
+			atlOffset=-1.9073486e-006;
 		};
 	};
 	class Connections

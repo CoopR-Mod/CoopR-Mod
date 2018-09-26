@@ -14,6 +14,7 @@ if(_isLoggedIn) then {
 
     // get the actual player stats
     private _playerHash = _player call X11_fnc_mapPlayerToHash;
+    // TODO just use getPlayerUID _player here
     private _uid = [_playerHash, KEY_UID] call CBA_fnc_hashGet;
 
     // add player profile to hash of profiles

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15;
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={13118.967,76.999855,9984.5869};
-		dir[]={-0.57265753,-0.42606148,0.70040005};
-		up[]={-0.26968735,0.90469217,0.32984629};
-		aside[]={0.77418101,-7.6601282e-008,0.63298219};
+		pos[]={13174.54,193.85298,9891.1338};
+		dir[]={-0.43450394,-0.68344724,0.58663523};
+		up[]={-0.40678117,0.73000067,0.54920566};
+		aside[]={0.80359691,-2.3259781e-007,0.59520209};
 	};
 };
 binarizationWanted=0;
@@ -744,11 +744,10 @@ randomSeed=7114109;
 class ScenarioData
 {
 	author="xetra11";
+	respawnDialog=0;
 	disabledAI=1;
 	joinUnassigned=0;
 	respawn=3;
-	respawnDelay=2;
-	respawnVehicleDelay=5;
 	class Header
 	{
 		gameType="Coop";
@@ -763,6 +762,44 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="ReviveForceRespawnDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -776,28 +813,10 @@ class CustomAttributes
 							"ARRAY"
 						};
 					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuPosition";
-							};
-						};
-					};
 				};
 			};
 		};
-		class Attribute1
+		class Attribute3
 		{
 			property="ReviveMode";
 			expression="false";
@@ -816,7 +835,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute2
+		class Attribute4
 		{
 			property="SharedObjectives";
 			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
@@ -835,7 +854,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=3;
+		nAttributes=5;
 	};
 	class Category1
 	{
@@ -4315,7 +4334,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Deployed v0.1 - The Coop RPG ALiVE mode";
-		overviewText="Der IS hat mit Hilfe der Saudis den Kaukassus invasieren koennen!";
+		overviewText="WIP";
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0.25;
@@ -14347,7 +14366,7 @@ class Mission
 			};
 			id=1035;
 			type="Land_New_WiredFence_5m_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=0.057006836;
 		};
 		class Item121
 		{
@@ -14364,6 +14383,7 @@ class Mission
 			};
 			id=1036;
 			type="Land_New_WiredFence_10m_F";
+			atlOffset=0.056991577;
 		};
 		class Item122
 		{
@@ -14380,6 +14400,7 @@ class Mission
 			};
 			id=1037;
 			type="Land_New_WiredFence_10m_F";
+			atlOffset=0.056991577;
 		};
 		class Item123
 		{
@@ -14396,6 +14417,7 @@ class Mission
 			};
 			id=1038;
 			type="Land_New_WiredFence_5m_F";
+			atlOffset=0.056991577;
 		};
 		class Item124
 		{
@@ -14440,6 +14462,7 @@ class Mission
 			};
 			id=1047;
 			type="EmptyDetector";
+			atlOffset=0.056991577;
 		};
 		class Item128
 		{
@@ -14457,6 +14480,7 @@ class Mission
 			};
 			id=1049;
 			type="EmptyDetector";
+			atlOffset=0.056991577;
 		};
 		class Item129
 		{

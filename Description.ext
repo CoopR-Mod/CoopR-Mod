@@ -74,6 +74,7 @@ class CfgFunctions {
             class getPlayerProfile {};
             class registerPlayer {};
             class mapPlayerToHash {};
+            class setProfileValue {};
         }
         class Profiles_Client {
             file = "Profiles\Client";

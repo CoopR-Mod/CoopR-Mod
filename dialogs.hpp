@@ -35,6 +35,16 @@ class X11_Login_Dialog{
         w = 0.061875 * safezoneW;
         h = 0.0440197 * safezoneH;
     };
+    class X11_rscButton_Reset: RscButton
+    {
+        idc = 1602;
+
+        text = "Reset Profile"; //--- ToDo: Localize;
+        x = 0.474219 * safezoneW + safezoneX;
+        y = 0.533015 * safezoneH + safezoneY;
+        w = 0.061875 * safezoneW;
+        h = 0.0440197 * safezoneH;
+    };
     ////////////////////////////////////////////////////////
     // GUI EDITOR OUTPUT END
     ////////////////////////////////////////////////////////

@@ -1,12 +1,14 @@
 #include "..\..\globals.hpp"
 #include "..\constants.hpp"
 
-params ["_player", "_clientOwnerId"];
+params [["_player", objNull],
+        ["_clientOwnerId", 0],
+        ["_forceRegister", false]];
 
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
 private _alreadyRegistered  = [_playerProfiles, getPlayerUID _player] call CBA_fnc_hashHasKey;
 
-if(_alreadyRegistered) exitWith {
+if(_alreadyRegistered and not _forceRegister) exitWith {
     [format ["||Deployed|| already registered with this SteamID. Please login."]] remoteExec ["systemChat", _clientOwnerId];
 };
 

@@ -88,6 +88,7 @@ class CfgFunctions {
         class Equipment {
             file = "Equipment\Client";
             class showEquipmentVendorShop {};
+            class initVendor {};
         }
     }
 }

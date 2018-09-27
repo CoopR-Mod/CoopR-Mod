@@ -25,7 +25,7 @@ class X11_Equipment_Dialog{
             h = 0.62728 * safezoneH;
             colorBackground[] = {0.6,0.6,0.4,1};
         };
-        class X11_Equipment_Info_Textbox: RscText
+        class X11_Equipment_Info_Textbox: RscStructuredText
         {
             idc = 1001;
             text = "<Placeholder Text>";

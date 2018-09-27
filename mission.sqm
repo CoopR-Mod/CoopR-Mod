@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1086;
+		nextID=1088;
 	};
 	class MarkerIDProvider
 	{
@@ -9762,12 +9762,13 @@ class Mission
 									class PositionInfo
 									{
 										position[]={12160.354,158.90143,12613.866};
-										angles[]={0,6.0737085,0};
+										angles[]={0,6.0737104,0};
 									};
 									side="West";
 									flags=7;
 									class Attributes
 									{
+										init="call{[this,""SIT"",""ASIS""] call BIS_fnc_ambientAnim;" \n "}";
 										name="fw_briefing";
 										class Inventory
 										{

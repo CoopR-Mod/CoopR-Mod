@@ -18,7 +18,7 @@ _renegade setVariable [KEY_PRISON_FREE_POSITION, _oldPosition];
 
 _renegade call X11_fnc_syncPlayerToServer;
 
-[{call X11_fnc_checkFreedom}, 3, [_renegade, _oldPosition]] call CBA_fnc_addPerFrameHandler;
+[{call X11_fnc_checkFreedom}, 3, [_renegade]] call CBA_fnc_addPerFrameHandler;
 
 _renegade call X11_fnc_makePrisoner;
 

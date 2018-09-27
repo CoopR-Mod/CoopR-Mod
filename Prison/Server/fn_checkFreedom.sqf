@@ -10,7 +10,6 @@ private _prisonStartTime = _renegade getVariable [KEY_PRISON_START, 0];
 
 if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec) then
 {
-    private _oldPosition =  _args select 1;
     private _savedLoadout =  _renegade getVariable [KEY_LOADOUT, []];
 
     ["prison time has been served out", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
@@ -19,7 +18,7 @@ if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec) then
     _renegade setVariable [KEY_PRISON_START, 0];
     _renegade setVariable [KEY_PRISON_FREE_POSITION, []];
 
-    _renegade setPos _oldPosition;
+    _renegade setPos getPos respawn_hq;
     ["teleport arrested player back to old position", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
     _renegade setUnitLoadout _savedLoadout;

@@ -8,5 +8,5 @@ private _savedLoadout = getUnitLoadout player;
 if(_prisonTime > 0 and _prisonTime < serverTime) then {
     ["player has still prison time", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     player call X11_fnc_makePrisoner;
-    [{call X11_fnc_checkFreedom}, 3, [player, _freedomPosition, _savedLoadout]] call CBA_fnc_addPerFrameHandler;
+    [{call X11_fnc_checkFreedom}, 3, [player]] call CBA_fnc_addPerFrameHandler;
 }

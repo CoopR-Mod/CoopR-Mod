@@ -3,6 +3,7 @@ allowFunctionsRecompile = 1;
 #include "define.hpp"
 #include "guiLogin.hpp"
 #include "guiEquipment.hpp"
+#include "guiNewProfile.hpp"
 
 class CfgFunctions {
     class X11 {
@@ -55,6 +56,7 @@ class CfgFunctions {
             class login {};
             class postLogin {};
             class showLoginDialog {};
+            class showNewProfileDialog {};
         }
         class Lobby_Server {
             file = "Lobby\Server";

@@ -46,6 +46,7 @@ class CfgFunctions {
             class updateReputation {};
             class showReputation {};
             class initReputationmaster {};
+            class addReputationForKill {};
         }
         class Lobby_Client {
             file = "Lobby\Client";

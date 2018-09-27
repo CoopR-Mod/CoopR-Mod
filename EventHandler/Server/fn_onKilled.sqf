@@ -20,4 +20,6 @@ if (_isBlueOnBlue and not _isSuicide) then {
     [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
     _killer call X11_fnc_punishTeamkill;
   }
-};
+}else {
+    [] remoteExec ["X11_fnc_addReputationForKill", owner _killer]
+}

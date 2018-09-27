@@ -8,20 +8,25 @@ waitUntil {!isNull findDisplay 1102};
 
 private _vendorDisplay = findDisplay 1102;
 private _listBox = _vendorDisplay displayCtrl 1500;
-private _textboxInfos = _vendorDisplay displayCtrl 1001;
 private _textboxReputation = _vendorDisplay displayCtrl 1002;
 private _buttonEquip = _vendorDisplay displayCtrl 1600;
 private _currentReputation = player getVariable [KEY_REPUTATION, 0];
+
 private _itemsHash = [REP_ITEMS, []] call CBA_fnc_hashCreate;
+private _itemKeys = [_itemsHash] call CBA_fnc_hashKeys;
 
 _textboxReputation ctrlSetText format["Deine momentane Reputation ist: %1", str _currentReputation];
 
 {
   lbAdd [1500, _x];
-} forEach _items call CBA_fnc_hashKeys;
+} forEach _itemKeys;
 
 _equipHandler = {
   private _index = lbCurSel 1500;
+  private _vendorDisplay = findDisplay 1102;
+  private _itemsHash = [REP_ITEMS, []] call CBA_fnc_hashCreate;
+  private _currentReputation = player getVariable [KEY_REPUTATION, 0];
+  private _textboxInfos = _vendorDisplay displayCtrl 1001;
 
   if (_index != -1) then {
     private _selectedItem = lbText [1500, _index];

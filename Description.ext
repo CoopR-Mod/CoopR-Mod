@@ -91,6 +91,7 @@ class CfgFunctions {
             file = "Equipment\Client";
             class showEquipmentVendorShop {};
             class initVendor {};
+            class getLoadoutForClass {};
         }
     }
 }

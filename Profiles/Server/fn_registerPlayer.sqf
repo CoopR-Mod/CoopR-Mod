@@ -2,7 +2,7 @@
 #include "..\constants.hpp"
 
 params [["_player", objNull],
-        ["_clientOwnerId", 0],
+        ["_profile", []],
         ["_forceRegister", false]];
 
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
@@ -14,11 +14,9 @@ if(_alreadyRegistered and not _forceRegister) exitWith {
 
 private _uid = getPlayerUID _player;
 // create new player (stats hash)
-private _statsHash = [_uid, name _player, "dpl_class_medic", 0, 500, false, 0] call X11_fnc_createPlayerProfile;
-// add new player loadout (did not want to write a helluva parameter overkill above)
-[_statsHash, KEY_LOADOUT, NEW_PLAYER_LOADOUT] call CBA_fnc_hashSet;
+
 // add player profile to hash of profiles
-[_playerProfiles, _uid, _statsHash] call CBA_fnc_hashSet;
+[_playerProfiles, _uid, _profile] call CBA_fnc_hashSet;
 
 ["new player added to profiles hash", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

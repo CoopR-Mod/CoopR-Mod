@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1094;
+		nextID=1098;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=26;
+		nextID=41;
 	};
 	class Camera
 	{
-		pos[]={12161.814,183.96785,12572.588};
-		dir[]={0.089064188,-0.60244179,0.79317963};
-		up[]={0.067224346,0.7981624,0.5986799};
-		aside[]={0.99375564,1.6767444e-008,-0.11158641};
+		pos[]={12156.06,166.41275,12592.544};
+		dir[]={0.28726682,-0.6086176,0.73963779};
+		up[]={0.22034469,0.79346389,0.56733096};
+		aside[]={0.93216377,2.8515933e-007,-0.36204135};
 	};
 };
 binarizationWanted=0;
@@ -113,9 +113,9 @@ addons[]=
 	"CUP_WheeledVehicles_Ural",
 	"ace_rearm",
 	"CUP_Editor_Buildings_Config",
-	"A3_Modules_F_Multiplayer",
 	"alive_main",
-	"alive_sys_profile"
+	"alive_sys_profile",
+	"A3_Modules_F_Multiplayer"
 };
 class AddonsMetaData
 {
@@ -613,22 +613,22 @@ class AddonsMetaData
 		};
 		class Item79
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item80
-		{
 			className="ALiVE_main";
 			name="alive_main";
 			author="ALiVE Mod Team";
 		};
-		class Item81
+		class Item80
 		{
 			className="ALiVE_sys_profile";
 			name="alive_sys_profile";
 			author="ALiVE Mod Team";
+		};
+		class Item81
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -11758,117 +11758,6 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12155.945,159.04141,12598.447};
-				angles[]={0.013334315,0.25799456,6.2698507};
-			};
-			name="respawn_hq";
-			id=207;
-			type="ModuleRespawnPosition_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleRespawnPosition_F_Marker";
-					expression="_this setVariable ['Marker',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleRespawnPosition_F_Name";
-					expression="_this setVariable ['Name',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="respawn";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleRespawnPosition_F_Side";
-					expression="_this setVariable ['Side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="1";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleRespawnPosition_F_ShowNotification";
-					expression="_this setVariable ['ShowNotification',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="1";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleRespawnPosition_F_Type";
-					expression="_this setVariable ['Type',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item6
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
 				position[]={1239.791,378.69681,14618.222};
 				angles[]={0.0039968039,0,0.01733112};
 			};
@@ -12088,7 +11977,7 @@ class Mission
 				nAttributes=11;
 			};
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -12313,7 +12202,7 @@ class Mission
 				nAttributes=11;
 			};
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Group";
 			side="West";
@@ -12741,7 +12630,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Group";
 			side="West";
@@ -12812,6 +12701,117 @@ class Mission
 			{
 			};
 			id=1093;
+		};
+		class Item9
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={12157.755,159.05275,12595.532};
+				angles[]={0.013334315,0,6.2565165};
+			};
+			name="respawn_hq";
+			id=1097;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
 		};
 	};
 	class Connections

@@ -1,7 +1,7 @@
 #include "..\..\globals.hpp"
 #include "..\constants.hpp"
 
-private _oldPos = player getVariable [KEY_POSITION, 0];
+private _oldPos = player getVariable [KEY_POSITION, []];
 private _prisonTime = player getVariable [KEY_PRISON_START, 0];
 private _loadout = player getVariable [KEY_LOADOUT, []];
 

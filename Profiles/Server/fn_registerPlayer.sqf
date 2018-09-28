@@ -9,7 +9,7 @@ private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] 
 private _alreadyRegistered  = [_playerProfiles, getPlayerUID _player] call CBA_fnc_hashHasKey;
 
 if(_alreadyRegistered and not _forceRegister) exitWith {
-    [format ["||Deployed|| already registered with this SteamID. Please login."]] remoteExec ["systemChat", _clientOwnerId];
+    [format ["||Deployed|| already registered with this SteamID. Please login."]] remoteExec ["systemChat", owner _player];
 };
 
 private _uid = getPlayerUID _player;

@@ -12,6 +12,8 @@ private _position = [_playerProfile, KEY_POSITION] call CBA_fnc_hashGet;
 private _prisonPosition = [_playerProfile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_playerProfile, KEY_LOADOUT] call CBA_fnc_hashGet;
 
+
+
 player setVariable [KEY_CLASS, _class];
 [format ["variable %1: %2", KEY_CLASS, _class], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

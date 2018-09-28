@@ -21,7 +21,8 @@ _loginHandler = {
 };
 
 _registerHandler = {
-    [player, clientOwner] remoteExec ["X11_fnc_registerPlayer", SERVER];
+    closeDialog 1;
+    [] spawn X11_fnc_showNewProfileDialog;
 };
 
 _resetHandler = {

@@ -25,21 +25,26 @@ _createButton setVariable ["_classesHash", _classesHash];
 {_specCombobox lbAdd _x} forEach _classNames;
 
 _createHandler = {
-     private _ctrl = _this select 0;
-     private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
-     private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
-     private _classesHash = _ctrl getVariable ["_classesHash", objNull];
+    private _ctrl = _this select 0;
+    private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
+    private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
+    private _classesHash = _ctrl getVariable ["_classesHash", objNull];
 
-     private _name = ctrlText _nameTextEdit;
-     private _index = lbCurSel _specCombobox;
-     private _className = _specCombobox lbText _index;
-     private _classId = [_classesHash, _className] call CBA_fnc_hashGet;
+    private _name = ctrlText _nameTextEdit;
+    private _index = lbCurSel _specCombobox;
+    private _className = _specCombobox lbText _index;
+    private _classId = [_classesHash, _className] call CBA_fnc_hashGet;
+    private _loadOut = _classId call X11_fnc_getLoadoutForClass;
 
-     private _statsHash = [_uid, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
-     [_statsHash, KEY_LOADOUT, NEW_PLAYER_LOADOUT] call CBA_fnc_hashSet;
+    [format ["DEBUG!: %1", _loadOut], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-    [format ["DEBUG: %1", _name], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    private _profile = [_uid, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
+    [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
+    [player, _profile, true] remoteExec ["X11_fnc_registerPlayer", SERVER];
+
+    closeDialog 1;
+    [] spawn X11_fnc_showLoginDialog;
 };
 
 _createButton ctrlAddEventHandler ["MouseButtonDown", _createHandler];

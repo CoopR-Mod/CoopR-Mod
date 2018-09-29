@@ -6,6 +6,7 @@
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
 #define KEY_REGISTERED "dpl_registration_state"
+#define KEY_PROFILE_FETCHED "dpl_profile_fetched"
 
 #define KEY_REPUTATION "dpl_profile_reputation"
 #define KEY_MONEY "dpl_profile_money"

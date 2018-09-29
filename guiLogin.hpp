@@ -6,41 +6,107 @@ class X11_Login_Dialog{
 
   class Controls{
 
-    class X11_rscPicture: RscPicture
-    {
-        idc = 1200;
-        x = 0.448438 * safezoneW + safezoneX;
-        y = 0.312916 * safezoneH + safezoneY;
-        w = 0.113437 * safezoneW;
-        h = 0.330147 * safezoneH;
-    };
-    class X11_rscButton_Login: RscButton
-    {
-        idc = 1600;
-        text = "Login"; //--- ToDo: Localize;
-        x = 0.474219 * safezoneW + safezoneX;
-        y = 0.356936 * safezoneH + safezoneY;
-        w = 0.061875 * safezoneW;
-        h = 0.0440197 * safezoneH;
-    };
-    class X11_rscButton_Register: RscButton
-    {
-        idc = 1601;
-        text = "Register"; //--- ToDo: Localize;
-        x = 0.474219 * safezoneW + safezoneX;
-        y = 0.422966 * safezoneH + safezoneY;
-        w = 0.061875 * safezoneW;
-        h = 0.0440197 * safezoneH;
-    };
-    class X11_rscButton_Reset: RscButton
-    {
-        idc = 1602;
-        text = "Reset Profile"; //--- ToDo: Localize;
-        x = 0.474219 * safezoneW + safezoneX;
-        y = 0.533015 * safezoneH + safezoneY;
-        w = 0.061875 * safezoneW;
-        h = 0.0440197 * safezoneH;
-    };
+   class X11_Login_Background: RscText
+   {
+   	idc = 1000;
+   	x = 0.0875804 * safezoneW + safezoneX;
+   	y = 0.0928181 * safezoneH + safezoneY;
+   	w = 0.824839 * safezoneW;
+   	h = 0.825369 * safezoneH;
+   	colorBackground[] = {0.6,0.6,0.4,0.8};
+   };
+   class X11_Login_Profile_1: RscPicture
+   {
+   	idc = 1200;
+   	text = "#(argb,8,8,3)color(1,1,1,1)";
+   	x = 0.154599 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   };
+   class X11_Login_Profile_2: RscPicture
+   {
+   	idc = 1201;
+   	text = "#(argb,8,8,3)color(1,1,1,1)";
+   	x = 0.422671 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   };
+   class X11_Login_Profile_3: RscPicture
+   {
+   	idc = 1202;
+   	text = "#(argb,8,8,3)color(1,1,1,1)";
+   	x = 0.685589 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   };
+   class X11_Login_Profile_1_Button: RscButton
+   {
+   	idc = 1600;
+   	text = "Entfernen"; //--- ToDo: Localize;
+   	x = 0.154599 * safezoneW + safezoneX;
+   	y = 0.621054 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.0550246 * safezoneH;
+   	colorBackground[] = {0,0,0,1};
+   };
+   class X11_Login_Profile_2_Button: RscButton
+   {
+   	idc = 1601;
+   	text = "Entfernen"; //--- ToDo: Localize;
+   	x = 0.422671 * safezoneW + safezoneX;
+   	y = 0.621054 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.0550246 * safezoneH;
+   	colorBackground[] = {0,0,0,1};
+   };
+   class X11_Login_Profile_3_Button: RscButton
+   {
+   	idc = 1602;
+   	text = "Entfernen"; //--- ToDo: Localize;
+   	x = 0.685589 * safezoneW + safezoneX;
+   	y = 0.621054 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.0550246 * safezoneH;
+   	colorBackground[] = {0,0,0,1};
+   };
+   class X11_Login_Profile_1_Label: RscText
+   {
+   	idc = 1001;
+   	text = "Profil 1"; //--- ToDo: Localize;
+   	x = 0.200996 * safezoneW + safezoneX;
+   	y = 0.169853 * safezoneH + safezoneY;
+   	w = 0.0567077 * safezoneW;
+   	h = 0.0440197 * safezoneH;
+   	sizeEx = 2 * GUI_GRID_H;
+   };
+   class X11_Login_Profile_1_Info: RscStructuredText
+   {
+   	idc = 1100;
+   	x = 0.154599 * safezoneW + safezoneX;
+   	y = 0.687084 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.143064 * safezoneH;
+   };
+   class X11_Login_Profile_2_Info: RscStructuredText
+   {
+   	idc = 1101;
+   	x = 0.422671 * safezoneW + safezoneX;
+   	y = 0.687084 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.143064 * safezoneH;
+   };
+   class X11_Login_Profile_3_Info: RscStructuredText
+   {
+   	idc = 1102;
+   	x = 0.685589 * safezoneW + safezoneX;
+   	y = 0.687084 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.143064 * safezoneH;
+   };
+
   }
 }
 

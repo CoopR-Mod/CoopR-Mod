@@ -3,6 +3,7 @@
 
 params ["_playerProfile"];
 
+private _naem = [_playerProfile, KEY_NAME] call CBA_fnc_hashGet;
 private _class = [_playerProfile, KEY_CLASS] call CBA_fnc_hashGet;
 private _reputation = [_playerProfile, KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_playerProfile, KEY_MONEY] call CBA_fnc_hashGet;
@@ -12,7 +13,8 @@ private _position = [_playerProfile, KEY_POSITION] call CBA_fnc_hashGet;
 private _prisonPosition = [_playerProfile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_playerProfile, KEY_LOADOUT] call CBA_fnc_hashGet;
 
-
+player setVariable [KEY_NAME, _name];
+[format ["variable %1: %2", KEY_NAME, _name], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_CLASS, _class];
 [format ["variable %1: %2", KEY_CLASS, _class], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

@@ -9,7 +9,7 @@ class X11_Equipment_Dialog{
 
         class X11_Equipment_Background: RscText
         {
-            idc = 1000;
+            idc = 2000;
             x = 0.21125 * safezoneW + safezoneX;
             y = 0.0598034 * safezoneH + safezoneY;
             w = 0.567187 * safezoneW;
@@ -18,7 +18,7 @@ class X11_Equipment_Dialog{
         };
         class X11_Equipment_Listbox: RscListbox
         {
-            idc = 1500;
+            idc = 2500;
             x = 0.242187 * safezoneW + safezoneX;
             y = 0.235882 * safezoneH + safezoneY;
             w = 0.226875 * safezoneW;
@@ -27,7 +27,7 @@ class X11_Equipment_Dialog{
         };
         class X11_Equipment_Info_Textbox: RscStructuredText
         {
-            idc = 1001;
+            idc = 2001;
             text = "<Placeholder Text>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.367941 * safezoneH + safezoneY;
@@ -36,7 +36,7 @@ class X11_Equipment_Dialog{
         };
         class X11_Equipment_Reputation_Textbox: RscText
         {
-            idc = 1002;
+            idc = 2002;
             text = "<Placeholder Text>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.246887 * safezoneH + safezoneY;
@@ -46,7 +46,7 @@ class X11_Equipment_Dialog{
         };
         class X11_Equipment_Button_Equip: RscButton
         {
-            idc = 1600;
+            idc = 2600;
             text = "Ausruesten"; //--- ToDo: Localize;
             x = 0.54125 * safezoneW + safezoneX;
             y = 0.103823 * safezoneH + safezoneY;

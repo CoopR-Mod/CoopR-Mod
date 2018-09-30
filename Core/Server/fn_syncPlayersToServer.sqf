@@ -3,7 +3,11 @@
 
 ["start syncing player profiles...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 private _allPlayers = allPlayers;
-private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
+private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, EMPTY_HASH];
+
+if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
+    ["no profiles found - skipping sync", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+};
 
 [format ["found %1 players", count _allPlayers], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

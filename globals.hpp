@@ -19,6 +19,7 @@
 #define KEY_POSITION "dpl_profile_position"
 #define KEY_LOADOUT "dpl_profile_loadout"
 
+#define EMPTY_HASH [] call CBA_fnc_hashCreate
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
 #define CLASS_LEADER "dpl_class_leader"

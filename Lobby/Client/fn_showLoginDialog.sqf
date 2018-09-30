@@ -31,15 +31,22 @@ private _playerProfile = player getVariable [KEY_PROFILE_FETCHED, false];
 private _name = [_playerProfile, KEY_NAME] call CBA_fnc_hashGet;
 private _reputation = [_playerProfile, KEY_REPUTATION] call CBA_fnc_hashGet;
 
-_profileInfo1 ctrlSetStructuredText composeText [localize "str.dpl.profile.name", _name, lineBreak,
-                                                localize "str.dpl.profile.reputation: ", str _reputation, lineBreak,
-                                                "Reputation: ", str _reputation, lineBreak,
-                                                "Reputation: ", str _reputation];
+[format ["DEBUG: %1", isLocalized "test.string" ], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
+_profileInfo1 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
+                                                localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.money", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
 
+_profileInfo2 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
+                                                localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.money", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
 
-
-
+_profileInfo3 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
+                                                localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.money", str _reputation, lineBreak,
+                                                localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
 
 _loginHandler = {
     params ["_control"];

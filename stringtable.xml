@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Project name="Deployment RPG">
-    <Package name="Lobby">
-        <Key ID="str.dpl.profile.info.name">
-            <Original>DebugName:</Original>
-        </Key>
-        <Key ID="str.dpl.profile.info.reputation">
-            <Original>ReputationDebug:</Original>
-        </Key>
-    </Package>
+<Project name="Deployed RPG">
+<Package name="Lobby">
+    <Key ID="str.dpl.profile.info.name">
+        <Original>Name: </Original>
+    </Key>
+    <Key ID="str.dpl.profile.info.reputation">
+        <Original>Reputation: </Original>
+    </Key>
+    <Key ID="str.dpl.profile.info.money">
+        <Original>Reputation: </Original>
+    </Key>
+    <Key ID="str.dpl.profile.info.isprisoner">
+        <Original>Is Prisoner: </Original>
+    </Key>
+</Package>
 </Project>

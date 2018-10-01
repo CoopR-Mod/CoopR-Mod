@@ -5,6 +5,10 @@ params ["_player"];
 
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
 
+if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
+    ["no profiles found - skipping sync", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+};
+
 ["syncing player profile to server...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];
 

@@ -1,11 +1,11 @@
 #define DEBUG_CTX "DPL.BASE"
 
 #define SERVER 2
+#define MAX_PROFILES 3
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
-#define KEY_REGISTERED "dpl_registration_state"
 #define KEY_PROFILE_FETCHED "dpl_profile_fetched"
 
 #define KEY_REPUTATION "dpl_profile_reputation"

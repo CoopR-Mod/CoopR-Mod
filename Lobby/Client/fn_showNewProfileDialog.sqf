@@ -1,6 +1,8 @@
 #include "..\..\globals.hpp"
 #include "..\constants.hpp"
 
+params ["_slot"];
+
 disableSerialization;
 
 createDialog "X11_NewProfile_Dialog";
@@ -18,6 +20,7 @@ private _classNames = [_classesHash] call CBA_fnc_hashKeys;
 _createButton setVariable ["_nameTextEdit", _nameTextEdit];
 _createButton setVariable ["_specCombobox", _specCombobox];
 _createButton setVariable ["_classesHash", _classesHash];
+_createButton setVariable ["_slot", _slot];
 
 // TODO: Escape pres returns to Login
 // _loginDisplay displayAddEventHandler ["KeyDown", "true"];
@@ -29,19 +32,22 @@ _createHandler = {
     private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
     private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
     private _classesHash = _ctrl getVariable ["_classesHash", objNull];
+    private _slot = _ctrl getVariable ["_slot", -1];
 
+    private _uid = getPlayerUID player;
     private _name = ctrlText _nameTextEdit;
     private _index = lbCurSel _specCombobox;
     private _className = _specCombobox lbText _index;
     private _classId = [_classesHash, _className] call CBA_fnc_hashGet;
     private _loadOut = _classId call X11_fnc_getLoadoutForClass;
 
-    [format ["DEBUG!: %1", _loadOut], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    FLOG("creating new profile for %1", _uid);
+    FLOG("profile slot is %1", _slot);
 
     private _profile = [_uid, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
     [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
-    [player, _profile, true] remoteExec ["X11_fnc_registerPlayer", SERVER];
+    [player, _profile, _slot] remoteExec ["X11_fnc_saveProfile", SERVER];
 
     closeDialog 1;
     [] spawn X11_fnc_showLoginDialog;

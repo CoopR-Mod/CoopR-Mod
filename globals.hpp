@@ -27,3 +27,5 @@
 #define CLASS_ENGINEER "dpl_class_engineer"
 #define CLASS_DMR "dpl_class_marksman"
 #define CLASS_MG "dpl_class_mg"
+
+#include "macros.hpp"

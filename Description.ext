@@ -1,6 +1,7 @@
 allowFunctionsRecompile = 1;
 
 #include "define.hpp"
+#include "macros.hpp"
 #include "guiLogin.hpp"
 #include "guiEquipment.hpp"
 #include "guiNewProfile.hpp"

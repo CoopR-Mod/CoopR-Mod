@@ -72,6 +72,7 @@ class CfgFunctions {
             file = "Core\Server";
             class syncPlayersToServer {};
             class syncPlayerToServer {};
+            class syncProfileToServer {};
         }
         class Profiles_Server {
             file = "Profiles\Server";
@@ -80,7 +81,6 @@ class CfgFunctions {
             class saveProfile {};
             class mapPlayerToHash {};
             class setProfileValue {};
-            class fetchPlayerProfile {};
         }
         class Profiles_Client {
             file = "Profiles\Client";

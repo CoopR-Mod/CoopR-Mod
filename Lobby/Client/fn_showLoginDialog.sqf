@@ -11,6 +11,12 @@ waitUntil { count (player getVariable [KEY_PROFILE_FETCHED, []]) > 0};
 
 private _loginDisplay = findDisplay 1101;
 
+    [player] remoteExec ["X11_fnc_syncProfileToPlayer"];
+    (player getVariable [KEY_PROFILE_FETCHED, EMPTY_HASH]) call CBA_fnc_hashSize > 0;
+    sleep 10;
+};
+
+private _playerProfiles = player getVariable [KEY_PROFILE_FETCHED, EMPTY_HASH];
 private _profilePicture1 = _loginDisplay displayCtrl 1200;
 private _profilePicture2 = _loginDisplay displayCtrl 1201;
 private _profilePicture3 = _loginDisplay displayCtrl 1202;

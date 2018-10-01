@@ -5,10 +5,10 @@ params ["_player"];
 
 private _fetchedProfiles = getPlayerUID _player call X11_fnc_getPlayerProfile;
 
-[format ["DEBUG! %1", _fetchedProfiles], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+//DEBUG(_fetchedProfiles);
 
 if ([_fetchedProfiles] call CBA_fnc_hashSize == 0) exitWith {
-    ["no profiles found - setting fetched profiles to empty hash", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    SLOG("no profiles found - setting fetched profiles to empty hash");
     [_player, [KEY_PROFILE_FETCHED, EMPTY_HASH]] remoteExec ["setVariable", owner _player];
 };
 

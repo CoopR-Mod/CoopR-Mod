@@ -3,9 +3,9 @@
 
 params [["_player", objNull],
         ["_profile", []],
-        ["_index", -1]];
+        ["_slot", -1]];
 
-if(_index > MAX_PROFILES-1 or _index < 0) exitWith {
+if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
 };
 
@@ -20,7 +20,7 @@ if(([_allProfiles] call CBA_fnc_hashSize) == 0) then {
 
 private _playerProfiles = [_allProfiles, _uid] call CBA_fnc_hashGet;
 
-_playerProfiles set [_index, _profile];
+_playerProfiles set [_slot, _profile];
 [_allProfiles, _uid, _playerProfiles] call CBA_fnc_hashSet;
 
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];

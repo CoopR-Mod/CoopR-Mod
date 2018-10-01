@@ -24,6 +24,15 @@ class X11_Login_Dialog{
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
+   class X11_Login_Profile_1_Overlay: RscButton
+   {
+   	idc = 1210;
+   	x = 0.154599 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   	colorBackground[] = {0,0,0,0};
+   };
    class X11_Login_Profile_2: RscPicture
    {
    	idc = 1201;
@@ -33,6 +42,15 @@ class X11_Login_Dialog{
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
+   class X11_Login_Profile_2_Overlay: RscButton
+   {
+   	idc = 1220;
+   	x = 0.422671 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   	colorBackground[] = {0,0,0,0};
+   };
    class X11_Login_Profile_3: RscPicture
    {
    	idc = 1202;
@@ -41,6 +59,15 @@ class X11_Login_Dialog{
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
+   };
+   class X11_Login_Profile_3_Overlay: RscButton
+   {
+   	idc = 1230;
+   	x = 0.685589 * safezoneW + safezoneX;
+   	y = 0.224877 * safezoneH + safezoneY;
+   	w = 0.159813 * safezoneW;
+   	h = 0.385172 * safezoneH;
+   	colorBackground[] = {0,0,0,0};
    };
    class X11_Login_Profile_1_Button: RscButton
    {

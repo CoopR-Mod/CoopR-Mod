@@ -15,6 +15,8 @@ private _prisonPosition = _player getVariable [KEY_PRISON_FREE_POSITION, 0];
 private _position = getPos _player;
 private _loadout = getUnitLoadout _player;
 
+SLOG("extracting player variables...");
+
 [_uid,
  _name,
  _class,

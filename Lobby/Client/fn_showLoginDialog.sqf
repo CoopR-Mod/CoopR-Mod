@@ -46,9 +46,9 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
 waitUntil {
-    _profileInfo1 ctrlSetText "fetching profile...";
-    _profileInfo2 ctrlSetText "fetching profile...";
-    _profileInfo3 ctrlSetText "fetching profile...";
+    _profileInfo1 ctrlSetText localize "str.dpl.profiles.fetch";
+    _profileInfo1 ctrlSetText localize "str.dpl.profiles.fetch";
+    _profileInfo1 ctrlSetText localize "str.dpl.profiles.fetch";
     [player] remoteExec ["X11_fnc_syncProfileToPlayer"];
     private _fetched = player getVariable [KEY_PROFILE_FETCHED, EMPTY_HASH];
     sleep 1;

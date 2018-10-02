@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Deployed RPG">
 
+<Package name="Profiles">
+    <Key ID="str.dpl.profiles.noprofile">
+        <Original>No Profile</Original>
+        <German>Kein Profil</German>
+    </Key>
+</Package>
+
 <Package name="Intel">
-    <Key ID="str.dpl.intel.info. ">
+    <Key ID="str.dpl.intel.info.progress">
         <Original>||Deployed|| Der Aufklaerungsfortschritt betraegt [%1]</Original>
         <German>||Deployed|| Your intel progress is [%1]</German>
     </Key>
@@ -56,19 +63,19 @@
 
 <Package name="Lobby">
     <Key ID="str.dpl.profile.info.name">
-        <Original>Name: </Original>
+        <Original>Name:&nbsp;</Original>
     </Key>
     <Key ID="str.dpl.profile.info.reputation">
-        <Original>Reputation: </Original>
-        <German>Ruf: </German>
+        <Original>Reputation:&nbsp;</Original>
+        <German>Ruf:&nbsp;</German>
     </Key>
     <Key ID="str.dpl.profile.info.money">
-        <Original>Money: </Original>
-        <German>Sold: </German>
+        <Original>Money:&nbsp;</Original>
+        <German>Sold:&nbsp;</German>
     </Key>
     <Key ID="str.dpl.profile.info.isprisoner">
-        <Original>Prisoner: </Original>
-        <German>Gefangener: </German>
+        <Original>Prisoner:&nbsp;</Original>
+        <German>Gefangener:&nbsp;</German>
     </Key>
 </Package>
 </Project>

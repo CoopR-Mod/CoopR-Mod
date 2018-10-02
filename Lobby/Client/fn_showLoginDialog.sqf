@@ -60,9 +60,9 @@ private _profile1 = _playerProfiles select 0;
 private _profile2 = _playerProfiles select 1;
 private _profile3 = _playerProfiles select 2;
 
-[_profile1, _profileInfo1] call X11_fnc_updateSlot;
-[_profile2, _profileInfo2] call X11_fnc_updateSlot;
-[_profile3, _profileInfo3] call X11_fnc_updateSlot;
+[_profile1, _profileInfo1] call X11_fnc_setProfileSlot;
+[_profile2, _profileInfo2] call X11_fnc_setProfileSlot;
+[_profile3, _profileInfo3] call X11_fnc_setProfileSlot;
 
 _loginHandler = {
     params ["_control"];

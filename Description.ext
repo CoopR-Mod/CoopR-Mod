@@ -61,7 +61,7 @@ class CfgFunctions {
         }
         class Lobby_Client_Helper {
             file = "Lobby\Client\Helper";
-            class updateSlot {};
+            class setProfileSlot {};
         }
         class Lobby_Server {
             file = "Lobby\Server";

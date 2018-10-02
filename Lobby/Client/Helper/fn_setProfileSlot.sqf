@@ -1,9 +1,9 @@
-#include "..\..\..\globals.hpp"
+
 #include "..\..\constants.hpp"
 
 params ["_profile", "_slot"];
 
-if([_profile] call CBA_fnc_isHash and [_profile] call CBA_fnc_hashSize > 0) then {
+if !(_profile call X11_fnc_isProfileEmpty) then {
     private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
     private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
     private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;

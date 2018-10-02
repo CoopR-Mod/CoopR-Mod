@@ -3,7 +3,7 @@
 
 params ["_playerUID"];
 
-FLOG("fetching player profile for id %1 from server", _playerUID);
+FLOG("fetching player profiles for id %1 from server", _playerUID);
 private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, EMPTY_HASH];
 
 if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
@@ -11,13 +11,12 @@ if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
     EMPTY_HASH;
 };
 
-FLOG("retrieved profile is: %1 ", _playerProfiles);
-private _profileExists = [_playerProfiles, _playerUID] call CBA_fnc_hashHasKey;
+private _profilesExist = [_playerProfiles, _playerUID] call CBA_fnc_hashHasKey;
 
-if(_profileExists) then {
+if(_profilesExist) then {
     [_playerProfiles, _playerUID] call CBA_fnc_hashGet;
 } else {
-    FLOG("failed to get profile - uid %1 was not found", _playerProfiles);
+    FLOG("failed to get profiles - no entry for player uid %1 was found", _playerProfiles);
     false;
 };
 

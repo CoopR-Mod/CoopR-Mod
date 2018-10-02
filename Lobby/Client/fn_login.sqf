@@ -1,17 +1,20 @@
 
 #include "..\constants.hpp"
 
-params ["_playerProfile"];
+params ["_profile"];
 
-private _naem = [_playerProfile, KEY_NAME] call CBA_fnc_hashGet;
-private _class = [_playerProfile, KEY_CLASS] call CBA_fnc_hashGet;
-private _reputation = [_playerProfile, KEY_REPUTATION] call CBA_fnc_hashGet;
-private _money = [_playerProfile, KEY_MONEY] call CBA_fnc_hashGet;
-private _renegade = [_playerProfile, KEY_IS_RENEGADE] call CBA_fnc_hashGet;
-private _prisonTime = [_playerProfile, KEY_PRISON_START] call CBA_fnc_hashGet;
-private _position = [_playerProfile, KEY_POSITION] call CBA_fnc_hashGet;
-private _prisonPosition = [_playerProfile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
-private _loadout = [_playerProfile, KEY_LOADOUT] call CBA_fnc_hashGet;
+FLOG("%1 is logging in...", player);
+DEBUG(_profile);
+
+private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
+private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;
+private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
+private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
+private _renegade = [_profile, KEY_IS_RENEGADE] call CBA_fnc_hashGet;
+private _prisonTime = [_profile, KEY_PRISON_START] call CBA_fnc_hashGet;
+private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
+private _prisonPosition = [_profile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
+private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
 
 player setVariable [KEY_NAME, _name];
 [format ["variable %1: %2", KEY_NAME, _name], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

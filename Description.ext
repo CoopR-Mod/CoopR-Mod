@@ -59,6 +59,10 @@ class CfgFunctions {
             class showLoginDialog {};
             class showNewProfileDialog {};
         }
+        class Lobby_Client_Helper {
+            file = "Lobby\Client\Helper";
+            class updateSlot {};
+        }
         class Lobby_Server {
             file = "Lobby\Server";
             class playerLogin {};

@@ -45,7 +45,6 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel2 = _loginDisplay displayCtrl 1101;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
-
 waitUntil {
     _profileInfo1 ctrlSetText "fetching profile...";
     _profileInfo2 ctrlSetText "fetching profile...";
@@ -61,33 +60,9 @@ private _profile1 = _playerProfiles select 0;
 private _profile2 = _playerProfiles select 1;
 private _profile3 = _playerProfiles select 2;
 
-if([_profile1] call CBA_fnc_isHash and [_profile1] call CBA_fnc_hashSize > 0) then{
-    private _name = [_profile1, KEY_NAME] call CBA_fnc_hashGet;
-    private _reputation = [_profile1, KEY_REPUTATION] call CBA_fnc_hashGet;
-
-    _profileInfo1 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
-                                                    localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.money", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
-}else { _profileInfo1 ctrlSetText "no profile"; };
-
-if([_profile2] call CBA_fnc_isHash and [_profile2] call CBA_fnc_hashSize > 0) then{
-    _name = [_profile2, KEY_NAME] call CBA_fnc_hashGet;
-    _reputation = [_profile2, KEY_REPUTATION] call CBA_fnc_hashGet;
-    _profileInfo2 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
-                                                    localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.money", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
-}else { _profileInfo2 ctrlSetText "no profile"; };
-
-if([_profile3] call CBA_fnc_isHash and [_profile3] call CBA_fnc_hashSize > 0) then{
-    _name = [_profile3, KEY_NAME] call CBA_fnc_hashGet;
-    _reputation = [_profile2, KEY_REPUTATION] call CBA_fnc_hashGet;
-    _profileInfo3 ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
-                                                    localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.money", str _reputation, lineBreak,
-                                                    localize "str.dpl.profile.info.isprisoner", str _reputation, lineBreak];
-}else { _profileInfo3 ctrlSetText "no profile"; };
+[_profile1, _profileInfo1] call X11_fnc_updateSlot;
+[_profile2, _profileInfo2] call X11_fnc_updateSlot;
+[_profile3, _profileInfo3] call X11_fnc_updateSlot;
 
 _loginHandler = {
     params ["_control"];

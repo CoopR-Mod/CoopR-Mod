@@ -82,7 +82,7 @@ class CfgFunctions {
             class saveProfile {};
             class mapPlayerToHash {};
             class setProfileValue {};
-            class getProfile {};
+            class getAllProfiles {};
         }
         class Profiles_Client {
             file = "Profiles\Client";

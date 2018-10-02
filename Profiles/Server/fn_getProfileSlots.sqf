@@ -3,7 +3,7 @@
 
 params ["_playerUid"];
 
-private _allProfiles = [_playerUid] call X11_fnc_getProfile;
+private _allProfiles = call X11_fnc_getAllProfiles;
 
 if ([_allProfiles] call CBA_fnc_hashSize == 0) exitWith {
     SLOG("no profiles found - skipping fetch");

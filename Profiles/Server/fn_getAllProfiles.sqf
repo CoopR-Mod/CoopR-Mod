@@ -1,7 +1,4 @@
-
 #include "..\constants.hpp"
 
-params ["_playerUid"];
-
-FLOG("getting profile for player id %1", _playerUID);
+SLOG("getting all profiles");
 profileNamespace getVariable [KEY_PLAYER_PROFILES, EMPTY_HASH];

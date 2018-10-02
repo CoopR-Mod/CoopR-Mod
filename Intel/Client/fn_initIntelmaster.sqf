@@ -1,4 +1,4 @@
-#include "..\..\globals.hpp"
+
 #include "..\constants.hpp"
 
 [intelmaster,"STAND_U1","ASIS"] call BIS_fnc_ambientAnim;

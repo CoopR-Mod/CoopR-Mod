@@ -1,4 +1,4 @@
-#include "..\..\globals.hpp"
+
 #include "..\constants.hpp"
 
 [keymaster,"STAND_1","ASIS"] call BIS_fnc_ambientAnim;

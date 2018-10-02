@@ -1,4 +1,4 @@
-#include "..\..\globals.hpp"
+
 #include "..\constants.hpp"
 
 ["start syncing player profiles...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

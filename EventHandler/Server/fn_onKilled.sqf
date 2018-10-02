@@ -1,4 +1,4 @@
-#include "..\..\globals.hpp"
+
 #include "..\constants.hpp"
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];

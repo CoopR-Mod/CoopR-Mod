@@ -1,3 +1,5 @@
+#include "..\globals.hpp"
+
 #define DEBUG_CTX "DPL.EQUIPMENT"
 
 #define REPUTATION_ITEMS ["BWA3_G36A1_AG40", "BWA3_G36A2", "BWA3_G36KA2"]

@@ -1,4 +1,4 @@
-#include "..\..\globals.hpp"
+
 #include "..\constants.hpp"
 
 // VCOM AI stealing workaround

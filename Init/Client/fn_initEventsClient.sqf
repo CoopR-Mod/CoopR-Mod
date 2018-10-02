@@ -8,7 +8,7 @@ _onConnected = {
 
 _onKilled = {
     player setVariable [KEY_PLAYER_LOGGEDIN, false, true];
-   [player, KEY_POSITION, getPos respawn_hq] remoteExec ["X11_fnc_setProfileValue", SERVER];
+   // [player, KEY_POSITION, getPos respawn_hq] remoteExec ["X11_fnc_setProfileValue", SERVER];
 };
 
 addMissionEventHandler ["PlayerConnected", _onConnected];

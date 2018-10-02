@@ -73,12 +73,13 @@ class CfgFunctions {
             file = "Core\Server";
             class syncPlayersToServer {};
             class syncPlayerToServer {};
-            class syncProfileToPlayer {};
+            class syncCharactersToPlayer {};
         }
         class Profiles_Server {
             file = "Profiles\Server";
             class createPlayerProfile {};
-            class getProfileSlots {};
+            class getCharacterSlots {};
+            class removeProfileSlot {};
             class saveProfile {};
             class mapPlayerToHash {};
             class setProfileValue {};

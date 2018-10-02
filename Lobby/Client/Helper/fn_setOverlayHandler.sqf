@@ -1,10 +1,10 @@
 #include "..\..\constants.hpp"
 
-params ["_profile", "_profileOverlay"];
+params ["_profile", "_profileOverlay", "_slot"];
 
 _registerHandler = {
     params ["_ctrl"];
-    private _slot = _ctrl getVariable ["_slot", -1];
+    private _slot = _ctrl getVariable ["_slot", _slot];
     closeDialog 1;
     [_slot] spawn X11_fnc_showNewProfileDialog;
 };

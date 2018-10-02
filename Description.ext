@@ -61,7 +61,9 @@ class CfgFunctions {
         }
         class Lobby_Client_Helper {
             file = "Lobby\Client\Helper";
+            class setOverlayHandler {};
             class setProfileSlot {};
+            class isProfileEmpty {};
         }
         class Lobby_Server {
             file = "Lobby\Server";

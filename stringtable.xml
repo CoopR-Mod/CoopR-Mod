@@ -1,17 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Deployed RPG">
+
+<Package name="Intel">
+    <Key ID="str.dpl.intel.info. ">
+        <Original>||Deployed|| Der Aufklaerungsfortschritt betraegt [%1]</Original>
+        <German>||Deployed|| Your intel progress is [%1]</German>
+    </Key>
+    <Key ID="str.dpl.intel.action.deliver">
+        <Original>Deliver Intel</Original>
+        <German>Dokumente abgeben</German>
+    </Key>
+    <Key ID="str.dpl.intel.chatter.nointel">
+        <Original>Wow awesome! You collected about 0 documents...</Original>
+        <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+    </Key>
+    <Key ID="str.dpl.intel.chatter.intel">
+        <Original>Wow awesome! You collected about 0 documents...</Original>
+        <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+    </Key>
+</Package>
+
+<Package name="Init">
+    <Key ID="str.dpl.init.action.vehicles">
+        <Original>Please drive carefully. The technical maintenance is due!</Original>
+        <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
+    </Key>
+    <Key ID="str.dpl.init.action.keys">
+        <Original>Please drive carefully. The technical maintenance is due!</Original>
+        <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
+    </Key>
+    <Key ID="str.dpl.init.action.rep">
+        <Original>Show reputation</Original>
+        <German>Ruf anzeigen</German>
+    </Key>
+    <Key ID="str.dpl.init.action.intel">
+        <Original>Show intel status</Original>
+        <German>Aufklaerungsstand anzeigen</German>
+    </Key>
+</Package>
+
+<Package name="Equipment">
+    <Key ID="str.dpl.equipment.action.vendor">
+        <Original>Request new equipment</Original>
+        <German>Neue Ausruestung beantragen</German>
+    </Key>
+    <Key ID="str.dpl.equipment.vendor.rep">
+        <Original>Your current reputation is: </Original>
+        <German>Dein momentaner Ruf betraegt: </German>
+    </Key>
+    <Key ID="str.dpl.equipment.vendor.norep">
+        <Original>You do not enough reputation to receive this item</Original>
+        <German>Du hast nicht genug Ruf um diese Ausruestung zu erhalten</German>
+    </Key>
+</Package>
+
 <Package name="Lobby">
     <Key ID="str.dpl.profile.info.name">
         <Original>Name: </Original>
     </Key>
     <Key ID="str.dpl.profile.info.reputation">
         <Original>Reputation: </Original>
+        <German>Ruf: </German>
     </Key>
     <Key ID="str.dpl.profile.info.money">
-        <Original>Reputation: </Original>
+        <Original>Money: </Original>
+        <German>Sold: </German>
     </Key>
     <Key ID="str.dpl.profile.info.isprisoner">
-        <Original>Is Prisoner: </Original>
+        <Original>Prisoner: </Original>
+        <German>Gefangener: </German>
     </Key>
 </Package>
 </Project>

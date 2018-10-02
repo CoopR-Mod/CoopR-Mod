@@ -21,7 +21,7 @@ _buttonEquip setVariable ["_currentReputation", _currentReputation];
 _buttonEquip setVariable ["_textboxInfos", _textboxInfos];
 _buttonEquip setVariable ["_listBox", _listBox];
 
-_textboxReputation ctrlSetText format["Deine momentane Reputation ist: %1", str _currentReputation];
+_textboxReputation ctrlSetText composeText [localize "str.dpl.equipment.vendor.rep", str _currentReputation];
 
 { _listBox lbAdd _x; } forEach _itemKeys;
 
@@ -40,7 +40,7 @@ _equipHandler = {
 
     if (_repNeeded > _currentReputation) exitWith {
         [format ["not enough rep pts for item: %1", _selectedItem], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-        _textboxInfos ctrlSetStructuredText (composeText ["Du hast nicht genug Reputation", lineBreak, "um diese Ausruestung zu erhalten"]);
+        _textboxInfos ctrlSetText composeText [localize "str.dpl.equipment.vendor.norep"];
     };
 
     player addWeapon _selectedItem;

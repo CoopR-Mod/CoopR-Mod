@@ -3,7 +3,7 @@
 
 params ["_playerUID", "_clientOwnerId"];
 
-private _foundPlayerProfile = _playerUID call X11_fnc_getPlayerProfile;
+private _foundPlayerProfile = _playerUID call X11_fnc_getProfileSlots;
 
 ["login in progress...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 

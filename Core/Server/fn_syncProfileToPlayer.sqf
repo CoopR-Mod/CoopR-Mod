@@ -3,7 +3,7 @@
 
 params ["_player"];
 
-private _fetchedProfiles = getPlayerUID _player call X11_fnc_getPlayerProfile;
+private _fetchedProfiles = getPlayerUID _player call X11_fnc_getProfileSlots;
 
 if ([_fetchedProfiles] call CBA_fnc_hashSize == 0) exitWith {
     SLOG("no profiles found - setting fetched profiles to empty hash");

@@ -1,30 +1,38 @@
-
 #include "..\constants.hpp"
 
-params [["_player", objNull],
+params [["_playerUid", -1],
         ["_profile", []],
         ["_slot", -1]];
+
+FLOG("saving character to slot %1", _slot);
 
 if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
 };
 
-private _uid = getPlayerUID _player;
-private _allProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
+private _allProfiles = call X11_fnc_getAllProfiles;
+private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 
-if(([_allProfiles] call CBA_fnc_hashSize) == 0) then {
-  FLOG("no profiles set yet for id %1 - creating new array", _uid);
-  private _initProfile = [[_uid, []]];
-  _allProfiles = [_initProfile, []] call CBA_fnc_hashCreate;
+if(_hasNoProfiles) then {
+    FLOG("there are no profiles yet set - init with given id %1", _playerUid);
+    private _initProfile = [[_playerUid, [EMPTY_HASH, EMPTY_HASH, EMPTY_HASH]]];
+    _allProfiles = [_initProfile, EMPTY_HASH] call CBA_fnc_hashCreate;
 };
 
-private _playerProfiles = [_allProfiles, _uid] call CBA_fnc_hashGet;
+private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
 
-_playerProfiles set [_slot, _profile];
-[_allProfiles, _uid, _playerProfiles] call CBA_fnc_hashSet;
+if(_hasPlayerEntry) then {
+    FLOG("found player entry for id %1", _playerUid);
 
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
-saveProfileNamespace;
+    private _characterProfiles = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
 
-FLOG("saved new profile for id %1", _uid);
+    _characterProfiles set [_slot, _profile];
+    [_allProfiles, _playerUid, _characterProfiles] call CBA_fnc_hashSet;
+
+    profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
+    saveProfileNamespace;
+
+    FLOG("saved new character at slot %1", _slot);
+};
+
 

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1099;
+		nextID=1101;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=111;
+		nextID=116;
 	};
 	class Camera
 	{
@@ -115,13 +115,14 @@ addons[]=
 	"CUP_Editor_Buildings_Config",
 	"alive_main",
 	"alive_sys_profile",
-	"A3_Modules_F_Multiplayer"
+	"A3_Modules_F_Multiplayer",
+	"A3_Characters_F_Jets"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=82;
+		items=83;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -627,6 +628,13 @@ class AddonsMetaData
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item82
+		{
+			className="A3_Characters_F_Jets";
+			name="Arma 3 Jets - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -4248,7 +4256,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			dataType="Trigger";
@@ -12812,6 +12820,37 @@ class Mission
 				};
 				nAttributes=5;
 			};
+		};
+		class Item10
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12164.859,162.30791,12609.7};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=1100;
+					type="B_Deck_Crew_F";
+					atlOffset=3.0517578e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1099;
+			atlOffset=3.0517578e-005;
 		};
 	};
 	class Connections

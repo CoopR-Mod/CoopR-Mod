@@ -6,7 +6,6 @@ private _loadout = player getVariable [KEY_LOADOUT, []];
 
 SLOG("post login init...");
 
-call X11_fnc_initNpcs;
 call X11_fnc_addPlayerActions;
 
 // check if player has an old position if not spawn to hq asap

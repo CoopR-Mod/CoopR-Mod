@@ -54,6 +54,25 @@
     </Key>
 </Package>
 
+<Package name="Reputation">
+    <Key ID="dpl.action.dogtags">
+        <Original>Deliver dogtags</Original>
+        <German>Hundemarken abgeben</German>
+    </Key>
+    <Key ID="dpl.system.norep">
+        <Original>You have no dogtags with you</Original>
+        <German>Du hast keine Hundemarken am Mann</German>
+    </Key>
+    <Key ID="dpl.chatter.rep">
+        <Original>Good job soldier!</Original>
+        <German>Gute Arbeit Soldat!</German>
+    </Key>
+    <Key ID="dpl.system.rep">
+        <Original>||Deployed|| You received %1 RPTS!</Original>
+        <German>||Deployed|| Du hast %1 RPTS erhalten!</German>
+    </Key>
+</Package>
+
 <Package name="Lobby">
     <Key ID="str.dpl.profiles.fetch">
         <Original>Fetching profiles...</Original>

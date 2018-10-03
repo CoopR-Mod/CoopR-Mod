@@ -1,4 +1,3 @@
-
 #include "..\constants.hpp"
 
 // visuals
@@ -6,6 +5,6 @@
 repmaster disableAI "ALL";
 repmaster switchMove "Acts_C_in1_briefing";
 
-repmaster addAction ["Give dogtags", {call X11_fnc_tradeDogtags},[],1.5,true,true,"","true",3];
+repmaster addAction [localize "dpl.action.dogtags", {call X11_fnc_tradeDogtags},[],1.5,true,true,"","true",3];
 
-["reputationmaster initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+SLOG("reputationmaster initialized");

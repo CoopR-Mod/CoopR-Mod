@@ -3,31 +3,30 @@
 
 params ["_player"];
 
-private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, [] call CBA_fnc_hashCreate];
+private _allProfiles = call X11_fnc_getAllProfiles;
+private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 
-if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
-    ["no profiles found - skipping sync", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+if (_hasNoProfiles) exitWith {
+    SLOG("no profiles found - skipping sync");
 };
 
-["syncing player profile to server...", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];
 
-[format ["%1's login state is: %2", name _player, _isLoggedIn], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-// skip if not logged in
 if(_isLoggedIn) then {
 
-    // get the actual player stats
-    private _playerHash = _player call X11_fnc_mapPlayerToHash;
-    // TODO just use getPlayerUID _player here
-    private _uid = [_playerHash, KEY_UID] call CBA_fnc_hashGet;
+    private _slot = _player getVariable [KEY_SLOT, -1];
+    private _uid = getPlayerUID _player;
+    private _characterSlots = _uid call X11_fnc_getCharacterSlots;
+    private _characterState = _player call X11_fnc_mapPlayerToHash;
+    FLOG("syncing player character for slot %1 to server...", _slot);
 
-    // add player profile to hash of profiles
-    [_playerProfiles, _uid, _playerHash] call CBA_fnc_hashSet;
+    _characterSlots set [_slot, _characterState];
+    [_allProfiles, _uid, _characterSlots] call CBA_fnc_hashSet;
 
-    [format ["player %1 synced", name _player], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    FLOG("player %1 manually synced", name _player);
 };
 
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _playerProfiles];
+profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
-["... syncing done.", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+SLOG("... syncing done.");
 

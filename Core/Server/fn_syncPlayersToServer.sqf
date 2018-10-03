@@ -27,7 +27,7 @@ FLOG("found %1 players", count _allPlayers);
         _characterSlots set [_slot, _characterState];
         [_allProfiles, _uid, _characterSlots] call CBA_fnc_hashSet;
 
-        FLOG("player %1 synced", name _player);
+        FLOG("player %1 auto synced", name _player);
     }
 
 } forEach allPlayers;

@@ -2,7 +2,6 @@
 
 params ["_profile", "_profileOverlay", "_slot"];
 
-SLOG("setting overlay");
 
 _profileOverlay setVariable ["_profile", _profile];
 

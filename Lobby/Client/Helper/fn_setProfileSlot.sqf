@@ -2,7 +2,6 @@
 
 params ["_characterSlot", "_infoBox"];
 
-SLOG("setting profile slot");
 
 private _name = [_characterSlot, KEY_NAME] call CBA_fnc_hashGet;
 private _reputation = [_characterSlot, KEY_REPUTATION] call CBA_fnc_hashGet;

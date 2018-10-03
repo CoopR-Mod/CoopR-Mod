@@ -2,7 +2,6 @@
 
 params ["_button", "_slot"];
 
-SLOG("setting remove button");
 
 _button setVariable ["_slot", _slot];
 

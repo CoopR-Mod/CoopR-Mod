@@ -57,7 +57,6 @@ waitUntil {
 };
 
 private _characterSlots = player getVariable [KEY_PROFILE_FETCHED, []];
-LDEBUG("fetched slots", _characterSlots);
 
 {
     private _isCharacterSlot = [_x] call X11_fnc_isCharacterSlot;

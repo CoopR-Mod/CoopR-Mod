@@ -15,4 +15,4 @@ addMissionEventHandler ["PlayerConnected", _onConnected];
 player addEventHandler ["Killed", _onKilled];
 player addEventHandler ["Respawn", _onConnected];
 
-["client events initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+SLOG("client events initialized");

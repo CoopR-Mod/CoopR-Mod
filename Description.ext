@@ -1,4 +1,5 @@
 allowFunctionsRecompile = 1;
+enableDebugConsole = 1;
 
 #include "define.hpp"
 #include "macros.hpp"

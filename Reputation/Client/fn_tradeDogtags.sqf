@@ -12,7 +12,7 @@ if(_dogTagAmount <= 0) exitWith {
     systemChat localize "dpl.system.norep";
 };
 
-[_caller, _totalEarnedRep] call X11_fnc_updateReputation;
+[_totalEarnedRep] call X11_fnc_updateReputation;
 
 // remove all dogtags
 {_caller removeItems _x} forEach _allDogTags;

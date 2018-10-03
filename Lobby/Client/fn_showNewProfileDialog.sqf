@@ -5,6 +5,8 @@ params ["_slot"];
 
 disableSerialization;
 
+SLOG("initialising new profile dialog");
+
 createDialog "X11_NewProfile_Dialog";
 waitUntil {!isNull findDisplay 1103};
 
@@ -22,12 +24,13 @@ _createButton setVariable ["_specCombobox", _specCombobox];
 _createButton setVariable ["_classesHash", _classesHash];
 _createButton setVariable ["_slot", _slot];
 
-// TODO: Escape pres returns to Login
+// TODO: Escape press returns to Login
 // _loginDisplay displayAddEventHandler ["KeyDown", "true"];
 
 {_specCombobox lbAdd _x} forEach _classNames;
 
 _createHandler = {
+    DEBUG("executing new profile handler");
     private _ctrl = _this select 0;
     private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
     private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
@@ -47,7 +50,7 @@ _createHandler = {
     private _profile = [_uid, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
     [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
-    [player, _profile, _slot] remoteExec ["X11_fnc_saveProfile", SERVER];
+    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveProfile", SERVER];
 
     closeDialog 1;
     [] spawn X11_fnc_showLoginDialog;

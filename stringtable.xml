@@ -64,22 +64,22 @@
         <German>Kein Profil</German>
     </Key>
     <Key ID="str.dpl.profile.info.name">
-        <Original>Name:&nbsp;</Original>
+        <Original>Name:</Original>
     </Key>
     <Key ID="str.dpl.profile.info.name">
-        <Original>Name:&nbsp;</Original>
+        <Original>Name:</Original>
     </Key>
     <Key ID="str.dpl.profile.info.reputation">
-        <Original>Reputation:&nbsp;</Original>
-        <German>Ruf:&nbsp;</German>
+        <Original>Reputation:</Original>
+        <German>Ruf:</German>
     </Key>
     <Key ID="str.dpl.profile.info.money">
-        <Original>Money:&nbsp;</Original>
-        <German>Sold:&nbsp;</German>
+        <Original>Money:</Original>
+        <German>Sold:</German>
     </Key>
     <Key ID="str.dpl.profile.info.isprisoner">
-        <Original>Prisoner:&nbsp;</Original>
-        <German>Gefangener:&nbsp;</German>
+        <Original>Prisoner:</Original>
+        <German>Gefangener:</German>
     </Key>
 </Package>
 </Project>

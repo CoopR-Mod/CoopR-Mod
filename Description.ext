@@ -41,6 +41,7 @@ class CfgFunctions {
         class Prison_Client {
             file = "Prison\Client";
             class checkPrisonRefugee {};
+            class setFree {};
         }
         class Reputation {
             file = "Reputation\Client";

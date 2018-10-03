@@ -1,10 +1,11 @@
-
 #include "..\constants.hpp"
 
 params ["_renegade"];
 
-["Remove current loadout from player", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+SLOG("remove current loadout from player");
 _renegade setUnitLoadout EMPTY_LOADOUT;
 
-["teleport player to prison area", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+SLOG("teleport player to prison area");
 _renegade setPos (getPos prison);
+
+[{call X11_fnc_checkFreedom}, 3, [player]] call CBA_fnc_addPerFrameHandler;

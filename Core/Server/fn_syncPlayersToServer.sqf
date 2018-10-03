@@ -2,9 +2,10 @@
 
 SLOG("start syncing player profiles...");
 private _allPlayers = allPlayers;
-private _playerProfiles = profileNamespace getVariable [KEY_PLAYER_PROFILES, EMPTY_HASH];
+private _allProfiles = call X11_fnc_getAllProfiles;
+private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 
-if ([_playerProfiles] call CBA_fnc_hashSize == 0) exitWith {
+if (_hasNoProfiles) exitWith {
     SLOG("no profiles found - skipping sync");
 };
 
@@ -17,20 +18,21 @@ FLOG("found %1 players", count _allPlayers);
     // skip if not logged in
     if(_isLoggedIn and not _isRenegade) then {
 
-        SLOG("syncing player profile to server...");
-        // get the actual player stats
-        private _playerHash = _player call X11_fnc_mapPlayerToHash;
-        private _uid = [_playerHash, KEY_UID] call CBA_fnc_hashGet;
+        private _slot = _player getVariable [KEY_SLOT, -1];
+        private _uid = getPlayerUID _player;
+        private _characterSlots = _uid call X11_fnc_getCharacterSlots;
+        private _characterState = _player call X11_fnc_mapPlayerToHash;
+        FLOG("syncing player character for slot %1 to server...", _slot);
 
-        // add player profile to hash of profiles
-        [_playerProfiles, _uid, _playerHash] call CBA_fnc_hashSet;
+        _characterSlots set [_slot, _characterState];
+        [_allProfiles, _uid, _characterSlots] call CBA_fnc_hashSet;
 
         FLOG("player %1 synced", name _player);
     }
 
 } forEach allPlayers;
 
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _playerProfiles];
+profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
 SLOG("... syncing done.");
 

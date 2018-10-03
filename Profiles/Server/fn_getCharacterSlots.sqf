@@ -8,6 +8,7 @@ private _allProfiles = call X11_fnc_getAllProfiles;
 private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
 
+FLOG("retrieving character slots for player %1", _playerUid);
 if (_hasNoProfiles) exitWith {
     SLOG("no profiles found - skipping fetch");
     [];

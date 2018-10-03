@@ -5,6 +5,7 @@ params ["_profile"];
 
 FLOG("%1 is logging in...", player);
 
+private _slot = [_profile, KEY_SLOT] call CBA_fnc_hashGet;
 private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
 private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;
 private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
@@ -14,6 +15,9 @@ private _prisonTime = [_profile, KEY_PRISON_START] call CBA_fnc_hashGet;
 private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
 private _prisonPosition = [_profile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
+
+player setVariable [KEY_SLOT, _slot];
+[format ["variable %1: %2", KEY_SLOT, _slot], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_NAME, _name];
 [format ["variable %1: %2", KEY_NAME, _name], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

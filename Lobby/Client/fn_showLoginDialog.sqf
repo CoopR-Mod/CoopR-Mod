@@ -57,17 +57,13 @@ waitUntil {
 };
 
 private _characterSlots = player getVariable [KEY_PROFILE_FETCHED, []];
-LDEBUG("allSlots", _characterSlots);
-LDEBUG("count", count _characterSlots);
+LDEBUG("fetched slots", _characterSlots);
 
 {
     private _isCharacterSlot = [_x] call X11_fnc_isCharacterSlot;
     private _overlay = _profileOverlays select _forEachIndex;
     private _info = _profileInfos select _forEachIndex;
     private _removeButton = _profileButtons select _forEachIndex;
-
-    LDEBUG("iteration", _forEachIndex);
-    LDEBUG("iterationCharSlot", _x);
 
     if (_isCharacterSlot) then {
         [_x, _info] call X11_fnc_setProfileSlot;

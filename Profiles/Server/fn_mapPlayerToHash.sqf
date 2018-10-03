@@ -3,21 +3,22 @@
 
 params ["_player"];
 
-private _uid = getPlayerUID _player;
-private _name = name _player;
-
-private _money = _player getVariable [KEY_MONEY, 0];
-private _class = _player getVariable [KEY_CLASS, "<None>"];
-private _reputation = _player getVariable [KEY_REPUTATION, 0];
+private _uid = getPlayerUID player;
+private _slot = _player getVariable [KEY_SLOT, -1];
+private _name = _player getVariable [KEY_NAME, "<No Name Found>"];
+private _money = _player getVariable [KEY_MONEY, "<No Value Found>"];
+private _class = _player getVariable [KEY_CLASS, CLASS_NONE];
+private _reputation = _player getVariable [KEY_REPUTATION, "<No Value Found>"];
 private _renegade = _player getVariable [KEY_IS_RENEGADE, false];
 private _prisonTime = _player getVariable [KEY_PRISON_START, 0];
 private _prisonPosition = _player getVariable [KEY_PRISON_FREE_POSITION, 0];
 private _position = getPos _player;
 private _loadout = getUnitLoadout _player;
 
-SLOG("extracting player variables...");
+SLOG("mapping player variables to hash...");
 
 [_uid,
+ _slot,
  _name,
  _class,
  _reputation,

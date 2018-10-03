@@ -2,6 +2,7 @@
 #include "..\constants.hpp"
 
 params [["_playerId", 0],
+        ["_slot", -1],
         ["_playerName","<NoName>" ],
         ["_classType","<None>" ],
         ["_reputation", 0],
@@ -13,6 +14,7 @@ params [["_playerId", 0],
         ["_loadout", []]];
 
 private _statsHash = [[KEY_UID, _playerId],
+                      [KEY_SLOT, _slot],
                       [KEY_NAME, _playerName],
                       [KEY_CLASS, _classType],
                       [KEY_REPUTATION, _reputation],

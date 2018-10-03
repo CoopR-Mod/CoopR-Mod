@@ -6,6 +6,8 @@ createDialog "X11_Login_Dialog";
 
 waitUntil {!isNull findDisplay 1101};
 
+SLOG("initialising login dialog");
+
 private _loginDisplay = findDisplay 1101;
 
 private _profilePicture1 = _loginDisplay displayCtrl 1200;
@@ -31,28 +33,49 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel2 = _loginDisplay displayCtrl 1101;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
-waitUntil {
+[player] remoteExec ["X11_fnc_syncCharactersToPlayer"];
 
-    { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
-
-    [player] remoteExec ["X11_fnc_syncProfileToPlayer"];
-    private _fetched = player getVariable [KEY_PROFILE_FETCHED, EMPTY_HASH];
-    sleep 1;
-
-    count _fetched > 0;
+_registerHandler = {
+    params ["_ctrl"];
+    private _slot = _ctrl getVariable ["_slot", -1];
+    closeDialog 1;
+    [_slot] spawn X11_fnc_showNewProfileDialog;
 };
 
-private _playerProfiles = player getVariable [KEY_PROFILE_FETCHED, false];
+{
+    _x setVariable ["_slot", _forEachIndex];
+    _x ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
+} forEach _profileOverlays;
+
+// wait for character slots be available to be rendered
+waitUntil {
+    { _x ctrlSetText localize "str.dpl.profiles.noprofile" } forEach _profileInfos;
+    private _fetched = player getVariable [KEY_PROFILE_FETCHED, []];
+    sleep 1;
+    count _fetched > 0 || isNull _loginDisplay;
+};
+
+private _characterSlots = player getVariable [KEY_PROFILE_FETCHED, []];
+LDEBUG("allSlots", _characterSlots);
+LDEBUG("count", count _characterSlots);
 
 {
-    private _profile = _x;
+    private _isCharacterSlot = [_x] call X11_fnc_isCharacterSlot;
     private _overlay = _profileOverlays select _forEachIndex;
     private _info = _profileInfos select _forEachIndex;
+    private _removeButton = _profileButtons select _forEachIndex;
 
-    [_profile, _info] call X11_fnc_setProfileSlot;
-    [_profile, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
+    LDEBUG("iteration", _forEachIndex);
+    LDEBUG("iterationCharSlot", _x);
 
-} forEach _playerProfiles;
+    if (_isCharacterSlot) then {
+        [_x, _info] call X11_fnc_setProfileSlot;
+        [_x, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
+        [_removeButton, _forEachIndex] call X11_fnc_setRemoveButtonHandler;
+    };
+
+} forEach _characterSlots;
+
 
 
 

@@ -9,4 +9,6 @@ if(_isDebug) then {
     if (is3DENMultiplayer) then { DEBUG_CFG = [true, true, false]; };
 }else {
     DEBUG_CFG = [false, false, false];
-}
+};
+
+publicVariable "DEBUG_CFG";

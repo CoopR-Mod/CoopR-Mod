@@ -22,10 +22,10 @@
 
 <Package name="Init">
     <Key ID="str.dpl.init.action.vehicles">
-        <Original>Please drive carefully. The technical maintenance is due!</Original>
-        <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
+        <Original>Get vehicle keys</Original>
+        <German>Fahrzeugschluessel anfordern</German>
     </Key>
-    <Key ID="str.dpl.init.action.keys">
+    <Key ID="str.dpl.init.chatter.keys">
         <Original>Please drive carefully. The technical maintenance is due!</Original>
         <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
     </Key>

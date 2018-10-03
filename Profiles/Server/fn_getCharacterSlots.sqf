@@ -1,21 +1,22 @@
-
 #include "..\constants.hpp"
 
-params ["_playerUid"];
+params [
+    ["_playerUid", -1]
+];
 
 private _allProfiles = call X11_fnc_getAllProfiles;
-
-if ([_allProfiles] call CBA_fnc_hashSize == 0) exitWith {
-    SLOG("no profiles found - skipping fetch");
-    EMPTY_HASH;
-};
-
+private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
+
+if (_hasNoProfiles) exitWith {
+    SLOG("no profiles found - skipping fetch");
+    [];
+};
 
 if(_hasPlayerEntry) then {
     [_allProfiles, _playerUid] call CBA_fnc_hashGet;
 } else {
-    FLOG("failed to get profiles - no entry for player uid %1 was found", _allProfiles);
-    false;
+    FLOG("failed to get profiles - no entry for player uid %1 was found", _playerUid);
+    [];
 };
 

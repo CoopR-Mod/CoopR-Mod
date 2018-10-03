@@ -71,6 +71,10 @@ class CfgFunctions {
             class sameSide {};
         }
         class Core {
+            file = "Core";
+            class debug {};
+        }
+        class Core_Server {
             file = "Core\Server";
             class syncPlayersToServer {};
             class syncPlayerToServer {};

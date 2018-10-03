@@ -13,6 +13,8 @@ _loginHandler = {
     [_profile] spawn X11_fnc_login;
 };
 
+private _registerHandlerId = _profileOverlay getVariable ["_registerHandlerId", -1];
+_profileOverlay ctrlRemoveEventHandler ["MouseButtonDown", _registerHandlerId];
 _profileOverlay ctrlAddEventHandler ["MouseButtonDown", _loginHandler];
 
 

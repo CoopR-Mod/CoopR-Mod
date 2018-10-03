@@ -44,7 +44,8 @@ _registerHandler = {
 
 {
     _x setVariable ["_slot", _forEachIndex];
-    _x ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
+    private _handlerId = _x ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
+    _x setVariable ["_registerHandlerId", _handlerId];
 } forEach _profileOverlays;
 
 // wait for character slots be available to be rendered

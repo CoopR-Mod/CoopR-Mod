@@ -1,18 +1,15 @@
-
 #include "..\..\constants.hpp"
 
-params ["_profile", "_infoBox"];
+params ["_characterSlot", "_infoBox"];
 
-if !(_profile call X11_fnc_isProfileEmpty) then {
-    private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
-    private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
-    private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
-    private _prisoner = [_profile, KEY_IS_RENEGADE] call CBA_fnc_hashGet;
+SLOG("setting profile slot");
 
-    _infoBox ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", _name, lineBreak,
-                                             localize "str.dpl.profile.info.reputation", str _reputation, lineBreak,
-                                             localize "str.dpl.profile.info.money", str _money, lineBreak,
-                                             localize "str.dpl.profile.info.isprisoner", str _prisoner, lineBreak];
-}else {
-    _infoBox ctrlSetText localize "str.dpl.profiles.noprofile";
-};
+private _name = [_characterSlot, KEY_NAME] call CBA_fnc_hashGet;
+private _reputation = [_characterSlot, KEY_REPUTATION] call CBA_fnc_hashGet;
+private _money = [_characterSlot, KEY_MONEY] call CBA_fnc_hashGet;
+private _prisoner = [_characterSlot, KEY_IS_RENEGADE] call CBA_fnc_hashGet;
+
+_infoBox ctrlSetStructuredText composeText [localize "str.dpl.profile.info.name", " ", _name, lineBreak,
+                                         localize "str.dpl.profile.info.reputation", " ", str _reputation, lineBreak,
+                                         localize "str.dpl.profile.info.money", " ", str _money, lineBreak,
+                                         localize "str.dpl.profile.info.isprisoner", " ", str _prisoner, lineBreak];

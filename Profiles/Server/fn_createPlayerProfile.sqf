@@ -23,7 +23,7 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_PRISON_FREE_POSITION, _prisonPosition],
                       [KEY_LOADOUT, _loadout]];
 
-[format ["player profile created: %1", _statsHash], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+FLOG("character hash created: %1", _statsHash);
 
 [_statsHash, []] call CBA_fnc_hashCreate;
 

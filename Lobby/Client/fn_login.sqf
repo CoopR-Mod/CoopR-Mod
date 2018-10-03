@@ -4,7 +4,6 @@
 params ["_profile"];
 
 FLOG("%1 is logging in...", player);
-DEBUG(_profile);
 
 private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
 private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;

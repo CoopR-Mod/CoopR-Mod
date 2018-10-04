@@ -10,6 +10,8 @@ SLOG("initialising login dialog");
 
 private _loginDisplay = findDisplay 1101;
 
+_loginDisplay displayAddEventHandler ["KeyDown", "true"];
+
 private _profilePicture1 = _loginDisplay displayCtrl 1200;
 private _profilePicture2 = _loginDisplay displayCtrl 1201;
 private _profilePicture3 = _loginDisplay displayCtrl 1202;

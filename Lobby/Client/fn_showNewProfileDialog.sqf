@@ -11,6 +11,13 @@ createDialog "X11_NewProfile_Dialog";
 waitUntil {!isNull findDisplay 1103};
 
 private _newProfileDisplay = findDisplay 1103;
+
+_onUnload = {
+    [] spawn X11_fnc_showLoginDialog;
+};
+
+_newProfileDisplay displayAddEventHandler ["Unload", _onUnload];
+
 private _nameTextEdit = _newProfileDisplay displayCtrl 3400;
 private _specCombobox = _newProfileDisplay displayCtrl 3100;
 private _createButton = _newProfileDisplay displayCtrl 3600;
@@ -24,8 +31,6 @@ _createButton setVariable ["_specCombobox", _specCombobox];
 _createButton setVariable ["_classesHash", _classesHash];
 _createButton setVariable ["_slot", _slot];
 
-// TODO: Escape press returns to Login
-// _loginDisplay displayAddEventHandler ["KeyDown", "true"];
 
 {_specCombobox lbAdd _x} forEach _classNames;
 
@@ -53,7 +58,6 @@ _createHandler = {
     [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveProfile", SERVER];
 
     closeDialog 1;
-    [] spawn X11_fnc_showLoginDialog;
 };
 
 _createButton ctrlAddEventHandler ["MouseButtonDown", _createHandler];

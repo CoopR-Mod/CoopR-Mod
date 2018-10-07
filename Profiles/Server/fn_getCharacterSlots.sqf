@@ -15,7 +15,9 @@ if (_hasNoProfiles) exitWith {
 };
 
 if(_hasPlayerEntry) then {
-    [_allProfiles, _playerUid] call CBA_fnc_hashGet;
+    private _characterSlots = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
+    FLOG("found player profile for id %1: %2", _playerUid, _characterSlots);
+    _characterSlots;
 } else {
     FLOG("failed to get profiles - no entry for player uid %1 was found", _playerUid);
     [];

@@ -1,8 +1,6 @@
 #include "..\..\constants.hpp"
 
 params ["_button", "_slot"];
-
-
 _button setVariable ["_slot", _slot];
 
 _removeProfileSlotHandler = {

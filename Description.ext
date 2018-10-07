@@ -87,7 +87,7 @@ class CfgFunctions {
             class createPlayerProfile {};
             class getCharacterSlots {};
             class removeProfileSlot {};
-            class saveProfile {};
+            class saveCharacter {};
             class mapPlayerToHash {};
             class setProfileValue {};
             class getAllProfiles {};

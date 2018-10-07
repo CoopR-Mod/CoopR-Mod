@@ -8,7 +8,7 @@ if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
 };
 
-FLOG("saving character to slot %1...", _slot);
+FLOG("updating character slots for slot: %1...", _slot);
 
 private _allProfiles = call X11_fnc_getAllProfiles;
 private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
@@ -16,7 +16,7 @@ private _existingCharacterSlots = [];
 
 if (_hasPlayerEntry) then {
     _existingCharacterSlots = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
-    FLOG("found existing character slots of size", count _existingCharacterSlot);
+    FLOG("found existing character slots of size", count _existingCharacterSlots);
     _existingCharacterSlots set [_slot, _profile];
 }else{
     SLOG("no entry found for player - creating new one");
@@ -29,5 +29,5 @@ if (_hasPlayerEntry) then {
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
 
-FLOG("character saved", _slot);
+FLOG("character slots updated", _slot);
 

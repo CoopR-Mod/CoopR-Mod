@@ -55,7 +55,7 @@ _createHandler = {
     private _profile = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
     [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
-    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveProfile", SERVER];
+    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveCharacter", SERVER];
 
     closeDialog 1;
 };

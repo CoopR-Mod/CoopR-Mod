@@ -9,7 +9,7 @@ if (_hasNoProfiles) exitWith {
     SLOG("no profiles found - skipping sync");
 };
 
-FLOG("found %1 players", count _allPlayers);
+FLOG("found %1 players connected", count _allPlayers);
 {
     private _player = _x;
     private _isLoggedIn = _player getVariable [KEY_PLAYER_LOGGEDIN, false];

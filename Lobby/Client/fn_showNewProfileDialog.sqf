@@ -52,7 +52,7 @@ _createHandler = {
     FLOG("creating new profile for %1", _uid);
     FLOG("profile slot is %1", _slot);
 
-    private _profile = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createPlayerProfile;
+    private _profile = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createCharacterState;
     [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
     [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveCharacter", SERVER];

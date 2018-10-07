@@ -17,7 +17,7 @@ if(_isLoggedIn) then {
     private _slot = _player getVariable [KEY_SLOT, -1];
     private _uid = getPlayerUID _player;
     private _characterSlots = _uid call X11_fnc_getCharacterSlots;
-    private _characterState = _player call X11_fnc_mapPlayerToHash;
+    private _characterState = _player call X11_fnc_createCharacterStateFromPlayer;
     FLOG("syncing player character for slot %1 to server...", _slot);
 
     _characterSlots set [_slot, _characterState];

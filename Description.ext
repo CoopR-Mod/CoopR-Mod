@@ -84,11 +84,11 @@ class CfgFunctions {
         }
         class Profiles_Server {
             file = "Profiles\Server";
-            class createPlayerProfile {};
+            class createCharacterState {};
             class getCharacterSlots {};
             class removeProfileSlot {};
             class saveCharacter {};
-            class mapPlayerToHash {};
+            class createCharacterStateFromPlayer {};
             class setProfileValue {};
             class getAllProfiles {};
         }

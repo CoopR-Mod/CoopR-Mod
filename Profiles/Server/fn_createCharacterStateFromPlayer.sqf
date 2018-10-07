@@ -27,4 +27,4 @@ SLOG("mapping player variables to hash...");
  _prisonTime,
  _position,
  _prisonPosition,
- _loadout] call X11_fnc_createPlayerProfile;
+ _loadout] call X11_fnc_createCharacterState;

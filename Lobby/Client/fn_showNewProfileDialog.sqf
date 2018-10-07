@@ -31,11 +31,10 @@ _createButton setVariable ["_specCombobox", _specCombobox];
 _createButton setVariable ["_classesHash", _classesHash];
 _createButton setVariable ["_slot", _slot];
 
-
 {_specCombobox lbAdd _x} forEach _classNames;
 
 _createHandler = {
-    DEBUG("executing new profile handler");
+    LSTART("CREATE CHAR");
     private _ctrl = _this select 0;
     private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
     private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
@@ -49,13 +48,13 @@ _createHandler = {
     private _classId = [_classesHash, _className] call CBA_fnc_hashGet;
     private _loadOut = _classId call X11_fnc_getLoadoutForClass;
 
-    FLOG("creating new profile for %1", _uid);
-    FLOG("profile slot is %1", _slot);
+    FFLOG("creating new profile for %1 at slot %1", _uid, _slot);
 
     private _profile = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createCharacterState;
     [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
-    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_saveCharacter", SERVER];
+    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_updateCharacter", SERVER];
+    LEND("CREATE CHAR");
 
     closeDialog 1;
 };

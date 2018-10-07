@@ -1,14 +1,7 @@
 #include "..\constants.hpp"
 
 LSTART("SYNC");
-SLOG("start syncing player profiles...");
 private _allPlayers = allPlayers;
-private _allProfiles = call X11_fnc_getAllProfiles;
-private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
-
-if (_hasNoProfiles) exitWith {
-    SLOG("no profiles found - skipping sync");
-};
 
 FLOG("found %1 players connected", count _allPlayers);
 {
@@ -19,21 +12,13 @@ FLOG("found %1 players connected", count _allPlayers);
     // skip if not logged in
     if(_isLoggedIn and not _isRenegade) then {
         private _slot = _player getVariable [KEY_SLOT, -1];
-        private _uid = getPlayerUID _player;
-        private _characterSlots = _uid call X11_fnc_getCharacterSlots;
         private _characterState = _player call X11_fnc_createCharacterStateFromPlayer;
-        FLOG("syncing player character for slot %1 to server...", _slot);
-
-        _characterSlots set [_slot, _characterState];
-        [_allProfiles, _uid, _characterSlots] call CBA_fnc_hashSet;
-
-        FLOG("player %1 auto synced", name _player);
+        [getPlayerUID _player, _characterState, _slot] call X11_fnc_updateCharacter;
+        FFLOG("player %1 auto synced at slot %2", name _player, _slot);
     }
 
 } forEach allPlayers;
 
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
-saveProfileNamespace;
 SLOG("... syncing done.");
 LEND("SYNC");
 

@@ -1,5 +1,6 @@
 #include "..\constants.hpp"
 
+LSTART("SYNC");
 SLOG("start syncing player profiles...");
 private _allPlayers = allPlayers;
 private _allProfiles = call X11_fnc_getAllProfiles;
@@ -17,7 +18,6 @@ FLOG("found %1 players connected", count _allPlayers);
 
     // skip if not logged in
     if(_isLoggedIn and not _isRenegade) then {
-
         private _slot = _player getVariable [KEY_SLOT, -1];
         private _uid = getPlayerUID _player;
         private _characterSlots = _uid call X11_fnc_getCharacterSlots;
@@ -35,4 +35,5 @@ FLOG("found %1 players connected", count _allPlayers);
 profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
 SLOG("... syncing done.");
+LEND("SYNC");
 

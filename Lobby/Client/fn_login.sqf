@@ -2,7 +2,7 @@
 #include "..\constants.hpp"
 
 params ["_profile"];
-
+LSTART("LOGIN");
 FLOG("%1 is logging in...", player);
 
 private _slot = [_profile, KEY_SLOT] call CBA_fnc_hashGet;
@@ -41,8 +41,8 @@ player setVariable [KEY_PRISON_FREE_POSITION, _prisonPosition];
 [format ["variable %1: %2", KEY_PRISON_FREE_POSITION, _prisonPosition], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_POSITION, _position];
-[format ["variable
- %1: %2", KEY_POSITION, _position], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+[format ["variable %1: %2", KEY_POSITION, _position], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+LDEBUG("in login", _player getVariable [KEY_POSITION, -1]);
 
 player setVariable [KEY_LOADOUT, _loadout];
 [format ["variable %1: %2", KEY_LOADOUT, _loadout], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
@@ -53,3 +53,4 @@ player setVariable [KEY_PLAYER_LOGGEDIN, true, true];
 [format ["player with id %1 logged in", getPlayerUID player], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 call X11_fnc_postLogin;
+LEND("LOGIN");

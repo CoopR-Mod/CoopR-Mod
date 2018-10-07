@@ -4,6 +4,7 @@ params [["_playerUid", -1],
         ["_profile", []],
         ["_slot", -1]];
 
+LSTART("UPDATING CHAR")
 if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
 };
@@ -30,4 +31,5 @@ profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
 
 FLOG("character slots updated", _slot);
+LEND("UPDATING CHAR")
 

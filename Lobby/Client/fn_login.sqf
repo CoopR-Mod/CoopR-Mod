@@ -16,35 +16,35 @@ private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
 private _prisonPosition = [_profile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
 
-player setVariable [KEY_SLOT, _slot];
+player setVariable [KEY_SLOT, _slot, true];
 [format ["variable %1: %2", KEY_SLOT, _slot], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_NAME, _name];
+player setVariable [KEY_NAME, _name, true];
 [format ["variable %1: %2", KEY_NAME, _name], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_CLASS, _class];
+player setVariable [KEY_CLASS, _class, true];
 [format ["variable %1: %2", KEY_CLASS, _class], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_REPUTATION, _reputation];
+player setVariable [KEY_REPUTATION, _reputation, true];
 [format ["variable %1: %2", KEY_REPUTATION, _reputation], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_MONEY, _money];
+player setVariable [KEY_MONEY, _money, true];
 [format ["variable %1: %2", KEY_MONEY, _money], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_IS_RENEGADE, _renegade];
+player setVariable [KEY_IS_RENEGADE, _renegade, true];
 [format ["variable %1: %2", KEY_IS_RENEGADE, _renegade], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_PRISON_START, _prisonTime];
+player setVariable [KEY_PRISON_START, _prisonTime, true];
 [format ["variable %1: %2", KEY_PRISON_START, _prisonTime], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_PRISON_FREE_POSITION, _prisonPosition];
+player setVariable [KEY_PRISON_FREE_POSITION, _prisonPosition, true];
 [format ["variable %1: %2", KEY_PRISON_FREE_POSITION, _prisonPosition], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_POSITION, _position];
+player setVariable [KEY_POSITION, _position, true];
 [format ["variable %1: %2", KEY_POSITION, _position], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 LDEBUG("in login", _player getVariable [KEY_POSITION, -1]);
 
-player setVariable [KEY_LOADOUT, _loadout];
+player setVariable [KEY_LOADOUT, _loadout, true];
 [format ["variable %1: %2", KEY_LOADOUT, _loadout], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 ["stored variables saved in player namespace", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

@@ -9,7 +9,7 @@ params [["_playerId", 0],
         ["_money", 0],
         ["_renegade", false],
         ["_prisonStart", 0],
-        ["_position", []],
+        ["_position", getPos respawn_hq],
         ["_prisonPosition", []],
         ["_loadout", []]];
 

@@ -2,6 +2,7 @@
 
 private _oldPos = player getVariable [KEY_POSITION, []];
 private _prisonTime = player getVariable [KEY_PRISON_START, 0];
+private _isPrisoner = player getVariable [KEY_IS_RENEGADE, false];
 private _loadout = player getVariable [KEY_LOADOUT, []];
 
 SLOG("post login init...");
@@ -17,7 +18,9 @@ if(count _oldPos > 0) then {
 
 player setUnitLoadout _loadout;
 
-// check if player still has to stay in prison
-call X11_fnc_checkPrisonRefugee;
+if(_isPrisoner) then {
+    SLOG("player was lastly seen in prison");
+    call X11_fnc_checkPrisonRefugee;
+};
 
 SLOG("...post login init done");

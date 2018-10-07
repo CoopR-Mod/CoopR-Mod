@@ -11,4 +11,5 @@ FFLOG("player %1 manually synced at slot %2", name _player, _slot);
 
 SLOG("... syncing done.");
 LEND("MAN SYNC");
+_slot;
 

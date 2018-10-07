@@ -1,7 +1,7 @@
 #include "..\constants.hpp"
 
 private _prisonTime = player getVariable [KEY_PRISON_START, 0];
-private _freedomPosition = player getVariable [KEY_PRISON_FREE_POSITION, []];
+private _freedomPosition = player getVariable [KEY_PRISON_FREE_POSITION, getPos respawn_hq];
 private _savedLoadout = getUnitLoadout player;
 
 SLOG("check if player still has to be in prison...");

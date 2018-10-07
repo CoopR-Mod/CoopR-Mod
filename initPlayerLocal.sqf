@@ -2,6 +2,7 @@
 
 params ["_player", "_JIP"];
 LSTART("INIT CLIENT");
+call X11_fnc_initPromise;
 call X11_fnc_initEventsClient;
 call X11_fnc_initNpcs;
 [player] remoteExec ["X11_fnc_syncCharactersToPlayer", SERVER];

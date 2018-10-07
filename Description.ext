@@ -71,6 +71,7 @@ class CfgFunctions {
         class Helper {
             file = "Helper";
             class sameSide {};
+            class initPromise {};
         }
         class Core {
             file = "Core";

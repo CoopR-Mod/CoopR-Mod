@@ -7,6 +7,7 @@ params [["_playerUid", -1],
 LSTART("UPDATING CHAR");
 if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
+    LEND("UPDATING CHAR")
 };
 
 FLOG("updating character slots for slot: %1...", _slot);

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=176;
+		nextID=181;
 	};
 	class Camera
 	{
-		pos[]={12163.875,167.42116,12585.929};
-		dir[]={-0.0086173965,-0.39018393,0.92075312};
-		up[]={-0.0036520357,0.92072576,0.39017582};
-		aside[]={1.0000064,6.7595101e-007,0.0093585784};
+		pos[]={12162.831,170.89766,12580.414};
+		dir[]={0.0076400768,-0.3581405,0.93369359};
+		up[]={0.0029302817,0.93365425,0.35813987};
+		aside[]={1.0000165,6.6555026e-007,-0.0081835445};
 	};
 };
 binarizationWanted=0;
@@ -12818,11 +12818,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=10;
+			nextID=9;
 		};
 		class Links
 		{
-			items=10;
+			items=9;
 			class Item0
 			{
 				linkID=0;
@@ -12846,7 +12846,7 @@ class Mission
 			class Item2
 			{
 				linkID=2;
-				item0=122;
+				item0=140;
 				item1=22;
 				class CustomData
 				{
@@ -12856,8 +12856,8 @@ class Mission
 			class Item3
 			{
 				linkID=3;
-				item0=140;
-				item1=22;
+				item0=261;
+				item1=265;
 				class CustomData
 				{
 					type="Sync";
@@ -12866,8 +12866,8 @@ class Mission
 			class Item4
 			{
 				linkID=4;
-				item0=261;
-				item1=265;
+				item0=795;
+				item1=794;
 				class CustomData
 				{
 					type="Sync";
@@ -12876,8 +12876,8 @@ class Mission
 			class Item5
 			{
 				linkID=5;
-				item0=795;
-				item1=794;
+				item0=796;
+				item1=11;
 				class CustomData
 				{
 					type="Sync";
@@ -12886,7 +12886,7 @@ class Mission
 			class Item6
 			{
 				linkID=6;
-				item0=796;
+				item0=795;
 				item1=11;
 				class CustomData
 				{
@@ -12896,8 +12896,8 @@ class Mission
 			class Item7
 			{
 				linkID=7;
-				item0=795;
-				item1=11;
+				item0=798;
+				item1=794;
 				class CustomData
 				{
 					type="Sync";
@@ -12906,16 +12906,6 @@ class Mission
 			class Item8
 			{
 				linkID=8;
-				item0=798;
-				item1=794;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item9
-			{
-				linkID=9;
 				item0=797;
 				item1=795;
 				class CustomData

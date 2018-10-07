@@ -1,10 +1,10 @@
 #include "..\constants.hpp"
 
 params [["_playerUid", -1],
-        ["_profile", []],
+        ["_characterState", []],
         ["_slot", -1]];
 
-LSTART("UPDATING CHAR")
+LSTART("UPDATING CHAR");
 if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     SLOG("index is out of allowed range. 0 to 2 is allowed");
 };
@@ -17,12 +17,12 @@ private _existingCharacterSlots = [];
 
 if (_hasPlayerEntry) then {
     _existingCharacterSlots = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
-    FLOG("found existing character slots of size", count _existingCharacterSlots);
-    _existingCharacterSlots set [_slot, _profile];
+    SLOG("found existing character slots");
+    _existingCharacterSlots set [_slot, _characterState];
 }else{
     SLOG("no entry found for player - creating new one");
     _existingCharacterSlots = [EMPTY_HASH, EMPTY_HASH, EMPTY_HASH];
-    _existingCharacterSlots set [_slot, _profile];
+    _existingCharacterSlots set [_slot, _characterState];
 };
 
 [_allProfiles, _playerUid, _existingCharacterSlots] call CBA_fnc_hashSet;

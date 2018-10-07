@@ -35,7 +35,7 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel2 = _loginDisplay displayCtrl 1101;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
-[player] remoteExec ["X11_fnc_syncCharactersToPlayer"];
+[player] remoteExec ["X11_fnc_syncCharactersToPlayer", SERVER];
 
 _registerHandler = {
     params ["_ctrl"];
@@ -53,8 +53,8 @@ _registerHandler = {
 // wait for character slots be available to be rendered
 waitUntil {
     { _x ctrlSetText localize "str.dpl.profiles.noprofile" } forEach _profileInfos;
-    private _fetched = player getVariable [KEY_PROFILE_FETCHED, []];
     sleep 1;
+    private _fetched = player getVariable [KEY_PROFILE_FETCHED, []];
     count _fetched > 0 || isNull _loginDisplay;
 };
 

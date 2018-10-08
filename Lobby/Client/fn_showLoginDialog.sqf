@@ -50,7 +50,6 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
             [_slot] spawn X11_fnc_showNewProfileDialog;
         };
 
-        DEBUG(_result);
         private _characterSlots = _result;
         {
             private _isCharacterSlot = [_x] call x11_fnc_isCharacterSlot;

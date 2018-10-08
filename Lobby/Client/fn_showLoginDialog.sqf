@@ -35,46 +35,44 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel2 = _loginDisplay displayCtrl 1101;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
-[player] remoteExec ["X11_fnc_syncCharactersToPlayer", SERVER];
 
-_registerHandler = {
-    params ["_ctrl"];
-    private _slot = _ctrl getVariable ["_slot", -1];
-    closeDialog 1;
-    [_slot] spawn X11_fnc_showNewProfileDialog;
-};
+{ _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
 
-// wait for character slots be available to be rendered
-waitUntil {
-    { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
-    sleep 1;
-    private _fetched = player getVariable [KEY_PROFILE_FETCHED, []];
-    count _fetched > 0 || isNull _loginDisplay;
-};
+[SERVER, "X11_fnc_getCharacterSlots", [getPlayerUID player], //request-related
+    [_profileInfos, _profileOverlays, _profileButtons], {
+        params ["_args", "_result"];
+        _args params ["_profileInfos", "_profileOverlays", "_profileButtons"];
 
-private _characterSlots = player getVariable [KEY_PROFILE_FETCHED, []];
+        _registerHandler = {
+            params ["_ctrl"];
+            private _slot = _ctrl getVariable ["_slot", -1];
+            closeDialog 1;
+            [_slot] spawn X11_fnc_showNewProfileDialog;
+        };
 
-{
-    private _isCharacterSlot = [_x] call X11_fnc_isCharacterSlot;
-    private _overlay = _profileOverlays select _forEachIndex;
-    private _info = _profileInfos select _forEachIndex;
-    private _removeButton = _profileButtons select _forEachIndex;
+        DEBUG(_result);
+        private _characterSlots = _result;
+        {
+            private _isCharacterSlot = [_x] call x11_fnc_isCharacterSlot;
+            private _overlay = _profileOverlays select _forEachIndex;
+            private _info = _profileInfos select _forEachIndex;
+            private _removeButton = _profileButtons select _forEachIndex;
 
-    _info ctrlSetText localize "str.dpl.profiles.noprofile";
-    // first put register handler on overlay and later overwrite with login
-    _overlay setVariable ["_slot", _forEachIndex];
-    private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
-    _overlay setVariable ["_registerHandlerId", _handlerId];
+            _info ctrlSetText localize "str.dpl.profiles.noprofile";
+            // first put register handler on overlay and later overwrite with login
+            _overlay setVariable ["_slot", _forEachIndex];
+            private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
+            _overlay setVariable ["_registerHandlerId", _handlerId];
 
-    if (_isCharacterSlot) then {
-        [_x, _info] call X11_fnc_setProfileSlot;
-        [_x, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
-        [_removeButton, _forEachIndex] call X11_fnc_setRemoveButtonHandler;
-    };
+            if (_isCharacterSlot) then {
+                [_x, _info] call X11_fnc_setProfileSlot;
+                [_x, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
+                [_removeButton, _forEachIndex] call X11_fnc_setRemoveButtonHandler;
+            };
 
-} forEach _characterSlots;
-
-
+        } forEach _characterSlots;
+    }
+] call Promise_Create;
 
 
 

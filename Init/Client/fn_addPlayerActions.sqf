@@ -9,6 +9,7 @@ _onLogout = {
         [], {
             SLOG("...saved");
             call X11_fnc_spawnInLobby;
+            call X11_fnc_showLoginDialog;
         }
     ] call Promise_Create;
 

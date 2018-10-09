@@ -1,9 +1,8 @@
-
 #include "..\constants.hpp"
 
 params ["_reputation"];
 
 private _currentReputation = player getVariable [KEY_REPUTATION, 0];
-player setVariable [KEY_REPUTATION, _currentReputation + _reputation];
+private _charSlot = player getVariable [KEY_SLOT, -1];
+[_charSlot, KEY_REPUTATION, _currentReputation + _reputation] call X11_fnc_updateCharacterValue;
 
-[format ["update reputation for %1 by: %2", name player, _reputation], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

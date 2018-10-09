@@ -1,6 +1,12 @@
 #include "..\constants.hpp"
 
 LSTART("SYNC");
+
+if(!ALLOW_SYNC) exitWith {
+    SLOG("syncing disabled");
+    LEND("SYNC");
+};
+
 private _allPlayers = allPlayers;
 
 FLOG("found %1 players connected", count _allPlayers);

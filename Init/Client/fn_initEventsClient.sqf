@@ -2,7 +2,7 @@
 
 _onKilled = {
     player setVariable [KEY_PLAYER_LOGGEDIN, false, true];
-   // [player, KEY_POSITION, getPos respawn_hq] remoteExec ["X11_fnc_setProfileValue", SERVER];
+   // [player, KEY_POSITION, getPos respawn_hq] remoteExec ["X11_fnc_updateCharacterValue", SERVER];
 };
 
 _onRespawn = {

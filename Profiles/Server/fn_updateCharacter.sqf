@@ -13,13 +13,12 @@ if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
 FLOG("updating character slot: %1...", _slot);
 
 private _characterSlots = _playerUid call X11_fnc_getCharacterSlots;
-DEBUG(_characterSlots);
-DEBUG(_slot);
-DEBUG(_characterState);
 _characterSlots set [_slot, _characterState];
 
 [_playerUid, _characterSlots] call X11_fnc_updateCharacterSlots;
 
 FLOG("character slots updated", _slot);
-LEND("UPDATING CHAR")
+LEND("UPDATING CHAR");
+true; // execution result needed for promise
+
 

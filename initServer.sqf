@@ -1,6 +1,7 @@
 #include "globals.hpp"
 
 true call X11_fnc_debug;
+true call X11_fnc_sync;
 
 LSTART("INIT SERVER");
 

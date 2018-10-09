@@ -86,6 +86,7 @@ class CfgFunctions {
             file = "Profiles\Server";
             class createCharacterState {};
             class getCharacterSlots {};
+            class updateCharacterSlots {};
             class removeProfileSlot {};
             class updateCharacter {};
             class createCharacterStateFromPlayer {};

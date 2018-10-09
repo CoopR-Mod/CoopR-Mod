@@ -10,26 +10,15 @@ if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     LEND("UPDATING CHAR")
 };
 
-FLOG("updating character slots for slot: %1...", _slot);
+FLOG("updating character slot: %1...", _slot);
 
-private _allProfiles = call X11_fnc_getAllProfiles;
-private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
-private _existingCharacterSlots = [];
+private _characterSlots = _playerUid call X11_fnc_getCharacterSlots;
+DEBUG(_characterSlots);
+DEBUG(_slot);
+DEBUG(_characterState);
+_characterSlots set [_slot, _characterState];
 
-if (_hasPlayerEntry) then {
-    _existingCharacterSlots = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
-    SLOG("found existing character slots");
-    _existingCharacterSlots set [_slot, _characterState];
-}else{
-    SLOG("no entry found for player - creating new one");
-    _existingCharacterSlots = [EMPTY_HASH, EMPTY_HASH, EMPTY_HASH];
-    _existingCharacterSlots set [_slot, _characterState];
-};
-
-[_allProfiles, _playerUid, _existingCharacterSlots] call CBA_fnc_hashSet;
-
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
-saveProfileNamespace;
+[_playerUid, _characterSlots] call X11_fnc_updateCharacterSlots;
 
 FLOG("character slots updated", _slot);
 LEND("UPDATING CHAR")

@@ -9,7 +9,6 @@ SLOG("prison time has been served out");
 
 _prisoner setVariable [KEY_IS_RENEGADE, false];
 _prisoner setVariable [KEY_PRISON_START, 0];
-_prisoner setVariable [KEY_PRISON_FREE_POSITION, []];
 
 _prisoner setPos _oldPosition;
 SLOG("teleport arrested player back to old position");

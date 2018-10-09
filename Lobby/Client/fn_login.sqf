@@ -13,7 +13,6 @@ private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
 private _renegade = [_profile, KEY_IS_RENEGADE] call CBA_fnc_hashGet;
 private _prisonTime = [_profile, KEY_PRISON_START] call CBA_fnc_hashGet;
 private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
-private _prisonPosition = [_profile, KEY_PRISON_FREE_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
 
 player setVariable [KEY_SLOT, _slot, true];
@@ -36,9 +35,6 @@ player setVariable [KEY_IS_RENEGADE, _renegade, true];
 
 player setVariable [KEY_PRISON_START, _prisonTime, true];
 [format ["variable %1: %2", KEY_PRISON_START, _prisonTime], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-
-player setVariable [KEY_PRISON_FREE_POSITION, _prisonPosition, true];
-[format ["variable %1: %2", KEY_PRISON_FREE_POSITION, _prisonPosition], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_POSITION, _position, true];
 [format ["variable %1: %2", KEY_POSITION, _position], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

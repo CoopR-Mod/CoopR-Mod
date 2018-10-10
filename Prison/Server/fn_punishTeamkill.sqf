@@ -13,13 +13,9 @@ _renegade setVariable [KEY_IS_RENEGADE, true];
 _renegade setVariable [KEY_PRISON_START, _currentServerTime];
 
 [-30] remoteExec ["X11_fnc_updateReputation", _clientOwnerId];
-
 _renegade call X11_fnc_syncPlayerToServer;
-
-[{call X11_fnc_checkFreedom}, 3, [_renegade]] call CBA_fnc_addPerFrameHandler;
-
 _renegade call X11_fnc_makePrisoner;
 
-[format ["player %1 has been arrested at %2", name _renegade, _currentServerTime], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+FFLOG("player %1 has been arrested at %2", name _renegade, _currentServerTime);
 
 

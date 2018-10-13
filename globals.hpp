@@ -10,6 +10,7 @@
 #define KEY_SLOT "dpl_character_slot"
 #define KEY_NAME "dpl_character_name"
 #define KEY_UID "dpl_character_uid"
+#define KEY_STATE "dpl_character_state"
 #define KEY_REPUTATION "dpl_character_reputation"
 #define KEY_MONEY "dpl_character_money"
 #define KEY_CLASS "dpl_character_class"
@@ -17,6 +18,10 @@
 #define KEY_PRISON_START "dpl_character_prison_start"
 #define KEY_POSITION "dpl_character_position"
 #define KEY_LOADOUT "dpl_character_loadout"
+
+#define STATE_OK "dpl_character_state_ok"
+#define STATE_WIA "dpl_character_state_wia"
+#define STATE_KIA "dpl_character_state_kia"
 
 #define EMPTY_HASH [] call CBA_fnc_hashCreate
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]

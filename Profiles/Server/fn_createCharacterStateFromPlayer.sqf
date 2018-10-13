@@ -11,6 +11,7 @@ private _class = _player getVariable [KEY_CLASS, CLASS_NONE];
 private _reputation = _player getVariable [KEY_REPUTATION, "<No Value Found>"];
 private _prisoner = _player getVariable [KEY_IS_PRISONER, false];
 private _prisonTime = _player getVariable [KEY_PRISON_START, 0];
+private _state = _player getVariable [KEY_STATE, STATE_OK];
 private _position = getPos _player;
 private _loadout = getUnitLoadout _player;
 
@@ -25,4 +26,5 @@ SLOG("mapping player variables to hash...");
  _prisoner,
  _prisonTime,
  _position,
+ _state,
  _loadout] call X11_fnc_createCharacterState;

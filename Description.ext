@@ -70,7 +70,7 @@ class CfgFunctions {
             file = "Lobby\Client\Helper";
             class setOverlayHandler {};
             class setRemoveButtonHandler {};
-            class setProfileSlot {};
+            class setCharacterInfo {};
             class isCharacterSlot {};
         }
         class Helper {

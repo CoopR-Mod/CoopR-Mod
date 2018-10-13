@@ -82,8 +82,13 @@
         <Original>No Profile</Original>
         <German>Kein Profil</German>
     </Key>
-    <Key ID="str.dpl.profile.info.name">
-        <Original>Name:</Original>
+    <Key ID="str.dpl.character.state.kia">
+        <Original>Killed in Action</Original>
+        <German>Ausfall</German>
+    </Key>
+    <Key ID="str.dpl.character.state.kia">
+        <Original>Wounded in Action</Original>
+        <German>Verwundet</German>
     </Key>
     <Key ID="str.dpl.profile.info.name">
         <Original>Name:</Original>

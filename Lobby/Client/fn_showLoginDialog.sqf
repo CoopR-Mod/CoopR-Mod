@@ -52,7 +52,7 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 
         private _characterSlots = _result;
         {
-            private _isCharacterSlot = [_x] call x11_fnc_isCharacterSlot;
+            private _isNotEmptySlot = [_x] call x11_fnc_isCharacterSlot;
             private _overlay = _profileOverlays select _forEachIndex;
             private _info = _profileInfos select _forEachIndex;
             private _removeButton = _profileButtons select _forEachIndex;
@@ -63,8 +63,8 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
             private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
             _overlay setVariable ["_registerHandlerId", _handlerId];
 
-            if (_isCharacterSlot) then {
-                [_x, _info] call X11_fnc_setProfileSlot;
+            if (_isNotEmptySlot) then {
+                [_x, _info] call X11_fnc_setCharacterInfo;
                 [_x, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
                 [_removeButton, _forEachIndex] call X11_fnc_setRemoveButtonHandler;
             };

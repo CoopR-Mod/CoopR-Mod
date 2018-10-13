@@ -1,6 +1,6 @@
 #include "..\constants.hpp"
 
-private _isPrisoner = player getVariable [KEY_IS_RENEGADE, false];
+private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
 
 if(!_isPrisoner) then {
     SLOG("saving character state before logout...");

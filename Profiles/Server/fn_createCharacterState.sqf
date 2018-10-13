@@ -18,7 +18,7 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_CLASS, _classType],
                       [KEY_REPUTATION, _reputation],
                       [KEY_MONEY, _money],
-                      [KEY_IS_RENEGADE, _renegade],
+                      [KEY_IS_PRISONER, _renegade],
                       [KEY_POSITION, _position],
                       [KEY_PRISON_START, _prisonStart],
                       [KEY_LOADOUT, _loadout]];

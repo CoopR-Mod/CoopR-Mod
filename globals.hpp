@@ -2,6 +2,7 @@
 
 #define SERVER 2
 #define MAX_PROFILES 3
+#define DEATH_COOLDOWN_IN_MIN 5
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
@@ -18,6 +19,7 @@
 #define KEY_PRISON_START "dpl_character_prison_start"
 #define KEY_POSITION "dpl_character_position"
 #define KEY_LOADOUT "dpl_character_loadout"
+#define KEY_DEATH_TIMESTAMP "dpl_character_death_timestamp"
 
 #define STATE_OK "dpl_character_state_ok"
 #define STATE_WIA "dpl_character_state_wia"

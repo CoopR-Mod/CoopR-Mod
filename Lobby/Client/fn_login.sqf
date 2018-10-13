@@ -8,6 +8,7 @@ private _slot = [_profile, KEY_SLOT] call CBA_fnc_hashGet;
 private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
 private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;
 private _state = [_profile, KEY_STATE] call CBA_fnc_hashGet;
+private _deathTimestamp = [_profile, KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
 private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
 private _prisoner = [_profile, KEY_IS_PRISONER] call CBA_fnc_hashGet;
@@ -26,6 +27,9 @@ FFLOG("set state %1 to %2", KEY_CLASS, _class);
 
 player setVariable [KEY_STATE, _state, true];
 FFLOG("set state %1 to %2", KEY_STATE, _state);
+
+player setVariable [KEY_DEATH_TIMESTAMP, _deathTimestamp, true];
+FFLOG("set state %1 to %2", KEY_DEATH_TIMESTAMP, _deathTimestamp);
 
 player setVariable [KEY_REPUTATION, _reputation, true];
 FFLOG("set state %1 to %2", KEY_REPUTATION, _reputation);

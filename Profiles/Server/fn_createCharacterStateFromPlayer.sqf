@@ -14,6 +14,7 @@ private _prisonTime = _player getVariable [KEY_PRISON_START, 0];
 private _state = _player getVariable [KEY_STATE, STATE_OK];
 private _position = getPos _player;
 private _loadout = getUnitLoadout _player;
+private _deathTimestamp = _player getVariable [KEY_DEATH_TIMESTAMP, 0];
 
 SLOG("mapping player variables to hash...");
 
@@ -27,4 +28,5 @@ SLOG("mapping player variables to hash...");
  _prisonTime,
  _position,
  _state,
+ _deathTimestamp,
  _loadout] call X11_fnc_createCharacterState;

@@ -9,6 +9,10 @@ enableDebugConsole = 1;
 
 class CfgFunctions {
     class X11 {
+        class Death_Client {
+            file = "Death\Client";
+            class death {};
+        }
         class Init_Server {
             file = "Init\Server";
             class initEventsServer {};

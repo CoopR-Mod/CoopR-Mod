@@ -1,6 +1,7 @@
 #include "..\constants.hpp"
 
 _onKilled = {
+   call X11_fnc_death;
    call X11_fnc_logout;
 };
 

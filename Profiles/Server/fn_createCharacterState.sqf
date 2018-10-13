@@ -11,6 +11,7 @@ params [["_playerId", 0],
         ["_prisonStart", 0],
         ["_position", getPos respawn_hq],
         ["_state", STATE_OK],
+        ["_deathTimestamp", 0],
         ["_loadout", []]];
 
 private _statsHash = [[KEY_UID, _playerId],
@@ -23,6 +24,7 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_IS_PRISONER, _prisoner],
                       [KEY_POSITION, _position],
                       [KEY_PRISON_START, _prisonStart],
+                      [KEY_DEATH_TIMESTAMP, _deathTimestamp],
                       [KEY_LOADOUT, _loadout]];
 
 FLOG("character hash created: %1", _statsHash);

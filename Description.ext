@@ -57,6 +57,7 @@ class CfgFunctions {
             class spawnAtOldPosition {};
             class spawnInLobby {};
             class login {};
+            class logout {};
             class postLogin {};
             class showLoginDialog {};
             class showNewProfileDialog {};

@@ -7,16 +7,16 @@
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
 
-#define KEY_SLOT "dpl_profile_slot"
-#define KEY_NAME "dpl_profile_name"
-#define KEY_UID "dpl_profile_uid"
-#define KEY_REPUTATION "dpl_profile_reputation"
-#define KEY_MONEY "dpl_profile_money"
-#define KEY_CLASS "dpl_profile_class"
-#define KEY_IS_RENEGADE "dpl_profile_renegade"
-#define KEY_PRISON_START "dpl_profile_prison_start"
-#define KEY_POSITION "dpl_profile_position"
-#define KEY_LOADOUT "dpl_profile_loadout"
+#define KEY_SLOT "dpl_character_slot"
+#define KEY_NAME "dpl_character_name"
+#define KEY_UID "dpl_character_uid"
+#define KEY_REPUTATION "dpl_character_reputation"
+#define KEY_MONEY "dpl_character_money"
+#define KEY_CLASS "dpl_character_class"
+#define KEY_IS_RENEGADE "dpl_character_renegade"
+#define KEY_PRISON_START "dpl_character_prison_start"
+#define KEY_POSITION "dpl_character_position"
+#define KEY_LOADOUT "dpl_character_loadout"
 
 #define EMPTY_HASH [] call CBA_fnc_hashCreate
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]

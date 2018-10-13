@@ -13,7 +13,7 @@
 #define KEY_REPUTATION "dpl_character_reputation"
 #define KEY_MONEY "dpl_character_money"
 #define KEY_CLASS "dpl_character_class"
-#define KEY_IS_PRISONER "dpl_character_renegade"
+#define KEY_IS_PRISONER "dpl_character_prisoner"
 #define KEY_PRISON_START "dpl_character_prison_start"
 #define KEY_POSITION "dpl_character_position"
 #define KEY_LOADOUT "dpl_character_loadout"

@@ -9,7 +9,7 @@ private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
 private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;
 private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
-private _renegade = [_profile, KEY_IS_PRISONER] call CBA_fnc_hashGet;
+private _prisoner = [_profile, KEY_IS_PRISONER] call CBA_fnc_hashGet;
 private _prisonTime = [_profile, KEY_PRISON_START] call CBA_fnc_hashGet;
 private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
@@ -29,8 +29,8 @@ player setVariable [KEY_REPUTATION, _reputation, true];
 player setVariable [KEY_MONEY, _money, true];
 [format ["variable %1: %2", KEY_MONEY, _money], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
-player setVariable [KEY_IS_PRISONER, _renegade, true];
-[format ["variable %1: %2", KEY_IS_PRISONER, _renegade], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+player setVariable [KEY_IS_PRISONER, _prisoner, true];
+[format ["variable %1: %2", KEY_IS_PRISONER, _prisoner], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
 
 player setVariable [KEY_PRISON_START, _prisonTime, true];
 [format ["variable %1: %2", KEY_PRISON_START, _prisonTime], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

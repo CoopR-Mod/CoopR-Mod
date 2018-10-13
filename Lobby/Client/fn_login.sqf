@@ -1,4 +1,3 @@
-
 #include "..\constants.hpp"
 
 params ["_profile"];

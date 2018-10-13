@@ -1,4 +1,3 @@
-
 #include "..\constants.hpp"
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
@@ -15,9 +14,13 @@ private _nameOfKiller = name _killer;
 private _isBlueOnBlue = [group _killer, group _unit] call X11_fnc_sameSide;
 
 // check if killer attacked same side
+if(_isSuicide) then {
+ SLOG("player killed himself");
+};
+
 if (_isBlueOnBlue and not _isSuicide) then {
   if (_playerIsKiller) exitWith {
-    [format ["%1 is being punished for friendly fire", _nameOfKiller], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    FLOG("%1 is being punished for friendly fire", _nameOfKiller);
     _killer call X11_fnc_punishTeamkill;
   }
 }else {

@@ -1,8 +1,7 @@
 #include "..\constants.hpp"
 
 _onKilled = {
-    player setVariable [KEY_PLAYER_LOGGEDIN, false, true];
-   // [player, KEY_POSITION, getPos respawn_hq] remoteExec ["X11_fnc_updateCharacterValue", SERVER];
+   call X11_fnc_logout;
 };
 
 _onRespawn = {

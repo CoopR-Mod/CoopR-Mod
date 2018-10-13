@@ -23,4 +23,6 @@ if(_isPrisoner) then {
     call X11_fnc_checkPrisonRefugee;
 };
 
+cutText ["", "BLACK IN", 0.1];
+
 SLOG("...post login init done");

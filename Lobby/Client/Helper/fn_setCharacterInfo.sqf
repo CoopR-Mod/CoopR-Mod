@@ -2,7 +2,6 @@
 
 params ["_characterSlot", "_infoBox"];
 
-
 private _name = [_characterSlot, KEY_NAME] call CBA_fnc_hashGet;
 private _reputation = [_characterSlot, KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_characterSlot, KEY_MONEY] call CBA_fnc_hashGet;

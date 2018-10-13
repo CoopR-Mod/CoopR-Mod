@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12732.132,12.253017,8183.335};
-		dir[]={-0.82025921,-0.075919971,-0.56694567};
-		up[]={-0.0624579,0.99711156,-0.043169733};
-		aside[]={-0.56858617,1.7479761e-007,0.82263309};
+		pos[]={12174.267,199.58456,12533.682};
+		dir[]={-0.050641187,-0.51147819,0.85780901};
+		up[]={-0.030143401,0.85929328,0.51059026};
+		aside[]={0.99826777,-1.4240504e-007,0.058933549};
 	};
 };
 binarizationWanted=0;
@@ -169,6 +169,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -200,25 +219,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -735,6 +735,7 @@ class Mission
 					};
 					id=14;
 					type="BWA3_Crew_Tropen";
+					atlOffset=-1.5258789e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -783,6 +784,7 @@ class Mission
 			{
 			};
 			id=13;
+			atlOffset=-1.5258789e-005;
 		};
 		class Item7
 		{
@@ -4178,7 +4180,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12193.601,158.91864,12556.363};
-				angles[]={-0,5.0197005,6.2698579};
+				angles[]={0,5.0197005,6.2698579};
 			};
 			id=39;
 			type="ALiVE_SUP_TRANSPORT";
@@ -4307,7 +4309,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4795.6836,339,9627.2021};
-				angles[]={-0,2.5015948,0};
+				angles[]={0,2.5015948,0};
 			};
 			id=40;
 			type="ALiVE_sup_artillery";

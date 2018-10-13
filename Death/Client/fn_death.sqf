@@ -1,7 +1,7 @@
 #include "..\constants.hpp"
 
-private _slot = player getVariable [KEY_SLOT, -1];
-
-[_slot, KEY_STATE, STATE_KIA] call X11_fnc_updateCharacterValue;
-[_slot, KEY_DEATH_TIMESTAMP, serverTime] call X11_fnc_updateCharacterValue;
+player setVariable [KEY_STATE, STATE_KIA];
+player setVariable [KEY_DEATH_TIMESTAMP, serverTime];
+cutText ["You joined the ranks of the fallen", "BLACK OUT", 0.1];
+sleep 4;
 

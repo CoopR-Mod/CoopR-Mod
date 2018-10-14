@@ -6,25 +6,17 @@ disableSerialization;
 
 SLOG("initialising new profile dialog");
 
-createDialog "X11_NewProfile_Dialog";
 waitUntil {!isNull findDisplay 1103};
 
-private _newProfileDisplay = findDisplay 1103;
+private _newCharacterDisplay = findDisplay 1103;
 
-_onUnload = {
-    [] spawn {
-        createDialog "X11_Login_Dialog";
-        call X11_fnc_initLoginDialog;
-    };
-};
+_newCharacterDisplay displayAddEventHandler ["Unload", { call X11_fnc_newCharacterDialogUnloadHandler}];
 
-_newProfileDisplay displayAddEventHandler ["Unload", _onUnload];
-
-private _nameTextEdit = _newProfileDisplay displayCtrl 3400;
-private _infoText = _newProfileDisplay displayCtrl 3003;
-private _specCombobox = _newProfileDisplay displayCtrl 3100;
-private _createButton = _newProfileDisplay displayCtrl 3600;
-private _picture = _newProfileDisplay displayCtrl 3200;
+private _nameTextEdit = _newCharacterDisplay displayCtrl 3400;
+private _infoText = _newCharacterDisplay displayCtrl 3003;
+private _specCombobox = _newCharacterDisplay displayCtrl 3100;
+private _createButton = _newCharacterDisplay displayCtrl 3600;
+private _picture = _newCharacterDisplay displayCtrl 3200;
 
 private _classesHash = [PROFILE_CLASSES, []] call CBA_fnc_hashCreate;
 private _classNames = [_classesHash] call CBA_fnc_hashKeys;

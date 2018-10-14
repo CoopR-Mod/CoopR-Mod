@@ -9,6 +9,5 @@ FLOG("removing profile for player id %1", _playerUid);
     [], {
         params ["_args", "_result"];
         closeDialog 1;
-        [] spawn X11_fnc_showLoginDialog;
     }
 ] call Promise_Create;

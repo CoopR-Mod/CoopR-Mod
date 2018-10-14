@@ -64,6 +64,7 @@ class CfgFunctions {
             class logout {};
             class postLogin {};
             class showLoginDialog {};
+            class updateLoginDialog {};
             class showNewProfileDialog {};
         }
         class Lobby_Client_Helper {

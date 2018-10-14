@@ -35,6 +35,17 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 //private _profileLabel2 = _loginDisplay displayCtrl 1101;
 //private _profileLabel3 = _loginDisplay displayCtrl 1602;
 
+_onUnload = {
+    [] spawn {
+        sleep 3;
+        private _playerLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
+        if(!_playerLoggedIn) then {
+        call X11_fnc_showLoginDialog;
+        }
+    }
+};
+
+_loginDisplay displayAddEventHandler ["Unload", _onUnload];
 
 { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
 

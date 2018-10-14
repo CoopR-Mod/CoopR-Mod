@@ -38,9 +38,10 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
 _onUnload = {
     [] spawn {
         sleep 3;
+        DEBUG("called");
         private _playerLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
-        if(!_playerLoggedIn) then {
-        call X11_fnc_showLoginDialog;
+        if(!_playerLoggedIn and isNull findDisplay 1103) then {
+            call X11_fnc_showLoginDialog;
         }
     }
 };

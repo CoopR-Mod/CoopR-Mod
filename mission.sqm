@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=184;
+		nextID=190;
 	};
 	class MarkerIDProvider
 	{
@@ -46,13 +46,16 @@ addons[]=
 	"CUP_WheeledVehicles_Dingo",
 	"CFP_B_DEARMY_WDL_WDL",
 	"CFP_I_WestUltra",
-	"bwa3_ammoboxes"
+	"bwa3_ammoboxes",
+	"alive_amb_civ_population",
+	"civ_interact",
+	"amb_ambiance"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=25;
 		class Item0
 		{
 			className="bwa3_units";
@@ -188,6 +191,24 @@ class AddonsMetaData
 			author="BW-Mod";
 			url="http://www.bwmod.de/index.php/inhalt/download";
 		};
+		class Item22
+		{
+			className="ALiVE_amb_civ_population";
+			name="alive_amb_civ_population";
+			author="ALiVE Mod Team";
+		};
+		class Item23
+		{
+			className="civ_interact";
+			name="civ_interact";
+			author="SpyderAddons";
+		};
+		class Item24
+		{
+			className="amb_ambiance";
+			name="amb_ambiance";
+			author="SpyderAddons";
+		};
 	};
 };
 randomSeed=6702069;
@@ -197,6 +218,10 @@ class ScenarioData
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
+	class Header
+	{
+		gameType="Coop";
+	};
 };
 class CustomAttributes
 {
@@ -3422,6 +3447,7 @@ class Mission
 {
 	class Intel
 	{
+		briefingName="Deployed v0.5 Coop PvP RPG ";
 		timeOfChanges=1800.0002;
 		startWeather=0.25;
 		startWind=0.1;
@@ -3442,7 +3468,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=66;
 		class Item0
 		{
 			dataType="Group";
@@ -12566,6 +12592,660 @@ class Mission
 			};
 			id=181;
 			type="BWA3_Box_Ammo";
+		};
+		class Item63
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4653.7427,240.79141,12093.32};
+				angles[]={0.061255306,0,6.2738566};
+			};
+			id=187;
+			type="ALiVE_amb_civ_population";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ALiVE_amb_civ_population_ambientCivilianRoles";
+					expression="_this setVariable ['ambientCivilianRoles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[""townelder"",""muezzin"",""politician""]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ALiVE_amb_civ_population_debug";
+					expression="_this setVariable ['debug',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="false";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ALiVE_amb_civ_population_hostilityEast";
+					expression="_this setVariable ['hostilityEast',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ALiVE_amb_civ_population_spawnTypeJetRadius";
+					expression="_this setVariable ['spawnTypeJetRadius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ALiVE_amb_civ_population_hostilityWest";
+					expression="_this setVariable ['hostilityWest',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ALiVE_amb_civ_population_spawnTypeHeliRadius";
+					expression="_this setVariable ['spawnTypeHeliRadius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="900";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ALiVE_amb_civ_population_activeLimiter";
+					expression="_this setVariable ['activeLimiter',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="25";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ALiVE_amb_civ_population_spawnRadius";
+					expression="_this setVariable ['spawnRadius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="900";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ALiVE_amb_civ_population_hostilityIndep";
+					expression="_this setVariable ['hostilityIndep',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="30";
+						};
+					};
+				};
+				nAttributes=9;
+			};
+		};
+		class Item64
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4617.3652,243.87692,12041.449};
+				angles[]={0.058608156,0,6.2685246};
+			};
+			id=188;
+			type="SpyderAddons_civ_interact";
+			atlOffset=-1.5258789e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="SpyderAddons_civ_interact_EnemyFaction";
+					expression="_this setVariable ['EnemyFaction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="CFP_O_IS";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="SpyderAddons_civ_interact_Debug";
+					expression="_this setVariable ['Debug',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="false";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="SpyderAddons_civ_interact_Enable";
+					expression="_this setVariable ['Enable',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item65
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4688.0991,243.49245,12040.775};
+				angles[]={0.050614551,0,6.2471962};
+			};
+			id=189;
+			type="SpyderAddons_amb_ambiance";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="SpyderAddons_amb_ambiance_EnemyChance";
+					expression="_this setVariable ['EnemyChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="5";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="SpyderAddons_amb_ambiance_AmbientAnimals";
+					expression="_this setVariable ['AmbientAnimals',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="false";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="SpyderAddons_amb_ambiance_WhitelistMarkers";
+					expression="_this setVariable ['WhitelistMarkers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="SpyderAddons_amb_ambiance_EnemyClasses";
+					expression="_this setVariable ['EnemyClasses',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="O_Soldier_F, O_Soldier_GL_F, O_Soldier_AR_F, O_Soldier_lite_F, O_Sharpshooter_F";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="SpyderAddons_amb_ambiance_Enable";
+					expression="_this setVariable ['Enable',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="SpyderAddons_amb_ambiance_CivilianClasses";
+					expression="_this setVariable ['CivilianClasses',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="C_man_1, C_man_polo_1_F, C_man_polo_2_F, C_man_polo_6_F, C_man_shorts_1_F, C_man_w_worker_F";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="SpyderAddons_amb_ambiance_AmbientVehicles";
+					expression="_this setVariable ['AmbientVehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="SpyderAddons_amb_ambiance_EnemiesInsideVehicles";
+					expression="_this setVariable ['EnemiesInsideVehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="SpyderAddons_amb_ambiance_VehicleChance";
+					expression="_this setVariable ['VehicleChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="30";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="SpyderAddons_amb_ambiance_VehicleClasses";
+					expression="_this setVariable ['VehicleClasses',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="C_Hatchback_01_F, C_Offroad_01_F, C_Van_01_transport_F, C_Van_01_box_F";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="SpyderAddons_amb_ambiance_SpawnRange";
+					expression="_this setVariable ['SpawnRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="900";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="SpyderAddons_amb_ambiance_AnimalsDivider";
+					expression="_this setVariable ['AnimalsDivider',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="SpyderAddons_amb_ambiance_MaxVehiclesPerZone";
+					expression="_this setVariable ['MaxVehiclesPerZone',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="SpyderAddons_amb_ambiance_BlacklistMarkers";
+					expression="_this setVariable ['BlacklistMarkers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="SpyderAddons_amb_ambiance_AnimalClasses";
+					expression="_this setVariable ['AnimalClasses',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_Random_F, Sheep_random_F";
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="SpyderAddons_amb_ambiance_Debug";
+					expression="_this setVariable ['Debug',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="false";
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="SpyderAddons_amb_ambiance_VehiclesDivider";
+					expression="_this setVariable ['VehiclesDivider',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="SpyderAddons_amb_ambiance_ActivationCheck";
+					expression="_this setVariable ['ActivationCheck',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="20";
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="SpyderAddons_amb_ambiance_Locations";
+					expression="_this setVariable ['Locations',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="NameVillage, NameCity, NameCityCapital, NameLocal";
+						};
+					};
+				};
+				class Attribute19
+				{
+					property="SpyderAddons_amb_ambiance_AnimalChance";
+					expression="_this setVariable ['AnimalChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="40";
+						};
+					};
+				};
+				nAttributes=20;
+			};
 		};
 	};
 	class Connections

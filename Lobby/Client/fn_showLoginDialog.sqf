@@ -58,7 +58,8 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
             private _removeButton = _profileButtons select _forEachIndex;
 
             _info ctrlSetText localize "str.dpl.profiles.noprofile";
-            // first put register handler on overlay and later overwrite with login
+
+            // set data to controls
             _overlay setVariable ["_slot", _forEachIndex];
             private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
             _overlay setVariable ["_registerHandlerId", _handlerId];
@@ -66,7 +67,9 @@ private _profileLabel1 = _loginDisplay displayCtrl 1001;
             if (_isNotEmptySlot) then {
                 [_x, _info] call X11_fnc_setCharacterInfo;
                 [_x, _overlay, _forEachIndex] call X11_fnc_setOverlayHandler;
-                [_removeButton, _forEachIndex] call X11_fnc_setRemoveButtonHandler;
+                // add logic to delete character
+                _removeButton setVariable ["_slot", _forEachIndex];
+                _removeButton ctrlAddEventHandler ["MouseButtonDown",  {call X11_fnc_removeCharacterHandler}];
             };
 
         } forEach _characterSlots;

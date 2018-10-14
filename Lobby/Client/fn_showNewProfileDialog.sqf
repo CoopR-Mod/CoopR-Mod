@@ -33,30 +33,4 @@ _createButton setVariable ["_slot", _slot];
 
 {_specCombobox lbAdd _x} forEach _classNames;
 
-_createHandler = {
-    LSTART("CREATE CHAR");
-    private _ctrl = _this select 0;
-    private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
-    private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
-    private _classesHash = _ctrl getVariable ["_classesHash", objNull];
-    private _slot = _ctrl getVariable ["_slot", -1];
-
-    private _uid = getPlayerUID player;
-    private _name = ctrlText _nameTextEdit;
-    private _index = lbCurSel _specCombobox;
-    private _className = _specCombobox lbText _index;
-    private _classId = [_classesHash, _className] call CBA_fnc_hashGet;
-    private _loadOut = _classId call X11_fnc_getLoadoutForClass;
-
-    FFLOG("creating new profile for %1 at slot %1", _uid, _slot);
-
-    private _profile = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createCharacterState;
-    [_profile, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
-
-    [getPlayerUID player, _profile, _slot] remoteExec ["X11_fnc_updateCharacter", SERVER];
-    LEND("CREATE CHAR");
-
-    closeDialog 1;
-};
-
-_createButton ctrlAddEventHandler ["MouseButtonDown", _createHandler];
+_createButton ctrlAddEventHandler ["MouseButtonDown", { call X11_fnc_createCharacterHandler}];

@@ -73,6 +73,11 @@ class CfgFunctions {
             class setCharacterInfo {};
             class isCharacterSlot {};
         }
+        class Lobby_Client_EventHandler {
+            file = "Lobby\Client\EventHandler";
+            class createCharacterHandler {};
+            class removeCharacterHandler {};
+        }
         class Helper {
             file = "Helper";
             class sameSide {};
@@ -93,7 +98,6 @@ class CfgFunctions {
             class createCharacterState {};
             class getCharacterSlots {};
             class updateCharacterSlots {};
-            class removeProfileSlot {};
             class getCharacter {};
             class updateCharacter {};
             class createCharacterStateFromPlayer {};

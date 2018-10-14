@@ -45,8 +45,8 @@
         <German>Neue Ausruestung beantragen</German>
     </Key>
     <Key ID="str.dpl.equipment.vendor.rep">
-        <Original>Your current reputation is: </Original>
-        <German>Dein momentaner Ruf betraegt: </German>
+        <Original>Your current reputation is: %1</Original>
+        <German>Dein momentaner Ruf betraegt: %1</German>
     </Key>
     <Key ID="str.dpl.equipment.vendor.norep">
         <Original>You do not enough reputation to receive this item</Original>

@@ -28,7 +28,7 @@ class X11_Equipment_Dialog{
         class X11_Equipment_Info_Textbox: RscStructuredText
         {
             idc = 2001;
-            text = "<Placeholder Text>";
+            text = "<Placeholder Info>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.367941 * safezoneH + safezoneY;
             w = 0.242344 * safezoneW;
@@ -37,7 +37,7 @@ class X11_Equipment_Dialog{
         class X11_Equipment_Reputation_Textbox: RscText
         {
             idc = 2002;
-            text = "<Placeholder Text>";
+            text = "<Placeholder Reputation>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.246887 * safezoneH + safezoneY;
             w = 0.221719 * safezoneW;

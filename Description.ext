@@ -108,11 +108,15 @@ class CfgFunctions {
             file = "EventHandler\Server";
             class onKilled {};
         }
-        class Equipment {
+        class Equipment_Client {
             file = "Equipment\Client";
             class showEquipmentVendorShop {};
             class initVendor {};
             class getLoadoutForClass {};
+        }
+        class Equipment_Client_EventHandler {
+            file = "Equipment\Client\EventHandler";
+            class equipHandler {};
         }
     }
 }

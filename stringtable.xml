@@ -48,6 +48,18 @@
         <Original>Your current reputation is: %1</Original>
         <German>Dein momentaner Ruf betraegt: %1</German>
     </Key>
+    <Key ID="str.dpl.equipment.vendor.remain">
+        <Original>You still need %1 reputation points</Original>
+        <German>Du benoetigst noch %1 mehr Ruf</German>
+    </Key>
+    <Key ID="str.dpl.equipment.vendor.repneeded">
+        <Original>You need %1 reputation for this item</Original>
+        <German>Du benoetigst %1 fuer diesen Ausruestungsgegenstand</German>
+    </Key>
+    <Key ID="str.dpl.equipment.vendor.allowed">
+        <Original>You are allowed to receive this item</Original>
+        <German>Du kannst dieses Ausruestungsgegenstand erhalten</German>
+    </Key>
     <Key ID="str.dpl.equipment.vendor.norep">
         <Original>You do not enough reputation to receive this item</Original>
         <German>Du hast nicht genug Ruf um diese Ausruestung zu erhalten</German>

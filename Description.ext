@@ -117,6 +117,7 @@ class CfgFunctions {
         class Equipment_Client_EventHandler {
             file = "Equipment\Client\EventHandler";
             class equipHandler {};
+            class selectHandler {};
         }
     }
 }

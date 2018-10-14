@@ -2,6 +2,7 @@
 
 params ["_profileInfos", "_profileOverlays", "_profileButtons"];
 
+_loginDisplay displayRemoveAllEventHandlers "Unload";
 _loginDisplay displayAddEventHandler ["Unload", {call X11_fnc_loginDialogUnloadHandler}];
 
 { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;

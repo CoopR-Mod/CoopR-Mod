@@ -9,7 +9,10 @@ call X11_fnc_initNpcs;
 [] spawn {
     waitUntil { !(isNull (findDisplay 46)) };
     call X11_fnc_spawnInLobby;
-    [] spawn X11_fnc_showLoginDialog;
+    [] spawn {
+        createDialog "X11_Login_Dialog";
+        call X11_fnc_initLoginDialog
+    };
 };
 
 ["client initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

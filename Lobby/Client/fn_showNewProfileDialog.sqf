@@ -1,4 +1,3 @@
-
 #include "..\constants.hpp"
 
 params ["_slot"];
@@ -13,7 +12,10 @@ waitUntil {!isNull findDisplay 1103};
 private _newProfileDisplay = findDisplay 1103;
 
 _onUnload = {
-    [] spawn X11_fnc_showLoginDialog;
+    [] spawn {
+        createDialog "X11_Login_Dialog";
+        call X11_fnc_initLoginDialog;
+    };
 };
 
 _newProfileDisplay displayAddEventHandler ["Unload", _onUnload];

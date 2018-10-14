@@ -14,12 +14,14 @@ if(!_isPrisoner) then {
             cutText ["...saved!", "BLACK OUT", 0.0001];
             sleep 1;
             call X11_fnc_spawnInLobby;
-            call X11_fnc_showLoginDialog;
+            createDialog "X11_Login_Dialog";
+            call X11_fnc_initLoginDialog;
         }
     ] call Promise_Create;
 }else {
     SLOG("character is still prisoner - will not save state before logout");
     call X11_fnc_spawnInLobby;
-    call X11_fnc_showLoginDialog;
+    createDialog "X11_Login_Dialog";
+    call X11_fnc_initLoginDialog;
 };
 

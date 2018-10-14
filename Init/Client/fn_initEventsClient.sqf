@@ -8,7 +8,8 @@ _onKilled = {
             [], {
                 SLOG("...saved");
                 call X11_fnc_spawnInLobby;
-                call X11_fnc_showLoginDialog;
+                createDialog "X11_Login_Dialog";
+                call X11_fnc_initLoginDialog;
             }
         ] call Promise_Create;
    };

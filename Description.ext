@@ -63,7 +63,7 @@ class CfgFunctions {
             class login {};
             class logout {};
             class postLogin {};
-            class showLoginDialog {};
+            class initLoginDialog {};
             class updateLoginDialog {};
             class showNewProfileDialog {};
         }

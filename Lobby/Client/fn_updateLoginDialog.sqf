@@ -8,12 +8,16 @@ _onUnload = {
         private _playerLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
         if(!_playerLoggedIn and isNull findDisplay 1103) then {
             DEBUG("called");
-            call X11_fnc_showLoginDialog;
+            createDialog "X11_Login_Dialog";
+            call X11_fnc_initLoginDialog;
         }
     }
 };
 
+DEBUG("adding unload event");
+
 _loginDisplay displayAddEventHandler ["Unload", _onUnload];
+
 { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
 
 [SERVER, "X11_fnc_getCharacterSlots", [getPlayerUID player], //request-related

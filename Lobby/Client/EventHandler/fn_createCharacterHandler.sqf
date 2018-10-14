@@ -3,6 +3,7 @@
 LSTART("CREATE CHAR");
 private _ctrl = _this select 0;
 private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
+private _infoText = _ctrl getVariable ["_infoText", objNull];
 private _specCombobox = _ctrl getVariable ["_specCombobox", objNull];
 private _classesHash = _ctrl getVariable ["_classesHash", objNull];
 private _slot = _ctrl getVariable ["_slot", -1];
@@ -18,6 +19,10 @@ FFLOG("creating new profile for %1 at slot %1", _uid, _slot);
 
 private _character = [_uid, _slot, _name, _classId, 0, 500, false, 0] call X11_fnc_createCharacterState;
 [_character, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
+
+if(_name == "" or _className == "") exitWith {
+    _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.dpl.profiles.validator"];
+};
 
 [SERVER, "X11_fnc_updateCharacter", [_uid, _character, _slot], //request-related
     [_pairs], {

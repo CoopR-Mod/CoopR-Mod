@@ -10,7 +10,6 @@ private _isLoggedIn = _prisoner getVariable [KEY_PLAYER_LOGGEDIN, false];
 
 if(serverTime >= _prisonStartTime + _maxPrisonTimeInSec and _isLoggedIn) then
 {
-    DEBUG(_isLoggedIn);
     if(_isLoggedIn) then {
         _prisoner call X11_fnc_setFree;
     };

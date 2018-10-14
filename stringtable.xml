@@ -86,6 +86,10 @@
 </Package>
 
 <Package name="Lobby">
+    <Key ID="str.dpl.profiles.validator">
+        <Original>Fields can not be empty!</Original>
+        <German>Alle Felder muessen ausgefuellt sein!</German>
+    </Key>
     <Key ID="str.dpl.profiles.fetch">
         <Original>Fetching profiles...</Original>
         <German>Frage Profile ab...</German>

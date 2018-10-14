@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=182;
+		nextID=184;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11968.449,375.069,12294.197};
-		dir[]={0.13810292,-0.61777288,0.77427864};
-		up[]={0.10847513,0.78634375,0.60815799};
-		aside[]={0.98457217,1.8240535e-006,-0.17561491};
+		pos[]={12100.323,184.75449,12488.941};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -5617,7 +5617,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="ACRE_SEM52SL";
+							value="ItemMap";
 						};
 					};
 				};
@@ -6068,7 +6068,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="false";
+							value="true";
 						};
 					};
 				};
@@ -6182,7 +6182,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="true";
+							value="false";
 						};
 					};
 				};
@@ -6970,7 +6970,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="ACRE_SEM52SL";
+							value="ItemMap";
 						};
 					};
 				};
@@ -7118,7 +7118,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="EAGLE ONE";
+							value="STURMADLER";
 						};
 					};
 				};
@@ -7190,7 +7190,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="RODEO TWO";
+							value="VALKYRE";
 						};
 					};
 				};
@@ -9417,7 +9417,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="false";
+							value="true";
 						};
 					};
 				};
@@ -9531,7 +9531,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="true";
+							value="false";
 						};
 					};
 				};
@@ -9550,7 +9550,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="true";
+							value="false";
 						};
 					};
 				};
@@ -10652,7 +10652,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13088.539,5.9899998,10318.665};
+				position[]={12982.319,6,10028.954};
 			};
 			id=63;
 			type="ALiVE_mil_logistics";

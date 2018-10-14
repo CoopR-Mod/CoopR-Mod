@@ -26,6 +26,14 @@ class X11_NewProfile_Dialog{
             h = 0.0550246 * safezoneH;
             sizeEx = 2 * GUI_GRID_H;
         };
+        class X11_NewProfile_Info: RscStructuredText
+        {
+            idc = 3003;
+            x = 0.216406 * safezoneW + safezoneX;
+            y = 0.478 * safezoneH + safezoneY;
+            w = 0.149531 * safezoneW;
+            h = 0.044 * safezoneH;
+        };
         class X11_NewProfile_Button_Create: RscButton
         {
         	idc = 3600;

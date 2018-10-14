@@ -2,21 +2,8 @@
 
 params ["_profileInfos", "_profileOverlays", "_profileButtons"];
 
-_onUnload = {
-    [] spawn {
-        sleep 3;
-        private _playerLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
-        if(!_playerLoggedIn and isNull findDisplay 1103) then {
-            DEBUG("called");
-            createDialog "X11_Login_Dialog";
-            call X11_fnc_initLoginDialog;
-        }
-    }
-};
-
 DEBUG("adding unload event");
-
-_loginDisplay displayAddEventHandler ["Unload", _onUnload];
+_loginDisplay displayAddEventHandler ["Unload", {call X11_fnc_loginDialogUnloadHandler}];
 
 { _x ctrlSetText localize "str.dpl.profiles.fetch" } forEach _profileInfos;
 
@@ -24,13 +11,6 @@ _loginDisplay displayAddEventHandler ["Unload", _onUnload];
     [_profileInfos, _profileOverlays, _profileButtons], {
         params ["_args", "_result"];
         _args params ["_profileInfos", "_profileOverlays", "_profileButtons"];
-
-        _registerHandler = {
-            params ["_ctrl"];
-            private _slot = _ctrl getVariable ["_slot", -1];
-            closeDialog 1;
-            [_slot] spawn X11_fnc_showNewProfileDialog;
-        };
 
         private _characterSlots = _result;
         {
@@ -43,7 +23,7 @@ _loginDisplay displayAddEventHandler ["Unload", _onUnload];
 
             // set data to controls
             _overlay setVariable ["_slot", _forEachIndex];
-            private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", _registerHandler];
+            private _handlerId = _overlay ctrlAddEventHandler ["MouseButtonDown", {call X11_fnc_newCharacterButtonHandler}];
             _overlay setVariable ["_registerHandlerId", _handlerId];
 
             if (_isNotEmptySlot) then {

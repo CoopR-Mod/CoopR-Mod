@@ -96,8 +96,8 @@ class CfgFunctions {
             class syncPlayersToServer {};
             class syncPlayerToServer {};
         }
-        class Profiles_Server {
-            file = "Profiles\Server";
+        class Characters_Server {
+            file = "Characters\Server";
             class createCharacterState {};
             class getCharacterSlots {};
             class updateCharacterSlots {};
@@ -106,8 +106,8 @@ class CfgFunctions {
             class createCharacterStateFromPlayer {};
             class getAllProfiles {};
         }
-        class Profiles_Client {
-            file = "Profiles\Client";
+        class Characters_Client {
+            file = "Characters\Client";
             class updateCharacterValue {};
             class updateCharacterMultiValue {};
         }

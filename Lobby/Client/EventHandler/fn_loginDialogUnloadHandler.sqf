@@ -1,7 +1,7 @@
 #include "..\..\constants.hpp"
 
 [] spawn {
-    sleep 3;
+    sleep 1;
     private _playerLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
     if(!_playerLoggedIn and isNull findDisplay 1103) then {
         DEBUG("called login unload");

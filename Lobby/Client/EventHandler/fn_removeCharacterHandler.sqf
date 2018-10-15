@@ -8,6 +8,6 @@ FLOG("removing profile for player id %1", _playerUid);
 [SERVER, "X11_fnc_updateCharacter", [getPlayerUID player, EMPTY_HASH, _slot], //request-related
     [], {
         params ["_args", "_result"];
-        call X11_fnc_initLoginDialog;
+        closeDialog 1;
     }
 ] call Promise_Create;

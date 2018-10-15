@@ -23,6 +23,9 @@ if(_isPrisoner) then {
     call X11_fnc_checkPrisonRefugee;
 };
 
+// temporary workaround until health persistence is implemented
+[objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
+
 cutText ["", "BLACK IN", 0.1];
 
 SLOG("...post login init done");

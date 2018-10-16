@@ -10,7 +10,7 @@ if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     LEND("UPDATING CHAR")
 };
 
-FLOG("updating character slot: %1...", _slot);
+FLOG("updating character slot: %1 ...", _slot);
 
 private _characterSlots = _playerUid call X11_fnc_getCharacterSlots;
 _characterSlots set [_slot, _characterState];

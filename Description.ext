@@ -13,6 +13,10 @@ class CfgFunctions {
             file = "Death\Client";
             class death {};
         }
+        class Death_Client_EventHandler {
+            file = "Death\Client\EventHandler";
+            class playerKilledHandler {};
+        }
         class Init_Server {
             file = "Init\Server";
             class initEventsServer {};
@@ -54,7 +58,6 @@ class CfgFunctions {
             class updateReputation {};
             class showReputation {};
             class initReputationmaster {};
-            class addReputationForKill {};
         }
         class Lobby_Client {
             file = "Lobby\Client";

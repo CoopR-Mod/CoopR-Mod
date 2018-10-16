@@ -2,6 +2,7 @@
 
 params ["_profileInfos", "_profileOverlays", "_profileButtons"];
 
+LSTART("UPDATE LOGIN DIALOG");
 _loginDisplay displayRemoveAllEventHandlers "Unload";
 _loginDisplay displayAddEventHandler ["Unload", {call X11_fnc_loginDialogUnloadHandler}];
 
@@ -35,5 +36,6 @@ _loginDisplay displayAddEventHandler ["Unload", {call X11_fnc_loginDialogUnloadH
             };
 
         } forEach _characterSlots;
+        LEND("UPDATE LOGIN DIALOG");
     }
 ] call Promise_Create;

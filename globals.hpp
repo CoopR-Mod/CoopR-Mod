@@ -2,11 +2,13 @@
 
 #define SERVER 2
 #define MAX_PROFILES 3
+#define MAX_TK 3
 #define DEATH_COOLDOWN_IN_MIN 5
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
 #define KEY_INTEL_PROGRESS "dpl_intel_progess"
+#define KEY_TEAMKILLS "dpl_player_teamkills"
 
 #define KEY_SLOT "dpl_character_slot"
 #define KEY_NAME "dpl_character_name"

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=190;
+		nextID=197;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12138.557,194.60062,12521.693};
-		dir[]={0.22407585,-0.24862181,0.94235122};
-		up[]={0.057517789,0.96859419,0.24189091};
-		aside[]={0.97289753,-2.015513e-007,-0.23134029};
+		pos[]={12229.255,884.24548,12262.642};
+		dir[]={-0.18003201,-0.90955275,0.37465325};
+		up[]={-0.39393613,0.41562021,0.81979728};
+		aside[]={0.90136462,6.7969086e-007,0.43313199};
 	};
 };
 binarizationWanted=0;
@@ -49,13 +49,18 @@ addons[]=
 	"bwa3_ammoboxes",
 	"alive_amb_civ_population",
 	"civ_interact",
-	"amb_ambiance"
+	"amb_ambiance",
+	"A3_Characters_F",
+	"cfp_uniforms",
+	"A3_Air_F_Heli_Light_01",
+	"ace_realisticnames",
+	"acre_sys_intercom"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=25;
+		items=29;
 		class Item0
 		{
 			className="bwa3_units";
@@ -209,6 +214,33 @@ class AddonsMetaData
 			name="amb_ambiance";
 			author="SpyderAddons";
 		};
+		class Item25
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item26
+		{
+			className="cfp_uniforms";
+			name="cfp_uniforms";
+			author="CFP Team";
+		};
+		class Item27
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item28
+		{
+			className="acre_sys_intercom";
+			name="ACRE2 - Vehicle Intercom";
+			author="ACRE2Team";
+			url="https://github.com/IDI-Systems/acre2";
+		};
 	};
 };
 randomSeed=6702069;
@@ -218,6 +250,7 @@ class ScenarioData
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
+	respawnDelay=5;
 	class Header
 	{
 		gameType="Coop";
@@ -3468,7 +3501,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=66;
+		items=69;
 		class Item0
 		{
 			dataType="Group";
@@ -4608,8 +4641,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4202.314,288.31128,7385.6646};
-				angles[]={0.0053265258,0,6.2751846};
+				position[]={4202.314,288.31125,7385.665};
+				angles[]={0.0053232545,0,6.2751913};
 			};
 			id=24;
 			type="ALiVE_civ_placement";
@@ -4668,7 +4701,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="100";
 						};
 					};
 				};
@@ -4965,8 +4998,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6196.1826,300.22778,7696.8604};
-				angles[]={6.253861,0,6.2352209};
+				position[]={6196.1831,300.22778,7696.8599};
+				angles[]={6.2538638,0,6.2352238};
 			};
 			id=25;
 			type="ALiVE_mil_placement";
@@ -5158,7 +5191,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="100";
 						};
 					};
 				};
@@ -8056,7 +8089,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="100";
 						};
 					};
 				};
@@ -8603,7 +8636,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Random";
+							value="Mechanized";
 						};
 					};
 				};
@@ -8641,7 +8674,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="0";
+							value="1500";
 						};
 					};
 				};
@@ -8750,7 +8783,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="100";
 						};
 					};
 				};
@@ -9107,7 +9140,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="60";
 						};
 					};
 				};
@@ -9183,7 +9216,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="0";
+							value="75";
 						};
 					};
 				};
@@ -9259,7 +9292,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Random";
+							value="Motorized";
 						};
 					};
 				};
@@ -9444,7 +9477,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="true";
+							value="false";
 						};
 					};
 				};
@@ -9687,7 +9720,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="0";
+							value="0.2";
 						};
 					};
 				};
@@ -10399,7 +10432,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12624.261,5.6273003,9156.2969};
-				angles[]={0.0026520467,0,0.0080009829};
+				angles[]={0.0026529003,0,0.0079936078};
 			};
 			id=60;
 			type="ALiVE_mil_OPCOM";
@@ -10903,7 +10936,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10539.881,145.7532,9313.541};
-				angles[]={0.10230836,0,6.2259145};
+				angles[]={0.1023112,0,6.2259207};
 			};
 			id=64;
 			type="ALiVE_civ_placement";
@@ -10962,7 +10995,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="100";
+							value="60";
 						};
 					};
 				};
@@ -12880,7 +12913,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="5";
+							value="15";
 						};
 					};
 				};
@@ -12918,7 +12951,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="";
+							value="is_zone";
 						};
 					};
 				};
@@ -13247,6 +13280,153 @@ class Mission
 				};
 				nAttributes=20;
 			};
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12173.27,159.30435,12567.521};
+						angles[]={0.013334315,0,6.243217};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						name="testairD";
+						isPlayer=1;
+					};
+					id=192;
+					type="B_Helipilot_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12173.27,159.30435,12567.521};
+						angles[]={0.013334315,0,6.243217};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=193;
+					type="B_Helipilot_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=192;
+						item1=191;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=193;
+						item1=191;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=190;
+		};
+		class Item67
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12173.341,161.08047,12567.496};
+				angles[]={0.013334315,0,6.243217};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+				name="testair";
+			};
+			id=191;
+			type="B_Heli_Light_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""arifle_MXC_F"",""FirstAidKit""],[2,2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[""B_Parachute""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item68
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12159.603,158.91257,12615.884};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=195;
+					type="I_support_AMG_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=194;
 		};
 	};
 	class Connections

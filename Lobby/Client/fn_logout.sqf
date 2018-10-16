@@ -4,9 +4,9 @@ private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
 
 cutText ["returning to character lobby.", "BLACK OUT", 0.5];
 sleep 1;
-cutText ["saving character...", "BLACK OUT", 0.0001];
-sleep 1;
 if(!_isPrisoner) then {
+    cutText ["saving character...", "BLACK OUT", 0.0001];
+    sleep 1;
     SLOG("saving character state before logout...");
     [SERVER, "X11_fnc_syncPlayerToServer", [player], //request-related
         [], {

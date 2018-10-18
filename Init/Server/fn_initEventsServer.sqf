@@ -1,6 +1,13 @@
 #include "..\constants.hpp"
 
-[{{driver _x setVariable ["VCM_Disable",true];} forEach (vehicles select {_x isKindOf 'air'});}, 1, []] call CBA_fnc_addPerFrameHandler;
+_disableVCOM = {
+    {
+        driver _x setVariable ["VCM_Disable",true];
+        FLOG("VCOM disabeled for air asset %1", _x);
+    } forEach (vehicles select {_x isKindOf 'air'});
+};
+
+[_disableVCOM, 1, []] call CBA_fnc_addPerFrameHandler;
 
 [{call X11_fnc_syncPlayersToServer;},  SYNC_RATE_MIN * 60] call CBA_fnc_addPerFrameHandler;
 

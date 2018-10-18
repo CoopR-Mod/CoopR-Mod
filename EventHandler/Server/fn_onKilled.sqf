@@ -10,7 +10,6 @@ if(isPlayer _unit) then {
         SLOG("player killed himself");
     };
 } else {
-
     // workaround to get the actual killer unit. Something is screwing up the 'killed' handler
     _killer = _unit getVariable ["ace_medical_lastDamageSource", objNull];
 
@@ -38,7 +37,7 @@ if(isPlayer _unit) then {
 
         if (_sideVictim == _badSide and (_unit call CBA_fnc_isPerson)) then {
             systemChat format ["||DEPLOYED|| Du hast %1 RPTS erhalten!", REP_PER_DOGTAG];
-            REP_PER_DOGTAG call X11_fnc_updateReputation;
+            [REP_PER_DOGTAG] remoteExec ["X11_fnc_updateReputation"];
          };
 
         if (_isBlueOnBlue and not _isSuicide) then {

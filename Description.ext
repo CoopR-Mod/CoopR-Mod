@@ -54,10 +54,8 @@ class CfgFunctions {
         }
         class Reputation {
             file = "Reputation\Client";
-            class tradeDogtags {};
             class updateReputation {};
             class showReputation {};
-            class initReputationmaster {};
         }
         class Lobby_Client {
             file = "Lobby\Client";

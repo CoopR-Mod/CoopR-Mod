@@ -37,7 +37,7 @@ if(isPlayer _unit) then {
 
         if (_sideVictim == _badSide and (_unit call CBA_fnc_isPerson)) then {
             systemChat format ["||DEPLOYED|| Du hast %1 RPTS erhalten!", REP_PER_DOGTAG];
-            [REP_PER_DOGTAG] remoteExec ["X11_fnc_updateReputation"];
+            [REP_PER_INF] remoteExec ["X11_fnc_updateReputation"];
          };
 
         if (_isBlueOnBlue and not _isSuicide) then {

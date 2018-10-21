@@ -3,7 +3,6 @@
 _disableVCOM = {
     {
         driver _x setVariable ["VCM_Disable",true];
-        FLOG("VCOM disabeled for air asset %1", _x);
     } forEach (vehicles select {_x isKindOf 'air'});
 };
 

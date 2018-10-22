@@ -10,7 +10,7 @@ private _playerName = name player;
 
 if (_victimWasEnemy) then {
     systemChat format ["||DEPLOYED|| Du hast %1 RPTS erhalten!", REP_PER_INF];
-    [REP_PER_INF] call X11_fnc_updateReputation;
+    REP_PER_INF call X11_fnc_updateTempReputation;
 };
 
 if (_victimWasEnemy isEqualTo false) then {

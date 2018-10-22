@@ -5,11 +5,9 @@
 #define MAX_TK 3
 #define DEATH_COOLDOWN_IN_MIN 5
 
-#define ASSTRING(var1) "var1"
-
 //AREAS
-#define DPL_HQ dpl_hq
-#define DPL_ESC_ZONE dpl_esc_zone
+#define DPL_HQ "dpl_hq"
+#define DPL_ESC_ZONE "dpl_esc_zone"
 
 #define KEY_PLAYER_PROFILES "dpl_player_profiles"
 #define KEY_PLAYER_LOGGEDIN "dpl_login_state"
@@ -44,5 +42,6 @@
 #define CLASS_MG "dpl_class_mg"
 #define CLASS_NONE "dpl_class_none"
 
-#include "macros.hpp"
+#include "debug.hpp"
+#include "helper.hpp"
 #include "testing.hpp"

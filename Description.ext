@@ -2,8 +2,9 @@ allowFunctionsRecompile = 1;
 enableDebugConsole = 1;
 
 #include "define.hpp"
-#include "macros.hpp"
+#include "debug.hpp"
 #include "testing.hpp"
+#include "variables.hpp"
 #include "guiLogin.hpp"
 #include "guiEquipment.hpp"
 #include "guiNewProfile.hpp"

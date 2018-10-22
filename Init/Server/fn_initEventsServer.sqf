@@ -14,6 +14,6 @@ _disableVCOM = {
 ["CAManBase", "killed", {call X11_fnc_onKilled}] call CBA_fnc_addClassEventHandler;
 
 // trigger events
-if (!isNil ASSTRING(DPL_ESC_ZONE)) then { DPL_ESC_ZONE setTriggerStatements ["this", "call X11_fnc_onOutbreak", ""]; };
+if (!isNil DPL_ESC_ZONE) then { GLOB(DPL_ESC_ZONE) setTriggerStatements ["this", "call X11_fnc_onOutbreak", ""]; };
 
 SLOG("server events initialized");

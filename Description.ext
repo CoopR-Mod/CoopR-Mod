@@ -18,9 +18,16 @@ class CfgFunctions {
             file = "Death\Client\EventHandler";
             class playerKilledHandler {};
         }
+        class Init_Tests {
+            file = "Init\tests";
+            class tests_init {};
+        }
         class Init_Server {
             file = "Init\Server";
             class initEventsServer {};
+        }
+        class Init_Server_EventHandler {
+            file = "Init\Server\eventhandler";
         }
         class Init_Client {
             file = "Init\Client";

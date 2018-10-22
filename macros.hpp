@@ -12,4 +12,3 @@
 #define TSUCCESS [format ["TEST - failed", var1], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug
 #define TFAIL [format ["TEST - success", var1], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug
 
-

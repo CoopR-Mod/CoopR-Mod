@@ -33,7 +33,6 @@ class CfgFunctions {
         class Intel_Server {
             file = "Intel\Server";
             class showIntelProgress {};
-            class addRandomIntelItem {};
             class updateIntelProgress {};
         }
         class Intel_Client {

@@ -16,6 +16,7 @@
 #define KEY_UID "dpl_character_uid"
 #define KEY_STATE "dpl_character_state"
 #define KEY_REPUTATION "dpl_character_reputation"
+#define KEY_TMP_REPUTATION "dpl_character_tmp_reputation"
 #define KEY_MONEY "dpl_character_money"
 #define KEY_CLASS "dpl_character_class"
 #define KEY_IS_PRISONER "dpl_character_prisoner"
@@ -39,3 +40,4 @@
 #define CLASS_NONE "dpl_class_none"
 
 #include "macros.hpp"
+#include "testing.hpp"

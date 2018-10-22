@@ -1,6 +1,7 @@
 #define DEBUG_CTX "DPL.BASE"
 
 #define SERVER 2
+#define DPL_HQ dpl_hq
 #define MAX_PROFILES 3
 #define MAX_TK 3
 #define DEATH_COOLDOWN_IN_MIN 5

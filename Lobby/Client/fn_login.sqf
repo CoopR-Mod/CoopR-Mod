@@ -1,20 +1,20 @@
 #include "..\constants.hpp"
 
-params ["_profile"];
+params ["_character"];
 LSTART("LOGIN");
 FLOG("%1 is logging in...", player);
 
-private _slot = [_profile, KEY_SLOT] call CBA_fnc_hashGet;
-private _name = [_profile, KEY_NAME] call CBA_fnc_hashGet;
-private _class = [_profile, KEY_CLASS] call CBA_fnc_hashGet;
-private _state = [_profile, KEY_STATE] call CBA_fnc_hashGet;
-private _deathTimestamp = [_profile, KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
-private _reputation = [_profile, KEY_REPUTATION] call CBA_fnc_hashGet;
-private _money = [_profile, KEY_MONEY] call CBA_fnc_hashGet;
-private _prisoner = [_profile, KEY_IS_PRISONER] call CBA_fnc_hashGet;
-private _prisonTime = [_profile, KEY_PRISON_START] call CBA_fnc_hashGet;
-private _position = [_profile, KEY_POSITION] call CBA_fnc_hashGet;
-private _loadout = [_profile, KEY_LOADOUT] call CBA_fnc_hashGet;
+private _slot = [_character, KEY_SLOT] call CBA_fnc_hashGet;
+private _name = [_character, KEY_NAME] call CBA_fnc_hashGet;
+private _class = [_character, KEY_CLASS] call CBA_fnc_hashGet;
+private _state = [_character, KEY_STATE] call CBA_fnc_hashGet;
+private _deathTimestamp = [_character, KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
+private _reputation = [_character, KEY_REPUTATION] call CBA_fnc_hashGet;
+private _money = [_character, KEY_MONEY] call CBA_fnc_hashGet;
+private _prisoner = [_character, KEY_IS_PRISONER] call CBA_fnc_hashGet;
+private _prisonTime = [_character, KEY_PRISON_START] call CBA_fnc_hashGet;
+private _position = [_character, KEY_POSITION] call CBA_fnc_hashGet;
+private _loadout = [_character, KEY_LOADOUT] call CBA_fnc_hashGet;
 
 player setVariable [KEY_SLOT, _slot, true];
 FFLOG("set state %1 to %2", KEY_SLOT, _slot);

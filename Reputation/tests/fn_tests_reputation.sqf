@@ -46,5 +46,12 @@ private _actual = player getVariable [KEY_TMP_REPUTATION, 0];
 TASSERT(_actual == 0);
 call _cleanup;
 
+TEST("should ceal temp reputation when converted ");
+3 call X11_fnc_updateTempReputation;
+private _before = player getVariable [KEY_REPUTATION, 0];
+0.2 call X11_fnc_convertTempToReputation;
+private _actual = player getVariable [KEY_REPUTATION, 0];
+TASSERT(_actual == 1);
+call _cleanup;
 
 TEND;

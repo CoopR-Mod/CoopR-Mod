@@ -8,5 +8,5 @@ player setVariable [KEY_POSITION, getPos GLOB(DPL_HQ), true];
 //player setVariable [KEY_DEATH_TIMESTAMP, serverTime, true];
 REP_DEATH_MULTIPLIER call X11_fnc_convertTempToReputation;
 
-cutText ["You joined the ranks of the fallen", "BLACK OUT", 0.1];
+
 

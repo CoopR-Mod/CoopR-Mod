@@ -1,7 +1,12 @@
 #include "..\constants.hpp"
 
-params ["_character"];
+params [["_character", []]];
 LSTART("LOGIN");
+
+if(not ([_character] call CBA_fnc_isHash)) exitWith {
+    ERROR("argument has to be a cba hash");
+};
+
 FLOG("%1 is logging in...", player);
 
 private _slot = [_character, KEY_SLOT] call CBA_fnc_hashGet;

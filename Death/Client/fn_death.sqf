@@ -2,7 +2,7 @@
 
 FLOG("player %1 has been killed in action", name player);
 //TODO: reactivate logic with refactored death system
-player setVariable [KEY_POSITION, getPos DPL_HQ, true];
+player setVariable [KEY_POSITION, getPos GLOB(DPL_HQ), true];
 //player setVariable [KEY_STATE, STATE_KIA, true];
 //player setVariable [KEY_DEATH_TIMESTAMP, serverTime, true];
 

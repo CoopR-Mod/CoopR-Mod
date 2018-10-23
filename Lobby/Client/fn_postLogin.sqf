@@ -13,7 +13,7 @@ call X11_fnc_addPlayerActions;
 if(count _oldPos > 0) then {
    call X11_fnc_spawnAtOldPosition;
 } else {
-   player setPos (getPos DPL_HQ);
+   player setPos (getPos GLOB(DPL_HQ));
 };
 
 player setUnitLoadout _loadout;

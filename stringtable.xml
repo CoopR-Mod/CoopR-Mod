@@ -21,6 +21,13 @@
 </Package>
 
 <Package name="Init">
+    <Key ID="str.dpl.reputation.action.commander">
+        <Original>After Action Report</Original>
+        <German>Abschlussbericht</German>
+    </Key>
+</Package>
+
+<Package name="Init">
     <Key ID="str.dpl.init.action.vehicles">
         <Original>Get vehicle keys</Original>
         <German>Fahrzeugschluessel anfordern</German>

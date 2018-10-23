@@ -1,1 +1,1 @@
-#define GLOB(var) missionNamespace getVariable var
+#define GLOB(var) (missionNamespace getVariable var)

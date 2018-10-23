@@ -24,8 +24,9 @@ TEST("should convert temp reputation to real reputation 1 to 1");
 3 call X11_fnc_updateTempReputation;
 private _before = player getVariable [KEY_REPUTATION, 0];
 1 call X11_fnc_convertTempToReputation;
-private _after = player getVariable [KEY_REPUTATION, 0];
-TASSERT(_after == _before + 3);
+private _actual = player getVariable [KEY_REPUTATION, 0];
+private _expected = _before + 3;
+TASSERT(_actual == _expected);
 call _cleanup;
 
 TEST("should convert temp reputation to real reputation 1/5 ");
@@ -33,8 +34,17 @@ TEST("should convert temp reputation to real reputation 1/5 ");
 5 call X11_fnc_updateTempReputation;
 private _before = player getVariable [KEY_REPUTATION, 0];
 0.2 call X11_fnc_convertTempToReputation;
-private _after = player getVariable [KEY_REPUTATION, 0];
-TASSERT(_after == 1);
+private _actual = player getVariable [KEY_REPUTATION, 0];
+TASSERT(_actual == 1);
 call _cleanup;
+
+TEST("should clear temp reputation when converted ");
+5 call X11_fnc_updateTempReputation;
+private _before = player getVariable [KEY_REPUTATION, 0];
+1 call X11_fnc_convertTempToReputation;
+private _actual = player getVariable [KEY_TMP_REPUTATION, 0];
+TASSERT(_actual == 0);
+call _cleanup;
+
 
 TEND;

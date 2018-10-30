@@ -9,7 +9,6 @@ private _victimIsPerson = _victim call CBA_fnc_isPerson;
 private _playerName = name player;
 
 if (_victimWasEnemy) then {
-    systemChat format ["||DEPLOYED|| Du hast %1 RPTS erhalten!", REP_PER_INF];
     REP_PER_INF call X11_fnc_updateTempReputation;
 };
 

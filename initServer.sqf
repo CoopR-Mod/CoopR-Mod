@@ -8,6 +8,7 @@ LSTART("INIT SERVER");
 call X11_fnc_initPromise;
 call X11_fnc_initEventsServer;
 call X11_fnc_staticData;
+call X11_fnc_initNpcs;
 
 SLOG("server initialized");
 

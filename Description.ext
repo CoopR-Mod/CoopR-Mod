@@ -19,6 +19,10 @@ class CfgFunctions {
             file = "Death\Client\EventHandler";
             class playerKilledHandler {};
         }
+        class Init {
+            file = "Init";
+            class initNpcs {};
+        }
         class Init_Tests {
             file = "Init\tests";
             class tests_init {};
@@ -36,7 +40,6 @@ class CfgFunctions {
             class initEventsClient {};
             class addPlayerActions {};
             class initKeymaster {};
-            class initNpcs {};
         }
         class Intel_Server {
             file = "Intel\Server";

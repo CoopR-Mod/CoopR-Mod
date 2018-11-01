@@ -30,6 +30,7 @@ class CfgFunctions {
         class Init_Server {
             file = "Init\Server";
             class initEventsServer {};
+            class initBoxes {};
         }
         class Init_Server_EventHandler {
             file = "Init\Server\eventhandler";

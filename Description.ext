@@ -31,6 +31,7 @@ class CfgFunctions {
             file = "Init\Server";
             class initEventsServer {};
             class initBoxes {};
+            class initDPLServer {};
         }
         class Init_Server_EventHandler {
             file = "Init\Server\eventhandler";
@@ -41,6 +42,7 @@ class CfgFunctions {
             class initEventsClient {};
             class addPlayerActions {};
             class initKeymaster {};
+            class initDPLClients {};
         }
         class Intel_Server {
             file = "Intel\Server";
@@ -111,6 +113,7 @@ class CfgFunctions {
             class staticData {}
             class debug {};
             class sync {};
+            class enableDPL {};
         }
         class Core_Server {
             file = "Core\Server";

@@ -9,7 +9,6 @@ call X11_fnc_initPromise;
 call X11_fnc_initEventsServer;
 call X11_fnc_staticData;
 call X11_fnc_initNpcs;
-call X11_fnc_initBoxes;
 
 SLOG("server initialized");
 

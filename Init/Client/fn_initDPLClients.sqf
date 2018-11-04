@@ -4,6 +4,8 @@ LSTART("INIT CLIENTS");
 call X11_fnc_initPromise;
 call X11_fnc_initEventsClient;
 call X11_fnc_initNpcs;
+call X11_fnc_initBoxes;
+call X11_fnc_addPlayerActions;
 
 [] spawn {
     waitUntil { !(isNull (findDisplay 46)) };

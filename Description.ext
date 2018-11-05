@@ -12,11 +12,11 @@ enableDebugConsole = 1;
 class CfgFunctions {
     class X11 {
         class Death_Client {
-            file = "Death\Client";
+            file = "death\client";
             class death {};
         }
         class Death_Client_EventHandler {
-            file = "Death\Client\EventHandler";
+            file = "death\client\eventHandler";
             class playerKilledHandler {};
         }
         class Init {

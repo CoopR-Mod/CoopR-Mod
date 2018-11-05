@@ -90,7 +90,7 @@
         <Original>Killed in Action</Original>
         <German>Ausfall</German>
     </Key>
-    <Key ID="str.dpl.character.state.kia">
+    <Key ID="str.dpl.character.state.wia">
         <Original>Wounded in Action</Original>
         <German>Verwundet</German>
     </Key>

@@ -134,11 +134,15 @@ class CfgFunctions {
             file = "Characters\Client";
             class updateCharacterValue {};
         }
-        class EventHandlers {
+        class EventHandlers_Server {
             file = "EventHandler\Server";
             class onKilled {};
             class playerKilledNpc {};
             class playerKilledPlayer {};
+        }
+        class EventHandlers_Client {
+            file = "EventHandler\client";
+            class abortButtonEventHandler {};
         }
         class Equipment_Client {
             file = "Equipment\Client";

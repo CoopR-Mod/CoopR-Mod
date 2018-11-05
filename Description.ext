@@ -105,8 +105,9 @@ class CfgFunctions {
             class newCharacterButtonHandler {};
         }
         class Helper {
-            file = "Helper";
+            file = "helper";
             class initPromise {};
+            class characterStatePrettyLog {};
         }
         class Core {
             file = "Core";

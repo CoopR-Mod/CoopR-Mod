@@ -5,6 +5,10 @@
 #define MAX_TK 3
 #define DEATH_COOLDOWN_IN_MIN 5
 
+//DIALOGS
+#define MP_MENU 49
+#define ABORT_BUTTON 104
+
 //AREAS
 #define DPL_HQ "dpl_hq"
 #define DPL_ESC_ZONE "dpl_esc_zone"

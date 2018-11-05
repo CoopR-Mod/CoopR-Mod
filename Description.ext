@@ -11,6 +11,10 @@ enableDebugConsole = 1;
 
 class CfgFunctions {
     class X11 {
+        class Death {
+            file = "death";
+            class checkCharacterWIAStates {};
+        }
         class Death_Client {
             file = "death\client";
             class death {};

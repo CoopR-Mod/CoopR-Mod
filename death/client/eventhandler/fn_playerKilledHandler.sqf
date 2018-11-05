@@ -8,7 +8,6 @@ if(player getVariable [KEY_STATE, STATE_OK] isEqualTo STATE_OK) then {
     call X11_fnc_death;
     _state = player call X11_fnc_createCharacterStateFromPlayer;
     _slot = player getVariable [KEY_SLOT, -1];
-    DEBUG("!");
     [_state] call X11_fnc_characterStatePrettyLog;
     [SERVER, "X11_fnc_updateCharacter", [getPlayerUID player, _state, _slot], //request-related
         [], {

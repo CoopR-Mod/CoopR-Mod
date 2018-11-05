@@ -109,5 +109,9 @@
         <Original>Prisoner:</Original>
         <German>Gefangener:</German>
     </Key>
+    <Key ID="str.dpl.profile.info.wia.timeleft">
+        <Original>Hospilitized:</Original>
+        <German>Im Lazarett:</German>
+    </Key>
 </Package>
 </Project>

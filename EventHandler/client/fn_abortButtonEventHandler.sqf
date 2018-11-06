@@ -8,9 +8,11 @@
         };
         ((findDisplay MP_MENU) displayCtrl ABORT_BUTTON) ctrlAddEventHandler ["ButtonClick", {
             [] spawn {
+                LSTART("ABORT SYNC");
+                private _isLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
                 private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
 
-                if(!_isPrisoner) then {
+                if(_isLoggedIn and not _isPrisoner) then {
                     SLOG("saving character state before mission end...");
                     [SERVER, "X11_fnc_syncPlayerToServer", [player],
                         [], {
@@ -18,9 +20,9 @@
                         }
                     ] call Promise_Create;
                 }else {
-                    SLOG("character is still prisoner - will not save state before mission end");
+                    SLOG("character is still prisoner or in logged out - will not save state before mission end");
                 };
-
+                LEND("ABORT SYNC");
             };
         }];
     };

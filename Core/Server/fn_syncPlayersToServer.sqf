@@ -1,6 +1,6 @@
 #include "..\constants.hpp"
 
-LSTART("SYNC");
+LSTART("ALL SYNC");
 
 if(!ALLOW_SYNC) exitWith {
     SLOG("syncing disabled");
@@ -17,14 +17,11 @@ FLOG("found %1 players connected", count _allPlayers);
 
     // skip if not logged in
     if(_isLoggedIn and not _isPrisoner) then {
-        private _slot = _player getVariable [KEY_SLOT, -1];
-        private _characterState = _player call X11_fnc_createCharacterStateFromPlayer;
-        [getPlayerUID _player, _characterState, _slot] call X11_fnc_updateCharacter;
-        FFLOG("player %1 auto synced at slot %2", name _player, _slot);
+     _player call X11_fnc_syncPlayerToServer;
     }
 
 } forEach allPlayers;
 
 SLOG("... syncing done.");
-LEND("SYNC");
+LEND("ALL SYNC");
 

@@ -2,7 +2,7 @@
 
 params [["_player", objNull]];
 
-LSTART("MAN SYNC");
+LSTART("PLAYER SYNC");
 
 if(!ALLOW_SYNC) exitWith {
     SLOG("syncing disabled");
@@ -19,7 +19,7 @@ private _characterState = _player call X11_fnc_createCharacterStateFromPlayer;
 FFLOG("player %1 manually synced at slot %2", getPlayerUID _player, _slot);
 
 SLOG("... syncing done.");
-LEND("MAN SYNC");
+LEND("PLAYER SYNC");
 _slot;
 
 

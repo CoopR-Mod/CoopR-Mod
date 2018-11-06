@@ -3,7 +3,7 @@
 #define SERVER 2
 #define MAX_PROFILES 3
 #define MAX_TK 3
-#define WIA_CD 0.1
+#define WIA_CD 0.5
 
 //DIALOGS
 #define MP_MENU 49

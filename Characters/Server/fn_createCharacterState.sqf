@@ -1,4 +1,3 @@
-
 #include "..\constants.hpp"
 
 params [["_playerId", 0],
@@ -27,7 +26,9 @@ private _statsHash = [[KEY_UID, _playerId],
                       [KEY_DEATH_TIMESTAMP, _deathTimestamp],
                       [KEY_LOADOUT, _loadout]];
 
-FLOG("character hash created: %1", _statsHash);
+SLOG("character hash created");
 
-[_statsHash, []] call CBA_fnc_hashCreate;
+_state = [_statsHash, []] call CBA_fnc_hashCreate;
+_state call X11_fnc_characterStatePrettyLog;
+_state;
 

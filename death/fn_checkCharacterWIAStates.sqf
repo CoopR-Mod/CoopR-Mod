@@ -3,7 +3,6 @@
 {
     _uid = getPlayerUID _x;
     {
-
         private _characterSlot = _x;
 
             private _slot = _forEachIndex;
@@ -12,8 +11,6 @@
             private _timeOver = serverTime >= _timeStamp + (WIA_CD * 60);
 
             if(_state isEqualTo STATE_WIA and _timeOver) then {
-                DEBUG("Stuff");
-                DEBUG(_uid);
                 [_characterSlot, KEY_STATE, STATE_OK] call CBA_fnc_hashSet;
                 [_uid, _characterSlot, _slot] call X11_fnc_updateCharacter;
                 FLOG("player %1 was set back to state OK", name _player);

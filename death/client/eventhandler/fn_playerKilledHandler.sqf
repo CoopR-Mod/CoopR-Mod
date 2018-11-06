@@ -9,7 +9,7 @@ if(player getVariable [KEY_STATE, STATE_OK] isEqualTo STATE_OK) then {
     _state = player call X11_fnc_createCharacterStateFromPlayer;
     [_state, KEY_POSITION, getPos GLOB(DPL_HQ)] call CBA_fnc_hashSet;
     _slot = player getVariable [KEY_SLOT, -1];
-    [_state] call X11_fnc_characterStatePrettyLog;
+    //[_state] call X11_fnc_characterStatePrettyLog;
     [SERVER, "X11_fnc_updateCharacter", [getPlayerUID player, _state, _slot], //request-related
         [], {
         sleep 5;

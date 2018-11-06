@@ -28,7 +28,7 @@ private _statsHash = [[KEY_UID, _playerId],
 
 SLOG("character hash created");
 
-_state = [_statsHash, []] call CBA_fnc_hashCreate;
-_state call X11_fnc_characterStatePrettyLog;
+private _state = [_statsHash, []] call CBA_fnc_hashCreate;
+//[_state] call X11_fnc_characterStatePrettyLog;
 _state;
 

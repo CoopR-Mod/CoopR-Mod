@@ -19,7 +19,7 @@ if (_hasNoProfiles) then {
 if(_hasPlayerEntry) then {
     _slots = [_allProfiles, _playerUid] call CBA_fnc_hashGet;
     FLOG("found character slots for id %1", _playerUid);
-    { [_x] call X11_fnc_characterStatePrettyLog; } forEach _slots;
+    //{ [_x] call X11_fnc_characterStatePrettyLog; } forEach _slots;
 } else {
     FLOG("failed to get character slots - no entry for player uid %1 was found", _playerUid);
 };

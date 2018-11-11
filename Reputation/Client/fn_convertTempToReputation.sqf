@@ -10,5 +10,6 @@ if(_tempReputation != 0) then {
     _tempReputation = ceil (_tempReputation * _multiplier);
     _tempReputation call X11_fnc_updateReputation;
     player setVariable [KEY_TMP_REPUTATION, 0];
+    _tempReputation;
 };
 

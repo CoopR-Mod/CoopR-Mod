@@ -23,5 +23,5 @@ if(_intelItemsCount <= 0) exitWith {
 [_intelItemsCount] remoteExec ["X11_fnc_updateIntelProgress", SERVER];
 _target commandChat localize "str.dpl.intel.chatter.intel";
 
-[format ["%1 delivered %2 intel items", name _caller, _intelItemsCount], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+FFLOG("%1 delivered %2 intel items", name _caller, _intelItemsCount);
 

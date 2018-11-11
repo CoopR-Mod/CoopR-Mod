@@ -20,10 +20,14 @@
     </Key>
 </Package>
 
-<Package name="Init">
+<Package name="Reputation">
     <Key ID="str.dpl.reputation.action.commander">
         <Original>After Action Report</Original>
         <German>Abschlussbericht</German>
+    </Key>
+    <Key ID="str.dpl.reputation.chatter.aar">
+        <Original>Good Job! Glad you made it back!</Original>
+        <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
     </Key>
 </Package>
 

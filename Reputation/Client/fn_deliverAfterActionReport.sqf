@@ -1,3 +1,9 @@
 #include "..\constants.hpp"
 
-REP_AAR_MULTIPLIER call X11_fnc_convertTempToReputation;
+params ["_target", "_caller"];
+
+private _gainedReputation = REP_AAR_MULTIPLIER call X11_fnc_convertTempToReputation;
+
+_target commandChat localize "str.dpl.reputation.chatter.aar";
+
+systemChat format ["||Deployed|| Reputation received [%1]", _gainedReputation];

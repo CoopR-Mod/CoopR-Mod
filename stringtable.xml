@@ -29,6 +29,10 @@
         <Original>Good Job! Glad you made it back!</Original>
         <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
     </Key>
+    <Key ID="str.dpl.reputation.mychar">
+        <Original>My character</Original>
+        <German>Mein Charakter</German>
+    </Key>
 </Package>
 
 <Package name="Init">

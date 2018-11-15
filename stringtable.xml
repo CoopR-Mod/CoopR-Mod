@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Deployed RPG">
 
+<Package name="ACE3_Interaction">
+    <Key ID="str.coopr.ace3.interaction.coopr">
+        <Original>CoopR</Original>
+    </Key>
+</Package>
+
 <Package name="Intel">
     <Key ID="str.dpl.intel.info.progress">
         <Original>||Deployed|| Der Aufklaerungsfortschritt betraegt [%1]</Original>
@@ -28,10 +34,6 @@
     <Key ID="str.dpl.reputation.chatter.aar">
         <Original>Good Job! Glad you made it back!</Original>
         <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
-    </Key>
-    <Key ID="str.dpl.reputation.mychar">
-        <Original>My character</Original>
-        <German>Mein Charakter</German>
     </Key>
 </Package>
 

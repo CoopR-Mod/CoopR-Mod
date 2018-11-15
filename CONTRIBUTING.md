@@ -12,7 +12,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 * Pull the actual state of the ``development`` branch
 * Create a feature branch by this convention: ``feature/{short_description}``
 * *Do stuff*
-* Commit by the following convention: `type(scope): short descripting` in the tense of *simple present*
+* Commit by the following convention: `type(scope): short descripting` in an imperative manner
 (example: `feature(reputation): add logic access actions more easy`
 * Push your feature branch
 * Create a pull request -> `development`

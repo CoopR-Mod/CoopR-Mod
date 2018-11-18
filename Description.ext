@@ -11,6 +11,15 @@ enableDebugConsole = 1;
 
 class CfgFunctions {
     class X11 {
+        class ACE3 {
+            file = "plugins\ace3";
+            class isACE3Active {};
+        }
+        class ACE3_Init_Client {
+            file = "plugins\ace3\init\client";
+            class ace3_addPlayerActions {};
+            class ace3_initCommander {};
+        }
         class Death {
             file = "death";
             class checkCharacterWIAStates {};

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CoopR Mod">
+    <Package name="integration">
+        <Package name="ace3">
+            <Key ID="str.coopr.ace3.interaction.coopr">
+                <Original>CoopR</Original>
+            </Key>
+        </Package>
+    </Package>
+</Project>

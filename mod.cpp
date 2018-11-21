@@ -1,0 +1,14 @@
+name = "CoopR Mod";
+dir = "@CoopR";
+//picture = "image.paa";
+actionName = "CoopR Mod";
+action = "https://github.com/CoopR-Mod/CoopR-Altis";
+//logo = "image.paa";
+//logoOver = "image.paa";
+tooltip = "CoopR Mod";
+tooltipOwned = "CoopR Mod";
+overview = "CoopR - Coop Roleplay Modification. Dive into a new gameplay experience for coop squads";
+author = "xetra11";
+// overviewPicture = "image.paa";
+overviewText = "CoopR Mod";
+overviewFootnote = "";

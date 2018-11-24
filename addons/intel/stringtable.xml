@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CoopR Mod">
+    <Package name="intel">
+        <Key ID="str.coopr.intel.info.progress">
+            <Original>||Deployed|| Der Aufklaerungsfortschritt betraegt [%1]</Original>
+            <German>||Deployed|| Your intel progress is [%1]</German>
+        </Key>
+        <Key ID="str.coopr.intel.action.deliver">
+            <Original>Deliver Intel</Original>
+            <German>Dokumente abgeben</German>
+        </Key>
+        <Key ID="str.coopr.intel.chatter.nointel">
+            <Original>Wow awesome! You collected about 0 documents...</Original>
+            <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+        </Key>
+        <Key ID="str.coopr.intel.chatter.intel">
+            <Original>Wow awesome! You collected about 0 documents...</Original>
+            <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+        </Key>
+    </Package>
+</Project>

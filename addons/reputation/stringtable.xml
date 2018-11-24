@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CoopR Mod">
+    <Package name="reputation">
+        <Key ID="str.coopr.reputation.action.commander">
+            <Original>After Action Report</Original>
+            <German>Abschlussbericht</German>
+        </Key>
+        <Key ID="str.coopr.reputation.chatter.aar">
+            <Original>Good Job! Glad you made it back!</Original>
+            <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
+        </Key>
+    </Package>
+</Project>

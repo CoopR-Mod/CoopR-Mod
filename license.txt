@@ -1,5 +1,5 @@
 Copyright 2018 xetra11
 
-This work (Deployed or the like) uses the license Arma Public License Share Alike (APL-SA)
+This work (CoopR Mod or the like) uses the license Arma Public License Share Alike (APL-SA)
 
 https://www.bohemia.net/community/licenses/arma-public-license-share-alike

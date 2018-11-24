@@ -17,7 +17,7 @@ private _loadOut = _classId call coopr_fnc_getLoadoutForClass;
 
 FFLOG("creating new profile for %1 at slot %1", _uid, _slot);
 
-private _character = [_uid, _slot, _name, _classId, 0, 500, false, 0] call coopr_fnc_createCharacterState;
+private _character = [_uid, _slot, _name, _classId, 0, 500, false, 0] call coopr_fnc_createCharacterStateFromPlayer;
 [_character, KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
 if(_name == "" or _className == "") exitWith {

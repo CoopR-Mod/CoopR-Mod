@@ -7,7 +7,6 @@ class CfgFunctions {
             class syncPlayersToServer {};
             class syncPlayerToServer {};
             class initPromise {};
-            class characterStatePrettyLog {};
         }
     }
 }

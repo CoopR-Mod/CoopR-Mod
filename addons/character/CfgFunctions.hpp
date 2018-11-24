@@ -7,8 +7,10 @@ class CfgFunctions {
             class getCharacter {};
             class updateCharacter {};
             class createCharacterStateFromPlayer {};
+            class createCharacterState {};
             class getAllProfiles {};
             class updateCharacterValue {};
+            class characterStatePrettyLog {};
         }
     }
 }

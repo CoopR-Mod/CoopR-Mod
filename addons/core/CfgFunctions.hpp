@@ -2,12 +2,12 @@ class CfgFunctions {
     class coopr {
         class coopr_core_functions {
             file = "x\coopr\addons\core\functions";
-            class debug {RECOMPILE;};
-            class sync {RECOMPILE;};
-            class syncPlayersToServer {RECOMPILE;};
-            class syncPlayerToServer {RECOMPILE;};
-            class initPromise {RECOMPILE;};
-            class characterStatePrettyLog {RECOMPILE;};
+            class debug {};
+            class sync {};
+            class syncPlayersToServer {};
+            class syncPlayerToServer {};
+            class initPromise {};
+            class characterStatePrettyLog {};
         }
     }
 }

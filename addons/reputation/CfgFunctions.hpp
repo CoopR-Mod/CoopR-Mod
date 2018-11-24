@@ -2,16 +2,16 @@ class CfgFunctions {
     class coopr {
         class coopr_reputation_functions {
             file = "x\coopr\addons\reputation\functions";
-            class updateReputation {RECOMPILE;};
-            class updateTempReputation {RECOMPILE;};
-            class convertTempToReputation {RECOMPILE;};
-            class initCommander {RECOMPILE;};
-            class deliverAfterActionReport {RECOMPILE;};
-            class showReputation {RECOMPILE;};
+            class updateReputation {};
+            class updateTempReputation {};
+            class convertTempToReputation {};
+            class initCommander {};
+            class deliverAfterActionReport {};
+            class showReputation {};
         }
         class coopr_reputation_tests {
             file = "x\coopr\addons\reputation\tests";
-            class tests_reputation {RECOMPILE;};
+            class tests_reputation {};
         }
     }
 }

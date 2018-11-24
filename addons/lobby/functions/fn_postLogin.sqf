@@ -11,18 +11,20 @@ SLOG("post login init...");
 if(count _oldPos > 0) then {
    call coopr_fnc_spawnAtOldPosition;
 } else {
-   player setPos (getPos GLOB(COOPR_HQ));
+   player setPos getPos GLOB(COOPR_HQ);
 };
 
 player setUnitLoadout _loadout;
 
-if(_isPrisoner) then {
-    SLOG("player was lastly seen in prison");
-    call coopr_fnc_checkPrisonRefugee;
-};
+//if(_isPrisoner) then {
+ //   SLOG("player was lastly seen in prison");
+  //  call coopr_fnc_checkPrisonRefugee;
+//};
 
 // temporary workaround until health persistence is implemented
-[objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
+if(coopr_fnc_isACEActive) then {
+    [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
+}
 
 cutText ["", "BLACK IN", 0.1];
 

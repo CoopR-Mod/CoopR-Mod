@@ -5,7 +5,9 @@ class CfgFunctions {
             class initNpcs {};
             class initEventsServer {};
             class setupCommanderModule {};
+            class setupQuartermasterModule {};
             class initCommanderNPC {};
+            class initQuartermasterNPC {};
             class initBoxes {};
             class initCoopRServer {postInit = 1; };
             class initCoopRClients {postInit = 1; };

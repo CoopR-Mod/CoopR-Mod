@@ -12,11 +12,10 @@ class CfgPatches {
         requiredAddons[] = {
             "coopr_core",
         };
-        // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
-            "CoopR_ModuleSetupCommander"
+            "CoopR_ModuleSetupCommander",
+            "CoopR_ModuleSetupQuartermaster"
         };
-        // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
     };
 }

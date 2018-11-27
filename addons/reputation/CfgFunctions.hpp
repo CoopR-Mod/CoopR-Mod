@@ -5,7 +5,6 @@ class CfgFunctions {
             class updateReputation {};
             class updateTempReputation {};
             class convertTempToReputation {};
-            class initCommander {};
             class deliverAfterActionReport {};
             class showReputation {};
         }

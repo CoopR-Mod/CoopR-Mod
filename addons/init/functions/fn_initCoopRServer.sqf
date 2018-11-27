@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
 if(isServer) then {
-    true call coopr_fnc_debug;
     true call coopr_fnc_sync;
 
     LSTART("INIT SERVER");

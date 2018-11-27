@@ -1,6 +1,7 @@
 #include "script_component.hpp"
+params [["_commander", objNull]];
 
-private _commander = GLOB(COOPR_NPC_COMMANDER);
+if (_commander isEqualTo objNull) exitWith { ERROR("_commander variable was not set") };
 
 if (isServer) then {
     _commander setBehaviour "CARELESS";
@@ -13,4 +14,4 @@ if (call coopr_fnc_isACE3Active) then {
     _commander addAction [localize "str.coopr.reputation.action.commander", {call coopr_fnc_deliverAfterActionReport},[],1.5,true,true,"","true",3];
 };
 
-FLOG("%1 initialized", COOPR_NPC_COMMANDER);
+FLOG("initialized %1 as commander", _commander);

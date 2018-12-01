@@ -36,7 +36,7 @@ class CfgVehicles
     class CoopR_ModuleSetupQuartermaster: Module_F
     {
         scope = 2;
-        displayName = "Quartermaster Module";
+        displayName = "Quartermaster NPC Module";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupQuartermasterModule";
@@ -54,7 +54,7 @@ class CfgVehicles
     class CoopR_ModuleSetupIntelligence: Module_F
     {
         scope = 2;
-        displayName = "Intelligence Module";
+        displayName = "Intelligence NPC Module";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupIntelligenceModule";
@@ -67,6 +67,24 @@ class CfgVehicles
         class ModuleDescription: ModuleDescription
         {
           description = "Sync this module with an AI unit to make it the CoopR intelligence unit";
+        };
+    };
+    class CoopR_ModuleSetupVehicle: Module_F
+    {
+        scope = 2;
+        displayName = "Vehicle NPC Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupVehicleModule";
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "Sync this module with an AI unit to make it the CoopR vehicle npc unit";
         };
     };
 };

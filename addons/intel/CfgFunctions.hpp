@@ -5,7 +5,6 @@ class CfgFunctions {
             class showIntelProgress {};
             class updateIntelProgress {};
             class deliverIntel {};
-            class initIntelmaster {};
         }
     }
 }

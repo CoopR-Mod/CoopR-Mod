@@ -8,10 +8,12 @@ class CfgFunctions {
             class setupCommanderModule {};
             class setupQuartermasterModule {};
             class setupIntelligenceModule {};
+            class setupVehicleModule {};
 
             class initCommanderNPC {};
             class initQuartermasterNPC {};
             class initIntelligenceNPC {};
+            class initVehicleNPC {};
 
             class initBoxes {};
 

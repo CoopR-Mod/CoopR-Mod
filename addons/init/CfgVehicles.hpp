@@ -51,4 +51,22 @@ class CfgVehicles
             description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";
         };
     };
+    class CoopR_ModuleSetupIntelligence: Module_F
+    {
+        scope = 2;
+        displayName = "Intelligence Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupIntelligenceModule";
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "Sync this module with an AI unit to make it the CoopR intelligence unit";
+        };
+    };
 };

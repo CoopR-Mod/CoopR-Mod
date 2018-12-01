@@ -4,11 +4,17 @@ class CfgFunctions {
             file = "x\coopr\addons\init\functions";
             class initNpcs {};
             class initEventsServer {};
+
             class setupCommanderModule {};
             class setupQuartermasterModule {};
+            class setupIntelligenceModule {};
+
             class initCommanderNPC {};
             class initQuartermasterNPC {};
+            class initIntelligenceNPC {};
+
             class initBoxes {};
+
             class initCoopRServer {postInit = 1; };
             class initCoopRClients {postInit = 1; };
         }

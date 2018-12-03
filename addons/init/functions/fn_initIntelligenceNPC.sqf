@@ -1,10 +1,8 @@
 #include "script_component.hpp"
 params [["_intelligence", objNull]];
 
-if (isServer) then {
-    _intelligence setBehaviour "CARELESS";
-    [_intelligence,"AidlPercMstpSnonWnonDnon_G02", "ASIS"] call BIS_fnc_ambientAnim;
-};
+if (_intelligence isEqualTo objNull) exitWith { ERROR("_intelligence variable was not set") };
+
 _intelligence addAction [localize "str.coopr.intel.action.deliver", {call coopr_fnc_deliverIntel},[],1.5,true,true,"","true",3];
 
 FLOG("initialized %1 as intelligence", _intelligence);

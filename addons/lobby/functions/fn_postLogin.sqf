@@ -11,7 +11,7 @@ SLOG("post login init...");
 if(count _oldPos > 0) then {
    call coopr_fnc_spawnAtOldPosition;
 } else {
-   player setPos getPos GLOB(COOPR_HQ);
+   player setPos getPos COOPR_HQ_WEST;
 };
 
 player setUnitLoadout _loadout;

@@ -17,7 +17,7 @@ class CfgVehicles
     class CoopR_ModuleSetupCommander: Module_F
     {
         scope = 2;
-        displayName = "Commander Module";
+        displayName = "Commander NPC Module";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupCommanderModule";

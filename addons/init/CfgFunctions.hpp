@@ -2,7 +2,6 @@ class CfgFunctions {
     class coopr {
         class coopr_init_functions {
             file = "x\coopr\addons\init\functions";
-            class initNpcs {};
             class initEventsServer {};
 
             class setupCommanderModule {};

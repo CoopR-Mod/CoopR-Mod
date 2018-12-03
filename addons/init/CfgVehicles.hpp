@@ -3,9 +3,10 @@ class CfgVehicles
     class Logic;
     class Module_F: Logic
     {
-        class AttributesBase
+        class ArgumentsBaseUnits
         {
             class Default;
+            class Combo; // Default combo box (i.e., drop-down menu)
             class ModuleDescription;
         };
         // Description base classes, for more information see below
@@ -85,6 +86,36 @@ class CfgVehicles
         class ModuleDescription: ModuleDescription
         {
           description = "Sync this module with an AI unit to make it the CoopR vehicle npc unit";
+        };
+    };
+    class CoopR_ModuleSetupHQ: Module_F
+    {
+        scope = 2;
+        displayName = "HQ Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupHQModule";
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class Arguments {
+              class Side {
+                  displayName = "Side"
+                  description = "The side the HQ is bound to";
+                  typeName = "STRING";
+                  class Values : ArgumentsBaseUnits {
+                      class opt_1 {name = "West"; value = "West"; default="West";};
+                      class opt_2 {name = "East"; value = "East"; default="West";};
+                  }
+              }
+        }
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "Place this module to set the CoopR HQ position";
         };
     };
 };

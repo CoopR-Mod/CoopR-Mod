@@ -8,7 +8,6 @@ if(isServer) then {
     call coopr_fnc_initPromise;
     call coopr_fnc_initEventsServer;
     call coopr_fnc_staticData;
-    call coopr_fnc_initNpcs;
 
     SLOG("server initialized");
 

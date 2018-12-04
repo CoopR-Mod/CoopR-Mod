@@ -9,13 +9,14 @@ class CfgFunctions {
             class setupQuartermasterModule {};
             class setupIntelligenceModule {};
             class setupVehicleModule {};
+            class setupAmmoboxModule {};
 
             class initCommanderNPC {};
             class initQuartermasterNPC {};
             class initIntelligenceNPC {};
             class initVehicleNPC {};
-
-            class initBoxes {};
+          
+            class initAmmobox {};
 
             class initCoopRServer {postInit = 1; };
             class initCoopRClients {postInit = 1; };

@@ -10,6 +10,7 @@ class CfgFunctions {
             class setupIntelligenceModule {};
             class setupVehicleModule {};
             class setupHQModule {};
+            class setupAmmoboxModule {};
 
             class initCommanderNPC {};
             class initQuartermasterNPC {};
@@ -17,7 +18,7 @@ class CfgFunctions {
             class initVehicleNPC {};
             class initHQ {};
 
-            class initBoxes {};
+            class initAmmobox {};
 
             class initCoopRServer {postInit = 1; };
             class initCoopRClients {postInit = 1; };

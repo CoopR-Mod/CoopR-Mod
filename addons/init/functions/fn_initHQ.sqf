@@ -8,10 +8,8 @@ if (_logic isEqualTo objNull) exitWith { ERROR("Module is not defined") };
 
 if (_sideOfHQ isEqualTo "West") then {
     COOPR_HQ_WEST = _logic;
-    COOPR_HQ_EAST = objNull;
     SLOG("HQ West initialized");
 } else {
-    COOPR_HQ_WEST = objNull;
     COOPR_HQ_EAST = _logic;
     SLOG("HQ East initialized");
 };

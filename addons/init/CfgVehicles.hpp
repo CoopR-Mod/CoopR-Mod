@@ -88,7 +88,7 @@ class CfgVehicles
           description = "Sync this module with an AI unit to make it the CoopR vehicle npc unit";
         };
     };
-    class CoopR_ModuleSetupVehicle: Module_F
+    class CoopR_ModuleSetupAmmobox: Module_F
     {
         scope = 2;
         displayName = "Ammobox Module";

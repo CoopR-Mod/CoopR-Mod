@@ -3,7 +3,7 @@
 params ["_prisoner"];
 
 private _savedLoadout =  _prisoner getVariable [KEY_LOADOUT, []];
-private _oldPosition =  _prisoner getVariable [KEY_POSITION, getPos GLOB(COOPR_HQ)];
+private _oldPosition =  _prisoner getVariable [KEY_POSITION, getPos COOPR_HQ_WEST];
 
 SLOG("prison time has been served out");
 

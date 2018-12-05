@@ -1,10 +1,8 @@
 #include "script_component.hpp"
+params [["_vehicleNpc", objNull]];
 
-private _vehicleNpc = GLOB(COOPR_NPC_VEHICLE);
+if (_vehicleNpc isEqualTo objNull) exitWith { ERROR("_vehicleNpc variable was not set") };
 
-if (isServer) then {
-    [_vehicleNpc,"STAND_U1","ASIS"] call BIS_fnc_ambientAnim;
-};
 _vehicleNpc addAction [localize "str.coopr.init.action.vehicles", {call coopr_fnc_addVehicleKeyWest},[],1.5,true,true,"","!('ACE_key_west' in items _this)",3];
 
-FLOG("%1 initialized", COOPR_NPC_VEHICLE);
+FLOG("initialized %1 as vehicle npc", _vehicleNpc);

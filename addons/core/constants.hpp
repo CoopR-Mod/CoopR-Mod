@@ -8,6 +8,5 @@
 #define COOPR_BOX_MAGAZINES "coopr_box_magazines"
 
 //AREAS
-#define COOPR_HQ "coopr_area_hq"
 #define COOPR_LOBBY "coopr_area_lobby"
 //#define COOPR_ESC_ZONE "coopr_esc_zone"

@@ -11,6 +11,7 @@ class CfgFunctions {
             class setupVehicleModule {};
             class setupHQModule {};
             class setupAmmoboxModule {};
+            class setupEquipmentboxModule {};
 
             class initCommanderNPC {};
             class initQuartermasterNPC {};
@@ -19,6 +20,7 @@ class CfgFunctions {
             class initHQ {};
 
             class initAmmobox {};
+            class initEquipmentbox {};
 
             class verifySetup {};
             class initCoopRServer {postInit = 1;};

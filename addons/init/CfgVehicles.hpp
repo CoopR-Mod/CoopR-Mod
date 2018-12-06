@@ -106,6 +106,24 @@ class CfgVehicles
           description = "Sync this module with an container or box to make it a CoopR ammo box";
         };
     };
+    class CoopR_ModuleSetupEquipmentbox: Module_F
+    {
+        scope = 2;
+        displayName = "Equipmentbox Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupEquipmentboxModule";
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "Sync this module with an container or box to make it a CoopR equipment box";
+        };
+    };
     class CoopR_ModuleSetupHQ: Module_F
     {
         scope = 2;

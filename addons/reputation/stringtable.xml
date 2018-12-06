@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CoopR Mod">
     <Package name="reputation">
-        <Key ID="str.coopr.reputation.action.commander">
+        <Key ID="str.coopr.aar.action.commander">
             <Original>After Action Report</Original>
             <German>Abschlussbericht</German>
         </Key>

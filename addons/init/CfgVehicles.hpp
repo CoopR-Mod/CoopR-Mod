@@ -154,4 +154,22 @@ class CfgVehicles
           description = "Place this module to set the CoopR HQ position";
         };
     };
+    class CoopR_LobbySetupHQ: Module_F
+    {
+        scope = 2;
+        displayName = "Lobby Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupLobbyModule";
+        functionPriority = 2;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "The lobby defines the position where players spawn before login";
+        };
+    };
 };

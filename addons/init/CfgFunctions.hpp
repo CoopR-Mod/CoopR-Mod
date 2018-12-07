@@ -10,6 +10,8 @@ class CfgFunctions {
             class setupIntelligenceModule {};
             class setupVehicleModule {};
             class setupHQModule {};
+            class setupLobbyModule {};
+
             class setupAmmoboxModule {};
             class setupEquipmentboxModule {};
 
@@ -18,6 +20,7 @@ class CfgFunctions {
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
+            class initLobby {};
 
             class initAmmobox {};
             class initEquipmentbox {};

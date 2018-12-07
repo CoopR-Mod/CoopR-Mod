@@ -3,7 +3,7 @@
 params [["_sideOfHQ", objNull],
         ["_logic", objNull]];
 
-if (_sideOfHQ isEqualTo objNull) exitWith { ERROR("There was not side set for a HQ module") };
+if (_sideOfHQ isEqualTo objNull) exitWith { ERROR("There was no side set for a HQ module") };
 if (_logic isEqualTo objNull) exitWith { ERROR("Module is not defined") };
 
 if (_sideOfHQ isEqualTo "West") then {

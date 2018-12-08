@@ -24,7 +24,7 @@ player setUnitLoadout _loadout;
 // temporary workaround until health persistence is implemented
 if(coopr_fnc_isACEActive) then {
     [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
-};
+}
 
 cutText ["", "BLACK IN", 0.1];
 

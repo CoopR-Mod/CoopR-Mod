@@ -1,7 +1,10 @@
 #!/bin/sh
 
 ARMAKE="tools/armake";
+VALIDATOR="tools/sqf_validator.py";
 DEST="@CoopR/addons"
+
+python $VALIDATOR
 
 rm -rf @CoopR
 mkdir -p $DEST

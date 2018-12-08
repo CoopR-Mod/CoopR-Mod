@@ -2,7 +2,11 @@
 :: into the @CoopR folder in the root directory
 
 SET armake64="tools\armake_w64.exe"
+SET validator="tools\sqf_validator.py"
 SET dest="@CoopR\addons"
+
+python %validator%
+
 rmdir /Q /S "@CoopR"
 mkdir %dest%
 

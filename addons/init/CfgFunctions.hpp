@@ -27,7 +27,7 @@ class CfgFunctions {
 
             class verifySetup {};
             class initCoopRServer {postInit = 1;};
-            //class initCoopRClients {postInit = 1; };
+            class initCoopRClients {postInit = 1; };
         }
         class coopr_init_tests {
             file = "x\coopr\addons\init\tests";

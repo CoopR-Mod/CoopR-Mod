@@ -22,7 +22,7 @@ player setUnitLoadout _loadout;
 //};
 
 // temporary workaround until health persistence is implemented
-if(coopr_fnc_isACEActive) then {
+if(coopr_fnc_isACE3Active) then {
     [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
 };
 

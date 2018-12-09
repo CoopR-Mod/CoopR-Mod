@@ -19,7 +19,6 @@ mkdir %dest%
 %armake64% build -p addons\integration %dest%\integration.pbo
 %armake64% build -p addons\intel %dest%\intel.pbo
 %armake64% build -p addons\lobby %dest%\lobby.pbo
-%armake64% build -p addons\prison %dest%\prison.pbo
 %armake64% build -p addons\reputation %dest%\reputation.pbo
 
 copy mod.cpp @CoopR\mod.cpp

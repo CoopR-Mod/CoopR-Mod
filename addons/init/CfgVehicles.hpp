@@ -139,13 +139,19 @@ class CfgVehicles
 
         class Arguments {
               class Side {
-                  displayName = "Side"
-                  description = "The side the HQ is bound to";
+                  displayName = "Side";
+                  description = "The side the HQ is bound to. (default = West)";
                   typeName = "STRING";
                   class Values : ArgumentsBaseUnits {
-                      class opt_1 {name = "West"; value = "West"; default="West";};
-                      class opt_2 {name = "East"; value = "East"; default="West";};
+                      class opt_1 {name = "West"; value = "West"; default = 1;};
+                      class opt_2 {name = "East"; value = "East";};
                   }
+              }
+              class Faction {
+                  displayName = "Faction";
+                  description = "The unit faction of this HQ. Relevant for features like initial loadout etc. (default = BLU_F)"
+                  typeName = "STRING";
+                  defaultvalue = "BLU_F";
               }
         }
 

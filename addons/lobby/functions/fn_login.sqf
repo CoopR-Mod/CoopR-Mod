@@ -17,8 +17,6 @@ private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
 private _deathTimestamp = [_character, COOPR_KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
 private _reputation = [_character, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_character, COOPR_KEY_MONEY] call CBA_fnc_hashGet;
-private _prisoner = [_character, COOPR_KEY_IS_PRISONER] call CBA_fnc_hashGet;
-private _prisonTime = [_character, COOPR_KEY_PRISON_START] call CBA_fnc_hashGet;
 private _position = [_character, COOPR_KEY_POSITION] call CBA_fnc_hashGet;
 private _loadout = [_character, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;
 
@@ -29,8 +27,6 @@ player setVariable [COOPR_KEY_STATE, _state, true];
 player setVariable [COOPR_KEY_DEATH_TIMESTAMP, _deathTimestamp, true];
 player setVariable [COOPR_KEY_REPUTATION, _reputation, true];
 player setVariable [COOPR_KEY_MONEY, _money, true];
-player setVariable [COOPR_KEY_IS_PRISONER, _prisoner, true];
-player setVariable [COOPR_KEY_PRISON_START, _prisonTime, true];
 player setVariable [COOPR_KEY_POSITION, _position, true];
 player setVariable [COOPR_KEY_LOADOUT, _loadout, true];
 

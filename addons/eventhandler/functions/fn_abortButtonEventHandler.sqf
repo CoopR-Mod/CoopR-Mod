@@ -10,9 +10,8 @@
             [] spawn {
                 LSTART("ABORT SYNC");
                 private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
-                private _isPrisoner = player getVariable [COOPR_KEY_IS_PRISONER, false];
 
-                if(_isLoggedIn and not _isPrisoner) then {
+                if(_isLoggedIn) then {
                     SLOG("saving character state before mission end...");
                     [SERVER, "coopr_fnc_syncPlayerToServer", [player],
                         [], {
@@ -20,7 +19,7 @@
                         }
                     ] call Promise_Create;
                 }else {
-                    SLOG("character is still prisoner or in logged out - will not save state before mission end");
+                    SLOG("character is not logged in. Character state will not be saved");
                 };
                 LEND("ABORT SYNC");
             };

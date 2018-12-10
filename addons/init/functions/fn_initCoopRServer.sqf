@@ -6,7 +6,7 @@ if(isServer) then {
         LSTART("INIT SERVER");
         call coopr_fnc_initPromise;
         call coopr_fnc_initEventsServer;
-        call coopr_fnc_staticData;
+        //call coopr_fnc_staticData;
         SLOG("server initialized");
         LEND("INIT SERVER");
         true call coopr_fnc_sync;

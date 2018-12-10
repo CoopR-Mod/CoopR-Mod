@@ -1,7 +1,7 @@
 
 #include "script_component.hpp"
 
-private _oldPos = player getVariable [KEY_POSITION, []];
+private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
 
 player setPos _oldPos;
 

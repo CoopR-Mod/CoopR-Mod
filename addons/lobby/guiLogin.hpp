@@ -18,56 +18,66 @@ class coopr_Login_Dialog{
    class coopr_Login_Profile_1: RscPicture
    {
    	idc = 1200;
-   	text = "#(argb,8,8,3)color(1,1,1,1)";
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
-   class coopr_Login_Profile_1_Overlay: RscButton
+   class coopr_Login_Profile_1_Overlay: RscButtonMenu
    {
    	idc = 1210;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
+   	colorBackgroundActive[] = {0,0,0,0};
+   	color[] = {0,0,0,0};
+   	color2[] = {0,0,0,0};
    	colorBackground[] = {0,0,0,0};
+   	colorBackground2[] = {0,0,0,0};
    };
    class coopr_Login_Profile_2: RscPicture
    {
    	idc = 1201;
-   	text = "#(argb,8,8,3)color(1,1,1,1)";
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
-   class coopr_Login_Profile_2_Overlay: RscButton
+   class coopr_Login_Profile_2_Overlay: RscButtonMenu
    {
    	idc = 1220;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
+   	colorBackgroundActive[] = {0,0,0,0};
+   	color[] = {0,0,0,0};
+   	color2[] = {0,0,0,0};
    	colorBackground[] = {0,0,0,0};
+   	colorBackground2[] = {0,0,0,0};
    };
    class coopr_Login_Profile_3: RscPicture
    {
    	idc = 1202;
-   	text = "#(argb,8,8,3)color(1,1,1,1)";
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
-   class coopr_Login_Profile_3_Overlay: RscButton
+   // https://forums.bohemia.net/forums/topic/161429-button-texture/
+   class coopr_Login_Profile_3_Overlay: RscButtonMenu
    {
    	idc = 1230;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
+   	colorBackgroundActive[] = {0,0,0,0};
+   	color[] = {0,0,0,0};
+   	color2[] = {0,0,0,0};
    	colorBackground[] = {0,0,0,0};
+   	colorBackground2[] = {0,0,0,0};
    };
    class coopr_Login_Profile_1_Button: RscButton
    {

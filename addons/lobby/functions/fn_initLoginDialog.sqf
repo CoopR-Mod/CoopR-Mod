@@ -6,10 +6,6 @@ SLOG("initialising login dialog");
 
 private _loginDisplay = findDisplay 1101;
 
-private _profilePicture1 = _loginDisplay displayCtrl 1200;
-private _profilePicture2 = _loginDisplay displayCtrl 1201;
-private _profilePicture3 = _loginDisplay displayCtrl 1202;
-
 private _profileInfos = [];
 _profileInfos set [0, _loginDisplay displayCtrl 1100];
 _profileInfos set [1, _loginDisplay displayCtrl 1101];
@@ -25,8 +21,9 @@ _profileOverlays set [0, _loginDisplay displayCtrl 1210];
 _profileOverlays set [1, _loginDisplay displayCtrl 1220];
 _profileOverlays set [2, _loginDisplay displayCtrl 1230];
 
-private _profileLabel1 = _loginDisplay displayCtrl 1001;
-//private _profileLabel2 = _loginDisplay displayCtrl 1101;
-//private _profileLabel3 = _loginDisplay displayCtrl 1602;
+private _characterPictures = [];
+_characterPictures set [0, _loginDisplay displayCtrl 1200];
+_characterPictures set [1, _loginDisplay displayCtrl 1201];
+_characterPictures set [2, _loginDisplay displayCtrl 1202];
 
-[_profileInfos, _profileOverlays, _profileButtons] call coopr_fnc_updateLoginDialog;
+[_profileInfos, _profileOverlays, _profileButtons, _characterPictures] call coopr_fnc_updateLoginDialog;

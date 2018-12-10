@@ -2,7 +2,7 @@
 
 params ["_target", "_caller"];
 
-private _gainedReputation = REP_AAR_MULTIPLIER call coopr_fnc_convertTempToReputation;
+private _gainedReputation = COOPR_REP_AAR_MULTIPLIER call coopr_fnc_convertTempToReputation;
 
 _target commandChat localize "str.coopr.reputation.chatter.aar";
 

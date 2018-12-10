@@ -11,6 +11,7 @@ class CfgFunctions {
             class updateLoginDialog {};
             class showNewCharacterDialog {};
             class setOverlayHandler {};
+            class updateCharacterPicture {};
             class setCharacterInfo {};
             class isCharacterSlot {};
             class createCharacterHandler {};
@@ -18,6 +19,8 @@ class CfgFunctions {
             class loginDialogUnloadHandler {};
             class newCharacterDialogUnloadHandler {};
             class newCharacterButtonHandler {};
+            class roleSelectionEH {};
+            class getImageForRole {};
         }
     }
 }

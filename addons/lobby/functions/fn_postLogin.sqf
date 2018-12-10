@@ -1,9 +1,7 @@
 #include "script_component.hpp"
 
-private _oldPos = player getVariable [KEY_POSITION, []];
-private _prisonTime = player getVariable [KEY_PRISON_START, 0];
-private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
-private _loadout = player getVariable [KEY_LOADOUT, []];
+private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
+private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
 
 SLOG("post login init...");
 
@@ -14,17 +12,16 @@ if(count _oldPos > 0) then {
    player setPos getPos COOPR_HQ_WEST;
 };
 
-player setUnitLoadout _loadout;
-
-//if(_isPrisoner) then {
- //   SLOG("player was lastly seen in prison");
-  //  call coopr_fnc_checkPrisonRefugee;
-//};
+if (count _loadout isEqualTo 0) then {
+    ERROR("loadout was empty");
+} else {
+    player setUnitLoadout _loadout;
+};
 
 // temporary workaround until health persistence is implemented
-if(coopr_fnc_isACEActive) then {
+if(call coopr_fnc_isACE3Active) then {
     [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
-}
+};
 
 cutText ["", "BLACK IN", 0.1];
 

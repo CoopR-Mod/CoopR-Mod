@@ -32,9 +32,9 @@
             <Original>Money:</Original>
             <German>Sold:</German>
         </Key>
-        <Key ID="str.coopr.profile.info.isprisoner">
-            <Original>Prisoner:</Original>
-            <German>Gefangener:</German>
+        <Key ID="str.coopr.profile.info.role">
+            <Original>Role:</Original>
+            <German>Rolle:</German>
         </Key>
         <Key ID="str.coopr.profile.info.wia.timeleft">
             <Original>Hospilitized:</Original>

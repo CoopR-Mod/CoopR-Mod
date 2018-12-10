@@ -7,7 +7,7 @@ FLOG("update profile for player %1", _playerUid);
 
 private _allProfiles = call coopr_fnc_getAllProfiles;
 [_allProfiles, _playerUid, _characterSlots] call CBA_fnc_hashSet;
-profileNamespace setVariable [KEY_PLAYER_PROFILES, _allProfiles];
+profileNamespace setVariable [COOPR_KEY_PLAYER_PROFILES, _allProfiles];
 saveProfileNamespace;
 
 LEND("UPDATING PROFILE");

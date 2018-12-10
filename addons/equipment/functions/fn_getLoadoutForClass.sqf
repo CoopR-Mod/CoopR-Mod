@@ -1,13 +1,12 @@
-
 #include "script_component.hpp"
 
-params ["_class"];
+params ["_role"];
 
-switch (_class) do {
-    case CLASS_LEADER: {  CLASS_LEADER_LOADOUT };
-    case CLASS_MEDIC: { CLASS_MEDIC_LOADOUT};
-    case CLASS_ENGINEER: { CLASS_ENGINEER_LOADOUT };
-    case CLASS_DMR: { CLASS_DMR_LOADOUT };
-    case CLASS_MG: { CLASS_MG_LOADOUT };
+switch (_role) do {
+    case COOPR_ROLE_LEADER: { COOPR_ROLE_LEADER_LOADOUT };
+    case COOPR_ROLE_MEDIC: { COOPR_ROLE_MEDIC_LOADOUT};
+    case COOPR_ROLE_ENGINEER: { COOPR_ROLE_ENGINEER_LOADOUT };
+    case COOPR_ROLE_DMR: { COOPR_ROLE_DMR_LOADOUT };
+    case COOPR_ROLE_MG: { COOPR_ROLE_MG_LOADOUT };
     default { [] };
 };

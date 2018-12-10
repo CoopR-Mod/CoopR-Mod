@@ -8,37 +8,35 @@
 #define ABORT_BUTTON 104
 
 
-#define KEY_PLAYER_PROFILES "coopr_player_profiles"
-#define KEY_PLAYER_LOGGEDIN "coopr_login_state"
-#define KEY_INTEL_PROGRESS "coopr_intel_progess"
-#define KEY_TEAMKILLS "coopr_player_teamkills"
+#define COOPR_KEY_PLAYER_PROFILES "coopr_player_profiles"
+#define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
+#define COOPR_KEY_INTEL_PROGRESS "coopr_intel_progess"
+#define COOPR_KEY_TEAMKILLS "coopr_player_teamkills"
 
-#define KEY_SLOT "coopr_character_slot"
-#define KEY_NAME "coopr_character_name"
-#define KEY_UID "coopr_character_uid"
-#define KEY_STATE "coopr_character_state"
-#define KEY_REPUTATION "coopr_character_reputation"
-#define KEY_TMP_REPUTATION "coopr_character_tmp_reputation"
-#define KEY_MONEY "coopr_character_money"
-#define KEY_CLASS "coopr_character_class"
-#define KEY_IS_PRISONER "coopr_character_prisoner"
-#define KEY_PRISON_START "coopr_character_prison_start"
-#define KEY_POSITION "coopr_character_position"
-#define KEY_LOADOUT "coopr_character_loadout"
-#define KEY_DEATH_TIMESTAMP "coopr_character_death_timestamp"
+#define COOPR_KEY_SLOT "coopr_character_slot"
+#define COOPR_KEY_NAME "coopr_character_name"
+#define COOPR_KEY_UID "coopr_character_uid"
+#define COOPR_KEY_STATE "coopr_character_state"
+#define COOPR_KEY_REPUTATION "coopr_character_reputation"
+#define COOPR_KEY_TMP_REPUTATION "coopr_character_tmp_reputation"
+#define COOPR_KEY_MONEY "coopr_character_money"
+#define COOPR_KEY_ROLE "coopr_character_role"
+#define COOPR_KEY_POSITION "coopr_character_position"
+#define COOPR_KEY_LOADOUT "coopr_character_loadout"
+#define COOPR_KEY_DEATH_TIMESTAMP "coopr_character_death_timestamp"
 
-#define STATE_OK "coopr_character_state_ok"
-#define STATE_WIA "coopr_character_state_wia"
-#define STATE_KIA "coopr_character_state_kia"
+#define COOPR_STATE_OK "coopr_character_state_ok"
+#define COOPR_STATE_WIA "coopr_character_state_wia"
+#define COOPR_STATE_KIA "coopr_character_state_kia"
 
 #define EMPTY_HASH [] call CBA_fnc_hashCreate
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
-#define CLASS_LEADER "coopr_class_leader"
-#define CLASS_MEDIC "coopr_class_medic"
-#define CLASS_ENGINEER "coopr_class_engineer"
-#define CLASS_DMR "coopr_class_marksman"
-#define CLASS_MG "coopr_class_mg"
-#define CLASS_NONE "coopr_class_none"
+#define COOPR_ROLE_LEADER "coopr_role_leader"
+#define COOPR_ROLE_MEDIC "coopr_role_medic"
+#define COOPR_ROLE_ENGINEER "coopr_role_engineer"
+#define COOPR_ROLE_DMR "coopr_role_marksman"
+#define COOPR_ROLE_MG "coopr_role_mg"
+#define COOPR_ROLE_NONE "coopr_role_none"
 
 

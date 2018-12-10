@@ -6,6 +6,8 @@ class CfgFunctions {
             class getLoadoutForClass {};
             class equipHandler {};
             class selectHandler {};
+            class initLoadoutTemplates {postInit = 1};
+            class initQuartermasterRepItemTemplates {postInit = 1};
         }
     }
 }

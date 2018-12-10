@@ -4,7 +4,6 @@
 
 #define DEBUG_CTX "COOPR.REPUTATION"
 
-#define REP_AAR_MULTIPLIER 1.0
-#define REP_PER_INF 1
+#define COOPR_REP_AAR_MULTIPLIER 1.0
 
 #include "\x\coopr\addons\core\script_macros.hpp"

@@ -47,6 +47,15 @@ class CfgVehicles
         isDisposable = 1;
         is3DEN = 0;
 
+        class Arguments {
+              class RepItemTemplate {
+                  displayName = "Reputation Item Template";
+                  description = "The template list of items that can be purchased with reputation points";
+                  typeName = "STRING";
+                  defaultValue = "vanilla";
+              }
+        }
+
         class ModuleDescription: ModuleDescription
         {
             description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";
@@ -139,19 +148,61 @@ class CfgVehicles
 
         class Arguments {
               class Side {
-                  displayName = "Side"
-                  description = "The side the HQ is bound to";
+                  displayName = "Side";
+                  description = "The side the HQ is bound to. (default = West)";
                   typeName = "STRING";
-                  class Values : ArgumentsBaseUnits {
-                      class opt_1 {name = "West"; value = "West"; default="West";};
-                      class opt_2 {name = "East"; value = "East"; default="West";};
+                  class Values {
+                      class opt_1 {name = "West"; value = "West"; default = 1;};
+                      class opt_2 {name = "East"; value = "East";};
                   }
+              }
+              class Faction {
+                  displayName = "Faction";
+                  description = "The unit faction of this HQ"
+                  typeName = "STRING";
+                  defaultvalue = "BLU_F";
+              }
+              class InitLoadout {
+                  displayName = "Initial Loadout Template";
+                  description = "The template for the initial loadout for new created characters"
+                  typeName = "STRING";
+                  defaultvalue = "vanilla";
+              }
+              class ReputationMan {
+                  displayName = "Reputation per enemy (infantry)";
+                  description = "The amount of reputation points a player will receive for eliminating an enemy infantry unit"
+                  typeName = "NUMBER";
+                  defaultvalue = 1;
+              }
+              class WIAReputation {
+                  displayName = "Wounded in Action malus multiplier";
+                  description = "When a player is killed in action during a mission he will only receive a lowered amount of reputaton"
+                  typeName = "NUMBER";
+                  defaultvalue = 0.2;
               }
         }
 
         class ModuleDescription: ModuleDescription
         {
           description = "Place this module to set the CoopR HQ position";
+        };
+    };
+    class CoopR_LobbySetupHQ: Module_F
+    {
+        scope = 2;
+        displayName = "Lobby Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupLobbyModule";
+        functionPriority = 2;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "The lobby defines the position where players spawn before login";
         };
     };
 };

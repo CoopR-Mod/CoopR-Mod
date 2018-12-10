@@ -9,13 +9,13 @@ private _victimIsPerson = _victim call CBA_fnc_isPerson;
 private _playerName = name player;
 
 if (_victimWasEnemy) then {
-    REP_PER_INF call coopr_fnc_updateTempReputation;
+    COOPR_REP_MAN_WEST call coopr_fnc_updateTempReputation;
 };
 
 if (_victimWasEnemy isEqualTo false) then {
-      private _lastTK = _killer getVariable [KEY_TEAMKILLS, 0];
+      private _lastTK = _killer getVariable [COOPR_KEY_TEAMKILLS, 0];
       private _newTK = _lastTK + 1;
-      _killer setVariable [KEY_TEAMKILLS,  _newTK];
+      _killer setVariable [COOPR_KEY_TEAMKILLS,  _newTK];
       FFLOG("%1 adding TK - actual %2", _playerName, _newTk);
 
       if(_newTK >= MAX_TK) then {

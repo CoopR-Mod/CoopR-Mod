@@ -1,10 +1,15 @@
 #include "script_component.hpp"
 
-if (isNil "COOPR_HQ_WEST" && isNil "COOPR_HQ_EAST") then {
+if (isNil "COOPR_HQ_WEST" && isNil "COOPR_HQ_EAST") exitWith {
     SETUPERROR("There has to be at least one HQ module placed");
     false;
-} else {
-    SLOG("Verification of setup modules successful");
-    true; // all fine
-}
+};
+if (isNil "COOPR_LOBBY") exitWith {
+    SETUPERROR("There has to be at least one lobby module placed");
+    false;
+};
+SLOG("Verification of setup modules successful");
+true; // all fine
+
+
 

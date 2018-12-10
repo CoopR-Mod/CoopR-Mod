@@ -6,10 +6,12 @@ private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
 private _registerHandlerId = _profileOverlay getVariable ["_registerHandlerId", -1];
 
 if(_state isEqualTo COOPR_STATE_KIA or _state isEqualTo COOPR_STATE_WIA) exitWith {
-    SLOG("character is kia/wia - removing overlay handling");
-    _profileOverlay ctrlRemoveEventHandler ["MouseButtonDown", _registerHandlerId];
-};
+    SLOG("character is kia/wia - disabling overlay button");
+    _profileOverlay ctrlEnable false;
+} ;
 
+// in case it has been disabled before
+_profileOverlay ctrlEnable true;
 _profileOverlay setVariable ["_character", _character];
 
 _loginHandler = {

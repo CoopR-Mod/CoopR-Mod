@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (call coopr_fnc_isACE3Active) then {
-    call coopr_fnc_ace3_addPlayerActions;d
+    call coopr_fnc_ace3_addPlayerActions;
 } else {
 	player addAction [localize "str.coopr.init.action.rep", { player call coopr_fnc_showReputation; } , [], 0.5, true, true, "", "true"];
 	// player addAction [localize "str.coopr.init.action.intel", { [player, clientOwner] remoteExec ["coopr_fnc_showIntelProgress", SERVER]; } , [], 0.5, true, true, "", "true"];

@@ -8,7 +8,7 @@ params [["_playerId", 0],
         ["_money", 0],
         ["_prisoner", false],
         ["_prisonStart", 0],
-        ["_position", getPos GLOB(DPL_HQ)],
+        ["_position", getPos COOPR_HQ_WEST],
         ["_state", STATE_OK],
         ["_deathTimestamp", 0],
         ["_loadout", []]];

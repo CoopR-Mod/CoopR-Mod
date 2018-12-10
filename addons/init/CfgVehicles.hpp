@@ -142,7 +142,7 @@ class CfgVehicles
                   displayName = "Side";
                   description = "The side the HQ is bound to. (default = West)";
                   typeName = "STRING";
-                  class Values : ArgumentsBaseUnits {
+                  class Values {
                       class opt_1 {name = "West"; value = "West"; default = 1;};
                       class opt_2 {name = "East"; value = "East";};
                   }

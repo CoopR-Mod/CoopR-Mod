@@ -6,7 +6,7 @@ private _uid = getPlayerUID player;
 private _slot = _player getVariable [COOPR_KEY_SLOT, -1];
 private _name = _player getVariable [COOPR_KEY_NAME, "<No Name Found>"];
 private _money = _player getVariable [COOPR_KEY_MONEY, "<No Value Found>"];
-private _class = _player getVariable [COOPR_KEY_CLASS, COOPR_ROLE_NONE];
+private _role = _player getVariable [COOPR_KEY_ROLE, COOPR_ROLE_NONE];
 private _reputation = _player getVariable [COOPR_KEY_REPUTATION, "<No Value Found>"];
 private _prisoner = _player getVariable [COOPR_KEY_IS_PRISONER, false];
 private _prisonTime = _player getVariable [COOPR_KEY_PRISON_START, 0];
@@ -20,7 +20,7 @@ SLOG("mapping player variables to hash...");
 [_uid,
  _slot,
  _name,
- _class,
+ _role,
  _reputation,
  _money,
  _prisoner,

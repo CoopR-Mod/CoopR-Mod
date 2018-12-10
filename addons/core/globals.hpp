@@ -20,7 +20,7 @@
 #define COOPR_KEY_REPUTATION "coopr_character_reputation"
 #define COOPR_KEY_TMP_REPUTATION "coopr_character_tmp_reputation"
 #define COOPR_KEY_MONEY "coopr_character_money"
-#define COOPR_KEY_CLASS "coopr_character_class"
+#define COOPR_KEY_ROLE "coopr_character_role"
 #define COOPR_KEY_IS_PRISONER "coopr_character_prisoner"
 #define COOPR_KEY_PRISON_START "coopr_character_prison_start"
 #define COOPR_KEY_POSITION "coopr_character_position"

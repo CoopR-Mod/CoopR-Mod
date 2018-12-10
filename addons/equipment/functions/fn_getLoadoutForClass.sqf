@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 
-params ["_class"];
+params ["_role"];
 
-switch (_class) do {
+switch (_role) do {
     case COOPR_ROLE_LEADER: { COOPR_ROLE_LEADER_LOADOUT };
     case COOPR_ROLE_MEDIC: { COOPR_ROLE_MEDIC_LOADOUT};
     case COOPR_ROLE_ENGINEER: { COOPR_ROLE_ENGINEER_LOADOUT };

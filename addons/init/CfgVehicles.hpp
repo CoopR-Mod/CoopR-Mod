@@ -149,9 +149,15 @@ class CfgVehicles
               }
               class Faction {
                   displayName = "Faction";
-                  description = "The unit faction of this HQ. Relevant for features like initial loadout etc. (default = BLU_F)"
+                  description = "The unit faction of this HQ"
                   typeName = "STRING";
                   defaultvalue = "BLU_F";
+              }
+              class InitLoadout {
+                  displayName = "Initial Loadout Template";
+                  description = "The template for the initial loadout for new created characters"
+                  typeName = "STRING";
+                  defaultvalue = "no_mods";
               }
         }
 

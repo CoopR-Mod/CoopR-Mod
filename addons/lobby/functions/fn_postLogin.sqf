@@ -14,7 +14,11 @@ if(count _oldPos > 0) then {
    player setPos getPos COOPR_HQ_WEST;
 };
 
-player setUnitLoadout _loadout;
+if (count _loadout isEqualTo 0) then {
+    ERROR("loadout was empty");
+} else {
+    player setUnitLoadout _loadout;
+};
 
 //if(_isPrisoner) then {
  //   SLOG("player was lastly seen in prison");
@@ -22,7 +26,7 @@ player setUnitLoadout _loadout;
 //};
 
 // temporary workaround until health persistence is implemented
-if(coopr_fnc_isACE3Active) then {
+if(call coopr_fnc_isACE3Active) then {
     [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
 };
 

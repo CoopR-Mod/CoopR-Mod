@@ -12,7 +12,7 @@ private _textboxInfos = _vendorDisplay displayCtrl 2001;
 private _buttonEquip = _vendorDisplay displayCtrl 2600;
 private _currentReputation = player getVariable [KEY_REPUTATION, 0];
 
-private _itemsHash = [REP_ITEMS, []] call CBA_fnc_hashCreate;
+private _itemsHash = [COOPR_REP_ITEMS_WEST, []] call CBA_fnc_hashCreate;
 private _itemKeys = [_itemsHash] call CBA_fnc_hashKeys;
 
 // assign handler data to button

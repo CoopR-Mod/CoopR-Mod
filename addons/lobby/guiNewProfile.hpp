@@ -74,7 +74,7 @@ class coopr_NewProfile_Dialog{
             h = 0.0220098 * safezoneH;
             colorBackground[] = {0,0,0,0.8};
         };
-        class coopr_NewProfile_Combo_Specialisation: RscCombo
+        class coopr_NewProfile_Combo_Role: RscCombo
         {
             idc = 3100;
             x = 0.216462 * safezoneW + safezoneX;
@@ -85,11 +85,11 @@ class coopr_NewProfile_Dialog{
         class coopr_NewProfile_ClassPicture: RscPicture
         {
             idc = 3200;
-            text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.525776 * safezoneW + safezoneX;
+            text = "\x\coopr\addons\lobby\data\images\group-leader-256.paa";
+            x = 0.48 * safezoneW + safezoneX;
             y = 0.235882 * safezoneH + safezoneY;
-            w = 0.180434 * safezoneW;
-            h = 0.506226 * safezoneH;
+            w = 0.21 * safezoneW;
+            h = 0.30 * safezoneH;
             colorBackground[] = {0.6,0.6,0.4,0.8};
         };
 

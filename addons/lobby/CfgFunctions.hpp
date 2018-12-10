@@ -18,6 +18,8 @@ class CfgFunctions {
             class loginDialogUnloadHandler {};
             class newCharacterDialogUnloadHandler {};
             class newCharacterButtonHandler {};
+            class roleSelectionEH {};
+            class getImageForRole {};
         }
     }
 }

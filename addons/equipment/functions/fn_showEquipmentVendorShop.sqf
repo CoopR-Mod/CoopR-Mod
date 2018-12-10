@@ -10,7 +10,7 @@ private _listBox = _vendorDisplay displayCtrl 2500;
 private _textboxReputation = _vendorDisplay displayCtrl 2002;
 private _textboxInfos = _vendorDisplay displayCtrl 2001;
 private _buttonEquip = _vendorDisplay displayCtrl 2600;
-private _currentReputation = player getVariable [KEY_REPUTATION, 0];
+private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
 
 private _itemsHash = [COOPR_REP_ITEMS_WEST, []] call CBA_fnc_hashCreate;
 private _itemKeys = [_itemsHash] call CBA_fnc_hashKeys;

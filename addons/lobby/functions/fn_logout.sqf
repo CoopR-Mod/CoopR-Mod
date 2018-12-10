@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
+private _isPrisoner = player getVariable [COOPR_KEY_IS_PRISONER, false];
 
 cutText ["returning to character lobby.", "BLACK OUT", 0.5];
 sleep 1;

@@ -9,22 +9,22 @@ params [["_playerId", 0],
         ["_prisoner", false],
         ["_prisonStart", 0],
         ["_position", getPos COOPR_HQ_WEST],
-        ["_state", STATE_OK],
+        ["_state", COOPR_STATE_OK],
         ["_deathTimestamp", 0],
         ["_loadout", []]];
 
-private _statsHash = [[KEY_UID, _playerId],
-                      [KEY_SLOT, _slot],
-                      [KEY_NAME, _playerName],
-                      [KEY_CLASS, _classType],
-                      [KEY_STATE, _state],
-                      [KEY_REPUTATION, _reputation],
-                      [KEY_MONEY, _money],
-                      [KEY_IS_PRISONER, _prisoner],
-                      [KEY_POSITION, _position],
-                      [KEY_PRISON_START, _prisonStart],
-                      [KEY_DEATH_TIMESTAMP, _deathTimestamp],
-                      [KEY_LOADOUT, _loadout]];
+private _statsHash = [[COOPR_KEY_UID, _playerId],
+                      [COOPR_KEY_SLOT, _slot],
+                      [COOPR_KEY_NAME, _playerName],
+                      [COOPR_KEY_CLASS, _classType],
+                      [COOPR_KEY_STATE, _state],
+                      [COOPR_KEY_REPUTATION, _reputation],
+                      [COOPR_KEY_MONEY, _money],
+                      [COOPR_KEY_IS_PRISONER, _prisoner],
+                      [COOPR_KEY_POSITION, _position],
+                      [COOPR_KEY_PRISON_START, _prisonStart],
+                      [COOPR_KEY_DEATH_TIMESTAMP, _deathTimestamp],
+                      [COOPR_KEY_LOADOUT, _loadout]];
 
 SLOG("character hash created");
 

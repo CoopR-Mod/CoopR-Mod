@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 
-private _oldPos = player getVariable [KEY_POSITION, []];
-private _prisonTime = player getVariable [KEY_PRISON_START, 0];
-private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
-private _loadout = player getVariable [KEY_LOADOUT, []];
+private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
+private _prisonTime = player getVariable [COOPR_KEY_PRISON_START, 0];
+private _isPrisoner = player getVariable [COOPR_KEY_IS_PRISONER, false];
+private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
 
 SLOG("post login init...");
 

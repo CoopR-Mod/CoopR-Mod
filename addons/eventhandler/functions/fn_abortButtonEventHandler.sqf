@@ -9,8 +9,8 @@
         ((findDisplay MP_MENU) displayCtrl ABORT_BUTTON) ctrlAddEventHandler ["ButtonClick", {
             [] spawn {
                 LSTART("ABORT SYNC");
-                private _isLoggedIn = player getVariable [KEY_PLAYER_LOGGEDIN, false];
-                private _isPrisoner = player getVariable [KEY_IS_PRISONER, false];
+                private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+                private _isPrisoner = player getVariable [COOPR_KEY_IS_PRISONER, false];
 
                 if(_isLoggedIn and not _isPrisoner) then {
                     SLOG("saving character state before mission end...");

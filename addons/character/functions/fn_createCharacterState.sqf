@@ -3,7 +3,7 @@
 params [["_playerId", 0],
         ["_slot", -1],
         ["_playerName","<NoName>" ],
-        ["_role","<None>" ],
+        ["_role", COOPR_ROLE_NONE],
         ["_reputation", 0],
         ["_money", 0],
         ["_prisoner", false],

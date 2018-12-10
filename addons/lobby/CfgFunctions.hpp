@@ -11,6 +11,7 @@ class CfgFunctions {
             class updateLoginDialog {};
             class showNewCharacterDialog {};
             class setOverlayHandler {};
+            class updateCharacterPicture {};
             class setCharacterInfo {};
             class isCharacterSlot {};
             class createCharacterHandler {};

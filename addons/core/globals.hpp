@@ -34,11 +34,11 @@
 #define EMPTY_HASH [] call CBA_fnc_hashCreate
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
-#define CLASS_LEADER "coopr_class_leader"
-#define CLASS_MEDIC "coopr_class_medic"
-#define CLASS_ENGINEER "coopr_class_engineer"
-#define CLASS_DMR "coopr_class_marksman"
-#define CLASS_MG "coopr_class_mg"
-#define CLASS_NONE "coopr_class_none"
+#define ROLE_LEADER "coopr_role_leader"
+#define ROLE_MEDIC "coopr_role_medic"
+#define ROLE_ENGINEER "coopr_role_engineer"
+#define ROLE_DMR "coopr_role_marksman"
+#define ROLE_MG "coopr_role_mg"
+#define ROLE_NONE "coopr_role_none"
 
 

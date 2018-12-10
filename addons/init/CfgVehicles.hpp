@@ -159,6 +159,18 @@ class CfgVehicles
                   typeName = "STRING";
                   defaultvalue = "no_mods";
               }
+              class ReputationMan {
+                  displayName = "Reputation per enemy (infantry)";
+                  description = "The amount of reputation points a player will receive for eliminating an enemy infantry unit"
+                  typeName = "NUMBER";
+                  defaultvalue = 1;
+              }
+              class WIAReputation {
+                  displayName = "Wounded in Action malus multiplier";
+                  description = "When a player is killed in action during a mission he will only receive a lowered amount of reputaton"
+                  typeName = "NUMBER";
+                  defaultvalue = 0.2;
+              }
         }
 
         class ModuleDescription: ModuleDescription

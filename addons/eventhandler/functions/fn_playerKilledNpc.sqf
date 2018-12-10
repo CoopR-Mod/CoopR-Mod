@@ -9,7 +9,7 @@ private _victimIsPerson = _victim call CBA_fnc_isPerson;
 private _playerName = name player;
 
 if (_victimWasEnemy) then {
-    REP_PER_INF call coopr_fnc_updateTempReputation;
+    COOPR_REP_MAN_WEST call coopr_fnc_updateTempReputation;
 };
 
 if (_victimWasEnemy isEqualTo false) then {

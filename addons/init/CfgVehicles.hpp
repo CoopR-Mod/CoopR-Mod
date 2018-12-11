@@ -47,15 +47,6 @@ class CfgVehicles
         isDisposable = 1;
         is3DEN = 0;
 
-        class Arguments {
-              class RepItemTemplate {
-                  displayName = "Reputation Item Template";
-                  description = "The template list of items that can be purchased with reputation points";
-                  typeName = "STRING";
-                  defaultValue = "vanilla";
-              }
-        }
-
         class ModuleDescription: ModuleDescription
         {
             description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";

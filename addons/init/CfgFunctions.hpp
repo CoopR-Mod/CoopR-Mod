@@ -14,6 +14,7 @@ class CfgFunctions {
             class setupIntelligenceModule {};
             class setupVehicleModule {};
             class setupHQModule {};
+            class setupBasicRoleLoadoutModule {};
             class setupLobbyModule {};
 
             class setupAmmoboxModule {};

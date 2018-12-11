@@ -10,6 +10,7 @@ class CfgFunctions {
 
             class setupCommanderModule {};
             class setupQuartermasterModule {};
+            class setupQuartermasterItemsModule {};
             class setupIntelligenceModule {};
             class setupVehicleModule {};
             class setupHQModule {};

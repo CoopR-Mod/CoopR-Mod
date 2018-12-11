@@ -6,8 +6,9 @@ private _index = _this select 1;
 private _itemsHash = _ctrl getVariable ["_itemsHash", []];
 private _currentReputation = _ctrl getVariable ["_currentReputation", 0];
 private _textboxInfos = _ctrl getVariable ["_textboxInfos", objNull];
-private _selectedItem = _ctrl lbText _index;
-private _repNeeded = [_itemsHash, _selectedItem] call CBA_fnc_hashGet;
+private _selectedItem = _ctrl lbData _index;
+private _values = [_itemsHash, _selectedItem] call CBA_fnc_hashGet;
+private _repNeeded = _values select 0;
 
 if (_repNeeded > _currentReputation) then {
     private _repRemain =  _repNeeded - _currentReputation;

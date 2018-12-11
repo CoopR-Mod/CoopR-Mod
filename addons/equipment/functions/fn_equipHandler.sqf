@@ -9,8 +9,9 @@ private _listBox = _ctrl getVariable ["_listBox", objNull];
 private _index = lbCurSel _listBox;
 
 if (_index != -1) then {
-private _selectedItem = _listBox lbText _index;
-private _repNeeded = [_itemsHash, _selectedItem] call CBA_fnc_hashGet;
+private _selectedItem = _listBox lbData _index;
+private _values = [_itemsHash, _selectedItem] call CBA_fnc_hashGet;
+private _repNeeded = _values select 0;
 
 if (_repNeeded > _currentReputation) exitWith {
     [format ["not enough rep pts for item: %1", _selectedItem], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;

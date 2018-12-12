@@ -228,6 +228,11 @@ class CfgVehicles
                   typeName = "NUMBER";
                   defaultvalue = 0.2;
               }
+              class Communications {
+                  displayName = "HQ Comm Devices";
+                  description = "Devices that are used to communicate with the high command"
+                  typeName = "STRING";
+              }
         }
 
         class ModuleDescription: ModuleDescription

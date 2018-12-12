@@ -25,6 +25,7 @@ class CfgFunctions {
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
+            class initHQCommunications {};
             class initLobby {};
 
             class initAmmobox {};

@@ -23,3 +23,7 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgVehicles.hpp"
+
+// UI
+#include "\x\coopr\addons\core\define.hpp"
+#include "guiSupply.hpp"

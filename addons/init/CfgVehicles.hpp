@@ -233,6 +233,12 @@ class CfgVehicles
                   description = "Devices that are used to communicate with the high command"
                   typeName = "STRING";
               }
+              class SupplyVehicle {
+                  displayName = "Supply Vehicle";
+                  description = "Vehicle class of the supply transport vehicle (default='B_Truck_01_ammo_F')"
+                  typeName = "STRING";
+                  defaultValue = "B_Truck_01_ammo_F";
+              }
         }
 
         class ModuleDescription: ModuleDescription

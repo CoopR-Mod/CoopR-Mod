@@ -1,10 +1,10 @@
 #include "script_component.hpp"
 
-//params [ ["_supplyVehicleClass", objNull]];
+params [["_supplyVehicleClass", objNull]];
 
-//if (_supplyVehicleClass isEqualTo objNull) then {
- private   _supplyVehicleClass = "B_Truck_01_ammo_F";
-//};
+if (_supplyVehicleClass isEqualTo objNull or _supplyVehicleClass isEqualTo "") then {
+    _supplyVehicleClass = "B_Truck_01_ammo_F";
+};
 
 SLOG("supply requested");
 

@@ -31,10 +31,12 @@ _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloa
             if (_isNotEmptySlot) then {
                 [_x, _info] call coopr_fnc_setCharacterInfo;
                 [_x, _overlay, _forEachIndex] call coopr_fnc_setOverlayHandler;
-                [_x, _picture, _forEachIndex] call coopr_fnc_updateCharacterPicture;
+                [_x, _picture] call coopr_fnc_updateCharacterPicture;
                 // add logic to delete character
                 _removeButton setVariable ["_slot", _forEachIndex];
                 _removeButton ctrlAddEventHandler ["MouseButtonDown",  {call coopr_fnc_removeCharacterHandler}];
+            } else {
+                [nil, _picture] call coopr_fnc_updateCharacterPicture;
             };
 
         } forEach _characterSlots;

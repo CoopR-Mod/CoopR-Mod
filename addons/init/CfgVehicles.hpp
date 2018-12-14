@@ -239,6 +239,12 @@ class CfgVehicles
                   typeName = "STRING";
                   defaultValue = "B_Truck_01_ammo_F";
               }
+              class SupplyDeliveryTime {
+                  displayName = "Supply time to deliver (minutes)";
+                  description = "The time it takes until a supply delivery will arrive"
+                  typeName = "NUMBER";
+                  defaultValue = "1";
+              }
         }
 
         class ModuleDescription: ModuleDescription

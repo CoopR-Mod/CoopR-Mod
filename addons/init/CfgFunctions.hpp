@@ -17,9 +17,6 @@ class CfgFunctions {
             class setupBasicRoleLoadoutModule {};
             class setupLobbyModule {};
 
-            class setupAmmoboxModule {};
-            class setupEquipmentboxModule {};
-
             class initCommanderNPC {};
             class initQuartermasterNPC {};
             class initIntelligenceNPC {};
@@ -27,9 +24,6 @@ class CfgFunctions {
             class initHQ {};
             class initHQCommunications {};
             class initLobby {};
-
-            class initAmmobox {};
-            class initEquipmentbox {};
 
             class verifySetup {};
             class initCoopRServer {postInit = 1;};

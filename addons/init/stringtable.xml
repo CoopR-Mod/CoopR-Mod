@@ -17,5 +17,13 @@
             <Original>Show intel status</Original>
             <German>Aufklaerungsstand anzeigen</German>
         </Key>
+        <Key ID="str.coopr.supply.ammo.label">
+            <Original>Ammo</Original>
+            <German>Munition</German>
+        </Key>
+        <Key ID="str.coopr.supply.equipment.label">
+            <Original>Equipment</Original>
+            <German>Ausruestung</German>
+        </Key>
     </Package>
 </Project>

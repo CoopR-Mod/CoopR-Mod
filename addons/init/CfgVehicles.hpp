@@ -47,18 +47,72 @@ class CfgVehicles
         isDisposable = 1;
         is3DEN = 0;
 
+        class ModuleDescription: ModuleDescription
+        {
+            description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";
+        };
+    };
+    class CoopR_QuartermasterItems: Module_F
+    {
+        scope = 2;
+        displayName = "Quartermaster Items Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupQuartermasterItemsModule";
+        functionPriority = 2;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+
         class Arguments {
-              class RepItemTemplate {
-                  displayName = "Reputation Item Template";
-                  description = "The template list of items that can be purchased with reputation points";
-                  typeName = "STRING";
-                  defaultValue = "vanilla";
-              }
+            class Item_1 {
+                displayName = "Item 1 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+                defaultValue = "['arifle_MXC_F', 15, 'MXC F', 'This weapon is pretty cool']";
+            }
+            class Item_2 {
+                displayName = "Item 2 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_3 {
+                displayName = "Item 3 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_4 {
+                displayName = "Item 4 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_5 {
+                displayName = "Item 5 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_6 {
+                displayName = "Item 6 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_7 {
+                displayName = "Item 7 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
+            class Item_8 {
+                displayName = "Item 8 (Array)";
+                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
+                typeName = "STRING";
+            }
         }
 
         class ModuleDescription: ModuleDescription
         {
-            description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";
+          description = "Configures the list of items available in the quartermaster menu";
         };
     };
     class CoopR_ModuleSetupIntelligence: Module_F
@@ -162,12 +216,6 @@ class CfgVehicles
                   typeName = "STRING";
                   defaultvalue = "BLU_F";
               }
-              class InitLoadout {
-                  displayName = "Initial Loadout Template";
-                  description = "The template for the initial loadout for new created characters"
-                  typeName = "STRING";
-                  defaultvalue = "vanilla";
-              }
               class ReputationMan {
                   displayName = "Reputation per enemy (infantry)";
                   description = "The amount of reputation points a player will receive for eliminating an enemy infantry unit"
@@ -180,11 +228,75 @@ class CfgVehicles
                   typeName = "NUMBER";
                   defaultvalue = 0.2;
               }
+              class Communications {
+                  displayName = "HQ Comm Devices";
+                  description = "Devices that are used to communicate with the high command"
+                  typeName = "STRING";
+              }
+              class SupplyVehicle {
+                  displayName = "Supply Vehicle";
+                  description = "Vehicle class of the supply transport vehicle (default='B_Truck_01_ammo_F')"
+                  typeName = "STRING";
+                  defaultValue = "B_Truck_01_ammo_F";
+              }
+              class SupplyDeliveryTime {
+                  displayName = "Supply time to deliver (minutes)";
+                  description = "The time it takes until a supply delivery will arrive"
+                  typeName = "NUMBER";
+                  defaultValue = "1";
+              }
         }
 
         class ModuleDescription: ModuleDescription
         {
           description = "Place this module to set the CoopR HQ position";
+        };
+    };
+    class CoopR_BasicRoleLoadouts: Module_F
+    {
+        scope = 2;
+        displayName = "Basic Role Loadout Module";
+        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
+        category = "CoopR_Setup";
+        function = "coopr_fnc_setupBasicRoleLoadoutModule";
+        functionPriority = 2;
+        isGlobal = 1;
+        isTriggerActivated = 1;
+        isDisposable = 1;
+        is3DEN = 0;
+
+        class Arguments {
+            class GroupLeaderLoadout {
+                displayName = "Group Leader Loadout";
+                description = "The loadout array for a specific role"
+                typeName = "STRING";
+                defaultValue = "[['arifle_MXC_F','','','',['30Rnd_65x39_caseless_mag',30],[],''],[],['hgun_P07_F','','','',['16Rnd_9x21_Mag',16],[],''],['U_B_CombatUniform_mcam_vest',[['FirstAidKit',1],['30Rnd_65x39_caseless_mag',2,30],['Chemlight_green',1,1]]],['V_BandollierB_rgr',[['30Rnd_65x39_caseless_mag',3,30],['16Rnd_9x21_Mag',2,16],['HandGrenade',2,1],['SmokeShell',1,1],['SmokeShellGreen',1,1],['Chemlight_green',1,1]]],[],'H_HelmetCrew_B','',[],['ItemMap','','ItemRadio','ItemCompass','ItemWatch','NVGoggles']]";
+            }
+            class MedicLoadout {
+                displayName = "Medic Loadout";
+                description = "The loadout array for a specific role"
+                typeName = "STRING";
+            }
+            class EngineerLoadout {
+                displayName = "Engineer Loadout";
+                description = "The loadout array for a specific role"
+                typeName = "STRING";
+            }
+            class DMRLoadout {
+                displayName = "DMR Loadout";
+                description = "The loadout array for a specific role"
+                typeName = "STRING";
+            }
+            class MGLoadout {
+                displayName = "MG Loadout";
+                description = "The loadout array for a specific role"
+                typeName = "STRING";
+            }
+        }
+
+        class ModuleDescription: ModuleDescription
+        {
+          description = "Defines the loadout for a newly created character role";
         };
     };
     class CoopR_LobbySetupHQ: Module_F
@@ -194,7 +306,7 @@ class CfgVehicles
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupLobbyModule";
-        functionPriority = 2;
+        functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 1;
         isDisposable = 1;

@@ -10,9 +10,11 @@ class CfgFunctions {
 
             class setupCommanderModule {};
             class setupQuartermasterModule {};
+            class setupQuartermasterItemsModule {};
             class setupIntelligenceModule {};
             class setupVehicleModule {};
             class setupHQModule {};
+            class setupBasicRoleLoadoutModule {};
             class setupLobbyModule {};
 
             class setupAmmoboxModule {};
@@ -23,6 +25,7 @@ class CfgFunctions {
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
+            class initHQCommunications {};
             class initLobby {};
 
             class initAmmobox {};
@@ -31,6 +34,9 @@ class CfgFunctions {
             class verifySetup {};
             class initCoopRServer {postInit = 1;};
             class initCoopRClients {postInit = 1; };
+
+            class requestSupply;
+            class showSupplyMenu;
         }
         class coopr_init_tests {
             file = "x\coopr\addons\init\tests";

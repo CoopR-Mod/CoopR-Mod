@@ -33,8 +33,6 @@ _textboxReputation ctrlSetText format[localize "str.coopr.equipment.vendor.rep",
     private _values = [_itemsHash, _x] call CBA_fnc_hashGet;
     private _itemName = _values select 1;
     _listBox lbAdd _itemName;
-     DEBUG(_forEachIndex);
-     DEBUG(_x);
     _listBox lbSetData [_forEachIndex, _x];
 } forEach _itemKeys;
 

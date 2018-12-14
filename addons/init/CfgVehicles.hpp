@@ -151,42 +151,6 @@ class CfgVehicles
           description = "Sync this module with an AI unit to make it the CoopR vehicle npc unit";
         };
     };
-    class CoopR_ModuleSetupAmmobox: Module_F
-    {
-        scope = 2;
-        displayName = "Ammobox Module";
-        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
-        function = "coopr_fnc_setupAmmoboxModule";
-        functionPriority = 1;
-        isGlobal = 1;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 0;
-
-        class ModuleDescription: ModuleDescription
-        {
-          description = "Sync this module with an container or box to make it a CoopR ammo box";
-        };
-    };
-    class CoopR_ModuleSetupEquipmentbox: Module_F
-    {
-        scope = 2;
-        displayName = "Equipmentbox Module";
-        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
-        function = "coopr_fnc_setupEquipmentboxModule";
-        functionPriority = 1;
-        isGlobal = 1;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 0;
-
-        class ModuleDescription: ModuleDescription
-        {
-          description = "Sync this module with an container or box to make it a CoopR equipment box";
-        };
-    };
     class CoopR_ModuleSetupHQ: Module_F
     {
         scope = 2;
@@ -228,9 +192,9 @@ class CfgVehicles
                   typeName = "NUMBER";
                   defaultvalue = 0.2;
               }
-              class Communications {
-                  displayName = "HQ Comm Devices";
-                  description = "Devices that are used to communicate with the high command"
+              class SupplyCommunicationDevices {
+                  displayName = "Supply Communication Devices";
+                  description = "Devices that are used to communicate with the high command supply service"
                   typeName = "STRING";
               }
               class SupplyVehicle {
@@ -244,6 +208,16 @@ class CfgVehicles
                   description = "The time it takes until a supply delivery will arrive"
                   typeName = "NUMBER";
                   defaultValue = "1";
+              }
+              class SupplyInsertionArea {
+                  displayName = "Area of supply insertion";
+                  description = "Define the name of the area marker where the insertion of supply vehicles should occur";
+                  typeName = "STRING";
+              }
+              class SupplyArrivalArea {
+                  displayName = "Area of supply arrival";
+                  description = "Define the name of the area marker where the supply vehicle should arrive at";
+                  typeName = "STRING";
               }
         }
 

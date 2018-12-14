@@ -22,7 +22,7 @@ class CfgFunctions {
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
-            class initHQCommunications {};
+            class initSupply {};
             class initLobby {};
 
             class verifySetup {};

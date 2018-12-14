@@ -20,5 +20,6 @@ mkdir %dest%
 %armake64% build -p addons\intel %dest%\intel.pbo
 %armake64% build -p addons\lobby %dest%\lobby.pbo
 %armake64% build -p addons\reputation %dest%\reputation.pbo
+%armake64% build -p addons\supply %dest%\supply.pbo
 
 copy mod.cpp @CoopR\mod.cpp

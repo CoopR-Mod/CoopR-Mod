@@ -22,7 +22,6 @@ class CfgFunctions {
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
-            class initSupply {};
             class initLobby {};
 
             class verifySetup {};

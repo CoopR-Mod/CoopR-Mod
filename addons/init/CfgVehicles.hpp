@@ -192,33 +192,6 @@ class CfgVehicles
                   typeName = "NUMBER";
                   defaultvalue = 0.2;
               }
-              class SupplyCommunicationDevices {
-                  displayName = "Supply Communication Devices";
-                  description = "Devices that are used to communicate with the high command supply service"
-                  typeName = "STRING";
-              }
-              class SupplyVehicle {
-                  displayName = "Supply Vehicle";
-                  description = "Vehicle class of the supply transport vehicle (default='B_Truck_01_ammo_F')"
-                  typeName = "STRING";
-                  defaultValue = "B_Truck_01_ammo_F";
-              }
-              class SupplyDeliveryTime {
-                  displayName = "Supply time to deliver (minutes)";
-                  description = "The time it takes until a supply delivery will arrive"
-                  typeName = "NUMBER";
-                  defaultValue = "1";
-              }
-              class SupplyInsertionArea {
-                  displayName = "Area of supply insertion";
-                  description = "Define the name of the area marker where the insertion of supply vehicles should occur";
-                  typeName = "STRING";
-              }
-              class SupplyArrivalArea {
-                  displayName = "Area of supply arrival";
-                  description = "Define the name of the area marker where the supply vehicle should arrive at";
-                  typeName = "STRING";
-              }
         }
 
         class ModuleDescription: ModuleDescription

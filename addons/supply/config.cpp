@@ -21,3 +21,7 @@ class CfgPatches {
 }
 
 #include "CfgFunctions.hpp"
+
+// UI
+#include "\x\coopr\addons\core\define.hpp"
+#include "ui\guiSupply.hpp"

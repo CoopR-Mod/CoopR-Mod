@@ -27,6 +27,8 @@ SLOG("supply requested");
     private _ammoAmount = _payLoad select 0;
     private _randomPosInsertion = [[_supplyInsertionArea]] call BIS_fnc_randomPos;
     private _vehicle = _supplyVehicleClass createVehicle _randomPosInsertion;
+    clearWeaponCargoGlobal _vehicle;
+    clearItemCargoGlobal _vehicle;
     private _randomPosAroundVehicle = [[[getPos _vehicle, 5]],[]] call BIS_fnc_randomPos;
     private _driverGrp = createGroup [west, true];
     private _driver =  _driverGrp createUnit ["B_diver_TL_F", _randomPosAroundVehicle, [], 0, "NONE"];
@@ -34,4 +36,11 @@ SLOG("supply requested");
     _vehicle addMagazineCargoGlobal ["30Rnd_65x39_caseless_mag", parseNumber (_payLoad select 0)];
     private _randomArrivalPosition = [[_supplyArrivalArea]] call BIS_fnc_randomPos;
     _driverGrp move _randomArrivalPosition;
+
+    SLOG("wait for unload");
+    // wait for vehicle being emptied by players
+    waitUntil { _vehicle call coopr_fnc_hasEmptyCargo };
+    SLOG("unloaded");
+    sleep 10;
+    _driverGrp move getMarkerPos _supplyInsertionArea;
 };

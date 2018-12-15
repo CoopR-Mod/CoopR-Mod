@@ -14,7 +14,13 @@ class CfgPatches {
         };
         units[] = {
             "CoopR_ModuleSetupCommander",
-            "CoopR_ModuleSetupQuartermaster"
+            "CoopR_ModuleSetupQuartermaster",
+            "CoopR_ModuleQuartermasterItems",
+            "CoopR_ModuleSetupIntelligence",
+            "CoopR_ModuleSetupVehicle",
+            "CoopR_ModuleSetupHQ",
+            "CoopR_ModuleBasicRoleLoadouts",
+            "CoopR_ModuleLobbySetup",
         };
         weapons[] = {};
     };

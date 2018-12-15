@@ -18,7 +18,7 @@ class CfgVehicles
     class CoopR_ModuleSetupCommander: Module_F
     {
         scope = 2;
-        displayName = "Commander NPC Module";
+        displayName = "CoopR Commander NPC";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupCommanderModule";
@@ -37,7 +37,7 @@ class CfgVehicles
     class CoopR_ModuleSetupQuartermaster: Module_F
     {
         scope = 2;
-        displayName = "Quartermaster NPC Module";
+        displayName = "CoopR Quartermaster NPC";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupQuartermasterModule";
@@ -55,7 +55,7 @@ class CfgVehicles
     class CoopR_QuartermasterItems: Module_F
     {
         scope = 2;
-        displayName = "Quartermaster Items Module";
+        displayName = "CoopR Quartermaster Items";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupQuartermasterItemsModule";
@@ -118,7 +118,7 @@ class CfgVehicles
     class CoopR_ModuleSetupIntelligence: Module_F
     {
         scope = 2;
-        displayName = "Intelligence NPC Module";
+        displayName = "CoopR Intelligence NPC";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupIntelligenceModule";
@@ -136,7 +136,7 @@ class CfgVehicles
     class CoopR_ModuleSetupVehicle: Module_F
     {
         scope = 2;
-        displayName = "Vehicle NPC Module";
+        displayName = "CoopR Vehicle NPC";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupVehicleModule";
@@ -154,7 +154,7 @@ class CfgVehicles
     class CoopR_ModuleSetupHQ: Module_F
     {
         scope = 2;
-        displayName = "HQ Module";
+        displayName = "CoopR HQ";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupHQModule";
@@ -226,10 +226,10 @@ class CfgVehicles
           description = "Place this module to set the CoopR HQ position";
         };
     };
-    class CoopR_BasicRoleLoadouts: Module_F
+    class CoopR_ModuleBasicRoleLoadouts: Module_F
     {
         scope = 2;
-        displayName = "Basic Role Loadout Module";
+        displayName = "CoopR Basic Role Loadout";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupBasicRoleLoadoutModule";
@@ -273,10 +273,10 @@ class CfgVehicles
           description = "Defines the loadout for a newly created character role";
         };
     };
-    class CoopR_LobbySetupHQ: Module_F
+    class CoopR_ModuleLobbySetup: Module_F
     {
         scope = 2;
-        displayName = "Lobby Module";
+        displayName = "CoopR Lobby";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupLobbyModule";

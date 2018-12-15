@@ -42,5 +42,12 @@ SLOG("supply requested");
     waitUntil { _vehicle call coopr_fnc_hasEmptyCargo };
     SLOG("unloaded");
     sleep 10;
+    SLOG("moving back");
     _driverGrp move getMarkerPos _supplyInsertionArea;
+
+    waitUntil { getPos (leader _driverGrp) inArea _supplyInsertionArea };
+    SLOG("vehicle is back in insertion");
+
+    { _vehicle deleteVehicleCrew _x } forEach crew _vehicle;
+    deleteVehicle _vehicle;
 };

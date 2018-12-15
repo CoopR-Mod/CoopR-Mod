@@ -2,6 +2,6 @@
 
 #define COMPONENT supply
 
-#define DEBUG_CTX "COOPR.DEATH"
+#define DEBUG_CTX "COOPR.SUPPLY"
 
 #include "\x\coopr\addons\core\script_macros.hpp"

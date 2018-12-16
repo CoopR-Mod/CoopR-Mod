@@ -22,7 +22,6 @@ class CfgPatches {
             "CoopR_ModuleSetupVehicle",
             "CoopR_ModuleSetupHQ",
             "CoopR_ModuleBasicRoleLoadouts",
-            "CoopR_ModuleLobbySetup",
         };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};

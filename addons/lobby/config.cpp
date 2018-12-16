@@ -13,14 +13,18 @@ class CfgPatches {
             "coopr_core"
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
-        units[] = {};
+        units[] = {
+            "CoopR_ModuleSetupLobby";
+        };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
     };
 }
 
 #include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"
+
 // UI
 #include "\x\coopr\addons\core\define.hpp"
-#include "guiLogin.hpp"
-#include "guiNewProfile.hpp"
+#include "ui\guiLogin.hpp"
+#include "ui\guiNewProfile.hpp"

@@ -5,6 +5,6 @@ params [["_logic", objNull]];
 if (_logic isEqualTo objNull) exitWith { SETUPERROR("Module is not defined") };
 
 COOPR_LOBBY = _logic;
-SLOG("Lobby initialized");
+INFO("Lobby initialized");
 
 

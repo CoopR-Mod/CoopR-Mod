@@ -19,14 +19,12 @@ class CfgFunctions {
             class setupVehicleModule {};
             class setupHQModule {};
             class setupBasicRoleLoadoutModule {};
-            class setupLobbyModule {};
 
             class initCommanderNPC {};
             class initQuartermasterNPC {};
             class initIntelligenceNPC {};
             class initVehicleNPC {};
             class initHQ {};
-            class initLobby {};
 
             class verifySetup {};
             class initCoopRServer {postInit = 1;};

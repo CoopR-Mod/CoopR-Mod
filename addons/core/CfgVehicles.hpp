@@ -246,22 +246,4 @@ class CfgVehicles
           description = "Defines the loadout for a newly created character role";
         };
     };
-    class CoopR_ModuleLobbySetup: Module_F
-    {
-        scope = 2;
-        displayName = "CoopR Lobby";
-        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
-        function = "coopr_fnc_setupLobbyModule";
-        functionPriority = 1;
-        isGlobal = 1;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 0;
-
-        class ModuleDescription: ModuleDescription
-        {
-          description = "The lobby defines the position where players spawn before login";
-        };
-    };
 };

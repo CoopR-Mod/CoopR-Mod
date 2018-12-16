@@ -16,10 +16,10 @@ if (_victimWasEnemy isEqualTo false) then {
       private _lastTK = _killer getVariable [COOPR_KEY_TEAMKILLS, 0];
       private _newTK = _lastTK + 1;
       _killer setVariable [COOPR_KEY_TEAMKILLS,  _newTK];
-      FFLOG("%1 adding TK - actual %2", _playerName, _newTk);
+      DEBUG3("%1 adding TK - actual %2", _playerName, _newTk);
 
       if(_newTK >= MAX_TK) then {
-          FLOG("%1 is being punished for too many blue on blues", _playerName);
+          DEBUG2("%1 is being punished for too many blue on blues", _playerName);
           _killer call coopr_fnc_punishTeamkill;
       };
  }

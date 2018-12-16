@@ -2,7 +2,8 @@
 
 disableSerialization;
 waitUntil {!isNull findDisplay 1101};
-INFO("initialising login dialog");
+
+DEBUG("initialising login ui");
 
 private _loginDisplay = findDisplay 1101;
 
@@ -25,5 +26,7 @@ private _characterPictures = [];
 _characterPictures set [0, _loginDisplay displayCtrl 1200];
 _characterPictures set [1, _loginDisplay displayCtrl 1201];
 _characterPictures set [2, _loginDisplay displayCtrl 1202];
+
+DEBUG("login ui initialized");
 
 [_profileInfos, _profileOverlays, _profileButtons, _characterPictures] call coopr_fnc_updateLoginDialog;

@@ -6,7 +6,7 @@ private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
 private _registerHandlerId = _profileOverlay getVariable ["_registerHandlerId", -1];
 
 if(_state isEqualTo COOPR_STATE_KIA or _state isEqualTo COOPR_STATE_WIA) exitWith {
-    INFO("character is kia/wia - disabling overlay button");
+    DEBUG("character is kia/wia - disabling overlay button");
     _profileOverlay ctrlEnable false;
 } ;
 

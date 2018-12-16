@@ -15,7 +15,7 @@ if (_supplyVehicleClass isEqualTo objNull or _supplyVehicleClass isEqualTo "") t
     _supplyVehicleClass = "B_Truck_01_ammo_F";
 };
 
-SLOG("supply requested");
+INFO("supply requested");
 
 [_supplyVehicleClass, _supplyDeliveryTime, _supplyInsertionArea, _supplyArrivalArea, _payLoad] spawn {
     params ["_supplyVehicleClass", "_supplyDeliveryTime", "_supplyInsertionArea", "_supplyArrivalArea", "_payLoad"];
@@ -23,7 +23,7 @@ SLOG("supply requested");
 
     waitUntil { serverTime >= _deliveryStartTime };
 
-    SLOG("supply inbound");
+    INFO("supply inbound");
     private _ammoAmount = _payLoad select 0;
     private _randomPosInsertion = [[_supplyInsertionArea]] call BIS_fnc_randomPos;
     private _vehicle = _supplyVehicleClass createVehicle _randomPosInsertion;

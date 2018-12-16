@@ -4,7 +4,7 @@ params [["_slot", -1],
         ["_key", ""],
         ["_value", "",[]]];
 
-FFLOG("updating %1 with value %2", _key, _value);
+DEBUG3("updating %1 with value %2", _key, _value);
 private _uid = getPlayerUID player;
 
 [SERVER, "coopr_fnc_getCharacter", [_uid, _slot], //request-related
@@ -19,7 +19,7 @@ private _uid = getPlayerUID player;
             [_key, _value], {
                 params ["_args", "_result"];
                 _args params ["_key", "_value"];
-                SLOG("update client char stats");
+                DEBUG("update client char stats");
                 player setVariable [_key, _value];
             }
         ] call Promise_Create;

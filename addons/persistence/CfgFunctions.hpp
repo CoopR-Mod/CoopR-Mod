@@ -1,7 +1,8 @@
 class CfgFunctions {
     class coopr {
-        class coopr_character_functions {
-            file = "x\coopr\addons\character\functions";
+        class coopr_persistence_functions {
+            file = "x\coopr\addons\persistence\functions";
+            class setupPersistenceModule {};
             class getCharacterSlots {};
             class updateCharacterSlots {};
             class getCharacter {};

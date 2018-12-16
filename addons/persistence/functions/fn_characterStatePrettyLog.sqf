@@ -10,5 +10,5 @@ private _keys = [_state] call CBA_fnc_hashKeys;
 {
   private _key = _x;
   private _value = [_state, _key] call CBA_fnc_hashGet;
-  FFLOG("%1 = %2", _key, _value);
+  DEBUG3("%1 = %2", _key, _value);
 } forEach _keys;

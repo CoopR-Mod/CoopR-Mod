@@ -9,7 +9,7 @@ python $VALIDATOR
 rm -rf @CoopR
 mkdir -p $DEST
 
-$ARMAKE build -p -f addons/character $DEST/character.pbo
+$ARMAKE build -p -f addons/persistence $DEST/character.pbo
 $ARMAKE build -p -f addons/core $DEST/core.pbo
 $ARMAKE build -p -f addons/death $DEST/death.pbo
 $ARMAKE build -p -f addons/equipment $DEST/equipment.pbo

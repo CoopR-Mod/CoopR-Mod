@@ -2,7 +2,7 @@
 
 params  ["_playerUid", "_characterSlots"];
 
-FLOG("update profile for player %1", _playerUid);
+DEBUG("update profile for player %1", _playerUid);
 
 private _allProfiles = call coopr_fnc_getAllProfiles;
 [_allProfiles, _playerUid, _characterSlots] call CBA_fnc_hashSet;

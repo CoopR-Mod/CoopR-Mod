@@ -12,14 +12,14 @@ if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
     ERROR("index is out of allowed range. 0 to 2 is allowed");
 };
 
-FLOG("updating character slot: %1 ...", _slot);
+DEBUG2("updating character slot: %1 ...", _slot);
 
 private _characterSlots = _playerUid call coopr_fnc_getCharacterSlots;
 _characterSlots set [_slot, _characterState];
 
 [_playerUid, _characterSlots] call coopr_fnc_updateCharacterSlots;
 
-FLOG("character slots updated", _slot);
+INFO2("character slots updated", _slot);
 true; // execution result needed for promise
 
 

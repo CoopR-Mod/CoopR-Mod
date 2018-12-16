@@ -22,8 +22,8 @@ private _statsHash = [[COOPR_KEY_UID, _playerId],
                       [COOPR_KEY_DEATH_TIMESTAMP, _deathTimestamp],
                       [COOPR_KEY_LOADOUT, _loadout]];
 
-SLOG("character hash created");
+DEBUG("character hash created");
 
 private _state = [_statsHash, []] call CBA_fnc_hashCreate;
-//[_state] call coopr_fnc_characterStatePrettyLog;
+[_state] call coopr_fnc_characterStatePrettyLog;
 _state;

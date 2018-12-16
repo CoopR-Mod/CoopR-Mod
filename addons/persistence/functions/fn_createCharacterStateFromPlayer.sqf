@@ -13,7 +13,7 @@ private _position = getPos _player;
 private _loadout = getUnitLoadout _player;
 private _deathTimestamp = _player getVariable [COOPR_KEY_DEATH_TIMESTAMP, 0];
 
-SLOG("mapping player variables to hash...");
+DEBUG("mapping player variables to hash...");
 
 [_uid,
  _slot,

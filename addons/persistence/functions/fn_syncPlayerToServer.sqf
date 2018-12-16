@@ -17,5 +17,3 @@ DEBUG3("player %1 manually synced at slot %2", getPlayerUID _player, _slot);
 
 INFO("... syncing done.");
 _slot;
-
-

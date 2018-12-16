@@ -42,6 +42,8 @@ class CfgVehicles
               class SupplyCommunicationDevices {
                   displayName = "Supply Communication Devices";
                   description = "Devices that are used to communicate with the high command supply service"
+                  // TODO: Check the example with ARRAY
+                  //typeName = "ARRAY"; // Value type, can be "NUMBER", "STRING" or "BOOL"
                   typeName = "STRING";
               }
               class SupplyVehicle {

@@ -25,6 +25,6 @@ private _itemValuesForHash = [];
 } forEach _itemValues;
 
 COOPR_REP_ITEMS_WEST = _itemValuesForHash;
-SLOG("quartermaster items have been set");
+DEBUG("quartermaster items have been set");
 
 true

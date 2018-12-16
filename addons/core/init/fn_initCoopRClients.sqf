@@ -15,5 +15,5 @@ if(hasInterface && _setupValid) then {
         };
     };
 
-    ["client initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
+    SLOG("client initialized");
 };

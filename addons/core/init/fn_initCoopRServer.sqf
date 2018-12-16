@@ -6,10 +6,10 @@ if(isServer) then {
         call coopr_fnc_initPromise;
         call coopr_fnc_initEventsServer;
         //call coopr_fnc_staticData;
-        SLOG("server initialized");
+        INFO("server initialized");
         true call coopr_fnc_sync;
     } else {
-        SLOG("Server was not initialized. Setup verification failed");
+        ERROR("Server was not initialized. Setup verification failed");
     };
 }
 

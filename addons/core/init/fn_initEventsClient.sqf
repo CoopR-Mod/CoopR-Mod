@@ -5,4 +5,4 @@ player addEventHandler ["Respawn", { call coopr_fnc_addPlayerActions; }];
 
 call coopr_fnc_abortButtonEventHandler;
 
-SLOG("client events initialized");
+INFO("client events initialized");

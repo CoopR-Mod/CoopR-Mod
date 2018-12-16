@@ -9,4 +9,4 @@ if (call coopr_fnc_isACE3Active) then {
     _commander addAction [localize "str.coopr.aar.action.commander", {call coopr_fnc_deliverAfterActionReport},[],1.5,true,true,"","true",3];
 };
 
-FLOG("initialized %1 as commander", _commander);
+DEBUG2("initialized %1 as commander", _commander);

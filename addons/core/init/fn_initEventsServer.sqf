@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+// TODO: check if VCOM is available
 _disableVCOM = {
     {
         driver _x setVariable ["VCM_Disable",true];
@@ -14,4 +15,4 @@ _disableVCOM = {
 // regular events
 ["CAManBase", "killed", {call coopr_fnc_onKilled}] call CBA_fnc_addClassEventHandler;
 
-SLOG("server events initialized");
+INFO("server events initialized");

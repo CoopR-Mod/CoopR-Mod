@@ -10,5 +10,5 @@ if (call coopr_fnc_isACE3Active) then {
     _quartermaster addAction [localize "str.coopr.equipment.action.quartermaster", {call coopr_fnc_showQuartermasterMenu},[],1.5,true,true,"","true",3];
 };
 
-FLOG("initialized %1 as quartermaster", _quartermaster);
+DEBUG2("initialized %1 as quartermaster", _quartermaster);
 

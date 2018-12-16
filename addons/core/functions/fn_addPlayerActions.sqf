@@ -8,4 +8,4 @@ if (call coopr_fnc_isACE3Active) then {
 	player addAction ["<t color='#ff0000'>Logout</t>", {[] spawn { call coopr_fnc_logout; };} , [], 0.5, true, true, "", "true"];
 };
 
-SLOG("player actions added");
+INFO("player actions added");

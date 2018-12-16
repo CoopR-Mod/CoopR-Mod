@@ -8,7 +8,7 @@ if (isNil "COOPR_LOBBY") exitWith {
     SETUPERROR("There has to be at least one lobby module placed");
     false;
 };
-SLOG("Verification of setup modules successful");
+INFO("Verification of setup modules successful");
 true; // all fine
 
 

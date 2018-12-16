@@ -14,10 +14,21 @@ class CfgPatches {
             "cba_diagnostic"
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
-        units[] = {};
+        units[] = {
+            "CoopR_ModuleSetupCommander",
+            "CoopR_ModuleSetupQuartermaster",
+            "CoopR_ModuleQuartermasterItems",
+            "CoopR_ModuleSetupIntelligence",
+            "CoopR_ModuleSetupVehicle",
+            "CoopR_ModuleSetupHQ",
+            "CoopR_ModuleBasicRoleLoadouts",
+            "CoopR_ModuleLobbySetup",
+        };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
     };
 }
 
 #include "CfgFunctions.hpp"
+#include "CfgFactionClasses.hpp"
+#include "CfgVehicles.hpp"

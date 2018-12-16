@@ -8,5 +8,10 @@ class CfgFunctions {
             class requestSupply {};
             class showSupplyMenu {};
         }
+        class coopr_supply_helper {
+            file = "x\coopr\addons\supply\helper";
+            class hasEmptyCargo {};
+        }
     }
 }
+u

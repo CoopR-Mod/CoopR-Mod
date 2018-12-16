@@ -2,8 +2,8 @@
 
 if(player getVariable [COOPR_KEY_STATE, COOPR_STATE_OK] isEqualTo COOPR_STATE_OK) then {
     //TODO: no saving until db is ready
-    //SLOG("saving character before respawn to lobby...");
-    //SLOG("...saved");
+    //INFO("saving character before respawn to lobby...");
+    //INFO("...saved");
     call coopr_fnc_death;
     _state = player call coopr_fnc_createCharacterStateFromPlayer;
     _baseLoadout = (player getVariable COOPR_KEY_ROLE) call coopr_fnc_getLoadoutForClass;

@@ -12,7 +12,6 @@ mkdir %dest%
 
 %armake64% build -p addons\persistence %dest%\character.pbo
 %armake64% build -p addons\core %dest%\core.pbo
-%armake64% build -p addons\death %dest%\death.pbo
 %armake64% build -p addons\equipment %dest%\equipment.pbo
 %armake64% build -p addons\integration %dest%\integration.pbo
 %armake64% build -p addons\intel %dest%\intel.pbo

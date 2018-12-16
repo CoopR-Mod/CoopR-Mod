@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-FLOG("player %1 has been killed in action", name player);
+INFO2("player %1 has been killed in action", name player);
 //TODO: reactivate logic with refactored death system
 cutText ["You joined the ranks of the fallen", "BLACK OUT", 0.1];
 player setVariable [COOPR_KEY_STATE, COOPR_STATE_WIA, true];

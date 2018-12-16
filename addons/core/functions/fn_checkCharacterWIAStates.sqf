@@ -13,7 +13,7 @@
             if(_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
                 [_characterSlot, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
                 [_uid, _characterSlot, _slot] call coopr_fnc_updateCharacter;
-                FLOG("player %1 was set back to state OK", name _player);
+                DEBUG2("player %1 was set back to state OK", name _player);
             };
     } forEach (_uid call coopr_fnc_getCharacterSlots);
 

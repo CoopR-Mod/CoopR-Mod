@@ -2,6 +2,9 @@ class CfgFunctions {
     class coopr {
         class coopr_core_functions {
             file = "x\coopr\addons\core\functions";
+            class checkCharacterWIAStates {};
+            class death {};
+            class playerKilledHandler {};
             class onKilled {};
             class playerKilledNpc {};
             class addVehicleKeyWest {};

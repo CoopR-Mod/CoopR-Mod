@@ -3,7 +3,7 @@
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],
-["reputation_action_1", localize "str.coopr.init.action.rep", "", {player call coopr_fnc_showReputation;}, {true}] call ace_interact_menu_fnc_createAction
+["reputation_action_1", localize "str.coopr.core.action.rep", "", {player call coopr_fnc_showReputation;}, {true}] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],

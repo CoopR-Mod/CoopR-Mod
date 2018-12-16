@@ -44,7 +44,7 @@ class CfgVehicles
                   description = "Where to persist characters and campaign states to";
                   typeName = "STRING";
                   class Values {
-                      class opt_1 {name = "Offical"; value = "Official"; default = 1};
+                      class opt_1 {name = "Official"; value = "Official"; default = 1};
                       class opt_2 {name = "Local"; value = "Local";};
                       class opt_3 {name = "Custom"; value = "Custom";};
                   }

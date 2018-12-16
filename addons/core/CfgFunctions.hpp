@@ -1,17 +1,14 @@
 class CfgFunctions {
     class coopr {
-        class coopr_core_functions {
-            file = "x\coopr\addons\core\functions";
-            class sync {};
-            class syncPlayersToServer {};
-            class syncPlayerToServer {};
-
+        class coopr_core_init {
+            file = "x\coopr\addons\core\init";
             class initEventsServer {};
             class initEventsClient {};
-
-            class addVehicleKeyWest {};
-            class addPlayerActions {};
-
+            class initCommanderNPC {};
+            class initQuartermasterNPC {};
+            class initIntelligenceNPC {};
+            class initVehicleNPC {};
+            class initHQ {};
             class setupCommanderModule {};
             class setupQuartermasterModule {};
             class setupQuartermasterItemsModule {};
@@ -20,15 +17,19 @@ class CfgFunctions {
             class setupHQModule {};
             class setupBasicRoleLoadoutModule {};
 
-            class initCommanderNPC {};
-            class initQuartermasterNPC {};
-            class initIntelligenceNPC {};
-            class initVehicleNPC {};
-            class initHQ {};
-
-            class verifySetup {};
             class initCoopRServer {postInit = 1;};
             class initCoopRClients {postInit = 1; };
+        }
+        class coopr_core_functions {
+            file = "x\coopr\addons\core\functions";
+            class addVehicleKeyWest {};
+            class addPlayerActions {};
+            class updateReputation {};
+            class updateTempReputation {};
+            class convertTempToReputation {};
+            class deliverAfterActionReport {};
+            class showReputation {};
+            class verifySetup {};
         }
         class coopr_core_helper {
             file = "x\coopr\addons\core\helper";
@@ -40,6 +41,7 @@ class CfgFunctions {
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";
             class tests_init {};
+            class tests_reputation {};
         }
     }
 }

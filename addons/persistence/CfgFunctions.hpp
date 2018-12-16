@@ -12,6 +12,9 @@ class CfgFunctions {
             class getAllProfiles {};
             class updateCharacterValue {};
             class characterStatePrettyLog {};
+            class sync {};
+            class syncPlayersToServer {};
+            class syncPlayerToServer {};
         }
     }
 }

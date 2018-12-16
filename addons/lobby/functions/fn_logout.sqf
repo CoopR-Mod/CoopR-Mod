@@ -3,11 +3,11 @@
 cutText ["returning to character lobby.", "BLACK OUT", 0.5];
 sleep 1;
 cutText ["saving character...", "BLACK OUT", 0.0001];
-SLOG("saving character state before logout...");
+INFO("saving character state before logout...");
 [SERVER, "coopr_fnc_syncPlayerToServer", [player], //request-related
     [], {
         sleep 4;
-        SLOG("...saved");
+        INFO("...saved");
         cutText ["...saved!", "BLACK OUT", 0.0001];
         call coopr_fnc_spawnInLobby;
         createDialog "coopr_Login_Dialog";

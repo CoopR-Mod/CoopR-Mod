@@ -4,7 +4,7 @@ params ["_slot"];
 
 disableSerialization;
 
-SLOG("initialising new profile dialog");
+INFO("initialising new profile dialog");
 
 waitUntil {!isNull findDisplay 1103};
 

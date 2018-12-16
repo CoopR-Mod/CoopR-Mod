@@ -2,7 +2,7 @@
 
 disableSerialization;
 waitUntil {!isNull findDisplay 1101};
-SLOG("initialising login dialog");
+INFO("initialising login dialog");
 
 private _loginDisplay = findDisplay 1101;
 

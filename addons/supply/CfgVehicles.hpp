@@ -32,11 +32,11 @@ class CfgVehicles
               class Logging {
                   displayName = "Logging Level";
                   description = "The Logging level to use for this module";
-                  typeName = "STRING";
+                  typeName = "NUMBER";
                   class Values {
-                      class opt_1 {name = "None"; value = "None";};
-                      class opt_2 {name = "Info"; value = "Info"; default = 1;};
-                      class opt_3 {name = "Debug"; value = "Debug";};
+                      class opt_1 {name = "None"; value = 0;};
+                      class opt_2 {name = "Info"; value = 1; default = 1;};
+                      class opt_3 {name = "Debug"; value = 2;};
                   }
               }
               class SupplyCommunicationDevices {

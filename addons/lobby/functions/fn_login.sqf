@@ -32,7 +32,7 @@ player setVariable [COOPR_KEY_LOADOUT, _loadout, true];
 
 [_character] call coopr_fnc_characterStatePrettyLog;
 
-SLOG("stored variables saved in player namespace");
+INFO("stored variables saved in player namespace");
 
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
 FLOG("player with id %1 logged in", getPlayerUID player);

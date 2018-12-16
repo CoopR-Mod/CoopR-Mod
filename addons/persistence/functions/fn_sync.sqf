@@ -4,10 +4,10 @@ params [["_allowSync", true]];
 
 if(_allowSync) then {
     ALLOW_SYNC = _allowSync;
-    SLOG("syncing activated");
+    INFO("syncing activated");
 }else{
     ALLOW_SYNC = _allowSync;
-    SLOG("syncing deactivated");
+    INFO("syncing deactivated");
 };
 
 publicVariable "ALLOW_SYNC";

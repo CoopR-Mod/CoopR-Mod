@@ -1,6 +1,11 @@
+
 #include "script_component.hpp"
 
 params [["_logic", objNull]];
+
+private _loggingLevel = _logic getVariable ["Logging", "None"];
+
+[_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
 
 private _supplyCommDevices = (_logic getVariable ["SupplyCommunicationDevices", ""]) splitString "," ;
 private _supplyVehicleClass = _logic getVariable ["SupplyVehicle", ""];

@@ -14,4 +14,3 @@ class CfgFunctions {
         }
     }
 }
-u

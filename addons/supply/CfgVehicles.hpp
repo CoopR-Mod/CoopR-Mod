@@ -29,6 +29,16 @@ class CfgVehicles
         is3DEN = 0;
 
         class Arguments {
+              class Logging {
+                  displayName = "Logging Level";
+                  description = "The Logging level to use for this module";
+                  typeName = "STRING";
+                  class Values {
+                      class opt_1 {name = "None"; value = "None";};
+                      class opt_2 {name = "Info"; value = "Info"; default = 1;};
+                      class opt_3 {name = "Debug"; value = "Debug";};
+                  }
+              }
               class SupplyCommunicationDevices {
                   displayName = "Supply Communication Devices";
                   description = "Devices that are used to communicate with the high command supply service"

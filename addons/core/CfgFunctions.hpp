@@ -36,6 +36,8 @@ class CfgFunctions {
             file = "x\coopr\addons\core\helper";
             class initPromise {};
             class stringReplace {};
+            class setLogLevel {};
+            class getLogLevel {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

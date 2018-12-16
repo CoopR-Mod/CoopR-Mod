@@ -37,16 +37,16 @@ SLOG("supply requested");
     private _randomArrivalPosition = [[_supplyArrivalArea]] call BIS_fnc_randomPos;
     _driverGrp move _randomArrivalPosition;
 
-    SLOG("wait for unload");
+    DEBUG("wait for unload");
     // wait for vehicle being emptied by players
     waitUntil { _vehicle call coopr_fnc_hasEmptyCargo };
-    SLOG("unloaded");
+    DEBUG("unloaded - waiting 10s");
     sleep 10;
-    SLOG("moving back");
+    DEBUG("moving back");
     _driverGrp move getMarkerPos _supplyInsertionArea;
 
     waitUntil { getPos (leader _driverGrp) inArea _supplyInsertionArea };
-    SLOG("vehicle is back in insertion");
+    DEBUG("vehicle is back in insertion");
 
     { _vehicle deleteVehicleCrew _x } forEach crew _vehicle;
     deleteVehicle _vehicle;

@@ -2,8 +2,6 @@
 
 params [["_character", []]];
 
-LSTART("LOGIN");
-
 if(not ([_character] call CBA_fnc_isHash)) exitWith {
     ERROR("argument has to be a cba hash");
 };
@@ -37,5 +35,3 @@ INFO("stored variables saved in player namespace");
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
 FLOG("player with id %1 logged in", getPlayerUID player);
 call coopr_fnc_postLogin;
-
-LEND("LOGIN");

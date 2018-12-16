@@ -4,8 +4,6 @@ params [
     ["_playerUid", -1]
 ];
 
-LSTART("FETCH CHAR SLOTS");
-
 private _allProfiles = call coopr_fnc_getAllProfiles;
 private _hasNoProfiles = ([_allProfiles] call CBA_fnc_hashSize) == 0;
 private _hasPlayerEntry = [_allProfiles, _playerUid] call CBA_fnc_hashHasKey;
@@ -24,5 +22,4 @@ if(_hasPlayerEntry) then {
     FLOG("failed to get character slots - no entry for player uid %1 was found", _playerUid);
 };
 
-LEND("FETCH CHAR SLOTS");
 _slots;

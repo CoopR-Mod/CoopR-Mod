@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-LSTART("CREATE CHAR");
 private _ctrl = _this select 0;
 private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
 private _infoText = _ctrl getVariable ["_infoText", objNull];
@@ -28,7 +27,6 @@ if(_name == "" or _roleName == "") exitWith {
     [_pairs], {
         params ["_args", "_result"];
         closeDialog 1;
-        LEND("CREATE CHAR");
     }
 ] call Promise_Create;
 

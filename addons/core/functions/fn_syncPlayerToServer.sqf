@@ -2,11 +2,8 @@
 
 params [["_player", objNull]];
 
-LSTART("PLAYER SYNC");
-
 if(!ALLOW_SYNC) exitWith {
     SLOG("syncing disabled");
-    LEND("SYNC");
 };
 
 if(isNull _player) exitWith {
@@ -19,7 +16,6 @@ private _characterState = _player call coopr_fnc_createCharacterStateFromPlayer;
 FFLOG("player %1 manually synced at slot %2", getPlayerUID _player, _slot);
 
 SLOG("... syncing done.");
-LEND("PLAYER SYNC");
 _slot;
 
 

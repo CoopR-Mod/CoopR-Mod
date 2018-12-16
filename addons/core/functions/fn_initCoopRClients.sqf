@@ -2,7 +2,6 @@
 
 private _setupValid = call coopr_fnc_verifySetup;
 if(hasInterface && _setupValid) then {
-    LSTART("INIT CLIENTS");
     call coopr_fnc_initPromise;
     call coopr_fnc_initEventsClient;
     call coopr_fnc_addPlayerActions;
@@ -17,5 +16,4 @@ if(hasInterface && _setupValid) then {
     };
 
     ["client initialized", DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-    LEND("INIT CLIENTS");
 };

@@ -2,7 +2,6 @@
 
 params ["_profileInfos", "_profileOverlays", "_profileButtons", "_characterPictures"];
 
-LSTART("UPDATE LOGIN DIALOG");
 _loginDisplay displayRemoveAllEventHandlers "Unload";
 _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloadHandler}];
 
@@ -40,6 +39,5 @@ _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloa
             };
 
         } forEach _characterSlots;
-        LEND("UPDATE LOGIN DIALOG");
     }
 ] call Promise_Create;

@@ -1,10 +1,7 @@
 #include "script_component.hpp"
 
-LSTART("ALL SYNC");
-
 if(!ALLOW_SYNC) exitWith {
     SLOG("syncing disabled");
-    LEND("SYNC");
 };
 
 private _allPlayers = allPlayers;
@@ -22,5 +19,3 @@ FLOG("found %1 players connected", count _allPlayers);
 } forEach allPlayers;
 
 SLOG("... syncing done.");
-LEND("ALL SYNC");
-

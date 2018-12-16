@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
 params ["_victim", "_killer", "_instigator", "_useEffects"];
-LSTART("ON KILL");
 
 private _lastDamageSource = _victim getVariable ["ace_medical_lastDamageSource", objNull];
 FLOG("instigator: %1", _instigator);
@@ -22,10 +21,8 @@ if(isPlayer _victim) then {
      // check for PvP
      // add coopr_fnc_playerKilledPlayer;
     };
-    LEND("ON KILL");
 } else {
     if (isPlayer _killer) then {
         [_victim] remoteExec ["coopr_fnc_playerKilledNpc", _killer];
     };
-    LEND("ON KILL");
 }

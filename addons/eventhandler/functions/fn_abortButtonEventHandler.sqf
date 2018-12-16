@@ -8,7 +8,6 @@
         };
         ((findDisplay MP_MENU) displayCtrl ABORT_BUTTON) ctrlAddEventHandler ["ButtonClick", {
             [] spawn {
-                LSTART("ABORT SYNC");
                 private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
 
                 if(_isLoggedIn) then {
@@ -21,7 +20,6 @@
                 }else {
                     SLOG("character is not logged in. Character state will not be saved");
                 };
-                LEND("ABORT SYNC");
             };
         }];
     };

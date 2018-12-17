@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CoopR Mod">
     <Package name="equipment">
-        <Key ID="str.coopr.equipment.action.quartermaster">
+        <Key ID="str.coopr.equipment.action.armory">
             <Original>Request new equipment</Original>
             <German>Neue Ausruestung beantragen</German>
         </Key>

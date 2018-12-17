@@ -21,13 +21,13 @@ class CfgFunctions {
             class initEventsServer {};
             class initEventsClient {};
             class initCommanderNPC {};
-            class initQuartermasterNPC {};
+            class initArmoryNPC {};
             class initVehicleNPC {};
             class initHQ {};
             class initCore {};
             class setupCommanderModule {};
-            class setupQuartermasterModule {};
-            class setupQuartermasterItemsModule {};
+            class setupArmoryModule {};
+            class setupArmoryItemsModule {};
             class setupVehicleModule {};
             class setupHQModule {};
             class setupCoreModule {};

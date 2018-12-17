@@ -78,13 +78,13 @@ class CfgVehicles
     };
 
     //TODO: rename to armory
-    class CoopR_ModuleSetupQuartermaster: Module_F
+    class CoopR_ModuleSetupArmory: Module_F
     {
         scope = 2;
-        displayName = "CoopR Quartermaster NPC";
+        displayName = "CoopR Armory NPC";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
-        function = "coopr_fnc_setupQuartermasterModule";
+        function = "coopr_fnc_setupArmoryModule";
         functionPriority = 2;
         isGlobal = 1;
         isTriggerActivated = 1;
@@ -93,16 +93,16 @@ class CfgVehicles
 
         class ModuleDescription: ModuleDescription
         {
-            description = "Sync this module with an AI unit to make it the CoopR quartermaster unit";
+            description = "Sync this module with an AI unit to make it the CoopR armory unit";
         };
     };
-    class CoopR_QuartermasterItems: Module_F
+    class CoopR_ArmoryItems: Module_F
     {
         scope = 2;
-        displayName = "CoopR Quartermaster Items";
+        displayName = "CoopR Armory Items";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
-        function = "coopr_fnc_setupQuartermasterItemsModule";
+        function = "coopr_fnc_setupArmoryItemsModule";
         functionPriority = 2;
         isGlobal = 1;
         isTriggerActivated = 1;
@@ -156,7 +156,7 @@ class CfgVehicles
 
         class ModuleDescription: ModuleDescription
         {
-          description = "Configures the list of items available in the quartermaster menu";
+          description = "Configures the list of items available in the armory menu";
         };
     };
     class CoopR_ModuleSetupIntelligence: Module_F

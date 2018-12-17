@@ -6,5 +6,5 @@ player setPos getPos COOPR_LOBBY;
 // to prevent lobby players from syncing
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, false, true];
 
-//FLOG("player %1 spawned in lobby", getPlayerUID player);
+DEBUG2("player %1 spawned in lobby", getPlayerUID player);
 

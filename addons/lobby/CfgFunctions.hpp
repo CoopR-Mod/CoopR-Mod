@@ -17,10 +17,11 @@ class CfgFunctions {
             class createCharacterHandler {};
             class removeCharacterHandler {};
             class loginDialogUnloadHandler {};
-            class newCharacterDialogUnloadHandler {};
             class newCharacterButtonHandler {};
             class roleSelectionEH {};
             class getImageForRole {};
+            class setupLobbyModule {};
+            class initLobby {};
         }
     }
 }

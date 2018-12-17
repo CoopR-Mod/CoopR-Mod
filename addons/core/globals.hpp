@@ -7,7 +7,6 @@
 #define MP_MENU 49
 #define ABORT_BUTTON 104
 
-
 #define COOPR_KEY_PLAYER_PROFILES "coopr_player_profiles"
 #define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
 #define COOPR_KEY_INTEL_PROGRESS "coopr_intel_progess"

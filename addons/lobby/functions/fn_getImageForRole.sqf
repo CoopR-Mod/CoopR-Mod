@@ -4,6 +4,8 @@ params [["_role", objNull]];
 
 if (_role isEqualTo objNull) then { ERROR("_role was null") };
 
+DEBUG2("role given was %1", _role);
+
 switch (_role) do {
     case COOPR_ROLE_LEADER: { "group-leader-256.paa" };
     case COOPR_ROLE_MEDIC: { "medic-256.paa" };

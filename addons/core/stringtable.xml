@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CoopR Mod">
+    <Package name="Core">
+        <Key ID="str.coopr.core.action.vehicles">
+            <Original>Get vehicle keys</Original>
+            <German>Fahrzeugschluessel anfordern</German>
+        </Key>
+        <Key ID="str.coopr.core.chatter.keys">
+            <Original>Please drive carefully. The technical maintenance is due!</Original>
+            <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
+        </Key>
+        <Key ID="str.coopr.core.action.rep">
+            <Original>Show reputation</Original>
+            <German>Ruf anzeigen</German>
+        </Key>
+        <Key ID="str.coopr.core.action.intelligence">
+            <Original>Show intelligence status</Original>
+            <German>Aufklaerungsstand anzeigen</German>
+        </Key>
+        <Key ID="str.coopr.supply.ammo.label">
+            <Original>Ammo</Original>
+            <German>Munition</German>
+        </Key>
+        <Key ID="str.coopr.supply.equipment.label">
+            <Original>Equipment</Original>
+            <German>Ausruestung</German>
+        </Key>
+            <Key ID="str.coopr.aar.action.commander">
+                <Original>After Action Report</Original>
+                <German>Abschlussbericht</German>
+            </Key>
+            <Key ID="str.coopr.reputation.chatter.aar">
+                <Original>Good Job! Glad you made it back!</Original>
+                <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
+            </Key>
+    </Package>
+</Project>

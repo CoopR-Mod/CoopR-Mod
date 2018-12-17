@@ -2,13 +2,11 @@
 
 params [["_character", []]];
 
-LSTART("LOGIN");
-
 if(not ([_character] call CBA_fnc_isHash)) exitWith {
     ERROR("argument has to be a cba hash");
 };
 
-FLOG("%1 is logging in...", player);
+INFO2("%1 is logging in", player);
 
 private _slot = [_character, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
 private _name = [_character, COOPR_KEY_NAME] call CBA_fnc_hashGet;
@@ -32,10 +30,8 @@ player setVariable [COOPR_KEY_LOADOUT, _loadout, true];
 
 [_character] call coopr_fnc_characterStatePrettyLog;
 
-SLOG("stored variables saved in player namespace");
+DEBUG("stored variables saved in player namespace");
 
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
-FLOG("player with id %1 logged in", getPlayerUID player);
+INFO2("player with id %1 logged in", getPlayerUID player);
 call coopr_fnc_postLogin;
-
-LEND("LOGIN");

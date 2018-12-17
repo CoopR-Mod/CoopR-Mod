@@ -4,13 +4,11 @@ params ["_slot"];
 
 disableSerialization;
 
-SLOG("initialising new profile dialog");
+DEBUG("initialising new profile ui");
 
 waitUntil {!isNull findDisplay 1103};
 
 private _newCharacterDisplay = findDisplay 1103;
-
-//_newCharacterDisplay displayAddEventHandler ["Unload", { call coopr_fnc_newCharacterDialogUnloadHandler}];
 
 private _nameTextEdit = _newCharacterDisplay displayCtrl 3400;
 private _infoText = _newCharacterDisplay displayCtrl 3003;
@@ -35,3 +33,6 @@ _roleSelectBox lbSetCurSel 0;
 
 _roleSelectBox ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_roleSelectionEH}];
 _createButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_createCharacterHandler}];
+
+DEBUG("new profile ui initialized");
+

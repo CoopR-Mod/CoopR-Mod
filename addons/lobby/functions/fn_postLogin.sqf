@@ -3,7 +3,7 @@
 private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
 private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
 
-SLOG("post login init...");
+DEBUG("post login init...");
 
 // check if player has an old position if not spawn to hq asap
 if(count _oldPos > 0) then {
@@ -25,4 +25,4 @@ if(call coopr_fnc_isACE3Active) then {
 
 cutText ["", "BLACK IN", 0.1];
 
-SLOG("...post login init done");
+DEBUG("...post login init done");

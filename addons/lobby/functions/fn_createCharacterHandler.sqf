@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-LSTART("CREATE CHAR");
 private _ctrl = _this select 0;
 private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
 private _infoText = _ctrl getVariable ["_infoText", objNull];
@@ -15,7 +14,7 @@ private _roleName = _roleSelectBox lbText _index;
 private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
 private _loadOut = _roleId call coopr_fnc_getLoadoutForClass;
 
-FFLOG("creating new character for %1 at slot %1", _uid, _slot);
+INFO3("creating new character for %1 at slot %1", _uid, _slot);
 
 private _character = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_createCharacterState;
 [_character, COOPR_KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
@@ -28,7 +27,6 @@ if(_name == "" or _roleName == "") exitWith {
     [_pairs], {
         params ["_args", "_result"];
         closeDialog 1;
-        LEND("CREATE CHAR");
     }
 ] call Promise_Create;
 

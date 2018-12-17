@@ -13,8 +13,8 @@
             <Original>Show reputation</Original>
             <German>Ruf anzeigen</German>
         </Key>
-        <Key ID="str.coopr.core.action.intel">
-            <Original>Show intel status</Original>
+        <Key ID="str.coopr.core.action.intelligence">
+            <Original>Show intelligence status</Original>
             <German>Aufklaerungsstand anzeigen</German>
         </Key>
         <Key ID="str.coopr.supply.ammo.label">

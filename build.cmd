@@ -14,7 +14,7 @@ mkdir %dest%
 %armake64% build -p addons\core %dest%\core.pbo
 %armake64% build -p addons\equipment %dest%\equipment.pbo
 %armake64% build -p addons\integration %dest%\integration.pbo
-%armake64% build -p addons\intel %dest%\intel.pbo
+%armake64% build -p addons\intelligence %dest%\intelligence.pbo
 %armake64% build -p addons\lobby %dest%\lobby.pbo
 %armake64% build -p addons\supply %dest%\supply.pbo
 

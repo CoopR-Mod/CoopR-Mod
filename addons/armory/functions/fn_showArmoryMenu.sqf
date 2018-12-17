@@ -26,7 +26,7 @@ _listBox setVariable ["_itemsHash", _itemsHash];
 _listBox setVariable ["_currentReputation", _currentReputation];
 _listBox setVariable ["_textboxInfos", _textboxInfos];
 
-_textboxReputation ctrlSetText format[localize "str.coopr.equipment.vendor.rep", str _currentReputation];
+_textboxReputation ctrlSetText format[localize "str.coopr.armory.vendor.rep", str _currentReputation];
 
 // fill listbox with items
 {

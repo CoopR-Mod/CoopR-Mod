@@ -14,8 +14,8 @@ private _values = [_itemsHash, _selectedItem] call CBA_fnc_hashGet;
 private _repNeeded = _values select 0;
 
 if (_repNeeded > _currentReputation) exitWith {
-    [format ["not enough rep pts for item: %1", _selectedItem], DEBUG_CTX, DEBUG_CFG] call CBA_fnc_debug;
-    _textboxInfos ctrlSetStructuredText composeText [localize "str.coopr.equipment.vendor.norep"];
+    DEBUG2("not enough rep pts for item: %1", _selectedItem);
+    _textboxInfos ctrlSetStructuredText composeText [localize "str.coopr.armory.vendor.norep"];
 };
 
 player addWeapon _selectedItem;

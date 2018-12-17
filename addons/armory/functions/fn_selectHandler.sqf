@@ -12,8 +12,8 @@ private _repNeeded = _values select 0;
 
 if (_repNeeded > _currentReputation) then {
     private _repRemain =  _repNeeded - _currentReputation;
-    _textboxInfos ctrlSetStructuredText composeText [ format [localize "str.coopr.equipment.vendor.repneeded", _repNeeded], lineBreak,
-                                                      format [localize "str.coopr.equipment.vendor.remain", _repRemain]];
+    _textboxInfos ctrlSetStructuredText composeText [ format [localize "str.coopr.armory.vendor.repneeded", _repNeeded], lineBreak,
+                                                      format [localize "str.coopr.armory.vendor.remain", _repRemain]];
 }else {
-    _textboxInfos ctrlSetStructuredText parseText format["<t size='2' color='#68b25c'>%1</t>", localize "str.coopr.equipment.vendor.allowed"];
+    _textboxInfos ctrlSetStructuredText parseText format["<t size='2' color='#68b25c'>%1</t>", localize "str.coopr.armory.vendor.allowed"];
 };

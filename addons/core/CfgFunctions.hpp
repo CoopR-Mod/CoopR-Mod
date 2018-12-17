@@ -21,12 +21,10 @@ class CfgFunctions {
             class initEventsServer {};
             class initEventsClient {};
             class initCommanderNPC {};
-            class initArmoryNPC {};
             class initVehicleNPC {};
             class initHQ {};
             class initCore {};
             class setupCommanderModule {};
-            class setupArmoryModule {};
             class setupVehicleModule {};
             class setupHQModule {};
             class setupCoreModule {};
@@ -39,6 +37,7 @@ class CfgFunctions {
             file = "x\coopr\addons\core\helper";
             class abortButtonEventHandler {};
             class initPromise {};
+            class getLoadoutForRole {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};

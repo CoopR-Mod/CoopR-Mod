@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT equipment
-#define DEBUG_CTX "COOPR.EQUIPMENT"
+#define COMPONENT armory
+#define DEBUG_CTX "COOPR.ARMORY"
 
 #include "\x\coopr\addons\core\script_macros.hpp"

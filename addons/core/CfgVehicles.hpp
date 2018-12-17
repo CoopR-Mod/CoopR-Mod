@@ -77,68 +77,6 @@ class CfgVehicles
         };
     };
 
-    class CoopR_ModuleSetupArmory: Module_F
-    {
-        scope = 2;
-        displayName = "CoopR Armory Module";
-        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
-        function = "coopr_fnc_setupArmoryModule";
-        functionPriority = 2;
-        isGlobal = 1;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 0;
-
-        class Arguments {
-            class Item_1 {
-                displayName = "Item 1 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-                defaultValue = "['arifle_MXC_F', 15, 'MXC F', 'This weapon is pretty cool']";
-            }
-            class Item_2 {
-                displayName = "Item 2 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_3 {
-                displayName = "Item 3 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_4 {
-                displayName = "Item 4 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_5 {
-                displayName = "Item 5 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_6 {
-                displayName = "Item 6 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_7 {
-                displayName = "Item 7 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-            class Item_8 {
-                displayName = "Item 8 (Array)";
-                description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"
-                typeName = "ARRAY";
-            }
-        }
-
-        class ModuleDescription: ModuleDescription
-        {
-          description = "Configures the list of items available in the armory menu. If synced to an NPC it will become the quartermaster";
-        };
-    };
     class CoopR_ModuleSetupIntelligence: Module_F
     {
         scope = 2;

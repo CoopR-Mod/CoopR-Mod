@@ -16,7 +16,6 @@ class CfgPatches {
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
             "CoopR_ModuleSetupCommander",
-            "CoopR_ModuleSetupArmory",
             "CoopR_ModuleSetupVehicle",
             "CoopR_ModuleSetupHQ",
             "CoopR_ModuleBasicRoleLoadouts",

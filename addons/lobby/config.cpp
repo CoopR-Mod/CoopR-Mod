@@ -6,7 +6,7 @@ class CfgPatches {
         // Meta information for editor
         name = "CoopR Mod";
         author = "xetra11";
-        url = "https://github.com/CoopR-Mod/CoopR-Altis";
+        url = "https://github.com/CoopR-Mod/CoopR-Mod";
 
         requiredVersion = 1.80;
         requiredAddons[] = {

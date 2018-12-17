@@ -77,6 +77,7 @@ class CfgVehicles
         };
     };
 
+    //TODO: rename to armory
     class CoopR_ModuleSetupQuartermaster: Module_F
     {
         scope = 2;

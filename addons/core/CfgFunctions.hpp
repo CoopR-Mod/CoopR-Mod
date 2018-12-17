@@ -27,7 +27,6 @@ class CfgFunctions {
             class initCore {};
             class setupCommanderModule {};
             class setupArmoryModule {};
-            class setupArmoryItemsModule {};
             class setupVehicleModule {};
             class setupHQModule {};
             class setupCoreModule {};

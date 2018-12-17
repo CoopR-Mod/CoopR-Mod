@@ -2,7 +2,7 @@
 
 disableSerialization;
 
-createDialog "coopr_Equipment_Dialog";
+createDialog "CoopR_Armory_Dialog";
 waitUntil {!isNull findDisplay 1102};
 
 private _vendorDisplay = findDisplay 1102;

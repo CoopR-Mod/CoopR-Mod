@@ -17,7 +17,6 @@ class CfgPatches {
         units[] = {
             "CoopR_ModuleSetupCommander",
             "CoopR_ModuleSetupArmory",
-            "CoopR_ModuleArmoryItems",
             "CoopR_ModuleSetupVehicle",
             "CoopR_ModuleSetupHQ",
             "CoopR_ModuleBasicRoleLoadouts",

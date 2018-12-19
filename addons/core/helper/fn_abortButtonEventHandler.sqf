@@ -11,14 +11,14 @@
                 private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
 
                 if(_isLoggedIn) then {
-                    SLOG("saving character state before mission end...");
+                    INFO("saving character state before mission end...");
                     [SERVER, "coopr_fnc_syncPlayerToServer", [player],
                         [], {
-                            SLOG("...saved");
+                            INFO("...saved");
                         }
                     ] call Promise_Create;
                 }else {
-                    SLOG("character is not logged in. Character state will not be saved");
+                    INFO("character is not logged in. Character state will not be saved");
                 };
             };
         }];

@@ -14,5 +14,5 @@ if(hasInterface) then {
         };
     };
 
-    SLOG("client initialized");
+    INFO("client initialized");
 };

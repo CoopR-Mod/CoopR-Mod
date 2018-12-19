@@ -11,6 +11,3 @@
 #define INFO2(var1,var2) if (DEBUG_CTX call coopr_fnc_getLogLevel >= 1) then { [format [var1, var2], DEBUG_CTX + ".info", DEBUG_CFG] call CBA_fnc_debug }
 #define INFO3(var1,var2,var3) if (DEBUG_CTX call coopr_fnc_getLogLevel >= 1) then { [format [var1, var2, var3], DEBUG_CTX + ".info", DEBUG_CFG] call CBA_fnc_debug }
 
-#define SLOG(var1) ""
-#define FLOG(var1,var2) ""
-#define FFLOG(var1,var2,var3) ""

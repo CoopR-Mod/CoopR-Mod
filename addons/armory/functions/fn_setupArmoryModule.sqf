@@ -4,12 +4,13 @@ params [["_logic", objNull]];
 
 private _loggingLevel = _logic getVariable ["Logging", -1];
 [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
+[_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_CLIENTS];
 
 private _syncedObjects = synchronizedObjects _logic;
 DEBUG2("Armory Module - synced units: %1", _syncedObjects);
 
 if(count _syncedObjects == 0) exitWith { ERROR("Armory Module has no synced units!") };
-{ _x call coopr_fnc_initArmoryNPC } forEach _syncedObjects;
+{ [_x] remoteExec ["coopr_fnc_initArmoryNPC", EXEC_CLIENTS]; } forEach _syncedObjects;
 
 private _items = (allVariables _logic) select { (_x find "item") == 0};
 private _itemValues = [];

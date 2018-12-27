@@ -10,6 +10,3 @@ if (isNil "COOPR_LOBBY") exitWith {
 };
 INFO("Verification of setup modules successful");
 true; // all fine
-
-
-

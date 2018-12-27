@@ -14,10 +14,10 @@ if (COOPR_ROLE_MEDIC_LOADOUT isEqualTo objNull) then { SETUPERROR("medic loadout
 if (COOPR_ROLE_DMR_LOADOUT isEqualTo objNull) then { SETUPERROR("dmr loadout is not defined") };
 if (COOPR_ROLE_MG_LOADOUT isEqualTo objNull) then { SETUPERROR("mg loadout is not defined") };
 
-publicVariable "COOPR_ROLE_ENGINEER_LOADOUT";
-publicVariable "COOPR_ROLE_LEADER_LOADOUT";
-publicVariable "COOPR_ROLE_MEDIC_LOADOUT";
-publicVariable "COOPR_ROLE_DMR_LOADOUT";
-publicVariable "COOPR_ROLE_MG_LOADOUT";
+    publicVariable "COOPR_ROLE_ENGINEER_LOADOUT";
+    publicVariable "COOPR_ROLE_LEADER_LOADOUT";
+    publicVariable "COOPR_ROLE_MEDIC_LOADOUT";
+    publicVariable "COOPR_ROLE_DMR_LOADOUT";
+    publicVariable "COOPR_ROLE_MG_LOADOUT";
 
 true;

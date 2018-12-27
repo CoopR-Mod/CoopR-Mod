@@ -16,3 +16,8 @@ if (_sideOfHQ isEqualTo "West") then {
     COOPR_FACTION_EAST = _faction;
     INFO("HQ East initialized");
 };
+
+publicVariable "COOPR_HQ_WEST";
+publicVariable "COOPR_FACTION_WEST";
+publicVariable "COOPR_HQ_EAST";
+publicVariable "COOPR_FACTION_EAST";

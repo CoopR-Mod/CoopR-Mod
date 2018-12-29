@@ -7,7 +7,7 @@ if(isServer) then {
     DEBUG2("Vehicle NPC Module - synced units: %1", _syncedObjects);
 
     if(count _syncedObjects == 0) exitWith { ERROR("Vehicle NPC Module has no synced units!") };
-    { [_x] remoteExec ["coopr_fnc_initVehicleNPC", EXEC_CLIENTS]; } forEach _syncedObjects;
+    { [_x] remoteExec ["coopr_fnc_initVehicleNPC", EXEC_GLOBAL]; } forEach _syncedObjects;
 
     true;
 } else {

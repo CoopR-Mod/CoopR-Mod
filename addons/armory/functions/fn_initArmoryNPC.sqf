@@ -8,7 +8,7 @@ if (INTEGRATE_ACE3) then {
     _armory call coopr_fnc_ace3_initArmory;
 } else {
     _armory addAction [localize "str.coopr.armory.action", {call coopr_fnc_showArmoryMenu},[],1.5,true,true,"","true",3];
+    DEBUG2("initialized %1 as armory", _armory);
 };
 
-DEBUG2("initialized %1 as armory", _armory);
 

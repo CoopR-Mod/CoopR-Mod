@@ -6,7 +6,7 @@ params [["_logic", objNull]];
 private _loggingLevel = _logic getVariable ["Logging", -1];
 
 [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
-[_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_CLIENTS];
+[_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
 private _supplyCommDevices = (_logic getVariable ["SupplyCommunicationDevices", ""]) splitString "," ;
 private _supplyVehicleClass = _logic getVariable ["SupplyVehicle", ""];
@@ -20,6 +20,6 @@ DEBUG("Supply delivery time: %1", _supplyDeliveryTime);
 DEBUG("Supply insertion area: %1", _supplyInsertionArea);
 DEBUG("Supply arrival area: %1", _supplyArrivalArea);
 
-[_supplyCommDevices, _supplyVehicleClass, _supplyDeliveryTime, _supplyInsertionArea, _supplyArrivalArea] remoteExec ["coopr_fnc_initSupply", EXEC_CLIENTS];
+[_supplyCommDevices, _supplyVehicleClass, _supplyDeliveryTime, _supplyInsertionArea, _supplyArrivalArea] remoteExec ["coopr_fnc_initSupply", EXEC_GLOBAL];
 
 true

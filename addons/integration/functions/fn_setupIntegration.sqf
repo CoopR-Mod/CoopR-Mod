@@ -4,7 +4,7 @@ params [["_logic", objNull]];
 
 private _loggingLevel = _logic getVariable ["Logging", -1];
 [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
-[_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_CLIENTS];
+[_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
 INTEGRATE_ACE3 = _logic getVariable ["ACE3", false] && call coopr_fnc_isACE3Active;
 INTEGRATE_ALIVE = _logic getVariable ["ALIVE", false];

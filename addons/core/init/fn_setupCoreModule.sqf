@@ -8,7 +8,7 @@ if(isServer) then {
     private _loggingLevel = _logic getVariable ["Logging", -1];
 
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
-    [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_CLIENTS];
+    [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
     DEBUG2("Reputation per Man is: %1", _reputationPerMan);
     DEBUG2("Reputation malus for WIA is: %1", _WIAReputation);

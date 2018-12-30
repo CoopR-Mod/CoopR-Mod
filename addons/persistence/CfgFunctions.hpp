@@ -15,6 +15,7 @@ class CfgFunctions {
             class sync {};
             class syncPlayersToServer {};
             class syncPlayerToServer {};
+            class allVariablesToHash {};
         }
     }
 }

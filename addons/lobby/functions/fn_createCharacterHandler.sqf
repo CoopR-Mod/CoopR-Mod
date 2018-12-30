@@ -12,7 +12,7 @@ private _name = ctrlText _nameTextEdit;
 private _index = lbCurSel _roleSelectBox;
 private _roleName = _roleSelectBox lbText _index;
 private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
-private _loadOut = _roleId call coopr_fnc_getLoadoutForClass;
+private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
 
 INFO3("creating new character for %1 at slot %1", _uid, _slot);
 

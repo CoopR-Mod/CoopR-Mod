@@ -14,10 +14,11 @@ class CfgFunctions {
             class convertTempToReputation {};
             class deliverAfterActionReport {};
             class showReputation {};
-            class verifySetup {};
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";
+            class verifySetup {};
+
             class initEventsServer {};
             class initEventsClient {};
             class initCommanderNPC {};
@@ -30,8 +31,8 @@ class CfgFunctions {
             class setupCoreModule {};
             class setupBasicRoleLoadoutModule {};
 
+            class initCoopRClients {};
             class initCoopRServer {postInit = 1;};
-            class initCoopRClients {postInit = 1; };
         }
         class coopr_core_helper {
             file = "x\coopr\addons\core\helper";

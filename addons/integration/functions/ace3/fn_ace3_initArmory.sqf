@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_armory"];
 
 //TODO: rename equipment vendor shop to armory

@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_commander"];
 
 [_commander, 0, ["ACE_MainActions"],

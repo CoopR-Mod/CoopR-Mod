@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_intelligence"];
 
 [_intelligence, 0, ["ACE_MainActions"],

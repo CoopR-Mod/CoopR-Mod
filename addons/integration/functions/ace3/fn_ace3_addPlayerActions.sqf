@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 [player, 1, ["ACE_SelfActions"],
 ["init_action_0", localize "str.coopr.ace3.interaction.coopr", "", {}, {true}] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;

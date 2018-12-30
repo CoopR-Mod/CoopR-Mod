@@ -45,24 +45,24 @@ private _protocolName = "coopr";
 _result = "extDB3" callExtension format["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2", _dbName, _protocolName];
 
 if(!(_result isEqualTo "[1]")) then {
-    ERROR("extDB3: error with database protocol connection");
+    ERROR("extDB3: error creating users table. Maybe just an already existing table. Check extDB3 logs");
     _success = false;
 } else {
     INFO("connection to database with protocol successful");
     _success = true;
 };
 
-private _createUserTable = "CREATE TABLE users (
+private _createUsersTable = "CREATE TABLE users (
                                steam_id int NOT NULL,
                                characters_id int,
                                PRIMARY KEY (steam_id),
                                FOREIGN KEY (characters_id) REFERENCES characters(id));";
 
-_result = "extDB3" callExtension format["1:%1:%2", _protocolName, _createUserTable];
+_result = "extDB3" callExtension format["1:%1:%2", _protocolName, _createUsersTable];
 
-if(!(_result isEqualTo "[1]")) then {
+if(!(_result isEqualTo "[1,[]]")) then {
     ERROR("extDB3: error creating users table");
-    _success = false;
+    ERROR("Maybe just an already existing table. Check extDB3 logs");
 } else {
     INFO("users table created successfully");
     _success = true;
@@ -77,9 +77,9 @@ private _createCharactersTable = "CREATE TABLE characters (
 
 _result = "extDB3" callExtension format["1:%1:%2", _protocolName, _createCharactersTable];
 
-if(!(_result isEqualTo "[1]")) then {
+if(!(_result isEqualTo "[1,[]]")) then {
     ERROR("extDB3: error creating characters table");
-    _success = false;
+    ERROR("Maybe just an already existing table. Check extDB3 logs");
 } else {
     INFO("characters table created successfully");
     _success = true;

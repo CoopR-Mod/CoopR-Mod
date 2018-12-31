@@ -53,22 +53,6 @@ if(isServer) then {
         _success = true;
     };
 
-    private _createUsersTable = "CREATE TABLE users (
-                                   steam_id int NOT NULL,
-                                   characters_id int,
-                                   PRIMARY KEY (steam_id),
-                                   FOREIGN KEY (characters_id) REFERENCES characters(id));";
-
-    _result = "extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable];
-
-    if(!(_result isEqualTo "[1,[]]")) then {
-        ERROR("extDB3: error creating users table");
-        ERROR("Maybe just an already existing table. Check extDB3 logs");
-    } else {
-        INFO("users table created successfully");
-        _success = true;
-    };
-
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
                                         character_1 TEXT,
@@ -85,6 +69,23 @@ if(isServer) then {
         INFO("characters table created successfully");
         _success = true;
     };
+
+    private _createUsersTable = "CREATE TABLE users (
+                                   steam_id int NOT NULL,
+                                   characters_id int,
+                                   PRIMARY KEY (steam_id),
+                                   FOREIGN KEY (characters_id) REFERENCES characters(id));";
+
+    _result = "extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable];
+
+    if(!(_result isEqualTo "[1,[]]")) then {
+        ERROR("extDB3: error creating users table");
+        ERROR("Maybe just an already existing table. Check extDB3 logs");
+    } else {
+        INFO("users table created successfully");
+        _success = true;
+    };
+
 
     _success;
 }

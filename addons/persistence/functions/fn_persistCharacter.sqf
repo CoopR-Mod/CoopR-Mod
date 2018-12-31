@@ -35,9 +35,7 @@ if(isServer)then {
         private _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable]);
 
         private _returnCode = _result select 0;
-        DEBUG2("return code is: %1", _returnCode);
         private _payload = _result select 1;
-        DEBUG2("payload is: %1", _payload);
 
         if(_payload isEqualTo []) then {
             INFO2("extDB3: No user could be found for steamID %1", _steamID);

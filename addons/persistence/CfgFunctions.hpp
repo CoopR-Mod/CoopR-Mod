@@ -19,6 +19,7 @@ class CfgFunctions {
             class prefixVariablesToHash {};
             class initLocalDB {};
             class hasUser {};
+            class initUser {};
         }
     }
 }

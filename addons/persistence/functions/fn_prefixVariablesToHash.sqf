@@ -25,8 +25,8 @@
 params [["_prefix", ""],
         ["_character", objNull]];
 
-if(_prefix isEqualTo "") then { ERROR("given _prefix is empty string") };
-if(_character isEqualTo objNull) then { ERROR("given _character object was null") };
+if(_prefix isEqualTo "") exitWith { ERROR("given _prefix is empty string") };
+if(_character isEqualTo objNull) exitWith { ERROR("given _character object was null") };
 
 INFO("start mapping character variables to hash");
 DEBUG2("character object is %1", _character);

@@ -22,7 +22,7 @@
 
 params [["_character", objNull]];
 
-if(_character isEqualTo objNull) then { ERROR("given _character object was null") };
+if(_character isEqualTo objNull) exitWith { ERROR("given _character object was null") };
 
 INFO("start mapping character variables to hash");
 DEBUG2("character object is %1", _character);

@@ -33,10 +33,8 @@ if (isServer) then {
     private _payload = _result select 1;
 
     if(_payload isEqualTo []) then {
-        INFO2("extDB3: No user could be found for steamID %1", _steamID);
         false;
     } else {
-        INFO2("extDB3: user found for steamID %1", _steamID);
         true;
     };
 }

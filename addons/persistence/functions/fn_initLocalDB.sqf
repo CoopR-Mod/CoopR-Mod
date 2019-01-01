@@ -35,9 +35,9 @@ if(isServer) then {
     private _success = false;
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
+                                        character_0 TEXT,
                                         character_1 TEXT,
                                         character_2 TEXT,
-                                        character_3 TEXT,
                                         PRIMARY KEY (id));";
 
     private _createUsersTable = "CREATE TABLE users (

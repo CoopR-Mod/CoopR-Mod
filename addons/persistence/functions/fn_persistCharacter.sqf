@@ -18,33 +18,34 @@
  * Scope: Server
  */
 
-params[["_playerUID", ""],
-       ["_character", objNull]];
+params [["_character", objNull]];
 
-if(_character isEqualTo objNull) exitWith { ERROR("_dbName was objNull") };
-if(_playerUID isEqualTo "") exitWith { ERROR("_playerUID was empty string") };
+if (isServer) then {
 
-if(isServer)then {
+    if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
+    private _playerUID = getPlayerUID _character;
+    DEBUG("checking if user has entry in database");
+
     if(_playerUID call coopr_fnc_hasUser) then {
-        private _characterHash = ["coopr", _character] call coopr_fnc_prefixVaraiblesToHash;
+        INFO("persisting character...");
+        private _characterHash = ["coopr", _character] call coopr_fnc_prefixVariablesToHash;
+        private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+        private _charactersID = _playerUID call coopr_fnc_getCharactersID select 0 select 0; //extDB3 result format [["value"]]
 
         private _protocolName = "coopr";
-        //TODO: unfinished business
-        private _createUsersTable = "INSERT INTO ";
+        private _createUsersTable = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];
 
         private _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable]);
-
         private _returnCode = _result select 0;
-        private _payload = _result select 1;
 
-        if(_payload isEqualTo []) then {
-            INFO2("extDB3: No user could be found for steamID %1", _steamID);
-            false;
-        } else {
-            INFO2("extDB3: user found for steamID %1", _steamID);
+        if(_returnCode isEqualTo 1) then {
+            INFO3("extDB3: character at slot %1 successfully updated for %2", _charactersSlot, _playerUID);
             true;
+        } else {
+            ERROR("extDB3: character could not be updated");
+            false;
         };
     } else {
         INFO2("skipping character perstisting. No user for id %1 in database", _playerUID);
     };
-}
+};

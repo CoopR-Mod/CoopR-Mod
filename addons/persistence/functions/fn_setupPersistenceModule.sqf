@@ -10,7 +10,11 @@ if (isServer) then {
 
     DEBUG2("persistence location is set to %1" _persistenceLocation);
 
+    LOCAL_PERSISTENCE_INIT = false;
+
     if(_perstistenceLocation isEqualTo "Local") then {
-      "Database" call coopr_fnc_initLocalDB;
+      LOCAL_PERSISTENCE_INIT = "Database" call coopr_fnc_initLocalDB;
     };
+
+    publicVariable "LOCAL_PERSISTENCE_INIT";
 };

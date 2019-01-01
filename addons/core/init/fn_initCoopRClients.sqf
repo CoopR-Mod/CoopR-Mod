@@ -2,7 +2,11 @@
 
 if(hasInterface) then {
     call coopr_fnc_initPromise;
-    [getPlayerUID player] remoteExec ["coopr_fnc_initUser", EXEC_SERVER];
+    //TODO: refactor to more abstract init flag
+    // only call if persistence init was successful
+    if(LOCAL_PERSISTENCE_INIT) then {
+        [getPlayerUID player] remoteExec ["coopr_fnc_initUser", EXEC_SERVER];
+    };
     call coopr_fnc_initEventsClient;
     call coopr_fnc_addPlayerActions;
 

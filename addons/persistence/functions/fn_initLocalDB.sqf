@@ -31,28 +31,8 @@ params[["_dbName", ""]];
 if(isServer) then {
     if(_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
 
-    private _success = false;
-    private _result = "extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName];
-
-    if(!(_result isEqualTo "[1]")) then {
-        ERROR("extDB3: error with database connection");
-        _success = false;
-    } else {
-        INFO("connection to database successful");
-        _success = true;
-    };
-
     private _protocolName = "coopr";
-    _result = "extDB3" callExtension format["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2", _dbName, _protocolName];
-
-    if(!(_result isEqualTo "[1]")) then {
-        ERROR("extDB3: error creating users table. Maybe just an already existing table. Check extDB3 logs");
-        _success = false;
-    } else {
-        INFO("connection to database with protocol successful");
-        _success = true;
-    };
-
+    private _success = false;
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
                                         character_1 TEXT,
@@ -60,32 +40,59 @@ if(isServer) then {
                                         character_3 TEXT,
                                         PRIMARY KEY (id));";
 
-    _result = "extDB3" callExtension format["0:%1:%2", _protocolName, _createCharactersTable];
-
-    if(!(_result isEqualTo "[1,[]]")) then {
-        ERROR("extDB3: error creating characters table");
-        ERROR("Maybe just an already existing table. Check extDB3 logs");
-    } else {
-        INFO("characters table created successfully");
-        _success = true;
-    };
-
     private _createUsersTable = "CREATE TABLE users (
-                                   steam_id int NOT NULL,
+                                   steam_id varchar(255) NOT NULL,
                                    characters_id int,
                                    PRIMARY KEY (steam_id),
                                    FOREIGN KEY (characters_id) REFERENCES characters(id));";
 
-    _result = "extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable];
+    // test connection
+    private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);
+    private _returnCode = _result select 0;
 
-    if(!(_result isEqualTo "[1,[]]")) then {
-        ERROR("extDB3: error creating users table");
-        ERROR("Maybe just an already existing table. Check extDB3 logs");
-    } else {
-        INFO("users table created successfully");
+    if(_returnCode isEqualTo 1) then {
+        INFO("connection to database successful");
         _success = true;
+    } else {
+        ERROR("extDB3: error with database connection");
+        _success = false;
     };
 
+    // test connection with sql protocol
+    _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2", _dbName, _protocolName]);
+    _returnCode = _result select 0;
+
+    if(_returnCode isEqualTo 1) then {
+        INFO("connection to database with protocol successful");
+        _success = true;
+    } else {
+        ERROR("extDB3: error creating users table. Maybe just an already existing table. Check extDB3 logs");
+        _success = false;
+    };
+
+    // initially create characters table
+    _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _createCharactersTable]);
+    _returnCode = _result select 0;
+
+    if(_returnCode isEqualTo 1) then {
+        INFO("characters table created successfully");
+        _success = true;
+    } else {
+        ERROR("extDB3: error creating characters table");
+        ERROR("Maybe just an already existing table. Check extDB3 logs");
+    };
+
+    // initially create users table
+    _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable]);
+    _returnCode = _result select 0;
+
+    if(_returnCode isEqualTo 1) then {
+        INFO("users table created successfully");
+        _success = true;
+    } else {
+        ERROR("extDB3: error creating users table");
+        ERROR("Maybe just an already existing table. Check extDB3 logs");
+    };
 
     _success;
-}
+};

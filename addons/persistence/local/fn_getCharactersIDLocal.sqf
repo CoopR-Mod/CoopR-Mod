@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Returns the character_id of the database for the given steam_id
+ * Returns the character_id of the database for the given steam_id for local (extDB3)
  *
  * Arguments:
  * 0: _steamID <STRING> - the steam id of the user
@@ -11,7 +11,7 @@
  * charactersID <STRING> - the ID of the characters table for the given user
  *
  * Example:
- * getPlayerUID player call coopr_fnc_getCharacterID
+ * getPlayerUID player call coopr_fnc_getCharacterIDLocal
  *
  * Public: No
  *
@@ -22,11 +22,7 @@ params[["_steamID", ""]];
 
 if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
-if(isServer) then {
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        _steamID call coopr_fnc_getCharactersIDLocal;
-    } else {
-        INFO("no persistence location defined - skipping persistence routine");
-    };
+if (isServer) then {
+    private _charactersIDStatement = format["SELECT characters_id FROM users WHERE steam_id = %1", _steamID];
+    _charactersIDStatement call coopr_fnc_extDB3sql;
 };
-

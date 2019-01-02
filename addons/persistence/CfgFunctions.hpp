@@ -1,5 +1,14 @@
 class CfgFunctions {
     class coopr {
+        class coopr_persistence_local {
+            file = "x\coopr\addons\persistence\local";
+            class extDB3sql {};
+            class getCharactersIDLocal {};
+            class persistCharacterLocal {};
+            class initUserLocal {};
+            class hasUserLocal {};
+            class initPersistenceLocal {};
+        }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
             class setupPersistenceModule {};
@@ -17,14 +26,9 @@ class CfgFunctions {
             class syncPlayerToServer {};
             class prefixVariablesToHash {};
             class initPersistence {};
-            class initPersistenceLocal {};
             class hasUser {};
-            class hasUserLocal {};
             class initUser {};
-            class initUserLocal {};
             class persistCharacter {};
-            class persistCharacterLocal {};
-            class extDB3sql {};
             class getCharactersID {};
         }
     }

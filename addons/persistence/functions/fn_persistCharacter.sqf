@@ -39,7 +39,7 @@ if (isServer) then {
         private _returnCode = _result select 0;
 
         if(_returnCode isEqualTo 1) then {
-            INFO3("extDB3: character at slot %1 successfully updated for %2", _charactersSlot, _playerUID);
+            INFO3("extDB3: character at slot %1 successfully updated for %2", _characterSlot, _playerUID);
             true;
         } else {
             ERROR("extDB3: character could not be updated");

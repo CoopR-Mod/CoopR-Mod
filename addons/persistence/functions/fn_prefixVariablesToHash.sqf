@@ -31,19 +31,20 @@ if(_character isEqualTo objNull) exitWith { ERROR("given _character object was n
 INFO("start mapping character variables to hash");
 DEBUG2("character object is %1", _character);
 INFO2("filter by prefix %1", _prefix);
-private _variableKeys = allVariables player;
-private _prefixedKeys = _variableKeys select { (_x find _prefix) == 0};
-private _hash = EMPTY_HASH;
+private _characterHash = _character call CBA_fnc_serializeNamespace;
+private _keys =  [_characterHash] call CBA_fnc_hashKeys;
+private _prefixedKeys = _keys select { (_x find _prefix) == 0};
+private _filteredHash = EMPTY_HASH;
 
 {
     private _value = _character getVariable _x;
     DEBUG3("building hash - key %1 value %2", _x, _value);
-    [_hash, _x, _value] call CBA_fnc_hashSet;
+    [_filteredHash, _x, _value] call CBA_fnc_hashSet;
 } forEach _prefixedKeys;
 
-DEBUG2("final hash %1" _hash);
+DEBUG2("final hash %1" _filteredHash);
 INFO("character variables mapped to hash");
-_hash
+_filteredHash
 
 
 

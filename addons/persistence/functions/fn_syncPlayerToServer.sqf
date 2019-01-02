@@ -8,9 +8,8 @@ if(isNull _player) exitWith { ERROR("player must not be objNull"); };
 private _slot = _player getVariable [COOPR_KEY_SLOT, -1];
 private _characterState = _player call coopr_fnc_createCharacterStateFromPlayer;
 [getPlayerUID _player, _characterState, _slot] call coopr_fnc_updateCharacter;
-DEBUG3("player %1 manually synced at slot %2", getPlayerUID _player, _slot);
-
 _player call coopr_fnc_persistCharacter;
 
+DEBUG3("player %1 manually synced at slot %2", getPlayerUID _player, _slot);
 INFO("... syncing done.");
 _slot;

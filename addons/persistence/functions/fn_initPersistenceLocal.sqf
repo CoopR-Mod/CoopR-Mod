@@ -19,7 +19,7 @@
  * None
  *
  * Example:
- * "Database" call coopr_fnc_initLocalDB
+ * "Database" call coopr_fnc_initPersistenceLocal
  *
  * Public: No
  *
@@ -31,6 +31,7 @@ params[["_dbName", ""]];
 if(isServer) then {
     if(_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
 
+    INFO("initializing local persistence layer");
     private _protocolName = "coopr";
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,

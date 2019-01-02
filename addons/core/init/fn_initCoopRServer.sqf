@@ -7,8 +7,11 @@ if(isServer) then {
         call coopr_fnc_initEventsServer;
         //call coopr_fnc_staticData;
         true call coopr_fnc_sync;
-        INFO("server initialized");
+        //wait until the persistence module finished its setup
+        waitUntil {!(isNil "COOPR_PERSISTENCE_LOCATION")};
+        call coopr_fnc_initPersistence;
         [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_GLOBAL, true];
+        INFO("server initialized");
     } else {
         ERROR("Server was not initialized. Setup verification failed");
     };

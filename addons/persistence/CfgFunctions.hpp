@@ -16,10 +16,14 @@ class CfgFunctions {
             class syncPlayersToServer {};
             class syncPlayerToServer {};
             class prefixVariablesToHash {};
-            class initLocalDB {};
+            class initPersistence {};
+            class initPersistenceLocal {};
             class hasUser {};
+            class hasUserLocal {};
             class initUser {};
+            class initUserLocal {};
             class persistCharacter {};
+            class persistCharacterLocal {};
             class extDB3sql {};
             class getCharactersID {};
         }

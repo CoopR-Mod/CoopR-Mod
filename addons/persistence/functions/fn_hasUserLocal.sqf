@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Checks if the current user (steam_id) is already in the database
+ * Checks if the current user (steam_id) is already in the local (extDB3) database
  *
  * Arguments:
  * 0: steamID <STRING> - the steam id of the connected user
@@ -11,7 +11,7 @@
  * isAvailable <BOOLEAN>
  *
  * Example:
- * (getPlayerUID player) call coopr_fnc_hasUser
+ * (getPlayerUID player) call coopr_fnc_hasUserLocal
  *
  * Public: No
  *
@@ -23,11 +23,13 @@ params[["_steamID", ""]];
 //TODO: refactor to macro
 if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
-if(isServer) then {
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        _steamID call coopr_fnc_hasUserLocal;
-    } else {
-        INFO("no persistence location defined - skipping persistence routine");
-    };
-};
+if (isServer) then {
+    private _selectUserByID = format["SELECT * FROM users WHERE steam_id = '%1'", _steamID];
+    private _payload = _selectUserByID call coopr_fnc_extDB3sql;
 
+    if(_payload isEqualTo []) then {
+        false;
+    } else {
+        true;
+    };
+}

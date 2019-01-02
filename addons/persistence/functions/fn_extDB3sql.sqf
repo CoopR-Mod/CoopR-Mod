@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Simple wrapping function to make SQL statements more easy
+ * Simple wrapping function to make extDB3 SQL statements more easy to use
  *
  * Arguments:
  * 0: _statement <STRING> - the sql statement
@@ -11,7 +11,7 @@
  * _payload <ARRAY> - the returned payload of the extDB3 database connection
  *
  * Example:
- * "INSERT INTO characters (character_1, character_2, character_3) VALUES ('[]', '[]', '[]')" call coopr_fnc_sql
+ * "INSERT INTO characters (character_1, character_2, character_3) VALUES ('[]', '[]', '[]')" call coopr_fnc_extDB3sql
  *
  * Public: No
  *
@@ -30,7 +30,10 @@ if (isServer) then {
     private _returnCode = _result select 0;
     private _payload = _result select 1;
 
-    if(_returnCode isEqualTo 0) exitWith { ERROR("there was an error with the extDB3 sql statement call") };
+    if(_returnCode isEqualTo 0) exitWith {
+        ERROR("there was an error with the extDB3 sql statement call");
+        DEBUG2("statement used: %1", _statement);
+    };
 
     _payload;
 };

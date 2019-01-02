@@ -26,25 +26,11 @@ if(_steamID call coopr_fnc_hasUser) exitWith { INFO2("user %1 already defined", 
 if (isServer) then {
     INFO("initializing new user entry");
 
-    private _protocolName = "coopr";
     private _insertCharacters = "INSERT INTO characters (character_0, character_1, character_2) VALUES ('[]', '[]', '[]')";
     private _insertUser = format["INSERT INTO users (steam_id, characters_id) VALUES(%1, LAST_INSERT_ID())", _steamID];
 
-    private _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _insertCharacters]);
-    private _returnCode = _result select 0;
+    _insertCharacters call coopr_fnc_extDB3sql;
+    _insertUser call coopr_fnc_extDB3sql;
 
-    if(_returnCode isEqualTo 1) then {
-        INFO("characters entry created successfully");
-    } else {
-        ERROR("extDB3: characters could not be created for steamID %1", _steamID);
-    };
-
-    _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _insertUser]);
-    _returnCode = _result select 0;
-
-    if(_returnCode isEqualTo 1) then {
-        INFO("user entry created successfully");
-    } else {
-        ERROR("extDB3: user could not be created for steamID %1", _steamID);
-    };
-}
+    INFO2("user for steam id %1 initialized", _steamID);
+};

@@ -24,7 +24,6 @@ if (isServer) then {
 
     if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
     private _playerUID = getPlayerUID _character;
-    DEBUG("checking if user has entry in database");
 
     if(_playerUID call coopr_fnc_hasUser) then {
         INFO("persisting character...");
@@ -32,19 +31,10 @@ if (isServer) then {
         private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
         private _charactersID = _playerUID call coopr_fnc_getCharactersID select 0 select 0; //extDB3 result format [["value"]]
 
-        private _protocolName = "coopr";
-        private _createUsersTable = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];
+        private _updateCharacter = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];
+        _updateCharacter call coopr_fnc_extDB3sql;
 
-        private _result = call compile ("extDB3" callExtension format["0:%1:%2", _protocolName, _createUsersTable]);
-        private _returnCode = _result select 0;
-
-        if(_returnCode isEqualTo 1) then {
-            INFO3("extDB3: character at slot %1 successfully updated for %2", _characterSlot, _playerUID);
-            true;
-        } else {
-            ERROR("extDB3: character could not be updated");
-            false;
-        };
+        INFO2("character persisted at slot %1", _characterSlot);
     } else {
         INFO2("skipping character perstisting. No user for id %1 in database", _playerUID);
     };

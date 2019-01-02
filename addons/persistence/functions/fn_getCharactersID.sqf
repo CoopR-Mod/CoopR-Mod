@@ -24,5 +24,5 @@ if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
 if (isServer) then {
     private _charactersIDStatement = format["SELECT characters_id FROM users WHERE steam_id = %1", _steamID];
-    _charactersIDStatement call coopr_fnc_sql;
+    _charactersIDStatement call coopr_fnc_extDB3sql;
 };

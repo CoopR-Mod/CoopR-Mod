@@ -20,7 +20,7 @@ class CfgFunctions {
             class hasUser {};
             class initUser {};
             class persistCharacter {};
-            class sql {};
+            class extDB3sql {};
             class getCharactersID {};
         }
     }

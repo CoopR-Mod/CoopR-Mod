@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * player call coopr_fnc_persistCharacterLocal
+ * player call coopr_fnc_updateCharacterLocal
  *
  * Public: No
  *
@@ -29,7 +29,7 @@ if (isServer) then {
         INFO("persisting character...");
         private _characterHash = ["coopr", _character] call coopr_fnc_prefixVariablesToHash;
         private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
-        private _charactersID = _playerUID call coopr_fnc_getCharactersID select 0 select 0; //extDB3 result format [["value"]]
+        private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 
         private _updateCharacter = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];
         _updateCharacter call coopr_fnc_extDB3sql;

@@ -4,7 +4,7 @@ class CfgFunctions {
             file = "x\coopr\addons\persistence\local";
             class extDB3sql {};
             class getCharactersIDLocal {};
-            class persistCharacterLocal {};
+            class updateCharacterLocal {};
             class initUserLocal {};
             class hasUserLocal {};
             class initPersistenceLocal {};
@@ -16,7 +16,7 @@ class CfgFunctions {
             class getCharacterSlots {};
             class updateCharacterSlots {};
             class getCharacter {};
-            class updateCharacter {};
+            class createCharacter{};
             class createCharacterStateFromPlayer {};
             class createCharacterState {};
             class getAllProfiles {};
@@ -29,7 +29,7 @@ class CfgFunctions {
             class initPersistence {};
             class hasUser {};
             class initUser {};
-            class persistCharacter {};
+            class updateCharacter {};
             class getCharactersID {};
             class getCharacters {};
         }

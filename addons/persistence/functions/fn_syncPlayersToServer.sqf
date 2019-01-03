@@ -14,7 +14,7 @@ DEBUG2("found %1 players connected", count _allPlayers);
     // skip if not logged in
     if(_isLoggedIn) then {
         _player call coopr_fnc_syncPlayerToServer;
-        _player call coopr_fnc_persistCharacter;
+        _player call coopr_fnc_updateCharacter;
     }
 
 } forEach allPlayers;

@@ -1,25 +1,33 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Persists a given character/player object to the specified persistent location (local/official/custom)
+ *
+ * Arguments:
+ * 0: _character <OBJECT> - the object of the actual player/character
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * player call coopr_fnc_updateCharacter
+ *
+ * Public: No
+ *
+ * Scope: Server
+ */
 
-params [["_playerUid", -1],
-        ["_characterState", []],
-        ["_slot", -1]];
+params [["_character", objNull]];
 
-if(not ([_characterState] call CBA_fnc_isHash)) exitWith {
-    ERROR("characterState has to be a cba hash");
+if (isServer) then {
+
+    if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
+
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+        _character call coopr_fnc_updateCharacterLocal;
+    } else {
+        INFO("no persistence location defined - skipping persistence routine");
+    }
+
 };
-
-if(_slot > MAX_PROFILES-1 or _slot < 0) exitWith {
-    ERROR("index is out of allowed range. 0 to 2 is allowed");
-};
-
-DEBUG2("updating character slot: %1 ...", _slot);
-
-private _characterSlots = _playerUid call coopr_fnc_getCharacterSlots;
-_characterSlots set [_slot, _characterState];
-
-[_playerUid, _characterSlots] call coopr_fnc_updateCharacterSlots;
-
-INFO2("character slots updated", _slot);
-true; // execution result needed for promise
-
-

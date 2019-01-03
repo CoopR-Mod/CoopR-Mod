@@ -1,4 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * This handler creates a new character by reading user entered informations and call the function to create a new
+ * character
+ *
+ * Arguments:
+ * Handler specific
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * _createButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_createCharacterHandler}];
+ *
+ * Public: No
+ *
+ * Scope: Server
+ */
 
 private _ctrl = _this select 0;
 private _nameTextEdit = _ctrl getVariable ["_nameTextEdit", objNull];
@@ -23,7 +42,7 @@ if(_name == "" or _roleName == "") exitWith {
     _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.profiles.validator"];
 };
 
-[SERVER, "coopr_fnc_updateCharacter", [_uid, _character, _slot], //request-related
+[SERVER, "coopr_fnc_createCharacter", [_uid, _character, _slot], //request-related
     [_pairs], {
         params ["_args", "_result"];
         closeDialog 1;

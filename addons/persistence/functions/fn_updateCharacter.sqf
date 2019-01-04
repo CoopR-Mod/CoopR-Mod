@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Persists a given character/player object to the specified persistent location (local/official/custom)
+ * Updates a given character/player object to the specified persistent location (local/official/custom)
  *
  * Arguments:
  * 0: _character <OBJECT> - the object of the actual player/character
@@ -29,5 +29,6 @@ if (isServer) then {
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     }
-
 };
+
+true;

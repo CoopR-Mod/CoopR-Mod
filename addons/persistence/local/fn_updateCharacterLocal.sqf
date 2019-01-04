@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Persists a given character/player object to the local database (extDB3)
+ * Updates a given character/player object to the local database (extDB3)
  *
  * Arguments:
  * 0: _character <OBJECT> - the object of the actual player/character
@@ -26,7 +26,7 @@ if (isServer) then {
     private _playerUID = getPlayerUID _character;
 
     if(_playerUID call coopr_fnc_hasUser) then {
-        INFO("persisting character...");
+        INFO("updating character...");
         private _characterHash = ["coopr", _character] call coopr_fnc_prefixVariablesToHash;
         private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
@@ -34,8 +34,8 @@ if (isServer) then {
         private _updateCharacter = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];
         _updateCharacter call coopr_fnc_extDB3sql;
 
-        INFO2("character persisted at slot %1", _characterSlot);
+        INFO2("character updated at slot %1", _characterSlot);
     } else {
-        INFO2("skipping character persistence - no user for id %1 in database", _playerUID);
+        INFO2("skipping character update - no user for id %1 in database", _playerUID);
     };
 };

@@ -14,9 +14,7 @@ class CfgFunctions {
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
             class setupPersistenceModule {};
-            class getCharacterSlots {};
             class updateCharacterSlots {};
-            class getCharacter {};
             class createCharacter{};
             class createCharacterStateFromPlayer {};
             class createCharacterState {};

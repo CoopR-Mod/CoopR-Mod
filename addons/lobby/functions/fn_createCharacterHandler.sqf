@@ -35,7 +35,7 @@ private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
 
 INFO3("creating new character for %1 at slot %1", _uid, _slot);
 
-private _characterState = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_createCharacterState;
+private _characterState = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_getNewCharacterState;
 [_characterState, COOPR_KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
 if(_name == "" or _roleName == "") exitWith {

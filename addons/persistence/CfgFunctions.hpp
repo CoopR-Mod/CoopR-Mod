@@ -17,7 +17,7 @@ class CfgFunctions {
             class updateCharacterSlots {};
             class createCharacter{};
             class createCharacterStateFromPlayer {};
-            class createCharacterState {};
+            class getNewCharacterState {};
             class getAllProfiles {};
             class updateCharacterValue {};
             class characterStatePrettyLog {};

@@ -24,4 +24,4 @@ DEBUG("mapping player variables to hash...");
  _position,
  _state,
  _deathTimestamp,
- _loadout] call coopr_fnc_createCharacterState;
+ _loadout] call coopr_fnc_getNewCharacterState;

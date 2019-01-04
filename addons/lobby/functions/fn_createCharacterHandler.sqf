@@ -35,14 +35,14 @@ private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
 
 INFO3("creating new character for %1 at slot %1", _uid, _slot);
 
-private _character = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_createCharacterState;
-[_character, COOPR_KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
+private _characterState = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_createCharacterState;
+[_characterState, COOPR_KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
 
 if(_name == "" or _roleName == "") exitWith {
     _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.profiles.validator"];
 };
 
-[SERVER, "coopr_fnc_createCharacter", [_uid, _character, _slot], //request-related
+[SERVER, "coopr_fnc_createCharacter", [_characterState, _slot], //request-related
     [_pairs], {
         params ["_args", "_result"];
         closeDialog 1;

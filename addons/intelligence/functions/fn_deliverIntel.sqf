@@ -22,7 +22,7 @@ if(_intelligenceItemsCount <= 0) exitWith {
     systemChat localize "str.coopr.intelligence.chatter.nointelligence";
 };
 
-[_intelligenceItemsCount] remoteExec ["coopr_fnc_updateIntelProgress", SERVER];
+[_intelligenceItemsCount] remoteExec ["coopr_fnc_updateIntelProgress", EXEC_SERVER];
 systemChat localize "str.coopr.intelligence.chatter.intelligence";
 
 DEBUG2("%1 delivered %2 intelligence items", name _caller, _intelligenceItemsCount);

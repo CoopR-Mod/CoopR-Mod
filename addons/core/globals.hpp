@@ -1,5 +1,9 @@
+#define EXEC_CLIENTS -2
+#define EXEC_SERVER  2
+#define EXEC_GLOBAL  0
+
 #define SERVER 2
-#define MAX_PROFILES 3
+#define MAX_CHARACTERS 3
 #define MAX_TK 3
 #define WIA_CD 0.5
 

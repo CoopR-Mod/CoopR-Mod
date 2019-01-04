@@ -6,7 +6,7 @@ private _uid = getPlayerUID player;
 
 DEBUG("removing profile for player id %1", _uid);
 
-[SERVER, "coopr_fnc_updateCharacter", [_uid, EMPTY_HASH, _slot], //request-related
+[EXEC_SERVER, "coopr_fnc_updateCharacter", [_uid, EMPTY_HASH, _slot], //request-related
     [], {
         params ["_args", "_result"];
         closeDialog 1;

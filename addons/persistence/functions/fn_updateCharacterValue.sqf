@@ -7,7 +7,7 @@ params [["_slot", -1],
 DEBUG3("updating %1 with value %2", _key, _value);
 private _uid = getPlayerUID player;
 
-[SERVER, "coopr_fnc_getCharacter", [_uid, _slot], //request-related
+[EXEC_SERVER, "coopr_fnc_getCharacter", [_uid, _slot], //request-related
     [_uid, _slot, _key, _value], {
         params ["_args", "_result"];
         _args params ["_uid", "_slot", "_key", "_value"];
@@ -15,7 +15,7 @@ private _uid = getPlayerUID player;
         private _character = _result;
         [_character, _key, _value] call CBA_fnc_hashSet;
 
-        [SERVER, "coopr_fnc_updateCharacter", [_uid, _character, _slot], //request-related
+        [EXEC_SERVER, "coopr_fnc_updateCharacter", [_uid, _character, _slot], //request-related
             [_key, _value], {
                 params ["_args", "_result"];
                 _args params ["_key", "_value"];

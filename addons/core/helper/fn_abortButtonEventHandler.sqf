@@ -12,7 +12,7 @@
 
                 if(_isLoggedIn) then {
                     INFO("saving character state before mission end...");
-                    [SERVER, "coopr_fnc_syncPlayerToServer", [player],
+                    [EXEC_SERVER, "coopr_fnc_syncPlayerToServer", [player],
                         [], {
                             INFO("...saved");
                         }

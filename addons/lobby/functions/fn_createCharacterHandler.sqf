@@ -42,7 +42,7 @@ if(_name == "" or _roleName == "") exitWith {
     _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.profiles.validator"];
 };
 
-[SERVER, "coopr_fnc_createCharacter", [_characterState, _slot], //request-related
+[EXEC_SERVER, "coopr_fnc_createCharacter", [_characterState, _slot], //request-related
     [_pairs], {
         params ["_args", "_result"];
         closeDialog 1;

@@ -16,7 +16,7 @@
  *
  * Public: No
  *
- * Scope: Server
+ * Scope: Client
  */
 
 private _ctrl = _this select 0;
@@ -25,19 +25,16 @@ private _infoText = _ctrl getVariable ["_infoText", objNull];
 private _roleSelectBox = _ctrl getVariable ["_roleSelectBox", objNull];
 private _rolesHash = _ctrl getVariable ["_rolesHash", objNull];
 private _slot = _ctrl getVariable ["_slot", -1];
-
 private _uid = getPlayerUID player;
 private _name = ctrlText _nameTextEdit;
 private _index = lbCurSel _roleSelectBox;
 private _roleName = _roleSelectBox lbText _index;
 private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
-private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
 
 INFO3("creating new character for %1 at slot %1", _uid, _slot);
+private _characterState = [player, _slot, _name, _roleId] call coopr_fnc_getNewCharacterState;
 
-private _characterState = [_uid, _slot, _name, _roleId, 0, 500] call coopr_fnc_getNewCharacterState;
-[_characterState, COOPR_KEY_LOADOUT, _loadOut] call CBA_fnc_hashSet;
-
+// textbox validation
 if(_name == "" or _roleName == "") exitWith {
     _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.profiles.validator"];
 };

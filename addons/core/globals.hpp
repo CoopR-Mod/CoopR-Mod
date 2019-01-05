@@ -2,6 +2,10 @@
 #define EXEC_SERVER  2
 #define EXEC_GLOBAL  0
 
+
+// NEW CHARACTER
+#define STARTING_MONEY 500
+
 #define SERVER 2
 #define MAX_CHARACTERS 3
 #define MAX_TK 3

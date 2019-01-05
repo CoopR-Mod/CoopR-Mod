@@ -3,7 +3,7 @@ class CfgFunctions {
         class coopr_core_functions {
             file = "x\coopr\addons\core\functions";
             class checkCharacterWIAStates {};
-            class death {};
+            class wounded {};
             class playerKilledHandler {};
             class onKilled {};
             class playerKilledNpc {};

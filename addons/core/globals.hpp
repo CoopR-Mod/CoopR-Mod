@@ -30,7 +30,7 @@
 #define COOPR_KEY_ROLE "coopr_character_role"
 #define COOPR_KEY_POSITION "coopr_character_position"
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
-#define COOPR_KEY_DEATH_TIMESTAMP "coopr_character_death_timestamp"
+#define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"

@@ -16,7 +16,6 @@ class CfgFunctions {
             class setupPersistenceModule {};
             class updateCharacterSlots {};
             class createCharacter{};
-            class createCharacterStateFromPlayer {};
             class getNewCharacterState {};
             class getAllProfiles {};
             class updateCharacterValue {};

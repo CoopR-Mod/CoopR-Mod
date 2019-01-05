@@ -27,7 +27,7 @@ if (isServer) then {
 
     if(_playerUID call coopr_fnc_hasUser) then {
         INFO("updating character...");
-        private _characterHash = ["coopr", _character] call coopr_fnc_prefixVariablesToHash;
+        private _characterHash = _character call coopr_fnc_serializeCoopR;
         private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 

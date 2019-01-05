@@ -25,6 +25,7 @@ if (isServer) then {
     if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+        _character call coopr_fnc_updateState;
         _character call coopr_fnc_updateCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

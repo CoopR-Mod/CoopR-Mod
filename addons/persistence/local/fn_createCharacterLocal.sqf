@@ -27,7 +27,9 @@ if (_characterState isEqualTo []) exitWith { ERROR("_characterState was empty") 
 
 if (isServer) then {
 
+    DEBUG2("state is %1", _characterState);
     private _playerUID = [_characterState, COOPR_KEY_UID] call CBA_fnc_hashGet;
+    DEBUG2("uid is %1", _playerUID);
 
     if(_playerUID call coopr_fnc_hasUser) then {
         INFO("creating character...");

@@ -20,7 +20,6 @@ class CfgFunctions {
             class serializeCoopR {};
             class getNewCharacterState {};
             class getAllProfiles {};
-            class updateCharacterValue {};
             class characterStatePrettyLog {};
             class sync {};
             class syncPlayersToServer {};

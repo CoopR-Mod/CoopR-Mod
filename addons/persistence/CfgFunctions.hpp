@@ -23,7 +23,6 @@ class CfgFunctions {
             class sync {};
             class syncPlayersToServer {};
             class syncPlayerToServer {};
-            class prefixVariablesToHash {};
             class initPersistence {};
             class hasUser {};
             class initUser {};

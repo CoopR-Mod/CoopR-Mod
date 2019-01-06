@@ -7,7 +7,7 @@ _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloa
 
 { _x ctrlSetText localize "str.coopr.profiles.fetch" } forEach _profileInfos;
 
-[SERVER, "coopr_fnc_getCharacterSlots", [getPlayerUID player], //request-related
+[EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
     [_profileInfos, _profileOverlays, _profileButtons, _characterPictures], {
         params ["_args", "_result"];
         _args params ["_profileInfos", "_profileOverlays", "_profileButtons", "_characterPictures"];

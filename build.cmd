@@ -10,7 +10,7 @@ python %validator%
 rmdir /Q /S "@CoopR"
 mkdir %dest%
 
-%armake64% build -p addons\persistence %dest%\character.pbo
+%armake64% build -p addons\persistence %dest%\persistence.pbo
 %armake64% build -p addons\core %dest%\core.pbo
 %armake64% build -p addons\armory %dest%\armory.pbo
 %armake64% build -p addons\integration %dest%\integration.pbo

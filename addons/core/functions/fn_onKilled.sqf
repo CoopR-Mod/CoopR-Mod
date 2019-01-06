@@ -5,8 +5,7 @@ params ["_victim", "_killer", "_instigator", "_useEffects"];
 //TODO: convert to integrated function
 private _lastDamageSource = _victim getVariable ["ace_medical_lastDamageSource", objNull];
 DEBUG2("instigator: %1", _instigator);
-DEBUG2("instigator is null:
-%1", isNull _instigator);
+DEBUG2("instigator is null: %1", isNull _instigator);
 DEBUG2("lastDmgSrc: %1", _lastDamageSource);
 DEBUG2("killer: %1", _killer);
 DEBUG2("victim: %1", _victim);

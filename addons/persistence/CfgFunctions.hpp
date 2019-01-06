@@ -1,23 +1,36 @@
 class CfgFunctions {
     class coopr {
+        class coopr_persistence_local {
+            file = "x\coopr\addons\persistence\local";
+            class extDB3sql {};
+            class getCharactersIDLocal {};
+            class updateCharacterLocal {};
+            class initUserLocal {};
+            class hasUserLocal {};
+            class initPersistenceLocal {};
+            class getCharactersLocal {};
+            class createCharacterLocal{};
+            class removeCharacterLocal {};
+        }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
             class setupPersistenceModule {};
-            class getCharacterSlots {};
             class updateCharacterSlots {};
-            class getCharacter {};
-            class updateCharacter {};
-            class createCharacterStateFromPlayer {};
-            class createCharacterState {};
+            class createCharacter {};
+            class updateState {};
+            class serializeCoopR {};
+            class getNewCharacterState {};
             class getAllProfiles {};
-            class updateCharacterValue {};
             class characterStatePrettyLog {};
             class sync {};
-            class syncPlayersToServer {};
-            class syncPlayerToServer {};
-            class allVariablesToHash {};
-            class prefixVariablesToHash {};
-            class initLocalDB {};
+            class syncPlayers {};
+            class removeCharacter {};
+            class initPersistence {};
+            class hasUser {};
+            class initUser {};
+            class updateCharacter {};
+            class getCharactersID {};
+            class getCharacters {};
         }
     }
 }

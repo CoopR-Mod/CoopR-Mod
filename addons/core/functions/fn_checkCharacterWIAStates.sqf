@@ -1,22 +1,43 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Checks if the cooldown timer (WIA_CD) for a wounded in action character is expired. If yes it will reset the
+ * character state to OK (COOPR_STATE_OK). Will iterate over all players.
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * call coopr_fnc_checkCharacterWIAStates
+ *
+ * Public: No
+ *
+ * Scope: Global
+ */
 
 {
-    _uid = getPlayerUID _x;
     {
-        private _characterSlot = _x;
+        private _character = _x;
 
-            private _slot = _forEachIndex;
-            private _state = [_characterSlot, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-            private _timestamp = [_characterSlot, COOPR_KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
-            private _timeOver = serverTime >= _timeStamp + (WIA_CD * 60);
+        if (_character isEqualTo []) exitWith { DEBUG("skipping empty character") };
 
-            if(_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
-                [_characterSlot, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
-                [_uid, _characterSlot, _slot] call coopr_fnc_updateCharacter;
-                DEBUG2("player %1 was set back to state OK", name _player);
-            };
-    } forEach (_uid call coopr_fnc_getCharacterSlots);
+        private _name = [_character, COOPR_KEY_NAME] call CBA_fnc_hashGet;
+        DEBUG2("checking WIA state for %1", _name);
+        private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
+        private _timestamp = [_character, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
+        private _timeOver = serverTime >= _timestamp + (WIA_CD * 60);
 
+        if (_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
+            [_character, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
+            [_character] call coopr_fnc_updateCharacter;
+            DEBUG2("player %1 was set back to state OK", _name);
+        };
+
+    } forEach ((getPlayerUID _x) call coopr_fnc_getCharacters);
 } forEach allPlayers;
 
 

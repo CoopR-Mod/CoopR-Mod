@@ -9,9 +9,9 @@ private _state = [_characterSlot, COOPR_KEY_STATE] call CBA_fnc_hashGet;
 private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
 private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
-private _deathTimeStamp = [_characterSlot, COOPR_KEY_DEATH_TIMESTAMP] call CBA_fnc_hashGet;
+private _woundedTimestamp = [_characterSlot, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
-private _hospilitationTimeLeft = _deathTimeStamp + (WIA_CD * 60) - serverTime;
+private _hospilitationTimeLeft = _woundedTimestamp + (WIA_CD * 60) - serverTime;
 
 private _composedInfoText = composeText [localize "str.coopr.profile.info.name", " ", _name, lineBreak,
                                          localize "str.coopr.profile.info.reputation", " ", str _reputation, lineBreak,

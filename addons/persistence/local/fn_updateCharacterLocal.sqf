@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Updates a given character/player object to the local database (extDB3)
+ * Updates a given character state hash to the local database (extDB3)
  *
  * Arguments:
- * 0: _character <OBJECT> - the object of the actual player/character
+ * 0: _characterHash <ARRAY> - formatted as CBA hash
  *
  * Return Value:
  * None
@@ -18,16 +18,16 @@
  * Scope: Server
  */
 
-params [["_character", objNull]];
+params [["_characterHash", []]];
 
 if (isServer) then {
+    if (_characterHash isEqualTo []) exitWith { ERROR("_characters was empty array") };
+    if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has to be a cba hash"); };
 
-    if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
-    private _playerUID = getPlayerUID _character;
+    private _playerUID = [_characterHash, COOPR_KEY_UID] call CBA_fnc_hashGet;
 
-    if(_playerUID call coopr_fnc_hasUser) then {
+    if (_playerUID call coopr_fnc_hasUser) then {
         INFO("updating character...");
-        private _characterHash = _character call coopr_fnc_serializeCoopR;
         private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 

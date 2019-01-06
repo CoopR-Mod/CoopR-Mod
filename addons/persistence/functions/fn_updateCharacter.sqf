@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Updates a given character/player object to the specified persistent location (local/official/custom)
+ * Updates a given character state hash to the specified persistence layer
  *
  * Arguments:
- * 0: _character <OBJECT> - the object of the actual player/character
+ * 0: _characterHash <ARRAY> - formatted as CBA hash
  *
  * Return Value:
  * None
@@ -18,15 +18,15 @@
  * Scope: Server
  */
 
-params [["_character", objNull]];
+params [["_characterHash", []]];
 
 if (isServer) then {
 
-    if (_character isEqualTo objNull) exitWith { ERROR("_characters was objNull") };
+    if (_characterHash isEqualTo []) exitWith { ERROR("_characters was empty array") };
+    if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has to be a cba hash"); };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        _character call coopr_fnc_updateState;
-        _character call coopr_fnc_updateCharacterLocal;
+        [_characterHash] call coopr_fnc_updateCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     }

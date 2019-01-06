@@ -22,7 +22,7 @@ class CfgFunctions {
             class getAllProfiles {};
             class characterStatePrettyLog {};
             class sync {};
-            class syncPlayersToServer {};
+            class syncPlayers {};
             class initPersistence {};
             class hasUser {};
             class initUser {};

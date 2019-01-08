@@ -7,5 +7,5 @@ private _gainedReputation = COOPR_REP_AAR_MULTIPLIER call coopr_fnc_convertTempT
 systemChat localize "str.coopr.reputation.chatter.aar";
 
 if(!isNil "_gainedReputation") then {
-    systemChat format ["||Deployed|| Reputation received [%1]", _gainedReputation];
+    systemChat format ["||CoopR|| Reputation received [%1]", _gainedReputation];
 }

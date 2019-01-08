@@ -33,7 +33,6 @@
 
         if (_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
             [_character, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
-            [_character] call coopr_fnc_updateCharacter;
             DEBUG2("player %1 was set back to state OK", _name);
         };
 

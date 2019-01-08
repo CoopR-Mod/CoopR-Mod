@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+// Unused and deprecated
 
 waitUntil {!isNil "ALiVE_STATIC_DATA_LOADED"};
 INFO("static data called");

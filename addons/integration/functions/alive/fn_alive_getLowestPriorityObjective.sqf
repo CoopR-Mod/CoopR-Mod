@@ -12,7 +12,7 @@
  * Lowest Priority Objective <OBJECT>
  *
  * Example:
- * ["WEST", "attacking"] call coopr_fnc_;
+ * ["WEST", "attacking"] call coopr_fnc_alive_getLowestPriorityObjective;
  *
  * Public: No
  *

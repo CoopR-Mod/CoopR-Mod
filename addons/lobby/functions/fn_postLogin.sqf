@@ -25,4 +25,7 @@ if(call coopr_fnc_isACE3Active) then {
 
 cutText ["", "BLACK IN", 0.1];
 
+call coopr_fnc_initEventsClient;
+call coopr_fnc_addPlayerActions;
+
 DEBUG("...post login init done");

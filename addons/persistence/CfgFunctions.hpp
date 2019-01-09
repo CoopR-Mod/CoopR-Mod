@@ -19,6 +19,7 @@ class CfgFunctions {
             class createCharacter {};
             class updateState {};
             class serializeCoopR {};
+            class deserializeCoopR {};
             class getNewCharacterState {};
             class getAllProfiles {};
             class characterStatePrettyLog {};

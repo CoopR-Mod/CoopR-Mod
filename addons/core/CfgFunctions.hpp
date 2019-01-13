@@ -39,6 +39,7 @@ class CfgFunctions {
             class abortButtonEventHandler {};
             class initPromise {};
             class getLoadoutForRole {};
+            class getNearestLocation {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};

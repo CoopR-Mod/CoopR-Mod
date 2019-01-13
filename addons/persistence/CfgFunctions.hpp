@@ -9,8 +9,10 @@ class CfgFunctions {
             class hasUserLocal {};
             class initPersistenceLocal {};
             class getCharactersLocal {};
+            class getAllCharactersLocal {};
             class createCharacterLocal{};
             class removeCharacterLocal {};
+            class localDatabaseRefresh {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";

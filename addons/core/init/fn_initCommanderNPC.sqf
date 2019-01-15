@@ -8,9 +8,7 @@ if (INTEGRATE_ACE3) then {
 } else {
     _commander addAction [localize "str.coopr.aar.action.commander", {call coopr_fnc_deliverAfterActionReport},[],1.5,true,true,"","true",3];
     if (INTEGRATE_ALIVE) then {
-        _commander addAction [localize "str.coopr.aar.action.minortask", {call coopr_fnc_alive_requestMinorSupportTask},[],1.5,true,true,"","true",3];
+        _commander addAction [localize "str.coopr.aar.action.minortask", {call coopr_fnc_alive_requestCooprTask},[],1.5,true,true,"","true",3];
     };
     DEBUG2("initialized %1 as commander", _commander);
 };
-
-

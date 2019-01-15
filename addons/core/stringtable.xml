@@ -25,13 +25,27 @@
             <Original>Equipment</Original>
             <German>Ausruestung</German>
         </Key>
-            <Key ID="str.coopr.aar.action.commander">
-                <Original>After Action Report</Original>
-                <German>Abschlussbericht</German>
-            </Key>
-            <Key ID="str.coopr.reputation.chatter.aar">
-                <Original>Good Job! Glad you made it back!</Original>
-                <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
-            </Key>
+        <Key ID="str.coopr.aar.action.minortask">
+            <Original>Request Minor Task</Original>
+            <German>Kurzauftrag anfragen</German>
+        </Key>
+        <Key ID="str.coopr.aar.action.commander">
+            <Original>After Action Report</Original>
+            <German>Abschlussbericht</German>
+        </Key>
+        <Key ID="str.coopr.reputation.chatter.aar">
+            <Original>Good Job! Glad you made it back!</Original>
+            <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
+        </Key>
+    </Package>
+    <Package name="Tasks">
+        <Key ID="str_coopr_task_recon_title">
+            <Original>Recon Area</Original>
+            <German>Gebiet aufklaeren</German>
+        </Key>
+        <Key ID="str_coopr_task_recon_description">
+            <Original>HQ wants you to recon the area for enemy contacts</Original>
+            <German>HQ moechte aktuelle Feindaufklaerung im Gebiet</German>
+        </Key>
     </Package>
 </Project>

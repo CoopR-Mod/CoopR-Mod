@@ -36,7 +36,7 @@
 #define COOPR_STATE_WIA "coopr_character_state_wia"
 #define COOPR_STATE_KIA "coopr_character_state_kia"
 
-#define EMPTY_HASH [] call CBA_fnc_hashCreate
+#define EMPTY_HASH ([[],[]] call CBA_fnc_hashCreate)
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
 #define COOPR_ROLE_LEADER "coopr_role_leader"

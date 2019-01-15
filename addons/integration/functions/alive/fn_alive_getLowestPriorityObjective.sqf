@@ -9,7 +9,7 @@
  * 1: _type <STRING> - type of objective
  *
  * Return Value:
- * Lowest Priority Objective <OBJECT>
+ * Lowest Priority Objective - <OBJECT>
  *
  * Example:
  * ["WEST", "attacking"] call coopr_fnc_alive_getLowestPriorityObjective;

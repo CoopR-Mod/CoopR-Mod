@@ -15,7 +15,7 @@ class CfgFunctions {
         class coopr_integration_alive_functions {
             file = "x\coopr\addons\integration\functions\alive";
             class alive_staticData {};
-            class alive_requestMinorSupportTask {};
+            class alive_requestCooprTask {};
             class alive_getLowestPriorityObjective {};
             class alive_getSpotreps {};
         }

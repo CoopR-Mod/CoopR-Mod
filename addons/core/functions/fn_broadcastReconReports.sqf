@@ -38,7 +38,7 @@ if (isServer) then {
 
             if (_reportingPlayerID isEqualTo (getPlayerUID _unit)) then {
                 DEBUG("found spotrep by given unit");
-                COOPR_TASK_QUEUE pushBack _x;
+                COOPR_TASK_QUEUE pushBack _spotrep;
 
                 // clear spotrep store to prevent multiples
                 [alive_sys_spotrep, "removespotrep", [_id]] call alive_fnc_spotrep;

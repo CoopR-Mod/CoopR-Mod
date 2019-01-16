@@ -25,9 +25,9 @@
             <Original>Equipment</Original>
             <German>Ausruestung</German>
         </Key>
-        <Key ID="str.coopr.aar.action.minortask">
-            <Original>Request Minor Task</Original>
-            <German>Kurzauftrag anfragen</German>
+        <Key ID="str.coopr.task.action.request">
+            <Original>Request Task</Original>
+            <German>Auftrag anfragen</German>
         </Key>
         <Key ID="str.coopr.aar.action.commander">
             <Original>After Action Report</Original>

@@ -32,6 +32,16 @@
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
 #define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
 
+#define COOPR_KEY_TASK_UID "coopr_task_uid"
+#define COOPR_KEY_TASK_TYPE "coopr_task_type"
+#define COOPR_KEY_TASK_LOCATION "coopr_task_location"
+#define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
+
+#define COOPR_TASK_TYPE_SNIPERTEAM "coopr_task_type_sniperteam"
+#define COOPR_TASK_TYPE_ATTACK "coopr_task_type_attack"
+#define COOPR_TASK_TYPE_SABOTAGE "coopr_task_type_sabotage"
+#define COOPR_TASK_TYPE_JTAC "coopr_task_type_jtac"
+
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
 #define COOPR_STATE_KIA "coopr_character_state_kia"

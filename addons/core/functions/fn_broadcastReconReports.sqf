@@ -17,7 +17,7 @@
  *
  * Public: No
  *
- * Scope: SERVER
+ * Scope: Server
  */
 
 params [["_unit", objNull]];
@@ -54,6 +54,7 @@ if (isServer) then {
        // info message to player
        if (_broadcastedReports > 0) then {
            systemChat format ["||CoopR|| you broadcasted %1 recon reports", _broadcastedReports];
+           call coopr_fnc_convertReconReportsToTasks;
        } else {
            systemChat "||CoopR|| no recon reports have been created yet";
        };

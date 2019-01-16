@@ -16,6 +16,7 @@ class CfgFunctions {
             class showReputation {};
             class createReconTask {};
             class broadcastReconReports {};
+            class convertReconReportsToTasks {};
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";

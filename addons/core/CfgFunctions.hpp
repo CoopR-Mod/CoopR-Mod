@@ -14,7 +14,7 @@ class CfgFunctions {
             class convertTempToReputation {};
             class deliverAfterActionReport {};
             class showReputation {};
-            class createReconTask {};
+            class createSniperteamTask {};
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
         }

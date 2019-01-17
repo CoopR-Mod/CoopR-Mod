@@ -27,10 +27,9 @@ if (count COOPR_TASKS <= 0 ) then {
     };
 
 } else {
-    DEBUG("coopr tasks found");
-
     private _cooprTask = COOPR_TASKS deleteAt 0;
-    private _taskType = [_cooprTask, COOPR_KEY_TASK_TYPE];
+    private _taskType = [_cooprTask, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
+    DEBUG2("task type: %1", _taskType);
 
     if (_taskType isEqualTo COOPR_TASK_TYPE_SNIPERTEAM) then {
         [player, _cooprTask] call coopr_fnc_createSniperteamTask;

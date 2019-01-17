@@ -37,11 +37,11 @@ private _opcom = nil;
 
 if (isNil "_opcom") exitWith { ERROR("OPCOM has no instances for given side") };
 
-private _objectives = [_opcom, "objectives", nil] call alive_fnc_hashGet;
+private _objectives = [_opcom, "objectives", []] call alive_fnc_hashGet;
 
-if (isNil "_objectives") exitWith { ERROR("OPCOM has no objectives") };
+if (_objectives isEqualTo []) exitWith { ERROR("OPCOM has no objectives") };
 
-private _lowestPrioObjective = nil;
+private _lowestPrioObjective = objNull;
 private _lowestPrio = 999;
 
 {

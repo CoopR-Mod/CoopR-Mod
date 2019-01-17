@@ -31,6 +31,7 @@
 #define COOPR_KEY_POSITION "coopr_character_position"
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
 #define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
+#define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
 
 #define COOPR_KEY_TASK_UID "coopr_task_uid"
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"

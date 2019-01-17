@@ -27,15 +27,18 @@ if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was []") };
 
 DEBUG("assigning sniper team task");
 private _location = [_cooprTask, COOPR_KEY_TASK_LOCATION] call CBA_fnc_hashGet;
+
 private _position = (_location call BIS_fnc_gridToPos) select 0; // [x,y] format
 private _description = [_cooprTask, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
 
 DEBUG2("task position: %1", _position);
-private _taskResult = [_unit, format ["coopr_task_sniperteam_%1", COOPR_STATS_TASK_SNIPERTEAM], [_description, "Sniper Team"], _position, 1, 2, true] call BIS_fnc_taskCreate;
+private _taskName = format ["coopr_task_sniperteam_%1", COOPR_STATS_TASK_SNIPERTEAM];
+private _taskResult = [_unit, _taskName , [_description, "Sniper Team"], _position, 1, 2, true] call BIS_fnc_taskCreate;
 
 if (_taskResult isEqualTo true) then {
-    DEBUG("siper team task assigned");
+    DEBUG("sniper team task assigned");
     // counter for sniper tasks (coopr statistics)
     COOPR_STATS_TASK_SNIPERTEAM = COOPR_STATS_TASK_SNIPERTEAM + 1;
+    _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
     _taskResult;
 };

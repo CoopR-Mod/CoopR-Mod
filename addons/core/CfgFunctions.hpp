@@ -43,6 +43,7 @@ class CfgFunctions {
             class initPromise {};
             class getLoadoutForRole {};
             class getNearestLocation {};
+            class countUnits {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};

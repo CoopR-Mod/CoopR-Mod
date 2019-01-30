@@ -28,7 +28,8 @@ if (isServer) then {
         ERROR("task counter was not initialized - check tasks module")
     };
 
-    private _prevCount =  [COOPR_COUNTER_TASKS, _type] call CBA_fnc_hashGet;
+    private _prevCount = [COOPR_COUNTER_TASKS, _type] call CBA_fnc_hashGet;
+    if (isNull _prevCount) then { _prevCount = 0; };
     private _newCount = prevCount + 1;
     [COOPR_COUNTER_TASKS, _type, _newCount] call CBA_fnc_hashSet;
     DEBUG2("%1 count increased by 1", _type);

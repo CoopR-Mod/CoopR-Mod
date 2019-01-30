@@ -8,5 +8,9 @@ class CfgFunctions {
             class createSniperteamTask {};
             class countTask {};
         }
+        class coopr_tasks_tests {
+            file = "x\coopr\addons\tasks\tests";
+            class tests_reputation {};
+        }
     }
 }

@@ -37,8 +37,7 @@ private _taskResult = [_unit, _taskName , [_description, "Sniper Team"], _positi
 
 if (_taskResult isEqualTo true) then {
     DEBUG("sniper team task assigned");
-    // counter for sniper tasks (coopr statistics)
-    COOPR_STATS_TASK_SNIPERTEAM = COOPR_STATS_TASK_SNIPERTEAM + 1;
+    [COOPR_TASK_TYPE_SNIPERTEAM] remoteExec ["coopr_fnc_countTask"];
     _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
     _taskResult;
 };

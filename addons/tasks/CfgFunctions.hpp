@@ -6,6 +6,7 @@ class CfgFunctions {
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
             class createSniperteamTask {};
+            class countTask {};
         }
     }
 }

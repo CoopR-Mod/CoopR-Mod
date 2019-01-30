@@ -39,9 +39,11 @@
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 
 #define COOPR_TASK_TYPE_SNIPERTEAM "coopr_task_type_sniperteam"
-#define COOPR_TASK_TYPE_ATTACK "coopr_task_type_attack"
-#define COOPR_TASK_TYPE_SABOTAGE "coopr_task_type_sabotage"
+#define COOPR_TASK_TYPE_ASYMMETRIC "coopr_task_type_asymmetric"
+#define COOPR_TASK_TYPE_ASSAULT "coopr_task_type_assault"
+#define COOPR_TASK_TYPE_CONQUER "coopr_task_type_conquer"
 #define COOPR_TASK_TYPE_JTAC "coopr_task_type_jtac"
+#define COOPR_TASK_TYPE_AMBUSH "coopr_task_type_ambush"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"

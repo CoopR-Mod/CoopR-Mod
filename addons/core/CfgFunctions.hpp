@@ -14,9 +14,6 @@ class CfgFunctions {
             class convertTempToReputation {};
             class deliverAfterActionReport {};
             class showReputation {};
-            class createSniperteamTask {};
-            class broadcastReconReports {};
-            class convertReconReportsToTasks {};
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";
@@ -50,7 +47,6 @@ class CfgFunctions {
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";
-            class tests_init {};
             class tests_reputation {};
         }
     }

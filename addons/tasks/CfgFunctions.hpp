@@ -6,11 +6,12 @@ class CfgFunctions {
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
             class createSniperteamTask {};
+            class validateReport {};
             class countTask {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
-            class tests_reputation {};
+            class tests_countTasks {};
         }
     }
 }

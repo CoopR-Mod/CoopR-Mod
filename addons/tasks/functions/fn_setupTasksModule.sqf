@@ -8,6 +8,9 @@ private _loggingLevel = _logic getVariable ["Logging", -1];
 
 // TODO: needs to be initialized with perstistent values from DB
 COOPR_COUNTER_TASKS = EMPTY_HASH;
+COOPR_TASKS_ACTIVE = true;
+
 publicVariable "COOPR_COUNTER_TASKS";
+publicVariable "COOPR_TASKS_ACTIVE";
 
 true

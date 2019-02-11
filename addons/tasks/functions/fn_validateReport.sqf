@@ -22,18 +22,18 @@
  * Scope: Server
  */
 
-params [["_location", locationNull],
+params [["_location", []],
         ["_strength", ""],
         ["_type", ""],
         ["_behaviour", ""]];
 
-if (_location isEqualTo locationNull) exitWith { ERROR("_location was locationNull") };
+if (_location isEqualTo []) exitWith { ERROR("_location was locationNull") };
 if (_strength isEqualTo "") exitWith { ERROR("_strength was empty string") };
 if (_type isEqualTo "") exitWith { ERROR("_type was empty string") };
 if (_behaviour isEqualTo "") exitWith { ERROR("_behaviour was empty string") };
 
 if (isServer) then {
-    private _positionOfReport = (_location call BIS_fnc_gridToPos) select 0; // [x,y] format
+    DEBUG2("location: %1", _location);
     private _accuracy = 100; // initial
     private _checkRadius = 0;
     // will turn "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
@@ -58,9 +58,9 @@ if (isServer) then {
         // moving support vehicle on the road)
         DEBUG("no existence check will happen");
     } else {
-        private _foundVehicles = [_positionOfReport nearEntities ["Car", _checkRadius], east] call coopr_fnc_countUnits;
-        private _foundInfantry = [_positionOfReport nearEntities ["Man", _checkRadius], east] call coopr_fnc_countUnits;
-        private _foundTanks = [_positionOfReport nearEntities ["Tank", _checkRadius], east] call coopr_fnc_countUnits;
+        private _foundVehicles = [_location nearEntities ["Car", _checkRadius], east] call coopr_fnc_countUnits;
+        private _foundInfantry = [_location nearEntities ["Man", _checkRadius], east] call coopr_fnc_countUnits;
+        private _foundTanks = [_location nearEntities ["Tank", _checkRadius], east] call coopr_fnc_countUnits;
 
         DEBUG2("found %1 vehicles", _foundVehicles);
         DEBUG2("found %1 infantry", _foundInfantry);

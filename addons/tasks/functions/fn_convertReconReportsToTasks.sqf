@@ -33,11 +33,12 @@ if (isServer) then {
             private _location = [_spotrep, "ALiVE_SYS_spotrep_loc"] call CBA_fnc_hashGet;
             private _type = [_spotrep, "ALiVE_SYS_spotrep_type"] call CBA_fnc_hashGet;
             private _behaviour = [_spotrep, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
+            private _markerPosition = [_spotrep, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
 
             private _cooprTask = EMPTY_HASH;
             private _cooprTaskType = nil;
 
-            [_location, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+            [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
 
             DEBUG("defining task type");
             if (_type isEqualTo "Infantry") then {

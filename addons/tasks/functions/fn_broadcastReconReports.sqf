@@ -28,6 +28,7 @@ if (not (isPlayer _unit)) exitWith { ERROR("_unit was not a player") };
 if (isServer) then {
     private _broadcastedReports = 0;
 
+    // parse ALiVE SpotReps as Recon Reports
     if (INTEGRATE_ALIVE) then {
         private _allSpotrepIDs = [alive_sys_spotrep_store] call CBA_fnc_hashKeys;
         {
@@ -35,6 +36,7 @@ if (isServer) then {
             private _spotrep = [alive_sys_spotrep_store, _id] call CBA_fnc_hashGet;
             private _reportingPlayerID = [_spotrep, "ALiVE_SYS_spotrep_player"] call CBA_fnc_hashGet;
             private _markername = [_spotrep, "ALiVE_SYS_spotrep_markername"] call CBA_fnc_hashGet;
+            [_spotrep, "ALiVE_SYS_spotrep_markerposition", getMarkerPos _markername] call CBA_fnc_hashSet;
 
             if (_reportingPlayerID isEqualTo (getPlayerUID _unit)) then {
                 DEBUG("found spotrep by given unit");

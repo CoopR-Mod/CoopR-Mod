@@ -24,24 +24,28 @@ params [["_entities", []],
         ["_sideFilter", sideEmpty]];
 
 private _counter = 0;
+private _unqiueUnits = [];
 if (_entities isEqualTo []) exitWith { _counter };
 DEBUG2("side filter is %1", _sideFilter);
+DEBUG2("enitities  %1", _entities);
 
 {
-    private _group = _x;
-    private _unitCount = count (units _group);
-    private _sideOfGroup = side _group;
+    private _entity = _x;
+    private _sideOfGroup = side _entity;
 
-    if (_sideFilter isEqualTo sideEmpty) then {
-        _counter = _counter + _unitCount;
-    } else {
-        if (_sideOfGroup isEqualTo _sideFilter) then {
-            _counter = _counter + _unitCount;
+    {
+        if (_sideFilter isEqualTo sideEmpty) then {
+            _unqiueUnits pushBackUnique _x;
         };
-    };
+        if (_sideFilter isEqualTo _sideOfGroup) then {
+            _unqiueUnits pushBackUnique _x;
+        };
+    } forEach (units _entity);
+
 
 } forEach _entities;
 
-DEBUG2("counted %1 units", _counter);
-_counter;
+
+DEBUG2("counted %1 units", count _uniqueUnits);
+count _unqiueUnits;
 

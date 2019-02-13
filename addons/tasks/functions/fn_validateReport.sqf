@@ -40,18 +40,19 @@ if (isServer) then {
     private _type = [_type splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
 
     // TODO: validate if was within range of recon objective
-    // validate behaviour
+    // check behaviour
     switch (_behaviour) do {
         case "ATTACKING": { _checkRadius = 0 }; // attacking enemies most likely will not be in the area afterwards
-        case "DEFENDING": { _checkRadius = 100 }; // defending units might be a bit wider spreaded
+        case "DEFENDING": { _checkRadius = 150 }; // defending units might be a bit wider spreaded
         case "RESUPPLY": { _checkRadius = 0 };
         case "WITHDRAWING": { _checkRadius = 0 };
-        case "STATIC": { _checkRadius = 25 }; // if a unit is reported as static it might be clear they won't leave their position
-        case "PATROL": { _checkRadius = 250 }; // patroling units most likely will patrol a large perimeter
+        case "STATIC": { _checkRadius = 30 }; // if a unit is reported as static it might be clear they won't leave their position
+        case "PATROL": { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
         case "DESTROYED": { _checkRadius = 0 }; // yea well...
         default { _checkRadius = 0 };
     };
 
+    // check strength
     DEBUG2("check radius is %1", _checkRadius);
     if (_checkRadius isEqualTo 0) then {
         // the check radius is not relevant since the enemy probably won't be where it has been seen last (for instance a
@@ -71,6 +72,10 @@ if (isServer) then {
                 if (_foundInfantry isEqualTo 0) exitWith {
                     DEBUG("no infantry units are within the check area - accuracy is 0%");
                     _accuracy = 0;
+                };
+                if (_foundInfantry isEqualTo _strength) exitWith {
+                    DEBUG("reported strength matches with actual strength");
+                    _accuracy = 100;
                 };
                 DEBUG("inf units found");
             };
@@ -97,7 +102,6 @@ if (isServer) then {
             };
         };
 
-        // validate strength
         // validate type
     };
 };

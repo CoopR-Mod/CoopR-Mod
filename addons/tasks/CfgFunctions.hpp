@@ -8,10 +8,12 @@ class CfgFunctions {
             class createSniperteamTask {};
             class validateReport {};
             class countTask {};
+            class strengthAccuracy {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
             class tests_countTasks {};
+            class tests_strengthAccuracy {};
         }
     }
 }

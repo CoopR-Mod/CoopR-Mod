@@ -45,6 +45,20 @@
 #define COOPR_TASK_TYPE_JTAC "coopr_task_type_jtac"
 #define COOPR_TASK_TYPE_AMBUSH "coopr_task_type_ambush"
 
+#define COOPR_STRENGTH_TYPE_FIRETEAM "fireteam"
+#define COOPR_STRENGTH_TYPE_SQUAD "squad"
+#define COOPR_STRENGTH_TYPE_PLATOON "platoon"
+#define COOPR_STRENGTH_TYPE_COMPANY "company"
+
+#define COOPR_STRENGTH_TYPE_FIRETEAM_MIN 2
+#define COOPR_STRENGTH_TYPE_FIRETEAM_MAX 4
+#define COOPR_STRENGTH_TYPE_SQUAD_MIN 8
+#define COOPR_STRENGTH_TYPE_SQUAD_MAX 14
+#define COOPR_STRENGTH_TYPE_PLATOON_MIN 15
+#define COOPR_STRENGTH_TYPE_PLATOON_MAX 45
+#define COOPR_STRENGTH_TYPE_COMPANY_MIN 80
+#define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
+
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
 #define COOPR_STATE_KIA "coopr_character_state_kia"

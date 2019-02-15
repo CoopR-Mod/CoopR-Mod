@@ -40,13 +40,13 @@ if (isServer) then {
     // TODO: validate if was within range of recon objective
     // check behaviour
     switch (_behaviour) do {
-        case "ATTACKING": { _checkRadius = 0 }; // attacking enemies most likely will not be in the area afterwards
-        case "DEFENDING": { _checkRadius = 150 }; // defending units might be a bit wider spreaded
-        case "RESUPPLY": { _checkRadius = 0 };
-        case "WITHDRAWING": { _checkRadius = 0 };
-        case "STATIC": { _checkRadius = 30 }; // if a unit is reported as static it might be clear they won't leave their position
-        case "PATROL": { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
-        case "DESTROYED": { _checkRadius = 0 }; // yea well...
+        case COOPR_TASK_BEHAVIOUR_ATTACKING: { _checkRadius = 0 }; // attacking enemies most likely will not be in the area afterwards
+        case COOPR_TASK_BEHAVIOUR_DEFENDING: { _checkRadius = 150 }; // defending units might be a bit wider spreaded
+        case COOPR_TASK_BEHAVIOUR_RESUPPLY: { _checkRadius = 0 };
+        case COOPR_TASK_BEHAVIOUR_WITHDRAWING: { _checkRadius = 0 };
+        case COOPR_TASK_BEHAVIOUR_STATIC: { _checkRadius = 30 }; // if a unit is reported as static it might be clear they won't leave their position
+        case COOPR_TASK_BEHAVIOUR_PATROL: { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
+        case COOPR_TASK_BEHAVIOUR_DESTROYED: { _checkRadius = 0 }; // yea well...
         default { _checkRadius = 0 };
     };
 

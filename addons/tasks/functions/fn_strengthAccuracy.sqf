@@ -39,10 +39,12 @@ if (isServer) then {
 
     if (_amount > _maxStrength) then {
         private _offset = (_amount - _maxStrength);
+        DEBUG2("reported amount has positive offset of %1", _offset);
         _accuracy = _accuracy - (_offset * (100 / _maxStrength));
     };
     if (_amount < _minStrength) then {
         private _offset = (_minStrength - _amount);
+        DEBUG2("reported amount has negative offset of %1", _offset);
         _accuracy = _accuracy - (_offset * (100 / _minStrength));
     };
 

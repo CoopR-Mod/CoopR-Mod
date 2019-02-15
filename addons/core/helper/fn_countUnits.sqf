@@ -24,7 +24,7 @@ params [["_entities", []],
         ["_sideFilter", sideEmpty]];
 
 private _counter = 0;
-private _unqiueUnits = [];
+private _uniqueUnits = [];
 if (_entities isEqualTo []) exitWith { _counter };
 DEBUG2("side filter is %1", _sideFilter);
 DEBUG2("enitities  %1", _entities);
@@ -35,10 +35,10 @@ DEBUG2("enitities  %1", _entities);
 
     {
         if (_sideFilter isEqualTo sideEmpty) then {
-            _unqiueUnits pushBackUnique _x;
+            _uniqueUnits pushBackUnique _x;
         };
         if (_sideFilter isEqualTo _sideOfGroup) then {
-            _unqiueUnits pushBackUnique _x;
+            _uniqueUnits pushBackUnique _x;
         };
     } forEach (units _entity);
 
@@ -47,5 +47,5 @@ DEBUG2("enitities  %1", _entities);
 
 
 DEBUG2("counted %1 units", count _uniqueUnits);
-count _unqiueUnits;
+count _uniqueUnits;
 

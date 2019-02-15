@@ -68,8 +68,8 @@ if (isServer) then {
         DEBUG2("found %1 tanks", _foundTanks);
 
         switch (_type) do {
-            case "Infantry": {
-                if (_foundInfantry isEqualTo 0) exitWith {
+            case COOPR_TASK_REPORT_TYPE_INFANTRY: {
+                if (_foundInfantry isEqualTo 0) then {
                     DEBUG("no infantry units are within the check area - accuracy is 0%");
                     _accuracy = 0;
                 };
@@ -79,22 +79,22 @@ if (isServer) then {
                 };
                 DEBUG("inf units found");
             };
-            case "MotorizedInfantry": {
-                if ((_foundInfantry + _foundVehicles) isEqualTo 0) exitWith {
-                    DEBUG("no infantry or vehicle units are within the check area - accuracy is 0%");
+            case COOPR_TASK_REPORT_TYPE_MOTORIZED: {
+                if ((_foundInfantry + _foundVehicles) isEqualTo 0) then {
+                    DEBUG("no motorized units are within the check area - accuracy is 0%");
                     _accuracy = 0;
                 };
                 DEBUG("moto inf units found");
             };
-            case "MechanizedInfantry": {
-                if ((_foundInfantry + _foundTanks) isEqualTo 0) exitWith {
-                    DEBUG("no infantry or armored units are within the check area - accuracy is 0%");
+            case COOPR_TASK_REPORT_TYPE_MECHANIZED: {
+                if ((_foundInfantry + _foundTanks) isEqualTo 0) then {
+                    DEBUG("no mechanized units are within the check area - accuracy is 0%");
                     _accuracy = 0;
                 };
                 DEBUG("mech inf units found");
             };
-            case "Armor": {
-                if (_foundTanks isEqualTo 0) exitWith {
+            case COOPR_TASK_REPORT_TYPE_ARMORED: {
+                if (_foundTanks isEqualTo 0) then {
                     DEBUG("no armored units are within the check area - accuracy is 0%");
                     _accuracy = 0;
                 };

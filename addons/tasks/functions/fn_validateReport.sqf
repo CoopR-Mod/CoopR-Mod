@@ -36,8 +36,6 @@ if (isServer) then {
     DEBUG2("location: %1", _location);
     private _accuracy = 100; // initial
     private _checkRadius = 0;
-    // will turn "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
-    private _type = [_type splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
 
     // TODO: validate if was within range of recon objective
     // check behaviour

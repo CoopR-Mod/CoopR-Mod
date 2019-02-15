@@ -32,6 +32,8 @@ if (isServer) then {
             private _notes = [_spotrep, "ALiVE_SYS_spotrep_remarks"] call CBA_fnc_hashGet;
             private _location = [_spotrep, "ALiVE_SYS_spotrep_loc"] call CBA_fnc_hashGet;
             private _type = [_spotrep, "ALiVE_SYS_spotrep_type"] call CBA_fnc_hashGet;
+            // will turn i.e. "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
+            _type = [_type splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
             private _behaviour = [_spotrep, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
             private _markerPosition = [_spotrep, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
 

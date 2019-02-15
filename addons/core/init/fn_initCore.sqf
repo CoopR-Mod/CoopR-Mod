@@ -11,7 +11,7 @@ COOPR_REP_MAN = _reputationMan;
 COOPR_REP_WIA_MULTIPLIER_WEST = _WIAReputation;
 COOPR_RECON_REPORTS = [];
 COOPR_RECON_TASKS = [];
-COOPR_TASKS = [];
+COOPR_TASKS_QUEUE = [];
 
 COOPR_STATS_TASK_SNIPERTEAM = 0;
 
@@ -19,6 +19,6 @@ publicVariable "COOPR_REP_MAN";
 publicVariable "COOPR_REP_WIA_MULTIPLIER_WEST";
 publicVariable "COOPR_RECON_REPORTS";
 publicVariable "COOPR_RECON_TASKS";
-publicVariable "COOPR_TASKS";
+publicVariable "COOPR_TASKS_QUEUE";
 
 publicVariable "COOPR_STATS_TASK_SNIPERTEAM";

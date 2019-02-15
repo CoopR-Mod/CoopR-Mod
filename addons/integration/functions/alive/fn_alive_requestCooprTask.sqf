@@ -19,7 +19,7 @@
  * Scope: Client
  */
 
-if (count COOPR_TASKS <= 0 ) then {
+if (count COOPR_TASKS_QUEUE <= 0 ) then {
     INFO("no coopr tasks found. Create a new recon task");
 
     if (INTEGRATE_ALIVE) then {
@@ -27,7 +27,7 @@ if (count COOPR_TASKS <= 0 ) then {
     };
 
 } else {
-    private _cooprTask = COOPR_TASKS deleteAt 0;
+    private _cooprTask = COOPR_TASKS_QUEUE deleteAt 0;
     DEBUG2("coopr task: %1", _cooprTask);
     private _taskType = [_cooprTask, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
     DEBUG2("task type: %1", _taskType);

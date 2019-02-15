@@ -69,6 +69,11 @@
 #define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 
+#define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
+#define COOPR_TASK_REPORT_TYPE_MOTORIZED "MotorizedInfantry"
+#define COOPR_TASK_REPORT_TYPE_MECHANIZED "MechanizedInfantry"
+#define COOPR_TASK_REPORT_TYPE_ARMORED "Armor"
+
 #define COOPR_TASK_TYPE_SNIPERTEAM "coopr_task_type_sniperteam"
 #define COOPR_TASK_TYPE_ASYMMETRIC "coopr_task_type_asymmetric"
 #define COOPR_TASK_TYPE_ASSAULT "coopr_task_type_assault"
@@ -84,7 +89,3 @@
 #define COOPR_STRENGTH_TYPE_PLATOON_MAX 45
 #define COOPR_STRENGTH_TYPE_COMPANY_MIN 80
 #define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
-
-
-
-

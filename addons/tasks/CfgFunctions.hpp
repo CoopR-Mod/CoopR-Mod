@@ -10,10 +10,17 @@ class CfgFunctions {
             class countTask {};
             class strengthAccuracy {};
         }
+        class coopr_tasks_helper {
+            file = "x\coopr\addons\tasks\helper";
+            class getMaxForStrength {};
+            class getMinForStrength {};
+        }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
+            class tests_tasks_runSuite {};
             class tests_countTasks {};
             class tests_strengthAccuracy {};
+            class tests_minMaxForStrength {};
         }
     }
 }

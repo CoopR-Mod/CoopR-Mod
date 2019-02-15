@@ -10,12 +10,13 @@
  * 1: _strengthType <STRING> - A type to check for (Fireteam, Squad, etc.)
  *
  * Return Value:
- * 100: If the amount matches exactly the strength type
+ * _accuracy <NUMBER>
  *
  * Example:
  * [3, COOPR_STRENGTH_TYPE_FIRETEAM] call coopr_fnc_strengthAccuracy; // returns 100
- * [20, COOPR_STRENGTH_TYPE_FIRETEAM] call coopr_fnc_strengthAccuracy; // returns 60
+ * [5, COOPR_STRENGTH_TYPE_FIRETEAM] call coopr_fnc_strengthAccuracy; // returns 80
  * [10, COOPR_STRENGTH_TYPE_SQUAD] call coopr_fnc_strengthAccuracy; // returns 100
+ * see tests_strengthAccuracy for more examples
  *
  * Public: No
  *
@@ -29,15 +30,24 @@ if (_amount isEqualTo -1) exitWith { ERROR("_amount was locationNull") };
 if (_strengthType isEqualTo "") exitWith { ERROR("_strengthType was empty string") };
 
 if (isServer) then {
+    if (_amount isEqualTo 0) exitWith { 0 };
+
     private _accuracy = 100;
 
-    switch (_strengthType) do {
-        case COOPR_STRENGTH_TYPE_FIRETEAM: {
-            if(_amount >= COOPR_STRENGTH_TYPE_FIRETEAM_MIN and _amount <= COOPR_STRENGTH_TYPE_FIRETEAM_MAX) exitWith { 100 }
-        };
-        default { _checkRadius = 0 };
+    private _minStrength = _strengthType call coopr_fnc_getMinForStrength;
+    private _maxStrength = _strengthType call coopr_fnc_getMaxForStrength;
+
+    if (_amount > _maxStrength) then {
+        private _offset = (_amount - _maxStrength);
+        _accuracy = _accuracy - (_offset * (100 / _maxStrength));
+    };
+    if (_amount < _minStrength) then {
+        private _offset = (_minStrength - _amount);
+        _accuracy = _accuracy - (_offset * (100 / _minStrength));
     };
 
+    if (_accuracy < 0) then { _accuracy = 0 };
+    ceil _accuracy;
 
 } else {
     ERROR("this function is only allowed on the server side");

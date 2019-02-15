@@ -1,12 +1,13 @@
 #define TEST_CFG [true, true, false]
 
-#define TSTART [format ["<< Test Start for %1 >>", DEBUG_CTX], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug;
-#define TEND [format ["<< Test End for %1 >>", DEBUG_CTX], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug;
-#define TLOG(var1) [format ["TEST - %1", var1], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug
-#define TSUCCESS [format ["TEST - success", var1], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug
-#define TFAIL [format ["TEST - failure", var1], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug
-#define TEST(ctx) private _testContext = ctx
+#define TSTART ["<< Test Start: " + __FILE__ + " >>", DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; private _totalTests = 0;
+#define TEND [format ["Summary: %1 tests executed", _totalTests], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; ["<< Test End: " + __FILE__ + " >>", DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug;
+#define TLOG(var1) [format ["%1", var1], DEBUG_CTX + ".test.log", TEST_CFG] call CBA_fnc_debug
+#define TSUCCESS [format ["success", var1], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug
+#define TFAIL [format ["failure", var1], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug
+#define TEST(ctx) private _testContext = ctx; _totalTests = _totalTests + 1;
 
-#define TASSERT(expression) if(expression) then { [format ["TEST %1 - success", _testContext], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug; } else { [format ["TEST %1 - failure", _testContext], DEBUG_CTX, TEST_CFG] call CBA_fnc_debug; }
+#define TASSERT(expression) if(expression) then { [format ["%1: success", _testContext], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; } else { [format ["%1: failure", _testContext], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; }
+#define TEXPECT(expected, actual) if(expected isEqualTo actual) then { [format ["%1: success", _testContext], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; } else { [format ["%1: failure", _testContext], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; [format ["expected %1 but was %2", expected, actual], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; }
 
 

@@ -9,9 +9,13 @@
             <Original>Please drive carefully. The technical maintenance is due!</Original>
             <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
         </Key>
+        <Key ID="str.coopr.core.action.broadcast">
+            <Original>&lt;t color='#4286f4'&gt;Send Recon Report&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Aufklaerungsbericht senden&lt;/t&gt;</German>
+        </Key>
         <Key ID="str.coopr.core.action.rep">
-            <Original>Show reputation</Original>
-            <German>Ruf anzeigen</German>
+            <Original>&lt;t color='#4286f4'&gt;Show Reputation&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Ruf anzeigen&lt;/t&gt;</German>
         </Key>
         <Key ID="str.coopr.core.action.intelligence">
             <Original>Show intelligence status</Original>
@@ -25,19 +29,20 @@
             <Original>Equipment</Original>
             <German>Ausruestung</German>
         </Key>
-        <Key ID="str.coopr.aar.action.minortask">
-            <Original>Request Minor Task</Original>
-            <German>Kurzauftrag anfragen</German>
+        <Key ID="str.coopr.task.action.request">
+            <Original>&lt;t color='#4286f4'&gt;Request Task&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Auftrag anfragen&lt;/t&gt;</German>
         </Key>
         <Key ID="str.coopr.aar.action.commander">
-            <Original>After Action Report</Original>
-            <German>Abschlussbericht</German>
+            <Original>&lt;t color='#4286f4'&gt;After Action Report&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Abschlussbericht&lt;/t&gt;</German>
         </Key>
         <Key ID="str.coopr.reputation.chatter.aar">
             <Original>Good Job! Glad you made it back!</Original>
             <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
         </Key>
     </Package>
+
     <Package name="Tasks">
         <Key ID="str_coopr_task_recon_title">
             <Original>Recon Area</Original>

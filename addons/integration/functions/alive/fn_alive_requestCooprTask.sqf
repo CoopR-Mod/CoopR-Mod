@@ -2,7 +2,8 @@
 /*
  * Author: xetra11
  *
- * Creates a CoopR Task. In combinatin with ALiVE it will launch a CoopR recon task at minor priority objectives.
+ * Creates a CoopR Task. If no attack missions/tasks are available this will create a recon task to get intel of enemy
+ * positions.
  *
  * Arguments:
  * None
@@ -18,27 +19,20 @@
  * Scope: Client
  */
 
-private _lowestPrioObjective = ["WEST", "attacking"] call coopr_fnc_alive_getLowestPriorityObjective;
+if (count COOPR_TASKS_QUEUE <= 0 ) then {
+    INFO("no coopr tasks found. Create a new recon task");
 
-// check for another objective type
-if (isNil "_lowestPrioObjective") then {
-    _lowestPrioObjective = ["WEST", "attack"] call coopr_fnc_alive_getLowestPriorityObjective;
-};
-
-if (not isNil "_lowestPrioObjective") then {
-    private _positionOfObjective = [_lowestPrioObjective, "center"] call alive_fnc_hashGet;
-    private _objectiveSize = [_lowestPrioObjective, "size"] call alive_fnc_hashGet;
-    private _enemySide = "EAST";
-    private _taskStatus = false;
-
-    _taskStatus = [player, _positionOfObjective] call coopr_fnc_createReconTask;
-    systemChat "||CoopR|| HQ wants you to recon the objective area and observice enemy movements!";
-
-    if (_taskStatus isEqualTo false) then {
-        systemChat "||CoopR|| There are no tasks for your unit at the moment";
+    if (INTEGRATE_ALIVE) then {
+        [player] remoteExec ["coopr_fnc_alive_createReconTask", EXEC_SERVER];
     };
 
 } else {
-    systemChat "||CoopR|| No objectives available at the moment";
-};
+    private _cooprTask = COOPR_TASKS_QUEUE deleteAt 0;
+    DEBUG2("coopr task: %1", _cooprTask);
+    private _taskType = [_cooprTask, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
+    DEBUG2("task type: %1", _taskType);
 
+    if (_taskType isEqualTo COOPR_TASK_TYPE_SNIPERTEAM) then {
+        [player, _cooprTask] call coopr_fnc_createSniperteamTask;
+    };
+};

@@ -1,3 +1,4 @@
+![CoopR Mod](https://i.imgur.com/2rmPBhF.png)
 # What is CoopR-Mod?
 At first glance a proficient ArmA 3 player would say CoopR-Mod is nothing new and just adds the same features every progress centered mission mod. To be honest that is somewhat true. The core features look similar to existing mods. Having a player on a server that can be "upgraded" through a points system often called "Reputation Points" and adding new gear to the player as it upgrades over time. Having generated missions that on success push the progress on the mission based campaign. Oh and some hot and fancy features to add supplies, airdrops and such to the gameplay. Nothing new. Yet CoopR-Mod tries to deliver a deeper simulation of a soldier being deployed in a combat scenario. The unique selling point is to wrap a mission or task into a fully fledged management of resources, menpower and decisions. A mission or task should not feel like a "quick quest" to be finished. It should be treated as important as in real life. Casualties are in no way acceptable and therefore the planning is crucial. CoopR-Mod wants to bring this feeling to the gameplay and players should be enforced to really think about the steps to be taken before rolling out for a patrol or combat task.
 # The Idea
@@ -30,9 +31,9 @@ Here listed one can see all planned features and technical milestones as a roadm
 ## v0.9
 | Type|Name | Description  | Tasks Completed|
 | ------------- |------------- |:-------------|-------------:|
-| Gameplay|Supply Requests | Squads can call for supplies to prepare mission resources | 0/2 |
-| Gameplay|Recon Tasks | Squads can be assigned to recon tasks and report enemy positions and movement | 0/3 |
-| Gameplay|Attack Tasks | Squads can be assigned to attack tasks. These are beforehand created through recon task results | 0/2 |
+| Gameplay|[Supply Requests](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#resources--supplements) | Squads can call for supplies to prepare mission resources | 0/2 |
+| Gameplay|[Recon Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#recon-tasks) | Squads can be assigned to recon tasks and report enemy positions and movement | 1/3 |
+| Gameplay|[Combat Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#combat-tasks) | Squads can be assigned to attack tasks. These are beforehand created through recon task results | 1/5 |
 | Technical|CoopR HQ Connection | The persistence layer can be setup to use the CoopR HQ webservices. This gives the option to have CoopR management features controlled with the browser | 0/1 |
 
 ## v0.10

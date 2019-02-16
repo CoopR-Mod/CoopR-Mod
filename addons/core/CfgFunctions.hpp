@@ -14,8 +14,6 @@ class CfgFunctions {
             class convertTempToReputation {};
             class deliverAfterActionReport {};
             class showReputation {};
-            class createReconTask {};
-            class broadcastReconReports {};
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";
@@ -42,13 +40,13 @@ class CfgFunctions {
             class initPromise {};
             class getLoadoutForRole {};
             class getNearestLocation {};
+            class countUnits {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";
-            class tests_init {};
             class tests_reputation {};
         }
     }

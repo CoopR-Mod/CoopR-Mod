@@ -18,6 +18,7 @@ class CfgFunctions {
             class alive_requestCooprTask {};
             class alive_getLowestPriorityObjective {};
             class alive_getSpotreps {};
+            class alive_createReconTask {};
         }
     }
 }

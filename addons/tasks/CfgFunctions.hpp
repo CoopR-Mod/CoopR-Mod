@@ -14,6 +14,7 @@ class CfgFunctions {
             file = "x\coopr\addons\tasks\helper";
             class getMaxForStrength {};
             class getMinForStrength {};
+            class determineTaskType {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
@@ -21,6 +22,7 @@ class CfgFunctions {
             class tests_countTasks {};
             class tests_strengthAccuracy {};
             class tests_minMaxForStrength {};
+            class tests_determineTaskType {};
         }
     }
 }

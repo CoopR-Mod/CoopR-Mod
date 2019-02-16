@@ -3,6 +3,6 @@
 #define COMPONENT tasks
 #define DEBUG_CTX "COOPR.TASKS"
 
-#define COOPR_ACCURACITY_THRESHOLD 65
+#define COOPR_ACCURACY_THRESHOLD 65
 
 #include "\x\coopr\addons\core\script_macros.hpp"

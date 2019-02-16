@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Converts all recon reports to CoopR missions/tasks if the accuracy is above COOPR_ACCURACITY_THRESHOLD
+ * Converts all recon reports to CoopR missions/tasks if the accuracy is above COOPR_ACCURACY_THRESHOLD
 
  * Arguments:
  * None
@@ -42,17 +42,17 @@ if (isServer) then {
             private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
             DEBUG2("task type: %1", _cooprTaskType);
 
-            if (_reportAccuracy >= COOPR_ACCURACITY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
-                private _cooprTask = EMPTY_HASH;
+            if (_reportAccuracy >= COOPR_ACCURACY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
+                private _newCooprTask = EMPTY_HASH;
 
                 DEBUG("building coopr task hash");
-                [_cooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-                [_cooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
-                [_cooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
-                [_cooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
 
-                DEBUG2("defined task details: %1", _cooprTask);
-                COOPR_TASKS_QUEUE pushBack _cooprTask;
+                DEBUG2("defined task details: %1", _newCooprTask);
+                COOPR_TASKS_QUEUE pushBack _newCooprTask;
                 _createdCounter = _createdCounter + 1;
             } else {
                 DEBUG("no task was generated out of recon report");

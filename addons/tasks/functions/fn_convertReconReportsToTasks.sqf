@@ -2,8 +2,8 @@
 /*
  * Author: xetra11
  *
- * Converts all recon reports to CoopR missions/tasks
- *
+ * Converts all recon reports to CoopR missions/tasks if the accuracy is above COOPR_ACCURACITY_THRESHOLD
+
  * Arguments:
  * None
  *
@@ -37,28 +37,28 @@ if (isServer) then {
             private _behaviour = [_spotrep, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
             private _markerPosition = [_spotrep, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
 
-            private _cooprTask = EMPTY_HASH;
-            private _cooprTaskType = nil;
+            private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+            DEBUG2("reportAccuracy %1", _reportAccuracy);
+            private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
+            DEBUG2("task type: %1", _cooprTaskType);
 
-            [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+            if (_reportAccuracy >= COOPR_ACCURACITY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
+                private _cooprTask = EMPTY_HASH;
 
-            DEBUG("defining task type");
-            if (_type isEqualTo "Infantry") then {
-                DEBUG("task defined for infantry combat");
-                switch (_strength) do {
-                   case "FireTeam": { _cooprTaskType = COOPR_TASK_TYPE_SNIPERTEAM };
-                }
-            };
+                DEBUG("building coopr task hash");
+                [_cooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
+                [_cooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
+                [_cooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
+                [_cooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
 
-            DEBUG("building coopr task hash");
-            [_cooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-            [_cooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
-            [_cooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
-            [_cooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
+                DEBUG2("defined task details: %1", _cooprTask);
+                COOPR_TASKS_QUEUE pushBack _cooprTask;
+                _createdCounter = _createdCounter + 1;
+            } else {
+                DEBUG("no task was generated out of recon report");
+                DEBUG2("accuracy of report was %1", _reportAccuracy);
+            }
 
-            DEBUG2("created task is: %1", _cooprTask);
-            COOPR_TASKS pushBack _cooprTask;
-            _createdCounter = _createdCounter + 1;
         };
 
     } forEach COOPR_RECON_REPORTS;

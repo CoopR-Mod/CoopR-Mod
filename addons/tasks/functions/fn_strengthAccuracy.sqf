@@ -6,8 +6,8 @@
  * strength type (like Fireteam or Squad). This function will return three different NUMBER values.
  *
  * Arguments:
- * 0: _amount <NUMBER> - The amount of units
- * 1: _strengthType <STRING> - A type to check for (Fireteam, Squad, etc.)
+ * 0: _actualAmount <NUMBER> - The amount of units
+ * 1: _reportedStrength <STRING> - A type to check for (Fireteam, Squad, etc.)
  *
  * Return Value:
  * _accuracy <NUMBER>
@@ -23,28 +23,38 @@
  * Scope: Server
  */
 
-params [["_amount", -1],
-        ["_strengthType", ""]];
+params [["_actualAmount", -1],
+        ["_reportedStrength", ""]];
 
-if (_amount isEqualTo -1) exitWith { ERROR("_amount was locationNull") };
-if (_strengthType isEqualTo "") exitWith { ERROR("_strengthType was empty string") };
+if (_actualAmount isEqualTo -1) exitWith { ERROR("_actualAmount was locationNull") };
+if (_reportedStrength isEqualTo "") exitWith { ERROR("_reportedStrength was empty string") };
+DEBUG2("amount : %1", _actualAmount);
+DEBUG2("strengthType : %1", _reportedStrength);
 
 if (isServer) then {
-    if (_amount isEqualTo 0) exitWith { 0 };
+    if (_actualAmount isEqualTo 0) exitWith { 0 };
 
     private _accuracy = 100;
 
-    private _minStrength = _strengthType call coopr_fnc_getMinForStrength;
-    private _maxStrength = _strengthType call coopr_fnc_getMaxForStrength;
+    private _minStrength = _reportedStrength call coopr_fnc_getMinForStrength;
+    private _maxStrength = _reportedStrength call coopr_fnc_getMaxForStrength;
 
-    if (_amount > _maxStrength) then {
-        private _offset = (_amount - _maxStrength);
-        DEBUG2("reported amount has positive offset of %1", _offset);
+    if (_maxStrength isEqualTo -1 or _minStrength isEqualTo -1) exitWith {
+        ERROR("no max or min strength could be determined");
+        0;
+    };
+
+    DEBUG2("maxStrength : %1", _maxStrength);
+    DEBUG2("minStrength : %1", _minStrength);
+
+    if (_actualAmount > _maxStrength) then {
+        private _offset = (_actualAmount - _maxStrength);
+        DEBUG2("reported strength has positive offset of %1", _offset);
         _accuracy = _accuracy - (_offset * (100 / _maxStrength));
     };
-    if (_amount < _minStrength) then {
-        private _offset = (_minStrength - _amount);
-        DEBUG2("reported amount has negative offset of %1", _offset);
+    if (_actualAmount < _minStrength) then {
+        private _offset = (_minStrength - _actualAmount);
+        DEBUG2("reported strength has negative offset of %1", _offset);
         _accuracy = _accuracy - (_offset * (100 / _minStrength));
     };
 

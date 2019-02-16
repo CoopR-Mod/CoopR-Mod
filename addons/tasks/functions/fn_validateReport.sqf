@@ -12,7 +12,7 @@
  * 3: _behaviour <STRING> - The reported behaviour of the enemy unit ("Attacking", "Patroling")
  *
  * Return Value:
- * None
+ * _accuracity <NUMBER> - Percentage of how accurate the report was
  *
  * Example:
  * [325342, "Fireteam", "Infantry", "PATROL"] call coopr_fnc_validateReport;
@@ -34,7 +34,6 @@ if (_behaviour isEqualTo "") exitWith { ERROR("_behaviour was empty string") };
 
 if (isServer) then {
     DEBUG2("location: %1", _location);
-    private _accuracy = 100; // initial
     private _checkRadius = 0;
 
     // TODO: validate if was within range of recon objective
@@ -65,42 +64,42 @@ if (isServer) then {
         DEBUG2("found %1 infantry", _foundInfantry);
         DEBUG2("found %1 tanks", _foundTanks);
 
+        // will check if the reported strength (Fireteam, Platoon, etc.) and the found amount of units matches somehow
+        // there will be a simple calculation of how accurate the report is
         switch (_type) do {
             case COOPR_TASK_REPORT_TYPE_INFANTRY: {
                 if (_foundInfantry isEqualTo 0) then {
                     DEBUG("no infantry units are within the check area - accuracy is 0%");
-                    _accuracy = 0;
+                    0;
+                } else {
+                    [_foundInfantry, _strength] call coopr_fnc_strengthAccuracy;
                 };
-                if (_foundInfantry isEqualTo _strength) exitWith {
-                    DEBUG("reported strength matches with actual strength");
-                    _accuracy = 100;
-                };
-                DEBUG("inf units found");
             };
             case COOPR_TASK_REPORT_TYPE_MOTORIZED: {
                 if ((_foundInfantry + _foundVehicles) isEqualTo 0) then {
                     DEBUG("no motorized units are within the check area - accuracy is 0%");
-                    _accuracy = 0;
+                    0;
+                } else {
+                    [_foundInfantry + _foundVehicles, _strength] call coopr_fnc_strengthAccuracy;
                 };
-                DEBUG("moto inf units found");
             };
             case COOPR_TASK_REPORT_TYPE_MECHANIZED: {
                 if ((_foundInfantry + _foundTanks) isEqualTo 0) then {
                     DEBUG("no mechanized units are within the check area - accuracy is 0%");
-                    _accuracy = 0;
+                    0;
+                } else {
+                    [_foundInfantry + _foundTanks, _strength] call coopr_fnc_strengthAccuracy;
                 };
-                DEBUG("mech inf units found");
             };
             case COOPR_TASK_REPORT_TYPE_ARMORED: {
                 if (_foundTanks isEqualTo 0) then {
                     DEBUG("no armored units are within the check area - accuracy is 0%");
-                    _accuracy = 0;
+                    0;
+                } else {
+                    [_foundTanks, _strength] call coopr_fnc_strengthAccuracy;
                 };
-                DEBUG("armored units found");
             };
         };
-
-        // validate type
     };
 };
 

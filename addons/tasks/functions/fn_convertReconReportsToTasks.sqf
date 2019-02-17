@@ -40,7 +40,7 @@ if (isServer) then {
             private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
             DEBUG2("reportAccuracy %1", _reportAccuracy);
             private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
-            DEBUG2("task type: %1", _cooprTaskType);
+            DEBUG2("determined task type: %1", _cooprTaskType);
 
             if (_reportAccuracy >= COOPR_ACCURACY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
                 private _newCooprTask = EMPTY_HASH;
@@ -56,11 +56,9 @@ if (isServer) then {
                 _createdCounter = _createdCounter + 1;
             } else {
                 DEBUG("no task was generated out of recon report");
-                DEBUG2("accuracy of report was %1", _reportAccuracy);
-            }
-
+                DEBUG2("accuracy of report was below %1", COOPR_ACCURACY_THRESHOLD);
+            };
         };
-
     } forEach COOPR_RECON_REPORTS;
 
     DEBUG2("generated coopr tasks: %1", _createdCounter);

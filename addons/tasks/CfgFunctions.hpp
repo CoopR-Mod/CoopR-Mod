@@ -8,6 +8,7 @@ class CfgFunctions {
             class createSniperteamTask {};
             class validateReport {};
             class countTask {};
+            class requestCooprTask {};
             class strengthAccuracy {};
         }
         class coopr_tasks_helper {

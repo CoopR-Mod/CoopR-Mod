@@ -24,15 +24,15 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
 
     if (INTEGRATE_ALIVE) then {
         [player] remoteExec ["coopr_fnc_alive_createReconTask", EXEC_SERVER];
+    } else {
+        // TODO call recon task for coopr or other integration
     };
 
 } else {
-    private _cooprTask = COOPR_TASKS_QUEUE deleteAt 0;
-    DEBUG2("coopr task: %1", _cooprTask);
-    private _taskType = [_cooprTask, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
+    private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
+    DEBUG2("coopr task: %1", _cooprTaskInfo);
+    private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
     DEBUG2("task type: %1", _taskType);
 
-    if (_taskType isEqualTo COOPR_TASK_TYPE_SNIPERTEAM) then {
-        [player, _cooprTask] call coopr_fnc_createSniperteamTask;
-    };
+    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_generateCombatTask"];
 };

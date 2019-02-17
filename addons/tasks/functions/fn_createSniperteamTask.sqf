@@ -40,4 +40,6 @@ if (isServer) then {
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
         _taskResult;
     };
-}
+} else {
+    ERROR("this function can only be executed on the server side");
+};

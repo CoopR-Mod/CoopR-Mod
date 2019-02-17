@@ -31,18 +31,10 @@ if (_type isEqualTo "") exitWith { ERROR("_type was empty string") };
 switch (_strength) do {
     case COOPR_STRENGTH_TYPE_FIRETEAM: {
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_INFANTRY: {
-                default { COOPR_TASK_TYPE_SNIPERTEAM; }
-            };
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED: {
-                default { COOPR_TASK_TYPE_SNIPERTEAM; }
-            };
-            case COOPR_TASK_REPORT_TYPE_MECHANIZED: {
-                default { COOPR_TASK_TYPE_JTAC; }
-            };
-            case COOPR_TASK_REPORT_TYPE_ARMORED: {
-                default { COOPR_TASK_TYPE_JTAC; }
-            };
+            case COOPR_TASK_REPORT_TYPE_INFANTRY: { COOPR_TASK_TYPE_SNIPERTEAM; };
+            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_SNIPERTEAM; };
+            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
+            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
             default { COOPR_TASK_TYPE_NONE };
         };
     };

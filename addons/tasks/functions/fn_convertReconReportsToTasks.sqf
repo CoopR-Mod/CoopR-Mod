@@ -50,6 +50,7 @@ if (isServer) then {
                 [_newCooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
                 [_newCooprTask, COOPR_KEY_TASK_LOCATION, _markerPosition] call CBA_fnc_hashSet;
                 [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_TARGET, _strength] call CBA_fnc_hashSet;
 
                 DEBUG2("defined task details: %1", _newCooprTask);
                 COOPR_TASKS_QUEUE pushBack _newCooprTask;

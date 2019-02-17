@@ -58,11 +58,18 @@
 
 // Task Globals
 #define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
+#define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
 
 #define COOPR_KEY_TASK_UID "coopr_task_uid"
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
 #define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
+#define COOPR_KEY_TASK_TARGET "coopr_task_target"
+
+#define COOPR_KEY_TASK_TRACKER_LEAVE_BASE "coopr_task_tracker_leavebase"
+#define COOPR_KEY_TASK_TRACKER_ENTER_BASE "coopr_task_tracker_enterbase"
+#define COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA "coopr_task_tracker_entertaskarea"
+#define COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA "coopr_task_tracker_leavetaskarea"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "MotorizedInfantry"

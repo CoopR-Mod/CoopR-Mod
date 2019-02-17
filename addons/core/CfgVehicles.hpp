@@ -116,7 +116,7 @@ class CfgVehicles
     class CoopR_ModuleSetupHQ: Module_F
     {
         scope = 2;
-        displayName = "CoopR HQ";
+        displayName = "CoopR Headquarter";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
         function = "coopr_fnc_setupHQModule";
@@ -127,6 +127,12 @@ class CfgVehicles
         is3DEN = 0;
 
         class Arguments {
+              class HQ_Bounds {
+                  displayName = "Headquarter Boundaries";
+                  description = "The name of the circle/rectangle marker that defines the boundaries of the headquarters"
+                  typeName = "STRING";
+                  defaultValue = "<NONE>";
+              }
               class Side {
                   displayName = "Side";
                   description = "The side the HQ is bound to. (default = West)";

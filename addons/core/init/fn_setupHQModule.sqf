@@ -2,7 +2,8 @@
 
 params [["_logic", objNull]];
 
-if(isServer) then {
+if (isServer) then {
+    private _hqBoundsMarker = _logic getVariable ["HQ_Bounds", ""];
     private _hqSide = _logic getVariable ["Side", ""];
     private _faction = _logic getVariable ["Faction", ""];
 
@@ -10,7 +11,7 @@ if(isServer) then {
     DEBUG2("Side of HQ is: %1", _hqSide);
     DEBUG2("Faction of HQ is: %1", _faction);
 
-    [_hqSide, _faction, _logic] call coopr_fnc_initHQ;
+    [_hqSide, _faction, _logic, _hqBoundsMarker] call coopr_fnc_initHQ;
 
     true;
 } else {

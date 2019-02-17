@@ -12,7 +12,7 @@
  * 3: _behaviour <STRING> - The reported behaviour of the enemy unit ("Attacking", "Patroling")
  *
  * Return Value:
- * _accuracity <NUMBER> - Percentage of how accurate the report was
+ * _accuracy <NUMBER> - Percentage of how accurate the report was
  *
  * Example:
  * [325342, "Fireteam", "Infantry", "PATROL"] call coopr_fnc_validateReport;
@@ -44,7 +44,7 @@ if (isServer) then {
         case COOPR_TASK_BEHAVIOUR_RESUPPLY: { _checkRadius = 0 };
         case COOPR_TASK_BEHAVIOUR_WITHDRAWING: { _checkRadius = 0 };
         case COOPR_TASK_BEHAVIOUR_STATIC: { _checkRadius = 30 }; // if a unit is reported as static it might be clear they won't leave their position
-        case COOPR_TASK_BEHAVIOUR_PATROL: { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
+        case COOPR_TASK_BEHAVIOUR_PATROLING: { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
         case COOPR_TASK_BEHAVIOUR_DESTROYED: { _checkRadius = 0 }; // yea well...
         default { _checkRadius = 0 };
     };
@@ -102,6 +102,3 @@ if (isServer) then {
         };
     };
 };
-
-
-

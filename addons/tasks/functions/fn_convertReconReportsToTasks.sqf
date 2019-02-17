@@ -48,7 +48,7 @@ if (isServer) then {
                 DEBUG("building coopr task hash");
                 [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
                 [_newCooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
+                [_newCooprTask, COOPR_KEY_TASK_LOCATION, _markerPosition] call CBA_fnc_hashSet;
                 [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
 
                 DEBUG2("defined task details: %1", _newCooprTask);

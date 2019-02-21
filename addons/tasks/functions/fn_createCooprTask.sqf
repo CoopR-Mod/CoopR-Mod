@@ -30,14 +30,14 @@ if (_cooprTaskInfo isEqualTo []) exitWith { ERROR("_cooprTaskInfo was []") };
 
 if (isServer) then {
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
-    private _location = [_cooprTaskInfo, COOPR_KEY_TASK_LOCATION] call CBA_fnc_hashGet;
+    private _destination = [_cooprTaskInfo, COOPR_KEY_TASK_LOCATION] call CBA_fnc_hashGet;
     private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
     private _target = [_cooprTaskInfo, COOPR_KEY_TASK_TARGET] call CBA_fnc_hashGet;
 
-    DEBUG2("task position: %1", _location);
+    DEBUG2("task position: %1", _destination);
     private _taskAmount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
     private _taskId = format ["%1_%2", _taskType, _taskAmount];
-    private _creationSuccess = [_unit, _taskId , [_description, "task assigned"], _location, 1, 2, true] call BIS_fnc_taskCreate;
+    private _creationSuccess = [_unit, _taskId , [_description, "task assigned"], _destination, 1, 2, true] call BIS_fnc_taskCreate;
 
     if (_creationSuccess isEqualTo true) then {
         private _taskTracker = EMPTY_HASH;

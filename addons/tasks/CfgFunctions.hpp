@@ -6,6 +6,7 @@ class CfgFunctions {
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
             class createCooprTask {};
+            class createReconTask {};
             class validateReport {};
             class countTask {};
             class requestCooprTask {};

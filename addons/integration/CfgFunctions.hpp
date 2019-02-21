@@ -17,7 +17,6 @@ class CfgFunctions {
             class alive_staticData {};
             class alive_getLowestPriorityObjective {};
             class alive_getSpotreps {};
-            class alive_createReconTask {};
         }
     }
 }

@@ -32,7 +32,7 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
 
         if (not (_lowestPrioObjective isEqualTo objNull)) then {
             private _positionOfObjective = [_lowestPrioObjective, "center"] call alive_fnc_hashGet;
-            [player, _positionOfObjective] remoteExec ["coopr_fnc_alive_createReconTask", EXEC_SERVER];
+            [player, _positionOfObjective] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
         } else {
             ["||CoopR|| No objectives available at the moment"] remoteExec ["systemChat", _unit];
         };

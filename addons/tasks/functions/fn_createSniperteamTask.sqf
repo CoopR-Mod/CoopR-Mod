@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Creates a CoopR sniperteam task that applied to the whole group of a given unit
+ * Creates a CoopR sniperteam task that is applied to the whole group of a given unit
  *
  * Arguments:
  * 0: _unit <OBJECT> - unit this task is assigned to
@@ -12,7 +12,7 @@
  * Boolean - if task was created successfully
  *
  * Example:
- * [player, ] call coopr_fnc_createSniperteamTask;
+ * [_unit, _cooprTaskInfo] call coopr_fnc_createSniperteamTask;
  *
  * Public: No
  *
@@ -32,7 +32,7 @@ if (isServer) then {
     private _target = [_cooprTaskInfo, COOPR_KEY_TASK_TARGET] call CBA_fnc_hashGet;
 
     DEBUG2("task position: %1", _location);
-    private _taskName = format ["coopr_task_sniperteam_%1", COOPR_STATS_TASK_SNIPERTEAM];
+    private _taskName = format ["coopr_task_sniperteam_%1", [COOPR_COUNTER_TASKS, COOPR_TASK_TYPE_SNIPERTEAM] call CBA_fnc_hashGet];
     private _creationSuccess = [_unit, _taskName , [_description, "Sniper Team"], _location, 1, 2, true] call BIS_fnc_taskCreate;
 
     if (_creationSuccess isEqualTo true) then {
@@ -56,5 +56,6 @@ if (isServer) then {
     };
 
 } else {
-    ERROR("this function can only be executed on the server side");
+    ERROR("this function can only be executed on the server side")
+    ;
 };

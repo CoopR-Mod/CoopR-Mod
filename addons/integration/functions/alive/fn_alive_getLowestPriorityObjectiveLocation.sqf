@@ -11,7 +11,7 @@
  * _location <LOCATION> - of found lowest objective
  *
  * Example:
- * call coopr_fnc_alive_getLowestPrioObjectiveLocation;
+ * call coopr_fnc_alive_getLowestPriorityObjectiveLocation;
  *
  * Public: No
  *

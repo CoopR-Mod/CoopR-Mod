@@ -23,7 +23,7 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
     INFO("no coopr tasks found. Create a new recon task");
 
     if (INTEGRATE_ALIVE) then {
-        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPrioObjectiveLocation;
+        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPriorityObjectiveLocation;
         [player, _reconTaskDestination] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
     } else {
         // TODO call recon task for coopr or other integration

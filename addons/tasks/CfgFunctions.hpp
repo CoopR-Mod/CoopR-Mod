@@ -10,7 +10,6 @@ class CfgFunctions {
             class countTask {};
             class requestCooprTask {};
             class strengthAccuracy {};
-            class generateCombatTask {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

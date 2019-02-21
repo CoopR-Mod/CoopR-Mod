@@ -30,9 +30,6 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
 
 } else {
     private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
-    DEBUG2("coopr task: %1", _cooprTaskInfo);
     private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
-    DEBUG2("task type: %1", _taskType);
-
-    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_generateCombatTask"];
+    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
 };

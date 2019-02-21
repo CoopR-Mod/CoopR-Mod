@@ -5,12 +5,12 @@ class CfgFunctions {
             class setupTasksModule {};
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
-            class createSniperteamTask {};
+            class createCooprTask {};
+            class createReconTask {};
             class validateReport {};
             class countTask {};
             class requestCooprTask {};
             class strengthAccuracy {};
-            class generateCombatTask {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

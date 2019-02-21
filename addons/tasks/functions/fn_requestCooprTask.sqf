@@ -23,16 +23,14 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
     INFO("no coopr tasks found. Create a new recon task");
 
     if (INTEGRATE_ALIVE) then {
-        [player] remoteExec ["coopr_fnc_alive_createReconTask", EXEC_SERVER];
+        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPrioObjectiveLocation;
+        [player, _reconTaskDestination] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
     } else {
         // TODO call recon task for coopr or other integration
     };
 
 } else {
     private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
-    DEBUG2("coopr task: %1", _cooprTaskInfo);
     private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
-    DEBUG2("task type: %1", _taskType);
-
-    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_generateCombatTask"];
+    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
 };

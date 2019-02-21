@@ -34,7 +34,7 @@ if (isServer) then {
     switch (_taskType) do {
         case COOPR_TASK_TYPE_SNIPERTEAM: {
             DEBUG("generating sniper team task");
-            [_unit, _cooprTaskInfo] call coopr_fnc_createSniperteamTask;
+            [_unit, COOPR_TASK_TYPE_SNIPERTEAM, _cooprTaskInfo] call coopr_fnc_createCooprTask;
         };
         // TODO: add other combat tasks
         default { false };

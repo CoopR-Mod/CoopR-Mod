@@ -5,8 +5,6 @@ class CfgFunctions {
             class setupTasksModule {};
             class broadcastReconReports {};
             class convertReconReportsToTasks {};
-            class createSniperteamTask {};
-            class createAssaultTask {};
             class createCooprTask {};
             class validateReport {};
             class countTask {};

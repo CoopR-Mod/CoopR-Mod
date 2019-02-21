@@ -23,19 +23,8 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
     INFO("no coopr tasks found. Create a new recon task");
 
     if (INTEGRATE_ALIVE) then {
-        private _lowestPrioObjective = ["WEST", "attacking"] call coopr_fnc_alive_getLowestPriorityObjective;
-
-        // check for another objective type
-        if (_lowestPrioObjective isEqualTo objNull) then {
-            _lowestPrioObjective = ["WEST", "attack"] call coopr_fnc_alive_getLowestPriorityObjective;
-        };
-
-        if (not (_lowestPrioObjective isEqualTo objNull)) then {
-            private _positionOfObjective = [_lowestPrioObjective, "center"] call alive_fnc_hashGet;
-            [player, _positionOfObjective] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
-        } else {
-            ["||CoopR|| No objectives available at the moment"] remoteExec ["systemChat", _unit];
-        };
+        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPrioObjectiveLocation;
+        [player, _reconTaskDestination] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
     } else {
         // TODO call recon task for coopr or other integration
     };

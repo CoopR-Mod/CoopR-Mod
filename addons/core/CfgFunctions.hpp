@@ -44,6 +44,7 @@ class CfgFunctions {
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};
+            class codeAsString {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

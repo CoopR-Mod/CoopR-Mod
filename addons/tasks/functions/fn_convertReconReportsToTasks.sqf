@@ -65,4 +65,6 @@ if (isServer) then {
     DEBUG2("generated coopr tasks: %1", _createdCounter);
     DEBUG("clearing recon reports array");
     COOPR_RECON_REPORTS = [];
+} else {
+    SERVER_ONLY_ERROR;
 };

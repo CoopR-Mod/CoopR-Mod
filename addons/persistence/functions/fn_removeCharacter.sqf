@@ -30,7 +30,10 @@ if (isServer) then {
         [_steamID, _slot] call coopr_fnc_removeCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping removal routine");
-    }
+    };
+    true;
+} else {
+    SERVER_ONLY_ERROR;
+    false;
 };
 
-true;

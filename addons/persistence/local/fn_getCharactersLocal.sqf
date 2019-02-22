@@ -20,13 +20,15 @@
 
 params[["_steamID", ""]];
 
-if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
+if (_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
-if(isServer) then {
+if (isServer) then {
     DEBUG2("fetch characters for steam id %1", _steamID);
     private _id = _steamID call coopr_fnc_getCharactersIDLocal;
     private _getCharactersForID = format ["SELECT character_0, character_1, character_2 FROM characters WHERE id = %1", _id];
     private _result = _getCharactersForID call coopr_fnc_extDB3sql select 0;
     _result;
+} else {
+    SERVER_ONLY_ERROR;
 };
 

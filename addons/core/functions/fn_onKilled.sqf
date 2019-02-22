@@ -51,4 +51,7 @@ if (isServer) then {
         DEBUG("player killed npc");
         [_victim] remoteExec ["coopr_fnc_playerKilledNpc", _killer];
     };
+} else {
+    SERVER_ONLY_ERROR;
 }
+

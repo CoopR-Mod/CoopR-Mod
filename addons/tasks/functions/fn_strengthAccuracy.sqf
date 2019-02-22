@@ -62,5 +62,5 @@ if (isServer) then {
     ceil _accuracy;
 
 } else {
-    ERROR("this function can only be executed on the server side");
+    SERVER_ONLY_ERROR;
 };

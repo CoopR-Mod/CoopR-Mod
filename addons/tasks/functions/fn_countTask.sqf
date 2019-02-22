@@ -34,7 +34,7 @@ if (isServer) then {
     [COOPR_COUNTER_TASKS, _type, _newCount] call CBA_fnc_hashSet;
     DEBUG2("%1 count increased by 1", _type);
 } else {
-    ERROR("function is only callable on the serverside")
+    SERVER_ONLY_ERROR;
 }
 
 

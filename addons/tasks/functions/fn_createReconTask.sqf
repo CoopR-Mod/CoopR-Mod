@@ -38,5 +38,7 @@ if (isServer) then {
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
         COOPR_RECON_TASKS pushBack _taskName;
     };
+} else {
+    SERVER_ONLY_ERROR;
 }
 

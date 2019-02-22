@@ -36,4 +36,6 @@ if (isServer) then {
     };
 
     _payload;
+} else {
+    SERVER_ONLY_ERROR;
 };

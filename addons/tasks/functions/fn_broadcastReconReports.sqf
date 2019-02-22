@@ -61,4 +61,6 @@ if (isServer) then {
            systemChat "||CoopR|| no recon reports have been created yet";
        };
     };
+} else {
+    SERVER_ONLY_ERROR;
 };

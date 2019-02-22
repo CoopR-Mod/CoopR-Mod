@@ -38,4 +38,6 @@ if (isServer) then {
     } else {
         INFO2("skipping character update - no user for id %1 in database", _playerUID);
     };
+} else {
+    SERVER_ONLY_ERROR;
 };

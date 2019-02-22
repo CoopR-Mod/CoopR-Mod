@@ -101,4 +101,6 @@ if (isServer) then {
             };
         };
     };
+} else {
+    SERVER_ONLY_ERROR;
 };

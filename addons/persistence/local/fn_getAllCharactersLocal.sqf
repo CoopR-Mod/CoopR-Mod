@@ -20,9 +20,11 @@
 
 if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
-if(isServer) then {
+if (isServer) then {
     DEBUG2("fetch all characters");
     private _getAllCharacters = format ["SELECT character_0, character_1, character_2 FROM characters", _id];
     private _result = _getAllCharacters call coopr_fnc_extDB3sql select 0;
     _result;
+} else {
+    SERVER_ONLY_ERROR;
 };

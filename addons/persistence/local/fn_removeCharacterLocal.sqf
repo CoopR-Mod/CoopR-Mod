@@ -37,4 +37,6 @@ if (isServer) then {
     } else {
         INFO2("skipping character removal - no user for id %1 in database", _steamID);
     };
+} else {
+    SERVER_ONLY_ERROR;
 };

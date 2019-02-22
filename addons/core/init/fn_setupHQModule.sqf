@@ -15,5 +15,6 @@ if (isServer) then {
 
     true;
 } else {
+    SERVER_ONLY_ERROR;
     false;
 };

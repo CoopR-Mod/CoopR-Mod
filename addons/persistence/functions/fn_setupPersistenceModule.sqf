@@ -11,4 +11,6 @@ if (isServer) then {
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
     DEBUG2("persistence location is set to %1" _persistenceLocation);
+} else {
+    SERVER_ONLY_ERROR;
 };

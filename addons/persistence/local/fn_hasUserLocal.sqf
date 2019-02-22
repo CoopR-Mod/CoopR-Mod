@@ -32,4 +32,6 @@ if (isServer) then {
     } else {
         true;
     };
-}
+} else {
+    SERVER_ONLY_ERROR;
+};

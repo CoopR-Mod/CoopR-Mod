@@ -33,4 +33,6 @@ if (isServer) then {
     _insertUser call coopr_fnc_extDB3sql;
 
     INFO2("user for steam id %1 initialized", _steamID);
+} else {
+    SERVER_ONLY_ERROR;
 };

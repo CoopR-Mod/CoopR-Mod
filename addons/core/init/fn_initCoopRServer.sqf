@@ -15,5 +15,7 @@ if(isServer) then {
     } else {
         ERROR("Server was not initialized. Setup verification failed");
     };
+} else {
+    SERVER_ONLY_ERROR;
 }
 

@@ -28,8 +28,9 @@
 
 params[["_dbName", ""]];
 
-if(isServer) then {
-    if(_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
+if (_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
+
+if (isServer) then {
 
     INFO("initializing local persistence layer");
     private _protocolName = "coopr";
@@ -71,4 +72,6 @@ if(isServer) then {
     // init tables
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
+} else {
+    SERVER_ONLY_ERROR;
 };

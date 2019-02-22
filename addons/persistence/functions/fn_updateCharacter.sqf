@@ -29,7 +29,9 @@ if (isServer) then {
         [_characterHash] call coopr_fnc_updateCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
-    }
+    };
+    true;
+} else {
+    SERVER_ONLY_ERROR;
 };
 
-true;

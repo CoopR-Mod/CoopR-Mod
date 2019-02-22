@@ -6,6 +6,7 @@ if (isServer) then {
     private _loggingLevel = _logic getVariable ["Logging", -1];
     COOPR_PERSISTENCE_LOCATION = _logic getVariable ["PersistenceLocation", -1];
     publicVariable "COOPR_PERSISTENCE_LOCATION";
+    publicVariable "COOPR_PERSISTENCE_ACTIVE";
 
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];

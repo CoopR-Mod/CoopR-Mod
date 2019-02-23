@@ -19,9 +19,9 @@ INFO("supply requested");
 
 [_supplyVehicleClass, _supplyDeliveryTime, _supplyInsertionArea, _supplyArrivalArea, _payLoad] spawn {
     params ["_supplyVehicleClass", "_supplyDeliveryTime", "_supplyInsertionArea", "_supplyArrivalArea", "_payLoad"];
-    private _deliveryStartTime = serverTime + _supplyDeliveryTime * 60;
+    private _deliveryStartTime = (call coopr_fnc_currentGameTime) + _supplyDeliveryTime * 60;
 
-    waitUntil { serverTime >= _deliveryStartTime };
+    waitUntil { (call coopr_fnc_currentGameTime) >= _deliveryStartTime };
 
     INFO("supply inbound");
     private _ammoAmount = _payLoad select 0;

@@ -11,7 +11,8 @@ private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
 private _woundedTimestamp = [_characterSlot, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
-private _hospilitationTimeLeft = _woundedTimestamp + (WIA_CD * 60) - serverTime;
+private _currentGameTime = [] remoteExec ["coopr_fnc_currentGameTime", EXEC_SERVER];
+private _hospilitationTimeLeft = _woundedTimestamp + (WIA_CD * 60) - _currentGameTime;
 
 private _composedInfoText = composeText [localize "str.coopr.profile.info.name", " ", _name, lineBreak,
                                          localize "str.coopr.profile.info.reputation", " ", str _reputation, lineBreak,

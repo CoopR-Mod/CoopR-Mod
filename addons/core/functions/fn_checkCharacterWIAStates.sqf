@@ -27,7 +27,8 @@
     private _name = [_character, COOPR_KEY_NAME] call CBA_fnc_hashGet;
     private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
     private _timestamp = [_character, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
-    private _timeOver = serverTime >= _timestamp + (WIA_CD * 60);
+    private _currentGameTime = [] remoteExec ["coopr_fnc_currentGameTime", EXEC_SERVER];
+    private _timeOver =  _currentGameTime >= _timestamp + (WIA_CD * 60);
 
     if (_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
         [_character, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;

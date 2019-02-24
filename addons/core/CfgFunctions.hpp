@@ -14,6 +14,7 @@ class CfgFunctions {
             class convertTempToReputation {};
             class deliverAfterActionReport {};
             class showReputation {};
+            class currentGameTime {};
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";

@@ -27,7 +27,7 @@
     private _name = [_character, COOPR_KEY_NAME] call CBA_fnc_hashGet;
     private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
     private _timestamp = [_character, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
-    private _currentGameTime = [] remoteExec ["coopr_fnc_currentGameTime", EXEC_SERVER];
+    private _currentGameTime = call coopr_fnc_currentGameTime;
     private _timeOver =  _currentGameTime >= _timestamp + (WIA_CD * 60);
 
     if (_state isEqualTo COOPR_STATE_WIA and _timeOver) then {

@@ -17,18 +17,16 @@
  *
  * Public: No
  *
- * Scope: Server
+ * Scope: Global
  */
 
-if (isServer) then {
-    if (isNil "COOPR_PERSISTENCE_HQ_CONNECTION") then {
+if (isNil "COOPR_PERSISTENCE_HQ_CONNECTION") then {
+    serverTime;
+} else {
+    if (COOPR_PERSISTENCE_HQ_CONNECTION isEqualTo false) then {
         serverTime;
     } else {
-        if (COOPR_PERSISTENCE_HQ_CONNECTION isEqualTo false) then {
-            serverTime;
-        };
+        //TODO: remote call to fetch game time
     };
-} else {
-    SERVER_ONLY_ERROR;
 };
 

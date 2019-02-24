@@ -21,11 +21,12 @@ class CfgFunctions {
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
-            class tests_tasks_runSuite {};
+            class tests_tasks_runSuite { postInit = 1 };
             class tests_countTasks {};
             class tests_strengthAccuracy {};
             class tests_minMaxForStrength {};
             class tests_determineTaskType {};
+            class tests_checkTaskTracking {};
         }
     }
 }

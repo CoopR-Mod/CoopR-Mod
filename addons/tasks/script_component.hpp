@@ -4,5 +4,6 @@
 #define DEBUG_CTX "COOPR.TASKS"
 
 #define COOPR_ACCURACY_THRESHOLD 65
+#define COOPR_TASK_MIN_MISSIONTIME 1800
 
 #include "\x\coopr\addons\core\script_macros.hpp"

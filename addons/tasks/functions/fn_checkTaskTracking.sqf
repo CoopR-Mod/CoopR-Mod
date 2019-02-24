@@ -39,6 +39,16 @@ if (isServer) then {
     if (_leaveTaskArea < 0) then { _valid = false; };
     if (_enterBase < 0) then { _valid = false; };
 
+    private _missionTime = _enterBase - _leaveBase;
+    DEBUG2("mission time delta was %1", _missionTime);
+    DEBUG2("min mission time is %1", COOPR_TASK_MIN_MISSIONTIME);
+
+    if (_missionTime < COOPR_TASK_MIN_MISSIONTIME) then {
+        _valid = false;
+    };
+
+    _valid; // return value
+
 } else {
     SERVER_ONLY_ERROR;
 }

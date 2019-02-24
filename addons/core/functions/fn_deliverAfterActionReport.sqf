@@ -39,6 +39,7 @@ if (isServer) then {
 
     if (_taskCompleted isEqualTo false) then {
         DEBUG("task was not completed");
+        systemChat "||CoopR|| You did not yet finished the task";
     };
 
     [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE, -1] call CBA_fnc_hashSet;

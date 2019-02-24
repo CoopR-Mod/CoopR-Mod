@@ -1,0 +1,6 @@
+-v ./core|x\coopr\addons\core
+
+-i ./tests/CfgFunctionsGenerator.sqf
+-i ./core/script_component.hpp
+-i ./core/tests/fn_tests_reputation.sqf
+

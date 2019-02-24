@@ -1,0 +1,1 @@
+tools\sqfvm.exe -a --cli-file tools\tests\sqfvm_testing_filargs.txt

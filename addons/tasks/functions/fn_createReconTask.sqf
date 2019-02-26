@@ -35,6 +35,7 @@ if (isServer) then {
         ["||CoopR|| There are no demands for recon operations at the moment"] remoteExec ["systemChat", _unit];
     } else {
         ["||CoopR|| HQ wants you to recon the objective area and report enemy activity!"] remoteExec ["systemChat", _unit];
+        _unit call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
         COOPR_RECON_TASKS pushBack _taskName;
     };

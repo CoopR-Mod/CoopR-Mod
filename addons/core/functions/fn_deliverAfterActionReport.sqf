@@ -40,19 +40,14 @@ if (isServer) then {
     if (_taskCompleted isEqualTo false) then {
         DEBUG("task was not completed");
         systemChat "||CoopR|| You did not yet finished the task";
-    };
-
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_BASE, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA, -1] call CBA_fnc_hashSet;
-
-    [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
-    player setVariable [COOPR_KEY_ACTIVE_TASK, []];
-    DEBUG("active task removed");
-
-    if (!isNil "_gainedReputation") then {
-        systemChat format ["||CoopR|| Reputation received [%1]", _gainedReputation];
+    } else {
+        [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
+        player setVariable [COOPR_KEY_ACTIVE_TASK, []];
+        DEBUG("active task removed");
+        if (!isNil "_gainedReputation") then {
+            DEBUG2("adding %1 rep pts to the player", _gainedReputation);
+            systemChat format ["||CoopR|| Reputation received [%1]", _gainedReputation];
+        };
     };
 
 } else {

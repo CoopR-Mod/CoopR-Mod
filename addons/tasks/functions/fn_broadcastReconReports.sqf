@@ -42,7 +42,7 @@ if (isServer) then {
                 DEBUG("found spotrep by given unit");
                 COOPR_RECON_REPORTS pushBack _spotrep;
 
-                // clear spotrep store to prevent multiples
+                // clear spotrep store to prevent multipls
                 [alive_sys_spotrep, "removespotrep", [_id]] call alive_fnc_spotrep;
                 deleteMarker _markername;
                 INFO2("broadcasting spotrep %1", _id);

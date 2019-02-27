@@ -46,6 +46,7 @@ if (isServer) then {
         [_taskType] remoteExec ["coopr_fnc_countTask"];
         // TODO: need to be shifted to group/squads
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
+        [_destination, _taskId, "OTHER"] call coopr_fnc_createTaskMarker;
         _creationSuccess;
     } else {
         ERROR("could not assign task.");

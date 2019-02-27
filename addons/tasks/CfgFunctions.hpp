@@ -13,6 +13,7 @@ class CfgFunctions {
             class strengthAccuracy {};
             class checkTaskTracking {};
             class initTaskTracker {};
+            class createTaskMarker {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

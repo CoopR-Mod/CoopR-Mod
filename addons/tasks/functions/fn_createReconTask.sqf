@@ -27,17 +27,17 @@ if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestinatio
 
 if (isServer) then {
     private _taskStatus = false;
-    private _taskName = format ["coopr_task_recon_%1", count COOPR_RECON_TASKS];
+    private _taskId = format ["coopr_task_recon_%1", count COOPR_RECON_TASKS];
 
-    _taskStatus = [_unit, [_taskName], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    _taskStatus = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
     if (_taskStatus isEqualTo false) then {
         ["||CoopR|| There are no demands for recon operations at the moment"] remoteExec ["systemChat", _unit];
     } else {
         ["||CoopR|| HQ wants you to recon the objective area and report enemy activity!"] remoteExec ["systemChat", _unit];
         _unit call coopr_fnc_initTaskTracker;
-        _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskName, true];
-        COOPR_RECON_TASKS pushBack _taskName;
+        _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
+        COOPR_RECON_TASKS pushBack _taskId;
     };
 } else {
     SERVER_ONLY_ERROR;

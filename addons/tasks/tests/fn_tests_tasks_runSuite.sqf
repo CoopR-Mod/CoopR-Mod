@@ -10,3 +10,4 @@ call coopr_fnc_tests_strengthAccuracy;
 call coopr_fnc_tests_minMaxForStrength;
 call coopr_fnc_tests_determineTaskType;
 call coopr_fnc_tests_checkTaskTracking;
+call coopr_fnc_tests_initTaskTracker;

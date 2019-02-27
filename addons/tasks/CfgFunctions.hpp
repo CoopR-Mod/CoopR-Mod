@@ -28,6 +28,7 @@ class CfgFunctions {
             class tests_minMaxForStrength {};
             class tests_determineTaskType {};
             class tests_checkTaskTracking {};
+            class tests_initTaskTracker {};
         }
     }
 }

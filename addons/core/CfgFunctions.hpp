@@ -47,6 +47,7 @@ class CfgFunctions {
             class setLogLevel {};
             class getLogLevel {};
             class codeAsString {};
+            class isInHeadquarter {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

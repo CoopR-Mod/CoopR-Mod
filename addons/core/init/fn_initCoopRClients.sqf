@@ -1,10 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Script to run at every client machine at JIP
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Public: No
+ *
+ * Scope: Server
+ */
 
-if(hasInterface) then {
+if (hasInterface) then {
     call coopr_fnc_initPromise;
-    //TODO: refactor to more abstract init flag
-    // only call if persistence init was successful
-    [getPlayerUID player] remoteExec ["coopr_fnc_initUser", EXEC_SERVER];
+    [getPlayerUID player] remoteExec ["coopr_fnc_initPlayerPersistence", EXEC_SERVER];
 
     [] spawn {
         waitUntil { !(isNull (findDisplay 46)) };

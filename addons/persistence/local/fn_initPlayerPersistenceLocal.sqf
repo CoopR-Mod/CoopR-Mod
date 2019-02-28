@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * (getPlayerUID player) call coopr_fnc_initUserLocal
+ * (getPlayerUID player) call coopr_fnc_initPlayerPersistenceLocal
  *
  * Public: No
  *

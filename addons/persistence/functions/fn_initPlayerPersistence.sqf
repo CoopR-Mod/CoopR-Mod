@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Initially creates a user in the database depending on the persitence layer
+ * Initially creates a user in the database depending on the persistence layer
  *
  * Arguments:
  * None
@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * (getPlayerUID player) call coopr_fnc_initUser
+ * (getPlayerUID player) call coopr_fnc_initPlayerPersistence
  *
  * Public: No
  *
@@ -24,7 +24,7 @@ if (_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
 if (isServer) then {
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        _steamID call coopr_fnc_initUserLocal;
+        _steamID call coopr_fnc_initPlayerPersistenceLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

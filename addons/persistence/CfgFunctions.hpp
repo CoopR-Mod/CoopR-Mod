@@ -5,7 +5,7 @@ class CfgFunctions {
             class extDB3sql {};
             class getCharactersIDLocal {};
             class updateCharacterLocal {};
-            class initUserLocal {};
+            class initPlayerPersistenceLocal {};
             class hasUserLocal {};
             class initPersistenceLocal {};
             class getCharactersLocal {};
@@ -30,7 +30,7 @@ class CfgFunctions {
             class removeCharacter {};
             class initPersistence {};
             class hasUser {};
-            class initUser {};
+            class initPlayerPersistence {};
             class updateCharacter {};
             class getCharactersID {};
             class getCharacters {};

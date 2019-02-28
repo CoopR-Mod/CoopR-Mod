@@ -2,8 +2,7 @@
 /*
  * Author: xetra11
  *
- * This function will be called upon every character selection/login. It's logic will try to spawn the player at the
- * position he was logging out before and restoring his loadout.
+ * Will initialize the character that has been selected by the player
  *
  * Arguments:
  * None

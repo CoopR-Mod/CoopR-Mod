@@ -16,6 +16,7 @@
  */
 
 if (hasInterface) then {
+    //TODO: can be removed?
     call coopr_fnc_initPromise;
     [getPlayerUID player] remoteExec ["coopr_fnc_initPlayerPersistence", EXEC_SERVER];
 

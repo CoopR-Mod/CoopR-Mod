@@ -6,7 +6,7 @@ class CfgFunctions {
             class spawnInLobby {};
             class login {};
             class logout {};
-            class postLogin {};
+            class initCharacter {};
             class initLoginDialog {};
             class updateLoginDialog {};
             class showNewCharacterDialog {};

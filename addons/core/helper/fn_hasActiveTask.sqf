@@ -2,14 +2,13 @@
 /*
  * Author: xetra11
  *
- * Checks if the player is a player is within the coopr headquarter bounds and is actually a logged in
- * player character
+ * This helper will just check if a player has an active coopr task assigned
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _isInHeadquarter <BOOLEAN>: if the player is within the headquarter bounds
+ * _hasTask <BOOLEAN>: if the player has an active coopr task
  *
  * Public: No
  *
@@ -21,9 +20,7 @@ params[["_player", objNull]];
 if (_player isEqualTo "") exitWith { ERROR("_player was empty string") };
 if !(isPlayer _player) exitWith { ERROR("_player is not a player") };
 
-private _isLoggedIn = _player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
 
 // return boolean
-_player inArea COOPR_HQ_WEST_BOUNDS and _isLoggedIn;
-
-
+_currentTask isEqualTo [];

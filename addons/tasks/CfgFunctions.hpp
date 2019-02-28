@@ -15,6 +15,10 @@ class CfgFunctions {
             class initTaskTracker {};
             class createTaskMarker {};
         }
+        class coopr_tasks_routines {
+            file = "x\coopr\addons\tasks\routines";
+            class headquarterRoutine {};
+        }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";
             class getMaxForStrength {};

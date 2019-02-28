@@ -15,7 +15,7 @@
  * Scope: Client
  */
 player addEventHandler ["Killed", {call coopr_fnc_playerKilledHandler}];
-player addEventHandler ["Respawn", { call coopr_fnc_addPlayerActions; }];
+player addEventHandler ["Respawn", { call coopr_fnc_addCharacterActions; }];
 call coopr_fnc_abortButtonEventHandler;
 
 INFO("client events initialized");

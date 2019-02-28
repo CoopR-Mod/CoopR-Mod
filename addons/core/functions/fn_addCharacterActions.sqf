@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (INTEGRATE_ACE3) then {
-    call coopr_fnc_ace3_addPlayerActions;
+    call coopr_fnc_ace3_addCharacterActions;
 } else {
     _broadcastActionCondition = "count ([alive_sys_spotrep_store] call CBA_fnc_hashKeys) > 0";
 

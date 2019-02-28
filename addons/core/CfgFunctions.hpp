@@ -22,6 +22,7 @@ class CfgFunctions {
 
             class initEventsServer {};
             class initEventsClient {};
+            class initRoutinesClient {};
             class initCommanderNPC {};
             class initVehicleNPC {};
             class initHQ {};

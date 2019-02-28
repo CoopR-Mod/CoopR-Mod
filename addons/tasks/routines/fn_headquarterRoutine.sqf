@@ -16,20 +16,18 @@
  * Scope: Client
  */
 
-DEBUG("headquarter routine:");
 private _taskTracker = player getVariable [COOPR_KEY_TASK_TRACKER, EMPTY_HASH];
+if (_taskTracker isEqualTo []) exitWith { ERROR("player had no tasktracker assigned!"); };
+
+DEBUG("headquarter routine:");
 DEBUG2("task tracker state: %1", _taskTracker);
-if (player inArea COOPR_HQ_WEST_BOUNDS) then {
-    private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
-    if (_isLoggedIn and isPlayer player) then {
-        private _currentTask = player getVariable [COOPR_KEY_ACTIVE_TASK, []];
-        if (_currentTask isEqualTo []) then {
-            DEBUG("player in headquarter has no active task");
-        } else {
-           if (_taskTracker isEqualTo []) exitWith {
-               ERROR("player had no tasktracker assigned!");
-           };
-           systemChat "||CoopR|| Squad entered headquarters";
-        };
+
+if ([player] call coopr_fnc_isInHeadquarter) then {
+    private _currentTask = player getVariable [COOPR_KEY_ACTIVE_TASK, []];
+    if ([player] call coopr_fnc_hasActiveTask) then {
+       // do stuff
+    } else {
+       DEBUG("player in headquarter has no active task");
     };
+    systemChat "||CoopR|| Squad entered headquarters";
 };

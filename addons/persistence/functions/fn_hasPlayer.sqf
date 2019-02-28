@@ -25,7 +25,7 @@ if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 
 if (isServer) then {
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        _steamID call coopr_fnc_hasUserLocal;
+        _steamID call coopr_fnc_hasPlayerLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

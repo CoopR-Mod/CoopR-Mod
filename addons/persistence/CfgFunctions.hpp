@@ -6,7 +6,7 @@ class CfgFunctions {
             class getCharactersIDLocal {};
             class updateCharacterLocal {};
             class initPlayerPersistenceLocal {};
-            class hasUserLocal {};
+            class hasPlayerLocal {};
             class initPersistenceLocal {};
             class getCharactersLocal {};
             class getAllCharactersLocal {};
@@ -29,7 +29,7 @@ class CfgFunctions {
             class syncPlayers {};
             class removeCharacter {};
             class initPersistence {};
-            class hasUser {};
+            class hasPlayer {};
             class initPlayerPersistence {};
             class updateCharacter {};
             class getCharactersID {};

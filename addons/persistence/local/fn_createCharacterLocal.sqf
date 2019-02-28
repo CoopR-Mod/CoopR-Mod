@@ -31,7 +31,7 @@ if (isServer) then {
     private _playerUID = [_characterState, COOPR_KEY_UID] call CBA_fnc_hashGet;
     DEBUG2("uid is %1", _playerUID);
 
-    if(_playerUID call coopr_fnc_hasUser) then {
+    if(_playerUID call coopr_fnc_hasPlayer) then {
         INFO("creating character...");
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 

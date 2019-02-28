@@ -21,7 +21,7 @@
 params[["_steamID", ""]];
 
 if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
-if(_steamID call coopr_fnc_hasUser) exitWith { INFO2("user %1 already defined", _steamID)};
+if(_steamID call coopr_fnc_hasPlayer) exitWith { INFO2("user %1 already defined", _steamID)};
 
 if (isServer) then {
     INFO("initializing new user entry");

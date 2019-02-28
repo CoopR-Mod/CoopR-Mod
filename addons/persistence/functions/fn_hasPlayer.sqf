@@ -11,7 +11,7 @@
  * isAvailable <BOOLEAN>
  *
  * Example:
- * (getPlayerUID player) call coopr_fnc_hasUser
+ * (getPlayerUID player) call coopr_fnc_hasPlayer
  *
  * Public: No
  *

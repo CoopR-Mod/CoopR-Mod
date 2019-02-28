@@ -1,4 +1,20 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * This function will be called upon every character selection/login. It's logic will try to spawn the player at the
+ * position he was logging out before and restoring his loadout.
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Public: No
+ *
+ * Scope: Client
+ */
 
 private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
 private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
@@ -6,14 +22,15 @@ private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
 DEBUG("post login init...");
 
 // check if player has an old position if not spawn to hq asap
-if(count _oldPos > 0) then {
+if(_oldPos isEqualTo []) then {
    call coopr_fnc_spawnAtOldPosition;
 } else {
+   DEBUG("player position could not be revoked after login");
    player setPos getPos COOPR_HQ_WEST;
 };
 
 if (count _loadout isEqualTo 0) then {
-    ERROR("loadout was empty");
+    ERROR("player loadout could not be revoked after login")
 } else {
     player setUnitLoadout _loadout;
 };

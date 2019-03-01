@@ -48,7 +48,6 @@ class CfgFunctions {
             class getLogLevel {};
             class codeAsString {};
             class isInHeadquarter {};
-            class hasActiveTask {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

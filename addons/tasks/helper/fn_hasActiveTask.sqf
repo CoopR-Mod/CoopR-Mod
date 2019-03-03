@@ -23,4 +23,4 @@ if !(isPlayer _player) exitWith { ERROR("_player is not a player") };
 private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
 
 // return boolean
-_currentTask isEqualTo [];
+!(_currentTask isEqualTo [])

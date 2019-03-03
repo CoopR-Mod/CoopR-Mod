@@ -27,11 +27,22 @@ if !(player inArea COOPR_HQ_WEST_BOUNDS) then {
             DEBUG("player leaving headquarter without active task. desertion detected");
             player setPos getPos COOPR_HQ_WEST;
         } else {
-           private _timeStamp = call coopr_fnc_currentGameTime;
-           DEBUG2("updating task tracker for leaving headquarter with actual timestamp %1", _timeStamp);
-           [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE, _timeStamp] call CBA_fnc_hashSet;
-           player setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
-           systemChat "||CoopR|| Squad left headquarters";
+           private _leaveBase = [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE] call CBA_fnc_hashGet;
+           if (_leaveBase < 0) then {
+               private _timeStamp = call coopr_fnc_currentGameTime;
+               DEBUG2("squad left the headquarters", _timeStamp);
+               [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE, _timeStamp] call CBA_fnc_hashSet;
+               player setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
+               systemChat "||CoopR|| Squad left the headquarters";
+           };
+           private _enterTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA] call CBA_fnc_hashGet;
+           if (!([player] call coopr_fnc_isInTaskArea) and enterTaskArea > 0) then {
+               private _timeStamp = call coopr_fnc_currentGameTime;
+               DEBUG2("squad left the task area", _timeStamp);
+               [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA, _timeStamp] call CBA_fnc_hashSet;
+               player setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
+               systemChat "||CoopR|| Squad left the task area";
+           };
         };
     };
 };

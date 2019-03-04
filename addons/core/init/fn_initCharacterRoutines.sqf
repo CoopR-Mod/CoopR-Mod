@@ -15,8 +15,6 @@
  * Scope: Client
  */
 
-[coopr_fnc_headquarterRoutine, COOPR_TIMER_HQ_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
-[coopr_fnc_travelRoutine, COOPR_TIMER_TRAVEL_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
-[coopr_fnc_missionRoutine, COOPR_TIMER_MISSION_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
+[coopr_fnc_taskRoutine, COOPR_TIMER_TASK_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
 
 INFO("character routines initialized");

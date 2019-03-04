@@ -27,10 +27,10 @@ if (isServer) then {
 
     DEBUG("initialising task tracker");
     // init task tracker
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_BASE, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA, -1] call CBA_fnc_hashSet;
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA, -1] call CBA_fnc_hashSet;
+    private _timeStamp = call coopr_fnc_currentGameTime;
+    DEBUG2("task started at %1", _timeStamp);
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START, _timeStamp] call CBA_fnc_hashSet;
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, -1] call CBA_fnc_hashSet;
 
     _unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
     DEBUG2("assigned task tracker to %1", _unit);

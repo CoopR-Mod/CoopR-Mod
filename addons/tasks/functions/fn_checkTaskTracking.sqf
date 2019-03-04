@@ -29,21 +29,21 @@ if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was objNull") };
 if (isServer) then {
     private _valid = true;
 
-    private _leaveBase = [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_BASE] call CBA_fnc_hashGet;
-    private _enterTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA] call CBA_fnc_hashGet;
-    private _leaveTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA] call CBA_fnc_hashGet;
-    private _enterBase = [_taskTracker, COOPR_KEY_TASK_TRACKER_ENTER_BASE] call CBA_fnc_hashGet;
+    private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
 
-    if (_leaveBase < 0) then { _valid = false; };
-    if (_enterTaskArea < 0) then { _valid = false; };
-    if (_leaveTaskArea < 0) then { _valid = false; };
-    if (_enterBase < 0) then { _valid = false; };
+    if (_visitedTaskArea < 0) then {
+        DEBUG2("$");
+        systemChat "||CoopR|| Your squad weren't present in the task area";
+         _valid = false;
+     };
 
-    private _missionTime = _enterBase - _leaveBase;
-    DEBUG2("mission time delta was %1", _missionTime);
-    DEBUG2("min mission time is %1", COOPR_TASK_MIN_MISSIONTIME);
+    private _currentGameTime = call coopr_fnc_currentGameTime;
+    private _missionTime = _taskStart - _currentGameTime;
+    DEBUG2("mission time was %1", _missionTime);
 
-    if (_missionTime < COOPR_TASK_MIN_MISSIONTIME) then {
+    if (_missionTime < COOPR_TASK_MIN_TASK_TIME) then {
+        DEBUG2("min mission time is %1", COOPR_TASK_MIN_TASK_TIME);
+        systemChat "||CoopR|| You returned way too fast from the mission";
         _valid = false;
     };
 

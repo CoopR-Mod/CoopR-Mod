@@ -17,9 +17,7 @@ class CfgFunctions {
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";
-            class headquarterRoutine {};
-            class travelRoutine {};
-            class missionRoutine {};
+            class taskRoutine {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

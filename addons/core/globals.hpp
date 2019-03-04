@@ -66,10 +66,8 @@
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_TARGET "coopr_task_target"
 
-#define COOPR_KEY_TASK_TRACKER_LEAVE_BASE "coopr_task_tracker_leavebase"
-#define COOPR_KEY_TASK_TRACKER_ENTER_BASE "coopr_task_tracker_enterbase"
-#define COOPR_KEY_TASK_TRACKER_ENTER_TASK_AREA "coopr_task_tracker_entertaskarea"
-#define COOPR_KEY_TASK_TRACKER_LEAVE_TASK_AREA "coopr_task_tracker_leavetaskarea"
+#define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
+#define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "MotorizedInfantry"

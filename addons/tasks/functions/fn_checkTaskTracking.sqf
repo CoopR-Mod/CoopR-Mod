@@ -29,6 +29,7 @@ if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was objNull") };
 if (isServer) then {
     private _valid = true;
 
+    private _taskStart = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
     private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
 
     if (_visitedTaskArea < 0) then {

@@ -16,5 +16,6 @@
  */
 
 [coopr_fnc_taskRoutine, COOPR_TIMER_TASK_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
+[coopr_fnc_desertionRoutine, COOPR_TIMER_DESERTION_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
 
 INFO("character routines initialized");

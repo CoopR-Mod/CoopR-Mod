@@ -39,7 +39,7 @@ if (isServer) then {
      };
 
     private _currentGameTime = call coopr_fnc_currentGameTime;
-    private _missionTime = _taskStart - _currentGameTime;
+    private _missionTime = _currentGameTime - _taskStart;
     DEBUG2("mission time was %1", _missionTime);
 
     if (_missionTime < COOPR_TASK_MIN_TASK_TIME) then {

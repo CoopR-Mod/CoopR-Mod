@@ -18,8 +18,8 @@
  */
 
 if !([player] call coopr_fnc_isInHeadquarter) then {
-    DEBUG("desertion routine...");
     if !([player] call coopr_fnc_hasActiveTask) then {
+        DEBUG("desertion routine...");
         DEBUG("player leaving headquarter without active task. desertion detected");
         [] spawn {sleep 3; player setPos getPos COOPR_HQ_WEST; }
     };

@@ -31,6 +31,7 @@ if (isServer) then {
     DEBUG2("task started at %1", _timeStamp);
     [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START, _timeStamp] call CBA_fnc_hashSet;
     [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, -1] call CBA_fnc_hashSet;
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT, 0] call CBA_fnc_hashSet;
 
     _unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
     DEBUG2("assigned task tracker to %1", _unit);

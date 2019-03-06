@@ -5,13 +5,14 @@
  * Ends the current task and evaluates reputation points and recon reports
  *
  * Arguments:
- * 0: _unit <OBJECT> - unit this task is assigned to
+ * 0: _target <OBJECT> - object the action is bound to
+ * 1: _caller <OBJECT> - action caller
  *
  * Return Value:
- * Boolean - if task was created successfully
+ * None
  *
  * Example:
- * [player] call coopr_fnc_alive_createReconTask;
+ * [_target, _caller] call coopr_fnc_deliverAfterActionReport;
  *
  * Public: No
  *

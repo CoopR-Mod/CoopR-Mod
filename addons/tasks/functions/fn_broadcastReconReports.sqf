@@ -57,11 +57,7 @@ if (isServer) then {
        if (_broadcastedReports > 0) then {
            systemChat format ["||CoopR|| you broadcasted %1 recon reports", _broadcastedReports];
            call coopr_fnc_convertReconReportsToTasks;
-            private _currentTask = _unit getVariable [COOPR_KEY_ACTIVE_TASK, []];
-           private _subTasks = _currentTask call BIS_fnc_taskChildren;
-           { [_x, "SUCCEEDED"] call BIS_fnc_taskSetState } forEach _subTasks;
-           private _subtaskId = format ["coopr_subtask_optional_recon_%1", count COOPR_RECON_TASKS];
-           [_unit, [_subtaskId, _currentTask], "CoopR_Subtask_Optional_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+           [_unit] call coopr_fnc_completeReconSubtask;
        } else {
            systemChat "||CoopR|| no recon reports have been created yet";
        };

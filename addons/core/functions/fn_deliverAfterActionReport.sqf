@@ -36,9 +36,9 @@ if (isServer) then {
         ERROR("_taskTracker was [] - something went wrong here");
     };
 
-    private _taskCompleted = [_taskTracker] call coopr_fnc_checkTaskTracking;
+    private _validTaskExecution = [_taskTracker] call coopr_fnc_checkTaskTracking;
 
-    if (_taskCompleted isEqualTo false) then {
+    if (_validTaskExecution isEqualTo false) then {
         DEBUG("task was not completed");
         systemChat "||CoopR|| You did not yet finished the task";
     } else {

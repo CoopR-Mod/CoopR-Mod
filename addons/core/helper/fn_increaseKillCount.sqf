@@ -12,7 +12,8 @@
  * Boolean - if task was created successfully
  *
  * Example:
- * [] call coopr_fnc_playerKilledNpc;
+ * [_unit, 3] call coopr_fnc_increaseKillCount;
+ * [_unit] call coopr_fnc_increaseKillCount;
  *
  * Public: No
  *

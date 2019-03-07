@@ -52,5 +52,21 @@
             <Original>HQ wants you to recon the area for enemy contacts</Original>
             <German>HQ moechte aktuelle Feindaufklaerung im Gebiet</German>
         </Key>
+        <Key ID="str_coopr_subtask_recon_title">
+            <Original>Deliver a recon report</Original>
+            <German>Meldet einen Aufklaerungsbericht</German>
+        </Key>
+        <Key ID="str_coopr_subtask_recon_description">
+            <Original>You have to delivery at least one recon report to finish this mission</Original>
+            <German>Ihr muesst mindestens einen Aufklaerungsbericht abschicken um diesen Auftrag zu erfuellen</German>
+        </Key>
+        <Key ID="str_coopr_subtask_optional_recon_title">
+            <Original>Deliver more recon reports (optional)</Original>
+            <German>Meldet weitere Aufklaerungsberichte (Optional)</German>
+        </Key>
+        <Key ID="str_coopr_subtask_optional_recon_description">
+            <Original>You can delivery more recon reports to gather more information for the headquarters</Original>
+            <German>Ihr koennt weiterhin Aufklaerung betreiben um dem Hauptquartier weitere Informationen zur Verfuegung zu stellen</German>
+        </Key>
     </Package>
 </Project>

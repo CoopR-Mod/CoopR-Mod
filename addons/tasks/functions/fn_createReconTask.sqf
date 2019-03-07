@@ -26,12 +26,15 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestination was locationNull") };
 
 if (isServer) then {
-    private _taskStatus = false;
+    private _taskStatusRecon = false;
+    private _subtaskStatusRecon = false;
     private _taskId = format ["coopr_task_recon_%1", count COOPR_RECON_TASKS];
+    private _subtaskId = format ["coopr_subtask_recon_%1", count COOPR_RECON_TASKS];
 
-    _taskStatus = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    _taskStatusRecon = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    _subtaskStatusRecon = [_unit, [_subtaskId, _taskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
-    if (_taskStatus isEqualTo false) then {
+    if (_taskStatusRecon isEqualTo false) then {
         ["||CoopR|| There are no demands for recon operations at the moment"] remoteExec ["systemChat", _unit];
     } else {
         ["||CoopR|| HQ wants you to recon the objective area and report enemy activity!"] remoteExec ["systemChat", _unit];

@@ -65,6 +65,7 @@
 #define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_TARGET "coopr_task_target"
+#define COOPR_KEY_TASK_CREATED "coopr_task_created"
 
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
 #define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"

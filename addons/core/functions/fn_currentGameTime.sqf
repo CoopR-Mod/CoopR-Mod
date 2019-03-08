@@ -13,7 +13,7 @@
  * _currentGameTime <NUMBER> - the current gametime
  *
  * Example:
- * call coopr_fnc_currentCurrentTime;
+ * call coopr_fnc_currentGameTime;
  *
  * Public: No
  *

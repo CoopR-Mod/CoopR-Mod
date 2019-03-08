@@ -25,6 +25,7 @@ if (isServer) then {
         waitUntil {!(isNil "COOPR_PERSISTENCE_LOCATION")};
         call coopr_fnc_initPersistence;
         [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_GLOBAL, true];
+        call coopr_fnc_initServerRoutines;
         INFO("server initialized");
     } else {
         ERROR("Server was not initialized. Setup verification failed");

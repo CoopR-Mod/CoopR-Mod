@@ -17,8 +17,7 @@ class CfgTaskDescriptions
     };
     class coopr_task_type_sniperteam
     {
-        title = $
-        STR_coopr_task_type_sniperteam_title;
+        title = $STR_coopr_task_type_sniperteam_title;
         description = $STR_coopr_task_type_sniperteam_description;
     };
     class coopr_task_type_asymmetric

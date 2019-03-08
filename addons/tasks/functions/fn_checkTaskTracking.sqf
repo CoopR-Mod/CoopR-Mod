@@ -27,23 +27,30 @@ params [["_taskTracker", []]];
 if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was objNull") };
 
 if (isServer) then {
+    DEBUG("task tracker check:");
     private _valid = true;
 
     private _taskStart = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
+    private _taskRequirements = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
     private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
 
     if (_visitedTaskArea < 0) then {
-        DEBUG2("$");
+        DEBUG("failed - was not in target area");
         systemChat "||CoopR|| Your squad weren't present in the task area";
          _valid = false;
-     };
+    };
+    if (_taskRequirements isEqualTo false) then {
+        DEBUG("failed - not fulfilled all requirements");
+        systemChat "||CoopR|| Your squad did not yet fulfilled all task requirements";
+         _valid = false;
+    };
 
     private _currentGameTime = call coopr_fnc_currentGameTime;
     private _missionTime = _currentGameTime - _taskStart;
     DEBUG2("mission time was %1", _missionTime);
 
     if (_missionTime < COOPR_TASK_MIN_TASK_TIME) then {
-        DEBUG2("min mission time is %1", COOPR_TASK_MIN_TASK_TIME);
+        DEBUG("failed - mission time was too short to be logical");
         systemChat "||CoopR|| You returned way too fast from the mission";
         _valid = false;
     };

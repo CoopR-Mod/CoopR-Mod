@@ -34,6 +34,7 @@ if (isServer) then {
     _taskStatusRecon = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
     _subtaskStatusRecon = [_unit, [_subtaskId, _taskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
+    DEBUG2("recon task creation: %1", _taskStatusRecon);
     if (_taskStatusRecon isEqualTo false) then {
         ["||CoopR|| There are no demands for recon operations at the moment"] remoteExec ["systemChat", _unit];
     } else {

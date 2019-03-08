@@ -4,7 +4,8 @@
  *
  * This function will parse all recon reports of a group/unit (CoopR: RECONREP / ALiVE: SPOTREP) and broadcasts it to the HQ logic.
  * The HQ will then generate tasks out of the recon reports depending on many factors. Broadcasting does only work
- * through radio or by delivering the reports directly to the commander NPC.
+ * through radio or by delivering the reports directly to the commander NPC. The recon task requirement will be fulfilled
+ * if a recon report is delivered successfully
  *
  * Arguments:
  * 0: _unit <OBJECT> - The unit from which the reports should be broadcasted. Needs to be a player

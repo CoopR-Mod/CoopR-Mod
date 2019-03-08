@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CoopR Mod">
-    <Package name="tasks">
+    <Package name="Tasks">
+        <Key ID="str_coopr_task_recon_title">
+            <Original>Recon Area</Original>
+            <German>Gebiet aufklaeren</German>
+        </Key>
+        <!--Recon Task-->
+        <Key ID="str_coopr_task_recon_description">
+            <Original>HQ wants you to recon the area for enemy contacts</Original>
+            <German>HQ moechte aktuelle Feindaufklaerung im Gebiet</German>
+        </Key>
+        <Key ID="str_coopr_subtask_recon_title">
+            <Original>Deliver a recon report</Original>
+            <German>Meldet einen Aufklaerungsbericht</German>
+        </Key>
+        <!--Recon Subtask-->
+        <Key ID="str_coopr_subtask_recon_description">
+            <Original>You have to delivery at least one recon report to finish this mission</Original>
+            <German>Ihr muesst mindestens einen Aufklaerungsbericht abschicken um diesen Auftrag zu erfuellen</German>
+        </Key>
+        <!--Optional Recon Task-->
+        <Key ID="str_coopr_subtask_optional_recon_title">
+            <Original>Deliver more recon reports (optional)</Original>
+            <German>Meldet weitere Aufklaerungsberichte (Optional)</German>
+        </Key>
+        <Key ID="str_coopr_subtask_optional_recon_description">
+            <Original>You can deliver more recon reports to gather more precise information for the headquarter</Original>
+            <German>Ihr koennt weiterhin Aufklaerung betreiben um dem Hauptquartier genauere Informationen zur Verfuegung zu stellen</German>
+        </Key>
+        <!--Asymmetric Task-->
+        <Key ID="str_coopr_task_type_asymmetric_title">
+            <Original>Disrupt enemy activity</Original>
+            <German>Feindaktivitaeten stoeren</German>
+        </Key>
+        <Key ID="str_coopr_task_type_asymmetric_description">
+            <Original>Enemy activity has been observed. Disrupt at your own discretion</Original>
+            <German>Feindaktivitaet wurde aufgeklaert. Stoert den Feind nach eigenem Ermessen</German>
+        </Key>
+        <!--Assault Task-->
+        <Key ID="str_coopr_task_type_assault_title">
+            <Original>Take enemy position</Original>
+            <German>Feindliche Stellungen nehmen</German>
+        </Key>
+        <Key ID="str_coopr_task_type_assault_description">
+            <Original>Enemy positions have been reported. Take them without casualties</Original>
+            <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
+        </Key>
     </Package>
 </Project>

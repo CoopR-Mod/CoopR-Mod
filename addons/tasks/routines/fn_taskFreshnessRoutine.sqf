@@ -2,8 +2,8 @@
 /*
  * Author: xetra11
  *
- * This routine will check all parameters regarding tasks
- * Routine timer: COOPR_TIMER_TASK_ROUTINE
+ * This routine will check all parameters the freshness of a task in the queue
+ * Routine timer: COOPR_TIMER_TASK_FRESHNESS_ROUTINE
  *
  * Arguments:
  * None

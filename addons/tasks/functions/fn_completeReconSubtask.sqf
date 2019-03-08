@@ -28,6 +28,9 @@ if (isServer) then {
     { [_x, "SUCCEEDED"] call BIS_fnc_taskSetState } forEach _subTasks;
     private _subtaskId = format ["coopr_subtask_optional_recon_%1", count COOPR_RECON_TASKS];
     [_unit, [_subtaskId, _currentTask], "CoopR_Subtask_Optional_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+
+    private _taskTracker = _unit getVariable [COOPR_KEY_TASK_TRACKER, []];
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_REQUIREMENTS, true] call CBA_fnc_hashSet;
 } else {
     SERVER_ONLY_ERROR;
 };

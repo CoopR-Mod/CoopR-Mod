@@ -28,6 +28,15 @@
             <Original>You can deliver more recon reports to gather more precise information for the headquarter</Original>
             <German>Ihr koennt weiterhin Aufklaerung betreiben um dem Hauptquartier genauere Informationen zur Verfuegung zu stellen</German>
         </Key>
+        <!--Sniper Team Task-->
+        <Key ID="str_coopr_task_type_sniperteam_title">
+            <Original>Take out enemy units</Original>
+            <German>Feindkraefte minimieren</German>
+        </Key>
+        <Key ID="str_coopr_task_type_sniperteam_description">
+            <Original>Minor enemy activity has been reported. Take a sniperteam and take out enemy units</Original>
+            <German>Schwache feindliche Aktivitaeten wurden gemeldet. Ein Scharfschuetzentrupp soll Feind minimieren</German>
+        </Key>
         <!--Asymmetric Task-->
         <Key ID="str_coopr_task_type_asymmetric_title">
             <Original>Disrupt enemy activity</Original>

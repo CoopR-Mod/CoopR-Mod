@@ -8,7 +8,7 @@ if(isServer) then {
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
     // TODO: needs to be initialized with perstistent values from DB
-    COOPR_COUNTER_TASKS = EMPTY_HASH;
+    COOPR_COUNTER_TASKS = [[], 0] call CBA_fnc_hashCreate;
     COOPR_TASKS_ACTIVE = true;
 
     publicVariable "COOPR_COUNTER_TASKS";

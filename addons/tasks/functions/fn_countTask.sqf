@@ -24,13 +24,10 @@ params [["_type", ""]];
 if (_type isEqualTo "") exitWith { ERROR("_type was empty") };
 
 if (isServer) then {
-    if (isNil "COOPR_COUNTER_TASKS") exitWith {
-        ERROR("task counter was not initialized - check tasks module")
-    };
+    if (isNil "COOPR_COUNTER_TASKS") exitWith { ERROR("task counter was not initialized - check tasks module") };
 
     private _prevCount = [COOPR_COUNTER_TASKS, _type] call CBA_fnc_hashGet;
-    if (isNull _prevCount) then { _prevCount = 0; };
-    private _newCount = prevCount + 1;
+    private _newCount = _prevCount + 1;
     [COOPR_COUNTER_TASKS, _type, _newCount] call CBA_fnc_hashSet;
     DEBUG2("%1 count increased by 1", _type);
 } else {

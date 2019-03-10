@@ -32,7 +32,7 @@ if (isServer) then {
 
     switch (_taskMarkerType) do {
         case "RECON": {
-            _reconTaskMarker = createMarker [_taskId + "_marker" + "_area", _reconDestination];
+            _reconTaskMarker = createMarker [_taskId + "_marker" + "_area", _position];
             _reconTaskMarker setMarkerSize [300, 300];
             _reconTaskMarker setMarkerAlpha 0.5;
             _reconTaskMarker setMarkerColor "ColorRed";
@@ -40,7 +40,7 @@ if (isServer) then {
             DEBUG2("recon task marker created: %1", _reconTaskMarker);
         };
         default {
-            _otherMarker = createMarker [_taskId + "_marker" + "_area", _reconDestination];
+            _otherMarker = createMarker [_taskId + "_marker" + "_area", _position];
             _otherMarker setMarkerSize [300, 300];
             _otherMarker setMarkerAlpha 0.5;
             _otherMarker setMarkerColor "ColorRed";

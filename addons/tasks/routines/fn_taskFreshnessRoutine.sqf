@@ -17,7 +17,7 @@
  */
 
 if (isServer) then {
-    DEBUG("task freshness routine...");
+    DEBUG("task freshness routine running");
     private _tasksToBeRemoved = [];
     {
         private _currentTime = call coopr_fnc_currentGameTime;

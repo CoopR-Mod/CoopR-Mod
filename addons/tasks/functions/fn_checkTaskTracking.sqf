@@ -34,7 +34,7 @@ if (isServer) then {
     private _taskRequirements = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
     private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
 
-    if (_visitedTaskArea < 0) then {
+    if (_visitedTaskArea isEqualTo false) then {
         DEBUG("failed - was not in target area");
         systemChat "||CoopR|| Your squad weren't present in the task area";
          _valid = false;

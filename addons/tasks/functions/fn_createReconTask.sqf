@@ -26,24 +26,23 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestination was locationNull") };
 
 if (isServer) then {
-    private _taskStatusRecon = false;
-    private _subtaskStatusRecon = false;
+    // TODO: replace with task counter function
     private _taskId = format ["coopr_task_recon_%1", count COOPR_RECON_TASKS];
     private _subtaskId = format ["coopr_subtask_recon_%1", count COOPR_RECON_TASKS];
 
-    _taskStatusRecon = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
-    _subtaskStatusRecon = [_unit, [_subtaskId, _taskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    private _reconTaskId = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    [_unit, [_subtaskId, _reconTaskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
-    DEBUG2("recon task creation: %1", _taskStatusRecon);
-    if (_taskStatusRecon isEqualTo false) then {
-        ["||CoopR|| There are no demands for recon operations at the moment"] remoteExec ["systemChat", _unit];
-    } else {
-        ["||CoopR|| HQ wants you to recon the objective area and report enemy activity!"] remoteExec ["systemChat", _unit];
+    if !(isNil "_reconTaskId") then {
+        DEBUG2("%1 assigned", _reconTaskId);
         _unit call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
 
         COOPR_RECON_TASKS pushBack _taskId;
+    } else {
+        ERROR("could not assign task.");
+        false;
     };
 } else {
     SERVER_ONLY_ERROR;

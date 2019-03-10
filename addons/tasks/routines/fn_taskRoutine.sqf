@@ -22,7 +22,7 @@ if ([player] call coopr_fnc_hasActiveTask) then {
     DEBUG2("tasktracker state: %1", _taskTracker);
     if ([player] call coopr_fnc_isInTaskArea) then {
         private _timeStamp = call coopr_fnc_currentGameTime;
-        [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, _timeStamp] call CBA_fnc_hashSet;
+        [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, true] call CBA_fnc_hashSet;
         player setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
     }
 };

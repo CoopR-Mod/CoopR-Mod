@@ -37,20 +37,19 @@ if (isServer) then {
     DEBUG2("task position: %1", _destination);
     private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
     private _taskId = format ["%1_%2", _taskType, _taskCount];
-    private _creationSuccess = [_unit, _taskId , _taskType, _destination, 1, 2, true] call BIS_fnc_taskCreate;
+    private _cooprTaskId = [_unit, _taskId , _taskType, _destination, 1, 2, true] call BIS_fnc_taskCreate;
 
-    DEBUG2("task creation: %1", _creationSuccess);
-    if (_creationSuccess isEqualTo true) then {
+    if !(isNil "_cooprTaskId") then {
         _unit call coopr_fnc_initTaskTracker;
-        DEBUG2("%1 assigned", _taskType);
+        DEBUG2("%1 assigned", _cooprTaskId);
         [_taskType] remoteExec ["coopr_fnc_countTask"];
         // TODO: need to be shifted to group/squads
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_destination, _taskId, "OTHER"] call coopr_fnc_createTaskMarker;
-        _creationSuccess;
+        _cooprTaskId;
     } else {
         ERROR("could not assign task.");
-        _creationSuccess;
+        false;
     };
 
 } else {

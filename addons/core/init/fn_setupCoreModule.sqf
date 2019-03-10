@@ -5,6 +5,7 @@ params [["_logic", objNull]];
 if(isServer) then {
     private _reputationPerMan = _logic getVariable ["ReputationMan", ""];
     private _WIAReputation = _logic getVariable ["WIAReputation", ""];
+    private _devMode = _logic getVariable ["DeveloperMode", false];
     private _loggingLevel = _logic getVariable ["Logging", -1];
 
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
@@ -14,6 +15,9 @@ if(isServer) then {
     DEBUG2("Reputation malus for WIA is: %1", _WIAReputation);
 
     [_reputationPerMan, _WIAReputation, _logic] call coopr_fnc_initCore;
+
+    COOPR_DEV_MODE = _devMode;
+    publicVariable "COOPR_DEV_MODE";
 
     true;
 } else {

@@ -51,6 +51,11 @@ class CfgVehicles
                   typeName = "NUMBER";
                   defaultvalue = 0.2;
               }
+              class DeveloperMode {
+                  displayName = "Developer Mode";
+                  description = "When developer mode is active debug functions can be used to provide debug gameplay states"
+                  typeName = "BOOL";
+              }
         }
 
         class ModuleDescription: ModuleDescription

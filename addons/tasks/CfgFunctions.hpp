@@ -40,5 +40,9 @@ class CfgFunctions {
             class tests_checkTaskTracking {};
             class tests_initTaskTracker {};
         }
+        class coopr_tasks_debug {
+            file = "x\coopr\addons\tasks\debug";
+            class addDebugTasks {};
+        }
     }
 }

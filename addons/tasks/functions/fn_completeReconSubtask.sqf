@@ -30,7 +30,6 @@ if (isServer) then {
     [_unit, [_subtaskId, _currentTask], "CoopR_Subtask_Optional_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
     private _taskTracker = _unit getVariable [COOPR_KEY_TASK_TRACKER, []];
-    [_taskTracker, COOPR_KEY_TASK_TRACKER_REQUIREMENTS, true] call CBA_fnc_hashSet;
 } else {
     SERVER_ONLY_ERROR;
 };

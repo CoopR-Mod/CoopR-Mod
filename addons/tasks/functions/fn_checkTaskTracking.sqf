@@ -31,17 +31,11 @@ if (isServer) then {
     private _valid = true;
 
     private _taskStart = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
-    private _taskRequirements = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
     private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
 
     if (_visitedTaskArea isEqualTo false) then {
         DEBUG("failed - was not in target area");
         systemChat "||CoopR|| Your squad weren't present in the task area";
-         _valid = false;
-    };
-    if (_taskRequirements isEqualTo false) then {
-        DEBUG("failed - not fulfilled all requirements");
-        systemChat "||CoopR|| Your squad did not yet fulfilled all task requirements";
          _valid = false;
     };
 

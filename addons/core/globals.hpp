@@ -70,7 +70,6 @@
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
 #define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"
 #define COOPR_KEY_TASK_TRACKER_KILL_COUNT "coopr_task_tracker_kill_count"
-#define COOPR_KEY_TASK_TRACKER_REQUIREMENTS "coopr_task_tracker_requirements"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "MotorizedInfantry"

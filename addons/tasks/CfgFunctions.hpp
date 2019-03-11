@@ -14,6 +14,7 @@ class CfgFunctions {
             class checkTaskTracking {};
             class initTaskTracker {};
             class createTaskMarker {};
+            class removeTaskMarker {};
             class completeReconSubtask {};
             class checkTaskRequirements {};
         }

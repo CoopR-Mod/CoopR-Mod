@@ -5,13 +5,14 @@
  * Increases/updates the reputation of a character by the given amount
  *
  * Arguments:
- * 0: _reputation <NUMBER> - amount to increase the reputation
+ * 0: _unit <OBJECT> - unit that gains the reputation
+ * 1: _reputation <NUMBER> - amount to increase the reputation
  *
  * Return Value:
  * None
  *
  * Example:
- * 10 call coopr_fnc_updateReputation;
+ * [_unit, 10] call coopr_fnc_updateReputation;
  *
  * Public: No
  *

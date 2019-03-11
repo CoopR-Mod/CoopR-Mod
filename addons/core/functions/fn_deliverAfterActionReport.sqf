@@ -26,8 +26,7 @@ if (_caller isEqualTo objNull) exitWith { ERROR("_caller was objNull") };
 
 if (isServer) then {
     private _player = _caller;
-    private _gainedReputation = COOPR_REP_AAR_MULTIPLIER call coopr_fnc_convertTempToReputation;
-    systemChat localize "str.coopr.reputation.chatter.aar";
+    systemChat localize "str.coopr.aar.chatter.commander";
 
     private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
     private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];

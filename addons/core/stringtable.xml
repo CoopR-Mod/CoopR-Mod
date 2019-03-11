@@ -37,7 +37,7 @@
             <Original>&lt;t color='#4286f4'&gt;After Action Report&lt;/t&gt;</Original>
             <German>&lt;t color='#4286f4'&gt;Abschlussbericht&lt;/t&gt;</German>
         </Key>
-        <Key ID="str.coopr.reputation.chatter.aar">
+        <Key ID="str.coopr.aar.chatter.commander">
             <Original>Good Job! Glad you made it back!</Original>
             <German>Gute Arbeit! Wir sind froh, dass ihr es zurueck geschafft habt!</German>
         </Key>

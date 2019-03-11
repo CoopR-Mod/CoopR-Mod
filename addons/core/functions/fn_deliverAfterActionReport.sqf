@@ -31,25 +31,43 @@ if (isServer) then {
     private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
     private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];
 
-    if (_taskTracker isEqualTo []) exitWith {
-        ERROR("_taskTracker was [] - something went wrong here");
-    };
+    if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was [] - something went wrong here"); };
 
     private _validTaskExecution = [_taskTracker] call coopr_fnc_checkTaskTracking;
+    private _fulfilledRequirements = [_player] call coopr_fnc_checkTaskRequirements;
 
-    if (_validTaskExecution isEqualTo false) then {
-        DEBUG("task was not completed");
-        systemChat "||CoopR|| You did not yet finished the task";
-    } else {
-        [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
-        player setVariable [COOPR_KEY_ACTIVE_TASK, []];
-        DEBUG("active task removed");
-        if (!isNil "_gainedReputation") then {
-            DEBUG2("adding %1 rep pts to the player", _gainedReputation);
-            systemChat format ["||CoopR|| Reputation received [%1]", _gainedReputation];
-        };
+    if (_fulfilledRequirements isEqualTo false) exitWith {
+        DEBUG("task requirements not met");
+        [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
+        _player setVariable [COOPR_KEY_ACTIVE_TASK, []];
+        [_currentTask] call coopr_fnc_removeTaskMarker;
     };
 
+    if (_validTaskExecution isEqualTo false) exitWith {
+        DEBUG("task was not completed");
+        [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
+        _player setVariable [COOPR_KEY_ACTIVE_TASK, []];
+        [_currentTask] call coopr_fnc_removeTaskMarker;
+    };
+
+    [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    _player setVariable [COOPR_KEY_ACTIVE_TASK, []];
+    DEBUG("active task removed");
+
+    private _tempRep = COOPR_REP_AAR_MULTIPLIER call coopr_fnc_convertTempToReputation;
+    private _taskReputation = 5;
+    private _finalRep = _tempRep + _taskReputation;
+
+    [_player, _finalRep] call coopr_fnc_updateReputation;
+    DEBUG2("adding %1 rep pts to the player", _finalRep);
+    ["ReputationGained", [str _finalRep]] call BIS_fnc_showNotification;
+
+    // perstist change
+    _player call coopr_fnc_updateState;
+    private _characterHash = _player call coopr_fnc_serializeCoopR;
+    [_characterHash] call coopr_fnc_updateCharacter;
+
+    [_currentTask] call coopr_fnc_removeTaskMarker;
 } else {
     SERVER_ONLY_ERROR;
 };

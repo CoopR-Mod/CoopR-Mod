@@ -23,4 +23,5 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgTaskDescription.hpp"
+#include "CfgTaskDescriptions.hpp"
+#include "CfgNotifications.hpp"

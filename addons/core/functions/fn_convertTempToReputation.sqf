@@ -25,12 +25,13 @@ params [["_unit", objNull],
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
 if (isServer) then {
-    _tempReputation = _unit getVariable [COOPR_KEY_TMP_REPUTATION, 0] ;
+    _tempReputation = _unit getVariable [COOPR_KEY_TMP_REPUTATION, 0];
 
     if(_tempReputation != 0) then {
         _tempReputation = ceil (_tempReputation * _multiplier);
-        _tempReputation call coopr_fnc_updateReputation;
+        [_unit, _tempReputation] call coopr_fnc_updateReputation;
         _unit setVariable [COOPR_KEY_TMP_REPUTATION, 0];
+        ["ReputationGained", [str _tempReputation, "tempory reputation"]] call BIS_fnc_showNotification;
         _tempReputation;
     };
 } else {

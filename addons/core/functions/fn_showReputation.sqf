@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-params ["_player"];
-
 private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
-systemChat format ["||CoopR|| Your current reputation is [%1]", _currentReputation];
+private _tempReputation = player getVariable [COOPR_KEY_TMP_REPUTATION, 0];
+["ShowReputation", [str _currentReputation, str _tempReputation]] call BIS_fnc_showNotification;

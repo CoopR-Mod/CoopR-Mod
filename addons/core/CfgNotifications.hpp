@@ -15,25 +15,25 @@ class CfgNotifications
     {
         title = "Reputation gained";
         iconPicture = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
-        description = "+ %1 Rep Points";
+        description = "+ %1 Rep Points from %2";
         priority = 7;
         duration =  5;
     };
-    // Examples
-    class TaskAssigned
+    class ReputationLost
     {
-        title = "TASK ASSIGNED";
-        iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-        description = "%1";
+        title = "Reputation lost";
+        iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa";
+        description = "%1 Rep Points from %2";
         priority = 7;
+        duration =  5;
     };
-    class ScoreAdded
+    class ShowReputation
     {
-        title = "Score bonus";
-        iconText = "+%2";
-        description = "%1";
-        color[] = {0.5,1,1,1};
-        priority = 0;
-        difficulty[] = {"netStats"};
+        title = "Current reputation";
+        iconPicture = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
+        description = " %1 Rep Points and %2 Temp Rep Points";
+        priority = 7;
+        duration =  5;
     };
+
 };

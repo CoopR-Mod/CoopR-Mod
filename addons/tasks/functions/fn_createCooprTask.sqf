@@ -40,7 +40,7 @@ if (isServer) then {
     private _cooprTaskId = [_unit, _taskId , _taskType, _destination, 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_cooprTaskId") then {
-        _unit call coopr_fnc_initTaskTracker;
+        [_unit, _taskType] call coopr_fnc_initTaskTracker;
         DEBUG2("%1 assigned", _cooprTaskId);
         [_taskType] remoteExec ["coopr_fnc_countTask"];
         // TODO: need to be shifted to group/squads

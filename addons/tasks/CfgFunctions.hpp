@@ -15,6 +15,7 @@ class CfgFunctions {
             class initTaskTracker {};
             class createTaskMarker {};
             class completeReconSubtask {};
+            class checkTaskRequirements {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";

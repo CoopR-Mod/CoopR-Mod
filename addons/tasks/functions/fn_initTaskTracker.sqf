@@ -6,6 +6,7 @@
  *
  * Arguments:
  * 0: _unit <OBJECT> - unit this task is assigned to
+ * 0: _taskType <STRING> - type of task
  *
  * Return Value:
  * NONE
@@ -18,9 +19,11 @@
  * Scope: Server
  */
 
-params [["_unit", objNull]];
+params [["_unit", objNull],
+        ["_type", ""]];
 
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
+if (_type isEqualTo "") exitWith { ERROR("_type was empty string") };
 
 if (isServer) then {
     private _taskTracker = EMPTY_HASH;
@@ -32,6 +35,7 @@ if (isServer) then {
     [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START, _timeStamp] call CBA_fnc_hashSet;
     [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, false] call CBA_fnc_hashSet;
     [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT, 0] call CBA_fnc_hashSet;
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_TYPE, _type] call CBA_fnc_hashSet;
 
     _unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
     DEBUG2("assigned task tracker to %1", _unit);

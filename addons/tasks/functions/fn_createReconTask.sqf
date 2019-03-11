@@ -35,7 +35,7 @@ if (isServer) then {
 
     if !(isNil "_reconTaskId") then {
         DEBUG2("%1 assigned", _reconTaskId);
-        _unit call coopr_fnc_initTaskTracker;
+        [_unit, "coopr_task_recon"] call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
 

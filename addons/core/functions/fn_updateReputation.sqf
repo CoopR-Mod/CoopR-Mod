@@ -15,14 +15,21 @@
  *
  * Public: No
  *
- * Scope: Client
+ * Scope: Server
  */
 
-params ["_reputation"];
+params [["_unit", objNull],
+        ["_reputation", 0]];
 
-private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
-private _charSlot = player getVariable [COOPR_KEY_SLOT, -1];
-player setVariable [COOPR_KEY_REPUTATION, _currentReputation + _reputation];
+if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
-player call coopr_fnc_updateState;
-[player call coopr_fnc_serializeCoopR] remoteExec ["coopr_fnc_updateCharacter", EXEC_SERVER];
+if (isServer) then {
+    private _currentReputation = _unit getVariable [COOPR_KEY_REPUTATION, 0];
+    private _charSlot = _unit getVariable [COOPR_KEY_SLOT, -1];
+    _unit setVariable [COOPR_KEY_REPUTATION, _currentReputation + _reputation];
+
+    _unit call coopr_fnc_updateState;
+    [_unit call coopr_fnc_serializeCoopR] call coopr_fnc_updateCharacter;
+} else {
+    SERVER_ONLY_ERROR;
+};

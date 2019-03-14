@@ -27,14 +27,18 @@ if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestinatio
 
 if (isServer) then {
     // TODO: replace with task counter function
-    private _taskId = format ["coopr_task_recon_%1", count COOPR_RECON_TASKS];
-    private _subtaskId = format ["coopr_subtask_recon_%1", count COOPR_RECON_TASKS];
+    private _taskType = "coopr_task_recon";
+    private _subTaskType = "coopr_subtask_recon";
+    private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
+    private _taskId = format ["%1_%2", _taskType, _taskCount];
+    private _subtaskId = format ["%1_%2", _subTaskType, _taskCount];
 
     private _reconTaskId = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
     [_unit, [_subtaskId, _reconTaskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_reconTaskId") then {
         DEBUG2("%1 assigned", _reconTaskId);
+        [_taskType] call coopr_fnc_countTask;
         [_unit, "coopr_task_recon"] call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;

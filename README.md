@@ -32,7 +32,7 @@ Here listed one can see all planned features and technical milestones as a roadm
 | Type|Name | Description  | Tasks Completed|
 | ------------- |------------- |:-------------|-------------:|
 | Gameplay|[Supply Requests](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#resources--supplements) | Squads can call for supplies to prepare mission resources | 0/2 |
-| Gameplay|[Recon Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#recon-tasks) | Squads can be assigned to recon tasks and report enemy positions and movement | 1/3 |
+| Gameplay|[Recon Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#recon-tasks) | Squads can be assigned to recon tasks and report enemy positions and movement | 2/3 |
 | Gameplay|[Combat Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#combat-tasks) | Squads can be assigned to attack tasks. These are beforehand created through recon task results | 1/5 |
 | Technical|CoopR HQ Connection | The persistence layer can be setup to use the CoopR HQ webservices. This gives the option to have CoopR management features controlled with the browser | 0/1 |
 

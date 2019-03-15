@@ -54,7 +54,7 @@ if (isServer) then {
     if (_checkRadius isEqualTo 0) then {
         // the check radius is not relevant since the enemy probably won't be where it has been seen last (for instance a
         // moving support vehicle on the road)
-        DEBUG("no existence check will happen");
+        INFO("no existence check will happen");
     } else {
         private _foundVehicles = [_location nearEntities ["Car", _checkRadius], east] call coopr_fnc_countUnits;
         private _foundInfantry = [_location nearEntities ["Man", _checkRadius], east] call coopr_fnc_countUnits;
@@ -69,7 +69,7 @@ if (isServer) then {
         switch (_type) do {
             case COOPR_TASK_REPORT_TYPE_INFANTRY: {
                 if (_foundInfantry isEqualTo 0) then {
-                    DEBUG("no infantry units are within the check area - accuracy is 0%");
+                    INFO("no infantry units are within the check area - accuracy is 0%");
                     0;
                 } else {
                     [_foundInfantry, _strength] call coopr_fnc_strengthAccuracy;
@@ -77,7 +77,7 @@ if (isServer) then {
             };
             case COOPR_TASK_REPORT_TYPE_MOTORIZED: {
                 if ((_foundInfantry + _foundVehicles) isEqualTo 0) then {
-                    DEBUG("no motorized units are within the check area - accuracy is 0%");
+                    INFO("no motorized units are within the check area - accuracy is 0%");
                     0;
                 } else {
                     [_foundInfantry + _foundVehicles, _strength] call coopr_fnc_strengthAccuracy;
@@ -85,7 +85,7 @@ if (isServer) then {
             };
             case COOPR_TASK_REPORT_TYPE_MECHANIZED: {
                 if ((_foundInfantry + _foundTanks) isEqualTo 0) then {
-                    DEBUG("no mechanized units are within the check area - accuracy is 0%");
+                    INFO("no mechanized units are within the check area - accuracy is 0%");
                     0;
                 } else {
                     [_foundInfantry + _foundTanks, _strength] call coopr_fnc_strengthAccuracy;
@@ -93,7 +93,7 @@ if (isServer) then {
             };
             case COOPR_TASK_REPORT_TYPE_ARMORED: {
                 if (_foundTanks isEqualTo 0) then {
-                    DEBUG("no armored units are within the check area - accuracy is 0%");
+                    INFO("no armored units are within the check area - accuracy is 0%");
                     0;
                 } else {
                     [_foundTanks, _strength] call coopr_fnc_strengthAccuracy;

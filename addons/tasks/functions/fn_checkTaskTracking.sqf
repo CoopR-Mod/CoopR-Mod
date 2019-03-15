@@ -35,7 +35,7 @@ if (isServer) then {
 
     if (_visitedTaskArea isEqualTo false) then {
         DEBUG("failed - was not in target area");
-        systemChat "||CoopR|| Your squad weren't present in the task area";
+        [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["Squad did not visited the task area"]] call CBA_fnc_notify;
          _valid = false;
     };
 
@@ -45,7 +45,7 @@ if (isServer) then {
 
     if (_missionTime < COOPR_TASK_MIN_TASK_TIME) then {
         DEBUG("failed - mission time was too short to be logical");
-        systemChat "||CoopR|| You returned way too fast from the mission";
+        [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["Squad returned too fast from mission"]] call CBA_fnc_notify;
         _valid = false;
     };
 

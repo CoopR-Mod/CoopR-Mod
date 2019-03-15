@@ -9,7 +9,7 @@ if (COOPR_TASKS_ACTIVE) then {
         if (count (_player call BIS_fnc_tasksUnit) <= 0) then {
             call coopr_fnc_requestCooprTask;
         } else {
-            systemChat "||CoopR|| This unit already has a task assigned";
+           [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["already has a task"]] call CBA_fnc_notify;
         };
     };
 

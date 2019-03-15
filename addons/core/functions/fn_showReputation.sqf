@@ -7,7 +7,6 @@
  * Scope: Client
  */
 
-
 private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
 private _tempReputation = player getVariable [COOPR_KEY_TMP_REPUTATION, 0];
 private _currentInfo = format ["Reputation: %1", _currentReputation];

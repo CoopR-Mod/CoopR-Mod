@@ -61,7 +61,7 @@ if (isServer) then {
            call coopr_fnc_convertReconReportsToTasks;
            [_unit] call coopr_fnc_completeReconSubtask;
        } else {
-           systemChat "||CoopR|| no recon reports have been created yet";
+           [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;
        };
     };
 } else {

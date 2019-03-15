@@ -58,6 +58,7 @@ if (isServer) then {
        if (_broadcastedReports > 0) then {
            private _reportInfo = format ["Reports send: %1", count COOPR_RECON_REPORTS];
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_reportInfo]] call CBA_fnc_notify;
+           call coopr_fnc_removeRedundantReports;
            call coopr_fnc_convertReconReportsToTasks;
            [_unit] call coopr_fnc_completeReconSubtask;
        } else {

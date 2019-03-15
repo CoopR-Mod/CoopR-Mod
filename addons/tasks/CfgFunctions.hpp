@@ -4,6 +4,7 @@ class CfgFunctions {
             file = "x\coopr\addons\tasks\functions";
             class setupTasksModule {};
             class broadcastReconReports {};
+            class removeRedundantReports {};
             class convertReconReportsToTasks {};
             class createCooprTask {};
             class createReconTask {};

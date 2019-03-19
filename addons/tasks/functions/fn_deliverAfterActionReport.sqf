@@ -26,7 +26,6 @@ if (_caller isEqualTo objNull) exitWith { ERROR("_caller was objNull") };
 
 if (isServer) then {
     private _player = _caller;
-    systemChat localize "str.coopr.aar.chatter.commander";
 
     private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
     private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];
@@ -41,21 +40,24 @@ if (isServer) then {
         DEBUG("task requirements not met");
         [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
         _finalRep = -5;
-        ["ReputationLost", [str _finalRep, "failing task"]] call BIS_fnc_showNotification;
+        private _message = format ["You lost % reputation for failing", str _finalRep];
+        [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 
     if (_validTaskExecution isEqualTo false) then {
         DEBUG("task was not completed");
         [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
         _finalRep = -5;
-        ["ReputationLost", [str _finalRep, "failing task"]] call BIS_fnc_showNotification;
+        private _message = format ["You lost % reputation for failing", str _finalRep];
+        [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 
     if (_validTaskExecution and _fulfilledRequirements) then {
         [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
         DEBUG("active task removed");
         _finalRep = 10;
-        ["ReputationGained", [str _finalRep, "finishing task"]] call BIS_fnc_showNotification;
+        private _message = format ["You gained % reputation", str _finalRep];
+        [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 
     // add temp rep points

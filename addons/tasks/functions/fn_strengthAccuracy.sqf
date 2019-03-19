@@ -3,7 +3,7 @@
  * Author: xetra11
  *
  * This function will check the amount of counted/checked units and checks if it will fit into the range of a unit
- * strength type (like Fireteam or Squad). This function will return three different NUMBER values.
+ * strength type (like Fireteam or Squad).
  *
  * Arguments:
  * 0: _actualAmount <NUMBER> - The amount of units

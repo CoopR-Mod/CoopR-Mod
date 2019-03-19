@@ -7,7 +7,7 @@
  * remove the redundant report so avoid duplicated tasks.
  *
  * Arguments:
- * 0: _unit <OBJECT> - The unit from which the reports should be broadcasted. Needs to be a player
+ * None
  *
  * Return Value:
  * None

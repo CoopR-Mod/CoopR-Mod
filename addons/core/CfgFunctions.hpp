@@ -12,7 +12,6 @@ class CfgFunctions {
             class updateReputation {};
             class updateTempReputation {};
             class convertTempToReputation {};
-            class deliverAfterActionReport {};
             class showReputation {};
             class currentGameTime {};
         }

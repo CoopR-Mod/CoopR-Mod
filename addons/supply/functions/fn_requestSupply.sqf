@@ -1,4 +1,27 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Core logic for the supply request. When a player requests a supply a vehicle will be spawned (incl. crew)
+ * the spawn location is defined by the parameters of the function like the destination. When the truck
+ * arrived at it's destination it will wait until being unloaded. If unloaded it will wait for a small amount
+ * of time and then return to the spawn area where it will finally despawn. Before a truck will start it will wait
+ * a given delivery time. This time will be used later to give like a 24h timewindow until supplies will be arriving
+ * at a base.
+ *
+ * Arguments:
+ * WIP
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * ["Cool_Truck", 100, "my_insertion_marker", "my_arrival_area_marker", ["weapon1", "weapon2"]] call coopr_fnc_requestSupply;
+ *
+ * Public: No
+ *
+ * Scope: Global
+ */
 
 params [["_supplyVehicleClass", objNull],
         ["_supplyDeliveryTime", -1],

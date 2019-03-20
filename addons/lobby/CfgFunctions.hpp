@@ -7,6 +7,11 @@ class CfgFunctions {
             class login {};
             class logout {};
             class initCharacter {};
+            class setupLobbyModule {};
+            class initLobby {};
+        }
+        class coopr_lobby_functions {
+            file = "x\coopr\addons\lobby\ui";
             class initLoginDialog {};
             class updateLoginDialog {};
             class showNewCharacterDialog {};
@@ -20,8 +25,6 @@ class CfgFunctions {
             class newCharacterButtonHandler {};
             class roleSelectionEH {};
             class getImageForRole {};
-            class setupLobbyModule {};
-            class initLobby {};
         }
     }
 }

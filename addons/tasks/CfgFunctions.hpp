@@ -26,6 +26,10 @@ class CfgFunctions {
             class desertionRoutine {};
             class taskFreshnessRoutine {};
         }
+        class coopr_tasks_ui {
+            file = "x\coopr\addons\tasks\ui";
+            class initReconRepDialog {};
+        }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";
             class getMaxForStrength {};

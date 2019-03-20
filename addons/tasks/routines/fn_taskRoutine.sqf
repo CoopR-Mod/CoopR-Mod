@@ -16,6 +16,9 @@
  * Scope: Client
  */
 
+private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+if !(_isLoggedIn) exitWith { DEBUG("skipping task routine - not logged in"); };
+
 if ([player] call coopr_fnc_hasActiveTask) then {
     DEBUG("task routine running");
     private _taskTracker = player getVariable [COOPR_KEY_TASK_TRACKER, EMPTY_HASH];

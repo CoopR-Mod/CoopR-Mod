@@ -29,6 +29,7 @@ class CfgFunctions {
         class coopr_tasks_ui {
             file = "x\coopr\addons\tasks\ui";
             class initReconRepDialog {};
+            class writeEntry {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

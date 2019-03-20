@@ -40,7 +40,7 @@ if (isServer) then {
         DEBUG("task requirements not met");
         [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
         _finalRep = -5;
-        private _message = format ["You lost % reputation for failing", str _finalRep];
+        private _message = format ["You lost %1 reputation for failing", str _finalRep];
         [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 
@@ -48,7 +48,7 @@ if (isServer) then {
         DEBUG("task was not completed");
         [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
         _finalRep = -5;
-        private _message = format ["You lost % reputation for failing", str _finalRep];
+        private _message = format ["You lost %1 reputation for failing", str _finalRep];
         [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 
@@ -56,7 +56,7 @@ if (isServer) then {
         [_currentTask, "SUCCEEDED"] call BIS_fnc_taskSetState;
         DEBUG("active task removed");
         _finalRep = 10;
-        private _message = format ["You gained % reputation", str _finalRep];
+        private _message = format ["You gained +%1 reputation", _finalRep];
         [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
     };
 

@@ -31,7 +31,8 @@ if (isServer) then {
         _tempReputation = ceil (_tempReputation * _multiplier);
         [_unit, _tempReputation] call coopr_fnc_updateReputation;
         _unit setVariable [COOPR_KEY_TMP_REPUTATION, 0];
-        ["ReputationGained", [str _tempReputation, "tempory reputation"]] call BIS_fnc_showNotification;
+        private _message = format ["You gained +%1 from temp reputation", _tempReputation];
+        [[COOPR_LOGO_SMALL], ["Temporary Reputation:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
         _tempReputation;
     };
 } else {

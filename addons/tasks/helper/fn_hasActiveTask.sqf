@@ -17,7 +17,7 @@
 
 params[["_player", objNull]];
 
-if (_player isEqualTo "") exitWith { ERROR("_player was empty string") };
+if (_player isEqualTo objNull) exitWith { ERROR("_player was objNull") };
 if !(isPlayer _player) exitWith { ERROR("_player is not a player") };
 
 private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];

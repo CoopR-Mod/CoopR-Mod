@@ -12,7 +12,7 @@ _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],
-["recon_report_action_1", localize "str.coopr.core.action.report", "", {player call coopr_fnc_initReconRepDialog;}, _broadcastActionCondition] call ace_interact_menu_fnc_createAction
+["recon_report_action_1", localize "str.coopr.core.action.reports", "", {player call coopr_fnc_initReconRepDialog;}, _broadcastActionCondition] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],

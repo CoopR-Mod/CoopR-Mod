@@ -28,6 +28,13 @@ INFO2("%1 is logging in", player);
 private _oldPlayerUnit = player;
 private _playerGroup = createGroup [west, true];
 private _newLoginUnit =  _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_LOBBY, [], 0, "NONE"];
+
+// hack to get ALiVE actions back on new player control unit
+if (INTEGRATE_ALIVE) then {
+    DEBUG("resetting ALiVE actions");
+    { _newLoginUnit addAction (player actionParams _x); } forEach (actionIDs player);
+};
+
 DEBUG("new unit was created");
 selectPlayer _newLoginUnit;
 deleteVehicle _oldPlayerUnit;
@@ -36,4 +43,6 @@ DEBUG("assigned as player");
 DEBUG("applied character state to new unit");
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
 INFO2("player with id %1 logged in", getPlayerUID player);
+
+
 call coopr_fnc_initCharacter;

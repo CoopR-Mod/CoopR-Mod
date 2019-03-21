@@ -32,7 +32,13 @@ private _newLoginUnit =  _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_L
 // hack to get ALiVE actions back on new player control unit
 if (INTEGRATE_ALIVE) then {
     DEBUG("resetting ALiVE actions");
-    { _newLoginUnit addAction (player actionParams _x); } forEach (actionIDs player);
+    {
+        private _newActionParams = player actionParams _x;
+        _newActionParams deleteAt 10; // pls do not ask
+        _newActionParams deleteAt 10;
+        _newLoginUnit addAction _newActionParams;
+    } forEach (actionIDs player);
+
 };
 
 DEBUG("new unit was created");

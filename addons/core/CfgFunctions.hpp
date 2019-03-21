@@ -49,6 +49,8 @@ class CfgFunctions {
             class codeAsString {};
             class isInHeadquarter {};
             class increaseKillCount {};
+            class serializeMarker {};
+            class deserializeMarker {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

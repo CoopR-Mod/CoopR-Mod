@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 
 disableSerialization;
+
+createDialog "CoopR_ReconReport_Dialog";
 waitUntil {!isNull findDisplay 1105};
 
 DEBUG("initialising recon rep ui");

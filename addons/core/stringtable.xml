@@ -17,6 +17,10 @@
             <Original>&lt;t color='#4286f4'&gt;Show Reputation&lt;/t&gt;</Original>
             <German>&lt;t color='#4286f4'&gt;Ruf anzeigen&lt;/t&gt;</German>
         </Key>
+        <Key ID="str.coopr.core.action.reports">
+            <Original>&lt;t color='#4286f4'&gt;Create Recon Report&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Aufklaerungsbericht verfassen&lt;/t&gt;</German>
+        </Key>
         <Key ID="str.coopr.core.action.intelligence">
             <Original>Show intelligence status</Original>
             <German>Aufklaerungsstand anzeigen</German>

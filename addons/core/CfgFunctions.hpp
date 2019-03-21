@@ -51,6 +51,7 @@ class CfgFunctions {
             class increaseKillCount {};
             class serializeMarker {};
             class deserializeMarker {};
+            class makerIntersects {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

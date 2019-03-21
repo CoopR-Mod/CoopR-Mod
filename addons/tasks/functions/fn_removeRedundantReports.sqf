@@ -26,38 +26,35 @@ if (isServer) then {
 
     if (count COOPR_RECON_REPORTS > 0) then {
         {
-            private _spotRepAIndex = _forEachIndex;
-            if (_spotRepAIndex in _distinctedReports) then {
-                DEBUG2("index %1 will be removed - skipping", _spotRepAIndex);
+            private _entryAIndex = _forEachIndex;
+            if (_entryAIndex in _distinctedReports) then {
+                DEBUG2("index %1 will be removed - skipping", _entryAIndex);
             } else {
-                DEBUG2("comparing spotRep-%1", _spotRepAIndex);
-                private _spotRepA = _x;
-                private _strengthA = [_spotRepA, "ALiVE_SYS_spotrep_size"] call CBA_fnc_hashGet;
-                private _typeA = [_spotRepA, "ALiVE_SYS_spotrep_type"] call CBA_fnc_hashGet;
-                // will turn i.e. "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
-                _typeA = [_typeA splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
-                private _behaviourA = [_spotRepA, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
-                private _markerPositionA = [_spotRepA, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
+                DEBUG2("comparing entry-%1", _entryAIndex);
+                private _entryA = _x;
+                private _typeA = [_entryA, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
+                private _strengthA = [_entryA, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
+                private _behaviourA = [_entryA, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
+                private _markerA = [_entryA, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
 
                 {
-                    private _spotRepBIndex = _forEachIndex;
-                    if (_spotRepBIndex isEqualTo _spotRepAIndex) then {
-                        DEBUG2("skipping %1", _spotRepBIndex)
+                    private _entryAIndex = _forEachIndex;
+                    if (_entryAIndex isEqualTo _entryAIndex) then {
+                        DEBUG2("skipping %1", _entryAIndex)
                     } else {
-                        DEBUG2("with spotRep-%1", _forEachIndex);
-                        private _spotRepB = _x;
-                        private _strengthB = [_spotRepB, "ALiVE_SYS_spotrep_size"] call CBA_fnc_hashGet;
-                        private _typeB = [_spotRepB, "ALiVE_SYS_spotrep_type"] call CBA_fnc_hashGet;
-                        // will turn i.e. "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
-                        _typeB = [_typeB splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
-                        private _behaviourB = [_spotRepB, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
-                        private _markerPositionB = [_spotRepB, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
+                        DEBUG2("with entry-%1", _forEachIndex);
+                        private _entryB = _x;
+                        private _typeB = [_entryB, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
+                        private _strengthB = [_entryB, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
+                        private _behaviourB = [_entryB, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
+                        private _markerB = [_entryB, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
 
                         // Check if it's a similar report
                         if (_strengthA isEqualTo _strengthB) then {
                             if (_typeA isEqualTo _typeB) then {
                                 if (_behaviourA isEqualTo _behaviourB) then {
-                                    _distinctedReports pushBackUnique _spotRepBIndex;
+
+                                    _distinctedReports pushBackUnique _entryAIndex;
                                 }
                             }
                         }

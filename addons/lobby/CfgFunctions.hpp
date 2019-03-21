@@ -10,8 +10,7 @@ class CfgFunctions {
             class setupLobbyModule {};
             class initLobby {};
         }
-        class coopr_lobby_u
-        i {
+        class coopr_lobby_ui {
             file = "x\coopr\addons\lobby\ui";
             class initLoginDialog {};
             class updateLoginDialog {};

@@ -31,6 +31,5 @@ if (count COOPR_TASKS_QUEUE <= 0 ) then {
 
 } else {
     private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
-    private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
-    [player, _taskType, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
+    [player, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
 };

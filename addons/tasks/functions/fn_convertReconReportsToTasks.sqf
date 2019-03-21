@@ -43,8 +43,8 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_LOCATION, _markerPosition] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_TARGET, _strength] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_CREATED, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_MARKER, [_marker] call coopr_fnc_serializeMarker] call CBA_fnc_hashSet;
 
             DEBUG2("defined task details: %1", _newCooprTask);
             COOPR_TASKS_QUEUE pushBack _newCooprTask;

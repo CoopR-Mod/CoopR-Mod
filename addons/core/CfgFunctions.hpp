@@ -55,6 +55,7 @@ class CfgFunctions {
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";
             class tests_reputation {};
+            class tests_markerSerialization {};
         }
     }
 }

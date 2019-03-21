@@ -21,18 +21,17 @@
  */
 
 params [["_unit", objNull],
-        ["_taskType", ""],
         ["_cooprTaskInfo", []]];
 
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
-if (_taskType isEqualTo "") exitWith { ERROR("_taskType was empty string") };
 if (_cooprTaskInfo isEqualTo []) exitWith { ERROR("_cooprTaskInfo was []") };
 
 if (isServer) then {
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
+    private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
     private _destination = [_cooprTaskInfo, COOPR_KEY_TASK_LOCATION] call CBA_fnc_hashGet;
     private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
-    private _target = [_cooprTaskInfo, COOPR_KEY_TASK_TARGET] call CBA_fnc_hashGet;
+    private _serializedMarker = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
 
     DEBUG2("task position: %1", _destination);
     private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
@@ -45,7 +44,8 @@ if (isServer) then {
         [_taskType] call coopr_fnc_countTask;
         // TODO: need to be shifted to group/squads
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
-        [_destination, _taskId, "OTHER"] call coopr_fnc_createTaskMarker;
+        private _newMarkerName = _taskId + "_marker" + "_area";
+        [_serializedMarker, _newMarkerName] call coopr_fnc_deserializeMarker;
         _cooprTaskId;
     } else {
         ERROR("could not assign task.");

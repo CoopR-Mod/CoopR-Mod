@@ -24,3 +24,7 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgTaskDescriptions.hpp"
+
+// UI
+#include "\x\coopr\addons\core\define.hpp"
+#include "ui\guiReconReport.hpp"

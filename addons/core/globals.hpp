@@ -50,12 +50,17 @@
 #define COOPR_ROLE_MG "coopr_role_mg"
 #define COOPR_ROLE_NONE "coopr_role_none"
 
+// Recon Entry Keys
+#define COOPR_KEY_RECON_ENTRY_TYPE "coopr_recon_entry_type"
+#define COOPR_KEY_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"
+#define COOPR_KEY_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"
+#define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
+
 // Recon Report Params
 #define COOPR_STRENGTH_TYPE_FIRETEAM "FireTeam"
 #define COOPR_STRENGTH_TYPE_SQUAD "Squad"
 #define COOPR_STRENGTH_TYPE_PLATOON "Platoon"
 #define COOPR_STRENGTH_TYPE_COMPANY "Company"
-
 
 // Task Globals
 #define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"

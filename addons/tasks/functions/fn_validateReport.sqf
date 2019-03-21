@@ -15,7 +15,7 @@
  * _accuracy <NUMBER> - Percentage of how accurate the report was
  *
  * Example:
- * [325342, "Fireteam", "Infantry", "PATROL"] call coopr_fnc_validateReport;
+ * [325342, "Fireteam", "Infantry", "Patrol"] call coopr_fnc_validateReport;
  *
  * Public: No
  *
@@ -39,13 +39,9 @@ if (isServer) then {
     // TODO: validate if was within range of recon objective
     // check behaviour
     switch (_behaviour) do {
-        case COOPR_TASK_BEHAVIOUR_ATTACKING: { _checkRadius = 0 }; // attacking enemies most likely will not be in the area afterwards
-        case COOPR_TASK_BEHAVIOUR_DEFENDING: { _checkRadius = 150 }; // defending units might be a bit wider spreaded
-        case COOPR_TASK_BEHAVIOUR_RESUPPLY: { _checkRadius = 0 };
-        case COOPR_TASK_BEHAVIOUR_WITHDRAWING: { _checkRadius = 0 };
-        case COOPR_TASK_BEHAVIOUR_STATIC: { _checkRadius = 30 }; // if a unit is reported as static it might be clear they won't leave their position
-        case COOPR_TASK_BEHAVIOUR_PATROLING: { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
-        case COOPR_TASK_BEHAVIOUR_DESTROYED: { _checkRadius = 0 }; // yea well...
+        case COOPR_TASK_BEHAVIOUR_COMBAT: { _checkRadius = 0 }; // attacking enemies most likely will not be in the area afterwards
+        case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { _checkRadius = 150 }; // defending units might be a bit wider spreaded
+        case COOPR_TASK_BEHAVIOUR_PATROL: { _checkRadius = 500 }; // patroling units most likely will patrol a large perimeter
         default { _checkRadius = 0 };
     };
 

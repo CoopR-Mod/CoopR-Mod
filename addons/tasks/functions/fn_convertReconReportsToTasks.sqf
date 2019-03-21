@@ -23,42 +23,36 @@ if (isServer) then {
 
     private _createdCounter = 0;
     {
-        if (INTEGRATE_ALIVE) then {
+        DEBUG("parsing recon reports");
+        private _entry = _x;
+        private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
+        private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
+        private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
+        private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _markerPosition = getMarkerPos _marker;
 
-            DEBUG("parsing spotrep reports");
-            private _spotrep = _x;
-            private _reportingPlayerID = [_spotrep, "ALiVE_SYS_spotrep_player"] call CBA_fnc_hashGet;
-            private _strength = [_spotrep, "ALiVE_SYS_spotrep_size"] call CBA_fnc_hashGet;
-            private _notes = [_spotrep, "ALiVE_SYS_spotrep_remarks"] call CBA_fnc_hashGet;
-            private _type = [_spotrep, "ALiVE_SYS_spotrep_type"] call CBA_fnc_hashGet;
-            // will turn i.e. "Mechanized Infantry - Mechanized Company HQ" into "MechanizedInfantry"
-            _type = [_type splitString ":" select 0, " ", ""] call coopr_fnc_stringReplace;
-            private _behaviour = [_spotrep, "ALiVE_SYS_spotrep_activity"] call CBA_fnc_hashGet;
-            private _markerPosition = [_spotrep, "ALiVE_SYS_spotrep_markerposition"] call CBA_fnc_hashGet;
+        private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+        DEBUG2("reportAccuracy %1", _reportAccuracy);
+        private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
+        DEBUG2("determined task type: %1", _cooprTaskType);
 
-            private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
-            DEBUG2("reportAccuracy %1", _reportAccuracy);
-            private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
-            DEBUG2("determined task type: %1", _cooprTaskType);
+        if (_reportAccuracy >= COOPR_ACCURACY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
+            private _newCooprTask = EMPTY_HASH;
 
-            if (_reportAccuracy >= COOPR_ACCURACY_THRESHOLD and !(_cooprTaskType isEqualTo COOPR_TASK_TYPE_NONE)) then {
-                private _newCooprTask = EMPTY_HASH;
+            DEBUG("building coopr task hash");
+            [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_LOCATION, _markerPosition] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_TARGET, _strength] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_CREATED, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 
-                DEBUG("building coopr task hash");
-                [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_UID, _reportingPlayerID] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_LOCATION, _markerPosition] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, _notes] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_TARGET, _strength] call CBA_fnc_hashSet;
-                [_newCooprTask, COOPR_KEY_TASK_CREATED, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
-
-                DEBUG2("defined task details: %1", _newCooprTask);
-                COOPR_TASKS_QUEUE pushBack _newCooprTask;
-                _createdCounter = _createdCounter + 1;
-            } else {
-                DEBUG("no task was generated out of recon report");
-                DEBUG2("accuracy of report was below %1", COOPR_ACCURACY_THRESHOLD);
-            };
+            DEBUG2("defined task details: %1", _newCooprTask);
+            COOPR_TASKS_QUEUE pushBack _newCooprTask;
+            _createdCounter = _createdCounter + 1;
+            deleteMarker _marker; // clean up marker on map
+        } else {
+            DEBUG("no task was generated out of recon report");
+            DEBUG2("accuracy of report was below %1", COOPR_ACCURACY_THRESHOLD);
         };
     } forEach COOPR_RECON_REPORTS;
 

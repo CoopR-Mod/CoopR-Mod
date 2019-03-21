@@ -57,7 +57,7 @@
 #define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
 
 // Recon Report Params
-#define COOPR_STRENGTH_TYPE_FIRETEAM "FireTeam"
+#define COOPR_STRENGTH_TYPE_FIRETEAM "Fireteam"
 #define COOPR_STRENGTH_TYPE_SQUAD "Squad"
 #define COOPR_STRENGTH_TYPE_PLATOON "Platoon"
 #define COOPR_STRENGTH_TYPE_COMPANY "Company"
@@ -66,7 +66,6 @@
 #define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
 #define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
 
-#define COOPR_KEY_TASK_UID "coopr_task_uid"
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
 #define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
@@ -79,17 +78,13 @@
 #define COOPR_KEY_TASK_TRACKER_TYPE "coopr_task_tracker_type"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
-#define COOPR_TASK_REPORT_TYPE_MOTORIZED "MotorizedInfantry"
-#define COOPR_TASK_REPORT_TYPE_MECHANIZED "MechanizedInfantry"
+#define COOPR_TASK_REPORT_TYPE_MOTORIZED "Motorized"
+#define COOPR_TASK_REPORT_TYPE_MECHANIZED "Mechanized"
 #define COOPR_TASK_REPORT_TYPE_ARMORED "Armor"
 
-#define COOPR_TASK_BEHAVIOUR_STATIC "STATIC"
-#define COOPR_TASK_BEHAVIOUR_DEFENDING "DEFENDING"
-#define COOPR_TASK_BEHAVIOUR_ATTACKING "ATTACKING"
-#define COOPR_TASK_BEHAVIOUR_RESUPPLY "RESUPPLY"
-#define COOPR_TASK_BEHAVIOUR_WITHDRAWING "WITHDRAWING"
-#define COOPR_TASK_BEHAVIOUR_PATROLING "PATROL"
-#define COOPR_TASK_BEHAVIOUR_DESTROYED "DESTROYED"
+#define COOPR_TASK_BEHAVIOUR_DEFENSIVE "Defensive"
+#define COOPR_TASK_BEHAVIOUR_PATROL "Patrol"
+#define COOPR_TASK_BEHAVIOUR_COMBAT "Combat"
 
 #define COOPR_TASK_TYPE_SNIPERTEAM "coopr_task_type_sniperteam"
 #define COOPR_TASK_TYPE_ASYMMETRIC "coopr_task_type_asymmetric"

@@ -42,8 +42,8 @@ switch (_strength) do {
         switch (_type) do {
             case COOPR_TASK_REPORT_TYPE_INFANTRY: {
                 switch (_behaviour) do {
-                    case COOPR_TASK_BEHAVIOUR_DEFENDING: { COOPR_TASK_TYPE_CONQUER; };
-                    case COOPR_TASK_BEHAVIOUR_PATROLING: { COOPR_TASK_TYPE_ASYMMETRIC; };
+                    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { COOPR_TASK_TYPE_CONQUER; };
+                    case COOPR_TASK_BEHAVIOUR_PATROL: { COOPR_TASK_TYPE_ASYMMETRIC; };
                     default { COOPR_TASK_TYPE_ASSAULT; };
                 }
             };
@@ -58,8 +58,8 @@ switch (_strength) do {
             case COOPR_TASK_REPORT_TYPE_INFANTRY: {
                 switch (_behaviour) do {
                     case COOPR_TASK_BEHAVIOUR_STATIC: { COOPR_TASK_TYPE_JTAC; };
-                    case COOPR_TASK_BEHAVIOUR_DEFENDING: { COOPR_TASK_TYPE_CONQUER; };
-                    case COOPR_TASK_BEHAVIOUR_PATROLING: { COOPR_TASK_TYPE_AMBUSH; };
+                    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { COOPR_TASK_TYPE_CONQUER; };
+                    case COOPR_TASK_BEHAVIOUR_PATROL: { COOPR_TASK_TYPE_AMBUSH; };
                     default { COOPR_TASK_TYPE_CONQUER; };
                 }
             };

@@ -70,7 +70,7 @@
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
 #define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
-#define COOPR_KEY_TASK_CREATED "coopr_task_created"
+#define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
 #define COOPR_KEY_TASK_MARKER "coopr_task_marker"
 
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"

@@ -21,8 +21,8 @@ if (isServer) then {
     private _tasksToBeRemoved = [];
     {
         private _currentTime = call coopr_fnc_currentGameTime;
-        private _taskCreatedTime = [_x, COOPR_KEY_TASK_CREATED] call CBA_fnc_hashGet;
-        private _freshness = _currentTime - _taskCreatedTime;
+        private _reportedTime = [_x, COOPR_KEY_TASK_REPORT_TIME] call CBA_fnc_hashGet;
+        private _freshness = _currentTime - _reportedTime;
         if (_freshness >= COOPR_TASK_MIN_FRESHNESS) then {
             DEBUG2("freshness of task %1 is too old", _x);
             DEBUG2("was: %1", _freshness);

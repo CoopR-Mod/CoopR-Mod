@@ -17,9 +17,9 @@ if (_markerNameEdit isEqualTo objNull) exitWith { ERROR("_markerNameEdit was obj
 if (_entriesTextbox isEqualTo objNull) exitWith { ERROR("_entriesTextbox was objNull") };
 
 // get select box values
-private _type = _typeSel lbValue (lbCurSel _typeSel);
-private _strength = _strengthSel lbValue (lbCurSel _strengthSel);
-private _behaviour = _behaviourSel lbValue (lbCurSel _behaviourSel);
+private _type = _typeSel lbData (lbCurSel _typeSel);
+private _strength = _strengthSel lbData (lbCurSel _strengthSel);
+private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
 private _markerText = ctrlText _markerNameEdit;
 DEBUG2("index: %1", lbCurSel _typeSel);
 

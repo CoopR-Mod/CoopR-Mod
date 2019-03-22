@@ -41,6 +41,7 @@ private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker select 0] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 
 _reconEntries pushBack _entryHash;
 player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];

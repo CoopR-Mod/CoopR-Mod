@@ -12,20 +12,25 @@ private _reconRepDisplay = findDisplay 1105;
 private _typeSelection = _reconRepDisplay displayCtrl 11051;
 private _strengthSelection = _reconRepDisplay displayCtrl 11052;
 private _behaviourSelection = _reconRepDisplay displayCtrl 11053;
-private _additionalInfoTextbox = _reconRepDisplay displayCtrl 11054;
+private _markerNameEdit = _reconRepDisplay displayCtrl 11054;
 private _buttonWriteReport = _reconRepDisplay displayCtrl 11055;
 private _entriesTextbox = _reconRepDisplay displayCtrl 11056;
 
 // init selection boxes
-{ _typeSelection lbAdd _x; } forEach COOPR_RECONREP_TYPE_OPTIONS;
-{ _strengthSelection lbAdd _x; } forEach COOPR_RECONREP_STRENGTH_OPTIONS;
-{ _behaviourSelection lbAdd _x; } forEach COOPR_RECONREP_BEHAVIOUR_OPTIONS;
+{ _typeSelection lbAdd _x; _typeSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_TYPE_OPTIONS;
+{ _strengthSelection lbAdd _x; _strengthSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_STRENGTH_OPTIONS;
+{ _behaviourSelection lbAdd _x; _typeSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_BEHAVIOUR_OPTIONS;
+
+// init select first item
+_typeSelection lbSetCurSel 0;
+_strengthSelection lbSetCurSel 0;
+_behaviourSelection lbSetCurSel 0;
 
 // set data to button
 _buttonWriteReport setVariable ["_typeSelection", _typeSelection];
 _buttonWriteReport setVariable ["_strengthSelection", _strengthSelection];
 _buttonWriteReport setVariable ["_behaviourSelection", _behaviourSelection];
-_buttonWriteReport setVariable ["_additionalInfoTextbox", _additionalInfoTextbox];
+_buttonWriteReport setVariable ["_markerNameEdit", _markerNameEdit];
 _buttonWriteReport setVariable ["_entriesTextbox", _entriesTextbox];
 
 _buttonWriteReport ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_writeEntry}];

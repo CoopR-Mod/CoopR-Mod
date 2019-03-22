@@ -39,6 +39,10 @@ if (isServer) then {
            call coopr_fnc_removeRedundantReports;
            call coopr_fnc_convertReconReportsToTasks;
            [_unit] call coopr_fnc_completeReconSubtask;
+
+           _unit setVariable [COOPR_KEY_RECON_ENTRIES, []];
+           private _entriesTextbox = _reconRepDisplay displayCtrl 11056; // textbox of recon reports
+           [_entriesTextbox, []] remoteExec ["coopr_fnc_updateReconReportEntries"];
         } else {
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;
         };

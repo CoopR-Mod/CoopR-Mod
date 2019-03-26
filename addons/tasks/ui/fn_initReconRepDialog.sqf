@@ -19,7 +19,7 @@ private _entriesTextbox = _reconRepDisplay displayCtrl 11056;
 // init selection boxes
 { _typeSelection lbAdd _x; _typeSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_TYPE_OPTIONS;
 { _strengthSelection lbAdd _x; _strengthSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_STRENGTH_OPTIONS;
-{ _behaviourSelection lbAdd _x; _typeSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_BEHAVIOUR_OPTIONS;
+{ _behaviourSelection lbAdd _x; _behaviourSelection lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_BEHAVIOUR_OPTIONS;
 
 // init select first item
 _typeSelection lbSetCurSel 0;
@@ -34,5 +34,9 @@ _buttonWriteReport setVariable ["_markerNameEdit", _markerNameEdit];
 _buttonWriteReport setVariable ["_entriesTextbox", _entriesTextbox];
 
 _buttonWriteReport ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_writeEntry}];
+
+// fill already existing entries
+private _reconEntries = player getVariable [COOPR_KEY_RECON_ENTRIES, []];
+[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
 
 DEBUG("recon rep ui initialized");

@@ -21,7 +21,6 @@ private _type = _typeSel lbData (lbCurSel _typeSel);
 private _strength = _strengthSel lbData (lbCurSel _strengthSel);
 private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
 private _markerText = ctrlText _markerNameEdit;
-DEBUG2("index: %1", lbCurSel _typeSel);
 
 // search marker by text/description
 private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText};

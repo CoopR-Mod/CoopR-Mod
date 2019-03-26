@@ -81,7 +81,7 @@ class CoopR_ReconReport_Dialog
 			w = safeZoneW * 0.201875;
 			h = safeZoneH * 0.35444445;
 			style = 0;
-			text = "Test Test";
+			text = "";
 			size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			colorBackground[] = {1,1,1,0};
 			class Attributes

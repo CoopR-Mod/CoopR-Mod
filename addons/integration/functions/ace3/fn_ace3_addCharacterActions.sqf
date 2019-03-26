@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-_broadcastActionCondition = { count ([alive_sys_spotrep_store] call CBA_fnc_hashKeys) > 0 };
+_broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
 _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
 [player, 1, ["ACE_SelfActions"],

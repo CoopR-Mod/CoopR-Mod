@@ -18,9 +18,7 @@ if (COOPR_TASKS_ACTIVE) then {
     } else {
         // after action report action
         private _aarActionCondition = { not ((_this getVariable ['coopr_character_active_task', []]) isEqualTo []); };
-        _commander addAction [localize "str.coopr.aar.action.commander", {
-             [_target, _caller] remoteExec ["coopr_fnc_deliverAfterActionReport"]
-        }, [], 1.5, true, true, "", _aarActionCondition call coopr_fnc_codeAsString, 3];
+        _commander addAction [localize "str.coopr.aar.action.commander", { call coopr_fnc_deliverAfterActionReport }, [], 1.5, true, true, "", _aarActionCondition call coopr_fnc_codeAsString, 3];
 
         // request task action
         private _requestActionCondition = { (_this getVariable ['coopr_character_active_task', []]) isEqualTo []; };

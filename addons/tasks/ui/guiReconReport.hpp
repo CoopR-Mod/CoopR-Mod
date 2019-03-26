@@ -13,7 +13,7 @@ class CoopR_ReconReport_Dialog
             y = safeZoneY + safeZoneH * 0.12666667
             w = safeZoneW * 0.4625
             h = safeZoneH * 0.75
-            text = "x\coopr\addons\tasks\data\images\notebook.paa";
+            text = "x\coopr\addons\tasks\data\images\notebook_front.paa";
             colorBackground[] = {0.2588,0.5294,0.2078,1};
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			

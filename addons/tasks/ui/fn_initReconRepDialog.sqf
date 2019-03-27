@@ -39,4 +39,6 @@ _buttonWriteReport ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_writ
 private _reconEntries = player getVariable [COOPR_KEY_RECON_ENTRIES, []];
 [_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
 
+
+playSound "coopr_sound_paperfold";
 DEBUG("recon rep ui initialized");

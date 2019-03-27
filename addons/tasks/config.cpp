@@ -23,6 +23,7 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgSounds.hpp"
 #include "CfgTaskDescriptions.hpp"
 
 // UI

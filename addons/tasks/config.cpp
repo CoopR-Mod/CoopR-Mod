@@ -28,4 +28,4 @@ class CfgPatches {
 
 // UI
 #include "\x\coopr\addons\core\define.hpp"
-#include "ui\guiReconReport.hpp"
+#include "ui\CoopR_ReconReport_Dialog.hpp"

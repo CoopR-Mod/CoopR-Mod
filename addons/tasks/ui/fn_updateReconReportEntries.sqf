@@ -20,7 +20,7 @@ DEBUG2("%1 entries found", count _entries);
     private _markerPos = getMarkerPos _marker;
 
     DEBUG2("type: %1", _type);
-    private _text = format ["%1,%2,%3 pos: (%4,%5) time %6", _type, _strength, _behaviour, _markerPos select 0, _markerPos select 1, _time];
+    private _text = format ["%1. %2,%3,%4 pos: (%5,%6) time %7", _forEachIndex + 1, _type, _strength, _behaviour, _markerPos select 0, _markerPos select 1, _time];
     _entryText = composeText [_entryText, _text, lineBreak];
 
 } forEach _entries;

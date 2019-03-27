@@ -188,7 +188,7 @@ class CoopR_ReconReport_Dialog
 			font = "PuristaMedium";
 			size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundClick",0.09,1.0};
+			soundClick[] = { "x\coopr\addons\tasks\data\sounds\pencil_draw.ogg", 0.8, 1, 100 };
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundPush",0.09,1.0};

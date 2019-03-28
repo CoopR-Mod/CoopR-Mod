@@ -52,6 +52,8 @@ class CfgFunctions {
             class serializeMarker {};
             class deserializeMarker {};
             class markerIntersects {};
+            class debugMarker {};
+            class isGroupStatic {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

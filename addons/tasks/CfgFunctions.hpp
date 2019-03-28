@@ -19,6 +19,7 @@ class CfgFunctions {
             class removeTaskMarker {};
             class completeReconSubtask {};
             class checkTaskRequirements {};
+            class createPatrolAreaMarker {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";

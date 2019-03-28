@@ -23,28 +23,32 @@ private _type = _typeSel lbData (lbCurSel _typeSel);
 private _strength = _strengthSel lbData (lbCurSel _strengthSel);
 private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
 private _markerText = ctrlText _markerNameEdit;
+private _checkAreaMarker = [];
 
-// search marker by text/description
-private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText};
-
-if ((count _foundMarker) > 1) exitWith {
-   [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker name is not unique"]] call CBA_fnc_notify;
+if (_markerText isEqualTo "") exitWith {
+   [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No marker name given"]] call CBA_fnc_notify;
 };
 
-if ((count _foundMarker) == 0) exitWith {
-   private _message = format ["No marker with name %1", _markerText];
-   [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
+switch (_behaviour) do {
+    case COOPR_TASK_BEHAVIOUR_COMBAT: { [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["This behaviour type is not yet implemented"]] call CBA_fnc_notify };
+    case COOPR_TASK_BEHAVIOUR_PATROL: { _checkAreaMarker = [_markerText] call coopr_fnc_createPatrolAreaMarker };
+    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { _checkAreaMarker pushBack ([_markerText] call coopr_fnc_createDefensiveAreaMarker) };
 };
 
+if (count _checkAreaMarker isEqualTo 0) exitWith { DEBUG("no marker was created"); };
+
+    private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
 // build hash for entry
 private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
-[_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker select 0] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _checkAreaMarker] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_VALID, false] call CBA_fnc_hashSet;
 
 _reconEntries pushBack _entryHash;
+playSound "coopr_sound_pencil_draw";
 
 // update remove combobox
 lbClear _entryRemoveCombo;

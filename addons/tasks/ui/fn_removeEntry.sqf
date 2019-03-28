@@ -19,4 +19,5 @@ lbClear _entryRemoveCombo;
 
 player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
 
+playSound "coopr_sound_pencil_erasing";
 [_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;

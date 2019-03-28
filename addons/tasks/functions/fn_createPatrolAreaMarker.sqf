@@ -38,7 +38,7 @@ private _flagPositions = [];
             DEBUG3("posA: %1 / posB: %2", _posA, _posB);
             private _centerPos = [((_posA select 0) + (_posB select 0))/2, ((_posA select 1) + (_posB select 1))/2];
             private _patrolMarker = createMarker ["coopr_patrol_marker_" + str serverTime + str _forEachIndex, _centerPos];
-            _patrolMarker setMarkerSize [_distance/4, _distance/2];
+            _patrolMarker setMarkerSize [_distance/3, _distance/1.5];
             _patrolMarker setMarkerDir _dir;
             _patrolMarker setMarkerShape "RECTANGLE";
             _patrolMarker setMarkerColor "ColorBlue";

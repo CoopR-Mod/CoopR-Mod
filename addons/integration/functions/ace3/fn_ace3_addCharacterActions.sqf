@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
-_broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
+private _hasReconEntries = (count (player getVariable [COOPR_KEY_RECON_ENTRIES, []])) > 0;
+_broadcastActionCondition = { _hasReconEntries };
 _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
 [player, 1, ["ACE_SelfActions"],

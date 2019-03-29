@@ -3,7 +3,8 @@
 if (INTEGRATE_ACE3) then {
     call coopr_fnc_ace3_addCharacterActions;
 } else {
-    _broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
+    private _hasReconEntries = (count (player getVariable [COOPR_KEY_RECON_ENTRIES, []])) > 0;
+    _broadcastActionCondition = { _hasReconEntries };
     _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
     player addAction [localize "str.coopr.core.action.rep", { player call coopr_fnc_showReputation; } , [], 0.5, true, true, "", "true"];

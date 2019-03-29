@@ -62,5 +62,5 @@ playSound "coopr_sound_pencil_draw";
 lbClear _entryRemoveCombo;
 { _entryRemoveCombo lbAdd str (_forEachIndex + 1); _entryRemoveCombo lbSetData [_forEachIndex, str _forEachIndex] } forEach _reconEntries;
 
-//player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
-//[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
+player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
+[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;

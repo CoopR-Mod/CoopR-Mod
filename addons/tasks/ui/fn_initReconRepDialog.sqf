@@ -53,7 +53,7 @@ _buttonWriteReport ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_writ
 _buttonRemoveReport ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_removeEntry}];
 
 // fill already existing entries
-//[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
+[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
 
 playSound "coopr_sound_paperfold";
 DEBUG("recon rep ui initialized");

@@ -37,7 +37,9 @@ switch (_behaviour) do {
 
 if (count _checkAreaMarker isEqualTo 0) exitWith { DEBUG("no marker was created"); };
 
-    private _reportAccuracy = [_markerPosition, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+private _reportAccuracy = [_checkAreaMarker, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+DEBUG2("report accuracy: %1", _reportAccuracy);
+
 // build hash for entry
 private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
@@ -45,7 +47,13 @@ private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _checkAreaMarker] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
-[_entryHash, COOPR_KEY_RECON_ENTRY_VALID, false] call CBA_fnc_hashSet;
+
+// set valid report
+if (_reportAccuracy > COOPR_ACCURACY_THRESHOLD) then {
+    [_entryHash, COOPR_KEY_RECON_ENTRY_VALID, true] call CBA_fnc_hashSet;
+} else {
+    [_entryHash, COOPR_KEY_RECON_ENTRY_VALID, false] call CBA_fnc_hashSet;
+};
 
 _reconEntries pushBack _entryHash;
 playSound "coopr_sound_pencil_draw";
@@ -54,6 +62,5 @@ playSound "coopr_sound_pencil_draw";
 lbClear _entryRemoveCombo;
 { _entryRemoveCombo lbAdd str (_forEachIndex + 1); _entryRemoveCombo lbSetData [_forEachIndex, str _forEachIndex] } forEach _reconEntries;
 
-player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
-
-[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
+//player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
+//[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;

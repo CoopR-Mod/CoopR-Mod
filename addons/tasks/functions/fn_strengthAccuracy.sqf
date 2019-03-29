@@ -26,7 +26,7 @@
 params [["_actualAmount", -1],
         ["_reportedStrength", ""]];
 
-if (_actualAmount isEqualTo -1) exitWith { ERROR("_actualAmount was locationNull") };
+if (_actualAmount isEqualTo -1) exitWith { ERROR("_actualAmount was not defined") };
 if (_reportedStrength isEqualTo "") exitWith { ERROR("_reportedStrength was empty string") };
 DEBUG2("amount : %1", _actualAmount);
 DEBUG2("strengthType : %1", _reportedStrength);

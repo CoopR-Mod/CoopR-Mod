@@ -23,13 +23,14 @@ DEBUG("creating patrol area marker");
 // patrol marker
 private _patrolFlags = allMapMarkers select { (markerType _x) isEqualTo "hd_flag" and ((markerText _x) isEqualTo _markerText)};
 DEBUG2("patrol markers: %1", count _patrolFlags);
+private _createdPatrolMarker = [];
 
 if ((count _patrolFlags) < 2) exitWith {
    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["To mark a patrol you need at least two flag marker"]] call CBA_fnc_notify;
+   _createdPatrolMarker; // which is empty here
 };
 
 if ((count _patrolFlags) > 1) then {
-    private _createdPatrolMarker = [];
     private _flagPositions = [];
     { _flagPositions pushBackUnique (getMarkerPos _x); } forEach _patrolFlags; // map to positions
     {

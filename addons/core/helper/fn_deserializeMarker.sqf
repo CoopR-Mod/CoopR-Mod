@@ -32,6 +32,7 @@ private _deserializedMarker = createMarker [_markerName, _serializedMarker delet
 } forEach [
     // omitting marker name element
     // omitting position
+    { _deserializedMarker setMarkerType _this },
     { _deserializedMarker setMarkerSize _this },
     { _deserializedMarker setMarkerShape _this },
     { _deserializedMarker setMarkerText _this },

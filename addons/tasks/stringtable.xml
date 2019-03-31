@@ -55,5 +55,14 @@
             <Original>Enemy positions have been reported. Take them without casualties</Original>
             <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
         </Key>
+        <!--Conquer Task-->
+        <Key ID="str_coopr_task_type_conquer_title">
+            <Original>Conquer enemy position</Original>
+            <German>Feindliche Stellungen nehmen</German>
+        </Key>
+        <Key ID="str_coopr_task_type_conquer_description">
+            <Original>Enemy positions have been reported. Take them without casualties</Original>
+            <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
+        </Key>
     </Package>
 </Project>

@@ -30,6 +30,7 @@ private _serializedMarker = [];
 } forEach [
     { _this }, // simply storing the name
     { markerPos _this },
+    { markerType _this },
     { markerSize _this },
     { markerShape _this },
     { markerText _this },

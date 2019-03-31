@@ -51,7 +51,6 @@ Here listed one can see all planned features and technical milestones as a roadm
 | ------------- |------------- |:-------------|-------------:|
 | Gameplay| Equipment Manager | Players can manage their stash and change equiptment and loadouts | 0/? |
 | Gameplay| Squad Creation | Players can manage squads. The squad creator is therefore the squad leader | 0/? |
-| Gameplay| Campsites | Squads can build up campsites when outside of the HQ to build temporary shelter for logging out | 0/? |
 | Gameplay| Nutrition | Players can die due starvation if no nutrition supplements are in their inventory | 0/? |
 | Technical| Enhance HQ Webapp| HQ Webapp MVP completion. Player can manage their characters and squads online | 0/? |
 

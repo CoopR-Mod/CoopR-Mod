@@ -8,6 +8,6 @@
 #define TEST(ctx) private _testContext = ctx; _totalTests = _totalTests + 1;
 
 #define TASSERT(expression) if(expression) then { [_testContext, DEBUG_CTX + ".test.success", TEST_CFG] call CBA_fnc_debug; } else { [ _testContext, DEBUG_CTX + ".test.failure", TEST_CFG] call CBA_fnc_debug; }
-#define TEXPECT(expected, actual) if(expected isEqualType actual and expected isEqualTo actual) then { [_testContext, DEBUG_CTX + ".test.success", TEST_CFG] call CBA_fnc_debug; } else { [_testContext, DEBUG_CTX + ".test.failure", TEST_CFG] call CBA_fnc_debug; [format ["expected %1 but was %2", expected, actual], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; }
+#define TEXPECT(expected, actual) if((expected) isEqualType (actual) and (expected) isEqualTo (actual)) then { [_testContext, DEBUG_CTX + ".test.success", TEST_CFG] call CBA_fnc_debug; } else { [_testContext, DEBUG_CTX + ".test.failure", TEST_CFG] call CBA_fnc_debug; [format ["expected %1 but was %2", expected, actual], DEBUG_CTX + ".test", TEST_CFG] call CBA_fnc_debug; }
 
 

@@ -19,10 +19,10 @@
  * Scope: Global
  */
 
-params [["_serializedMarker", [],
-        ["_newMarkername", ""]]];
+params [["_serializedMarker", []],
+        ["_newMarkername", ""]];
 
-if (_serializedMarker isEqualTo "") exitWith { ERROR("_serializedMarker was empty array") };
+if (_serializedMarker isEqualTo []) exitWith { ERROR("_serializedMarker was not defined") };
 private _markerName = _serializedMarker deleteAt 0;
 if !(_newMarkername isEqualTo "") then { _markerName = _newMarkername; }; // set override marker name
 

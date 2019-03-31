@@ -33,16 +33,12 @@ if (isServer) then {
     } else {
         // info message to player
         if ((count _reconEntries) > 0) then {
-           private _reportInfo = format ["Reports send: %1", count COOPR_RECON_REPORTS];
+           private _reportInfo = format ["Reports send: %1", count _reconEntries];
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_reportInfo]] call CBA_fnc_notify;
-           COOPR_RECON_REPORTS + _reconEntries; // add entries to global reports
-           call coopr_fnc_removeRedundantReports;
-           call coopr_fnc_convertReconReportsToTasks;
+           //call coopr_fnc_removeRedundantReports; TODO: remove?
+           [_reconEntries] call coopr_fnc_convertReconReportsToTasks;
            [_unit] call coopr_fnc_completeReconSubtask;
-
            _unit setVariable [COOPR_KEY_RECON_ENTRIES, []];
-           private _entriesTextbox = _reconRepDisplay displayCtrl 11056; // textbox of recon reports
-           [_entriesTextbox, []] remoteExec ["coopr_fnc_updateReconReportEntries"];
         } else {
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;
         };

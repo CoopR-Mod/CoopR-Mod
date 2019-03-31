@@ -24,12 +24,15 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
 if (isServer) then {
     private _currentTask = _unit getVariable [COOPR_KEY_ACTIVE_TASK, []];
-    private _subTasks = _currentTask call BIS_fnc_taskChildren;
-    { [_x, "SUCCEEDED"] call BIS_fnc_taskSetState } forEach _subTasks;
-    private _subtaskId = format ["coopr_subtask_optional_recon_%1", count COOPR_RECON_TASKS];
-    [_unit, [_subtaskId, _currentTask], "CoopR_Subtask_Optional_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    if (_currentTask isEqualTo []) exitWith { ERROR("no current task is active")};
 
-    private _taskTracker = _unit getVariable [COOPR_KEY_TASK_TRACKER, []];
+    private _subTasks = _currentTask call BIS_fnc_taskChildren;
+    {
+        [_x, "SUCCEEDED"] call BIS_fnc_taskSetState;
+        private _reconDestination = _x call BIS_fnc_taskDestination;
+        private _subtaskId = format ["coopr_subtask_optional_recon_%1", count COOPR_RECON_TASKS];
+        [_unit, [_subtaskId, _currentTask], "CoopR_Subtask_Optional_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
+    } forEach _subTasks;
 } else {
     SERVER_ONLY_ERROR;
 };

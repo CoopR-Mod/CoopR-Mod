@@ -38,5 +38,6 @@ DEBUG2("%1 entries found", count _entries);
 if (_entryText isEqualTo "") then {
     DEBUG("no entries found to render");
 } else {
+    _entriesTextbox ctrlSetTextColor [0,0,0,1];
     _entriesTextbox ctrlSetStructuredText _entryText;
 }

@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
-private _hasReconEntries = (count (player getVariable [COOPR_KEY_RECON_ENTRIES, []])) > 0;
-_broadcastActionCondition = { _hasReconEntries };
+_broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
 _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
 [player, 1, ["ACE_SelfActions"],
@@ -9,7 +8,7 @@ _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],
-["broadcast_action_1", localize "str.coopr.core.action.broadcast", "", {player call coopr_fnc_broadcastReconReports;}, _broadcastActionCondition] call ace_interact_menu_fnc_createAction
+["broadcast_action_1", localize "str.coopr.core.action.broadcast", "", { [player] remoteExec ["coopr_fnc_broadcastReconReports", EXEC_SERVER] }, _broadcastActionCondition] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],

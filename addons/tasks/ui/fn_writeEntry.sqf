@@ -23,29 +23,24 @@ private _type = _typeSel lbData (lbCurSel _typeSel);
 private _strength = _strengthSel lbData (lbCurSel _strengthSel);
 private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
 private _markerText = ctrlText _markerNameEdit;
-private _checkAreaMarker = [];
+private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText };
 
 if (_markerText isEqualTo "") exitWith {
    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No marker name given"]] call CBA_fnc_notify;
 };
 
-switch (_behaviour) do {
-    case COOPR_TASK_BEHAVIOUR_COMBAT: { [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["This behaviour type is not yet implemented"]] call CBA_fnc_notify };
-    case COOPR_TASK_BEHAVIOUR_PATROL: { _checkAreaMarker = [_markerText] call coopr_fnc_createPatrolAreaMarker };
-    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { _checkAreaMarker pushBack ([_markerText] call coopr_fnc_createDefensiveAreaMarker) };
-};
-
-if (count _checkAreaMarker isEqualTo 0) exitWith { DEBUG("no marker was created"); };
-
-private _reportAccuracy = [_checkAreaMarker, _strength, _type, _behaviour] call coopr_fnc_validateReport;
+private _reportAccuracy = [_markerText, _strength, _type, _behaviour] call coopr_fnc_validateReport;
 DEBUG2("report accuracy: %1", _reportAccuracy);
+
+if (isNil "_reportAccuracy") exitWith { ERROR("no entry will be written due previous errors")};
 
 // build hash for entry
 private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
-[_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _checkAreaMarker] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 
 // set valid report

@@ -38,14 +38,15 @@ if (isServer) then {
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
 
         // get position of a random marker
-        private _randomMarker = _marker select (random (count _marker));
+        private _randomIndex = ceil (random (count _marker - 1));
+        private _randomMarker = _marker select _randomIndex;
         private _location = getMarkerPos _randomMarker;
 
         private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
         DEBUG2("determined task type: %1", _cooprTaskType);
 
         private _serializedMarker = [];
-        { _serializedMarker pushBack [_x] call coopr_fnc_serializeMarker } forEach _marker;
+        { _serializedMarker pushBack ([_x, true] call coopr_fnc_serializeMarker); } forEach _marker;
 
         private _newCooprTask = EMPTY_HASH;
 
@@ -59,7 +60,6 @@ if (isServer) then {
         DEBUG2("defined task details: %1", _newCooprTask);
         COOPR_TASKS_QUEUE pushBack _newCooprTask;
         _createdCounter = _createdCounter + 1;
-        deleteMarker _marker; // clean up marker on map
     } forEach _validReports;
 
     DEBUG2("generated coopr tasks: %1", _createdCounter);

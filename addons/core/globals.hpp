@@ -69,7 +69,6 @@
 #define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
 
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
-#define COOPR_KEY_TASK_LOCATION "coopr_task_location"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
 #define COOPR_KEY_TASK_MARKER "coopr_task_marker"

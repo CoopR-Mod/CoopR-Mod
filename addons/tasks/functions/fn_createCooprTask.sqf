@@ -27,14 +27,13 @@ if (_cooprTaskInfo isEqualTo []) exitWith { ERROR("_cooprTaskInfo was []") };
 
 if (isServer) then {
     private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
-    private _destination = [_cooprTaskInfo, COOPR_KEY_TASK_LOCATION] call CBA_fnc_hashGet;
     private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
     private _serializedMarkers = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
     DEBUG2("task position: %1", _destination);
     private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
     private _taskId = format ["%1_%2", _taskType, _taskCount];
-    private _cooprTaskId = [_unit, _taskId , _taskType, _destination, 1, 2, true] call BIS_fnc_taskCreate;
+    private _cooprTaskId = [_unit, _taskId , _taskType, objNull, 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_cooprTaskId") then {
         [_unit, _taskType] call coopr_fnc_initTaskTracker;

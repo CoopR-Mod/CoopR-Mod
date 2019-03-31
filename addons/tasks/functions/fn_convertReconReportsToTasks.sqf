@@ -37,11 +37,6 @@ if (isServer) then {
         private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
 
-        // get position of a random marker
-        private _randomIndex = ceil (random (count _marker - 1));
-        private _randomMarker = _marker select _randomIndex;
-        private _location = getMarkerPos _randomMarker;
-
         private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
         DEBUG2("determined task type: %1", _cooprTaskType);
 
@@ -52,7 +47,6 @@ if (isServer) then {
 
         DEBUG("building coopr task hash");
         [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-        [_newCooprTask, COOPR_KEY_TASK_LOCATION, _location] call CBA_fnc_hashSet;
         [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
         [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
         [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarker] call CBA_fnc_hashSet;

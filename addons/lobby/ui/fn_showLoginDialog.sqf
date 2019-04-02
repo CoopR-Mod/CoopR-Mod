@@ -1,11 +1,11 @@
 #include "script_component.hpp"
 
 disableSerialization;
-waitUntil {!isNull findDisplay 1101};
+waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
 DEBUG("initialising login ui");
 
-private _loginDisplay = findDisplay 1101;
+private _loginDisplay = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _profileInfos = [];
 _profileInfos set [0, _loginDisplay displayCtrl 1100];

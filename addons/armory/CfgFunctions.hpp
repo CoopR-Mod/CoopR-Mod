@@ -7,7 +7,7 @@ class CfgFunctions {
         }
         class coopr_armory_ui {
             file = "x\coopr\addons\armory\ui";
-            class showArmoryMenu {};
+            class showArmoryDialog {};
             class equipHandler {};
             class selectHandler {};
         }

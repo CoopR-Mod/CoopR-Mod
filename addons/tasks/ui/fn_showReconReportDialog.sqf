@@ -3,11 +3,11 @@
 disableSerialization;
 
 createDialog "CoopR_ReconReport_Dialog";
-waitUntil {!isNull findDisplay 1105};
+waitUntil {!isNull findDisplay GUI_ID_RECONREPORT_DIALOG};
 
 DEBUG("initialising recon rep ui");
 
-private _reconRepDisplay = findDisplay 1105;
+private _reconRepDisplay = findDisplay GUI_ID_RECONREPORT_DIALOG;
 
 // controls
 private _typeSelection = _reconRepDisplay displayCtrl 11051;

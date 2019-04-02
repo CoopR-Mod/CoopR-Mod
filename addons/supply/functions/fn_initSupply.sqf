@@ -10,4 +10,3 @@ params [["_supplyCommDevices", []],
     (missionNamespace getVariable ([_x, " ", ""] call coopr_fnc_stringReplace)) addAction ["Request Supply", coopr_fnc_showSupplyMenu,
     [_supplyVehicleClass, _supplyDeliveryTime, _supplyInsertionArea, _supplyArrivalArea], 0.5, true, true, "", "true"];
 } forEach _supplyCommDevices;
-

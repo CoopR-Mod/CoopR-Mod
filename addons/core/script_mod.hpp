@@ -2,6 +2,7 @@
 
 #include "debug.hpp"
 #include "testing.hpp"
+#include "ui_id.hpp"
 #include "helper.hpp"
 #include "constants.hpp"
 #include "globals.hpp"

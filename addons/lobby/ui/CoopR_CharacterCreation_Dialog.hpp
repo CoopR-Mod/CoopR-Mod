@@ -1,4 +1,4 @@
-class coopr_NewProfile_Dialog{
+class CoopR_CharacterCreation_Dialog {
 
     idd = 1103;
     movingEnabled = false;

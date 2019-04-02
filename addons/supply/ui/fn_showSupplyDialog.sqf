@@ -9,9 +9,9 @@ private _supplyArrivalArea = (_this select 3) select 3;
 disableSerialization;
 
 createDialog "CoopR_Supply_Dialog";
-waitUntil {!isNull findDisplay 1104};
+waitUntil {!isNull findDisplay GUI_ID_SUPPLY_DIALOG};
 
-private _display = findDisplay 1104;
+private _display = findDisplay GUI_ID_SUPPLY_DIALOG;
 
 private _ammoLabel = _display displayCtrl 11041;
 private _equipmentLabel = _display displayCtrl 11042;

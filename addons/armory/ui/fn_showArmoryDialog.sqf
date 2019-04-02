@@ -3,9 +3,9 @@
 disableSerialization;
 
 createDialog "CoopR_Armory_Dialog";
-waitUntil {!isNull findDisplay 1102};
+waitUntil {!isNull findDisplay GUI_ID_ARMORY_DIALOG};
 
-private _vendorDisplay = findDisplay 1102;
+private _vendorDisplay = findDisplay GUI_ID_ARMORY_DIALOG;
 private _listBox = _vendorDisplay displayCtrl 2500;
 private _textboxReputation = _vendorDisplay displayCtrl 2002;
 private _textboxInfos = _vendorDisplay displayCtrl 2001;

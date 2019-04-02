@@ -31,6 +31,7 @@ class CfgFunctions {
         class coopr_tasks_ui {
             file = "x\coopr\addons\tasks\ui";
             class showReconReportDialog {};
+            class showTaskBoardDialog {};
             class writeEntry {};
             class removeEntry {};
             class updateReconReportEntries {};

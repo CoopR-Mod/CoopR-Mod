@@ -13,4 +13,7 @@
 #define COOPR_RECONREP_STRENGTH_OPTIONS ["Fireteam", "Squad", "Platoon", "Company"]
 #define COOPR_RECONREP_BEHAVIOUR_OPTIONS ["Patrol", "Combat", "Defensive"]
 
+// UI
+#define GUI_ID_TASKBOARD_DIALOG 1106
+
 #include "\x\coopr\addons\core\script_macros.hpp"

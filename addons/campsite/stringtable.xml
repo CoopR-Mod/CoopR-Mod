@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CoopR Mod">
+    <Package name="example">
+        <Key ID="str.coopr.example.foo">
+            <Original>Foo</Original>
+            <German>Foobar</German>
+        </Key>
+    </Package>
+</Project>

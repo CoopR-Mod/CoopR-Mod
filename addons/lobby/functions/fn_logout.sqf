@@ -13,7 +13,7 @@ player call coopr_fnc_updateState;
         cutText ["...saved!", "BLACK OUT", 0.0001];
         call coopr_fnc_spawnInLobby;
         createDialog "coopr_Login_Dialog";
-        call coopr_fnc_initLoginDialog;
+        call coopr_fnc_showLoginDialog;
     }
 ] call Promise_Create;
 

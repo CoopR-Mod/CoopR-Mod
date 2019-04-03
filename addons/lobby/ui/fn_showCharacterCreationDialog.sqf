@@ -4,11 +4,11 @@ params ["_slot"];
 
 disableSerialization;
 
-DEBUG("initialising new profile ui");
+DEBUG("initialising character creation ui");
 
-waitUntil {!isNull findDisplay 1103};
+waitUntil {!isNull findDisplay GUI_ID_CHARACTER_CREATION_DIALOG};
 
-private _newCharacterDisplay = findDisplay 1103;
+private _newCharacterDisplay = findDisplay GUI_ID_CHARACTER_CREATION_DIALOG;
 
 private _nameTextEdit = _newCharacterDisplay displayCtrl 3400;
 private _infoText = _newCharacterDisplay displayCtrl 3003;
@@ -34,5 +34,5 @@ _roleSelectBox lbSetCurSel 0;
 _roleSelectBox ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_roleSelectionEH}];
 _createButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_createCharacterHandler}];
 
-DEBUG("new profile ui initialized");
+DEBUG("character creation ui initialized");
 

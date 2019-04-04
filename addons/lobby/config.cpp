@@ -26,5 +26,5 @@ class CfgPatches {
 
 // UI
 #include "\x\coopr\addons\core\define.hpp"
-#include "ui\guiLogin.hpp"
-#include "ui\guiNewProfile.hpp"
+#include "ui\CoopR_Login_Dialog.hpp"
+#include "ui\CoopR_CharacterCreation_Dialog.hpp"

@@ -21,7 +21,9 @@ _loginHandler = {
     [_characterHash] spawn coopr_fnc_login;
 };
 
+DEBUG2("removing register handler of slot %1", _slot);
 _profileOverlay ctrlRemoveEventHandler ["MouseButtonDown", _registerHandlerId];
+DEBUG2("register login handler for slot %1", _slot);
 _profileOverlay ctrlAddEventHandler ["MouseButtonDown", _loginHandler];
 
 

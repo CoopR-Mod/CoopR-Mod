@@ -4,17 +4,17 @@ params ["_slot"];
 
 disableSerialization;
 
-DEBUG("initialising new profile ui");
+DEBUG("initialising character creation ui");
 
-waitUntil {!isNull findDisplay 1103};
+waitUntil {!isNull findDisplay GUI_ID_CHARACTER_CREATION_DIALOG};
 
-private _newCharacterDisplay = findDisplay 1103;
+private _newCharacterDisplay = findDisplay GUI_ID_CHARACTER_CREATION_DIALOG;
 
-private _nameTextEdit = _newCharacterDisplay displayCtrl 3400;
-private _infoText = _newCharacterDisplay displayCtrl 3003;
-private _roleSelectBox = _newCharacterDisplay displayCtrl 3100;
-private _createButton = _newCharacterDisplay displayCtrl 3600;
-private _picture = _newCharacterDisplay displayCtrl 3200;
+private _nameTextEdit = _newCharacterDisplay displayCtrl GUI_ID_CHARACTER_EDIT_NAME;
+private _infoText = _newCharacterDisplay displayCtrl GUI_ID_CHARACTER_LABEL_SPECIALISATION;
+private _roleSelectBox = _newCharacterDisplay displayCtrl GUI_ID_CHARACTER_COMBO_ROLE;
+private _createButton = _newCharacterDisplay displayCtrl GUI_ID_CHARACTER_BUTTON_CREATE;
+private _picture = _newCharacterDisplay displayCtrl GUI_ID_CHARACTER_CLASSPICTURE;
 
 private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
 private _roleNames = [_rolesHash] call CBA_fnc_hashKeys;
@@ -34,5 +34,5 @@ _roleSelectBox lbSetCurSel 0;
 _roleSelectBox ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_roleSelectionEH}];
 _createButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_createCharacterHandler}];
 
-DEBUG("new profile ui initialized");
+DEBUG("character creation ui initialized");
 

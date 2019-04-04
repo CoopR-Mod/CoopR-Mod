@@ -3,13 +3,13 @@
 disableSerialization;
 
 createDialog "CoopR_Armory_Dialog";
-waitUntil {!isNull findDisplay 1102};
+waitUntil {!isNull findDisplay GUI_ID_ARMORY_DIALOG};
 
-private _vendorDisplay = findDisplay 1102;
-private _listBox = _vendorDisplay displayCtrl 2500;
-private _textboxReputation = _vendorDisplay displayCtrl 2002;
-private _textboxInfos = _vendorDisplay displayCtrl 2001;
-private _buttonEquip = _vendorDisplay displayCtrl 2600;
+private _vendorDisplay = findDisplay GUI_ID_ARMORY_DIALOG;
+private _listBox = _vendorDisplay displayCtrl GUI_ID_ARMORY_LISTBOX;
+private _textboxReputation = _vendorDisplay displayCtrl GUI_ID_ARMORY_REPUTATION_TEXTBOX;
+private _textboxInfos = _vendorDisplay displayCtrl GUI_ID_ARMORY_INFO_TEXTBOX;
+private _buttonEquip = _vendorDisplay displayCtrl GUI_ID_ARMORY_BUTTON_EQUIP;
 private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
 
 private _itemsHash = [COOPR_REP_ITEMS_WEST, []] call CBA_fnc_hashCreate;

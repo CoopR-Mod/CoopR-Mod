@@ -8,7 +8,7 @@ if (INTEGRATE_ACE3) then {
     _buildCampsiteCondition = {[0] call coopr_fnc_canBuildCampsite };
 
     player addAction [localize "str.coopr.core.action.rep", { player call coopr_fnc_showReputation; } , [], 0.5, true, true, "", "true"];
-    player addAction [localize "str.coopr.core.action.reports", { call coopr_fnc_initReconRepDialog; } , [], 0.5, true, true, "", _reconReportActionCondition call coopr_fnc_codeAsString];
+    player addAction [localize "str.coopr.core.action.reports", { call coopr_fnc_showReconReportDialog; } , [], 0.5, true, true, "", _reconReportActionCondition call coopr_fnc_codeAsString];
     player addAction [localize "str.coopr.core.action.broadcast", { [player] remoteExec ["coopr_fnc_broadcastReconReports", EXEC_SERVER] } , [], 0.5, true, true, "", _broadcastActionCondition call coopr_fnc_codeAsString];
     player addAction [localize "str.coopr.campsite.action.startcampsite", {[0] call coopr_fnc_buildCampsite; }, [], -1, true, true, "", _buildCampsiteCondition call coopr_fnc_codeAsString]; 
     

@@ -1,4 +1,4 @@
-class coopr_Login_Dialog{
+class CoopR_Login_Dialog {
   idd = 1101;
   movingEnabled = false;
 

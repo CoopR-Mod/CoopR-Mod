@@ -26,7 +26,7 @@ if (hasInterface) then {
         call coopr_fnc_spawnInLobby;
         [] spawn {
             createDialog "coopr_Login_Dialog";
-            call coopr_fnc_initLoginDialog
+            call coopr_fnc_showLoginDialog
         };
     };
 

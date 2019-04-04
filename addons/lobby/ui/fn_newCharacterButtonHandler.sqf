@@ -3,5 +3,6 @@
 params ["_ctrl"];
 private _slot = _ctrl getVariable ["_slot", -1];
 closeDialog 1;
-createDialog "coopr_NewProfile_Dialog";
-[_slot] spawn coopr_fnc_showNewCharacterDialog;
+createDialog "CoopR_CharacterCreation_Dialog";
+[_slot] spawn coopr_fnc_showCharacterCreationDialog;
+

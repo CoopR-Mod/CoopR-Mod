@@ -3,23 +3,23 @@
 disableSerialization;
 
 createDialog "CoopR_ReconReport_Dialog";
-waitUntil {!isNull findDisplay 1105};
+waitUntil {!isNull findDisplay GUI_ID_RECONREPORT_DIALOG};
 
 DEBUG("initialising recon rep ui");
 
-private _reconRepDisplay = findDisplay 1105;
+private _reconRepDisplay = findDisplay GUI_ID_RECONREPORT_DIALOG;
 
 // controls
-private _typeSelection = _reconRepDisplay displayCtrl 11051;
-private _strengthSelection = _reconRepDisplay displayCtrl 11052;
-private _behaviourSelection = _reconRepDisplay displayCtrl 11053;
-private _markerNameEdit = _reconRepDisplay displayCtrl 11054;
-private _entriesTextbox = _reconRepDisplay displayCtrl 11055;
-private _buttonWriteReport = _reconRepDisplay displayCtrl 11056;
-private _entryRemoveCombo = _reconRepDisplay displayCtrl 11057;
-private _buttonRemoveReport = _reconRepDisplay displayCtrl 11058;
-private _senderLabel = _reconRepDisplay displayCtrl 11059;
-private _timeLabel = _reconRepDisplay displayCtrl 110510;
+private _typeSelection = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_TYPE_COMBO;
+private _strengthSelection = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_STRENGTH_COMBO;
+private _behaviourSelection = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_BEHAVIOUR_COMBO;
+private _markerNameEdit = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_MARKER_EDIT;
+private _entriesTextbox = _reconRepDisplay displayCtrl GUI_ID_RECONREPORTS_ENTRIES_STRUCT;
+private _buttonWriteReport = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_WRITE_BUTTON;
+private _entryRemoveCombo = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_ENTRYREMOVE_COMBO;
+private _buttonRemoveReport = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_REMOVE_BUTTON;
+private _senderLabel = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_SENDER_LABEL;
+private _timeLabel = _reconRepDisplay displayCtrl GUI_ID_RECONREPORT_TIME_LABEL;
 private _reconEntries = player getVariable [COOPR_KEY_RECON_ENTRIES, []];
 
 _senderLabel ctrlSetText (name player);

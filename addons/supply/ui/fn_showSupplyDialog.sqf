@@ -13,11 +13,11 @@ waitUntil {!isNull findDisplay GUI_ID_SUPPLY_DIALOG};
 
 private _display = findDisplay GUI_ID_SUPPLY_DIALOG;
 
-private _ammoLabel = _display displayCtrl 11041;
-private _equipmentLabel = _display displayCtrl 11042;
-private _ammoEdit = _display displayCtrl 11043;
-private _equipmentEdit = _display displayCtrl 11044;
-private _requestButton = _display displayCtrl 11045;
+private _ammoLabel = _display displayCtrl GUI_ID_SUPPLY_AMMO_TEXTBOX;
+private _equipmentLabel = _display displayCtrl GUI_ID_SUPPLY_EQUIPMENT_TEXTBOX;
+private _ammoEdit = _display displayCtrl GUI_ID_SUPPLY_AMMO_EDIT;
+private _equipmentEdit = _display displayCtrl GUI_ID_SUPPLY_EQUIPMENT_EDIT;
+private _requestButton = _display displayCtrl GUI_ID_SUPPLY_REQUEST_BUTTON;
 
 _ammoLabel ctrlSetText localize "str.coopr.supply.ammo.label";
 _equipmentLabel ctrlSetText localize "str.coopr.supply.equipment.label";

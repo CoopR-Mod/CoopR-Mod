@@ -8,7 +8,7 @@ DEBUG("initialising login ui");
 private _loginDisplay = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _characterInfos = [];
-_characterInfos set [1, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_CHARACTER_1_INFO];
+_characterInfos set [0, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_CHARACTER_1_INFO];
 _characterInfos set [1, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_CHARACTER_2_INFO];
 _characterInfos set [2, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_CHARACTER_3_INFO];
 

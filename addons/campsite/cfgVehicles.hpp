@@ -9,11 +9,6 @@ class cfgVehicles
         displayName= "Camping item"; // TODO-LOCALIZE
         author = "Gilles";
         vehicleClass = "Items";
-
-		class EventHandlers
-		{
-			init = "params [""_campingItem""];[_campingItem] call coopr_fnc_campsite_addaction"
-		};
 	};
 
 	class Logic;

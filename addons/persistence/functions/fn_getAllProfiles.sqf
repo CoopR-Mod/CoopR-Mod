@@ -1,14 +1,14 @@
 #include "script_component.hpp"
 
-INFO("retrieving player profiles");
-private _allProfiles = profileNamespace getVariable [COOPR_KEY_PLAYER_PROFILES, EMPTY_HASH];
+INFO("retrieving player characters");
+private _allCharacters = profileNamespace getVariable [COOPR_KEY_PLAYER_CHARACTERS, EMPTY_HASH];
 
-if([_allProfiles] call CBA_fnc_hashSize == 0) then {
-    INFO("no profiles found");
+if([_allCharacters] call CBA_fnc_hashSize == 0) then {
+    INFO("no characters found");
     DEBUG("returning empty hash");
 }else{
-    INFO2("profiles found");
-    DEBUG2("%1", [_allProfiles] call CBA_fnc_hashKeys);
+    INFO2("characters found");
+    DEBUG2("%1", [_allCharacters] call CBA_fnc_hashKeys);
 };
 
-_allProfiles;
+_allCharacters;

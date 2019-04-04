@@ -5,7 +5,14 @@ params ["_profileInfos", "_profileOverlays", "_profileButtons", "_characterPictu
 _loginDisplay displayRemoveAllEventHandlers "Unload";
 _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloadHandler}];
 
-{ _x ctrlSetText localize "str.coopr.profiles.fetch" } forEach _profileInfos;
+
+DEBUG2("profileInfos: %1", _profileInfos);
+
+{
+    _x ctrlSetText localize "str.coopr.profiles.fetch";
+    DEBUG2("x: %1", _x);
+
+} forEach _profileInfos;
 
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
     [_profileInfos, _profileOverlays, _profileButtons, _characterPictures], {

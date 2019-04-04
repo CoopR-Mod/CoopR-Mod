@@ -1,0 +1,1 @@
+#define CAMPSITE_BASIC_ARRAY ["coopr_item_camping"]

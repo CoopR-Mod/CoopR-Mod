@@ -8,7 +8,7 @@ DEBUG("initialising login ui");
 private _loginDisplay = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _profileInfos = [];
-_profileInfos set [1, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_PROFILE_1_INFO];
+_profileInfos set [0, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_PROFILE_1_INFO];
 _profileInfos set [1, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_PROFILE_2_INFO];
 _profileInfos set [2, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_PROFILE_3_INFO];
 
@@ -29,4 +29,5 @@ _characterPictures set [2, _loginDisplay displayCtrl GUI_ID_LOGIN_DIALOG_PROFILE
 
 DEBUG("login ui initialized");
 
+DEBUG2("show profileInfos: %1", _profileInfos);
 [_profileInfos, _profileOverlays, _profileButtons, _characterPictures] call coopr_fnc_updateLoginDialog;

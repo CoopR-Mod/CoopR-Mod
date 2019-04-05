@@ -1,6 +1,6 @@
 class CoopR_ReconReport_Dialog
 {
-	idd = GUI_ID_RECONREPORT_DIALOG;
+	idd = GUI_ID_RECON_REPORT_DIALOG;
 	movingEnable = true;
 	
 	class ControlsBackground
@@ -8,7 +8,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Background
 		{
 			type = 0;
-			idc = GUI_ID_RECONREPORT_BACKGROUND;
+			idc = GUI_ID_RECON_REPORT_BACKGROUND;
 			x = safeZoneX + safeZoneW * 0.26875;
 			y = safeZoneY + safeZoneH * 0.12666667;
 			w = safeZoneW * 0.4625;
@@ -28,7 +28,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Marker_Edit
 		{
 			type = 2;
-			idc = GUI_ID_RECONREPORT_MARKER_EDIT;
+			idc = GUI_ID_RECON_REPORT_MARKER_EDIT;
 			x = safeZoneX + safeZoneW * 0.584375;
 			y = safeZoneY + safeZoneH * 0.34666667;
 			w = safeZoneW * 0.0725;
@@ -47,7 +47,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Type_Combo
 		{
 			type = 4;
-			idc = GUI_ID_RECONREPORT_TYPE_COMBO;
+			idc = GUI_ID_RECON_REPORT_TYPE_COMBO;
 			x = safeZoneX + safeZoneW * 0.384375;
 			y = safeZoneY + safeZoneH * 0.34777778;
 			w = safeZoneW * 0.06125;
@@ -81,7 +81,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Strength_Combo
 		{
 			type = 4;
-			idc = GUI_ID_RECONREPORT_STRENGTH_COMBO;
+			idc = GUI_ID_RECON_REPORT_STRENGTH_COMBO;
 			x = safeZoneX + safeZoneW * 0.45;
 			y = safeZoneY + safeZoneH * 0.34777778;
 			w = safeZoneW * 0.06125;
@@ -115,7 +115,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Behaviour_Combo
 		{
 			type = 4;
-			idc = GUI_ID_RECONREPORT_BEHAVIOUR_COMBO;
+			idc = GUI_ID_RECON_REPORT_BEHAVIOUR_COMBO;
 			x = safeZoneX + safeZoneW * 0.515625;
 			y = safeZoneY + safeZoneH * 0.34777778;
 			w = safeZoneW * 0.06125;
@@ -149,7 +149,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Sender_Label
 		{
 			type = 0;
-			idc = GUI_ID_RECONREPORT_SENDER_LABEL;
+			idc = GUI_ID_RECON_REPORT_SENDER_LABEL;
 			x = safeZoneX + safeZoneW * 0.386875;
 			y = safeZoneY + safeZoneH * 0.21555556;
 			w = safeZoneW * 0.055;
@@ -165,7 +165,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Write_Button
 		{
 			type = 16;
-			idc = GUI_ID_RECONREPORT_WRITE_BUTTON;
+			idc = GUI_ID_RECON_REPORT_WRITE_BUTTON;
 			x = safeZoneX + safeZoneW * 0.58625;
 			y = safeZoneY + safeZoneH * 0.79666667;
 			w = safeZoneW * 0.046875;
@@ -222,7 +222,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Remove_Button
 		{
 			type = 16;
-			idc = GUI_ID_RECONREPORT_REMOVE_BUTTON;
+			idc = GUI_ID_RECON_REPORT_REMOVE_BUTTON;
 			x = safeZoneX + safeZoneW * 0.434375;
 			y = safeZoneY + safeZoneH * 0.74888889;
 			w = safeZoneW * 0.059375;
@@ -279,7 +279,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_Time_Label
 		{
 			type = 0;
-			idc = GUI_ID_RECONREPORT_TIME_LABEL;
+			idc = GUI_ID_RECON_REPORT_TIME_LABEL;
 			x = safeZoneX + safeZoneW * 0.613125;
 			y = safeZoneY + safeZoneH * 0.16777778;
 			w = safeZoneW * 0.045;
@@ -295,7 +295,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReports_Entries_Struct
 		{
 			type = 13;
-			idc = GUI_ID_RECONREPORTS_ENTRIES_STRUCT;
+			idc = GUI_ID_RECON_REPORTS_ENTRIES_STRUCT;
 			x = safeZoneX + safeZoneW * 0.384375;
 			y = safeZoneY + safeZoneH * 0.37888889;
 			w = safeZoneW * 0.265;
@@ -314,7 +314,7 @@ class CoopR_ReconReport_Dialog
 		class CoopR_ReconReport_EntryRemove_Combo
 		{
 			type = 4;
-			idc = GUI_ID_RECONREPORT_ENTRYREMOVE_COMBO;
+			idc = GUI_ID_RECON_REPORT_ENTRYREMOVE_COMBO;
 			x = safeZoneX + safeZoneW * 0.386875;
 			y = safeZoneY + safeZoneH * 0.75222223;
 			w = safeZoneW * 0.0425;

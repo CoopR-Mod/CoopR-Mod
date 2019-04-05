@@ -1,6 +1,6 @@
 class CoopR_CharacterCreation_Dialog {
 
-    idd = 1103;
+    idd = GUI_ID_CHARACTER_CREATION_DIALOG;
     movingEnabled = false;
 
     class Backgrounds {}
@@ -9,7 +9,7 @@ class CoopR_CharacterCreation_Dialog {
 
         class CoopR_CharacterCreation_Background: RscText
         {
-            idc = 3000;
+            idc = GUI_ID_CHARACTER_BACKGROUND;
             x = 0.164909 * safezoneW + safezoneX;
             y = 0.0928181 * safezoneH + safezoneY;
             w = 0.644406 * safezoneW;
@@ -18,7 +18,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Title: RscText
         {
-            idc = 3001;
+            idc = GUI_ID_CHARACTER_TITLE;
             text = "Neues Profil erstellen"; //--- ToDo: Localize;
             x = 0.396895 * safezoneW + safezoneX;
             y = 0.136838 * safezoneH + safezoneY;
@@ -28,7 +28,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Info: RscStructuredText
         {
-            idc = 3003;
+            idc = GUI_ID_CHARACTER_INFO;
             x = 0.216406 * safezoneW + safezoneX;
             y = 0.478 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -36,7 +36,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Button_Create: RscButton
         {
-        	idc = 3600;
+        	idc = GUI_ID_CHARACTER_BUTTON_CREATE;
         	text = "Erstellen"; //--- ToDo: Localize;
         	x = 0.216462 * safezoneW + safezoneX;
         	y = 0.533015 * safezoneH + safezoneY;
@@ -47,7 +47,7 @@ class CoopR_CharacterCreation_Dialog {
 
         class CoopR_CharacterCreation_Edit_Name: RscEdit
         {
-            idc = 3400;
+            idc = GUI_ID_CHARACTER_EDIT_NAME;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.279902 * safezoneH + safezoneY;
             w = 0.175278 * safezoneW;
@@ -56,7 +56,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Label_Name: RscText
         {
-            idc = 3002;
+            idc = GUI_ID_CHARACTER_LABEL_NAME;
             text = "Name des Soldaten"; //--- ToDo: Localize;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.257892 * safezoneH + safezoneY;
@@ -66,7 +66,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Label_Specialisation: RscText
         {
-            idc = 3003;
+            idc = GUI_ID_CHARACTER_LABEL_SPECIALISATION;
             text = "Spezialisierung"; //--- ToDo: Localize;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.378946 * safezoneH + safezoneY;
@@ -76,7 +76,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_Combo_Role: RscCombo
         {
-            idc = 3100;
+            idc = GUI_ID_CHARACTER_COMBO_ROLE;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.400956 * safezoneH + safezoneY;
             w = 0.134036 * safezoneW;
@@ -84,7 +84,7 @@ class CoopR_CharacterCreation_Dialog {
         };
         class CoopR_CharacterCreation_ClassPicture: RscPicture
         {
-            idc = 3200;
+            idc = GUI_ID_CHARACTER_CLASSPICTURE;
             text = "\x\coopr\addons\lobby\data\images\group-leader-256.paa";
             x = 0.48 * safezoneW + safezoneX;
             y = 0.235882 * safezoneH + safezoneY;

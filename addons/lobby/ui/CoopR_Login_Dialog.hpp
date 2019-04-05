@@ -15,7 +15,7 @@ class CoopR_Login_Dialog {
    	h = 0.825369 * safezoneH;
    	colorBackground[] = {0.6,0.6,0.4,0.8};
    };
-   class coopr_Login_Profile_1: RscPicture
+   class coopr_Login_Character_1: RscPicture
    {
    	idc = 1200;
    	x = 0.154599 * safezoneW + safezoneX;
@@ -23,7 +23,7 @@ class CoopR_Login_Dialog {
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
-   class coopr_Login_Profile_1_Overlay: RscButtonMenu
+   class coopr_Login_Character_1_Overlay: RscButtonMenu
    {
    	idc = 1210;
    	x = 0.154599 * safezoneW + safezoneX;
@@ -36,7 +36,7 @@ class CoopR_Login_Dialog {
    	colorBackground[] = {0,0,0,0};
    	colorBackground2[] = {0,0,0,0};
    };
-   class coopr_Login_Profile_2: RscPicture
+   class coopr_Login_Character_2: RscPicture
    {
    	idc = 1201;
    	x = 0.422671 * safezoneW + safezoneX;
@@ -44,7 +44,7 @@ class CoopR_Login_Dialog {
    	w = 0.159813 * safezoneW;
    	h = 0.385172 * safezoneH;
    };
-   class coopr_Login_Profile_2_Overlay: RscButtonMenu
+   class coopr_Login_Character_2_Overlay: RscButtonMenu
    {
    	idc = 1220;
    	x = 0.422671 * safezoneW + safezoneX;
@@ -57,7 +57,7 @@ class CoopR_Login_Dialog {
    	colorBackground[] = {0,0,0,0};
    	colorBackground2[] = {0,0,0,0};
    };
-   class coopr_Login_Profile_3: RscPicture
+   class coopr_Login_Character_3: RscPicture
    {
    	idc = 1202;
    	x = 0.685589 * safezoneW + safezoneX;
@@ -66,7 +66,7 @@ class CoopR_Login_Dialog {
    	h = 0.385172 * safezoneH;
    };
    // https://forums.bohemia.net/forums/topic/161429-button-texture/
-   class coopr_Login_Profile_3_Overlay: RscButtonMenu
+   class coopr_Login_Character_3_Overlay: RscButtonMenu
    {
    	idc = 1230;
    	x = 0.685589 * safezoneW + safezoneX;
@@ -79,7 +79,7 @@ class CoopR_Login_Dialog {
    	colorBackground[] = {0,0,0,0};
    	colorBackground2[] = {0,0,0,0};
    };
-   class coopr_Login_Profile_1_Button: RscButton
+   class coopr_Login_Character_1_Button: RscButton
    {
    	idc = 1600;
    	text = "Entfernen"; //--- ToDo: Localize;
@@ -89,7 +89,7 @@ class CoopR_Login_Dialog {
    	h = 0.0550246 * safezoneH;
    	colorBackground[] = {0,0,0,1};
    };
-   class coopr_Login_Profile_2_Button: RscButton
+   class coopr_Login_Character_2_Button: RscButton
    {
    	idc = 1601;
    	text = "Entfernen"; //--- ToDo: Localize;
@@ -99,7 +99,7 @@ class CoopR_Login_Dialog {
    	h = 0.0550246 * safezoneH;
    	colorBackground[] = {0,0,0,1};
    };
-   class coopr_Login_Profile_3_Button: RscButton
+   class coopr_Login_Character_3_Button: RscButton
    {
    	idc = 1602;
    	text = "Entfernen"; //--- ToDo: Localize;
@@ -109,7 +109,7 @@ class CoopR_Login_Dialog {
    	h = 0.0550246 * safezoneH;
    	colorBackground[] = {0,0,0,1};
    };
-   class coopr_Login_Profile_1_Label: RscText
+   class coopr_Login_Character_1_Label: RscText
    {
    	idc = 1001;
    	text = "Profil 1"; //--- ToDo: Localize;
@@ -119,7 +119,7 @@ class CoopR_Login_Dialog {
    	h = 0.0440197 * safezoneH;
    	sizeEx = 2 * GUI_GRID_H;
    };
-   class coopr_Login_Profile_1_Info: RscStructuredText
+   class coopr_Login_Character_1_Info: RscStructuredText
    {
    	idc = 1100;
    	x = 0.154599 * safezoneW + safezoneX;
@@ -127,7 +127,7 @@ class CoopR_Login_Dialog {
    	w = 0.159813 * safezoneW;
    	h = 0.143064 * safezoneH;
    };
-   class coopr_Login_Profile_2_Info: RscStructuredText
+   class coopr_Login_Character_2_Info: RscStructuredText
    {
    	idc = 1101;
    	x = 0.422671 * safezoneW + safezoneX;
@@ -135,7 +135,7 @@ class CoopR_Login_Dialog {
    	w = 0.159813 * safezoneW;
    	h = 0.143064 * safezoneH;
    };
-   class coopr_Login_Profile_3_Info: RscStructuredText
+   class coopr_Login_Character_3_Info: RscStructuredText
    {
    	idc = 1102;
    	x = 0.685589 * safezoneW + safezoneX;

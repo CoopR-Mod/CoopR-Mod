@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CoopR Mod">
     <Package name="Lobby">
-        <Key ID="str.coopr.profiles.validator">
+        <Key ID="str.coopr.characters.validator">
             <Original>Fields can not be empty!</Original>
             <German>Alle Felder muessen ausgefuellt sein!</German>
         </Key>
-        <Key ID="str.coopr.profiles.fetch">
-            <Original>Fetching profiles...</Original>
-            <German>Frage Profile ab...</German>
+        <Key ID="str.coopr.characters.fetch">
+            <Original>Fetching characters...</Original>
+            <German>Frage Character ab...</German>
         </Key>
-        <Key ID="str.coopr.profiles.noprofile">
-            <Original>No Profile</Original>
+        <Key ID="str.coopr.characters.nocharacter">
+            <Original>No Character</Original>
             <German>Kein Profil</German>
         </Key>
         <Key ID="str.coopr.character.state.kia">
@@ -21,22 +21,22 @@
             <Original>Wounded in Action</Original>
             <German>Verwundet</German>
         </Key>
-        <Key ID="str.coopr.profile.info.name">
+        <Key ID="str.coopr.character.info.name">
             <Original>Name:</Original>
         </Key>
-        <Key ID="str.coopr.profile.info.reputation">
+        <Key ID="str.coopr.character.info.reputation">
             <Original>Reputation:</Original>
             <German>Ruf:</German>
         </Key>
-        <Key ID="str.coopr.profile.info.money">
+        <Key ID="str.coopr.character.info.money">
             <Original>Money:</Original>
             <German>Sold:</German>
         </Key>
-        <Key ID="str.coopr.profile.info.role">
+        <Key ID="str.coopr.character.info.role">
             <Original>Role:</Original>
             <German>Rolle:</German>
         </Key>
-        <Key ID="str.coopr.profile.info.wia.timeleft">
+        <Key ID="str.coopr.character.info.wia.timeleft">
             <Original>Hospilitized:</Original>
             <German>Im Lazarett:</German>
         </Key>

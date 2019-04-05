@@ -22,7 +22,7 @@
 // Character Params
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 
-#define COOPR_KEY_PLAYER_PROFILES "coopr_player_profiles"
+#define COOPR_KEY_PLAYER_CHARACTERS "coopr_player_characters"
 #define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
 #define COOPR_KEY_TEAMKILLS "coopr_player_teamkills"
 

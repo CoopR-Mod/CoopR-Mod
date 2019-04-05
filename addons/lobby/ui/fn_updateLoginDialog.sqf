@@ -1,26 +1,26 @@
 #include "script_component.hpp"
 
-params ["_profileInfos", "_profileOverlays", "_profileButtons", "_characterPictures"];
+params ["_characterInfos", "_characterOverlays", "_characterButtons", "_characterPictures"];
 
 _loginDisplay displayRemoveAllEventHandlers "Unload";
 _loginDisplay displayAddEventHandler ["Unload", {call coopr_fnc_loginDialogUnloadHandler}];
 
-{ _x ctrlSetText localize "str.coopr.profiles.fetch" } forEach _profileInfos;
+{ _x ctrlSetText localize "str.coopr.characters.fetch" } forEach _characterInfos;
 
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
-    [_profileInfos, _profileOverlays, _profileButtons, _characterPictures], {
+    [_characterInfos, _characterOverlays, _characterButtons, _characterPictures], {
         params ["_args", "_result"];
-        _args params ["_profileInfos", "_profileOverlays", "_profileButtons", "_characterPictures"];
+        _args params ["_characterInfos", "_characterOverlays", "_characterButtons", "_characterPictures"];
 
         private _characterSlots = _result;
         {
             private _isNotEmptySlot = [_x] call coopr_fnc_isCharacterSlot;
-            private _overlay = _profileOverlays select _forEachIndex;
+            private _overlay = _characterOverlays select _forEachIndex;
             private _picture = _characterPictures select _forEachIndex;
-            private _info = _profileInfos select _forEachIndex;
-            private _removeButton = _profileButtons select _forEachIndex;
+            private _info = _characterInfos select _forEachIndex;
+            private _removeButton = _characterButtons select _forEachIndex;
 
-            _info ctrlSetText localize "str.coopr.profiles.noprofile";
+            _info ctrlSetText localize "str.coopr.characters.nocharacter";
 
             // set data to controls
             _overlay setVariable ["_slot", _forEachIndex];

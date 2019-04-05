@@ -17,7 +17,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_1: RscPicture
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_1;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -25,7 +25,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_1_Overlay: RscButtonMenu
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_1_OVERLAY;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_OVERLAY;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -38,7 +38,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_2: RscPicture
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_2;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_2;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -46,7 +46,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_2_Overlay: RscButtonMenu
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_2_OVERLAY;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_2_OVERLAY;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -59,7 +59,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_3: RscPicture
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_3;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_3;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -68,7 +68,7 @@ class CoopR_Login_Dialog {
    // https://forums.bohemia.net/forums/topic/161429-button-texture/
    class coopr_Login_Character_3_Overlay: RscButtonMenu
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_3_OVERLAY;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_3_OVERLAY;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.224877 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -81,7 +81,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_1_Button: RscButton
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_1_BUTTON;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_BUTTON;
    	text = "Entfernen"; //--- ToDo: Localize;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
@@ -91,7 +91,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_2_Button: RscButton
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_2_BUTTON;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_2_BUTTON;
    	text = "Entfernen"; //--- ToDo: Localize;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
@@ -101,7 +101,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_3_Button: RscButton
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_3_BUTTON;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_3_BUTTON;
    	text = "Entfernen"; //--- ToDo: Localize;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
@@ -111,7 +111,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_1_Label: RscText
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_1_LABEL;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_LABEL;
    	text = "Profil 1"; //--- ToDo: Localize;
    	x = 0.200996 * safezoneW + safezoneX;
    	y = 0.169853 * safezoneH + safezoneY;
@@ -121,7 +121,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_1_Info: RscStructuredText
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_1_INFO;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_INFO;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.687084 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -129,7 +129,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_2_Info: RscStructuredText
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_2_INFO;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_2_INFO;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.687084 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -137,7 +137,7 @@ class CoopR_Login_Dialog {
    };
    class coopr_Login_Character_3_Info: RscStructuredText
    {
-   	idc = GUI_ID_LOGIN_DIALOG_PROFILE_3_INFO;
+   	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_3_INFO;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.687084 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;

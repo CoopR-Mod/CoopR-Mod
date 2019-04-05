@@ -2,7 +2,7 @@
 
 class CoopR_Supply_Dialog
 {
-    idd = 1104;
+    idd = GUI_ID_SUPPLY_DIALOG;
     movingEnable = false;
 
     class ControlsBackground
@@ -10,7 +10,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Background
         {
             type = 0;
-            idc = 11040;
+            idc = GUI_ID_SUPPLY_BACKGROUND;
             x = safeZoneX + safeZoneW * 0.29375;
             y = safeZoneY + safeZoneH * 0.22444445;
             w = safeZoneW * 0.4125;
@@ -30,7 +30,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Ammo_Textbox
         {
             type = 13;
-            idc = 11041;
+            idc = GUI_ID_SUPPLY_AMMO_TEXTBOX;
             x = safeZoneX + safeZoneW * 0.31875;
             y = safeZoneY + safeZoneH * 0.27333334;
             w = safeZoneW * 0.0625;
@@ -49,7 +49,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Equipment_Textbox
         {
             type = 13;
-            idc = 11042;
+            idc = GUI_ID_SUPPLY_EQUIPMENT_TEXTBOX;
             x = safeZoneX + safeZoneW * 0.31875;
             y = safeZoneY + safeZoneH * 0.34666667;
             w = safeZoneW * 0.0625;
@@ -68,7 +68,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Ammo_Edit
         {
             type = 2;
-            idc = 11043;
+            idc = GUI_ID_SUPPLY_AMMO_EDIT;
             x = safeZoneX + safeZoneW * 0.39375;
             y = safeZoneY + safeZoneH * 0.27333334;
             w = safeZoneW * 0.0375;
@@ -87,7 +87,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Equipment_Edit
         {
             type = 2;
-            idc = 11044;
+            idc = GUI_ID_SUPPLY_EQUIPMENT_EDIT;
             x = safeZoneX + safeZoneW * 0.39375;
             y = safeZoneY + safeZoneH * 0.34666667;
             w = safeZoneW * 0.0375;
@@ -107,7 +107,7 @@ class CoopR_Supply_Dialog
         class CoopR_Supply_Request_Button
         {
             type = 1;
-            idc = 11045;
+            idc = GUI_ID_SUPPLY_REQUEST_BUTTON;
             x = safeZoneX + safeZoneW * 0.44375;
             y = safeZoneY + safeZoneH * 0.66444445;
             w = safeZoneW * 0.1125;

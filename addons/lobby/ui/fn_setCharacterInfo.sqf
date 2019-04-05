@@ -14,15 +14,15 @@ private _woundedTimestamp = [_characterSlot, COOPR_KEY_WOUNDED_TIMESTAMP] call C
 private _currentGameTime = call coopr_fnc_currentGameTime;
 private _hospilitationTimeLeft = _woundedTimestamp + (WIA_CD * 60) - _currentGameTime;
 
-private _composedInfoText = composeText [localize "str.coopr.profile.info.name", " ", _name, lineBreak,
-                                         localize "str.coopr.profile.info.reputation", " ", str _reputation, lineBreak,
-                                         localize "str.coopr.profile.info.money", " ", str _money, lineBreak,
-                                         localize "str.coopr.profile.info.role", " ", _roleName, lineBreak];
+private _composedInfoText = composeText [localize "str.coopr.character.info.name", " ", _name, lineBreak,
+                                         localize "str.coopr.character.info.reputation", " ", str _reputation, lineBreak,
+                                         localize "str.coopr.character.info.money", " ", str _money, lineBreak,
+                                         localize "str.coopr.character.info.role", " ", _roleName, lineBreak];
 
 if(_state isEqualTo COOPR_STATE_WIA) then {
     private _parsedText = parseText format["<t size='2' color='#ff0000'>%1</t>", localize "str.coopr.character.state.wia"];
     _composedInfoText = composeText [_parsedText, lineBreak,
-                                     localize "str.coopr.profile.info.wia.timeleft", " ", str ceil((_hospilitationTimeLeft / 60)), " min"];
+                                     localize "str.coopr.character.info.wia.timeleft", " ", str ceil((_hospilitationTimeLeft / 60)), " min"];
 };
 
 _infoBox ctrlSetStructuredText _composedInfoText;

@@ -23,7 +23,7 @@ class CfgFunctions {
             class serializeCoopR {};
             class deserializeCoopR {};
             class getNewCharacterState {};
-            class getAllProfiles {};
+            class getAllCharacters {};
             class characterStatePrettyLog {};
             class sync {};
             class syncPlayers {};

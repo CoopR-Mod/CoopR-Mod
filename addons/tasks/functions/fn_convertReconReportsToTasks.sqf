@@ -22,10 +22,7 @@ params [["_reconEntries", []]];
 if (_reconEntries isEqualTo []) exitWith { ERROR("_reconEntries was not defined") };
 
 if (isServer) then {
-
     DEBUG2("recon reports to be converted: %1", count _reconEntries);
-    private _validReports = _reconEntries select { [_x, COOPR_KEY_RECON_ENTRY_VALID] call CBA_fnc_hashGet };
-    DEBUG2("valid reports converted: %1", count _validReports);
 
     private _createdCounter = 0;
     {
@@ -36,6 +33,7 @@ if (isServer) then {
         private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
         private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
+        private _accuracy = [_entry, COOPR_KEY_RECON_ENTRY_ACCURACY] call CBA_fnc_hashGet;
 
         private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
         DEBUG2("determined task type: %1", _cooprTaskType);
@@ -50,6 +48,7 @@ if (isServer) then {
         [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
         [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
         [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarker] call CBA_fnc_hashSet;
+        [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _accuracy] call CBA_fnc_hashSet;
 
         DEBUG2("defined task details: %1", _newCooprTask);
         COOPR_TASKS_QUEUE pushBack _newCooprTask;

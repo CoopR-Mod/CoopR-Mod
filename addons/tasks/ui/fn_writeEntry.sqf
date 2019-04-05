@@ -41,14 +41,7 @@ private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
-[_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
-
-// set valid report
-if (_reportAccuracy > COOPR_ACCURACY_THRESHOLD) then {
-    [_entryHash, COOPR_KEY_RECON_ENTRY_VALID, true] call CBA_fnc_hashSet;
-} else {
-    [_entryHash, COOPR_KEY_RECON_ENTRY_VALID, false] call CBA_fnc_hashSet;
-};
+[_entryHash, COOPR_KEY_RECON_ENTRY_ACCURACY, _reportAccuracy] call CBA_fnc_hashSet;
 
 _reconEntries pushBack _entryHash;
 playSound "coopr_sound_pencil_draw";

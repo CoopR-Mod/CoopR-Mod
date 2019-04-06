@@ -1,3 +1,8 @@
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+    name = #ITEM; \
+    count = COUNT; \
+};
+
 class cfgVehicles
 {
 	class Item_Base_F;
@@ -6,13 +11,13 @@ class cfgVehicles
 	{
 		scope = 2;
         scopeCurator = 2;
-        displayName= "Camping item"; // TODO-LOCALIZE
+        displayName= "$STR.coopr.campsite.item.campsite";
+        picture = "\A3\Weapons_F\Items\data\UI\gear_Toolkit_CA.paa";
         author = "Gilles";
-        vehicleClass = "Items";
+        vehicleClass = "Tents";
 
         class TransportItems{
-            name = "coopr_item_camping";
-            count = 1;
+            MACRO_ADDITEM(coopr_item_camping,1);
         };
 	};
 

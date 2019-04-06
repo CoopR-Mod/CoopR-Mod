@@ -36,7 +36,7 @@ private _characterState = [player, _slot, _name, _roleId] call coopr_fnc_getNewC
 
 // textbox validation
 if(_name == "" or _roleName == "") exitWith {
-    _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.profiles.validator"];
+    _infoText ctrlSetStructuredText parseText format["<t size='1' color='#ff0000'>%1</t>", localize "str.coopr.characters.validator"];
 };
 
 [EXEC_SERVER, "coopr_fnc_createCharacter", [_characterState, _slot], //request-related

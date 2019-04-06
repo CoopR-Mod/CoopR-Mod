@@ -1,6 +1,6 @@
 class CoopR_Armory_Dialog{
 
-    idd = 1102;
+    idd = GUI_ID_ARMORY_DIALOG;
     movingEnabled = false;
 
     class Backgrounds {}
@@ -9,7 +9,7 @@ class CoopR_Armory_Dialog{
 
         class CoopR_Armory_Background: RscText
         {
-            idc = 2000;
+            idc = GUI_ID_ARMORY_BACKGROUND;
             x = 0.21125 * safezoneW + safezoneX;
             y = 0.0598034 * safezoneH + safezoneY;
             w = 0.567187 * safezoneW;
@@ -18,7 +18,7 @@ class CoopR_Armory_Dialog{
         };
         class CoopR_Armory_Listbox: RscListbox
         {
-            idc = 2500;
+            idc = GUI_ID_ARMORY_LISTBOX;
             x = 0.242187 * safezoneW + safezoneX;
             y = 0.235882 * safezoneH + safezoneY;
             w = 0.226875 * safezoneW;
@@ -27,7 +27,7 @@ class CoopR_Armory_Dialog{
         };
         class CoopR_Armory_Info_Textbox: RscStructuredText
         {
-            idc = 2001;
+            idc = GUI_ID_ARMORY_INFO_TEXTBOX;
             text = "<Placeholder Info>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.367941 * safezoneH + safezoneY;
@@ -36,7 +36,7 @@ class CoopR_Armory_Dialog{
         };
         class CoopR_Armory_Reputation_Textbox: RscText
         {
-            idc = 2002;
+            idc = GUI_ID_ARMORY_REPUTATION_TEXTBOX;
             text = "<Placeholder Reputation>";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.246887 * safezoneH + safezoneY;
@@ -46,7 +46,7 @@ class CoopR_Armory_Dialog{
         };
         class CoopR_Armory_Button_Equip: RscButton
         {
-            idc = 2600;
+            idc = GUI_ID_ARMORY_BUTTON_EQUIP;
             text = "Ausruesten"; //--- ToDo: Localize;
             x = 0.54125 * safezoneW + safezoneX;
             y = 0.103823 * safezoneH + safezoneY;

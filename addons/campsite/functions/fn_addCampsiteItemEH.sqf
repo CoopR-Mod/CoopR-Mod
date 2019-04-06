@@ -19,26 +19,24 @@
 
 params["_type", "_item"];
 
-DEBUG("Put/Take EH initialized!");
-
 switch _type do{
 	case 1 : {
-		if(_item isEqualTo "coopr_item_camping")then{
-			DEBUG3("%1 took the %2", name player, _item);
-			
-			player setVariable ["coopr_campingItem_0", true];
-			private _debugVar = player getVariable "coopr_campingItem_0";
-			DEBUG2("coopr_campingItem_0 = %1", _debugVar);
-		};
-	};
-	case 2 : {
 		if(_item isEqualTo "coopr_item_camping")then{
 			DEBUG3("%1 dropped the %2", name player, _item);
 			
 			player setVariable ["coopr_campingItem_0", false];
-			
 			private _debugVar = player getVariable "coopr_campingItem_0";
-			DEBUG2("coopr_campingItem_0 = %1", _debugVar);
+			DEBUG2("has the item = %1", _debugVar);
+		};
+	};
+	case 2 : {
+		if(_item isEqualTo "coopr_item_camping")then{
+			DEBUG3("%1 took the %2", name player, _item);
+			
+			player setVariable ["coopr_campingItem_0", true];
+
+			private _debugVar = player getVariable "coopr_campingItem_0";
+			DEBUG2("has the item = %1", _debugVar);
 		};
 	}; 
 };

@@ -23,7 +23,7 @@ switch _structure do{
 	case 0: {
 		private _localizedString = localize "str.coopr.campsite.build.startcampsite";
 		private _campsitePos = format["%1: %2", _localizedString, mapGridPosition player];
-		[[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_campsitePos]] call CBA_fnc_notify;
-		player removeItems "coopr_item_camping";
+		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], [_campsitePos]] call CBA_fnc_notify;
+		player removeItem "coopr_item_camping";
 	};
 };

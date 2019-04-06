@@ -5,7 +5,7 @@
             <Original>Camping item</Original>
             <English>Camping item</English>
             <Spanish>Objeto de camping</Spanish>
-            <German>Foobar</German>
+            <German>Campingartikel</German>
         </Key>
     </Package>
     <Package name="campsite">
@@ -13,12 +13,12 @@
             <Original>Start a campsite</Original>
             <English>Start a Campsite</English>
             <Spanish>Preparar campamento</Spanish>
-            <German>Foobar</German>
+            <German>Campingplatz starten</German>
         <Key ID="str.coopr.campsite.build.startcampsite">
-            <Original>You started a campsite in grid:</Original>
-            <English>You started a campsite in grid:</English>
-            <Spanish>Comienzas un campamento en coordenadas:</Spanish>
-            <German>Foobar</German>
+            <Original>You started a campsite in grid</Original>
+            <English>You started a campsite in grid</English>
+            <Spanish>Campamento en coordenadas</Spanish>
+            <German>Campingplatz bei Koordinaten</German>
         </Key>
     </Package>
 </Project>

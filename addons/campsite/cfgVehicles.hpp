@@ -9,6 +9,11 @@ class cfgVehicles
         displayName= "Camping item"; // TODO-LOCALIZE
         author = "Gilles";
         vehicleClass = "Items";
+
+        class TransportItems{
+            name = "coopr_item_camping";
+            count = 1;
+        };
 	};
 
 	class Logic;

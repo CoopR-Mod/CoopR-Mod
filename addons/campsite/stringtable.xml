@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CoopR Mod">
+    <Package name="items">
+        <Key ID="str.coopr.campsite.item.campsite">
+            <Original>Camping item</Original>
+            <English>Camping item</English>
+            <Spanish>Objeto de camping</Spanish>
+            <German>Foobar</German>
+        </Key>
+    </Package>
     <Package name="campsite">
         <Key ID="str.coopr.campsite.action.startcampsite">
             <Original>Start a campsite</Original>
@@ -11,7 +19,6 @@
             <English>You started a campsite in grid:</English>
             <Spanish>Comienzas un campamento en coordenadas:</Spanish>
             <German>Foobar</German>
-
         </Key>
     </Package>
 </Project>

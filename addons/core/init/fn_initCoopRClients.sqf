@@ -18,12 +18,12 @@
 if (hasInterface) then {
     //TODO: can be removed?
     call coopr_fnc_initPromise;
+    [getPlayerUID player] remoteExec ["coopr_fnc_initPlayerPersistence", EXEC_SERVER];
 
     [] spawn {
         waitUntil { !(isNull (findDisplay 46)) };
-        //Here I am awaiting until player exists, making sure everything bellow works and getting rid of some errors on the mainscreen.
-        waitUntil {not isNull player};
-        [getPlayerUID player] remoteExec ["coopr_fnc_initPlayerPersistence", EXEC_SERVER];
+        //Seems like black magic but it looks like awaiting for player to don't be null is redundant now.
+        // waitUntil {not isNull player};
         call coopr_fnc_spawnInLobby;
         [] spawn {
             createDialog "coopr_Login_Dialog";

@@ -43,5 +43,6 @@ cutText ["", "BLACK IN", 0.1];
 
 call coopr_fnc_initCharacterEvents;
 call coopr_fnc_initCharacterRoutines;
+call coopr_fnc_addCharacterActions;
 
 DEBUG("...post login init done");

@@ -12,7 +12,7 @@ class cfgWeapons{
 		model = "\A3\Structures_F\Civ\Camping\Campfire_F.p3d";
 
 		class ItemInfo: CBA_MiscItem_ItemInfo{
-			mass = 0.5;
+			mass = 10;
 			allowedSlots[] = {901};
 			modelSides[] = {6};
 		};

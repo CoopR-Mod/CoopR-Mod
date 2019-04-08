@@ -23,5 +23,5 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 
 // UI
-#include "\x\coopr\addons\core\define.hpp"
+#include "\x\coopr\addons\core\controls.hpp"
 #include "ui\CoopR_Supply_Dialog.hpp"

@@ -28,7 +28,8 @@
 
 #define COOPR_KEY_SLOT "coopr_character_slot"
 #define COOPR_KEY_NAME "coopr_character_name"
-#define COOPR_KEY_UID "coopr_character_uid"
+#define COOPR_KEY_UID "coopr_character_user_id"
+#define COOPR_KEY_CHARACTER_ID "coopr_character_id"
 #define COOPR_KEY_STATE "coopr_character_state"
 #define COOPR_KEY_REPUTATION "coopr_character_reputation"
 #define COOPR_KEY_TMP_REPUTATION "coopr_character_tmp_reputation"

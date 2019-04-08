@@ -6,7 +6,7 @@ params [["_player", objNull],
         ["_role", COOPR_ROLE_NONE]];
 
 private _loadOut = _role call coopr_fnc_getLoadoutForRole;
-private _characterID = (random 1000) + serverTime;
+private _characterID = floor (random [1000,5555,9999]);
 
 private _stateHash = [[COOPR_KEY_UID, getPlayerUID _player],
                       [COOPR_KEY_CHARACTER_ID, _characterID],

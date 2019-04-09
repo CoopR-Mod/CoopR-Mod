@@ -4,8 +4,12 @@ params [["_logic", objNull]];
 
 if(isServer) then {
     private _loggingLevel = _logic getVariable ["Logging", -1];
+    private _taskItems = call compile (_logic getVariable ["TaskRequestItems", []]);
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
+
+    if (_taskItems isEqualTo []) then { SETUPERROR("no task items have been defined")};
+
 
     // TODO: needs to be initialized with perstistent values from DB
     COOPR_COUNTER_TASKS = [[], 0] call CBA_fnc_hashCreate;
@@ -13,6 +17,8 @@ if(isServer) then {
 
     publicVariable "COOPR_COUNTER_TASKS";
     publicVariable "COOPR_TASKS_ACTIVE";
+
+    [_taskItems] call coopr_fnc_initTaskItems;
 
     true
 } else {

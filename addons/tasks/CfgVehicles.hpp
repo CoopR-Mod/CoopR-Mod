@@ -40,6 +40,12 @@ class CfgVehicles
                       class opt_3 {name = "Debug"; value = 2;};
                   }
               }
+              class TaskRequestItems {
+                  displayName = "Task Request Item";
+                  description = "The items where the task request action should be applied to";
+                    typeName = "ARRAY";
+                    defaultValue = "['task_item_1', 'task_item_2']";
+              }
         }
         class ModuleDescription: ModuleDescription
         {

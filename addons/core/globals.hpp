@@ -104,3 +104,7 @@
 #define COOPR_STRENGTH_TYPE_PLATOON_MAX 45
 #define COOPR_STRENGTH_TYPE_COMPANY_MIN 80
 #define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
+
+// Campsite globals 
+#define COOPR_CAMP_ITEM_AREA "coopr_camp_item_area"
+#define COOPR_CAMP_ITEM_TENT "coopr_camp_item_tent"

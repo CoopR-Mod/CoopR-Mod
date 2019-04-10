@@ -8,7 +8,7 @@ class CfgFunctions {
             class onKilled {};
             class playerKilledNpc {};
             class addVehicleKeyWest {};
-            class addCharacterActions {};
+            class initCharacterActions {};
             class updateReputation {};
             class updateTempReputation {};
             class convertTempToReputation {};

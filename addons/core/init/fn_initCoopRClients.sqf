@@ -22,15 +22,11 @@ if (hasInterface) then {
 
     [] spawn {
         waitUntil { !(isNull (findDisplay 46)) };
-        //Seems like black magic but it looks like awaiting for player to don't be null is redundant now.
-        // waitUntil {not isNull player};
         call coopr_fnc_spawnInLobby;
         [] spawn {
             createDialog "coopr_Login_Dialog";
             call coopr_fnc_showLoginDialog
         };
-        // This call is not working 'cause we're creating a new unit when loggin in.
-        // call coopr_fnc_addCharacterActions;
     };
 
     INFO("client initialized");

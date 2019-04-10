@@ -5,8 +5,8 @@ if (INTEGRATE_ACE3) then {
 } else {
     _broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
     _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
-    _buildCampsiteCondition = {[0] call coopr_fnc_canBuildCampsiteStructure };
-    _buildTentCondition = {[1] call coopr_fnc_canBuildCampsiteStructure };
+    _buildCampsiteCondition = {[COOPR_CAMP_ITEM_AREA] call coopr_fnc_canBuildCampsiteStructure };
+    _buildTentCondition = {[COOPR_CAMP_ITEM_TENT] call coopr_fnc_canBuildCampsiteStructure };
 
     player addAction [localize "str.coopr.core.action.rep", { player call coopr_fnc_showReputation; } , [], 0.5, true, true, "", "true"];
     player addAction [localize "str.coopr.core.action.reports", { call coopr_fnc_showReconReportDialog; } , [], 0.5, true, true, "", _reconReportActionCondition call coopr_fnc_codeAsString];

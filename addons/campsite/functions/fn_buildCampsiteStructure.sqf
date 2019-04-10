@@ -2,18 +2,18 @@
 /*
  * Author: Gilles
  *
- * TODO DOCSTRING
- *
+ * Tries to build a campsite structure on the player's position.
+ * All possible paramters values are defined in the globals.hpp file.
+ * 
  * Arguments:
  * 0: _structure <STRING> - What structure is the player trying to build.
- * Possible values are defined in the constants.hpp file from the campsite 
- * module.
+ *  
  *
  * Return Value:
  * None
  *
  * Example:
- * [COOPR_CAMP_ITEM_TENT] call coopr_fnc_buildCampsite;
+ * [COOPR_CAMP_ITEM_TENT] call coopr_fnc_buildCampsiteStructure;
  * would try to build a tent at player's position.
  *
  * Public: No
@@ -21,12 +21,15 @@
  * Scope: Client
  */
 
-params["_structure"];
+params[["_structure", UNDEFINED]];
+if(_structure isEqualTo UNDEFINED) exitWith{
+	ERROR("Required parameter undefined: _structure");
+};
 
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {
-		private _markerName = [player] call coopr_fnc_createMarkerUniqueName;
-		private _builtNewMarker = [_markerName, player, [50,50]] call coopr_fnc_createMarkerArea;
+		private _markerName = [player] call coopr_fnc_createCampsiteMarkerUniqueName;
+		private _builtNewMarker = [_markerName, player, [50,50]] call coopr_fnc_createCampsiteMarkerArea;
 		if(!_builtNewMarker) exitWith{
 			[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], [localize "str.coopr.campsite.notif.cantbuildinsidemarker"]] call CBA_fnc_notify;
 		};

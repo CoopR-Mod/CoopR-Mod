@@ -24,7 +24,6 @@ class CfgPatches {
     };
 };
 
-#include "constants.hpp"
 #include "cfgFunctions.hpp"
 #include "cfgWeapons.hpp"
 #include "cfgVehicles.hpp"

@@ -2,13 +2,14 @@
 /*
  * Author: Gilles
  *
- * TODO DOCSTRING
+ * This function checks if the player is inside of one of his 
+ * campsite areas. 
  *
  * Arguments:
- * 0: xyz
+ * None
  *
  * Return Value:
- * None
+ * Boolean - Wether the player is inside a campsite of his own or not.
  *
  * Example:
  *
@@ -16,9 +17,6 @@
  *
  * Scope: Client
  */
-
-// Maybe consider checking this variable 1 time each session?
-scopeName "main";
 
 private _unitLeader = leader player;
 private _characterName = _unitLeader getVariable ["coopr_character_name", ""];
@@ -29,13 +27,8 @@ while{_characterName find "" > -1} do{
 };
 _characterName = _characterName joinString "";
 private _stringToSearch = format["%1"+"_campingArea_", _characterName];
-private _allMarkers = allMapMarkers select {_x find _stringToSearch == 0};
+private _allMarkersSetByPlayer = allMapMarkers select {_x find _stringToSearch == 0};
 
-// Maybe this approach is too expensive?
-for "_x" from 0 to (count _allMarkers - 1) do {
-    if(player inArea (_allMarkers select _x)) then {true} else {false}};
-// _allMarkers apply {
-// 	if(player inArea _x) then {true} else {false}
-// };
-// {if(player inArea _x) then {true} else {false}}forEach _allMarkers;
-// {if(player inArea _x) then {{true breakOut "main"}} else {false breakOut "main"}}forEach _allMarkers;
+// TODO: refactor the shit out of this
+for "_x" from 0 to (count _allMarkersSetByPlayer - 1) do {
+    if(player inArea (_allMarkersSetByPlayer select _x)) then {true} else {false}};

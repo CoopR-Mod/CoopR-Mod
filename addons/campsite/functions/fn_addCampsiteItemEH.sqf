@@ -2,15 +2,20 @@
 /*
  * Author: Gilles
  *
- * TODO DOCSTRING
+ * Detects when the player has picked up or dropped an item.
+ * If the item is the camping item, updates the player variable 
+ * that grants or denies him the option to build.
+ * //TODO: this EH should be refactored asap to be more general and for use of everyone.
  *
  * Arguments:
- * 0: xyz
+ * 0: _type - <NUMBER> The type of event, 0 for dropping, 1 for taking.
+ * 1: _item - <STRING> The item class the player dropped/picked
  *
  * Return Value:
  * None
  *
  * Example:
+ * trivial
  *
  * Public: No
  *

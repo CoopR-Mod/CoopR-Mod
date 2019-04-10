@@ -2,13 +2,15 @@
 /*
  * Author: Gilles
  *
- * TODO: DOCSTRING
+ * Tries to create a marker with given parameters. After creating it, 
+ * check if the marker is intersecting with another user campsite marker or
+ * the HQ. If it is, deletes the marker and returns false.
  *
  * Arguments:
  * 0: 
  *
  * Return Value:
- * _var - <STRING>
+ * Boolean - if the marker was created or not.
  *
  * Example:
  *
@@ -33,7 +35,12 @@ _markerName setMarkerAlpha _alpha;
 private _allMarkersSetByPlayer = allMapMarkers select {_x find "_campingArea_" > -1};
 _allMarkersSetByPlayer = _allMarkersSetByPlayer - [_markerName];
 DEBUG2("%1", _allMarkersSetByPlayer);
-// _allMarkersSetByPlayer pushBack COOPR_HQ_WEST_BOUNDS;
+
+// ADD HQ to markers to check for 
+if(!COOPR_DEV_MODE) then{
+	_allMarkersSetByPlayer pushBack COOPR_HQ_WEST_BOUNDS;
+}; 
+
 if({[_markerName, _x] call coopr_fnc_markerIntersects}forEach _allMarkersSetByPlayer) exitWith {
 	DEBUG("Campsite is inside another marker");
 	deleteMarker _markerName;

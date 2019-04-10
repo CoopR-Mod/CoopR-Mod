@@ -25,8 +25,6 @@ params [["_markerA", UNDEFINED],
 if (_markerA isEqualTo UNDEFINED) exitWith { ERROR("required parameter undefined: _markerA") };
 if (_markerB isEqualTo UNDEFINED) exitWith { ERROR("required parameter undefined: _markerB") };
 
-private _distance = getMarkerPos _markerA distance getMarkerPos _markerB;
-private _sizes = getMarkerSize _markerA + getMarkerSize _markerB;
-private _biggestSize = selectMax _sizes;
+private _overlapping = (getMarkerPos _markerA distance getMarkerPos _markerB) > (selectMax getMarkerSize _markerA + selectMax getMarkerSize _markerB);
 
-_distance < _biggestSize *2;
+_overlapping;

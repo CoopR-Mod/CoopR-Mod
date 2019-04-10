@@ -2,10 +2,11 @@
 /*
  * Author: Gilles
  *
- * TODO DOCSTRING
+ * This function checks if the player is able to build the structure given in
+ * the parameter. Useful for showing/hiding the action in the action menu. 
  *
  * Arguments:
- * 0: xyz
+ * 0: _structure <STRING>, The structure the player could build.
  *
  * Return Value:
  * None
@@ -17,7 +18,10 @@
  * Scope: Client
  */
 
-params["_structure"];
+params[["_structure", UNDEFINED]];
+if(_structure isEqualTo UNDEFINED) then{
+	ERROR("Required parameter undefined: _structure");
+};
 
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {

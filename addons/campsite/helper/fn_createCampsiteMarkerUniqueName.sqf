@@ -24,17 +24,19 @@
 params[["_player", "undefined"]];
 
 private _characterName = player getVariable ["coopr_character_name", ""];
-_characterName = _characterName splitString " ";
+// _characterName = _characterName splitString " ";
 
-while{_characterName find "" > -1} do{
-	_characterName deleteAT (_characterName find " ");
-};
-_characterName = _characterName joinString "";
+// while{_characterName find "" > -1} do{
+// 	_characterName deleteAT (_characterName find " ");
+// };
+// _characterName = _characterName joinString "";
+
+_characterName = [_characterName, " ", ""] call coopr_fnc_stringReplace;
 
  //Getting all markers from map with the player name
-private _stringToSearch = format["%1"+"_campingArea_", _characterName];
-private _allMarkers = allMapMarkers select {_x find _stringToSearch == 0};
-private _markerNumber = count _allMarkers;
+private _stringToSearch = format[_characterName +"_campingArea_"];
+private _allMarkersSetByPlayer = allMapMarkers select {_x find _stringToSearch == 0};
+private _markerNumber = count _allMarkersSetByPlayer;
 
 private _uniqueMarkerName = format["%1"+"%2", _stringToSearch, _markerNumber];
 

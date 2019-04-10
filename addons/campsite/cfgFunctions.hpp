@@ -7,9 +7,9 @@ class CfgFunctions {
 
         class coopr_campsite_helper{
             file = "x\coopr\addons\campsite\helper";
-            class createMarkerUniqueName {};
-            class createMarkerArea {};
-            class canBuildCampsite {};
+            class createCampsiteMarkerUniqueName {};
+            class createCampsiteMarkerArea {};
+            class canBuildCampsiteStructure {};
             class isInsideCampingArea {};
         };
         

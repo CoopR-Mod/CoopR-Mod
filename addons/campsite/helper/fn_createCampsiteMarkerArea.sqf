@@ -41,7 +41,7 @@ if(!COOPR_DEV_MODE) then{
 	_allMarkersSetByPlayer pushBack COOPR_HQ_WEST_BOUNDS;
 }; 
 
-if({[_markerName, _x] call coopr_fnc_markerIntersects}forEach _allMarkersSetByPlayer) exitWith {
+if({[_markerName, _x] call coopr_fnc_markerOverlaps}forEach _allMarkersSetByPlayer) exitWith {
 	DEBUG("Campsite is inside another marker");
 	deleteMarker _markerName;
 

@@ -51,7 +51,7 @@ class CfgFunctions {
             class increaseKillCount {};
             class serializeMarker {};
             class deserializeMarker {};
-            class markerIntersects {};
+            class markerOverlaps {};
             class debugMarker {};
             class isGroupStatic {};
         }

@@ -1,12 +1,12 @@
 #include "script_component.hpp"
 /*
- * Author: xetra11
+ * Author: Lou Montana
  *
  * checks if one marker intersects with another
  *
  * Arguments:
- * 0: _markerA <STRING> - name of marker one
- * 1: _markerB <STRING> - name of marker two
+ * 0: _markerA <STRING> - name of marker one 
+ * 1: _markerB <STRING> - name of marker one 
  *
  * Return Value:
  * _intersects - <BOOL>
@@ -19,11 +19,14 @@
  * Scope: Global
  */
 
-params [["_markerA", ""],
-        ["_markerB", ""]];
+params [["_markerA", UNDEFINED],
+        ["_markerB", UNDEFINED]];
 
-if (_markerA isEqualTo "") exitWith { ERROR("_markerA was empty string") };
-if (_markerB isEqualTo "") exitWith { ERROR("_markerB was empty string") };
+if (_markerA isEqualTo UNDEFINED) exitWith { ERROR("required parameter undefined: _markerA") };
+if (_markerB isEqualTo UNDEFINED) exitWith { ERROR("required parameter undefined: _markerB") };
 
-private _posA = getMarkerPos _markerA;
-_posA inArea _markerB;
+private _distance = getMarkerPos _markerA distance getMarkerPos _markerB;
+private _sizes = getMarkerSize _markerA + getMarkerSize _markerB;
+private _biggestSize = selectMax _sizes;
+
+_distance < _biggestSize *2;

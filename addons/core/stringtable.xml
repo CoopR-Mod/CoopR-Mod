@@ -34,8 +34,8 @@
             <German>Ausruestung</German>
         </Key>
         <Key ID="str.coopr.task.action.opentaskboard">
-            <Original>&lt;t color='#4286f4'&gt;Search Task Board&lt;/t&gt;</Original>
-            <German>&lt;t color='#4286f4'&gt;Aufgaben durchsuchen&lt;/t&gt;</German>
+            <Original>&lt;t color='#4286f4'&gt;Search Missionboard&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Gefechtsbefehle anschauen&lt;/t&gt;</German>
         </Key>
         <Key ID="str.coopr.task.action.request">
             <Original>&lt;t color='#4286f4'&gt;Request Task&lt;/t&gt;</Original>

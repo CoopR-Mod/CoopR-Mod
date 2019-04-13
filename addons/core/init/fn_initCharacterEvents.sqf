@@ -16,8 +16,8 @@
  */
 player addEventHandler ["Killed", {call coopr_fnc_playerKilledHandler}];
 player addEventHandler ["Respawn", { call coopr_fnc_initCharacterActions; }];
-player addEventHandler ["Put", {params["_unit", "_container", "_item"]; [1, _item] call coopr_fnc_addCampsiteItemEH}];
-player addEventHandler ["Take", {params["_unit", "_container", "_item"]; [2, _item] call coopr_fnc_addCampsiteItemEH}];
+player addEventHandler ["Put", {params["_unit", "_container", "_item"]; [_unit, _container, _item] call coopr_fnc_playerDroppedItem}];
+player addEventHandler ["Take", {params["_unit", "_container", "_item"]; [_unit, _container, _item] call coopr_fnc_playerTookItem}];
 
 call coopr_fnc_abortButtonEventHandler;
 

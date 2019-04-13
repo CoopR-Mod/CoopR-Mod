@@ -54,6 +54,8 @@ class CfgFunctions {
             class markerOverlaps {};
             class debugMarker {};
             class isGroupStatic {};
+            class playerTookItem {};
+            class playerDroppedItem {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

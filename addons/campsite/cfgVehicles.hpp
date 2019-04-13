@@ -7,17 +7,18 @@ class cfgVehicles
 {
 	class Item_Base_F;
 
-	class coopr_item_camping : Item_Base_F
+	class coopr_item_foldedTent : Item_Base_F
 	{
 		scope = 2;
         scopeCurator = 2;
-        displayName= "$STR.coopr.campsite.item.campsite";
-        picture = "\A3\Weapons_F\Items\data\UI\gear_Toolkit_CA.paa";
+        displayName= "$STR.coopr.campsite.item.tent";
+		picture = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Sleeping_bag_brown_folded_F.jpg";
         author = "Gilles";
         vehicleClass = "Tents";
+        editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Sleeping_bag_brown_folded_F.jpg";
 
         class TransportItems{
-            MACRO_ADDITEM(coopr_item_camping,1);
+            MACRO_ADDITEM(coopr_item_foldedTent,1);
         };
 	};
 

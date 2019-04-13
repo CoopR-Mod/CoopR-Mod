@@ -18,7 +18,7 @@ class CoopR_TaskBoard_Dialog
 	};
 	class Controls
 	{
-		class CoopR_TaskBoard_Document_Recon : ctrlButtonPictureOnly
+		class CoopR_TaskBoard_Document_Recon : ctrlButtonPictureOnly 
 		{
 			idc = GUI_ID_TASKBOARD_DOCUMENT_RECON;
 			x = safeZoneX + safeZoneW * 0.28125;
@@ -26,7 +26,6 @@ class CoopR_TaskBoard_Dialog
 			w = safeZoneW * 0.201875;
 			h = safeZoneH * 0.36333334;
 			text = "x\coopr\addons\tasks\data\images\taskboard_recon.paa";
-
 		};
 		class CoopR_TaskBoard_Document_Combat : ctrlButtonPictureOnly 
 		{
@@ -36,41 +35,35 @@ class CoopR_TaskBoard_Dialog
 			w = safeZoneW * 0.22125;
 			h = safeZoneH * 0.38444445;
 			text = "x\coopr\addons\tasks\data\images\taskboard_combat.paa";
-
 		};
-		class CoopR_TaskBoard_Document_Combat_Label
+		class CoopR_TaskBoard_Task_1 : ctrlButtonPictureOnly 
 		{
-			type = 0;
-			idc = GUI_ID_TASKBOARD_DOCUMENT_COMBAT_LABEL;
-			x = safeZoneX + safeZoneW * 0.556875;
-			y = safeZoneY + safeZoneH * 0.41888889;
-			w = safeZoneW * 0.0675;
-			h = safeZoneH * 0.03666667;
-			style = 0;
-			text = "Combat Tasks";
-			colorBackground[] = {0.6353,0.3569,0.2627,0};
-			colorText[] = {0,0,0,1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-
+			idc = GUI_ID_TASKBOARD_TASK_1;
+			x = safeZoneX + safeZoneW * 0.255625;
+			y = safeZoneY + safeZoneH * 0.29111112;
+			w = safeZoneW * 0.22125;
+			h = safeZoneH * 0.38444445;
+			text = "x\coopr\addons\tasks\data\images\taskboard_task_1.paa";
 		};
-		class CoopR_TaskBoard_Document_Recon_Label
+		class CoopR_TaskBoard_Task_2 : ctrlButtonPictureOnly 
 		{
-			type = 0;
-			idc = GUI_ID_TASKBOARD_DOCUMENT_RECON_LABEL;
-			x = safeZoneX + safeZoneW * 0.348125;
-			y = safeZoneY + safeZoneH * 0.39222223;
-			w = safeZoneW * 0.0625;
-			h = safeZoneH * 0.03666667;
-			style = 0;
-			text = "Recon Tasks";
-			colorBackground[] = {0.6353,0.3569,0.2627,0};
-			colorText[] = {0,0,0,1};
-			font = "PuristaMedium";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-
+			idc = GUI_ID_TASKBOARD_TASK_2;
+			x = safeZoneX + safeZoneW * 0.39125;
+			y = safeZoneY + safeZoneH * 0.29777778;
+			w = safeZoneW * 0.22125;
+			h = safeZoneH * 0.38444445;
+			text = "x\coopr\addons\tasks\data\images\taskboard_task_2.paa";
 		};
-
+		class CoopR_TaskBoard_Task_3 : ctrlButtonPictureOnly 
+		{
+			idc = GUI_ID_TASKBOARD_TASK_3;
+			x = safeZoneX + safeZoneW * 0.52625;
+			y = safeZoneY + safeZoneH * 0.29777778;
+			w = safeZoneW * 0.22125;
+			h = safeZoneH * 0.38444445;
+			text = "x\coopr\addons\tasks\data\images\taskboard_task_3.paa";
+		};
+		
 	};
 	
 };

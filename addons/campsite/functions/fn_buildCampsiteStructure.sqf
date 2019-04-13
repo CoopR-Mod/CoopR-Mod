@@ -37,8 +37,6 @@ switch _structure do{
 		private _localizedString = localize "str.coopr.campsite.notif.campsiteposition";
 		private _campsitePos = format["%1: %2", _localizedString, mapGridPosition player];
 		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], [_campsitePos]] call CBA_fnc_notify;
-		player removeItem "coopr_item_camping";
-		player setVariable["coopr_campingItem_0", false];
 	};
 	case COOPR_CAMP_ITEM_TENT: {
 		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], ["WORKS"]] call CBA_fnc_notify;

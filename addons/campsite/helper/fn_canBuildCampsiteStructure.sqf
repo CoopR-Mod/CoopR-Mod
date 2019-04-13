@@ -25,7 +25,6 @@ if(_structure isEqualTo UNDEFINED) then{
 
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {
-		if(!(player getVariable ["coopr_campingItem_0", false])) exitWith {false};
 		if(!isFormationLeader player) exitWith{false};
 		true;
 	};

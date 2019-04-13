@@ -36,6 +36,7 @@ class CfgFunctions {
             class writeEntry {};
             class removeEntry {};
             class updateReconReportEntries {};
+            class selectMissionType {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";

@@ -3,6 +3,7 @@
 #define EXEC_SERVER  2
 #define EXEC_GLOBAL  0
 #define EMPTY_HASH ([[],[]] call CBA_fnc_hashCreate)
+#define UNDEFINED "undefined"
 
 // NEW CHARACTER
 #define STARTING_MONEY 500
@@ -28,7 +29,8 @@
 
 #define COOPR_KEY_SLOT "coopr_character_slot"
 #define COOPR_KEY_NAME "coopr_character_name"
-#define COOPR_KEY_UID "coopr_character_uid"
+#define COOPR_KEY_UID "coopr_character_user_id"
+#define COOPR_KEY_CHARACTER_ID "coopr_character_id"
 #define COOPR_KEY_STATE "coopr_character_state"
 #define COOPR_KEY_REPUTATION "coopr_character_reputation"
 #define COOPR_KEY_TMP_REPUTATION "coopr_character_tmp_reputation"
@@ -104,3 +106,7 @@
 #define COOPR_STRENGTH_TYPE_PLATOON_MAX 45
 #define COOPR_STRENGTH_TYPE_COMPANY_MIN 80
 #define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
+
+// Campsite globals 
+#define COOPR_CAMP_ITEM_AREA "coopr_camp_item_area"
+#define COOPR_CAMP_ITEM_TENT "coopr_camp_item_tent"

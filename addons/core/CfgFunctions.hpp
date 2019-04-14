@@ -8,7 +8,7 @@ class CfgFunctions {
             class onKilled {};
             class playerKilledNpc {};
             class addVehicleKeyWest {};
-            class addCharacterActions {};
+            class initCharacterActions {};
             class updateReputation {};
             class updateTempReputation {};
             class convertTempToReputation {};
@@ -51,7 +51,7 @@ class CfgFunctions {
             class increaseKillCount {};
             class serializeMarker {};
             class deserializeMarker {};
-            class markerIntersects {};
+            class markerOverlaps {};
             class debugMarker {};
             class isGroupStatic {};
         }

@@ -114,3 +114,47 @@ class RscButtonMenu;
 class RscButtonMenuOK;
 class RscButtonMenuCancel;
 class RscControlsGroup;
+
+// 3DEN
+class ctrlDefault;
+
+class ctrlDefaultText;
+class ctrlStatic;
+class ctrlStaticBackground;
+class ctrlStaticFooter;
+class ctrlStaticOverlay;
+class ctrlStaticTitle;
+class ctrlStaticBackgroundDisableTiles;
+class ctrlEdit;
+class ctrlCombo;
+
+class ctrlStructuredText;
+class ctrlActivePicture;
+class ctrlStaticPicture;
+
+class ctrlDefaultButton;
+class ctrlButton;
+class ctrlButtonToolbar;
+class ctrlButtonCancel;
+class ctrlButtonClose;
+class ctrlButtonSearch;
+class ctrlButtonPicture;
+class ctrlButtonFilter;
+
+class ctrlControlsGroup;
+class ctrlControlsGroupNoScrollbars;
+
+class ctrlTree;
+
+class ctrlMenu;
+class ctrlMenuStrip;
+
+
+// CoopR Controls
+
+class ctrlButtonPictureOnly: ctrlButtonPicture {
+	colorBackground[]={0,0,0,0};
+	colorBackgroundDisabled[]={0,0,0,0};
+	colorBackgroundActive[]={1,1,1,0};
+	colorFocused[]={0,0,0,0};
+};

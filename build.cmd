@@ -18,5 +18,6 @@ mkdir %dest%
 %armake64% build -p addons\lobby %dest%\lobby.pbo
 %armake64% build -p addons\supply %dest%\supply.pbo
 %armake64% build -p addons\tasks %dest%\tasks.pbo
+%armake64% build -p addons\campsite %dest%\campsite.pbo
 
 copy mod.cpp @CoopR\mod.cpp

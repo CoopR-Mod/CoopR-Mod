@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-private _ctrl = _this select 0;
+params ["_ctrl"];
 
 private _typeSel = _ctrl getVariable ["_typeSelection", objNull];
 private _strengthSel = _ctrl getVariable ["_strengthSelection", objNull];

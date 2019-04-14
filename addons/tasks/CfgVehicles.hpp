@@ -42,7 +42,7 @@ class CfgVehicles
               }
               class TaskRequestItems {
                   displayName = "Task Request Item";
-                  description = "The items where the task request action should be applied to";
+                  description = "The items where the task request action should be applied to (example: ['doc1', 'doc2'])";
                     typeName = "ARRAY";
               }
         }

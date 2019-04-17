@@ -29,4 +29,8 @@ _mission3 ctrlShow false;
 _combatDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
 _reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
 
+_mission1 ctrlAddEventHandler ["MouseButtonDown", { DEBUG("test")}];
+_mission2 ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
+_mission3 ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
+
 DEBUG("taskboard ui initialized");

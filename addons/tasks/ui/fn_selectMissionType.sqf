@@ -27,8 +27,9 @@ if (_allMissionSelections isEqualTo []) exitWith { ERROR("no mission selections 
 // hide documents
 _ctrl ctrlShow false;
 _other ctrlShow false;
+
 // show all task selections
-{ _x ctrlShow true } forEach _allMissionSelections;
+{ (_allMissionSelections select _forEachIndex) ctrlShow true } forEach COOPR_TASKS_QUEUE;
 
 
 

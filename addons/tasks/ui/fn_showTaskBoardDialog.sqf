@@ -26,8 +26,12 @@ _mission1 ctrlShow false;
 _mission2 ctrlShow false;
 _mission3 ctrlShow false;
 
+private _hasCombatTasks = (count COOPR_TASKS_QUEUE) > 0;
+
+if (!_hasCombatTasks) then {  _combatDocument ctrlShow false } else { _combatDocument ctrlShow true };
+
 _combatDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
-_reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
+_reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_requestCooprReconTask; closeDialog GUI_ID_TASKBOARD_DIALOG}];
 
 _mission1 ctrlAddEventHandler ["MouseButtonDown", { DEBUG("test")}];
 _mission2 ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];

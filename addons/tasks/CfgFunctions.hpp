@@ -47,6 +47,7 @@ class CfgFunctions {
             class hasActiveTask {};
             class isInTaskArea {};
             class getTasksByType {};
+            class getLabelByMissionType {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";

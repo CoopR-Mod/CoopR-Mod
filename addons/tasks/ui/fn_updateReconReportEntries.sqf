@@ -17,6 +17,7 @@ DEBUG2("%1 entries found", count _entries);
     private _behaviour = [_x, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
     private _marker = [_x, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
     private _time = [_x, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
+    private _nearestLocation = [_x, COOPR_KEY_RECON_ENTRY_LOCATION] call CBA_fnc_hashGet;
     private _markerPos = [];
 
     switch (_behaviour) do {
@@ -26,8 +27,6 @@ DEBUG2("%1 entries found", count _entries);
             _markerPos = getMarkerPos (_marker select 0); // only one marker in array
         };
     };
-
-    private _nearestLocation = nearestLocation [_markerPos, ""];
 
     DEBUG2("type: %1", _type);
     private _text = format ["%1. %2,%3,%4 %5 time %6", _forEachIndex + 1, _type, _strength, _behaviour, _nearestLocation, _time];

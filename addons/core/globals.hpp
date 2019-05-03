@@ -59,6 +59,7 @@
 #define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
 #define COOPR_KEY_RECON_ENTRY_TIME "coopr_recon_entry_time"
 #define COOPR_KEY_RECON_ENTRY_ACCURACY "coopr_recon_entry_accuracy"
+#define COOPR_KEY_RECON_ENTRY_LOCATION "coopr_recon_entry_location"
 
 // Recon Report Params
 #define COOPR_STRENGTH_TYPE_FIRETEAM "Fireteam"

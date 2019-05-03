@@ -53,7 +53,7 @@ if (isServer) then {
         DEBUG2("defined task details: %1", _newCooprTask);
         COOPR_TASKS_QUEUE pushBack _newCooprTask;
         _createdCounter = _createdCounter + 1;
-    } forEach _validReports;
+    } forEach _reconEntries;
 
     DEBUG2("generated coopr tasks: %1", _createdCounter);
 } else {

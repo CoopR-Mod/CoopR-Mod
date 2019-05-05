@@ -11,7 +11,7 @@ DEBUG("updating recon report entries");
 DEBUG2("%1 entries found", count _entries);
 
 {
-    DEBUG2("adding entry: %1", _x);
+    DEBUG2("rendering entry: %1", _x);
     private _type = [_x, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
     private _strength = [_x, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
     private _behaviour = [_x, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;

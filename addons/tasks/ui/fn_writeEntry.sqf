@@ -24,6 +24,7 @@ private _strength = _strengthSel lbData (lbCurSel _strengthSel);
 private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
 private _markerText = ctrlText _markerNameEdit;
 private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText };
+DEBUG2("foundmarker: %1", _foundMarker);
 
 if (_markerText isEqualTo "") exitWith {
    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No marker name given"]] call CBA_fnc_notify;
@@ -34,13 +35,24 @@ DEBUG2("report accuracy: %1", _reportAccuracy);
 
 if (isNil "_reportAccuracy") exitWith { ERROR("no entry will be written due previous errors")};
 
+private _nameExists = false;
+
+{
+    private _marker = [_x, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+    _nameExists = (markerText (_marker select 0)) == markerText (_foundMarker select 0);
+} forEach _reconEntries;
+
+if (_nameExists) exitWith {
+   [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["marker name already exists"]] call CBA_fnc_notify;
+};
+
 // build hash for entry
 private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker] call CBA_fnc_hashSet;
-[_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, nearestLocation [(_foundMarker select 0), ""] ] call CBA_fnc_hashSet;
+[_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, nearestLocation [getMarkerPos (_foundMarker select 0), ""] ] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_ACCURACY, _reportAccuracy] call CBA_fnc_hashSet;
 

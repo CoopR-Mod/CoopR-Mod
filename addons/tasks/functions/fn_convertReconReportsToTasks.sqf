@@ -43,16 +43,20 @@ if (isServer) then {
 
         private _newCooprTask = EMPTY_HASH;
 
-        DEBUG("building coopr task hash");
-        [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-        [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
-        [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
-        [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarker] call CBA_fnc_hashSet;
-        [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _accuracy] call CBA_fnc_hashSet;
+        if (_accuracy >= 0) then {
+            DEBUG("building coopr task hash");
+            [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
+            [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarker] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _accuracy] call CBA_fnc_hashSet;
 
-        DEBUG2("defined task details: %1", _newCooprTask);
-        COOPR_TASKS_QUEUE pushBack _newCooprTask;
-        _createdCounter = _createdCounter + 1;
+            DEBUG2("defined task details: %1", _newCooprTask);
+            COOPR_TASKS_QUEUE pushBack _newCooprTask;
+            _createdCounter = _createdCounter + 1;
+        } else {
+            INFO("skipping convertion - recon report has accuracy -1");
+        }
     } forEach _reconEntries;
 
     DEBUG2("generated coopr tasks: %1", _createdCounter);

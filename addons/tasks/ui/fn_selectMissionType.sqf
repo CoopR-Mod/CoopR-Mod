@@ -34,7 +34,8 @@ _other ctrlShow false;
 // show all task selections
 {
 	private _typeLabel = [[_x, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
-	private _accuracy = str ([_x, COOPR_KEY_TASK_ACCURACY] call CBA_fnc_hashGet);
+	private _accuracy = [_x, COOPR_KEY_TASK_ACCURACY] call CBA_fnc_hashGet;
+	private _accuracyLabel = "Accuracy: " + (_accuracy call coopr_fnc_getLabelForAccuracy);
 	private _missionSelection = _allMissionSelections select _forEachIndex;
 
 	_missionSelection setVariable ["index", _forEachIndex];
@@ -42,6 +43,6 @@ _other ctrlShow false;
 	_missionSelection ctrlShow true;
 	(_allTypeLabels select _forEachIndex) ctrlSetText _typeLabel;
 	(_allTypeLabels select _forEachIndex) ctrlShow true;
-	(_allReportAccuracies select _forEachIndex) ctrlSetText _accuracy;
+	(_allReportAccuracies select _forEachIndex) ctrlSetText _accuracyLabel;
 	(_allReportAccuracies select _forEachIndex) ctrlShow true;
 } forEach COOPR_TASKS_QUEUE; 

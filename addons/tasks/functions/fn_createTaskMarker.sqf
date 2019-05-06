@@ -39,6 +39,17 @@ if (isServer) then {
             _reconTaskMarker setMarkerShape "ELLIPSE";
             DEBUG2("recon task marker created: %1", _reconTaskMarker);
         };
+        case "INVISIBLE": {
+            _invisibleTaskMarker = createMarker [_taskId + "_marker" + "_area", _position];
+            _invisibleTaskMarker setMarkerSize [300, 300];
+            if (COOPR_DEV_MODE) then {
+                _invisibleTaskMarker setMarkerAlpha 0.5;
+            } else {
+                _invisibleTaskMarker setMarkerAlpha 0;
+            };
+            _invisibleTaskMarker setMarkerColor "ColorRed";
+            _invisibleTaskMarker setMarkerShape "ELLIPSE";
+        };
         default {
             _otherMarker = createMarker [_taskId + "_marker" + "_area", _position];
             _otherMarker setMarkerSize [300, 300];

@@ -40,9 +40,11 @@ if (isServer) then {
         [_taskType] call coopr_fnc_countTask;
         // TODO: need to be shifted to group/squads
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
-        private _newMarkerName = _taskId + "_marker" + "_area_";
+        private _newMarkerName = _taskId + "_recon" + "_marker_";
         { [_x, _newMarkerName + (str _forEachIndex)] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
-
+        // get the position of the first marker of the task
+        private _deserializedMarkerPos = getMarkerPos (_newMarkerName + "0");
+        [_deserializedMarkerPos, _taskId, "INVISIBLE"] call coopr_fnc_createTaskMarker;
         _cooprTaskId;
     } else {
         ERROR("could not assign task.");

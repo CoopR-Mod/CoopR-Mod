@@ -7,6 +7,7 @@
  * Arguments:
  * 0: _side <STRING> - side of OPCOM / objectives
  * 1: _type <STRING> - type of objective
+ * 2: _minimum <NUMBER> - minimum of objective
  *
  * Return Value:
  * Lowest Priority Objective - <OBJECT>
@@ -19,7 +20,7 @@
  * Scope: Server
  */
 
-params [["_side", ""], ["_type", ""]];
+params [["_side", ""], ["_type", ""], ["_skipIDs", []]];
 
 if (_side isEqualTo "") exitWith { ERROR("_side was empty string") };
 if (_type isEqualTo "") exitWith { ERROR("_type empty string") };
@@ -45,14 +46,19 @@ private _lowestPrioObjective = objNull;
 private _lowestPrio = 999;
 
 {
+    private _id = [_x ,"objectiveID"] call alive_fnc_hashGet;
     private _currentPrio = [_x ,"priority", "none"] call alive_fnc_hashGet;
-    if (_currentPrio < _lowestPrio) then {
-        _lowestPrio = _currentPrio;
-        private _state = [_x ,"opcom_state", "none"] call alive_fnc_hashGet;
-        if (_state isEqualTo _type) then {
-            _lowestPrioObjective = _x;
-        }
-    };
+    if (_id in _skipIDs) then {
+        INFO2("skipping %1", _id);
+    } else {
+        if (_currentPrio < _lowestPrio) then {
+            _lowestPrio = _currentPrio;
+            private _state = [_x ,"opcom_state", "none"] call alive_fnc_hashGet;
+            if (_state isEqualTo _type) then {
+                _lowestPrioObjective = _x;
+            }
+        };
+    }
 } forEach _objectives;
 
 _lowestPrioObjective;

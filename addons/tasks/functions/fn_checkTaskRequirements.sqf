@@ -26,7 +26,7 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (isServer) then {
     private _activeTask = _unit getVariable [COOPR_KEY_ACTIVE_TASK, objNull];
     private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];
-    if (_activeTask isEqualTo objNull) exitWith { ERROR("_activeTask was objNull") };
+    if (_activeTask isEqualTo objNull) exitWith { ERROR("_activeTask was objNull"); false; };
     private _type = [_taskTracker, COOPR_KEY_TASK_TRACKER_TYPE] call CBA_fnc_hashGet;
     private _killCount = [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
 

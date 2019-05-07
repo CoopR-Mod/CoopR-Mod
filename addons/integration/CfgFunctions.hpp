@@ -16,7 +16,6 @@ class CfgFunctions {
             file = "x\coopr\addons\integration\functions\alive";
             class alive_staticData {};
             class alive_getLowestPriorityObjective {};
-            class alive_getLowestPriorityObjectiveLocation {};
         }
     }
 }

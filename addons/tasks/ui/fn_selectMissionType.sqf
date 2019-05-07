@@ -21,14 +21,28 @@
 params ["_ctrl"];
 
 private _allMissionSelections =  _ctrl getVariable ["missions", []];
+private _allTypeLabels =  _ctrl getVariable ["typeLabels", []];
+private _allReportAccuracies =  _ctrl getVariable ["reportAccuracies", []];
 private _other =  _ctrl getVariable ["other", objNull];
+
 if (_allMissionSelections isEqualTo []) exitWith { ERROR("no mission selections given to document handler")};
 
 // hide documents
 _ctrl ctrlShow false;
 _other ctrlShow false;
+
 // show all task selections
-{ _x ctrlShow true } forEach _allMissionSelections;
+{
+	private _typeLabel = [[_x, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
+	private _accuracy = [_x, COOPR_KEY_TASK_ACCURACY] call CBA_fnc_hashGet;
+	private _accuracyLabel = "Accuracy: " + (_accuracy call coopr_fnc_getLabelForAccuracy);
+	private _missionSelection = _allMissionSelections select _forEachIndex;
 
-
-
+	_missionSelection setVariable ["index", _forEachIndex];
+	_missionSelection ctrlAddEventHandler ["MouseButtonDown", { [(_this select 0) getVariable "index"] call coopr_fnc_requestCooprTask }];
+	_missionSelection ctrlShow true;
+	(_allTypeLabels select _forEachIndex) ctrlSetText _typeLabel;
+	(_allTypeLabels select _forEachIndex) ctrlShow true;
+	(_allReportAccuracies select _forEachIndex) ctrlSetText _accuracyLabel;
+	(_allReportAccuracies select _forEachIndex) ctrlShow true;
+} forEach COOPR_TASKS_QUEUE; 

@@ -67,7 +67,7 @@ if (isServer) then {
     [_player, _finalRep] call coopr_fnc_updateReputation;
     DEBUG2("adding %1 rep pts to the player", _finalRep);
 
-    // perstist change
+    // persist change
     _player call coopr_fnc_updateState;
     private _characterHash = _player call coopr_fnc_serializeCoopR;
     [_characterHash] call coopr_fnc_updateCharacter;

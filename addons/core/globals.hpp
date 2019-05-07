@@ -58,7 +58,8 @@
 #define COOPR_KEY_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"
 #define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
 #define COOPR_KEY_RECON_ENTRY_TIME "coopr_recon_entry_time"
-#define COOPR_KEY_RECON_ENTRY_VALID "coopr_recon_entry_valid"
+#define COOPR_KEY_RECON_ENTRY_ACCURACY "coopr_recon_entry_accuracy"
+#define COOPR_KEY_RECON_ENTRY_LOCATION "coopr_recon_entry_location"
 
 // Recon Report Params
 #define COOPR_STRENGTH_TYPE_FIRETEAM "Fireteam"
@@ -74,6 +75,7 @@
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
 #define COOPR_KEY_TASK_MARKER "coopr_task_marker"
+#define COOPR_KEY_TASK_ACCURACY "coopr_task_accuracy"
 
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
 #define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"

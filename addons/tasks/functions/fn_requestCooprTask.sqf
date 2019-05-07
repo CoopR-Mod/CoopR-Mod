@@ -19,17 +19,12 @@
  * Scope: Client
  */
 
-if (count COOPR_TASKS_QUEUE <= 0 ) then {
-    INFO("no coopr tasks found. Create a new recon task");
+params [["_indexOfMission", -1]];
 
-    if (INTEGRATE_ALIVE) then {
-        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPriorityObjectiveLocation;
-        [player, _reconTaskDestination] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
-    } else {
-        // TODO call recon task for coopr or other integration
-    };
+if (_indexOfMission isEqualTo -1) exitWith { ERROR("_indexOfMission was not defined") };
 
-} else {
-    private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
-    [player, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
-};
+private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt _indexOfMission;
+DEBUG2("info %1", _cooprTaskInfo);
+[player, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
+
+closeDialog GUI_ID_TASKBOARD_DIALOG;

@@ -21,6 +21,7 @@ class CfgFunctions {
             class checkTaskRequirements {};
             class createPatrolAreaMarker {};
             class createDefensiveAreaMarker {};
+            class requestCooprReconTask {};
             class initTaskItems {};
         }
         class coopr_tasks_routines {
@@ -45,6 +46,9 @@ class CfgFunctions {
             class determineTaskType {};
             class hasActiveTask {};
             class isInTaskArea {};
+            class getTasksByType {};
+            class getLabelByMissionType {};
+            class getLabelForAccuracy {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
@@ -55,6 +59,7 @@ class CfgFunctions {
             class tests_determineTaskType {};
             class tests_checkTaskTracking {};
             class tests_initTaskTracker {};
+            class tests_getTasksByType{};
         }
         class coopr_tasks_debug {
             file = "x\coopr\addons\tasks\debug";

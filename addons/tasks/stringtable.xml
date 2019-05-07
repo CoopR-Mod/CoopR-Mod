@@ -29,6 +29,10 @@
             <German>Ihr koennt weiterhin Aufklaerung betreiben um dem Hauptquartier genauere Informationen zur Verfuegung zu stellen</German>
         </Key>
         <!--Sniper Team Task-->
+        <Key ID="str_coopr_task_type_sniperteam">
+            <Original>Sniper Team</Original>
+            <German>Scharfschuetzen Trupp</German>
+        </Key>
         <Key ID="str_coopr_task_type_sniperteam_title">
             <Original>Take out enemy units</Original>
             <German>Feindkraefte minimieren</German>
@@ -38,6 +42,10 @@
             <German>Schwache feindliche Aktivitaeten wurden gemeldet. Ein Scharfschuetzentrupp soll Feind minimieren</German>
         </Key>
         <!--Asymmetric Task-->
+        <Key ID="str_coopr_task_type_asymmetric">
+            <Original>Asymmetric</Original>
+            <German>Asymmetrisch</German>
+        </Key>
         <Key ID="str_coopr_task_type_asymmetric_title">
             <Original>Disrupt enemy activity</Original>
             <German>Feindaktivitaeten stoeren</German>
@@ -47,6 +55,10 @@
             <German>Feindaktivitaet wurde aufgeklaert. Stoert den Feind nach eigenem Ermessen</German>
         </Key>
         <!--Assault Task-->
+        <Key ID="str_coopr_task_type_assault">
+            <Original>Assault</Original>
+            <German>Angriff</German>
+        </Key>
         <Key ID="str_coopr_task_type_assault_title">
             <Original>Take enemy position</Original>
             <German>Feindliche Stellungen nehmen</German>
@@ -56,6 +68,10 @@
             <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
         </Key>
         <!--Conquer Task-->
+        <Key ID="str_coopr_task_type_conquer">
+            <Original>Conquer</Original>
+            <German>Erobern</German>
+        </Key>
         <Key ID="str_coopr_task_type_conquer_title">
             <Original>Conquer enemy position</Original>
             <German>Feindliche Stellungen nehmen</German>
@@ -63,6 +79,49 @@
         <Key ID="str_coopr_task_type_conquer_description">
             <Original>Enemy positions have been reported. Take them without casualties</Original>
             <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
+        </Key>
+        <!--JTAC Task-->
+        <Key ID="str_coopr_task_type_jtac">
+            <Original>JTAC</Original>
+            <German>JTAC</German>
+        </Key>
+        <Key ID="str_coopr_task_type_jtac_title">
+            <Original>Call close air support</Original>
+            <German>Luftunterstuetzung anfordern</German>
+        </Key>
+        <Key ID="str_coopr_task_type_jtac_description">
+            <Original>Enemy positions have been reported. Take them without casualties</Original>
+            <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
+        </Key>
+        <!--Ambush Task-->
+        <Key ID="str_coopr_task_type_ambush">
+            <Original>Ambush</Original>
+            <German>Hinterhalt</German>
+        </Key>
+        <Key ID="str_coopr_task_type_ambush_title">
+            <Original>Disrupt enemy forces with an ambush</Original>
+            <German>Feindkraefte mit einem Hinterhalt stoeren</German>
+        </Key>
+        <Key ID="str_coopr_task_type_ambush_description">
+            <Original>Enemy positions have been reported. Take them without casualties</Original>
+            <German>Feindliche Stellungen wurden aufgeklaert. Nehmen der Stellungen ohne eigene Ausfaelle wurde befohlen</German>
+        </Key>
+        <!--Accuracy Labels-->
+        <Key ID="str_coopr_report_acc_useless">
+            <Original>useless</Original>
+            <German>Nutzlos</German>
+        </Key>
+        <Key ID="str_coopr_report_acc_inaccurate">
+            <Original>inaccurate</Original>
+            <German>Unwahrscheinlich</German>
+        </Key>
+        <Key ID="str_coopr_report_acc_accurate">
+            <Original>likely accurate</Original>
+            <German>sehr Wahrscheinlich</German>
+        </Key>
+        <Key ID="str_coopr_report_acc_confirmed">
+            <Original>Confirmed</Original>
+            <German>Bestaetigt</German>
         </Key>
     </Package>
 </Project>

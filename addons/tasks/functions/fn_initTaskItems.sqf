@@ -25,7 +25,8 @@ if (_taskItems isEqualTo []) exitWith { ERROR("_taskItems was not defined") };
 DEBUG2("initializing %1 as task items", _taskItems);
 {
     private _document = missionNamespace getVariable [_x, objNull];
+    _missionboardActionCondition = { !([player] call coopr_fnc_hasActiveTask) };
     if (_document isEqualTo objNull) exitWith { ERROR("given document string could not be found as object")};
-    _document addAction [localize "str.coopr.task.action.opentaskboard", { call coopr_fnc_showTaskBoardDialog}, [], 1.5,true,true,""]
+    _document addAction [localize "str.coopr.task.action.opentaskboard", { call coopr_fnc_showTaskBoardDialog}, [], 1.5,true,true,"", _missionboardActionCondition call coopr_fnc_codeAsString ];
 } forEach _taskItems;
 

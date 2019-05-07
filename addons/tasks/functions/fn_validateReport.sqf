@@ -61,8 +61,15 @@ switch (_behaviour) do {
     };
 };
 
+if ((_foundVehicles + _foundInfantry + _foundTanks) == 0) exitWith {
+    INFO("no units in the checkarea");
+    -1;
+};
+
 if (count _checkAreaMarker isEqualTo 0) exitWith { ERROR("no area check marker could be created") };
-{ deleteMarker _x } forEach _checkAreaMarker; // remove helper marker since they are not needed anymore
+if !(COOPR_DEV_MODE) then {
+    { deleteMarker _x } forEach _checkAreaMarker; // remove helper marker since they are not needed anymore
+};
 
 // will check if the reported strength (Fireteam, Platoon, etc.) and the found amount of units matches somehow
 // there will be a simple calculation of how accurate the report is

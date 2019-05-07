@@ -7,7 +7,16 @@ waitUntil {!isNull findDisplay GUI_ID_TASKBOARD_DIALOG};
 
 DEBUG("initialising taskboard ui");
 
+private _effect = ppEffectCreate ["DynamicBlur", 10];
+DEBUG2("effect: %1", _effect);
+_effect ppEffectEnable true;
+_effect ppEffectAdjust [10];
+_effect ppEffectCommit 0.1;
+
 private _taskBoardDisplay = findDisplay GUI_ID_TASKBOARD_DIALOG;
+_taskBoardDisplay setVariable ["effect", _effect];
+_taskBoardDisplay displayAddEventHandler ["Unload", { ppEffectDestroy ((_this select 0) getVariable "effect")} ];
+
 private _combatDocument = _taskBoardDisplay displayCtrl GUI_ID_TASKBOARD_DOCUMENT_COMBAT;
 private _reconDocument = _taskBoardDisplay displayCtrl GUI_ID_TASKBOARD_DOCUMENT_RECON;
 private _mission1 = _taskBoardDisplay displayCtrl GUI_ID_TASKBOARD_TASK_1;

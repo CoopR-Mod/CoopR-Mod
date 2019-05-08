@@ -47,6 +47,12 @@ if (isServer) then {
                                    PRIMARY KEY (steam_id),
                                    FOREIGN KEY (characters_id) REFERENCES characters(id));";
 
+    private _createTasksTable = "CREATE TABLE tasks (
+                                   task_id varchar(255) NOT NULL,
+                                   taskHash TEXT,
+                                   PRIMARY KEY (task_id));";
+
+
     // test connection
     private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);
     private _returnCode = _result select 0;
@@ -72,6 +78,7 @@ if (isServer) then {
     // init tables
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
+    _createTasksTable call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR;
 };

@@ -8,7 +8,6 @@ waitUntil {!isNull findDisplay GUI_ID_TASKBOARD_DIALOG};
 DEBUG("initialising taskboard ui");
 
 private _effect = ppEffectCreate ["DynamicBlur", 10];
-DEBUG2("effect: %1", _effect);
 _effect ppEffectEnable true;
 _effect ppEffectAdjust [10];
 _effect ppEffectCommit 0.1;

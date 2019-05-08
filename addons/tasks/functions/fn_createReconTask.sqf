@@ -43,7 +43,6 @@ if (isServer) then {
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
         [(_taskId call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
         //TODO: deprecated?
-        COOPR_RECON_TASKS pushBack _taskId;
         true;
     } else {
         ERROR("could not assign task.");

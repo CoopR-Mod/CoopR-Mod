@@ -14,6 +14,7 @@ class CfgFunctions {
             class removeCharacterLocal {};
             class localDatabaseRefresh {};
             class saveTaskLocal {};
+            class getTaskLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -36,6 +37,7 @@ class CfgFunctions {
             class getCharactersID {};
             class getCharacters {};
             class saveTask {};
+            class getTask {};
         }
     }
 }

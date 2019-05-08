@@ -11,7 +11,7 @@
  * characters <ARRAY> - the ID of the characters table for the given user
  *
  * Example:
- * getPlayerUID player call coopr_fnc_getCharacters
+ * (getPlayerUID player) call coopr_fnc_getCharactersLocal
  *
  * Public: No
  *

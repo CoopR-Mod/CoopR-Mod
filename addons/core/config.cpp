@@ -28,4 +28,3 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgVehicles.hpp"
-#include "CfgNotifications.hpp"

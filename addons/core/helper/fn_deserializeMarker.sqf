@@ -6,7 +6,7 @@
  *
  * Arguments:
  * 0: _serializedMarker <ARRAY> - serialized state of a marker
- * 1: _newMarkername <STRING> - flag to remove the marker after serialization (optional)
+ * 1: _newMarkername <STRING> - flag to overwrite the serialized marker name with a new one (optional)
  *
  * Return Value:
  * _deserializedMarker - <MARKER>

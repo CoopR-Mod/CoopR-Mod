@@ -32,5 +32,8 @@ _serializedTask pushBack _taskId;
     { _this call BIS_fnc_taskDestination },
     { _this call BIS_fnc_taskState }];
 
+private _serializedTaskMarker = [_taskId + "_task_marker"] call coopr_fnc_serializeMarker;
+_serializedTask pushBack _serializedTaskMarker;
+
 DEBUG("task serialized");
 _serializedTask;

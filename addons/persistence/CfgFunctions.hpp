@@ -15,6 +15,7 @@ class CfgFunctions {
             class localDatabaseRefresh {};
             class saveTaskLocal {};
             class getTaskLocal {};
+            class getTaskCountLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -38,6 +39,7 @@ class CfgFunctions {
             class getCharacters {};
             class saveTask {};
             class getTask {};
+            class getTaskCount {};
         }
     }
 }

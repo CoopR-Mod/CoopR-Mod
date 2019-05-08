@@ -23,6 +23,8 @@ class CfgFunctions {
             class createDefensiveAreaMarker {};
             class requestCooprReconTask {};
             class initTaskItems {};
+            class serializeTask {};
+            class deserializeTask {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";

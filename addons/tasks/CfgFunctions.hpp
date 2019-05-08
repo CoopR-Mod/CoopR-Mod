@@ -4,7 +4,6 @@ class CfgFunctions {
             file = "x\coopr\addons\tasks\functions";
             class setupTasksModule {};
             class broadcastReconReports {};
-            class removeRedundantReports {};
             class deliverAfterActionReport {};
             class convertReconReportsToTasks {};
             class createCooprTask {};
@@ -17,7 +16,6 @@ class CfgFunctions {
             class initTaskTracker {};
             class createTaskMarker {};
             class removeTaskMarker {};
-            class completeReconSubtask {};
             class checkTaskRequirements {};
             class createPatrolAreaMarker {};
             class createDefensiveAreaMarker {};

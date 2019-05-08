@@ -34,7 +34,6 @@ if (isServer) then {
     private _subtaskId = format ["%1_%2", _subTaskType, _taskCount];
 
     private _reconTaskId = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
-    [_unit, [_subtaskId, _reconTaskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_reconTaskId") then {
         DEBUG2("%1 assigned", _reconTaskId);

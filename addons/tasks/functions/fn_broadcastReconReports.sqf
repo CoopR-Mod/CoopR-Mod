@@ -37,7 +37,6 @@ if (isServer) then {
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_reportInfo]] call CBA_fnc_notify;
            //call coopr_fnc_removeRedundantReports; TODO: remove?
            [_reconEntries] call coopr_fnc_convertReconReportsToTasks;
-           [_unit] call coopr_fnc_completeReconSubtask;
            _unit setVariable [COOPR_KEY_RECON_ENTRIES, []];
         } else {
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;

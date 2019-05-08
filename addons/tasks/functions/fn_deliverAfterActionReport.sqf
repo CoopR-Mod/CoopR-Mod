@@ -72,7 +72,10 @@ if (isServer) then {
     private _characterHash = _player call coopr_fnc_serializeCoopR;
     [_characterHash] call coopr_fnc_updateCharacter;
 
-    [_currentTask] call coopr_fnc_removeTaskMarker;
+    [_currentTask] spawn coopr_fnc_removeTaskMarker;
+    // update task state to archive task on server db
+    [(_currentTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
+    [_currentTask] spawn BIS_fnc_deleteTask;
 } else {
     SERVER_ONLY_ERROR;
 };

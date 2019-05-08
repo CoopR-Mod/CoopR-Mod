@@ -42,9 +42,10 @@ if (isServer) then {
         [_unit, "coopr_task_recon"] call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
-
+        [(_taskId call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
         //TODO: deprecated?
         COOPR_RECON_TASKS pushBack _taskId;
+        true;
     } else {
         ERROR("could not assign task.");
         false;

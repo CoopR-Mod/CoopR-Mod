@@ -50,7 +50,7 @@ if (isServer) then {
             };
             _invisibleTaskMarker setMarkerColor "ColorRed";
             _invisibleTaskMarker setMarkerShape "ELLIPSE";
-            DEBUG2("invisible task marker created: %1", _reconTaskMarker);
+            DEBUG2("invisible task marker created: %1", _invisibleTaskMarker);
             _invisibleTaskMarker;
         };
         default {

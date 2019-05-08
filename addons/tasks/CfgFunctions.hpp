@@ -25,6 +25,7 @@ class CfgFunctions {
             class initTaskItems {};
             class serializeTask {};
             class deserializeTask {};
+            class initCharacterMissions {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";

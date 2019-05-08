@@ -1,4 +1,20 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * This function will initialize all actions that come with CoopR for this character
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Public: No
+ *
+ * Scope: Client
+ */
+
 
 if (INTEGRATE_ACE3) then {
     call coopr_fnc_ace3_addCharacterActions;

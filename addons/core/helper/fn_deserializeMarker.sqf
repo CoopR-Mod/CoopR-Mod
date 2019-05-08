@@ -26,6 +26,7 @@ if (_serializedMarker isEqualTo []) exitWith { ERROR("_serializedMarker was not 
 private _markerName = _serializedMarker deleteAt 0;
 if !(_newMarkername isEqualTo "") then { _markerName = _newMarkername; }; // set override marker name
 
+INFO2("deserializing marker %1", _markerName);
 private _deserializedMarker = createMarker [_markerName, _serializedMarker deleteAt 0];
 {
     (_serializedMarker select _forEachIndex) call _x;

@@ -21,7 +21,7 @@ private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
 DEBUG("post login init...");
 
 // check if player has an old position if not spawn to hq asap
-if(_oldPos isEqualTo []) then {
+if ((count _oldPos) isEqualTo 3) then {
    call coopr_fnc_spawnAtOldPosition;
 } else {
    DEBUG("player position could not be revoked after login");
@@ -44,5 +44,6 @@ cutText ["", "BLACK IN", 0.1];
 call coopr_fnc_initCharacterEvents;
 call coopr_fnc_initCharacterRoutines;
 call coopr_fnc_initCharacterActions;
+call coopr_fnc_initCharacterMissions;
 
 DEBUG("...post login init done");

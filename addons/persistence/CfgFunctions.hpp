@@ -16,6 +16,7 @@ class CfgFunctions {
             class saveTaskLocal {};
             class getTaskLocal {};
             class getTaskCountLocal {};
+            class initServerMetaLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -40,6 +41,7 @@ class CfgFunctions {
             class saveTask {};
             class getTask {};
             class getTaskCount {};
+            class initServerMeta {};
         }
     }
 }

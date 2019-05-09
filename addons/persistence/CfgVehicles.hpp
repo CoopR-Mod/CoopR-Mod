@@ -54,6 +54,11 @@ class CfgVehicles
                   description = "If 'Persistence Location' is set to 'Custom' then define the CoopR HQ here";
                   typeName = "STRING";
               }
+              class ServerId {
+                  displayName = "CoopR Server ID";
+                  description = "The identifier for this Coopr Server instance";
+                  typeName = "NUMBER";
+              }
         }
 
         class ModuleDescription: ModuleDescription

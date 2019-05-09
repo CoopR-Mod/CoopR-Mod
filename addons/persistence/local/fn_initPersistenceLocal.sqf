@@ -52,6 +52,14 @@ if (isServer) then {
                                    taskHash TEXT,
                                    PRIMARY KEY (task_id));";
 
+    private _createServerMetaTable = "CREATE TABLE server_meta (
+                                   server_id int NOT NULL,
+                                   PRIMARY KEY (server_id));";
+
+    private _createTaskQueuesTable = "CREATE TABLE task_queues (
+                                   server_id int,
+                                   task TEXT);";
+
 
     // test connection
     private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);
@@ -79,6 +87,8 @@ if (isServer) then {
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
     _createTasksTable call coopr_fnc_extDB3sql;
+    _createServerMetaTable call coopr_fnc_extDB3sql;
+    _createTaskQueuesTable call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR;
 };

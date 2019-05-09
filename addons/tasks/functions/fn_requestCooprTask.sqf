@@ -22,5 +22,8 @@
 params [["_cooprTask", []]];
 if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was undefined") };
 
-[player, _cooprTask] remoteExec ["coopr_fnc_createCooprTask"];
+private _id = [_cooprTask, COOPR_KEY_TASK_QUEUE_ID] call CBA_fnc_hashGet;
+[_id] remoteExec ["coopr_fnc_deleteQueuedTask", EXEC_SERVER];
+
+[player, _cooprTask] remoteExec ["coopr_fnc_createCooprTask", EXEC_SERVER];
 closeDialog GUI_ID_TASKBOARD_DIALOG;

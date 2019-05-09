@@ -71,6 +71,7 @@
 #define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
 #define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
 
+#define COOPR_KEY_TASK_QUEUE_ID "coopr_task_queue_id"
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"

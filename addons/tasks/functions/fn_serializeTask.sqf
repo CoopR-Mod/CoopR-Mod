@@ -29,7 +29,7 @@ _serializedTask pushBack _taskId;
   _serializedTask pushBack (_taskId call _x);
 } forEach [
     { _this call BIS_fnc_taskDescription },
-    { _this call BIS_fnc_taskDestination },
+    //{ _this call BIS_fnc_taskDestination },
     { _this call BIS_fnc_taskState }];
 
 private _serializedTaskMarker = [_taskId + "_task_marker"] call coopr_fnc_serializeMarker;

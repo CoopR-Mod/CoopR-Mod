@@ -22,7 +22,7 @@ params [["_serializedTask", []]];
 
 if (isServer) then {
     if (_serializedTask isEqualTo []) exitWith { ERROR("_serializedTask was not defined") };
-    if ((count _serializedTask) != 5 ) exitWith { ERROR("_serializedTask array format was wrong") };
+    if ((count _serializedTask) != 4 ) exitWith { ERROR("_serializedTask array format was wrong") };
 
     INFO("updating task...");
     private _taskId = _serializedTask select 0;

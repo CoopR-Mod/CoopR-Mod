@@ -31,7 +31,7 @@ if (isServer) then {
     private _serializedMarkers = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
     private _taskId = format ["%1_%2", _taskType, call coopr_fnc_getTaskCount];
-    private _cooprTask = [_unit, _taskId , _taskType, objNull, 1, 2, true] call BIS_fnc_taskCreate;
+    private _cooprTask = [_unit, _taskId , _taskType, [], 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_cooprTask") then {
         [_unit, _taskType] call coopr_fnc_initTaskTracker;
@@ -44,7 +44,7 @@ if (isServer) then {
         private _deserializedMarkerPos = getMarkerPos (_newMarkerName + "0");
         private _taskMarker = [_deserializedMarkerPos, _taskId, "INVISIBLE"] call coopr_fnc_createTaskMarker;
         [(_cooprTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
-        [_cooprTask, getMarkerPos _taskMarker] call BIS_fnc_taskSetDestination;
+        //[_cooprTask, getMarkerPos _taskMarker] call BIS_fnc_taskSetDestination;
         true;
     } else {
         ERROR("could not assign task.");

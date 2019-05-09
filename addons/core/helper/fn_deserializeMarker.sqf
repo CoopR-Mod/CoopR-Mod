@@ -39,6 +39,7 @@ private _deserializedMarker = createMarker [_markerName, _serializedMarker delet
     { _deserializedMarker setMarkerText _this },
     { _deserializedMarker setMarkerBrush _this },
     { _deserializedMarker setMarkerDir _this },
+    { _deserializedMarker setMarkerAlpha _this },
     { _deserializedMarker setMarkerColor _this }];
 
 DEBUG("marker deserialized");

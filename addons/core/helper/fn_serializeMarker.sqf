@@ -36,6 +36,7 @@ private _serializedMarker = [];
     { markerText _this },
     { markerBrush _this },
     { markerDir _this },
+    { markerAlpha _this },
     { markerColor _this }];
 
 DEBUG("marker serialized");

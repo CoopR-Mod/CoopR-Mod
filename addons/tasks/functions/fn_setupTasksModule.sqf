@@ -10,13 +10,9 @@ if(isServer) then {
 
     if (_taskItems isEqualTo []) then { SETUPERROR("no task items have been defined")};
 
-
-    // TODO: needs to be initialized with perstistent values from DB
-    COOPR_COUNTER_TASKS = [[], 0] call CBA_fnc_hashCreate;
     COOPR_TASKS_ACTIVE = true;
     COOPR_RECON_OBJECTIVE_CACHE = [];
 
-    publicVariable "COOPR_COUNTER_TASKS";
     publicVariable "COOPR_TASKS_ACTIVE";
     publicVariable "COOPR_RECON_OBJECTIVE_CACHE";
 

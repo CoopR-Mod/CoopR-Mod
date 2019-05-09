@@ -36,6 +36,7 @@ if (isServer) then {
            private _reportInfo = format ["Reports send: %1", count _reconEntries];
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], [_reportInfo]] call CBA_fnc_notify;
            [_reconEntries] call coopr_fnc_convertReconReportsToTasks;
+
            _unit setVariable [COOPR_KEY_RECON_ENTRIES, []];
         } else {
            [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;

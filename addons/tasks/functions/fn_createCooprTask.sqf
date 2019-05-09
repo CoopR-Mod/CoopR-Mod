@@ -44,7 +44,6 @@ if (isServer) then {
         private _deserializedMarkerPos = getMarkerPos (_newMarkerName + "0");
         private _taskMarker = [_deserializedMarkerPos, _taskId, "INVISIBLE"] call coopr_fnc_createTaskMarker;
         [(_cooprTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
-        //[_cooprTask, getMarkerPos _taskMarker] call BIS_fnc_taskSetDestination;
         true;
     } else {
         ERROR("could not assign task.");

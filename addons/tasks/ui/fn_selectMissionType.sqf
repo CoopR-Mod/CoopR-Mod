@@ -42,8 +42,8 @@ params ["_ctrl"];
         private _accuracyLabel = "Accuracy: " + (_accuracy call coopr_fnc_getLabelForAccuracy);
         private _missionSelection = _allMissionSelections select _forEachIndex;
 
-        _missionSelection setVariable ["index", _forEachIndex];
-        _missionSelection ctrlAddEventHandler ["MouseButtonDown", { [(_this select 0) getVariable "index"] call coopr_fnc_requestCooprTask }];
+        _missionSelection setVariable ["cooprTask", _cooprTask];
+        _missionSelection ctrlAddEventHandler ["MouseButtonDown", { [(_this select 0) getVariable "cooprTask"] call coopr_fnc_requestCooprTask }];
         _missionSelection ctrlShow true;
         (_allTypeLabels select _forEachIndex) ctrlSetText _typeLabel;
         (_allTypeLabels select _forEachIndex) ctrlShow true;

@@ -19,12 +19,8 @@
  * Scope: Client
  */
 
-params [["_indexOfMission", -1]];
+params [["_cooprTask", []]];
+if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was undefined") };
 
-if (_indexOfMission isEqualTo -1) exitWith { ERROR("_indexOfMission was not defined") };
-
-private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt _indexOfMission;
-DEBUG2("info %1", _cooprTaskInfo);
-[player, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
-
+[player, _cooprTask] remoteExec ["coopr_fnc_createCooprTask"];
 closeDialog GUI_ID_TASKBOARD_DIALOG;

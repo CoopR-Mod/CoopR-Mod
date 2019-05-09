@@ -19,7 +19,6 @@
  */
 
 if (isServer) then {
-
     private _insertServerMeta = format ["INSERT INTO server_meta VALUES (%1)", COOPR_SERVER_ID];
     _insertServerMeta call coopr_fnc_extDB3sql;
 

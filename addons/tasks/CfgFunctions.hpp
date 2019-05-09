@@ -62,7 +62,6 @@ class CfgFunctions {
         }
         class coopr_tasks_debug {
             file = "x\coopr\addons\tasks\debug";
-            class addDebugTasks {};
         }
     }
 }

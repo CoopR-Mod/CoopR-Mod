@@ -52,7 +52,7 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _accuracy] call CBA_fnc_hashSet;
 
             DEBUG2("defined task details: %1", _newCooprTask);
-            COOPR_TASKS_QUEUE pushBack _newCooprTask;
+            [_newCooprTask] call coopr_fnc_pushTaskQueue;
             _createdCounter = _createdCounter + 1;
         } else {
             INFO("skipping convertion - recon report has accuracy -1");

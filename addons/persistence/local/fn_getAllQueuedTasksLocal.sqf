@@ -20,7 +20,7 @@
 
 if (isServer) then {
     private _allTasksFromQueue = format["SELECT task FROM task_queues WHERE server_id = %1", COOPR_SERVER_ID];
-    _allTasksFromQueue call coopr_fnc_extDB3sql;
+    (_allTasksFromQueue call coopr_fnc_extDB3sql);
 } else {
     SERVER_ONLY_ERROR;
 };

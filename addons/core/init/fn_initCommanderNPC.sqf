@@ -4,15 +4,6 @@ params [["_commander", objNull]];
 if (_commander isEqualTo objNull) exitWith { ERROR("_commander variable was not set") };
 
 if (COOPR_TASKS_ACTIVE) then {
-    _taskActionHandler = {
-        private _player = _this select 1;
-        if (not (_player call coopr_fnc_hasActiveTask)) then {
-            call coopr_fnc_requestCooprTask;
-        } else {
-           [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["already has a task"]] call CBA_fnc_notify;
-        };
-    };
-
     if (INTEGRATE_ACE3) then {
         _commander call coopr_fnc_ace3_initCommander;
     } else {

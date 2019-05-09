@@ -39,16 +39,25 @@ _combatDocument setVariable ["other", _reconDocument];
 _reconDocument setVariable ["missions", _allMissionSelections];
 _reconDocument setVariable ["other", _combatDocument];
 
+_combatDocument ctrlShow false;
+
 // initially hide all mission selections
 { _x ctrlShow false } forEach _allMissionSelections;
 { _x ctrlShow false } forEach _allTypeLabels;
 { _x ctrlShow false } forEach _allReportAccuracies;
 
-private _hasCombatTasks = (count COOPR_TASKS_QUEUE) > 0;
 
-if (!_hasCombatTasks) then {  _combatDocument ctrlShow false } else { _combatDocument ctrlShow true };
+[[], "coopr_fnc_getQueuedTasksCount", [_combatDocument, _reconDocument], {
+    params ["_callbackArgs", "_promisedResult"];
+    _callbackArgs params ["_combatDocument", "_reconDocument"];
+    private _hasCombatTasks = _promisedResult > 0;
 
-_combatDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
-_reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_requestCooprReconTask; closeDialog GUI_ID_TASKBOARD_DIALOG }];
+    if (_hasCombatTasks) then { _combatDocument ctrlShow true };
 
-DEBUG("taskboard ui initialized"); 
+    _combatDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
+    _reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_requestCooprReconTask; closeDialog GUI_ID_TASKBOARD_DIALOG }];
+
+    DEBUG("taskboard ui initialized");
+
+}] call coopr_fnc_promise;
+

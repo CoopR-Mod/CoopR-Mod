@@ -18,6 +18,9 @@ class CfgFunctions {
             class getTaskCountLocal {};
             class initServerMetaLocal {};
             class pushTaskQueueLocal {};
+            class getAllQueuedTasksLocal {};
+            class getQueuedTasksCountLocal {};
+            class popQueuedTaskLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -44,6 +47,9 @@ class CfgFunctions {
             class getTaskCount {};
             class initServerMeta {};
             class pushTaskQueue {};
+            class getAllQueuedTasks {};
+            class getQueuedTasksCount {};
+            class popQueuedTask {};
         }
     }
 }

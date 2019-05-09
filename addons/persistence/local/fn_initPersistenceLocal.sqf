@@ -57,8 +57,10 @@ if (isServer) then {
                                    PRIMARY KEY (server_id));";
 
     private _createTaskQueuesTable = "CREATE TABLE task_queues (
+                                   id int NOT NULL AUTO_INCREMENT,
                                    server_id int,
-                                   task TEXT);";
+                                   task TEXT,
+                                   PRIMARY KEY (id));";
 
 
     // test connection

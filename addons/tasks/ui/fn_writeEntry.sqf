@@ -10,7 +10,9 @@ private _markerNameEdit = _ctrl getVariable ["_markerNameEdit", objNull];
 private _entryRemoveCombo = _ctrl getVariable ["_entryRemoveCombo", objNull];
 private _entriesTextbox = _ctrl getVariable ["_entriesTextbox", objNull];
 private _reconEntries = player getVariable [COOPR_KEY_RECON_ENTRIES, []];
+private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
+if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
 if (_typeSel isEqualTo objNull) exitWith { ERROR("_typeSel was objNull") };
 if (_strengthSel isEqualTo objNull) exitWith { ERROR("_strengthSel was objNull") };
 if (_behaviourSel isEqualTo objNull) exitWith { ERROR("_behaviourSel was objNull") };
@@ -48,6 +50,7 @@ if (_nameExists) exitWith {
 
 // build hash for entry
 private _entryHash = EMPTY_HASH;
+[_entryHash, COOPR_KEY_RECON_ENTRY_OWNER, _characterID] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
 [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;

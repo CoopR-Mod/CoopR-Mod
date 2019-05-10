@@ -53,6 +53,7 @@
 #define COOPR_ROLE_NONE "coopr_role_none"
 
 // Recon Entry Keys
+#define COOPR_KEY_RECON_ENTRY_OWNER "coopr_recon_entry_owner"
 #define COOPR_KEY_RECON_ENTRY_TYPE "coopr_recon_entry_type"
 #define COOPR_KEY_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"
 #define COOPR_KEY_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"

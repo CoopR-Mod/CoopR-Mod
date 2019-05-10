@@ -22,6 +22,9 @@ class CfgFunctions {
             class getQueuedTasksCountLocal {};
             class popQueuedTaskLocal {};
             class deleteQueuedTaskLocal {};
+            class initReconReportLocal {};
+            class getReportIdForCharacterLocal {};
+            class saveReconEntryLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -52,6 +55,9 @@ class CfgFunctions {
             class getQueuedTasksCount {};
             class popQueuedTask {};
             class deleteQueuedTask {};
+            class initReconReport {};
+            class getReportIdForCharacter {};
+            class saveReconEntry {};
         }
     }
 }

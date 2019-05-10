@@ -36,6 +36,8 @@ if (isServer) then {
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
         [(_taskId call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
+        private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
+        [_characterID] call coopr_fnc_initReconReport;
         true;
     } else {
         ERROR("could not assign task.");

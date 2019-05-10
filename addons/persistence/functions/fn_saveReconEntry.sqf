@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Initialized a recon report for a given character
+ * Persists a serialized task to the local database
  *
  * Arguments:
- * None
+ * 0: _reconEntry <CBA-HASH> - recon entry to be saved
  *
  * Return Value:
  * None
@@ -18,13 +18,13 @@
  * Scope: Server
  */
 
-params [["_characterId", -1]];
+params [["_reconEntry", []]];
 
 if (isServer) then {
-    if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
+    if (_reconEntry isEqualTo []) exitWith { ERROR("_reconEntry was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_initServerMetaLocal;
+        call coopr_fnc_saveReconEntryLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

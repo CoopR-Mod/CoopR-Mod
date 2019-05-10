@@ -5,7 +5,7 @@
  * Initialized a recon report for a given character
  *
  * Arguments:
- * None
+ * _characterId <NUMBER> - ID of the character
  *
  * Return Value:
  * None
@@ -24,7 +24,7 @@ if (isServer) then {
     if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_initServerMetaLocal;
+        call coopr_fnc_initReconReportLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

@@ -62,6 +62,18 @@ if (isServer) then {
                                    task TEXT,
                                    PRIMARY KEY (id));";
 
+    private _createReconReportsTable = "CREATE TABLE recon_reports (
+                                       id int NOT NULL AUTO_INCREMENT,
+                                       character_id int,
+                                       PRIMARY KEY (id));";
+
+    private _createReconEntriesTable = "CREATE TABLE recon_entries (
+                                       id int NOT NULL AUTO_INCREMENT,
+                                       report_id int,
+                                       entry TEXT,
+                                       PRIMARY KEY (id),
+                                       FOREIGN KEY (report_id) REFERENCES recon_reports(id));";
+
 
     // test connection
     private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);
@@ -91,6 +103,8 @@ if (isServer) then {
     _createTasksTable call coopr_fnc_extDB3sql;
     _createServerMetaTable call coopr_fnc_extDB3sql;
     _createTaskQueuesTable call coopr_fnc_extDB3sql;
+    _createReconReportsTable call coopr_fnc_extDB3sql;
+    _createReconEntriesTable call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR;
 };

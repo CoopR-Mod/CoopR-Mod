@@ -12,4 +12,3 @@ COOPR_REP_WIA_MULTIPLIER_WEST = _WIAReputation;
 
 publicVariable "COOPR_REP_MAN";
 publicVariable "COOPR_REP_WIA_MULTIPLIER_WEST";
-publicVariable "COOPR_RECON_REPORTS";

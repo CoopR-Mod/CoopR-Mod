@@ -45,7 +45,6 @@ class CfgFunctions {
             class determineTaskType {};
             class hasActiveTask {};
             class isInTaskArea {};
-            class getTasksByType {};
             class getLabelByMissionType {};
             class getLabelForAccuracy {};
         }

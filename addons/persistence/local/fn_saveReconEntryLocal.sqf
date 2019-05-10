@@ -23,10 +23,17 @@ params [["_reconEntry", []]];
 if (isServer) then {
     if (_reconEntry isEqualTo []) exitWith { ERROR("_reconEntry was not defined") };
 
-    INFO("saving recon entry");
-    private _characterId = [_entryHash, COOPR_KEY_RECON_ENTRY_OWNER] call CBA_fnc_hashGet;
-    private _updateTask = format["INSERT INTO recon_entries (report_id, entry) VALUES(%1, '%2')", _taskId, _serializedTask];
-    _updateTask call coopr_fnc_extDB3sql;
+    private _characterId = [_reconEntry, COOPR_KEY_RECON_ENTRY_OWNER] call CBA_fnc_hashGet;
+
+    [[_characterId], "coopr_fnc_getReportIdForCharacterLocal", [_reconEntry], {
+        params ["_callbackArgs", "_promisedResult"];
+        _callbackArgs params ["_reconEntry"];
+
+        INFO("saving recon entry");
+        private _saveEntry = format["INSERT INTO recon_entries (report_id, entry) VALUES(%1, '%2')", _promisedResult, _reconEntry];
+        _saveEntry call coopr_fnc_extDB3sql;
+
+    }] call coopr_fnc_promise;
 
 } else {
     SERVER_ONLY_ERROR;

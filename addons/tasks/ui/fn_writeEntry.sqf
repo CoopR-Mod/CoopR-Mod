@@ -60,6 +60,8 @@ private _entryHash = EMPTY_HASH;
 [_entryHash, COOPR_KEY_RECON_ENTRY_ACCURACY, _reportAccuracy] call CBA_fnc_hashSet;
 
 _reconEntries pushBack _entryHash;
+[_entryHash] remoteExec ["coopr_fnc_saveReconEntry", EXEC_SERVER];
+
 playSound "coopr_sound_pencil_draw";
 
 // update remove combobox

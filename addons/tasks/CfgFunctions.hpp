@@ -28,7 +28,6 @@ class CfgFunctions {
             file = "x\coopr\addons\tasks\routines";
             class taskRoutine {};
             class desertionRoutine {};
-            class taskFreshnessRoutine {};
         }
         class coopr_tasks_ui {
             file = "x\coopr\addons\tasks\ui";

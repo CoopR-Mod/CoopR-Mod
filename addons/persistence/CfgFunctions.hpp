@@ -25,6 +25,7 @@ class CfgFunctions {
             class initReconReportLocal {};
             class getReportIdForCharacterLocal {};
             class saveReconEntryLocal {};
+            class getEntriesForReportLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -58,6 +59,7 @@ class CfgFunctions {
             class initReconReport {};
             class getReportIdForCharacter {};
             class saveReconEntry {};
+            class getEntriesForReport {};
         }
     }
 }

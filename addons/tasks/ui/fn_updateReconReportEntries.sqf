@@ -16,10 +16,11 @@ DEBUG2("%1 entries found", count _entries);
     private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
     private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
     private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
-    private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+    private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
     private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
     private _nearestLocation = [_entry, COOPR_KEY_RECON_ENTRY_LOCATION] call CBA_fnc_hashGet;
     private _markerPos = [];
+    private _marker = [_serializedMarkers] call coopr_fnc_deserializeMarker;
 
     switch (_behaviour) do {
         case COOPR_TASK_BEHAVIOUR_COMBAT: { };

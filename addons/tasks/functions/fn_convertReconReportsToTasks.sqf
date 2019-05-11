@@ -31,15 +31,14 @@ if (isServer) then {
         private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
         private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
         private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
-        private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
         private _accuracy = [_entry, COOPR_KEY_RECON_ENTRY_ACCURACY] call CBA_fnc_hashGet;
 
         private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
         DEBUG2("determined task type: %1", _cooprTaskType);
 
-        private _serializedMarker = [];
-        { _serializedMarker pushBack ([_x, true] call coopr_fnc_serializeMarker); } forEach _marker;
+        { deleteMarker (_x select 0) } forEach _serializedMarkers;
 
         private _newCooprTask = EMPTY_HASH;
 
@@ -48,7 +47,7 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
             [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarker] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _accuracy] call CBA_fnc_hashSet;
 
             DEBUG2("defined task details: %1", _newCooprTask);

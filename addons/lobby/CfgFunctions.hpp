@@ -9,6 +9,7 @@ class CfgFunctions {
             class initCharacter {};
             class setupLobbyModule {};
             class initLobby {};
+            class cleanUp {};
         }
         class coopr_lobby_ui {
             file = "x\coopr\addons\lobby\ui";

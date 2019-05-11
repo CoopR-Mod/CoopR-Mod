@@ -31,6 +31,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
     private _markerText = ctrlText _markerNameEdit;
     private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText };
+    private _serializedMarkers = [];
     DEBUG2("foundmarker: %1", _foundMarker);
 
     if (_markerText isEqualTo "") exitWith {
@@ -47,13 +48,17 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     // check if marker name already has been defined
     {
         private _entry = _x select 0;
-        private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _marker = [_serializedMarkers] call coopr_fnc_deserializedMarker;
         _nameExists = (markerText (_marker select 0)) == markerText (_foundMarker select 0);
     } forEach _reconEntries;
 
     if (_nameExists) exitWith {
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["marker name already exists"]] call CBA_fnc_notify;
     };
+
+    // serialize all markers
+    { _serializedMarkers pushBack ([_x] call coopr_fnc_serializeMarker); } forEach _foundMarker;
 
     // build hash for entry
     private _entryHash = EMPTY_HASH;

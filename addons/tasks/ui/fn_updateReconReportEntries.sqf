@@ -20,7 +20,8 @@ DEBUG2("%1 entries found", count _entries);
     private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
     private _nearestLocation = [_entry, COOPR_KEY_RECON_ENTRY_LOCATION] call CBA_fnc_hashGet;
     private _markerPos = [];
-    private _marker = [_serializedMarkers] call coopr_fnc_deserializeMarker;
+    private _marker = [];
+    {_marker pushBack ([_x] call coopr_fnc_deserializeMarker) } forEach _serializedMarkers;
 
     switch (_behaviour) do {
         case COOPR_TASK_BEHAVIOUR_COMBAT: { };

@@ -24,7 +24,7 @@ if (isServer) then {
     if (_reportID isEqualTo -1) exitWith { ERROR("_reportID was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_getEntriesForReport;
+        call coopr_fnc_getEntriesForReportLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

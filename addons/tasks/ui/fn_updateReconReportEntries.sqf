@@ -11,13 +11,14 @@ DEBUG("updating recon report entries");
 DEBUG2("%1 entries found", count _entries);
 
 {
-    DEBUG2("rendering entry: %1", _x);
-    private _type = [_x, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
-    private _strength = [_x, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
-    private _behaviour = [_x, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
-    private _marker = [_x, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
-    private _time = [_x, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
-    private _nearestLocation = [_x, COOPR_KEY_RECON_ENTRY_LOCATION] call CBA_fnc_hashGet;
+    private _entry = _x select 0; // because of extDB3 result structure
+    DEBUG2("rendering entry: %1", _entry);
+    private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
+    private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
+    private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
+    private _marker = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+    private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
+    private _nearestLocation = [_entry, COOPR_KEY_RECON_ENTRY_LOCATION] call CBA_fnc_hashGet;
     private _markerPos = [];
 
     switch (_behaviour) do {

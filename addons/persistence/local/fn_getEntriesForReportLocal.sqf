@@ -24,7 +24,7 @@ if (isServer) then {
     if (_reportID isEqualTo -1) exitWith { ERROR("_reportID was not defined") };
     INFO2("fetching recon entries for report %1 ", _reportID);
     private _allEntries = format ["SELECT entry FROM recon_entries WHERE report_id = %1", _reportID];
-    (_allEntries call coopr_fnc_extDB3sql) select 0 select 0;
+    (_allEntries call coopr_fnc_extDB3sql);
 } else {
     SERVER_ONLY_ERROR;
 };

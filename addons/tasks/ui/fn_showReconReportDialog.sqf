@@ -5,15 +5,23 @@ disableSerialization;
 createDialog "CoopR_ReconReport_Dialog";
 waitUntil {!isNull findDisplay GUI_ID_RECON_REPORT_DIALOG};
 
+private _effect = ppEffectCreate ["DynamicBlur", 10];
+_effect ppEffectEnable true;
+_effect ppEffectAdjust [10];
+_effect ppEffectCommit 0.1;
+
 private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
 // promise for recon entries
-[[_characterID], "coopr_fnc_getEntriesForCharacter", [], {
+[[_characterID], "coopr_fnc_getEntriesForCharacter", [_effect], {
     params ["_callbackArgs", "_promisedResult"];
+    _callbackArgs params ["_effect"];
     private _reconEntries = _promisedResult;
     DEBUG2("found %1 recon entries", count _reconEntries);
 
     private _reconRepDisplay = findDisplay GUI_ID_RECON_REPORT_DIALOG;
+    _reconRepDisplay setVariable ["effect", _effect];
+    _reconRepDisplay displayAddEventHandler ["Unload", { ppEffectDestroy ((_this select 0) getVariable "effect")} ];
 
     // controls
     private _typeSelection = _reconRepDisplay displayCtrl GUI_ID_RECON_REPORT_TYPE_COMBO;

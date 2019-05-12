@@ -1,14 +1,14 @@
 #include "script_component.hpp"
 
-_broadcastActionCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
-_reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
+private _finishReportCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
+private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
 [player, 1, ["ACE_SelfActions"],
 ["init_action_0", localize "str.coopr.ace3.interaction.coopr", "", {}, {true}] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],
-["broadcast_action_1", localize "str.coopr.core.action.broadcast", "", { [player] remoteExec ["coopr_fnc_broadcastReconReports", EXEC_SERVER] }, _broadcastActionCondition] call ace_interact_menu_fnc_createAction
+ ["finish_report_action_1", localize "str.coopr.core.action.finishreport", "", { [player] remoteExec ["coopr_fnc_finishReconReport", EXEC_SERVER] }, _finishReportCondition] call ace_interact_menu_fnc_createAction
 ] call ace_interact_menu_fnc_addActionToObject;
 
 [player, 1, ["ACE_SelfActions", "init_action_0"],

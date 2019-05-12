@@ -9,9 +9,9 @@
             <Original>Please drive carefully. The technical maintenance is due!</Original>
             <German>Bitte fahrt vorsichtig. Die TMP ist bald wieder dran!</German>
         </Key>
-        <Key ID="str.coopr.core.action.broadcast">
-            <Original>&lt;t color='#4286f4'&gt;Send Recon Report&lt;/t&gt;</Original>
-            <German>&lt;t color='#4286f4'&gt;Aufklaerungsbericht senden&lt;/t&gt;</German>
+        <Key ID="str.coopr.core.action.finishreport">
+            <Original>&lt;t color='#4286f4'&gt;Finish Recon Report&lt;/t&gt;</Original>
+            <German>&lt;t color='#4286f4'&gt;Aufklaerungsbericht abschliessen&lt;/t&gt;</German>
         </Key>
         <Key ID="str.coopr.core.action.rep">
             <Original>&lt;t color='#4286f4'&gt;Show Reputation&lt;/t&gt;</Original>

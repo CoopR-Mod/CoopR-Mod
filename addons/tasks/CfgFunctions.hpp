@@ -3,7 +3,7 @@ class CfgFunctions {
         class coopr_tasks_functions {
             file = "x\coopr\addons\tasks\functions";
             class setupTasksModule {};
-            class broadcastReconReports {};
+            class finishReconReport {};
             class deliverAfterActionReport {};
             class convertReconReportsToTasks {};
             class createCooprTask {};

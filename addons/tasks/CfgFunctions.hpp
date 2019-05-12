@@ -5,7 +5,7 @@ class CfgFunctions {
             class setupTasksModule {};
             class finishReconReport {};
             class deliverAfterActionReport {};
-            class convertReconReportsToTasks {};
+            class convertReportToMission {};
             class createCooprTask {};
             class createReconTask {};
             class validateReport {};

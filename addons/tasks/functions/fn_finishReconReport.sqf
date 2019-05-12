@@ -32,12 +32,12 @@ if (isServer) then {
       private _reconEntries = _promisedResult;
 
       if ((count _reconEntries) isEqualTo 0) exitWith {
-        INFO("no recon entries created to broadcast");
-        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No recon reports created"]] call CBA_fnc_notify;
+        INFO("no recon entries to finish");
+        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["no recon reports created"]] call CBA_fnc_notify;
       };
 
-      [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Recon Report sent!"]] call CBA_fnc_notify;
-      [_reconEntries] call coopr_fnc_convertReconReportsToTasks;
+      [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["recon report sent"]] call CBA_fnc_notify;
+      [_reconEntries] call coopr_fnc_convertReportToMission;
       [_characterID, true] call coopr_fnc_setReportState;
 
     }] call coopr_fnc_promise; // coopr_fnc_getEntriesForCharacter

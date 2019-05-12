@@ -11,7 +11,7 @@ DEBUG("updating recon report entries");
 DEBUG2("%1 entries found", count _entries);
 
 {
-    private _entry = _x select 0; // because of extDB3 result structure
+    private _entry = _x;
     DEBUG2("rendering entry: %1", _entry);
     private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
     private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;

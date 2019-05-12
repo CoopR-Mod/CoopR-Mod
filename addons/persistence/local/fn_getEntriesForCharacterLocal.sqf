@@ -25,7 +25,10 @@ if (isServer) then {
     INFO2("fetching recon entries for character %1 ", _characterID);
     private _reportID = (player getVariable [COOPR_KEY_CHARACTER_ID, -1]) call coopr_fnc_getReportIdForCharacterLocal;
     private _allEntries = format ["SELECT entry FROM recon_entries WHERE report_id = %1", _reportID];
-    (_allEntries call coopr_fnc_extDB3sql);
+    private _results = (_allEntries call coopr_fnc_extDB3sql);
+    private _destructuredEntries = [];
+    { _destructuredEntries pushBack (_x select 0)} forEach _results; // to keep intuitive array structures
+    _destructuredEntries;
 } else {
     SERVER_ONLY_ERROR;
 };

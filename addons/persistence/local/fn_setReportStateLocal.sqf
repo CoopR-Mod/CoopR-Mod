@@ -2,10 +2,11 @@
 /*
  * Author: xetra11
  *
- * Initialized a recon report for a given character
+ * Sets the recon report to a given state
  *
  * Arguments:
- * None
+ * 0: _characterId <NUMBER> - ID of the character the reports belongs to
+ * 1: _state <BOOLEAN> - the state to set
  *
  * Return Value:
  * None
@@ -18,20 +19,21 @@
  * Scope: Server
  */
 
-params [["_characterId", -1]];
+params [["_characterId", -1],
+        ["_state", objNull]];
 
 if (isServer) then {
     if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
+    if (_state isEqualTo objNull) exitWith { ERROR("_state was not defined") };
 
     INFO2("init recon report for character %1", _characterId);
     private _hasReportStmt = format ["SELECT count(*) FROM recon_reports WHERE character_id = %1", _characterId];
     private _hasReport = (_hasReportStmt call coopr_fnc_extDB3sql) select 0 select 0;
-    if (_hasReport > 0) then {
-        DEBUG2("recon report for character %1 already initialized", _characterId);
-    } else {
-        private _initReconReport = format ["INSERT INTO recon_reports (character_id, finished) VALUES (%1, false)", _characterId];
-        _initReconReport call coopr_fnc_extDB3sql;
+    if (_hasReport == 0) exitWith {
+        DEBUG2("no recon report found for character %1", _characterId);
     };
+    private _updateState = format ["UPDATE recon_reports SET finished = %1 WHERE character_id = %2", _state, _characterId];
+    _updateState call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR;
 };

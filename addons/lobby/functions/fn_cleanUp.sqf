@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: xetra11 
+ * Author: xetra11
  *
  * This function will do some clean up tasks after a character logs out. Like removing player placed markers etc.
  * This is important due the fact the player can login with three different characters and they all should have their
@@ -32,4 +32,3 @@ if !(_currentTask isEqualTo []) then {
     [(_currentTask call coopr_fnc_serializeTask)] remoteExec ["coopr_fnc_saveTask", EXEC_SERVER];
     [_currentTask] spawn coopr_fnc_removeTaskMarker;
 };
-

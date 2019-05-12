@@ -1,4 +1,22 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Routine running when a character is being logged out
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * Trivial
+ *
+ * Public: No
+ *
+ * Scope: Client
+ */
 
 cutText ["returning to character lobby.", "BLACK OUT", 0.5];
 sleep 1;

@@ -50,5 +50,4 @@ DEBUG("applied character state to new unit");
 player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
 INFO2("player with id %1 logged in", getPlayerUID player);
 
-
 call coopr_fnc_initCharacter;

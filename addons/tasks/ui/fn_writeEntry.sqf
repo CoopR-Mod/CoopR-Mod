@@ -48,9 +48,9 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     // check if marker name already has been defined
     {
         private _entry = _x select 0;
-        private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
-        private _marker = [_serializedMarkers] call coopr_fnc_deserializedMarker;
-        _nameExists = (markerText (_marker select 0)) == markerText (_foundMarker select 0);
+        private _serMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _entryMarkerDescription = (_serMarkers select 0) select 5 // markerText index
+        _nameExists = _entryMarkerDescription isEqualTo markerText (_foundMarker select 0);
     } forEach _reconEntries;
 
     if (_nameExists) exitWith {
@@ -58,7 +58,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     };
 
     // serialize all markers
-    { _serializedMarkers pushBack ([_x] call coopr_fnc_serializeMarker); } forEach _foundMarker;
+    { _serializedMarkers pushBack ([_x] call coopr_fnc_serializeMarker) } forEach _foundMarker;
 
     // build hash for entry
     private _entryHash = EMPTY_HASH;

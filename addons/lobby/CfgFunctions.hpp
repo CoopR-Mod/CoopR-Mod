@@ -10,6 +10,7 @@ class CfgFunctions {
             class setupLobbyModule {};
             class initLobby {};
             class cleanUp {};
+            class redrawCharacterMarker {};
         }
         class coopr_lobby_ui {
             file = "x\coopr\addons\lobby\ui";

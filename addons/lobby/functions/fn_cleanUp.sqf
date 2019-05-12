@@ -20,8 +20,6 @@
  * Scope: Client
  */
 
-private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
-INFO2("running clean up for character %1", _characterID);
 
 //TODO: into own function
 INFO("removing characters markers");

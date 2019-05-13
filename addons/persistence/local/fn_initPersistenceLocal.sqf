@@ -65,6 +65,7 @@ if (isServer) then {
     private _createReconReportsTable = "CREATE TABLE recon_reports (
                                        id int NOT NULL AUTO_INCREMENT,
                                        character_id int,
+                                       task_id varchar(255),
                                        finished boolean,
                                        PRIMARY KEY (id));";
 

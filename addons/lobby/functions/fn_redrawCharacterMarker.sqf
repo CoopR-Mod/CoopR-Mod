@@ -30,4 +30,4 @@ private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
       { [_x] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
     } forEach _reconEntries;
 
-} call coopr_fnc_promise;
+}] call coopr_fnc_promise;

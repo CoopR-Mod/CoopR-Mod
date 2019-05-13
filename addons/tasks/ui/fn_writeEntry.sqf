@@ -49,7 +49,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     {
         private _entry = _x;
         private _serMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
-        private _entryMarkerDescription = (_serMarkers select 0) select 5 // markerText index
+        private _entryMarkerDescription = (_serMarkers select 0) select 5; // markerText index
         _nameExists = _entryMarkerDescription isEqualTo markerText (_foundMarker select 0);
     } forEach _reconEntries;
 

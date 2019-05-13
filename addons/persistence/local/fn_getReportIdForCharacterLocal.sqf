@@ -29,7 +29,8 @@ if (isServer) then {
         private _getId = format ["SELECT id FROM recon_reports WHERE character_id = %1", _characterId];
         (_getId call coopr_fnc_extDB3sql) select 0 select 0;
     } else {
-        ERROR2("no recon report found for character %1", _characterId);
+        DEBUG2("no recon report found for character %1", _characterId);
+        objNull;
     };
 } else {
     SERVER_ONLY_ERROR;

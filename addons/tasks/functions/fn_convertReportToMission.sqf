@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Converts all recon reports to CoopR missions/tasks.
+ * Converts all recon reports to a CoopR mission.
 
  * Arguments:
  * 0: _reconEntries <ARRAY> - All recon entries given by a unit/player
@@ -22,9 +22,9 @@ params [["_reconEntries", []]];
 if (_reconEntries isEqualTo []) exitWith { ERROR("_reconEntries was not defined") };
 
 if (isServer) then {
-    DEBUG2("recon reports to be converted: %1", count _reconEntries);
+    DEBUG2("recon entries to be converted: %1", count _reconEntries);
+    private _reportedStrengths = [_reconEntries] call coopr_fnc_extractReportedStrength;
 
-    private _createdCounter = 0;
     {
         DEBUG("parsing recon reports");
         private _entry = _x;
@@ -52,13 +52,12 @@ if (isServer) then {
 
             DEBUG2("defined task details: %1", _newCooprTask);
             [_newCooprTask] call coopr_fnc_pushTaskQueue;
-            _createdCounter = _createdCounter + 1;
+            DEBUG2("coopr mission created");
         } else {
             INFO("skipping convertion - recon report has accuracy -1");
         }
     } forEach _reconEntries;
 
-    DEBUG2("generated coopr tasks: %1", _createdCounter);
 } else {
     SERVER_ONLY_ERROR;
 };

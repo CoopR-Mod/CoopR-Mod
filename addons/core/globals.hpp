@@ -40,6 +40,7 @@
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
 #define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
 #define COOPR_KEY_RECON_ENTRIES "coopr_character_recon_entries"
+#define COOPR_KEY_IN_RECON "coopr_character_in_recon"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"

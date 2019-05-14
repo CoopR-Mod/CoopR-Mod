@@ -36,9 +36,10 @@ if (isServer) then {
         [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["no recon reports created"]] call CBA_fnc_notify;
       };
 
-      [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["recon report sent"]] call CBA_fnc_notify;
+      [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["recon report completed"]] call CBA_fnc_notify;
       [_reconEntries] call coopr_fnc_convertReportToMission;
       [_characterID, true] call coopr_fnc_setReportState;
+      _unit setVariable [COOPR_KEY_IN_RECON, false, true];
 
     }] call coopr_fnc_promise; // coopr_fnc_getEntriesForCharacter
 

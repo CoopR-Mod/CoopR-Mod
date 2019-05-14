@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-private _finishReportCondition = { count (player getVariable [COOPR_KEY_RECON_ENTRIES, []]) > 0 };
+private _finishReportCondition = { player getVariable [COOPR_KEY_IN_RECON, false] };
 private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask };
 
 [player, 1, ["ACE_SelfActions"],

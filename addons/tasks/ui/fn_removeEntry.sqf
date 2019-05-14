@@ -1,23 +1,31 @@
 #include "script_component.hpp"
 
 private _ctrl = _this select 0;
+private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
-private _entryRemoveCombo = _ctrl getVariable ["_entryRemoveCombo", objNull];
-private _entriesTextbox = _ctrl getVariable ["_entriesTextbox", objNull];
-private _reconEntries = player getVariable [COOPR_KEY_RECON_ENTRIES, []];
+[[_characterID], "coopr_fnc_getEntriesForCharacter", [_ctrl], {
+    params ["_callbackArgs", "_promisedResult"];
+    _callbackArgs params ["_ctrl"];
 
-if (_entryRemoveCombo isEqualTo objNull) exitWith { ERROR("_entryRemoveCombo was objNull") };
-if (_entriesTextbox isEqualTo objNull) exitWith { ERROR("_entriesTextbox was objNull") };
+    private _reconEntries = _promisedResult;
 
-private _selection = lbCurSel _entryRemoveCombo;
-private _selectedEntry = _entryRemoveCombo lbData _selection;
+    private _entryRemoveCombo = _ctrl getVariable ["_entryRemoveCombo", objNull];
+    private _entriesTextbox = _ctrl getVariable ["_entriesTextbox", objNull];
 
-DEBUG2("removing entry at %1", _selectedEntry);
-_reconEntries deleteAt (parseNumber _selectedEntry);
-lbClear _entryRemoveCombo;
-{ _entryRemoveCombo lbAdd str (_forEachIndex + 1); _entryRemoveCombo lbSetData [_forEachIndex, str _forEachIndex] } forEach _reconEntries;
+    if (_entryRemoveCombo isEqualTo objNull) exitWith { ERROR("_entryRemoveCombo was objNull") };
+    if (_entriesTextbox isEqualTo objNull) exitWith { ERROR("_entriesTextbox was objNull") };
 
-player setVariable [COOPR_KEY_RECON_ENTRIES, _reconEntries];
+    private _selection = lbCurSel _entryRemoveCombo;
+    private _selectedEntry = _entryRemoveCombo lbData _selection;
 
-playSound "coopr_sound_pencil_erasing";
-[_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
+    DEBUG2("removing entry at %1", _selectedEntry);
+    private _entryToRemove = _reconEntries select (parseNumber _selectedEntry);
+    private _idToRemove = [_entryToRemove, COOPR_KEY_RECON_ENTRY_ID] call CBA_fnc_hashGet;
+    [_idToRemove] remoteExec ["coopr_fnc_removeReconEntry", EXEC_SERVER];
+    lbClear _entryRemoveCombo;
+    { _entryRemoveCombo lbAdd str (_forEachIndex + 1); _entryRemoveCombo lbSetData [_forEachIndex, str _forEachIndex] } forEach _reconEntries;
+
+    playSound "coopr_sound_pencil_erasing";
+    [_entriesTextbox, _reconEntries] call coopr_fnc_updateReconReportEntries;
+
+}] call coopr_fnc_promise; // coopr_fnc_getEntriesForCharacter

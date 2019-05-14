@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Persists an entry to the local database
+ * removes an recon entry from the local database
  *
  * Arguments:
- * 0: _reconEntry <CBA-HASH> - recon entry to be saved
+ * 0: _id <NUMBER> - entry id
  *
  * Return Value:
  * None
@@ -18,13 +18,13 @@
  * Scope: Server
  */
 
-params [["_reconEntry", []]];
+params [["_id", -1]];
 
 if (isServer) then {
-    if (_reconEntry isEqualTo []) exitWith { ERROR("_reconEntry was not defined") };
+    if (_id isEqualTo -1) exitWith { ERROR("_id was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_reconEntry] call coopr_fnc_saveReconEntryLocal;
+        [_id] call coopr_fnc_removeReconEntryLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

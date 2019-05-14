@@ -39,7 +39,6 @@
 #define COOPR_KEY_POSITION "coopr_character_position"
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
 #define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
-#define COOPR_KEY_RECON_ENTRIES "coopr_character_recon_entries"
 #define COOPR_KEY_IN_RECON "coopr_character_in_recon"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
@@ -54,6 +53,7 @@
 #define COOPR_ROLE_NONE "coopr_role_none"
 
 // Recon Entry Keys
+#define COOPR_KEY_RECON_ENTRY_ID "coopr_recon_entry_id"
 #define COOPR_KEY_RECON_ENTRY_OWNER "coopr_recon_entry_owner"
 #define COOPR_KEY_RECON_ENTRY_TYPE "coopr_recon_entry_type"
 #define COOPR_KEY_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"

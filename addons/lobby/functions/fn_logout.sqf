@@ -23,7 +23,7 @@ sleep 1;
 cutText ["saving character...", "BLACK OUT", 0.0001];
 INFO2("player with id %1 is logging out to lobby", getPlayerUid player);
 
-[] spawn coopr_fnc_cleanUp;
+[] call coopr_fnc_cleanUp;
 
 DEBUG("saving character state before logout...");
 player call coopr_fnc_updateState;

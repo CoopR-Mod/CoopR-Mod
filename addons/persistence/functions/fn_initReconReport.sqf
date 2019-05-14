@@ -27,7 +27,7 @@ if (isServer) then {
     if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_chararacterId, _taskId] call coopr_fnc_initReconReportLocal;
+        [_characterId, _taskId] call coopr_fnc_initReconReportLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

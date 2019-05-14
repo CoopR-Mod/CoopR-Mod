@@ -24,8 +24,9 @@ private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
     params ["_callbackArgs", "_promisedResult"];
     private _reconEntries = _promisedResult;
 
+    DEBUG("redrawing markers");
     {
-      private _entry = _x select 0;
+      private _entry = _x;
       private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
       { [_x] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
     } forEach _reconEntries;

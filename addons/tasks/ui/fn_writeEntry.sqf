@@ -49,6 +49,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     {
         private _entry = _x;
         private _serMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        DEBUG2("serMarker %1", _serMarkers);
         private _entryMarkerDescription = (_serMarkers select 0) select 5; // markerText index
         _nameExists = _entryMarkerDescription isEqualTo markerText (_foundMarker select 0);
     } forEach _reconEntries;
@@ -66,7 +67,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     [_entryHash, COOPR_KEY_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _foundMarker] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundMarker select 0), ""]) ] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_ACCURACY, _reportAccuracy] call CBA_fnc_hashSet;

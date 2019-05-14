@@ -25,7 +25,7 @@ if (isServer) then {
     INFO2("fetching recon entries for character %1 ", _characterID);
     private _reportID = (player getVariable [COOPR_KEY_CHARACTER_ID, -1]) call coopr_fnc_getReportIdForCharacterLocal;
 
-    if (isNull _reportID) exitWith { DEBUG("report id was null - skip fetching"); []; };
+    if (_reportID isEqualTo -1) exitWith { DEBUG("report id was null - skip fetching"); []; };
 
     private _allEntries = format ["SELECT entry FROM recon_entries WHERE report_id = %1", _reportID];
     private _results = (_allEntries call coopr_fnc_extDB3sql);

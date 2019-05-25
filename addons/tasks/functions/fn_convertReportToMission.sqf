@@ -28,6 +28,7 @@ if (isServer) then {
     {
         DEBUG("parsing recon reports");
         private _entry = _x;
+        private _owner = [_entry, COOPR_KEY_RECON_ENTRY_OWNER] call CBA_fnc_hashGet;
         private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
         private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
         private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
@@ -39,6 +40,7 @@ if (isServer) then {
         DEBUG2("determined task type: %1", _cooprTaskType);
 
         { deleteMarker (_x select 0) } forEach _serializedMarkers;
+        private _currentTask = _owner getVariable [COOPR_KEY_ACTIVE_TASK, []];
 
         private _newCooprTask = EMPTY_HASH;
 

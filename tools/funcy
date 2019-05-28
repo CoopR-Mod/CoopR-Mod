@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+import argparse
+import os
+
+parser = argparse.ArgumentParser(prog='Funcy v0.1-alpha', description='Creates SQF functions')
+parser.add_argument('prefix',  help='the prefix of your mod')
+parser.add_argument('addon',  help='the addon the function should be created for')
+parser.add_argument('name',  help='name of the function (without fn prefix)')
+parser.add_argument('-v', dest='verbose', action='store_true', help='prints log messages to follow the process')
+
+args = parser.parse_args()
+
+def check_prerequisites(args):
+    has_addons = os.path.isdir("addons") and os.path.exists("addons")
+    has_addons_folder = os.path.isdir("addons/" + args.addon) and os.path.exists("addons/" + args.addon)
+    has_config_file = os.path.exists("addons/" + args.addon + "/CfgFunctions.hpp")
+
+    if args.verbose:
+        print(os.getcwd())
+    if not has_addons:
+        print("Error: no addons directory could be found")
+        exit()
+    if not has_addons_folder:
+        print("Error: " + args.addon + " could not be found in addons/")
+        exit()
+    if not has_config_file:
+        if args.verbose:
+            print("looking for CfgFunctions.hpp in " + os.getcwd() + "/addons/" + args.addon + "/CfgFunctions.hpp")
+        print("Error: CfgFunctions.hpp could not be found in addons/")
+        exit()
+
+def read_config(path_to_addon):
+    path_to_config = path_to_addon + "/CfgFunctions.hpp"
+
+    with open(path_to_config, 'r') as config_file:
+        config_file_content = config_file.readlines()
+        return config_file_content
+
+def contains_substring(the_list, substring):
+    for element in the_list:
+        if substring in element:
+            return True
+    return False
+
+def validate_config_format(old_config):
+    if not contains_substring(old_config, "class CfgFunctions"):
+        print("CfgFunctions declaration was missing in config")
+        exit()
+    if not contains_substring(old_config, "class " + args.prefix):
+        print("prefix '" + args.prefix + "' was missing in config")
+        exit()
+
+def modify_config(path_to_addon, old_config):
+    path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
+
+    old_value = old_config[4]
+    index_of_class = old_value.find("class")
+    tabs = old_value[0:index_of_class]
+
+    old_config.insert(4, tabs + "class " + args.name + " {};\n")
+
+    with open(path_to_config, 'w') as new_config_file:
+        new_config_file.writelines(old_config)
+        new_config_file.close()
+
+check_prerequisites(args)
+path_to_addon = "addons/" + args.addon
+old_config = read_config(path_to_addon)
+validate_config_format(old_config)
+modify_config(path_to_addon, old_config)
+

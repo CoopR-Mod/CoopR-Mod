@@ -9,6 +9,7 @@ parser.add_argument('addon',  help='the addon the function should be created for
 parser.add_argument('name',  help='name of the function (without fn prefix)')
 parser.add_argument('namespace', nargs="?", default="functions",  help='name of the function (without fn prefix)')
 parser.add_argument('-v', dest='verbose', action='store_true', help='prints log messages to follow the process')
+parser.add_argument('-t', dest='template', action='store_true', help='uses a template for creating function files')
 
 args = parser.parse_args()
 
@@ -57,7 +58,7 @@ def list_index_substring(the_list, substring):
     return -1
 
 def validate_config_format(old_config):
-    logger.info("validating old CfgFunctions.hpp format...")
+    logger.info("validating CfgFunctions.hpp format...")
     if not contains_substring(old_config, "class CfgFunctions"):
         logger.error("CfgFunctions declaration was missing in config")
         exit()
@@ -68,7 +69,6 @@ def validate_config_format(old_config):
 def modify_config(path_to_addon, old_config):
     logger.info("adding new function...")
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
-
     offset_to_functions = 2
     index_of_namespace = list_index_substring(old_config, args.prefix + "_" + args.addon + "_" + args.namespace)
     logger.debug("index of namespace is: " + str(index_of_namespace))
@@ -84,13 +84,30 @@ def modify_config(path_to_addon, old_config):
         new_config_file.writelines(old_config)
         new_config_file.close()
 
+def find_template():
+    logger.info("reading template file...")
+    script_path = os.path.dirname(os.path.realpath(__file__))
+    path_to_template = script_path + "/template.fy"
+
+    with open(path_to_template, 'r') as template_file:
+        temp_file = template_file.readlines()
+        template_file.close()
+        return temp_file
+
 def create_func_file():
     logger.info("create function file...")
     path_to_new_file = path_to_addon + "/" + args.namespace + "/fn_" + args.name + ".sqf"
 
-    with open(path_to_new_file, 'w') as new_func_file:
-        new_func_file.writelines(old_config)
-        new_func_file.close()
+    if args.template:
+        template = find_template()
+        with open(path_to_new_file, 'w') as new_func_file:
+            new_func_file.writelines(template)
+            new_func_file.close()
+
+    else:
+        with open(path_to_new_file, 'w') as new_func_file:
+            new_func_file.writelines("")
+            new_func_file.close()
 
 check_prerequisites(args)
 path_to_addon = "addons/" + args.addon

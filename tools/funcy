@@ -64,7 +64,6 @@ def validate_config_format(old_config):
     if not contains_substring(old_config, "class " + args.prefix):
         logger.error("prefix '" + args.prefix + "' was missing in config")
         exit()
-    logger.info("... format is valid")
 
 def modify_config(path_to_addon, old_config):
     logger.info("adding new function...")
@@ -74,7 +73,7 @@ def modify_config(path_to_addon, old_config):
     index_of_namespace = list_index_substring(old_config, args.prefix + "_" + args.addon + "_" + args.namespace)
     logger.debug("index of namespace is: " + str(index_of_namespace))
     old_value = old_config[index_of_namespace + offset_to_functions]
-    logger.debug("old_value is: " + old_value)
+    logger.debug("old_value is: " + old_value.strip())
     index_of_class = old_value.find("class")
     tabs = old_value[0:index_of_class]
     funcName = "class " + args.name + " {}"
@@ -84,11 +83,19 @@ def modify_config(path_to_addon, old_config):
     with open(path_to_config, 'w') as new_config_file:
         new_config_file.writelines(old_config)
         new_config_file.close()
-    logger.info("... function '" + funcName + "' added")
+
+def create_func_file():
+    logger.info("create function file...")
+    path_to_new_file = path_to_addon + "/" + args.namespace + "/fn_" + args.name + ".sqf"
+
+    with open(path_to_new_file, 'w') as new_func_file:
+        new_func_file.writelines(old_config)
+        new_func_file.close()
 
 check_prerequisites(args)
 path_to_addon = "addons/" + args.addon
 old_config = read_config(path_to_addon)
 validate_config_format(old_config)
 modify_config(path_to_addon, old_config)
+create_func_file()
 

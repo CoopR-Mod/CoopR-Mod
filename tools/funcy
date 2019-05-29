@@ -89,7 +89,7 @@ def find_template():
     script_path = os.path.dirname(os.path.realpath(__file__))
     path_to_template = script_path + "/template.fy"
 
-    with open(path_to_template, 'r') as template_file:
+    with open(path_to_template, 'r') as templ)_file:
         temp_file = template_file.readlines()
         template_file.close()
         return temp_file

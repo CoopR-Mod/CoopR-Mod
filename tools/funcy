@@ -1,104 +1,127 @@
+"""
+Funcy SQF Function Maker
+This tool will create functions for ArmA 3 Mods.
+"""
 #!/usr/bin/env python3
 import argparse
 import os
 import logging
 
-parser = argparse.ArgumentParser(prog='Funcy v0.1-alpha', description='Creates SQF functions')
-parser.add_argument('prefix',  help='the prefix of your mod')
-parser.add_argument('addon',  help='the addon the function should be created for')
-parser.add_argument('name',  help='name of the function (without fn prefix)')
-parser.add_argument('namespace', nargs="?", default="functions",  help='name of the function (without fn prefix)')
-parser.add_argument('-v', dest='verbose', action='store_true', help='prints log messages to follow the process')
-parser.add_argument('-t', dest='template', action='store_true', help='uses a template for creating function files')
+PARSER = argparse.ArgumentParser(prog='Funcy v0.1-alpha', description='Creates SQF functions')
+PARSER.add_argument('prefix', help='the prefix of your mod')
+PARSER.add_argument('addon', help='the addon the function should be created for')
+PARSER.add_argument('name', help='name of the function (without fn prefix)')
+PARSER.add_argument('namespace', nargs="?", default="functions",
+                    help='name of the function (without fn prefix)')
+PARSER.add_argument('-v', dest='verbose', action='store_true',
+                    help='prints log messages to follow the process')
+PARSER.add_argument('-t', dest='template', action='store_true',
+                    help='uses a template for creating function files')
 
-args = parser.parse_args()
+ARGS = PARSER.parse_args()
 
 logging.basicConfig(format='%(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger("Funcy")
-if args.verbose:
-    logger.setLevel(logging.DEBUG)
+LOGGER = logging.getLogger("Funcy")
+if ARGS.verbose:
+    LOGGER.setLevel(logging.DEBUG)
 
-def check_prerequisites(args):
-    logger.debug("checking prerequisites...")
+def check_prerequisites():
+    """Checks if the prerequisites for the execution are met"""
+    LOGGER.debug("checking prerequisites...")
     has_addons = os.path.isdir("addons") and os.path.exists("addons")
-    has_addons_folder = os.path.isdir("addons/" + args.addon) and os.path.exists("addons/" + args.addon)
-    has_config_file = os.path.exists("addons/" + args.addon + "/CfgFunctions.hpp")
+    addon_path = "addons/" + ARGS.addon
+    has_addons_folder = os.path.isdir(addon_path) and os.path.exists(addon_path)
+    has_config_file = os.path.exists(addon_path + "/CfgFunctions.hpp")
 
     if not has_addons:
-        logger.error("Error: no addons directory could be found")
+        LOGGER.error("Error: no addons directory could be found")
         exit()
     if not has_addons_folder:
-        logger.error("Error: " + args.addon + " could not be found in addons/")
+        LOGGER.error("Error: %s could not be found in addons", ARGS.addon)
         exit()
     if not has_config_file:
-        if args.verbose:
-            logger.error("looking for CfgFunctions.hpp in " + os.getcwd() + "/addons/" + args.addon + "/CfgFunctions.hpp")
-        logger.error("Error: CfgFunctions.hpp could not be found in addons/")
+        if ARGS.verbose:
+            LOGGER.error("looking for CfgFunctions.hpp in %s/%s/CfgFunctions.hpp",
+                         os.getcwd(), addon_path)
+        LOGGER.error("Error: CfgFunctions.hpp could not be found in addons/")
         exit()
 
-def read_config(path_to_addon):
-    logger.debug("parsing old CfgFunctions.hpp...")
+def read_config():
+    """Reads the existing configuration file that needs to be extended"""
+    LOGGER.debug("parsing old CfgFunctions.hpp...")
+    path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp"
 
     with open(path_to_config, 'r') as config_file:
         config_file_content = config_file.readlines()
-        logger.debug("...done")
+        LOGGER.debug("...done")
         return config_file_content
 
 def contains_substring(the_list, substring):
+    """Checks if a given substring is contained in an element of the list of strings"""
     for element in the_list:
         if substring in element:
             return True
     return False
 
 def list_index_substring(the_list, substring):
+    """Returns the index of the list element where a substring was found"""
     for index, element in enumerate(the_list):
         if substring in element:
             return index
     return -1
 
-def validate_config_format(old_config):
-    logger.info("validating CfgFunctions.hpp format...")
+def validate_config_format():
+    """Check if a given config format is valid in terms of Funcy"""
+    old_config = read_config()
+    LOGGER.info("validating CfgFunctions.hpp format...")
     if not contains_substring(old_config, "class CfgFunctions"):
-        logger.error("CfgFunctions declaration was missing in config")
+        LOGGER.error("CfgFunctions declaration was missing in config")
         exit()
-    if not contains_substring(old_config, "class " + args.prefix):
-        logger.error("prefix '" + args.prefix + "' was missing in config")
+    if not contains_substring(old_config, "class " + ARGS.prefix):
+        LOGGER.error("prefix '%s' was missing in config", ARGS.prefix)
         exit()
 
-def modify_config(path_to_addon, old_config):
-    logger.info("adding new function...")
+def modify_config():
+    """Modify the configuration file by adding the new function"""
+    old_config = read_config()
+    LOGGER.info("adding new function...")
+    path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
     offset_to_functions = 2
-    index_of_namespace = list_index_substring(old_config, args.prefix + "_" + args.addon + "_" + args.namespace)
-    logger.debug("index of namespace is: " + str(index_of_namespace))
+    namespace = ARGS.prefix + "_" + ARGS.addon + "_" + ARGS.namespace
+    index_of_namespace = list_index_substring(old_config, namespace)
+    LOGGER.debug("index of namespace is: %s", str(index_of_namespace))
     old_value = old_config[index_of_namespace + offset_to_functions]
-    logger.debug("old_value is: " + old_value.strip())
+    LOGGER.debug("old_value is: %s", old_value.strip())
     index_of_class = old_value.find("class")
     tabs = old_value[0:index_of_class]
-    funcName = "class " + args.name + " {}"
+    func_name = "class {} {{}}".format(ARGS.name)
 
-    old_config.insert(index_of_namespace + offset_to_functions, tabs + funcName + ";\n")
+    old_config.insert(index_of_namespace + offset_to_functions, tabs + func_name + ";\n")
 
     with open(path_to_config, 'w') as new_config_file:
         new_config_file.writelines(old_config)
         new_config_file.close()
 
 def find_template():
-    logger.info("reading template file...")
+    """Find the template file to use as content for the new function file"""
+    LOGGER.info("reading template file...")
     script_path = os.path.dirname(os.path.realpath(__file__))
     path_to_template = script_path + "/template.fy"
 
-    with open(path_to_template, 'r') as templ)_file:
+    with open(path_to_template, 'r') as template_file:
         temp_file = template_file.readlines()
         template_file.close()
         return temp_file
 
 def create_func_file():
-    logger.info("create function file...")
-    path_to_new_file = path_to_addon + "/" + args.namespace + "/fn_" + args.name + ".sqf"
+    """Creates a new function file in the namespace"""
+    LOGGER.info("create function file...")
+    path_to_addon = "addons/" + ARGS.addon
+    path_to_new_file = path_to_addon + "/" + ARGS.namespace + "/fn_" + ARGS.name + ".sqf"
 
-    if args.template:
+    if ARGS.template:
         template = find_template()
         with open(path_to_new_file, 'w') as new_func_file:
             new_func_file.writelines(template)
@@ -109,10 +132,7 @@ def create_func_file():
             new_func_file.writelines("")
             new_func_file.close()
 
-check_prerequisites(args)
-path_to_addon = "addons/" + args.addon
-old_config = read_config(path_to_addon)
-validate_config_format(old_config)
-modify_config(path_to_addon, old_config)
+check_prerequisites()
+validate_config_format()
+modify_config()
 create_func_file()
-

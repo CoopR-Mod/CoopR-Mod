@@ -7,7 +7,7 @@ import argparse
 import os
 import logging
 
-PARSER = argparse.ArgumentParser(prog='Funcy v0.1-alpha', description='Creates SQF functions',
+PARSER = argparse.ArgumentParser(prog='Funcy v1.0.1', description='Creates SQF functions',
                                  epilog="When using Funcy without the template flag (-t) the" +
                                  " created function will be blank.\nTo use a global template"+
                                  " for all functions create a file called 'template.fy' in"+
@@ -35,7 +35,7 @@ if ARGS.verbose:
 
 def check_prerequisites():
     """Checks if the prerequisites for the execution are met"""
-    LOGGER.debug("checking prerequisites...")
+    LOGGER.debug("check prerequisites...")
     has_addons = os.path.isdir("addons") and os.path.exists("addons")
     addon_path = "addons/" + ARGS.addon
     has_addons_folder = os.path.isdir(addon_path) and os.path.exists(addon_path)
@@ -56,9 +56,10 @@ def check_prerequisites():
 
 def read_config():
     """Reads the existing configuration file that needs to be extended"""
-    LOGGER.debug("parsing old CfgFunctions.hpp...")
+    LOGGER.debug("parse old CfgFunctions.hpp...")
     path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp"
+    LOGGER.info("open %s", path_to_config)
 
     with open(path_to_config, 'r') as config_file:
         config_file_content = config_file.readlines()
@@ -82,18 +83,27 @@ def list_index_substring(the_list, substring):
 def validate_config_format():
     """Check if a given config format is valid in terms of Funcy"""
     old_config = read_config()
-    LOGGER.info("validating CfgFunctions.hpp format...")
+    LOGGER.info("validate CfgFunctions.hpp format...")
     if not contains_substring(old_config, "class CfgFunctions"):
-        LOGGER.error("CfgFunctions declaration was missing in config")
+        LOGGER.error("CfgFunctions class declaration was missing in config")
+        LOGGER.error("was looking for: '%s'", "class CfgFunctions {...}")
         exit()
     if not contains_substring(old_config, "class " + ARGS.prefix):
-        LOGGER.error("prefix '%s' was missing in config", ARGS.prefix)
+        LOGGER.error("prefix/tag '%s' is missing in CfgFunctions", ARGS.prefix)
+        LOGGER.error("was looking for: \n%s", "class CfgFunctions {\n\tclass " + ARGS.prefix + " {...}\n}")
         exit()
-
+    if not contains_substring(old_config, "file ="):
+        LOGGER.error("the 'file =' statement is missing")
+        LOGGER.error("please use the CfgFunctions format that uses the 'Folder Path' style (check: https://community.bistudio.com/wiki/Arma_3_Functions_Library)")
+        exit()
+    namespace = "\{}\\addons\{}\{}".format(ARGS.prefix, ARGS.addon, ARGS.namespace)
+    if not contains_substring(old_config, namespace):
+        LOGGER.error("the folder path is missing in CfgFunctions")
+        LOGGER.error("was looking for: %s", "file = '" + namespace + "'")
+        exit()
 def modify_config():
     """Modify the configuration file by adding the new function"""
     old_config = read_config()
-    LOGGER.info("adding new function...")
     path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
     offset_to_functions = 2
@@ -105,6 +115,7 @@ def modify_config():
     index_of_class = old_value.find("class")
     tabs = old_value[0:index_of_class]
     func_name = "class {} {{}}".format(ARGS.name)
+    LOGGER.info("add '%s' as new entry to CfgFunctions.hpp", func_name)
 
     old_config.insert(index_of_namespace + offset_to_functions, tabs + func_name + ";\n")
 
@@ -114,7 +125,7 @@ def modify_config():
 
 def find_template():
     """Find the template file to use as content for the new function file"""
-    LOGGER.info("reading template file...")
+    LOGGER.info("read template file...")
     script_path = os.path.dirname(os.path.realpath(__file__))
     path_to_template = script_path + "/template.fy"
 
@@ -125,10 +136,9 @@ def find_template():
 
 def create_func_file():
     """Creates a new function file in the namespace"""
-    LOGGER.info("create function file...")
     path_to_addon = "addons/" + ARGS.addon
     path_to_new_file = path_to_addon + "/" + ARGS.namespace + "/fn_" + ARGS.name + ".sqf"
-
+    LOGGER.info("create function file %s", path_to_new_file)
     if ARGS.template:
         template = find_template()
         with open(path_to_new_file, 'w') as new_func_file:

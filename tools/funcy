@@ -63,7 +63,6 @@ def read_config():
 
     with open(path_to_config, 'r') as config_file:
         config_file_content = config_file.readlines()
-        LOGGER.debug("...done")
         return config_file_content
 
 def contains_substring(the_list, substring):
@@ -99,16 +98,21 @@ def validate_config_format():
     namespace = "\{}\\addons\{}\{}".format(ARGS.prefix, ARGS.addon, ARGS.namespace)
     if not contains_substring(old_config, namespace):
         LOGGER.error("the folder path is missing in CfgFunctions")
-        LOGGER.error("was looking for: %s", "file = '" + namespace + "'")
+        LOGGER.error("was looking for: \"file = ...%s\"", namespace)
         exit()
 def modify_config():
     """Modify the configuration file by adding the new function"""
     old_config = read_config()
     path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
-    offset_to_functions = 2
-    namespace = ARGS.prefix + "_" + ARGS.addon + "_" + ARGS.namespace
+    offset_to_functions = 1
+    namespace = "\{}\\addons\{}\{}".format(ARGS.prefix, ARGS.addon, ARGS.namespace)
+    LOGGER.debug("namespace string: %s", namespace)
     index_of_namespace = list_index_substring(old_config, namespace)
+    if index_of_namespace == -1:
+        LOGGER.error("namespace for file could not be found")
+        LOGGER.error("was looking for: \"file = ...%s\"", namespace)
+        exit()
     LOGGER.debug("index of namespace is: %s", str(index_of_namespace))
     old_value = old_config[index_of_namespace + offset_to_functions]
     LOGGER.debug("old_value is: %s", old_value.strip())

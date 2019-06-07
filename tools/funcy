@@ -14,13 +14,13 @@ PARSER = argparse.ArgumentParser(prog='Funcy v1.0.1', description='Creates SQF f
                                  " the directory Funcy is in. When creating a function Funcy"+
                                  " will take the content of this template file for all created"+
                                  " functions.\nIf you want to have a different template per"+
-                                 " namespace then put a 'template.fy' file into the specific "+
+                                 " category then put a 'template.fy' file into the specific "+
                                  " directory ie. /addons/core/functions/template.py")
-PARSER.add_argument('prefix', help='the prefix of your mod')
+PARSER.add_argument('tag', help='the tag of your mod')
 PARSER.add_argument('addon', help='the addon the function should be created for')
 PARSER.add_argument('name', help='name of the function (without fn prefix)')
-PARSER.add_argument('namespace', nargs="?", default="functions",
-                    help='the namespace where the function is defined')
+PARSER.add_argument('category', nargs="?", default="functions",
+                    help='the category where the function is defined')
 PARSER.add_argument('-v', dest='verbose', action='store_true',
                     help='prints log messages to follow the process')
 PARSER.add_argument('-t', dest='template', action='store_true',
@@ -87,18 +87,18 @@ def validate_config_format():
         LOGGER.error("CfgFunctions class declaration was missing in config")
         LOGGER.error("was looking for: '%s'", "class CfgFunctions {...}")
         exit()
-    if not contains_substring(old_config, "class " + ARGS.prefix):
-        LOGGER.error("prefix/tag '%s' is missing in CfgFunctions", ARGS.prefix)
-        LOGGER.error("was looking for: \n%s", "class CfgFunctions {\n\tclass " + ARGS.prefix + " {...}\n}")
+    if not contains_substring(old_config, "class " + ARGS.tag):
+        LOGGER.error("mod tag '%s' is missing in CfgFunctions", ARGS.tag)
+        LOGGER.error("was looking for: \n%s", "class CfgFunctions {\n\tclass " + ARGS.tag + " {...}\n}")
         exit()
     if not contains_substring(old_config, "file ="):
         LOGGER.error("the 'file =' statement is missing")
         LOGGER.error("please use the CfgFunctions format that uses the 'Folder Path' style (check: https://community.bistudio.com/wiki/Arma_3_Functions_Library)")
         exit()
-    namespace = "\{}\\addons\{}\{}".format(ARGS.prefix, ARGS.addon, ARGS.namespace)
-    if not contains_substring(old_config, namespace):
+    category = "\{}\\addons\{}\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
+    if not contains_substring(old_config, category):
         LOGGER.error("the folder path is missing in CfgFunctions")
-        LOGGER.error("was looking for: \"file = ...%s\"", namespace)
+        LOGGER.error("was looking for: \"file = ...%s\"", category)
         exit()
 def modify_config():
     """Modify the configuration file by adding the new function"""
@@ -106,22 +106,22 @@ def modify_config():
     path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
     offset_to_functions = 1
-    namespace = "\{}\\addons\{}\{}".format(ARGS.prefix, ARGS.addon, ARGS.namespace)
-    LOGGER.debug("namespace string: %s", namespace)
-    index_of_namespace = list_index_substring(old_config, namespace)
-    if index_of_namespace == -1:
-        LOGGER.error("namespace for file could not be found")
-        LOGGER.error("was looking for: \"file = ...%s\"", namespace)
+    category = "\{}\\addons\{}\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
+    LOGGER.debug("category string: %s", category)
+    index_of_category = list_index_substring(old_config, category)
+    if index_of_category == -1:
+        LOGGER.error("category for file could not be found")
+        LOGGER.error("was looking for: \"file = ...%s\"", category)
         exit()
-    LOGGER.debug("index of namespace is: %s", str(index_of_namespace))
-    old_value = old_config[index_of_namespace + offset_to_functions]
+    LOGGER.debug("index of category is: %s", str(index_of_category))
+    old_value = old_config[index_of_category + offset_to_functions]
     LOGGER.debug("old_value is: %s", old_value.strip())
     index_of_class = old_value.find("class")
     tabs = old_value[0:index_of_class]
     func_name = "class {} {{}}".format(ARGS.name)
     LOGGER.info("add '%s' as new entry to CfgFunctions.hpp", func_name)
 
-    old_config.insert(index_of_namespace + offset_to_functions, tabs + func_name + ";\n")
+    old_config.insert(index_of_category + offset_to_functions, tabs + func_name + ";\n")
 
     with open(path_to_config, 'w') as new_config_file:
         new_config_file.writelines(old_config)
@@ -139,9 +139,9 @@ def find_template():
         return temp_file
 
 def create_func_file():
-    """Creates a new function file in the namespace"""
+    """Creates a new function file in the category"""
     path_to_addon = "addons/" + ARGS.addon
-    path_to_new_file = path_to_addon + "/" + ARGS.namespace + "/fn_" + ARGS.name + ".sqf"
+    path_to_new_file = path_to_addon + "/" + ARGS.category + "/fn_" + ARGS.name + ".sqf"
     LOGGER.info("create function file %s", path_to_new_file)
     if ARGS.template:
         template = find_template()
@@ -154,7 +154,24 @@ def create_func_file():
             new_func_file.writelines("")
             new_func_file.close()
 
+def commit_config_change():
+    """Commit the temporary config file change"""
+    path_to_addon = "addons/" + ARGS.addon
+    path_to_temp_config = path_to_addon + "/CfgFunctions.hpp.tmp"
+    path_to_config = path_to_addon + "/CfgFunctions.hpp"
+    LOGGER.info("commit changes to %s", path_to_config)
+
+    with open(path_to_temp_config, 'r') as temp_config:
+        temp_config_content = temp_config.readlines()
+        with open(path_to_config, 'w') as original_config:
+            original_config.writelines(temp_config_content)
+            original_config.close()
+        temp_config.close()
+        LOGGER.debug("remove temp file %s", path_to_temp_config)
+        os.remove(path_to_temp_config)
+
 check_prerequisites()
 validate_config_format()
 modify_config()
 create_func_file()
+commit_config_change()

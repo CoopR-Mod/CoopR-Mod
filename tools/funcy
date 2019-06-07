@@ -89,13 +89,15 @@ def validate_config_format():
         exit()
     if not contains_substring(old_config, "class " + ARGS.tag):
         LOGGER.error("mod tag '%s' is missing in CfgFunctions", ARGS.tag)
-        LOGGER.error("was looking for: \n%s", "class CfgFunctions {\n\tclass " + ARGS.tag + " {...}\n}")
+        LOGGER.error("was looking for: \n%s", "class CfgFunctions {\n\tclass " +
+                     ARGS.tag + " {...}\n}")
         exit()
     if not contains_substring(old_config, "file ="):
         LOGGER.error("the 'file =' statement is missing")
-        LOGGER.error("please use the CfgFunctions format that uses the 'Folder Path' style (check: https://community.bistudio.com/wiki/Arma_3_Functions_Library)")
+        LOGGER.error("please use the CfgFunctions format that uses the 'Folder Path' style " +
+                     " (check: https://community.bistudio.com/wiki/Arma_3_Functions_Library)")
         exit()
-    category = "\{}\\addons\{}\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
+    category = "\\{}\\addons\\{}\\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
     if not contains_substring(old_config, category):
         LOGGER.error("the folder path is missing in CfgFunctions")
         LOGGER.error("was looking for: \"file = ...%s\"", category)
@@ -106,7 +108,7 @@ def modify_config():
     path_to_addon = "addons/" + ARGS.addon
     path_to_config = path_to_addon + "/CfgFunctions.hpp.tmp"
     offset_to_functions = 1
-    category = "\{}\\addons\{}\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
+    category = "\\{}\\addons\\{}\\{}".format(ARGS.tag, ARGS.addon, ARGS.category)
     LOGGER.debug("category string: %s", category)
     index_of_category = list_index_substring(old_config, category)
     if index_of_category == -1:

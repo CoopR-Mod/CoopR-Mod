@@ -38,6 +38,12 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No marker name given"]] call CBA_fnc_notify;
     };
 
+    private _reconTaskId = player getVariable [COOPR_KEY_ACTIVE_TASK, ""];
+    private _markerPos = getMarkerPos _foundMarker;
+    if !(_markerPos inArea _reconTaskId + "_task_marker") exitWith {
+       [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker was not in recon task area"]] call CBA_fnc_notify;
+    };
+
     private _reportAccuracy = [_markerText, _strength, _type, _behaviour] call coopr_fnc_validateReport;
     DEBUG2("report accuracy: %1", _reportAccuracy);
 

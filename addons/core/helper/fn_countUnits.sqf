@@ -34,14 +34,17 @@ DEBUG2("enitities  %1", _entities);
     private _sideOfGroup = side _entity;
 
     {
-        if (_sideFilter isEqualTo sideEmpty) then {
-            _uniqueUnits pushBackUnique _x;
-        };
-        if (_sideFilter isEqualTo _sideOfGroup) then {
-            _uniqueUnits pushBackUnique _x;
-        };
+        if ((vehicle _entity) isEqualTo _entity) then {
+            if (_sideFilter isEqualTo sideEmpty) then {
+                _uniqueUnits pushBackUnique _entity;
+            };
+            if (_sideFilter isEqualTo _sideOfGroup) then {
+                _uniqueUnits pushBackUnique _entity;
+            };
+        } else {
+          DEBUG("counted entity is a crew member - skipping");
+        }
     } forEach (units _entity);
-
 
 } forEach _entities;
 

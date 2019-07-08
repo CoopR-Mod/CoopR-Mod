@@ -23,6 +23,7 @@ class CfgFunctions {
             class serializeTask {};
             class deserializeTask {};
             class initCharacterMissions {};
+            class extractStrengthFromMissionArea {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";
@@ -48,6 +49,7 @@ class CfgFunctions {
             class getLabelByMissionType {};
             class getLabelForAccuracy {};
             class extractReportedStrength {};
+            class getStrengthByUnitCount {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";

@@ -26,9 +26,9 @@ if (isServer) then {
 
     private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
-    [[_characterID], "coopr_fnc_getEntriesForCharacter", [_characterID], {
+    [[_characterID], "coopr_fnc_getEntriesForCharacter", [_unit, _characterID], {
       params ["_callbackArgs", "_promisedResult"];
-      _callbackArgs params ["_characterID"];
+      _callbackArgs params ["_unit", "_characterId"];
       private _reconEntries = _promisedResult;
 
       if ((count _reconEntries) isEqualTo 0) exitWith {

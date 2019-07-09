@@ -40,7 +40,7 @@ if (isServer) then {
         DEBUG2("determined task type: %1", _cooprTaskType);
 
         { deleteMarker (_x select 0) } forEach _serializedMarkers;
-        private _currentTask = _owner getVariable [COOPR_KEY_ACTIVE_TASK, []];
+        //private _currentTask = _owner getVariable [COOPR_KEY_ACTIVE_TASK, []];
 
         private _newCooprTask = EMPTY_HASH;
 

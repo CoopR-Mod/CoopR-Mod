@@ -23,7 +23,7 @@ if (_reconEntries isEqualTo []) exitWith { ERROR("_reconEntries was not defined"
 
 if (isServer) then {
     DEBUG2("recon entries to be converted: %1", count _reconEntries);
-    private _reportedStrengths = [_reconEntries] call coopr_fnc_extractReportedStrength;
+    //private _reportedStrengths = [_reconEntries] call coopr_fnc_extractReportedStrength;
 
     {
         DEBUG("parsing recon reports");

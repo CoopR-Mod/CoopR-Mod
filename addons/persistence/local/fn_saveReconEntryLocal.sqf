@@ -25,7 +25,7 @@ if (isServer) then {
 
     private _characterId = [_reconEntry, COOPR_KEY_RECON_ENTRY_OWNER] call CBA_fnc_hashGet;
     private _reportID = [_characterId] call coopr_fnc_getReportIdForCharacterLocal;
-    private _countStmt = format ["SELECT count(*) FROM recon_entries WHERE report_id= %1", _reportID];
+    private _countStmt = "SELECT count(*) FROM recon_entries";
     private _countEntries = (_countStmt call coopr_fnc_extDB3sql) select 0 select 0;
     [_reconEntry, COOPR_KEY_RECON_ENTRY_ID, _countEntries + 1] call CBA_fnc_hashSet;
 

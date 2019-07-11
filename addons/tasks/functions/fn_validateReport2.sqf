@@ -30,48 +30,12 @@ if (isServer) then {
     if (_strengthReports isEqualTo []) exitWith { ERROR("_strengthReports was not defined") };
 
     INFO("recon validation check:");
-
-    INFO("counting units in recon area");
-    private _markerPos = getMarkerPos _marker;
-    private _markerRadius = getMarkerSize _marker select X;
-
-    // INFANTRY
-    private _infantryEntities = _markerPos nearEntities ["Man", _markerRadius];
-    private _infGroups = [_infantryEntities] call coopr_fnc_groupsByEntities;
-    private _infantryStrengths = [];
-
-    DEBUG2("inf groups: %1", _infGroups);
-    {
-        private _grp = _x;
-        DEBUG2("counting group: %1", _grp);
-        private _infantryCount = [_grp] call coopr_fnc_countUnits;
-        DEBUG2("found infantry units: %1", _infantryCount);
-        _infantryStrengths pushBack ([_infantryCount] call coopr_fnc_getStrengthByUnitCount);
-    } forEach _infGroups;
-
-    DEBUG2("all infantry actual strengths: %1", _infantryStrengths);
-
-    // MOTORIZED
-    private _motorizedEntities = _markerPos nearEntities ["Car", _markerRadius];
-    private _motGroups = [_motorizedEntities] call coopr_fnc_groupsByEntities;
-    private _motorizedStrengths = [];
-
-    DEBUG2("motorized groups: %1", _motGroups);
-    {
-        private _grp = _x;
-        DEBUG2("counting group: %1", _grp);
-        private _motorizedCount = [_grp] call coopr_fnc_countUnits;
-        DEBUG2("found motorized units: %1", _motorizedCount);
-        _motorizedStrengths pushBack ([_motorizedCount] call coopr_fnc_getStrengthByUnitCount);
-    } forEach _motGroups;
-
-    DEBUG2("motorized actual strength: %1", _motorizedStrengths);
-
-    // ARMORED
-    private _armoredCount = count (_markerPos nearEntities ["Tank", _markerRadius]);
-    DEBUG2("found armored units: %1", _armoredCount);
-    private _armoredStrength = [_armoredCount] call coopr_fnc_getStrengthByUnitCount;
-    DEBUG2("armored actual strength: %1", _armoredStrength);
+    INFO("determining infantry units in recon area");
+    private _infantryStrengths = [_marker, "Man"] call coopr_fnc_determineUnitStrength;
+    INFO("determining motorized units in recon area");
+    private _motorizedStrengths = [_marker, "Car"] call coopr_fnc_determineUnitStrength;
+    INFO("determining armored units in recon area");
+    private _armoredStrengths = [_marker, "Tank"] call coopr_fnc_determineUnitStrength;
 
 } else {
     SERVER_ONLY_ERROR;

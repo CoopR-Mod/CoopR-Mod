@@ -30,7 +30,9 @@ DEBUG2("group  %1", _group);
     if ((vehicle _unit) isEqualTo _unit) then {
         _uniqueUnits pushBackUnique _unit;
     } else {
-      DEBUG("unit is a crew member - skipping");
+      DEBUG("unit is a crew member - mapping to vehicle");
+      private _vehicle = vehicle _unit;
+      _uniqueUnits pushBackUnique _vehicle;
     }
 
 } forEach units _group;

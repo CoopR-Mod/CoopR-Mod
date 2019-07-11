@@ -36,28 +36,36 @@ if (isServer) then {
     private _markerRadius = getMarkerSize _marker select X;
 
     // INFANTRY
-    private _foundEntities = _markerPos nearEntities ["Man", _markerRadius];
-    private _groups = [_foundEntities] call coopr_fnc_groupsByEntities;
+    private _infantryEntities = _markerPos nearEntities ["Man", _markerRadius];
+    private _infGroups = [_infantryEntities] call coopr_fnc_groupsByEntities;
     private _infantryStrengths = [];
 
-    DEBUG2("groups: %1", _groups);
+    DEBUG2("inf groups: %1", _infGroups);
     {
         private _grp = _x;
         DEBUG2("counting group: %1", _grp);
         private _infantryCount = [_grp] call coopr_fnc_countUnits;
         DEBUG2("found infantry units: %1", _infantryCount);
         _infantryStrengths pushBack ([_infantryCount] call coopr_fnc_getStrengthByUnitCount);
-    } forEach _groups;
+    } forEach _infGroups;
 
-
-    // check every infantry entity to differ between group sizes
     DEBUG2("all infantry actual strengths: %1", _infantryStrengths);
 
     // MOTORIZED
-    private _motorizedCount = count (_markerPos nearEntities ["Car", _markerRadius]);
-    DEBUG2("found motorized units: %1", _motorizedCount);
-    private _motorizedStrength = [_motorizedCount] call coopr_fnc_getStrengthByUnitCount;
-    DEBUG2("motorized actual strength: %1", _motorizedStrength);
+    private _motorizedEntities = _markerPos nearEntities ["Car", _markerRadius];
+    private _motGroups = [_motorizedEntities] call coopr_fnc_groupsByEntities;
+    private _motorizedStrengths = [];
+
+    DEBUG2("motorized groups: %1", _motGroups);
+    {
+        private _grp = _x;
+        DEBUG2("counting group: %1", _grp);
+        private _motorizedCount = [_grp] call coopr_fnc_countUnits;
+        DEBUG2("found motorized units: %1", _motorizedCount);
+        _motorizedStrengths pushBack ([_motorizedCount] call coopr_fnc_getStrengthByUnitCount);
+    } forEach _motGroups;
+
+    DEBUG2("motorized actual strength: %1", _motorizedStrengths);
 
     // ARMORED
     private _armoredCount = count (_markerPos nearEntities ["Tank", _markerRadius]);

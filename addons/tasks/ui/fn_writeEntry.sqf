@@ -44,11 +44,6 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker was not in recon task area"]] call CBA_fnc_notify;
     };
 
-    private _reportAccuracy = [_markerText, _strength, _type, _behaviour] call coopr_fnc_validateReport;
-    DEBUG2("report accuracy: %1", _reportAccuracy);
-
-    if (isNil "_reportAccuracy") exitWith { ERROR("no entry will be written due previous errors")};
-
     private _nameExists = false;
 
     // check if marker name already has been defined
@@ -76,7 +71,6 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundMarker select 0), ""]) ] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_KEY_RECON_ENTRY_ACCURACY, _reportAccuracy] call CBA_fnc_hashSet;
 
     [[_entryHash], "coopr_fnc_saveReconEntry", [_entryHash, _ctrl], {
         params ["_callbackArgs", "_promisedResult"];

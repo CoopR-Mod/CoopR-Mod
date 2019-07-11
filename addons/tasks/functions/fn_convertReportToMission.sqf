@@ -34,7 +34,6 @@ if (isServer) then {
         private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
         private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
-        private _accuracy = [_entry, COOPR_KEY_RECON_ENTRY_ACCURACY] call CBA_fnc_hashGet;
 
         private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
         DEBUG2("determined task type: %1", _cooprTaskType);

@@ -9,6 +9,7 @@ class CfgFunctions {
             class createCooprTask {};
             class createReconTask {};
             class validateReport {};
+            class validateReport2 {};
             class requestCooprTask {};
             class strengthAccuracy {};
             class checkTaskTracking {};

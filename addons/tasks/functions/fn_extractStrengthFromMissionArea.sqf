@@ -26,11 +26,12 @@ if (isServer) then {
   INFO("parsing mission area units");
   private _markerPos = getPos _missionMarker;
   private _markerRadius = getMarkerSize _missioMarker;
-  private _strengths = EMPTY_HASH
+  private _strengths = EMPTY_HASH;
 
   private _foundInfantryEntities = _markerPos nearEntities ["Man", _markerRadius];
   private _foundMotorizedEntities = _markerPos nearEntities ["Car", _markerRadius];
   private _foundArmoredEntities = _markerPos nearEntities ["Tank", _markerRadius];
+
 
   {
     private _strength = [count (units _x)] call coopr_fnc_getStrengthByUnitCount;

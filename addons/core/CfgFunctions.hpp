@@ -43,6 +43,7 @@ class CfgFunctions {
             class getLoadoutForRole {};
             class getNearestLocation {};
             class countUnits {};
+            class groupsByEntities {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};

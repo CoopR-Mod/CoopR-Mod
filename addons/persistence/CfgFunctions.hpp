@@ -17,6 +17,8 @@ class CfgFunctions {
             class getTaskLocal {};
             class getTaskCountLocal {};
             class initServerMetaLocal {};
+            class getReconAreaActivityLocal {};
+            class setReconAreaActivityLocal {};
             class pushTaskQueueLocal {};
             class getAllQueuedTasksLocal {};
             class getQueuedTasksCountLocal {};
@@ -47,6 +49,8 @@ class CfgFunctions {
             class initPersistence {};
             class hasPlayer {};
             class initPlayerPersistence {};
+            class getReconAreaActivity {};
+            class setReconAreaActivity {};
             class updateCharacter {};
             class getCharactersID {};
             class getCharacters {};

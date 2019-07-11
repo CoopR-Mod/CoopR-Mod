@@ -66,6 +66,7 @@ if (isServer) then {
                                        id int NOT NULL AUTO_INCREMENT,
                                        character_id int,
                                        task_id varchar(255),
+                                       activity TEXT,
                                        finished boolean,
                                        PRIMARY KEY (id));";
 

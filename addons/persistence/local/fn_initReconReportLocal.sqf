@@ -32,7 +32,7 @@ if (isServer) then {
     if (_hasReport > 0) then {
         DEBUG2("recon report for character %1 already initialized", _characterId);
     } else {
-        private _initReconReport = format ["INSERT INTO recon_reports (character_id, task_id, finished) VALUES (%1, '%2', false)", _characterId, _taskId];
+        private _initReconReport = format ["INSERT INTO recon_reports (character_id, task_id, activity, finished) VALUES (%1, '%2', '%3', false)", _characterId, _taskId, EMPTY_HASH];
         _initReconReport call coopr_fnc_extDB3sql;
     };
 } else {

@@ -27,7 +27,7 @@ if (isServer) then {
   if (_activity isEqualTo []) exitWith { ERROR("_activity was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_setReconAreaActivityLocal;
+       [_characterId, _activity] call coopr_fnc_setReconAreaActivityLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

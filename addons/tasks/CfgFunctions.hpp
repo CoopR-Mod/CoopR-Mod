@@ -8,8 +8,7 @@ class CfgFunctions {
             class convertReportToMission {};
             class createCooprTask {};
             class createReconTask {};
-            class validateReport {};
-            class validateReport2 {};
+            class validateReportEntries {};
             class requestCooprTask {};
             class strengthAccuracy {};
             class checkTaskTracking {};
@@ -25,6 +24,7 @@ class CfgFunctions {
             class deserializeTask {};
             class initCharacterMissions {};
             class determineUnitStrength {};
+            class parseStrengthsInArea {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";

@@ -31,9 +31,8 @@ if (isServer) then {
     if (_hasUnfinishedReport == 0) exitWith {
         DEBUG2("no unfinished recon report found for character %1", _characterId);
     };
-    private _setActivity = format ["UPDATE recon_reports SET activity = %1 WHERE character_id = %2 AND finished = 0", _activity, _characterI];
-    private _result = (_setActivity call coopr_fnc_extDB3sql) select 0 select 0;
-    _result;
+    private _setActivity = format ["UPDATE recon_reports SET activity = '%1' WHERE character_id = %2 AND finished = 0", _activity, _characterId];
+    _setActivity call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR;
 };

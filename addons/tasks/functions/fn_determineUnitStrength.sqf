@@ -9,7 +9,7 @@
  * 1: _type <TYPE> - unit type ("Man", "Car", "Tank")
  *
  * Return Value:
- * _strengths <CBA_HASH> - all determined strengths as an array of definitions categorised by a type hashkey
+ * _strengths <ARRAY> - all determined strengths as an array of definitions categorised by a type hashkey
  *
  * Example:
  * Trivial
@@ -36,7 +36,7 @@ if (isServer) then {
     // INFANTRY
     private _entities = _markerPos nearEntities [_type, _markerRadius];
     if (_entities isEqualTo []) exitWith { INFO("no entities found"); []};
-    private _groups = [_entities] call coopr_fnc_groupsByEntities;
+    private _groups = [_entities, east] call coopr_fnc_groupsByEntities;
     private _strengths = [];
 
     DEBUG2("groups: %1", _groups);

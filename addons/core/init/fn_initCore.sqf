@@ -10,5 +10,8 @@ if (_WIAReputation isEqualTo objNull) exitWith { SETUPERROR("There was no reputa
 COOPR_REP_MAN = _reputationMan;
 COOPR_REP_WIA_MULTIPLIER_WEST = _WIAReputation;
 
+COOPR_RECON_ROUTINE_TOGGLE = false;
+
 publicVariable "COOPR_REP_MAN";
 publicVariable "COOPR_REP_WIA_MULTIPLIER_WEST";
+publicVariable "COOPR_RECON_ROUTINE_TOGGLE";

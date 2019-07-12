@@ -39,6 +39,7 @@ if (isServer) then {
         private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
         [_characterID, _taskId] call coopr_fnc_initReconReport;
         _unit setVariable [COOPR_KEY_IN_RECON, true, true];
+        COOPR_RECON_ROUTINE_TOGGLE = true;
         true;
     } else {
         ERROR("could not assign task.");

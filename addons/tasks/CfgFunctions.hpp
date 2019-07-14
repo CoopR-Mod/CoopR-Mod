@@ -1,5 +1,13 @@
 class CfgFunctions {
     class coopr {
+        class coopr_tasks_init {
+            file = "x\coopr\addons\tasks\init";
+            class initALiVETaskSystem {};
+            class initCooprTaskSystem {};
+            class initTaskItems {};
+            class initTaskTracker {};
+            class initCharacterMissions {};
+        }
         class coopr_tasks_functions {
             file = "x\coopr\addons\tasks\functions";
             class setupTasksModule {};
@@ -12,17 +20,14 @@ class CfgFunctions {
             class requestCooprTask {};
             class strengthAccuracy {};
             class checkTaskTracking {};
-            class initTaskTracker {};
             class createTaskMarker {};
             class removeTaskMarker {};
             class checkTaskRequirements {};
             class createPatrolAreaMarker {};
             class createDefensiveAreaMarker {};
             class requestCooprReconTask {};
-            class initTaskItems {};
             class serializeTask {};
             class deserializeTask {};
-            class initCharacterMissions {};
             class determineUnitStrength {};
             class parseStrengthsInArea {};
         }

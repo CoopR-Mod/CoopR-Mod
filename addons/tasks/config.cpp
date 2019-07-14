@@ -11,7 +11,8 @@ class CfgPatches {
         requiredVersion = 1.80;
         requiredAddons[] = {
             "A3_3DEN",
-            "coopr_core" // all addons need to depend on core
+            "coopr_core", // all addons need to depend on core
+            "coopr_integration" // all addons need to depend on core
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {

@@ -17,7 +17,7 @@
  *
  * Scope: Server
  */
-
+#define X 0
 
 params [["_marker", ""]];
 
@@ -25,18 +25,20 @@ if (_marker isEqualTo "") exitWith { ERROR("_marker was not defined") };
 
 if (isServer) then {
     private _areaUnitStrength = EMPTY_HASH;
+    private _markerPos = getMarkerPos _marker;
+    private _markerRadius = getMarkerSize _marker select X;
 
     INFO("determining infantry units in recon area");
     private _infantryStrengths = [_marker, "Man"] call coopr_fnc_determineUnitStrength;
     [_areaUnitStrength, "infantry", _infantryStrengths] call CBA_fnc_hashSet;
 
     INFO("determining motorized units in recon area");
-    private _motorizedStrengths = [_marker, "Car"] call coopr_fnc_determineUnitStrength;
-    [_areaUnitStrength, "motorized", _motorizedStrengths] call CBA_fnc_hashSet;
+    private _entities = _markerPos nearEntities ["Car", _markerRadius];
+    [_areaUnitStrength, "motorized", count _entities] call CBA_fnc_hashSet;
 
     INFO("determining armored units in recon area");
-    private _armoredStrengths = [_marker, "Tank"] call coopr_fnc_determineUnitStrength;
-    [_areaUnitStrength, "armored", _armoredStrengths] call CBA_fnc_hashSet;
+    private _entities = _markerPos nearEntities ["Tank", _markerRadius];
+    [_areaUnitStrength, "armored", count _entities] call CBA_fnc_hashSet;
 
     _areaUnitStrength
 } else {

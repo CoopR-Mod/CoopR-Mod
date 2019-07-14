@@ -33,10 +33,11 @@ if (isServer) then {
     private _markerPos = getMarkerPos _marker;
     private _markerRadius = getMarkerSize _marker select X;
 
+
     // INFANTRY
     private _entities = _markerPos nearEntities [_type, _markerRadius];
     if (_entities isEqualTo []) exitWith { INFO("no entities found"); []};
-    private _groups = [_entities, east] call coopr_fnc_groupsByEntities;
+    private _groups = [_entities, resistance] call coopr_fnc_groupsByEntities;
     private _strengths = [];
 
     DEBUG2("groups: %1", _groups);

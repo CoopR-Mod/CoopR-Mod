@@ -22,12 +22,7 @@
 
 if (INTEGRATE_ALIVE) then {
     DEBUG2("current objective cache: %1", COOPR_RECON_OBJECTIVE_CACHE);
-    private _lowestPrioObjective = ["WEST", "attacking", COOPR_RECON_OBJECTIVE_CACHE] call coopr_fnc_alive_getLowestPriorityObjective;
-
-    // check for another objective type
-    if (isNil "_lowestPrioObjective") then {
-        _lowestPrioObjective = ["WEST", "attack", COOPR_RECON_OBJECTIVE_CACHE] call coopr_fnc_alive_getLowestPriorityObjective;
-    };
+    private _lowestPrioObjective = ["WEST", ["attacking", "attack"], COOPR_RECON_OBJECTIVE_CACHE] call coopr_fnc_alive_getLowestPriorityObjective;
 
     if (not (isNil "_lowestPrioObjective")) then {
         COOPR_RECON_OBJECTIVE_CACHE pushBackUnique _lowestPrioObjective;

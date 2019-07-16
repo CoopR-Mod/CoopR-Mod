@@ -30,15 +30,15 @@ if (isServer) then {
 
     INFO("determining infantry units in recon area");
     private _infantryStrengths = [_marker, "Man"] call coopr_fnc_determineUnitStrength;
-    [_areaUnitStrength, "infantry", _infantryStrengths] call CBA_fnc_hashSet;
+    [_areaUnitStrength, COOPR_TASK_REPORT_TYPE_INFANTRY, _infantryStrengths] call CBA_fnc_hashSet;
 
     INFO("determining motorized units in recon area");
     private _entities = _markerPos nearEntities ["Car", _markerRadius];
-    [_areaUnitStrength, "motorized", count _entities] call CBA_fnc_hashSet;
+    [_areaUnitStrength, COOPR_TASK_REPORT_TYPE_MOTORIZED, count _entities] call CBA_fnc_hashSet;
 
     INFO("determining armored units in recon area");
     private _entities = _markerPos nearEntities ["Tank", _markerRadius];
-    [_areaUnitStrength, "armored", count _entities] call CBA_fnc_hashSet;
+    [_areaUnitStrength, COOPR_TASK_REPORT_TYPE_ARMORED, count _entities] call CBA_fnc_hashSet;
 
     _areaUnitStrength
 } else {

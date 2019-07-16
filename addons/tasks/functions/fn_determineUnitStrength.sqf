@@ -33,7 +33,6 @@ if (isServer) then {
     private _markerPos = getMarkerPos _marker;
     private _markerRadius = getMarkerSize _marker select X;
 
-
     // INFANTRY
     private _entities = _markerPos nearEntities [_type, _markerRadius];
     if (_entities isEqualTo []) exitWith { INFO("no entities found"); []};

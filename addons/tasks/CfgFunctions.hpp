@@ -56,7 +56,6 @@ class CfgFunctions {
             class isInTaskArea {};
             class getLabelByMissionType {};
             class getLabelForAccuracy {};
-            class extractReportedStrength {};
             class getStrengthByUnitCount {};
         }
         class coopr_tasks_tests {

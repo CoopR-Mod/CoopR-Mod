@@ -16,7 +16,7 @@ class CfgFunctions {
             class convertReportToMission {};
             class createCooprTask {};
             class createReconTask {};
-            class validateReportEntries {};
+            class validateReportEntry {};
             class requestCooprTask {};
             class strengthAccuracy {};
             class checkTaskTracking {};

@@ -12,19 +12,21 @@ private _behaviourSel = _ctrl getVariable ["_behaviourSelection", objNull];
 lbClear _strengthSel;
 lbClear _behaviourSel;
 
-if !(_selectedIndex == INFANTRY) then {
+if !(_selectedIndex isEqualTo INFANTRY) then {
     _strengthSel lbAdd "NOT USED";
     _behaviourSel lbAdd "NOT USED";
+    _strengthSel lbSetData [0, "1"];
+    _behaviourSel lbSetData [0, COOPR_TASK_BEHAVIOUR_DEFENSIVE];
     _strengthSelection lbSetCurSel 0;
     _behaviourSelection lbSetCurSel 0;
-    ctrlEnable [_strengthSel, false];
-    ctrlEnable [_behaviourSel, false];
+    _strengthSel ctrlEnable false;
+    _behaviourSel ctrlEnable false;
 } else {
     { _strengthSel lbAdd _x; _strengthSel lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_STRENGTH_OPTIONS;
     { _behaviourSel lbAdd _x; _behaviourSel lbSetData [_forEachIndex, _x] } forEach COOPR_RECONREP_BEHAVIOUR_OPTIONS;
-    _strengthSelection lbSetCurSel 0;
-    _behaviourSelection lbSetCurSel 0;
-    ctrlEnable [_strengthSel, true];
-    ctrlEnable [_behaviourSel, true];
+    _strengthSel lbSetCurSel 0;
+    _behaviourSel lbSetCurSel 0;
+    _strengthSel ctrlEnable true;
+    _behaviourSel ctrlEnable true;
 };
 

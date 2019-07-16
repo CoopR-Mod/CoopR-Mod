@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+#define INFANTRY 0
+
 params ["_ctrl"];
 private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };

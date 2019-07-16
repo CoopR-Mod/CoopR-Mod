@@ -36,20 +36,17 @@ if (isServer) then {
         private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         private _time = [_entry, COOPR_KEY_RECON_ENTRY_TIME] call CBA_fnc_hashGet;
 
-
         { deleteMarker (_x select 0) } forEach _serializedMarkers;
 
         private _strengthListForType = [_scannedStrengths, _type] call CBA_fnc_hashGet;
-        DEBUG2("strengthlist (before): %1", _strengthListForType);
         private _isValid = [_type, _strength, _strengthListForType] call coopr_fnc_validateReportEntry;
-        //TODO: private _accuracy = code ...
+        //TODO: setup accuracy depending on the _strengthListForType counts
 
         private _newCooprTask = EMPTY_HASH;
 
         if (_isValid) then {
             // remove element to shrink down strength list for upcoming validations
             _strengthListForType deleteAt (_strengthListForType find _strength);
-            DEBUG2("strengthlist (after): %1", _strengthListForType);
 
             private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
             DEBUG2("evaluated task type: %1", _cooprTaskType);

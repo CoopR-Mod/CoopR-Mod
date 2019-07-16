@@ -31,6 +31,10 @@ if (INTEGRATE_ACE3) then {
     player addAction ["TENT", {[COOPR_CAMP_ITEM_TENT] call coopr_fnc_buildCampsiteStructure; }, [], -1, true, true, "", _buildTentCondition call coopr_fnc_codeAsString]; 
     
     player addAction ["<t color='#ff0000'>Logout</t>", {[] spawn { call coopr_fnc_logout; };} , [], 0.5, true, true, "", "true"];
+    if (COOPR_DEV_MODE) then {
+        player addAction ["<t color='#F633FF'>-DEV- HQ</t>", {} , [], 0.5, true, true, "", "true"];
+        player addAction ["<t color='#F633FF'>Teleport HQ</t>", {player setPos (getPos COOPR_HQ_WEST)} , [], 0.5, true, true, "", "true"];
+    }
 };
 
 INFO("player actions added");

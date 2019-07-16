@@ -27,7 +27,7 @@ if (isServer) then {
   if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
 
     INFO2("init recon report for character %1", _characterId);
-    private _hasReportStmt = format ["SELECT count(*) FROM recon_reports WHERE character_id = %1", _characterId];
+    private _hasReportStmt = format ["SELECT count(*) FROM recon_reports WHERE character_id = %1 AND finished = 0", _characterId];
     private _hasReport = (_hasReportStmt call coopr_fnc_extDB3sql) select 0 select 0;
     if (_hasReport > 0) then {
         DEBUG2("recon report for character %1 already initialized", _characterId);

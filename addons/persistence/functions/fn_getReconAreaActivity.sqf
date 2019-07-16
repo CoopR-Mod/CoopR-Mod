@@ -5,7 +5,7 @@
  * Returns the hostile activity in strength of the recon area
  *
  * Arguments:
- * 0: _characterId <NUMBER> - ID of the character the reports belongs to
+ * 0: _reportID <NUMBER> - ID of the character the reports belongs to
  *
  * Return Value:
  * _strengths <CBA_HASH> - all hostile strengths in the recon area
@@ -18,13 +18,13 @@
  * Scope: Server
  */
 
-params [["_characterId", -1]];
+params [["_reportID", -1]];
 
 if (isServer) then {
-  if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
+  if (_reportID isEqualTo -1) exitWith { ERROR("_reportID was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_getReconAreaActivityLocal;
+        [_reportID] call coopr_fnc_getReconAreaActivityLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

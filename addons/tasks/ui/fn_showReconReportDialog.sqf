@@ -49,6 +49,11 @@ private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
     _strengthSelection lbSetCurSel 0;
     _behaviourSelection lbSetCurSel 0;
 
+    // list box event
+    _typeSelection setVariable ["_strengthSelection", _strengthSelection];
+    _typeSelection setVariable ["_behaviourSelection", _behaviourSelection];
+    _typeSelection ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectType} ];
+
     // set data to write button
     _buttonWriteReport setVariable ["_typeSelection", _typeSelection];
     _buttonWriteReport setVariable ["_strengthSelection", _strengthSelection];

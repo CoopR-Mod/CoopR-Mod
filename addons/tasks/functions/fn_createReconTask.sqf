@@ -27,7 +27,7 @@ if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestinatio
 
 if (isServer) then {
     private _taskType = "coopr_task_recon";
-    private _taskId = format ["%1_%2", _taskType, call coopr_fnc_getTaskCount];
+    private _taskId = format ["%1_%2", _taskType, (call coopr_fnc_getTaskCount) + 1];
     private _reconTask = [_unit, [_taskId], "CoopR_Task_Recon", [], 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_reconTask") then {

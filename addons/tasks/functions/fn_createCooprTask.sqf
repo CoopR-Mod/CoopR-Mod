@@ -30,7 +30,7 @@ if (isServer) then {
     private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
     private _serializedMarkers = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
-    private _taskId = format ["%1_%2", _taskType, call coopr_fnc_getTaskCount];
+    private _taskId = format ["%1_%2", _taskType, (call coopr_fnc_getTaskCount) + 1];
     private _cooprTask = [_unit, _taskId , _taskType, [], 1, 2, true] call BIS_fnc_taskCreate;
 
     if !(isNil "_cooprTask") then {

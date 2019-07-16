@@ -64,6 +64,8 @@ if (isServer) then {
     [_player, COOPR_REP_AAR_MULTIPLIER] call coopr_fnc_convertTempToReputation;
     _player setVariable [COOPR_KEY_ACTIVE_TASK, []];
     _player setVariable [COOPR_KEY_IN_RECON, false];
+    private _characterID = _player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+    [_characterID, true] call coopr_fnc_setReportState;
 
     [_player, _finalRep] call coopr_fnc_updateReputation;
     DEBUG2("adding %1 rep pts to the player", _finalRep);

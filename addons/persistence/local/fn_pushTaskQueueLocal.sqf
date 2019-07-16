@@ -24,7 +24,7 @@ if (isServer) then {
     if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was not defined") };
     if (not ([_cooprTask] call CBA_fnc_isHash)) exitWith { ERROR("_cooprTask has to be a cba hash"); };
 
-    INFO("pushing coopr task to task queue");
+    DEBUG("pushing coopr task to task queue");
     private _currentCount = call coopr_fnc_getQueuedTasksCountLocal;
     [_cooprTask, COOPR_KEY_TASK_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
     private _taskToQueue = format["INSERT INTO task_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprTask];

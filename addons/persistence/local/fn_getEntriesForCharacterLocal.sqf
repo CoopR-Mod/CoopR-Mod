@@ -22,7 +22,7 @@ params [["_characterID", -1]];
 
 if (isServer) then {
     if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was not defined") };
-    INFO2("fetching recon entries for character %1 ", _characterID);
+    DEBUG2("fetching recon entries for character %1 ", _characterID);
     private _reportID = (player getVariable [COOPR_KEY_CHARACTER_ID, -1]) call coopr_fnc_getReportIdForCharacterLocal;
 
     if (_reportID isEqualTo -1) exitWith { DEBUG("report id was null - skip fetching"); []; };

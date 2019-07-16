@@ -27,6 +27,7 @@ if (_type isEqualTo "") exitWith { ERROR("_type was not defined") };
 if (_strength isEqualTo "") exitWith { ERROR("_strength was not defined") };
 if (_strengthListForType isEqualTo []) exitWith { ERROR("_strengthListForType was not defined") };
 
+DEBUG2("strength %1", _strength);
 if (_strength in _strengthListForType) then {
     true;
 } else {

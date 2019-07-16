@@ -23,7 +23,7 @@ params [["_reportID", -1]];
 if (isServer) then {
     if (_reportID isEqualTo -1) exitWith { ERROR("_reportID was not defined") };
 
-    INFO2("get recon area activity for report %1", _reportID);
+    DEBUG2("get recon area activity for report %1", _reportID);
     private _getActivity = format ["SELECT activity FROM recon_reports WHERE id = %1 AND finished = 0", _reportID];
     private _result = (_getActivity call coopr_fnc_extDB3sql) select 0 select 0;
     _result;

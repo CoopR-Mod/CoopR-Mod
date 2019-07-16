@@ -30,7 +30,6 @@ class CfgFunctions {
             class deserializeTask {};
             class determineUnitStrength {};
             class parseStrengthsInArea {};
-            class mapEntriesToStrengthList {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";
@@ -57,6 +56,7 @@ class CfgFunctions {
             class getLabelByMissionType {};
             class getLabelForAccuracy {};
             class getStrengthByUnitCount {};
+            class mapEntriesToStrengthList {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";

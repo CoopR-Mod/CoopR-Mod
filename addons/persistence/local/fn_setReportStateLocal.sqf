@@ -26,7 +26,7 @@ if (isServer) then {
     if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
     if (_state isEqualTo objNull) exitWith { ERROR("_state was not defined") };
 
-    INFO2("init recon report for character %1", _characterId);
+    DEBUG2("init recon report for character %1", _characterId);
     private _hasReportStmt = format ["SELECT count(*) FROM recon_reports WHERE character_id = %1", _characterId];
     private _hasReport = (_hasReportStmt call coopr_fnc_extDB3sql) select 0 select 0;
     if (_hasReport == 0) exitWith {

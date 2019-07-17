@@ -57,7 +57,8 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_ACCURACY, 100] call CBA_fnc_hashSet;
 
-            DEBUG2("defined task details: %1", _newCooprTask);
+           ["defined task details:", _newCooprTask] call coopr_fnc_logHash;
+
             [_newCooprTask] call coopr_fnc_pushTaskQueue;
             DEBUG2("coopr mission created");
         } else {

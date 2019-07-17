@@ -56,6 +56,7 @@ class CfgFunctions {
             class debugMarker {};
             class isGroupStatic {};
             class promise {};
+            class logHash {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

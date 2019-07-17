@@ -23,7 +23,7 @@ params [["_characterHash", []]];
 if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has to be a cba hash"); };
 
 INFO2("%1 is logging in", player);
-[_characterHash] call coopr_fnc_characterStatePrettyLog; // for debugging
+["logged in character:", _characterHash] call coopr_fnc_logHash;
 
 private _oldPlayerUnit = player;
 private _playerGroup = createGroup [west, true];

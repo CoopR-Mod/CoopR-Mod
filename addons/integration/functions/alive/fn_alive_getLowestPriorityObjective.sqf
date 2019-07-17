@@ -81,4 +81,5 @@ if ((isNil "_lowestPrioObjective") and (count COOPR_RECON_OBJECTIVE_CACHE > 0)) 
     COOPR_RECON_OBJECTIVE_CACHE = [];
 };
 
+DEBUG2("lowest prio objective: %1", _lowestPrioObjective);
 _lowestPrioObjective; // return

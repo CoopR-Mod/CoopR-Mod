@@ -56,6 +56,7 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_ACCURACY, 100] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_TARGET, [_type, _strength]] call CBA_fnc_hashSet;
 
            ["defined task details:", _newCooprTask] call coopr_fnc_logHash;
 

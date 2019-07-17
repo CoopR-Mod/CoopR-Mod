@@ -12,7 +12,7 @@ DEBUG2("%1 entries found", count _entries);
 
 {
     private _entry = _x;
-    DEBUG2("rendering entry: %1", _entry);
+    ["rendering recon entry:", _entry] call coopr_fnc_logHash;
     private _type = [_entry, COOPR_KEY_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
     private _strength = [_entry, COOPR_KEY_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
     private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;

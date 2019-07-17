@@ -78,11 +78,13 @@
 #define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
 #define COOPR_KEY_TASK_MARKER "coopr_task_marker"
 #define COOPR_KEY_TASK_ACCURACY "coopr_task_accuracy"
+#define COOPR_KEY_TASK_TARGET "coopr_task_target"
 
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
 #define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"
 #define COOPR_KEY_TASK_TRACKER_KILL_COUNT "coopr_task_tracker_kill_count"
 #define COOPR_KEY_TASK_TRACKER_TYPE "coopr_task_tracker_type"
+#define COOPR_KEY_TASK_TRACKER_TARGET "coopr_task_tracker_target"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "Motorized"

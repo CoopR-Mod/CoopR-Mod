@@ -19,7 +19,7 @@
  */
 
 if (isServer) then {
-    private _count = format["SELECT count(*) FROM task_queues WHERE server_id = %1", COOPR_SERVER_ID];
+    private _count = format["SELECT count(*) FROM task_queues"];
     (_count call coopr_fnc_extDB3sql) select 0 select 0;
 } else {
     SERVER_ONLY_ERROR;

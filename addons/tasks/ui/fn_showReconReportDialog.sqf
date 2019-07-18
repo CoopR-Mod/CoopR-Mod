@@ -2,6 +2,11 @@
 
 disableSerialization;
 
+private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+if !(player call coopr_fnc_isInTaskArea) exitWith {
+    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["You need to be in the recon task area"]] call CBA_fnc_notify;
+};
+
 createDialog "CoopR_ReconReport_Dialog";
 waitUntil {!isNull findDisplay GUI_ID_RECON_REPORT_DIALOG};
 
@@ -10,7 +15,6 @@ _effect ppEffectEnable true;
 _effect ppEffectAdjust [10];
 _effect ppEffectCommit 0.1;
 
-private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
 // promise for recon entries
 [[_characterID], "coopr_fnc_getEntriesForCharacter", [_effect], {

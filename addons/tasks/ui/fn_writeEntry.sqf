@@ -33,19 +33,20 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     private _behaviour = _behaviourSel lbData (lbCurSel _behaviourSel);
     private _markerText = ctrlText _markerNameEdit;
     private _foundMarker = allMapMarkers select { (markerText _x) isEqualTo _markerText };
+    private _foundUserMarker = _foundMarker select { _x find "_USER_DEFINED" >= 0 };
     private _serializedMarkers = [];
-    DEBUG2("foundmarker: %1", _foundMarker);
+    DEBUG2("foundmarker: %1", _foundUserMarker);
 
     if (_markerText isEqualTo "") exitWith {
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No marker name given"]] call CBA_fnc_notify;
     };
 
-    if (_foundMarker isEqualTo []) exitWith {
+    if (_foundUserMarker isEqualTo []) exitWith {
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No user marker found"]] call CBA_fnc_notify;
     };
 
     private _reconTaskId = player getVariable [COOPR_KEY_ACTIVE_TASK, ""];
-    private _markerPos = getMarkerPos _foundMarker;
+    private _markerPos = getMarkerPos _foundUserMarker;
     if !(_markerPos inArea _reconTaskId + "_task_marker") exitWith {
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker was not in recon task area"]] call CBA_fnc_notify;
     };
@@ -58,7 +59,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
         private _serMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         DEBUG2("serMarker %1", _serMarkers);
         private _entryMarkerDescription = (_serMarkers select 0) select 5; // markerText index
-        _nameExists = _entryMarkerDescription isEqualTo markerText (_foundMarker select 0);
+        _nameExists = _entryMarkerDescription isEqualTo markerText (_foundUserMarker select 0);
     } forEach _reconEntries;
 
     if (_nameExists) exitWith {
@@ -66,7 +67,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     };
 
     // serialize all markers
-    { _serializedMarkers pushBack ([_x] call coopr_fnc_serializeMarker) } forEach _foundMarker;
+    { _serializedMarkers pushBack ([_x] call coopr_fnc_serializeMarker) } forEach _foundUserMarker;
 
     // build hash for entry
     private _entryHash = EMPTY_HASH;
@@ -75,7 +76,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     [_entryHash, COOPR_KEY_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundMarker select 0), ""]) ] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_KEY_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundUserMarker select 0), ""]) ] call CBA_fnc_hashSet;
     [_entryHash, COOPR_KEY_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 
     [[_entryHash], "coopr_fnc_saveReconEntry", [_entryHash, _ctrl], {

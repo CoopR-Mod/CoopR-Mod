@@ -85,6 +85,7 @@
 #define COOPR_KEY_TASK_TRACKER_KILL_COUNT "coopr_task_tracker_kill_count"
 #define COOPR_KEY_TASK_TRACKER_TYPE "coopr_task_tracker_type"
 #define COOPR_KEY_TASK_TRACKER_TARGET "coopr_task_tracker_target"
+#define COOPR_KEY_TASK_TRACKER_RECON_COMPLETE "coopr_task_tracker_recon_complete"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "Motorized"

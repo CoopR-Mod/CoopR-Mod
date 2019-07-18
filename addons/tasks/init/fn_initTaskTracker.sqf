@@ -39,6 +39,7 @@ if (isServer) then {
     [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT, 0] call CBA_fnc_hashSet;
     [_taskTracker, COOPR_KEY_TASK_TRACKER_TYPE, _type] call CBA_fnc_hashSet;
     [_taskTracker, COOPR_KEY_TASK_TRACKER_TARGET, _target] call CBA_fnc_hashSet;
+    [_taskTracker, COOPR_KEY_TASK_TRACKER_RECON_COMPLETE, false] call CBA_fnc_hashSet;
 
     ["tasktracker init state:", _taskTracker] call coopr_fnc_logHash;
 

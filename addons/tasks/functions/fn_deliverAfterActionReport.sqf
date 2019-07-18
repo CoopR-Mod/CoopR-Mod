@@ -58,7 +58,18 @@ if (isServer) then {
         _finalRep = 10;
         private _message = format ["You gained +%1 reputation", _finalRep];
         [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
+
+        private _isComplete = [_taskTracker, COOPR_KEY_TASK_TRACKER_RECON_COMPLETE] call CBA_fnc_hashGet;
+        if (_isComplete) then {
+            DEBUG("report was complete - applying bonus reputation");
+            private _bonusRep = 50;
+            private _message = format ["You gained +%1 bonus reputation", _bonusRep];
+            [[COOPR_LOGO_SMALL], ["Complete Recon Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;
+        } else {
+            DEBUG("report was NOT completed");
+        };
     };
+
 
     // add temp rep points
     [_player, COOPR_REP_AAR_MULTIPLIER] call coopr_fnc_convertTempToReputation;

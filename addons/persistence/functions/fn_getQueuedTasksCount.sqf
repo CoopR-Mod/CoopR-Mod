@@ -5,7 +5,7 @@
  * Counts all queued tasks
  *
  * Arguments:
- * None
+ * 0: _serverID <NUMBER> - server id to filter count
  *
  * Return Value:
  * _tasks <ARRAY> - all found tasks for server id
@@ -17,10 +17,11 @@
  *
  * Scope: Server
  */
+params [["_serverID", -1]];
 
 if (isServer) then {
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_getQueuedTasksCountLocal;
+        [_serverID] call coopr_fnc_getQueuedTasksCountLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

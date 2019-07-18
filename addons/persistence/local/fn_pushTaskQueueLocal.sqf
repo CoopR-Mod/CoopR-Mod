@@ -25,7 +25,7 @@ if (isServer) then {
     if (not ([_cooprTask] call CBA_fnc_isHash)) exitWith { ERROR("_cooprTask has to be a cba hash"); };
 
     DEBUG("pushing coopr task to task queue");
-    private _currentCount = call coopr_fnc_getQueuedTasksCountLocal;
+    private _currentCount = [] call coopr_fnc_getQueuedTasksCountLocal;
     [_cooprTask, COOPR_KEY_TASK_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
     private _taskToQueue = format["INSERT INTO task_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprTask];
     _taskToQueue call coopr_fnc_extDB3sql;

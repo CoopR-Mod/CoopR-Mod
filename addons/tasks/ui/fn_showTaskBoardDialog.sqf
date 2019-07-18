@@ -47,7 +47,7 @@ _combatDocument ctrlShow false;
 { _x ctrlShow false } forEach _allReportAccuracies;
 
 
-[[], "coopr_fnc_getQueuedTasksCount", [_combatDocument, _reconDocument], {
+[[COOPR_SERVER_ID], "coopr_fnc_getQueuedTasksCount", [_combatDocument, _reconDocument], {
     params ["_callbackArgs", "_promisedResult"];
     _callbackArgs params ["_combatDocument", "_reconDocument"];
     private _hasCombatTasks = _promisedResult > 0;

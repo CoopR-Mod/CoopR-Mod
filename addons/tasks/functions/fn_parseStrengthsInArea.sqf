@@ -35,14 +35,15 @@ if (isServer) then {
     DEBUG("determining motorized units in recon area");
     private _entities = _markerPos nearEntities ["Car", _markerRadius];
     private _array = [];
-    for "_i" from 1 to (count _entities) do { _array pushBack str _i };
+    // if this logic looks weird - ask xetra11 for reasons :D
+    for "_i" from 1 to (count _entities) do { _array pushBack "1" };
     [_areaUnitStrength, COOPR_TASK_REPORT_TYPE_MOTORIZED, _array] call CBA_fnc_hashSet;
     DEBUG2("found motorized: %1", count _entities);
 
     DEBUG("determining armored units in recon area");
     _entities = _markerPos nearEntities ["Tank", _markerRadius];
     _array = [];
-    for "_i" from 1 to (count _entities) do { _array pushBack str _i };
+    for "_i" from 1 to (count _entities) do { _array pushBack "1" };
     [_areaUnitStrength, COOPR_TASK_REPORT_TYPE_ARMORED, _array] call CBA_fnc_hashSet;
     DEBUG2("found armored: %1", count _entities);
 

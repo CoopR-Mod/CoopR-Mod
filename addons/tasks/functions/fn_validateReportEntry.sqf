@@ -6,11 +6,10 @@
  * or not.
  *
  * Arguments:
- * 0: _type <String> - type of reported unit
  * 0: _strength <String> - strength/size of reported unit
  *
  * Return Value:
- * _isValid <BOOL> - if entry is valid for task conversion
+ * _accuracy <NUMBER> - accuracy for entry strength
  *
  * Example:
  *
@@ -19,19 +18,16 @@
  * Scope: Client
  */
 
-params [["_type", ""],
-        ["_strength", ""]];
+params [["_strength", ""]];
         ["_strengthListForType", []];
 
-if (_type isEqualTo "") exitWith { ERROR("_type was not defined") };
-if (_strength isEqualTo "") exitWith { ERROR("_strength was not defined") };
 if (_strengthListForType isEqualTo []) exitWith { ERROR("_strengthListForType was not defined") };
 
 DEBUG2("strength %1", _strength);
 if (_strength in _strengthListForType) then {
-    true;
+    50;
 } else {
-    false;
+    0;
 }
 
 

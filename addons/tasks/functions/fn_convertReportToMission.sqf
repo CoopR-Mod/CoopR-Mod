@@ -39,12 +39,16 @@ if (isServer) then {
         { deleteMarker (_x select 0) } forEach _serializedMarkers;
 
         private _strengthListForType = [_scannedStrengths, _type] call CBA_fnc_hashGet;
-        private _isValid = [_type, _strength, _strengthListForType] call coopr_fnc_validateReportEntry;
-        //TODO: setup accuracy depending on the _strengthListForType counts
+        private _entryAccuracy = 0;
+        // reported type is accurate
+        if (count _strengthListForType > 0) then {
+            _entryAccuracy = _entryAccuracy + COOPR_ACCURACY_THRESHOLD;
+        };
+        private _accuracy = [_strength, _strengthListForType] call coopr_fnc_validateReportEntry;
+        _entryAccuracy = _entryAccuracy + _accuracy; // add validation accuracy value
 
-        private _newCooprTask = EMPTY_HASH;
-
-        if (_isValid) then {
+        if (_entryAccuracy > 50) then {
+            private _newCooprTask = EMPTY_HASH;
             // remove element to shrink down strength list for upcoming validations
             _strengthListForType deleteAt (_strengthListForType find _strength);
 
@@ -55,7 +59,7 @@ if (isServer) then {
             [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
             [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_ACCURACY, 100] call CBA_fnc_hashSet;
+            [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _entryAccuracy] call CBA_fnc_hashSet;
             [_newCooprTask, COOPR_KEY_TASK_TARGET, [_type, _strength]] call CBA_fnc_hashSet;
 
            ["defined task details:", _newCooprTask] call coopr_fnc_logHash;

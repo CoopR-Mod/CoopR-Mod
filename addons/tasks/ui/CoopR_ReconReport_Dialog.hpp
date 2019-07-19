@@ -171,7 +171,7 @@ class CoopR_ReconReport_Dialog
 			w = safeZoneW * 0.046875;
 			h = safeZoneH * 0.02444445;
 			style = 0;
-			text = "Write Entry";
+			text = $STR.coopr.report.write;
 			animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
 			animTextureDisabled = "#(argb,8,8,3)color(0.2,0.2,0.2,1)";
 			animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";
@@ -228,7 +228,7 @@ class CoopR_ReconReport_Dialog
 			w = safeZoneW * 0.059375;
 			h = safeZoneH * 0.02444445;
 			style = 0;
-			text = "Remove Entry";
+			text = $STR.coopr.report.remove;
 			animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
 			animTextureDisabled = "#(argb,8,8,3)color(0.2,0.2,0.2,1)";
 			animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";

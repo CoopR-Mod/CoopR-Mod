@@ -9,7 +9,7 @@
 		<Key ID="str.coopr.characters.fetch">
 			<Original>Fetching characters...</Original>
 			<German>Frage Character ab...</German>
-			<French>Récupération des profils</French>
+			<French>Récupération des profils...</French>
 		</Key>
 		<Key ID="str.coopr.characters.nocharacter">
 			<Original>No Character</Original>
@@ -43,7 +43,7 @@
 		<Key ID="str.coopr.character.info.role">
 			<Original>Role:</Original>
 			<German>Rolle:</German>
-			<French>Rôle;</French>
+			<French>Rôle:</French>
 		</Key>
 		<Key ID="str.coopr.character.info.wia.timeleft">
 			<Original>Hospilitized:</Original>
@@ -52,7 +52,7 @@
 		</Key>
 		<Key ID="str.coopr.character.role.leader">
 			<German>Gruppenfuehrer</German>
-			<Original>Group leader</Original>
+			<Original>Groupleader</Original>
 			<French>Chef d'équipe</French>
 		</Key>
 		<Key ID="str.coopr.character.role.medic">
@@ -72,8 +72,8 @@
 		</Key>
 		<Key ID="str.coopr.character.role.mg">
 			<German>MG-Schuetze</German>
-			<Original>Heavy Gunner</Original>
-			<French>Artilleur Lourd</French>
+			<Original>Light Machinegunner</Original>
+			<French>Fusiller Auto</French>
 		</Key>
 		<Key ID="str.coopr.character.delete">
 			<French>Supprimer</French>
@@ -103,7 +103,7 @@
 		<Key ID="str.coopr.character.newprofile.role">
 			<French>Spécialisation</French>
 			<German>Spezialisierung</German>
-			<Original>specialization</Original>
+			<Original>Specialization</Original>
 		</Key>
 	</Package>
 </Project>

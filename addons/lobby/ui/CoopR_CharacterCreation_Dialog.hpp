@@ -19,7 +19,7 @@ class CoopR_CharacterCreation_Dialog {
         class CoopR_CharacterCreation_Title: RscText
         {
             idc = GUI_ID_CHARACTER_TITLE;
-            text = "Neues Profil erstellen"; //--- ToDo: Localize;
+            text = $STR.coopr.character.newprofile.create;
             x = 0.396895 * safezoneW + safezoneX;
             y = 0.136838 * safezoneH + safezoneY;
             w = 0.190744 * safezoneW;
@@ -37,7 +37,7 @@ class CoopR_CharacterCreation_Dialog {
         class CoopR_CharacterCreation_Button_Create: RscButton
         {
         	idc = GUI_ID_CHARACTER_BUTTON_CREATE;
-        	text = "Erstellen"; //--- ToDo: Localize;
+        	text = $STR.coopr.character.create;
         	x = 0.216462 * safezoneW + safezoneX;
         	y = 0.533015 * safezoneH + safezoneY;
         	w = 0.103105 * safezoneW;
@@ -57,7 +57,7 @@ class CoopR_CharacterCreation_Dialog {
         class CoopR_CharacterCreation_Label_Name: RscText
         {
             idc = GUI_ID_CHARACTER_LABEL_NAME;
-            text = "Name des Soldaten"; //--- ToDo: Localize;
+            text = $STR.coopr.character.newprofile.name;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.257892 * safezoneH + safezoneY;
             w = 0.0773287 * safezoneW;
@@ -67,7 +67,7 @@ class CoopR_CharacterCreation_Dialog {
         class CoopR_CharacterCreation_Label_Specialisation: RscText
         {
             idc = GUI_ID_CHARACTER_LABEL_SPECIALISATION;
-            text = "Spezialisierung"; //--- ToDo: Localize;
+            text = $STR.coopr.character.newprofile.role;
             x = 0.216462 * safezoneW + safezoneX;
             y = 0.378946 * safezoneH + safezoneY;
             w = 0.0773287 * safezoneW;

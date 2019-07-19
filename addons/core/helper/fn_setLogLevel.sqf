@@ -9,6 +9,8 @@ if (isNil "LOG_CONFIG") then {
    LOG_CONFIG = EMPTY_HASH;
 };
 
+publicVariable "LOG_CONFIG";
+
 [LOG_CONFIG, _context, _logLevel] call CBA_fnc_hashSet;
 
 switch _logLevel do {

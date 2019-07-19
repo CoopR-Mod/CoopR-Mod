@@ -153,12 +153,12 @@
 		</Key>
 		<Key ID="str.coopr.report.remove">
 			<French>Supprimer l'entrée</French>
-			<German>Remove Entry</German>
+			<German>Eintrag entfernen</German>
 			<Original>Remove Entry</Original>
 		</Key>
 		<Key ID="str.coopr.report.write">
 			<French>Écrire l'entrée</French>
-			<German>Write Entry</German>
+			<German>Eintrag erstellen</German>
 			<Original>Write Entry</Original>
 		</Key>
 	</Package>

@@ -3,7 +3,7 @@
 	<Package name="Lobby">
 		<Key ID="str.coopr.supply.request">
 			<Original>Request Supply</Original>
-			<German>Request Supply</German>
+			<German>Versorgung anfordern</German>
 			<French>Demander du ravitaillement</French>
 		</Key>
 	</Package>

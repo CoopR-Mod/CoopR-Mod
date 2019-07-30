@@ -26,24 +26,21 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (_reconDestination isEqualTo locationNull) exitWith { ERROR("_reconDestination was locationNull") };
 
 if (isServer) then {
-    // TODO: replace with task counter function
     private _taskType = "coopr_task_recon";
-    private _subTaskType = "coopr_subtask_recon";
-    private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
-    private _taskId = format ["%1_%2", _taskType, _taskCount];
-    private _subtaskId = format ["%1_%2", _subTaskType, _taskCount];
+    private _taskId = format ["%1_%2", _taskType, (call coopr_fnc_getTaskCount) + 1];
+    private _reconTask = [_unit, [_taskId], "CoopR_Task_Recon", [], 1, 2, true] call BIS_fnc_taskCreate;
 
-    private _reconTaskId = [_unit, [_taskId], "CoopR_Task_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
-    [_unit, [_subtaskId, _reconTaskId], "CoopR_Subtask_Recon", _reconDestination, 1, 2, true] call BIS_fnc_taskCreate;
-
-    if !(isNil "_reconTaskId") then {
-        DEBUG2("%1 assigned", _reconTaskId);
-        [_taskType] call coopr_fnc_countTask;
+    if !(isNil "_reconTask") then {
+        DEBUG2("%1 assigned", _reconTask);
         [_unit, "coopr_task_recon"] call coopr_fnc_initTaskTracker;
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
         [_reconDestination, _taskId, "RECON"] call coopr_fnc_createTaskMarker;
-
-        COOPR_RECON_TASKS pushBack _taskId;
+        [(_taskId call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
+        private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
+        [_characterID, _taskId] call coopr_fnc_initReconReport;
+        _unit setVariable [COOPR_KEY_IN_RECON, true, true];
+        COOPR_RECON_ROUTINE_TOGGLE = true;
+        true;
     } else {
         ERROR("could not assign task.");
         false;

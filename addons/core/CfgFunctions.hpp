@@ -43,6 +43,7 @@ class CfgFunctions {
             class getLoadoutForRole {};
             class getNearestLocation {};
             class countUnits {};
+            class groupsByEntities {};
             class stringReplace {};
             class setLogLevel {};
             class getLogLevel {};
@@ -56,6 +57,8 @@ class CfgFunctions {
             class isGroupStatic {};
             class playerTookItem {};
             class playerDroppedItem {};
+            class promise {};
+            class logHash {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="CoopR Mod">
-    <Package name="intelligence">
-        <Key ID="str.coopr.intelligence.info.progress">
-            <Original>||CoopR|| Der Aufklaerungsfortschritt betraegt [%1]</Original>
-            <German>||CoopR|| Your intelligence progress is [%1]</German>
-        </Key>
-        <Key ID="str.coopr.intelligence.action.deliver">
-            <Original>Deliver Intel</Original>
-            <German>Dokumente abgeben</German>
-        </Key>
-        <Key ID="str.coopr.intelligence.chatter.nointelligence">
-            <Original>Wow awesome! You collected about 0 documents...</Original>
-            <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
-        </Key>
-        <Key ID="str.coopr.intelligence.chatter.intelligence">
-            <Original>Wow awesome! You collected about 0 documents...</Original>
-            <German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
-        </Key>
-    </Package>
+	<Package name="intelligence">
+		<Key ID="str.coopr.intelligence.info.progress">
+			<Original>||CoopR|| Your intelligence progress is [%1]</Original>
+			<German>||CoopR|| Der Aufklaerungsfortschritt betraegt [%1]</German>
+			<French>||CoopR|| Progrès des reinseignements [%1]</French>
+		</Key>
+		<Key ID="str.coopr.intelligence.action.deliver">
+			<Original>Deliver Intel</Original>
+			<German>Dokumente abgeben</German>
+			<French>Livrer les renseignements</French>
+		</Key>
+		<Key ID="str.coopr.intelligence.chatter.nointelligence">
+			<Original>Wow awesome! You collected about 0 documents...</Original>
+			<German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+			<French>Wow génial! Vous avez collecté environ 0 documents ...</French>
+		</Key>
+		<Key ID="str.coopr.intelligence.chatter.intelligence">
+			<Original>Wow awesome! You collected about 0 documents...</Original>
+			<German>Wow Klasse! Du hast ganze 0 Dokumente dabei...</German>
+			<French>Wow génial! Vous avez collecté environ 0 documents ...</French>
+		</Key>
+	</Package>
 </Project>

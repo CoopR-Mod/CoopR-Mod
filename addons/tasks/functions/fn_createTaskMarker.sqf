@@ -10,7 +10,7 @@
  * 2: _taskMarkerType <STRING> - what kind of task marker should be created
  *
  * Return Value:
- * None
+ * _markerName <STRING> - name of the created marker
  *
  * Example:
  * [_position, "coopr_task_test_0", "RECON"] call coopr_fnc_createTaskMarker;
@@ -32,20 +32,35 @@ if (isServer) then {
 
     switch (_taskMarkerType) do {
         case "RECON": {
-            _reconTaskMarker = createMarker [_taskId + "_marker" + "_area", _position];
+            _reconTaskMarker = createMarker [_taskId + "_task_marker", _position];
             _reconTaskMarker setMarkerSize [300, 300];
             _reconTaskMarker setMarkerAlpha 0.5;
             _reconTaskMarker setMarkerColor "ColorRed";
             _reconTaskMarker setMarkerShape "ELLIPSE";
             DEBUG2("recon task marker created: %1", _reconTaskMarker);
+            _reconTaskMarker;
+        };
+        case "INVISIBLE": {
+            _invisibleTaskMarker = createMarker [_taskId + "_task_marker", _position];
+            _invisibleTaskMarker setMarkerSize [300, 300];
+            if (COOPR_DEV_MODE) then {
+                _invisibleTaskMarker setMarkerAlpha 0.5;
+            } else {
+                _invisibleTaskMarker setMarkerAlpha 0;
+            };
+            _invisibleTaskMarker setMarkerColor "ColorRed";
+            _invisibleTaskMarker setMarkerShape "ELLIPSE";
+            DEBUG2("invisible task marker created: %1", _invisibleTaskMarker);
+            _invisibleTaskMarker;
         };
         default {
-            _otherMarker = createMarker [_taskId + "_marker" + "_area", _position];
+            _otherMarker = createMarker [_taskId + "_task_marker", _position];
             _otherMarker setMarkerSize [300, 300];
             _otherMarker setMarkerAlpha 0.5;
             _otherMarker setMarkerColor "ColorRed";
             _otherMarker setMarkerShape "ELLIPSE";
             DEBUG2("other task marker created: %1", _otherMarker);
+            _otherMarker;
         }
     };
 

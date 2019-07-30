@@ -16,7 +16,6 @@
  */
 
 if (isServer) then {
-    [coopr_fnc_taskFreshnessRoutine, COOPR_TIMER_TASK_FRESHNESS_ROUTINE, []] call CBA_fnc_addPerFrameHandler;
     INFO("server routines initialized");
 } else {
     SERVER_ONLY_ERROR;

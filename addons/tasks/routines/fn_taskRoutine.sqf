@@ -20,9 +20,9 @@ private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
 if !(_isLoggedIn) exitWith { DEBUG("skipping task routine - not logged in"); };
 
 if ([player] call coopr_fnc_hasActiveTask) then {
-    DEBUG("task routine running");
+    //DEBUG("task routine running");
     private _taskTracker = player getVariable [COOPR_KEY_TASK_TRACKER, EMPTY_HASH];
-    DEBUG2("tasktracker state: %1", _taskTracker);
+    //DEBUG2("tasktracker state: %1", _taskTracker);
     if ([player] call coopr_fnc_isInTaskArea) then {
         private _timeStamp = call coopr_fnc_currentGameTime;
         [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, true] call CBA_fnc_hashSet;

@@ -5,16 +5,6 @@ class CfgTaskDescriptions
         title = $STR_coopr_task_recon_title;
         description = $STR_coopr_task_recon_description;
     };
-    class CoopR_Subtask_Recon
-    {
-        title = $STR_coopr_subtask_recon_title;
-        description = $STR_coopr_subtask_recon_description;
-    };
-    class CoopR_Subtask_Optional_Recon
-    {
-        title = $STR_coopr_subtask_optional_recon_title;
-        description = $STR_coopr_subtask_optional_recon_description;
-    };
     class coopr_task_type_sniperteam
     {
         title = $STR_coopr_task_type_sniperteam_title;

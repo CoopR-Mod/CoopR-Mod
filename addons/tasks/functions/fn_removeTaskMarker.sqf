@@ -23,7 +23,7 @@ params [["_taskId", ""]];
 if (_taskId isEqualTo "") exitWith { ERROR("_taskId was empty") };
 
 if (isServer) then {
-    private _markerName = _taskId + "_marker" + "_area";
+    private _markerName = _taskId + "_task_marker";
     DEBUG2("removing task marker: %1", _markerName);
     deleteMarker _markerName;
 } else {

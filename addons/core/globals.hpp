@@ -39,7 +39,7 @@
 #define COOPR_KEY_POSITION "coopr_character_position"
 #define COOPR_KEY_LOADOUT "coopr_character_loadout"
 #define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
-#define COOPR_KEY_RECON_ENTRIES "coopr_character_recon_entries"
+#define COOPR_KEY_IN_RECON "coopr_character_in_recon"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
@@ -53,12 +53,14 @@
 #define COOPR_ROLE_NONE "coopr_role_none"
 
 // Recon Entry Keys
+#define COOPR_KEY_RECON_ENTRY_ID "coopr_recon_entry_id"
+#define COOPR_KEY_RECON_ENTRY_OWNER "coopr_recon_entry_owner"
 #define COOPR_KEY_RECON_ENTRY_TYPE "coopr_recon_entry_type"
 #define COOPR_KEY_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"
 #define COOPR_KEY_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"
 #define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
 #define COOPR_KEY_RECON_ENTRY_TIME "coopr_recon_entry_time"
-#define COOPR_KEY_RECON_ENTRY_VALID "coopr_recon_entry_valid"
+#define COOPR_KEY_RECON_ENTRY_LOCATION "coopr_recon_entry_location"
 
 // Recon Report Params
 #define COOPR_STRENGTH_TYPE_FIRETEAM "Fireteam"
@@ -70,15 +72,20 @@
 #define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
 #define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
 
+#define COOPR_KEY_TASK_QUEUE_ID "coopr_task_queue_id"
 #define COOPR_KEY_TASK_TYPE "coopr_task_type"
 #define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
 #define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
 #define COOPR_KEY_TASK_MARKER "coopr_task_marker"
+#define COOPR_KEY_TASK_ACCURACY "coopr_task_accuracy"
+#define COOPR_KEY_TASK_TARGET "coopr_task_target"
 
 #define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
 #define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"
 #define COOPR_KEY_TASK_TRACKER_KILL_COUNT "coopr_task_tracker_kill_count"
 #define COOPR_KEY_TASK_TRACKER_TYPE "coopr_task_tracker_type"
+#define COOPR_KEY_TASK_TRACKER_TARGET "coopr_task_tracker_target"
+#define COOPR_KEY_TASK_TRACKER_RECON_COMPLETE "coopr_task_tracker_recon_complete"
 
 #define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_TASK_REPORT_TYPE_MOTORIZED "Motorized"
@@ -99,11 +106,11 @@
 
 #define COOPR_STRENGTH_TYPE_FIRETEAM_MIN 1
 #define COOPR_STRENGTH_TYPE_FIRETEAM_MAX 4
-#define COOPR_STRENGTH_TYPE_SQUAD_MIN 8
+#define COOPR_STRENGTH_TYPE_SQUAD_MIN 5
 #define COOPR_STRENGTH_TYPE_SQUAD_MAX 14
 #define COOPR_STRENGTH_TYPE_PLATOON_MIN 15
 #define COOPR_STRENGTH_TYPE_PLATOON_MAX 45
-#define COOPR_STRENGTH_TYPE_COMPANY_MIN 80
+#define COOPR_STRENGTH_TYPE_COMPANY_MIN 46
 #define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
 
 // Campsite globals 

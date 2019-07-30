@@ -44,7 +44,7 @@ if ((count _patrolFlags) > 1) then {
                 private _distance = _posA distance _posB;
                 DEBUG3("posA: %1 / posB: %2", _posA, _posB);
                 private _centerPos = [((_posA select 0) + (_posB select 0))/2, ((_posA select 1) + (_posB select 1))/2];
-                private _patrolMarker = createMarker ["coopr_patrol_marker_" + str serverTime + str _forEachIndex, _centerPos];
+                private _patrolMarker = createMarker ["coopr_patrol_marker_" + _markerText + str (floor (random 100) + _forEachIndex), _centerPos];
                 _patrolMarker setMarkerSize [_distance/3, _distance/1.5];
                 _patrolMarker setMarkerDir _dir;
                 _patrolMarker setMarkerShape "RECTANGLE";
@@ -53,7 +53,7 @@ if ((count _patrolFlags) > 1) then {
                     _patrolMarker setMarkerAlpha 0; // make invisible if not in dev mode
                 };
                 _createdPatrolMarker pushBackUnique _patrolMarker;
-                DEBUG("patrol area marker created");
+                DEBUG2("patrol area marker created: %1", _patrolMarker);
             };
         } forEach _flagPositions;
 

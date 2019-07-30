@@ -113,7 +113,7 @@ class CoopR_Supply_Dialog
             w = safeZoneW * 0.1125;
             h = safeZoneH * 0.06111112;
             style = 0+2;
-            text = "Request Supply";
+            text = $STR.coopr.supply.request;
             borderSize = 0;
             colorBackground[] = {0.2,0.302,0.702,1};
             colorBackgroundActive[] = {0.2,0.302,0.702,1};

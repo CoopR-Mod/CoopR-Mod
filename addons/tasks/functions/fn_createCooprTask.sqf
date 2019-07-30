@@ -12,7 +12,7 @@
  * Boolean - if task was created successfully
  *
  * Example:
- * [_unit, "coopr_task_type_assault", _cooprTaskInfo] call coopr_fnc_createCooprTask;
+ * [_unit, _cooprTaskInfo] call coopr_fnc_createCooprTask;
  *
  * Public: No
  *
@@ -28,23 +28,24 @@ if (_cooprTaskInfo isEqualTo []) exitWith { ERROR("_cooprTaskInfo was []") };
 if (isServer) then {
     private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
     private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
+    private _target = [_cooprTaskInfo, COOPR_KEY_TASK_TARGET] call CBA_fnc_hashGet;
     private _serializedMarkers = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _taskType, _unit);
-    DEBUG2("task position: %1", _destination);
-    private _taskCount = [COOPR_COUNTER_TASKS, _taskType] call CBA_fnc_hashGet;
-    private _taskId = format ["%1_%2", _taskType, _taskCount];
-    private _cooprTaskId = [_unit, _taskId , _taskType, objNull, 1, 2, true] call BIS_fnc_taskCreate;
+    private _taskId = format ["%1_%2", _taskType, (call coopr_fnc_getTaskCount) + 1];
+    private _cooprTask = [_unit, _taskId , _taskType, [], 1, 2, true] call BIS_fnc_taskCreate;
 
-    if !(isNil "_cooprTaskId") then {
-        [_unit, _taskType] call coopr_fnc_initTaskTracker;
-        DEBUG2("%1 assigned", _cooprTaskId);
-        [_taskType] call coopr_fnc_countTask;
+    if !(isNil "_cooprTask") then {
+        [_unit, _taskType, _target] call coopr_fnc_initTaskTracker;
+        DEBUG2("%1 assigned", _cooprTask);
         // TODO: need to be shifted to group/squads
         _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
-        private _newMarkerName = _taskId + "_marker" + "_area_";
+        private _newMarkerName = _taskId + "_recon_marker_";
         { [_x, _newMarkerName + (str _forEachIndex)] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
-
-        _cooprTaskId;
+        // get the position of the first marker of the task
+        private _deserializedMarkerPos = getMarkerPos (_newMarkerName + "0");
+        private _taskMarker = [_deserializedMarkerPos, _taskId, "INVISIBLE"] call coopr_fnc_createTaskMarker;
+        [(_cooprTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
+        true;
     } else {
         ERROR("could not assign task.");
         false;

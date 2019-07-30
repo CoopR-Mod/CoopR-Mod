@@ -19,17 +19,11 @@
  * Scope: Client
  */
 
-if (count COOPR_TASKS_QUEUE <= 0 ) then {
-    INFO("no coopr tasks found. Create a new recon task");
+params [["_cooprTask", []]];
+if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was undefined") };
 
-    if (INTEGRATE_ALIVE) then {
-        private _reconTaskDestination = "WEST" call coopr_fnc_alive_getLowestPriorityObjectiveLocation;
-        [player, _reconTaskDestination] remoteExec ["coopr_fnc_createReconTask", EXEC_SERVER];
-    } else {
-        // TODO call recon task for coopr or other integration
-    };
+private _id = [_cooprTask, COOPR_KEY_TASK_QUEUE_ID] call CBA_fnc_hashGet;
+[_id] remoteExec ["coopr_fnc_deleteQueuedTask", EXEC_SERVER];
 
-} else {
-    private _cooprTaskInfo = COOPR_TASKS_QUEUE deleteAt 0;
-    [player, _cooprTaskInfo] remoteExec ["coopr_fnc_createCooprTask"];
-};
+[player, _cooprTask] remoteExec ["coopr_fnc_createCooprTask", EXEC_SERVER];
+closeDialog GUI_ID_TASKBOARD_DIALOG;

@@ -25,6 +25,6 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 
 // UI
-#include "\x\coopr\addons\core\define.hpp"
+#include "\x\coopr\addons\core\controls.hpp"
 #include "ui\CoopR_Login_Dialog.hpp"
 #include "ui\CoopR_CharacterCreation_Dialog.hpp"

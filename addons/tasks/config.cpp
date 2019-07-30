@@ -10,7 +10,9 @@ class CfgPatches {
 
         requiredVersion = 1.80;
         requiredAddons[] = {
-            "coopr_core" // all addons need to depend on core
+            "A3_3DEN",
+            "coopr_core", // all addons need to depend on core
+            "coopr_integration" // all addons need to depend on core
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
@@ -27,5 +29,6 @@ class CfgPatches {
 #include "CfgTaskDescriptions.hpp"
 
 // UI
-#include "\x\coopr\addons\core\define.hpp"
+#include "\x\coopr\addons\core\controls.hpp"
 #include "ui\CoopR_ReconReport_Dialog.hpp"
+#include "ui\CoopR_TaskBoard_Dialog.hpp"

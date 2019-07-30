@@ -1,32 +1,41 @@
 class CfgFunctions {
     class coopr {
+        class coopr_tasks_init {
+            file = "x\coopr\addons\tasks\init";
+            class initALiVETaskSystem {};
+            class initCooprTaskSystem {};
+            class initTaskItems {};
+            class initTaskTracker {};
+            class initCharacterMissions {};
+        }
         class coopr_tasks_functions {
             file = "x\coopr\addons\tasks\functions";
             class setupTasksModule {};
-            class broadcastReconReports {};
-            class removeRedundantReports {};
+            class finishReconReport {};
             class deliverAfterActionReport {};
-            class convertReconReportsToTasks {};
+            class convertReportToMission {};
             class createCooprTask {};
             class createReconTask {};
-            class validateReport {};
-            class countTask {};
+            class validateReportEntry {};
             class requestCooprTask {};
             class strengthAccuracy {};
             class checkTaskTracking {};
-            class initTaskTracker {};
             class createTaskMarker {};
             class removeTaskMarker {};
-            class completeReconSubtask {};
             class checkTaskRequirements {};
             class createPatrolAreaMarker {};
             class createDefensiveAreaMarker {};
+            class requestCooprReconTask {};
+            class serializeTask {};
+            class deserializeTask {};
+            class determineUnitStrength {};
+            class parseStrengthsInArea {};
         }
         class coopr_tasks_routines {
             file = "x\coopr\addons\tasks\routines";
             class taskRoutine {};
+            class reconRoutine {};
             class desertionRoutine {};
-            class taskFreshnessRoutine {};
         }
         class coopr_tasks_ui {
             file = "x\coopr\addons\tasks\ui";
@@ -35,6 +44,8 @@ class CfgFunctions {
             class writeEntry {};
             class removeEntry {};
             class updateReconReportEntries {};
+            class selectMissionType {};
+            class selectType {};
         }
         class coopr_tasks_helper {
             file = "x\coopr\addons\tasks\helper";
@@ -43,11 +54,14 @@ class CfgFunctions {
             class determineTaskType {};
             class hasActiveTask {};
             class isInTaskArea {};
+            class getLabelByMissionType {};
+            class getLabelForAccuracy {};
+            class getStrengthByUnitCount {};
+            class mapEntriesToStrengthList {};
         }
         class coopr_tasks_tests {
             file = "x\coopr\addons\tasks\tests";
             class tests_tasks_runSuite { postInit = 1 };
-            class tests_countTasks {};
             class tests_strengthAccuracy {};
             class tests_minMaxForStrength {};
             class tests_determineTaskType {};
@@ -56,7 +70,6 @@ class CfgFunctions {
         }
         class coopr_tasks_debug {
             file = "x\coopr\addons\tasks\debug";
-            class addDebugTasks {};
         }
     }
 }

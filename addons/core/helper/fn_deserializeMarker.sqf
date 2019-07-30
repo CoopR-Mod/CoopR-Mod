@@ -6,7 +6,7 @@
  *
  * Arguments:
  * 0: _serializedMarker <ARRAY> - serialized state of a marker
- * 1: _newMarkername <STRING> - flag to remove the marker after serialization (optional)
+ * 1: _newMarkername <STRING> - flag to overwrite the serialized marker name with a new one (optional)
  *
  * Return Value:
  * _deserializedMarker - <MARKER>
@@ -26,6 +26,7 @@ if (_serializedMarker isEqualTo []) exitWith { ERROR("_serializedMarker was not 
 private _markerName = _serializedMarker deleteAt 0;
 if !(_newMarkername isEqualTo "") then { _markerName = _newMarkername; }; // set override marker name
 
+INFO2("deserializing marker %1", _markerName);
 private _deserializedMarker = createMarker [_markerName, _serializedMarker deleteAt 0];
 {
     (_serializedMarker select _forEachIndex) call _x;
@@ -38,6 +39,7 @@ private _deserializedMarker = createMarker [_markerName, _serializedMarker delet
     { _deserializedMarker setMarkerText _this },
     { _deserializedMarker setMarkerBrush _this },
     { _deserializedMarker setMarkerDir _this },
+    { _deserializedMarker setMarkerAlpha _this },
     { _deserializedMarker setMarkerColor _this }];
 
 DEBUG("marker deserialized");

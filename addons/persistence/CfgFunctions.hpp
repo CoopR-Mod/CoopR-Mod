@@ -13,6 +13,24 @@ class CfgFunctions {
             class createCharacterLocal{};
             class removeCharacterLocal {};
             class localDatabaseRefresh {};
+            class saveTaskLocal {};
+            class getTaskLocal {};
+            class getTaskCountLocal {};
+            class initServerMetaLocal {};
+            class getReconAreaActivityLocal {};
+            class setReconAreaActivityLocal {};
+            class pushTaskQueueLocal {};
+            class getAllQueuedTasksLocal {};
+            class getQueuedTasksCountLocal {};
+            class popQueuedTaskLocal {};
+            class deleteQueuedTaskLocal {};
+            class initReconReportLocal {};
+            class getReportIdForCharacterLocal {};
+            class saveReconEntryLocal {};
+            class getEntriesForReportLocal {};
+            class getEntriesForCharacterLocal {};
+            class setReportStateLocal {};
+            class removeReconEntryLocal {};
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
@@ -31,9 +49,27 @@ class CfgFunctions {
             class initPersistence {};
             class hasPlayer {};
             class initPlayerPersistence {};
+            class getReconAreaActivity {};
+            class setReconAreaActivity {};
             class updateCharacter {};
             class getCharactersID {};
             class getCharacters {};
+            class saveTask {};
+            class getTask {};
+            class getTaskCount {};
+            class initServerMeta {};
+            class pushTaskQueue {};
+            class getAllQueuedTasks {};
+            class getQueuedTasksCount {};
+            class popQueuedTask {};
+            class deleteQueuedTask {};
+            class initReconReport {};
+            class getReportIdForCharacter {};
+            class saveReconEntry {};
+            class getEntriesForReport {};
+            class getEntriesForCharacter {};
+            class setReportState {};
+            class removeReconEntry {};
         }
     }
 }

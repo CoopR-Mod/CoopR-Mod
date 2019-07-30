@@ -69,5 +69,12 @@ switch (_strength) do {
             default { COOPR_TASK_TYPE_NONE };
         };
     };
-    default { COOPR_TASK_TYPE_NONE }
+    default {
+        switch (_type) do {
+            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_ASYMMETRIC; };
+            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
+            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
+            default { COOPR_TASK_TYPE_NONE };
+        };
+    }
 };

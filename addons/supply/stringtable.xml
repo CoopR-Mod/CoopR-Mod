@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="CoopR Mod">
+	<Package name="Lobby">
+		<Key ID="str.coopr.supply.request">
+			<Original>Request Supply</Original>
+			<German>Versorgung anfordern</German>
+			<French>Demander du ravitaillement</French>
+		</Key>
+	</Package>
+</Project>

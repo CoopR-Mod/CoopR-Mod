@@ -82,7 +82,7 @@ class CoopR_Login_Dialog {
    class coopr_Login_Character_1_Button: RscButton
    {
    	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_BUTTON;
-   	text = "Entfernen"; //--- ToDo: Localize;
+   	text = $STR.coopr.character.delete;
    	x = 0.154599 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -92,7 +92,7 @@ class CoopR_Login_Dialog {
    class coopr_Login_Character_2_Button: RscButton
    {
    	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_2_BUTTON;
-   	text = "Entfernen"; //--- ToDo: Localize;
+   	text = $STR.coopr.character.delete;
    	x = 0.422671 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -102,7 +102,7 @@ class CoopR_Login_Dialog {
    class coopr_Login_Character_3_Button: RscButton
    {
    	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_3_BUTTON;
-   	text = "Entfernen"; //--- ToDo: Localize;
+   	text = $STR.coopr.character.delete;
    	x = 0.685589 * safezoneW + safezoneX;
    	y = 0.621054 * safezoneH + safezoneY;
    	w = 0.159813 * safezoneW;
@@ -112,7 +112,7 @@ class CoopR_Login_Dialog {
    class coopr_Login_Character_1_Label: RscText
    {
    	idc = GUI_ID_LOGIN_DIALOG_CHARACTER_1_LABEL;
-   	text = "Profil 1"; //--- ToDo: Localize;
+   	text = $STR.coopr.character.profile1;
    	x = 0.200996 * safezoneW + safezoneX;
    	y = 0.169853 * safezoneH + safezoneY;
    	w = 0.0567077 * safezoneW;

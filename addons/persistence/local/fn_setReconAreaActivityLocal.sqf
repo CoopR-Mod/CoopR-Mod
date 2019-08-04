@@ -29,5 +29,5 @@ if (isServer) then {
     private _setActivity = format ["UPDATE recon_reports SET activity = '%1' WHERE id = %2 AND finished = 0", _activity, _reportID];
     _setActivity call coopr_fnc_extDB3sql;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

@@ -32,6 +32,6 @@ if (isServer) then {
         ERROR("Server was not initialized. Setup verification failed");
     };
 } else {
-    SERVER_ONLY_ERROR;
+    //SERVER_ONLY_ERROR(__FILE__);
 }
 

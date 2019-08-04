@@ -52,6 +52,6 @@ if (isServer) then {
         [_victim] remoteExec ["coopr_fnc_playerKilledNpc", _killer];
     };
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 }
 

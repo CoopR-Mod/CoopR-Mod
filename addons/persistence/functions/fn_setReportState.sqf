@@ -32,5 +32,5 @@ if (isServer) then {
         INFO("no persistence location defined - skipping persistence routine");
     };
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

@@ -25,5 +25,5 @@ if (isServer) then {
     _deleteRow call coopr_fnc_extDB3sql;
     _result select 0 select 0;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

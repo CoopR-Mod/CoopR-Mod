@@ -25,5 +25,5 @@ if (isServer) then {
     private _removeEntry = format["DELETE FROM recon_entries WHERE id = %1", _id];
     _removeEntry call coopr_fnc_extDB3sql;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

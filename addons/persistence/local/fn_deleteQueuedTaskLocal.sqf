@@ -26,5 +26,5 @@ if (isServer) then {
     private _deleteRow = format ["DELETE FROM task_queues WHERE id = %1;", _id];
     _deleteRow call coopr_fnc_extDB3sql;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

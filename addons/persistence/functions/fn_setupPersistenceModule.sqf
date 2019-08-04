@@ -25,5 +25,5 @@ if (isServer) then {
     INFO2("CoopR Server ID: %1", COOPR_SERVER_ID);
     DEBUG2("persistence location is set to %1" _persistenceLocation);
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

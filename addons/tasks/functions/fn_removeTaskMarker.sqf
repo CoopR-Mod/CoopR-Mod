@@ -27,5 +27,5 @@ if (isServer) then {
     DEBUG2("removing task marker: %1", _markerName);
     deleteMarker _markerName;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

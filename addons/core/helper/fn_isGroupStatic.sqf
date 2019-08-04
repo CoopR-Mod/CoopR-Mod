@@ -29,5 +29,5 @@ if (isServer) then {
     DEBUG2("current wp: %1", _currentWaypoint);
     _currentWaypoint >= (_waypointCount - 0);
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

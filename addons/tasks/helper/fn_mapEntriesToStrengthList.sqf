@@ -51,5 +51,5 @@ if (isServer) then {
     _hash // return
 
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

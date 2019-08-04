@@ -91,5 +91,5 @@ if (isServer) then {
     [(_currentTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
     [_currentTask] spawn BIS_fnc_deleteTask;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

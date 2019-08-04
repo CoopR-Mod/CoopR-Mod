@@ -32,5 +32,5 @@ if (isServer) then {
     _unit call coopr_fnc_updateState;
     [_unit call coopr_fnc_serializeCoopR] call coopr_fnc_updateCharacter;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

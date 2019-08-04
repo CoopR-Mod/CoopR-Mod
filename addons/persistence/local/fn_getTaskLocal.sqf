@@ -28,6 +28,6 @@ if (isServer) then {
     private _result = (_getTaskId call coopr_fnc_extDB3sql) select 0 select 0;
     _result;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };
 

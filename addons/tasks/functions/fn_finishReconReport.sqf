@@ -44,5 +44,5 @@ if (isServer) then {
     }] call coopr_fnc_promise; // coopr_fnc_getEntriesForCharacter
 
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

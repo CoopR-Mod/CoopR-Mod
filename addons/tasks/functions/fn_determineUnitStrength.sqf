@@ -51,5 +51,5 @@ if (isServer) then {
     DEBUG2("found strengths: %1", _strengths);
     _strengths;
 } else {
-  SERVER_ONLY_ERROR;
+  SERVER_ONLY_ERROR(__FILE__);
 };

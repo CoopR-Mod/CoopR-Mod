@@ -22,8 +22,8 @@ if(isServer) then {
     if (_taskItems isEqualTo []) then { SETUPERROR("no task items have been defined")};
 
     switch (_taskSystem) do {
-        case COOPR_SYSTEM: { [_taskItems] call coopr_fnc_initCooprTaskSystem };
-        case ALIVE_SYSTEM: { [_taskItems] call coopr_fnc_initALiVETaskSystem };
+        case COOPR_SYSTEM: { [_taskItems] remoteExec ["coopr_fnc_initCooprTaskSystem", EXEC_GLOBAL, true] };
+        case ALIVE_SYSTEM: { [_taskItems] remoteExec ["coopr_fnc_initALiVETaskSystem", EXEC_GLOBAL, true] };
         case DISABLED_SYSTEM: { INFO("task system disabled") };
     };
 

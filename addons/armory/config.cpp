@@ -24,5 +24,5 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
 // UI
-#include "\x\coopr\addons\core\controls.hpp"
+#include "\x\coopr\addons\core\coopr_gui_base.hpp"
 #include "ui\CoopR_Armory_Dialog.hpp"

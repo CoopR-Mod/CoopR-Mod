@@ -31,5 +31,5 @@ if (isServer) then {
 
     INFO2("task %1 updated ", _taskId);
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

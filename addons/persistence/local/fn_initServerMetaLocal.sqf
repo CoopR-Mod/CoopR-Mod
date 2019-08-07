@@ -23,5 +23,5 @@ if (isServer) then {
     _insertServerMeta call coopr_fnc_extDB3sql;
 
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

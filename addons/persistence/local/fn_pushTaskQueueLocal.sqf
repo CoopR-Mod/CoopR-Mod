@@ -30,5 +30,5 @@ if (isServer) then {
     private _taskToQueue = format["INSERT INTO task_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprTask];
     _taskToQueue call coopr_fnc_extDB3sql;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

@@ -29,6 +29,6 @@ if (isServer) then {
     private _result = _getCharactersForID call coopr_fnc_extDB3sql select 0;
     _result;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };
 

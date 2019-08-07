@@ -43,7 +43,7 @@ if (isServer) then {
         INFO2("skipping character creation - no user for id %1 in database", _playerUID);
     };
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };
 
 

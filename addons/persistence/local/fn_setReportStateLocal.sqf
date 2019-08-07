@@ -35,5 +35,5 @@ if (isServer) then {
     private _updateState = format ["UPDATE recon_reports SET finished = %1 WHERE character_id = %2", _state, _characterId];
     _updateState call coopr_fnc_extDB3sql;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

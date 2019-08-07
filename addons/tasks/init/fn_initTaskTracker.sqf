@@ -46,6 +46,6 @@ if (isServer) then {
     _unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker, true];
     DEBUG2("assigned task tracker to %1", _unit);
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 }
 

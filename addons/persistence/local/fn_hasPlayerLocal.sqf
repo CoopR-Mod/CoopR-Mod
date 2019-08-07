@@ -33,5 +33,5 @@ if (isServer) then {
         true;
     };
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

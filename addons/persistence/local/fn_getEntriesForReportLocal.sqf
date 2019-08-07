@@ -29,5 +29,5 @@ if (isServer) then {
     { _destructuredEntries pushBack (_x select 0)} forEach _results; // to keep intuitive array structures
     _destructuredEntries;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

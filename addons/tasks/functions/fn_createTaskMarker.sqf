@@ -65,5 +65,5 @@ if (isServer) then {
     };
 
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

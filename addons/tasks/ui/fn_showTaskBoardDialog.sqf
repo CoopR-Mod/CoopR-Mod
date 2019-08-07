@@ -55,7 +55,7 @@ _combatDocument ctrlShow false;
     if (_hasCombatTasks) then { _combatDocument ctrlShow true };
 
     _combatDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectMissionType }];
-    _reconDocument ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_requestCooprReconTask; closeDialog GUI_ID_TASKBOARD_DIALOG }];
+    _reconDocument ctrlAddEventHandler ["MouseButtonDown", { [player] remoteExec ["coopr_fnc_requestCooprReconTask", EXEC_SERVER]; closeDialog GUI_ID_TASKBOARD_DIALOG }];
 
     DEBUG("taskboard ui initialized");
 

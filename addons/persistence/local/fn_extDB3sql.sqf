@@ -37,5 +37,5 @@ if (isServer) then {
 
     _payload;
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

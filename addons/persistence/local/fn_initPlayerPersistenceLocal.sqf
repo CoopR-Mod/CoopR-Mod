@@ -34,5 +34,5 @@ if (isServer) then {
 
     INFO2("user for steam id %1 initialized", _steamID);
 } else {
-    SERVER_ONLY_ERROR;
+    SERVER_ONLY_ERROR(__FILE__);
 };

@@ -11,6 +11,7 @@ private _characterList = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
 for "_i" from 0 to 3 do {
     private _rowArray = ((ctAddRow _characterList) select 1);
     _rowArray params ["_Role", "_Name", "_Main", "_Secondary", "_Button", "_Select"];
+    _Select ctrlShow false;
     if (["asd"] isEqualTo []) then {
         _Button ctrlAddEventHandler ["onClick", {[_i] call CoopR_fnc_createNewCharacterPanel}];
     } else {

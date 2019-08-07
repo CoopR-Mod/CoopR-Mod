@@ -67,7 +67,47 @@ class CoopR_Login_Dialog_New {
                     EBA_POSITION_CT(0,35,354,199)
                 };
                 class CharacterSelection_List: EBA_ControlsTable {
+                    idc = GUI_ID_LOGIN_CHARACTER_LIST;
                     EBA_POSITION_CT(0,35,354,199)
+
+                    class RowTemplate {
+                        class CharacterRole {
+                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            columnX = (10 * safeZoneW) / 1920;
+                            columnW = (30 * safeZoneW) / 1920;
+                            controlOffsetY = 0;
+                        };
+                        class CharacterName {
+                            controlBaseClassPath[] = {"EBA_Text"};
+                            columnX = (54 * safeZoneW) / 1920;
+                            columnW = (86 * safeZoneW) / 1920;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
+                        };
+                        class WeaponMainPicture {
+                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            columnX = (174 * safeZoneW) / 1920;
+                            columnW = (86 * safeZoneW) / 1920;
+                            controlOffsetY = 0;
+                        };
+                        class WeaponSecondaryPicture {
+                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            columnX = (260 * safeZoneW) / 1920;
+                            columnW = (86 * safeZoneW) / 1920;
+                            controlOffsetY = 0;
+                        };
+                        class CreateNewButton {
+                            controlBaseClassPath[] = {"EBA_Button"};
+                            columnX = (91 * safeZoneW) / 1920;
+                            columnW = (172 * safeZoneW) / 1920;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
+                        };
+                        class Select {
+                            controlBaseClassPath[] = {"RscButton"};
+                            columnX = 0;
+                            columnW = 1;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
+                        };
+                    };
                 };
             };
         };

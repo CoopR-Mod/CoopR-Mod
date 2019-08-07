@@ -73,6 +73,11 @@ class EBA_Button: EBA_CommonProperites {
     offsetPressedY = 0;
     offsetX = 0;
     offsetY = 0;
+
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 };
 
 class EBA_Button_Center: EBA_Button {

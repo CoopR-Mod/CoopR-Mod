@@ -72,40 +72,40 @@ class CoopR_Login_Dialog_New {
 
                     class RowTemplate {
                         class CharacterRole {
-                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            controlBaseClassPath[] = {"RscPictureKeepAspect"};
                             columnX = (10 * safeZoneW) / 1920;
                             columnW = (30 * safeZoneW) / 1920;
                             controlOffsetY = 0;
                         };
                         class CharacterName {
-                            controlBaseClassPath[] = {"EBA_Text"};
+                            controlBaseClassPath[] = {"RscText"};
                             columnX = (54 * safeZoneW) / 1920;
                             columnW = (86 * safeZoneW) / 1920;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            controlOffsetY = (12 * safeZoneH) / 1080;
                         };
                         class WeaponMainPicture {
-                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            controlBaseClassPath[] = {"RscPictureKeepAspect"};
                             columnX = (174 * safeZoneW) / 1920;
                             columnW = (86 * safeZoneW) / 1920;
                             controlOffsetY = 0;
                         };
                         class WeaponSecondaryPicture {
-                            controlBaseClassPath[] = {"EBA_PictureRatio"};
+                            controlBaseClassPath[] = {"RscPictureKeepAspect"};
                             columnX = (260 * safeZoneW) / 1920;
                             columnW = (86 * safeZoneW) / 1920;
                             controlOffsetY = 0;
                         };
                         class CreateNewButton {
-                            controlBaseClassPath[] = {"EBA_Button"};
+                            controlBaseClassPath[] = {"RscText"};
                             columnX = (91 * safeZoneW) / 1920;
                             columnW = (172 * safeZoneW) / 1920;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            controlOffsetY = (12 * safeZoneH) / 1080;
                         };
                         class Select {
-                            controlBaseClassPath[] = {"RscButton"};
+                            controlBaseClassPath[] = {"RscText"};
                             columnX = 0;
                             columnW = 1;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            controlOffsetY = (12 * safeZoneH) / 1080;
                         };
                     };
                 };

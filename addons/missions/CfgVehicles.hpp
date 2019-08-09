@@ -15,13 +15,13 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    class CoopR_TasksModule: Module_F
+    class CoopR_MissionsModule: Module_F
     {
         scope = 2;
-        displayName = "CoopR Tasks";
+        displayName = "CoopR Missions";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
-        function = "coopr_fnc_setupTasksModule"; // initially called
+        function = "coopr_fnc_setupMissionsModule"; // initially called
         functionPriority = 1;
         isGlobal = 1;
         isTriggerActivated = 1;
@@ -40,9 +40,9 @@ class CfgVehicles
                       class opt_3 {name = "Debug"; value = 2;};
                   }
               }
-              class TaskSystem {
-                  displayName = "Task System";
-                  description = "Chose the task system you want to use (CoopR, ALiVE)";
+              class MissionSystem {
+                  displayName = "Mission System";
+                  description = "Chose the mission system you want to use (CoopR, ALiVE)";
                   typeName = "NUMBER";
                   class Values {
                       class opt_1 {name = "CoopR"; value = 0;};
@@ -50,9 +50,9 @@ class CfgVehicles
                       class opt_3 {name = "Disable"; value = 2; default = 2};
                   }
               }
-              class TaskRequestItems {
-                  displayName = "Task Request Item";
-                  description = "The items where the task request action should be applied to (example: ['doc1', 'doc2'])";
+              class MissionRequestItems {
+                  displayName = "Mission Request Item";
+                  description = "The items where the mission request action should be applied to (example: ['doc1', 'doc2'])";
                     typeName = "ARRAY";
               }
         }

@@ -14,7 +14,7 @@ class CoopR_ReconReport_Dialog
 			w = safeZoneW * 0.4625;
 			h = safeZoneH * 0.75;
 			style = 2+48;
-			text = "x\coopr\addons\tasks\data\images\notebook_front.paa";
+			text = "x\coopr\addons\missions\data\images\notebook_front.paa";
 			colorBackground[] = {0.8392,0.8039,0.7765,1};
 			colorText[] = {0.8392,0.8039,0.7765,1};
 			font = "PuristaMedium";

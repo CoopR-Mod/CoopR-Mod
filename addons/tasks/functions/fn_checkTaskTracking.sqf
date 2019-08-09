@@ -2,32 +2,32 @@
 /*
  * Author: xetra11
  *
- * This function will return true if the given task tracker has valid tracking values for a tracked task.
- * This implies all situation like leaving a base, entering a target/task destination area and leaving it etc.
- * Also this will check if the time delta between those time stamps is reasonable. If a task is like 10 miles away
+ * This function will return true if the given mission tracker has valid tracking values for a tracked mission.
+ * This implies all situation like leaving a base, entering a target/mission destination area and leaving it etc.
+ * Also this will check if the time delta between those time stamps is reasonable. If a mission is like 10 miles away
  * from the headquarters it is like impossible to have timestamp deltas less than a minute. The tracker should avoid
  * exploitation or cheating by teleporting etc.
  *
  * Arguments:
- * 0: _taskTracker <CBA_HASH> - tracker to evaluate
+ * 0: _missionTracker <CBA_HASH> - tracker to evaluate
  *
  * Return Value:
- * Boolean - if task tracking was valid
+ * Boolean - if mission tracking was valid
  *
  * Example:
- * [_traskTracker] call coopr_fnc_alive_checkTaskTracking;
+ * [_traskTracker] call coopr_fnc_alive_checkMissionTracking;
  *
  * Public: No
  *
  * Scope: Server
  */
 
-params [["_taskTracker", []]];
+params [["_missionTracker", []]];
 
-if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was objNull") };
+if (_missionTracker isEqualTo []) exitWith { ERROR("_missionTracker was objNull") };
 
 if (isServer) then {
-    DEBUG("task tracker check:");
+    DEBUG("mission tracker check:");
     private _valid = true;
 
     private _taskStart = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;

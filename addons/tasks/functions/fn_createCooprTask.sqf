@@ -2,17 +2,17 @@
 /*
  * Author: xetra11
  *
- * Creates a CoopR task that is applied to the whole group of a given unit
+ * Creates a CoopR mission that is applied to the whole group of a given unit
  *
  * Arguments:
- * 0: _unit <OBJECT> - unit this task is assigned to
- * 1: _cooprTaskInfo <ARRAY/CBA_HASH> - coopr task containing all infos needed to create a task
+ * 0: _unit <OBJECT> - unit this mission is assigned to
+ * 1: _cooprMissionInfo <ARRAY/CBA_HASH> - coopr mission containing all infos needed to create a mission
  *
  * Return Value:
- * Boolean - if task was created successfully
+ * Boolean - if mission was created successfully
  *
  * Example:
- * [_unit, _cooprTaskInfo] call coopr_fnc_createCooprTask;
+ * [_unit, _cooprMissionInfo] call coopr_fnc_createCooprMission;
  *
  * Public: No
  *
@@ -20,34 +20,34 @@
  */
 
 params [["_unit", objNull],
-        ["_cooprTaskInfo", []]];
+        ["_cooprMissionInfo", []]];
 
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
-if (_cooprTaskInfo isEqualTo []) exitWith { ERROR("_cooprTaskInfo was []") };
+if (_cooprMissionInfo isEqualTo []) exitWith { ERROR("_cooprMissionInfo was []") };
 
 if (isServer) then {
-    private _taskType = [_cooprTaskInfo, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet;
-    private _description = [_cooprTaskInfo, COOPR_KEY_TASK_DESCRIPTION] call CBA_fnc_hashGet;
-    private _target = [_cooprTaskInfo, COOPR_KEY_TASK_TARGET] call CBA_fnc_hashGet;
-    private _serializedMarkers = [_cooprTaskInfo, COOPR_KEY_TASK_MARKER] call CBA_fnc_hashGet;
-    DEBUG3("assigning %1 to unit %2", _taskType, _unit);
-    private _taskId = format ["%1_%2", _taskType, (call coopr_fnc_getTaskCount) + 1];
-    private _cooprTask = [_unit, _taskId , _taskType, [], 1, 2, true] call BIS_fnc_taskCreate;
+    private _missionType = [_cooprMissionInfo, COOPR_KEY_MISSION_TYPE] call CBA_fnc_hashGet;
+    private _description = [_cooprMissionInfo, COOPR_KEY_MISSION_DESCRIPTION] call CBA_fnc_hashGet;
+    private _target = [_cooprMissionInfo, COOPR_KEY_MISSION_TARGET] call CBA_fnc_hashGet;
+    private _serializedMarkers = [_cooprMissionInfo, COOPR_KEY_MISSION_MARKER] call CBA_fnc_hashGet;
+    DEBUG3("assigning %1 to unit %2", _missionType, _unit);
+    private _missionId = format ["%1_%2", _missionType, (call coopr_fnc_getMissionCount) + 1];
+    private _cooprMission = [_unit, _missionId , _missionType, [], 1, 2, true] call BIS_fnc_taskCreate;
 
-    if !(isNil "_cooprTask") then {
-        [_unit, _taskType, _target] call coopr_fnc_initTaskTracker;
-        DEBUG2("%1 assigned", _cooprTask);
+    if !(isNil "_cooprMission") then {
+        [_unit, _missionType, _target] call coopr_fnc_initMissionTracker;
+        DEBUG2("%1 assigned", _cooprMission);
         // TODO: need to be shifted to group/squads
-        _unit setVariable [COOPR_KEY_ACTIVE_TASK, _taskId, true];
-        private _newMarkerName = _taskId + "_recon_marker_";
+        _unit setVariable [COOPR_KEY_ACTIVE_MISSION, _missionId, true];
+        private _newMarkerName = _missionId + "_recon_marker_";
         { [_x, _newMarkerName + (str _forEachIndex)] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
-        // get the position of the first marker of the task
+        // get the position of the first marker of the mission
         private _deserializedMarkerPos = getMarkerPos (_newMarkerName + "0");
-        private _taskMarker = [_deserializedMarkerPos, _taskId, "INVISIBLE"] call coopr_fnc_createTaskMarker;
-        [(_cooprTask call coopr_fnc_serializeTask)] spawn coopr_fnc_saveTask;
+        private _missionMarker = [_deserializedMarkerPos, _missionId, "INVISIBLE"] call coopr_fnc_createMissionMarker;
+        [(_cooprMission call coopr_fnc_serializeMission)] spawn coopr_fnc_saveMission;
         true;
     } else {
-        ERROR("could not assign task.");
+        ERROR("could not assign mission.");
         false;
     };
 

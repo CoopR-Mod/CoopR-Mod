@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Pops one of the queued tasks and returns it
+ * Pops one of the queued missions and returns it
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _tasks <ARRAY> - all found tasks for server id
+ * _missions <ARRAY> - all found missions for server id
  *
  * Example:
  * Trivial

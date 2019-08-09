@@ -2,30 +2,30 @@
 /*
  * Author: xetra11
  *
- * Get task by id from local DB
+ * Get mission by id from local DB
  *
  * Arguments:
- * 0: _taskId <STRING> - the id of the task
+ * 0: _missionId <STRING> - the id of the mission
  *
  * Return Value:
- * task <ARRAY> - the task of the id
+ * mission <ARRAY> - the mission of the id
  *
  * Example:
- * ["coopr_task_recon_0"] call coopr_fnc_getTaskLocal
+ * ["coopr_mission_recon_0"] call coopr_fnc_getMissionLocal
  *
  * Public: No
  *
  * Scope: Server
  */
 
-params[["_taskId", ""]];
+params[["_missionId", ""]];
 
-if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
+if (_missionId isEqualTo "") exitWith { ERROR("_missionId was not defined") };
 
 if (isServer) then {
-    DEBUG2("get task id %1 from local persistence", _taskId);
-    private _getTaskId = format ["SELECT taskHash FROM tasks WHERE task_id = '%1'", _taskId];
-    private _result = (_getTaskId call coopr_fnc_extDB3sql) select 0 select 0;
+    DEBUG2("get mission id %1 from local persistence", _missionId);
+    private _getMissionId = format ["SELECT missionHash FROM missions WHERE mission_id = '%1'", _missionId];
+    private _result = (_getMissionId call coopr_fnc_extDB3sql) select 0 select 0;
     _result;
 } else {
     SERVER_ONLY_ERROR(__FILE__);

@@ -6,7 +6,7 @@
  *
  * Arguments:
  * 0: _characterId <NUMBER> - ID of the character
- * 1: _taskId <STRING> - ID of the recon task referencing to this report
+ * 1: _missionId <STRING> - ID of the recon mission referencing to this report
  *
  * Return Value:
  * None
@@ -20,11 +20,11 @@
  */
 
 params [["_characterId", -1],
-        ["_taskId", ""]];
+        ["_missionId", ""]];
 
 if (isServer) then {
   if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
-  if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
+  if (_missionId isEqualTo "") exitWith { ERROR("_missionId was not defined") };
 
     DEBUG2("init recon report for character %1", _characterId);
     private _hasReportStmt = format ["SELECT count(*) FROM recon_reports WHERE character_id = %1 AND finished = 0", _characterId];
@@ -32,7 +32,7 @@ if (isServer) then {
     if (_hasReport > 0) then {
         DEBUG2("recon report for character %1 already initialized", _characterId);
     } else {
-        private _initReconReport = format ["INSERT INTO recon_reports (character_id, task_id, activity, finished) VALUES (%1, '%2', '%3', false)", _characterId, _taskId, EMPTY_HASH];
+        private _initReconReport = format ["INSERT INTO recon_reports (character_id, mission_id, activity, finished) VALUES (%1, '%2', '%3', false)", _characterId, _missionId, EMPTY_HASH];
         _initReconReport call coopr_fnc_extDB3sql;
     };
 } else {

@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Counts all tasks created
+ * Counts all missions created
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _count <NUMBER> - Amount of tasks created
+ * _count <NUMBER> - Amount of missions created
  *
  * Example:
  * Trivial
@@ -19,8 +19,8 @@
  */
 
 if (isServer) then {
-    private _countTasks = "SELECT count(*) FROM tasks";
-    private _result = (_countTasks call coopr_fnc_extDB3sql) select 0 select 0;
+    private _countMissions = "SELECT count(*) FROM missions";
+    private _result = (_countMissions call coopr_fnc_extDB3sql) select 0 select 0;
     _result;
 } else {
     SERVER_ONLY_ERROR(__FILE__);

@@ -2,38 +2,38 @@
 /*
  * Author: xetra11 
  *
- * Will serialize a task into an array
+ * Will serialize a mission into an array
  *
  * Arguments:
- * 0: _taskId <STRING> - ID of the task that should be serialized
+ * 0: _missionId <STRING> - ID of the mission that should be serialized
  *
  * Return Value:
- * _serializedTask <ARRAY> - serialized state of the task
+ * _serializedMission <ARRAY> - serialized state of the mission
  *
  * Example:
- * ["coopr_task_recon_0"] call coopr_fnc_serializeTask;
+ * ["coopr_mission_recon_0"] call coopr_fnc_serializeMission;
  *
  * Public: No
  *
  * Scope: Global
  */
 
-params [["_taskId", ""]];
+params [["_missionId", ""]];
 
-if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
+if (_missionId isEqualTo "") exitWith { ERROR("_missionId was not defined") };
 
-private _serializedTask = [];
-_serializedTask pushBack _taskId;
+private _serializedMission = [];
+_serializedMission pushBack _missionId;
 
 {
-  _serializedTask pushBack (_taskId call _x);
+  _serializedMission pushBack (_missionId call _x);
 } forEach [
-    { _this call BIS_fnc_taskDescription },
-    //{ _this call BIS_fnc_taskDestination },
-    { _this call BIS_fnc_taskState }];
+    { _this call BIS_fnc_missionDescription },
+    //{ _this call BIS_fnc_missionDestination },
+    { _this call BIS_fnc_missionState }];
 
-private _serializedTaskMarker = [_taskId + "_task_marker"] call coopr_fnc_serializeMarker;
-_serializedTask pushBack _serializedTaskMarker;
+private _serializedMissionMarker = [_missionId + "_mission_marker"] call coopr_fnc_serializeMarker;
+_serializedMission pushBack _serializedMissionMarker;
 
-DEBUG("task serialized");
-_serializedTask;
+DEBUG("mission serialized");
+_serializedMission;

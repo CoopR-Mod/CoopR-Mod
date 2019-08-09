@@ -25,5 +25,5 @@ if (_cooprMission isEqualTo []) exitWith { ERROR("_cooprMission was undefined") 
 private _id = [_cooprMission, COOPR_KEY_MISSION_QUEUE_ID] call CBA_fnc_hashGet;
 [_id] remoteExec ["coopr_fnc_deleteQueuedMission", EXEC_SERVER];
 
-[player, _cooprTask] remoteExec ["coopr_fnc_createCooprTask", EXEC_SERVER];
-closeDialog GUI_ID_TASKBOARD_DIALOG;
+[player, _cooprMission] remoteExec ["coopr_fnc_createCooprMission", EXEC_SERVER];
+closeDialog GUI_ID_MISSIONBOARD_DIALOG;

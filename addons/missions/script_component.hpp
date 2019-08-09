@@ -1,11 +1,11 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT tasks
-#define DEBUG_CTX "COOPR.TASKS"
+#define COMPONENT missions
+#define DEBUG_CTX "COOPR.MISSIONS"
 
 #define COOPR_ACCURACY_THRESHOLD 65
-#define COOPR_TASK_MIN_TASK_TIME 5
-#define COOPR_TASK_MIN_FRESHNESS 86400
+#define COOPR_MISSION_MIN_MISSION_TIME 5
+#define COOPR_MISSION_MIN_FRESHNESS 86400
 #define COOPR_MARKER_DEFENSE_DIAMETER 100
 
 // Recon Report Options

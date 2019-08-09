@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * This helper function will return the actual task type for a given enemy unit strength and behaviour combination
+ * This helper function will return the actual mission type for a given enemy unit strength and behaviour combination
  *
  * Arguments:
  * 0: _strength <STRING> - The reported strength of the spotted enemy ("Fireteam", "Squad", etc.)
@@ -10,10 +10,10 @@
  * 2: _behaviour <STRING> - The reported behaviour of the enemy unit ("Attacking", "Patroling")
  *
  * Return Value:
- * _taskType <STRING>
+ * _missionType <STRING>
  *
  * Example:
- * [COOPR_STRENGTH_TYPE_FIRETEAM, COOPR_TASK_REPORT_TYPE_INFANTRY, COOPR_TASK_BEHAVIOUR_STATIC] call coopr_fnc_determineTaskType;
+ * [COOPR_STRENGTH_TYPE_FIRETEAM, COOPR_MISSION_REPORT_TYPE_INFANTRY, COOPR_MISSION_BEHAVIOUR_STATIC] call coopr_fnc_determineMissionType;
  *
  * Public: No
  *
@@ -31,50 +31,50 @@ if (_type isEqualTo "") exitWith { ERROR("_type was empty string") };
 switch (_strength) do {
     case COOPR_STRENGTH_TYPE_FIRETEAM: {
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_INFANTRY: { COOPR_TASK_TYPE_SNIPERTEAM; };
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_SNIPERTEAM; };
-            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
-            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
-            default { COOPR_TASK_TYPE_NONE };
+            case COOPR_MISSION_REPORT_TYPE_INFANTRY: { COOPR_MISSION_TYPE_SNIPERTEAM; };
+            case COOPR_MISSION_REPORT_TYPE_MOTORIZED: { COOPR_MISSION_TYPE_SNIPERTEAM; };
+            case COOPR_MISSION_REPORT_TYPE_MECHANIZED: { COOPR_MISSION_TYPE_JTAC; };
+            case COOPR_MISSION_REPORT_TYPE_ARMORED: { COOPR_MISSION_TYPE_JTAC; };
+            default { COOPR_MISSION_TYPE_NONE };
         };
     };
     case COOPR_STRENGTH_TYPE_SQUAD: {
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_INFANTRY: {
+            case COOPR_MISSION_REPORT_TYPE_INFANTRY: {
                 switch (_behaviour) do {
-                    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { COOPR_TASK_TYPE_CONQUER; };
-                    case COOPR_TASK_BEHAVIOUR_PATROL: { COOPR_TASK_TYPE_ASYMMETRIC; };
-                    default { COOPR_TASK_TYPE_ASSAULT; };
+                    case COOPR_MISSION_BEHAVIOUR_DEFENSIVE: { COOPR_MISSION_TYPE_CONQUER; };
+                    case COOPR_MISSION_BEHAVIOUR_PATROL: { COOPR_MISSION_TYPE_ASYMMETRIC; };
+                    default { COOPR_MISSION_TYPE_ASSAULT; };
                 }
             };
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_ASYMMETRIC; };
-            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
-            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
-            default { COOPR_TASK_TYPE_NONE };
+            case COOPR_MISSION_REPORT_TYPE_MOTORIZED: { COOPR_MISSION_TYPE_ASYMMETRIC; };
+            case COOPR_MISSION_REPORT_TYPE_MECHANIZED: { COOPR_MISSION_TYPE_JTAC; };
+            case COOPR_MISSION_REPORT_TYPE_ARMORED: { COOPR_MISSION_TYPE_JTAC; };
+            default { COOPR_MISSION_TYPE_NONE };
         };
     };
     case COOPR_STRENGTH_TYPE_PLATOON: {
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_INFANTRY: {
+            case COOPR_MISSION_REPORT_TYPE_INFANTRY: {
                 switch (_behaviour) do {
-                    case COOPR_TASK_BEHAVIOUR_STATIC: { COOPR_TASK_TYPE_JTAC; };
-                    case COOPR_TASK_BEHAVIOUR_DEFENSIVE: { COOPR_TASK_TYPE_CONQUER; };
-                    case COOPR_TASK_BEHAVIOUR_PATROL: { COOPR_TASK_TYPE_AMBUSH; };
-                    default { COOPR_TASK_TYPE_CONQUER; };
+                    case COOPR_MISSION_BEHAVIOUR_STATIC: { COOPR_MISSION_TYPE_JTAC; };
+                    case COOPR_MISSION_BEHAVIOUR_DEFENSIVE: { COOPR_MISSION_TYPE_CONQUER; };
+                    case COOPR_MISSION_BEHAVIOUR_PATROL: { COOPR_MISSION_TYPE_AMBUSH; };
+                    default { COOPR_MISSION_TYPE_CONQUER; };
                 }
             };
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_ASYMMETRIC; };
-            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
-            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
-            default { COOPR_TASK_TYPE_NONE };
+            case COOPR_MISSION_REPORT_TYPE_MOTORIZED: { COOPR_MISSION_TYPE_ASYMMETRIC; };
+            case COOPR_MISSION_REPORT_TYPE_MECHANIZED: { COOPR_MISSION_TYPE_JTAC; };
+            case COOPR_MISSION_REPORT_TYPE_ARMORED: { COOPR_MISSION_TYPE_JTAC; };
+            default { COOPR_MISSION_TYPE_NONE };
         };
     };
     default {
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED: { COOPR_TASK_TYPE_ASYMMETRIC; };
-            case COOPR_TASK_REPORT_TYPE_MECHANIZED: { COOPR_TASK_TYPE_JTAC; };
-            case COOPR_TASK_REPORT_TYPE_ARMORED: { COOPR_TASK_TYPE_JTAC; };
-            default { COOPR_TASK_TYPE_NONE };
+            case COOPR_MISSION_REPORT_TYPE_MOTORIZED: { COOPR_MISSION_TYPE_ASYMMETRIC; };
+            case COOPR_MISSION_REPORT_TYPE_MECHANIZED: { COOPR_MISSION_TYPE_JTAC; };
+            case COOPR_MISSION_REPORT_TYPE_ARMORED: { COOPR_MISSION_TYPE_JTAC; };
+            default { COOPR_MISSION_TYPE_NONE };
         };
     }
 };

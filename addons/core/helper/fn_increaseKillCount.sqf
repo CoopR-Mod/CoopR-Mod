@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Increases kill count for tasktracker of a given unit
+ * Increases kill count for missiontracker of a given unit
  *
  * Arguments:
  * 0: _unit <OBJECT> - unit the killcount should be raised for

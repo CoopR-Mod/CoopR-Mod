@@ -16,7 +16,7 @@ $ARMAKE build -p -f addons/integration $DEST/integration.pbo
 $ARMAKE build -p -f addons/intelligence $DEST/intelligence.pbo
 $ARMAKE build -p -f addons/lobby $DEST/lobby.pbo
 $ARMAKE build -p -f addons/supply $DEST/supply.pbo
-$ARMAKE build -p -f addons/tasks $DEST/tasks.pbo
+$ARMAKE build -p -f addons/missions $DEST/missions.pbo
 $ARMAKE build -p -f addons/campsite $DEST/campsite.pbo
 
 cp mod.cpp @CoopR/mod.cpp

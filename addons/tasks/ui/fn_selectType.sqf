@@ -16,7 +16,7 @@ if !(_selectedIndex isEqualTo INFANTRY) then {
     _strengthSel lbAdd "NOT USED";
     _behaviourSel lbAdd "NOT USED";
     _strengthSel lbSetData [0, "1"];
-    _behaviourSel lbSetData [0, COOPR_TASK_BEHAVIOUR_DEFENSIVE];
+    _behaviourSel lbSetData [0, COOPR_MISSION_BEHAVIOUR_DEFENSIVE];
     _strengthSelection lbSetCurSel 0;
     _behaviourSelection lbSetCurSel 0;
     _strengthSel ctrlEnable false;

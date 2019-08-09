@@ -10,6 +10,12 @@ class CoopR_Login_Dialog_New {
             EBA_POSITION(0,1048,128,32)
             text = "Help";  //ToDo: Localize
         };
+
+        class Corner: EBA_Picture {
+            EBA_POSITION(553,0,80,80)
+           text = "\x\coopr\addons\lobby\data\images\corner.paa";
+        };
+
         class CharacterDescription: EBA_ControlsGroup {
             EBA_POSITION(1171,187,375,534)
             onLoad = "(_this#0) ctrlEnable false; (_this#0) ctrlShow false";

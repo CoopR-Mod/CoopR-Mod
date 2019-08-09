@@ -2,14 +2,14 @@
 /*
  * Author: xetra11
  *
- * Increases kill count for tasktracker of a given unit
+ * Increases kill count for missiontracker of a given unit
  *
  * Arguments:
  * 0: _unit <OBJECT> - unit the killcount should be raised for
  * 1: _amount <NUMBER> - amount to be raised (optional) - DEFAULT: 1
  *
  * Return Value:
- * Boolean - if task was created successfully
+ * Boolean - if mission was created successfully
  *
  * Example:
  * [_unit, 3] call coopr_fnc_increaseKillCount;
@@ -24,12 +24,12 @@ params[["_unit", objNull], ["_amount", 1]];
 
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
-private _taskTracker = player getVariable [COOPR_KEY_TASK_TRACKER, []];
+private _missionTracker = player getVariable [COOPR_KEY_MISSION_TRACKER, []];
 
-if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was empty") };
+if (_missionTracker isEqualTo []) exitWith { ERROR("_missionTracker was empty") };
 
-private _actualKillCount = [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
+private _actualKillCount = [_missionTracker, COOPR_KEY_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
 private _newKillCount = _actualKillCount + _amount;
-[_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT, _newKillCount] call CBA_fnc_hashSet;
+[_missionTracker, COOPR_KEY_MISSION_TRACKER_KILL_COUNT, _newKillCount] call CBA_fnc_hashSet;
 DEBUG2("raising kill count by %1", _amount);
-_unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker];
+_unit setVariable [COOPR_KEY_MISSION_TRACKER, _missionTracker];

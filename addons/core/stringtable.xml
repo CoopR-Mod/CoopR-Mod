@@ -41,7 +41,7 @@
 			<German>Ausruestung</German>
 			<French>Équipement</French>
 		</Key>
-		<Key ID="str.coopr.task.action.opentaskboard">
+		<Key ID="str.coopr.mission.action.openmissionboard">
 			<Original>&lt;t color='#4286f4'&gt;Search Missionboard&lt;/t&gt;</Original>
 			<German>&lt;t color='#4286f4'&gt;Gefechtsbefehle anschauen&lt;/t&gt;</German>
 			<French>&lt;t color='#4286f4'&gt;Rechercher dans le tableau de mission&lt;/t&gt;</French>
@@ -52,43 +52,43 @@
 			<French>&lt;t color='#4286f4'&gt;Compte rendu&lt;/t&gt;</French>
 		</Key>
 	</Package>
-	<Package name="Tasks">
-		<Key ID="str_coopr_task_recon_title">
+	<Package name="Missions">
+		<Key ID="str_coopr_mission_recon_title">
 			<Original>Recon Area</Original>
 			<German>Gebiet aufklaeren</German>
 			<French>Zone de reconnaissance</French>
 		</Key>
-		<Key ID="str_coopr_task_recon_description">
+		<Key ID="str_coopr_mission_recon_description">
 			<Original>HQ wants you to recon the area for enemy contacts</Original>
 			<German>HQ moechte aktuelle Feindaufklaerung im Gebiet</German>
 			<French>Le QG veut que vous partiez en reconnaissance dans la zone à la recherche de contacts ennemis</French>
 		</Key>
-		<Key ID="str_coopr_subtask_recon_title">
+		<Key ID="str_coopr_submission_recon_title">
 			<Original>Create a recon report</Original>
 			<German>Gebiet aufklaeren</German>
 			<French>Créer un rapport de reconnaissance</French>
 		</Key>
-		<Key ID="str_coopr_subtask_recon_description">
+		<Key ID="str_coopr_submission_recon_description">
 			<Original>You have to delivery at least one recon report to finish this mission</Original>
 			<German>Ihr muesst mindestens einen Aufklaerungsbericht abschicken um diesen Auftrag zu erfuellen</German>
 			<French>Vous devez livrer au moins un rapport de reconnaissance pour finir la mission</French>
 		</Key>
-		<Key ID="str_coopr_subtask_optional_recon_title">
+		<Key ID="str_coopr_submission_optional_recon_title">
 			<Original>Create more recon reports (optional)</Original>
 			<German>Gebiet weiter aufklaeren (Optional)</German>
 			<French>Créer des raports de reconnaissance suplémentaires (facultatif)</French>
 		</Key>
-		<Key ID="str_coopr_subtask_optional_recon_description">
+		<Key ID="str_coopr_submission_optional_recon_description">
 			<Original>You can delivery more recon reports to gather more information for the headquarters</Original>
 			<German>Ihr koennt weiterhin Aufklaerung betreiben um dem Hauptquartier weitere Informationen zur Verfuegung zu stellen</German>
 			<French>Vous pouvez livrer des rapports de reconnaissance suplémentaires afin de rassembler plus d'informations pour le quartier général </French>
 		</Key>
-		<Key ID="str_coopr_task_sniperteam_title">
+		<Key ID="str_coopr_mission_sniperteam_title">
 			<Original>Sniperteam Operation</Original>
 			<German>Scharfschuetzentrupp Auftrag</German>
 			<French>Mission de l'équipe de tireurs d'élite</French>
 		</Key>
-		<Key ID="str_coopr_task_sniperteam_description">
+		<Key ID="str_coopr_mission_sniperteam_description">
 			<Original>Weak enemy positions have been reported. These positions are to be destroyed by deploying a sniperteam</Original>
 			<German>Schwach feindliche Stellungen wurden aufgeklaert. Ziel ist es diese Stellungen durch den Einsatz von Scharfschuetzen zu zerschlagen</German>
 			<French>Des positions ennemies faiblement défenude ont été rapportés. Déployez une équipe de tireurs d'élite pour les détruires</French>

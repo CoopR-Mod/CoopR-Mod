@@ -47,25 +47,25 @@ if (isServer) then {
                                    PRIMARY KEY (steam_id),
                                    FOREIGN KEY (characters_id) REFERENCES characters(id));";
 
-    private _createTasksTable = "CREATE TABLE tasks (
-                                   task_id varchar(255) NOT NULL,
-                                   taskHash TEXT,
-                                   PRIMARY KEY (task_id));";
+    private _createMissionsTable = "CREATE TABLE missions (
+                                   mission_id varchar(255) NOT NULL,
+                                   missionHash TEXT,
+                                   PRIMARY KEY (mission_id));";
 
     private _createServerMetaTable = "CREATE TABLE server_meta (
                                    server_id int NOT NULL,
                                    PRIMARY KEY (server_id));";
 
-    private _createTaskQueuesTable = "CREATE TABLE task_queues (
+    private _createMissionQueuesTable = "CREATE TABLE mission_queues (
                                    id int NOT NULL AUTO_INCREMENT,
                                    server_id int,
-                                   task TEXT,
+                                   mission TEXT,
                                    PRIMARY KEY (id));";
 
     private _createReconReportsTable = "CREATE TABLE recon_reports (
                                        id int NOT NULL AUTO_INCREMENT,
                                        character_id int,
-                                       task_id varchar(255),
+                                       mission_id varchar(255),
                                        activity TEXT,
                                        finished boolean,
                                        PRIMARY KEY (id));";
@@ -103,9 +103,9 @@ if (isServer) then {
     // init tables
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
-    _createTasksTable call coopr_fnc_extDB3sql;
+    _createMissionsTable call coopr_fnc_extDB3sql;
     _createServerMetaTable call coopr_fnc_extDB3sql;
-    _createTaskQueuesTable call coopr_fnc_extDB3sql;
+    _createMissionQueuesTable call coopr_fnc_extDB3sql;
     _createReconReportsTable call coopr_fnc_extDB3sql;
     _createReconEntriesTable call coopr_fnc_extDB3sql;
 } else {

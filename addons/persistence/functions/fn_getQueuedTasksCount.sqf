@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Counts all queued tasks
+ * Counts all queued missions
  *
  * Arguments:
  * 0: _serverID <NUMBER> - server id to filter count
  *
  * Return Value:
- * _tasks <ARRAY> - all found tasks for server id
+ * _missions <ARRAY> - all found missions for server id
  *
  * Example:
  * Trivial
@@ -21,7 +21,7 @@ params [["_serverID", -1]];
 
 if (isServer) then {
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_serverID] call coopr_fnc_getQueuedTasksCountLocal;
+        [_serverID] call coopr_fnc_getQueuedMissionsCountLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

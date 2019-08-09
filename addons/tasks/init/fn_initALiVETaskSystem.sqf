@@ -2,7 +2,7 @@
 /*
  * Author: xetra11 
  *
- * Initialized the task system with ALiVE
+ * Initialized the mission system with ALiVE
  *
  * Arguments:
  * 1: _taskItems <ARRAY> - task items the action should be applied to

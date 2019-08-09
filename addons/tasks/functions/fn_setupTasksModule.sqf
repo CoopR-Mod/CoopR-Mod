@@ -8,23 +8,23 @@ params [["_logic", objNull]];
 
 if(isServer) then {
     private _loggingLevel = _logic getVariable ["Logging", -1];
-    private _taskSystem = _logic getVariable ["TaskSystem", DISABLED_SYSTEM];
-    private _taskItems = call compile (_logic getVariable ["TaskRequestItems", []]);
+    private _missionSystem = _logic getVariable ["MissionSystem", DISABLED_SYSTEM];
+    private _missionItems = call compile (_logic getVariable ["MissionRequestItems", []]);
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
-    COOPR_TASKS_ACTIVE = false;
+    COOPR_MISSIONS_ACTIVE = false;
     COOPR_RECON_OBJECTIVE_CACHE = [];
-    publicVariable "COOPR_TASKS_ACTIVE";
+    publicVariable "COOPR_MISSIONS_ACTIVE";
     publicVariable "COOPR_RECON_OBJECTIVE_CACHE";
 
-    if (isNil "_taskItems") exitWith {SETUPERROR("no task items have been defined") };
-    if (_taskItems isEqualTo []) then { SETUPERROR("no task items have been defined")};
+    if (isNil "_missionItems") exitWith {SETUPERROR("no mission items have been defined") };
+    if (_missionItems isEqualTo []) then { SETUPERROR("no mission items have been defined")};
 
-    switch (_taskSystem) do {
-        case COOPR_SYSTEM: { [_taskItems] remoteExec ["coopr_fnc_initCooprTaskSystem", EXEC_GLOBAL, true] };
-        case ALIVE_SYSTEM: { [_taskItems] remoteExec ["coopr_fnc_initALiVETaskSystem", EXEC_GLOBAL, true] };
-        case DISABLED_SYSTEM: { INFO("task system disabled") };
+    switch (_missionSystem) do {
+        case COOPR_SYSTEM: { [_missionItems] remoteExec ["coopr_fnc_initCooprMissionSystem", EXEC_GLOBAL, true] };
+        case ALIVE_SYSTEM: { [_missionItems] remoteExec ["coopr_fnc_initALiVEMissionSystem", EXEC_GLOBAL, true] };
+        case DISABLED_SYSTEM: { INFO("mission system disabled") };
     };
 
     true

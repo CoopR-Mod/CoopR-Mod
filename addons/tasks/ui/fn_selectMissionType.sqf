@@ -3,7 +3,7 @@
  * Author: xetra11
  *
  * This handler is the action resolved when a player clicks either the recon or combat mission document in the
- * task board GUI. It therefore will hide the document GUIs and show the mission selection document icons.
+ * mission board GUI. It therefore will hide the document GUIs and show the mission selection document icons.
  *
  * Arguments:
  *
@@ -20,7 +20,7 @@
 
 params ["_ctrl"];
 
-[[], "coopr_fnc_getAllQueuedTasks", [_ctrl], {
+[[], "coopr_fnc_getAllQueuedMissions", [_ctrl], {
     params ["_callbackArgs", "_promisedResult"];
     _callbackArgs params ["_ctrl"];
 
@@ -36,14 +36,14 @@ params ["_ctrl"];
     _other ctrlShow false;
 
     {
-        private _cooprTask = _x select 0;
-        private _typeLabel = [[_cooprTask, COOPR_KEY_TASK_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
-        private _accuracy = [_cooprTask, COOPR_KEY_TASK_ACCURACY] call CBA_fnc_hashGet;
+        private _cooprMission = _x select 0;
+        private _typeLabel = [[_cooprMission, COOPR_KEY_MISSION_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
+        private _accuracy = [_cooprMission, COOPR_KEY_MISSION_ACCURACY] call CBA_fnc_hashGet;
         private _accuracyLabel = "Accuracy: " + (_accuracy call coopr_fnc_getLabelForAccuracy);
         private _missionSelection = _allMissionSelections select _forEachIndex;
 
-        _missionSelection setVariable ["cooprTask", _cooprTask];
-        _missionSelection ctrlAddEventHandler ["MouseButtonDown", { [(_this select 0) getVariable "cooprTask"] call coopr_fnc_requestCooprTask }];
+        _missionSelection setVariable ["cooprMission", _cooprMission];
+        _missionSelection ctrlAddEventHandler ["MouseButtonDown", { [(_this select 0) getVariable "cooprMission"] call coopr_fnc_requestCooprMission }];
         _missionSelection ctrlShow true;
         (_allTypeLabels select _forEachIndex) ctrlSetText _typeLabel;
         (_allTypeLabels select _forEachIndex) ctrlShow true;
@@ -53,5 +53,5 @@ params ["_ctrl"];
 
 }] call coopr_fnc_promise;
 
-// show all task selections
+// show all mission selections
 

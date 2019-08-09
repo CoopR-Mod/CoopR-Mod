@@ -3,7 +3,7 @@
  * Author: xetra11
  *
  * A copy of Highheads function from the ALiVE project. (but cooler)
- * This will check in 500 steps for the nearest location used for tasks
+ * This will check in 500 steps for the nearest location used for missions
  *
  * Arguments:
  * 0: _referencePosition <ARRAY> - position to start lookup from

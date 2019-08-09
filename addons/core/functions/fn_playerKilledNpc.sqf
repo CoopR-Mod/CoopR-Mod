@@ -8,7 +8,7 @@
  * 0: _victim <OBJECT> - unit that has been killed by the player
  *
  * Return Value:
- * Boolean - if task was created successfully
+ * Boolean - if mission was created successfully
  *
  * Example:
  * [_victim] call coopr_fnc_playerKilledNpc;

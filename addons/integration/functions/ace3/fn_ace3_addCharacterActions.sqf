@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 private _finishReportCondition = { player getVariable [COOPR_KEY_IN_RECON, false] };
-private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveTask and (player getVariable [COOPR_KEY_IN_RECON, false]) };
+private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveMission and (player getVariable [COOPR_KEY_IN_RECON, false]) };
 
 [player, 1, ["ACE_SelfActions"],
 ["init_action_0", localize "str.coopr.ace3.interaction.coopr", "", {}, {true}] call ace_interact_menu_fnc_createAction

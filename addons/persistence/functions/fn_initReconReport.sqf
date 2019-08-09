@@ -6,7 +6,7 @@
  *
  * Arguments:
  * 0: _characterId <NUMBER> - ID of the character
- * 1: _taskId <STRING> - ID of the recon task referencing to this report
+ * 1: _missionId <STRING> - ID of the recon mission referencing to this report
  *
  * Return Value:
  * None
@@ -20,14 +20,14 @@
  */
 
 params [["_characterId", -1],
-        ["_taskId", ""]];
+        ["_missionId", ""]];
 
 if (isServer) then {
     if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
-    if (_taskId isEqualTo "") exitWith { ERROR("_taskId was not defined") };
+    if (_missionId isEqualTo "") exitWith { ERROR("_missionId was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_characterId, _taskId] call coopr_fnc_initReconReportLocal;
+        [_characterId, _missionId] call coopr_fnc_initReconReportLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

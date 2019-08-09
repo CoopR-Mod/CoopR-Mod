@@ -10,17 +10,21 @@ At the alpha testing phase there will be about two official servers hosted. Thes
 ## Can I use my created characters on other servers?
 Yes you can. The official CoopR-Servers will all be connected to the **CoopR-HQ**. The CoopR-HQ is the webservice that allows persistence of player created characters/soldiers. Every CoopR-Server is fetching the character list by a users Steam-ID from the CoopR-HQ. This allows players to switch between different servers and take part in different scenarios with their squads.
 
-## CoopR Mod Wiki 
+## Table of contents
 * [The Idea](https://github.com/CoopR-Mod/CoopR-Mod/wiki/The-Idea)
 * [Feature Roadmap](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Feature-Roadmap)
+* [Concepts](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts)
+  - [Character](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Character-Concepts)
+  - [Squad](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Squad-Concepts)
+  - [Headquarter](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Headquarter-Concepts)
+  - [Missions](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Mission-Concepts)
 * [How to setup a mission](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-setup-a-mission)
 * How to play 
-* [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing)
-  - [How to add a new feature](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#how-to-add-a-new-feature)
-  - [Addons](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#addons)
-  - [Contributing Guidelines](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#contributing-guidelines)
-  - [Concepts for CoopR-Mod](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts-(CoopR-Mod))
-  - [Concepts for CoopR-Servers](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts-(CoopR-Server))
+* [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contribution)
+  - [Setup Local](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Setup-(Local))
+  - [Addons Structure](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Addons-Structure)
+  - [How to add a new feature](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-add-a-new-feature)
+  - [Contributing Guidelines](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Contributing-Guidelines)
 * [Technical Documentation](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation)
   - [Macros](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#macros)
   - [Debugging and Logging](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#debugging-and-logging)
@@ -31,17 +35,17 @@ Here listed one can see all planned features and technical milestones as a roadm
 ## v0.9
 | Type|Name | Description  | Tasks Completed|
 | ------------- |------------- |:-------------|-------------:|
-| Gameplay|[Supply Requests](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#resources--supplements) | Squads can call for supplies to prepare mission resources | 0/2 |
-| Gameplay|[Recon Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#recon-tasks) | Squads can be assigned to recon tasks and report enemy positions and movement | 2/3 |
-| Gameplay|[Combat Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#combat-tasks) | Squads can be assigned to attack tasks. These are beforehand created through recon task results | 1/5 |
+| Gameplay|Supply Requests | Squads can call for supplies to prepare mission resources | 0/2 |
+| Gameplay|Recon Missions | Squads can be assigned to recon missions and report enemy positions and movement. Assault mission will be generated out of these | 5/6 |
+| Gameplay| Campsites | Squads can build up campsites when outside of the HQ to build temporary shelter for logging out | 1/3 |
 | Technical|CoopR HQ Connection | The persistence layer can be setup to use the CoopR HQ webservices. This gives the option to have CoopR management features controlled with the browser | 0/1 |
 
 ## v0.10
 | Type|Name | Description  | Tasks Completed|
 | ------------- |------------- |:-------------|-------------:|
+| Gameplay|Infiltration & Exfiltration | Squads need to request and plan infiltration and exfiltration support | 0/2 |
 | Gameplay| Equipment Manager | Players can manage their stash and change equiptment and loadouts | 0/? |
 | Gameplay| Squad Creation | Players can manage squads. The squad creator is therefore the squad leader | 0/? |
-| Gameplay| Campsites | Squads can build up campsites when outside of the HQ to build temporary shelter for logging out | 0/? |
 | Gameplay| Nutrition | Players can die due starvation if no nutrition supplements are in their inventory | 0/? |
 | Technical| Character Stats Overhaul | Revision of the CoopR character stats | 0/? |
 | Visual| Supply Request GUI Overhaul | Revision of the CoopR supply requests GUI | 0/? |
@@ -50,7 +54,7 @@ Here listed one can see all planned features and technical milestones as a roadm
 | Type|Name | Description  | Tasks Completed|
 | ------------- |------------- |:-------------|-------------:|
 | Gameplay| Equipment Manager | Players can manage their stash and change equiptment and loadouts | 0/? |
-| Gameplay| Squad Creation | Players can manage squads. The squad creator is therefore the squad leader | 0/? |
-| Gameplay| Nutrition | Players can die due starvation if no nutrition supplements are in their inventory | 0/? |
+| Gameplay| Filler Missions| Side missions to prevent boredom if no real mission missions are available | 0/? |
 | Technical| Enhance HQ Webapp| HQ Webapp MVP completion. Player can manage their characters and squads online | 0/? |
+
 

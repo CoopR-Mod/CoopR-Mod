@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class coopr_tasks
+    class coopr_missions
     {
         // Meta information for editor
         name = "CoopR Mod";
@@ -16,7 +16,7 @@ class CfgPatches {
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
-            "CoopR_Tasks"
+            "CoopR_Missions"
         };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
@@ -31,4 +31,4 @@ class CfgPatches {
 // UI
 #include "\x\coopr\addons\core\controls.hpp"
 #include "ui\CoopR_ReconReport_Dialog.hpp"
-#include "ui\CoopR_TaskBoard_Dialog.hpp"
+#include "ui\CoopR_MissionBoard_Dialog.hpp"

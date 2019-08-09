@@ -27,6 +27,7 @@ class CfgFunctions {
             class newCharacterButtonHandler {};
             class roleSelectionEH {};
             class getImageForRole {};
+            class selectCharacter {};
         }
     }
 }

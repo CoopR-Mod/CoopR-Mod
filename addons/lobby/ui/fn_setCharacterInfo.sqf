@@ -1,12 +1,12 @@
 #include "script_component.hpp"
 
 params ["_characterSlot", "_infoBox"];
+private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
 
 private _name = [_characterSlot, COOPR_KEY_NAME] call CBA_fnc_hashGet;
 private _reputation = [_characterSlot, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
 private _money = [_characterSlot, COOPR_KEY_MONEY] call CBA_fnc_hashGet;
 private _state = [_characterSlot, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
 private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
 private _woundedTimestamp = [_characterSlot, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;

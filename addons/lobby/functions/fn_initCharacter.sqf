@@ -24,12 +24,12 @@ DEBUG("post login init...");
 if ((count _oldPos) isEqualTo 3) then {
    call coopr_fnc_spawnAtOldPosition;
 } else {
-   DEBUG("player position could not be revoked after login");
+   DEBUG("character position could not be revoked after login");
    player setPos getPos COOPR_HQ_WEST;
 };
 
 if (count _loadout isEqualTo 0) then {
-    ERROR("player loadout could not be revoked after login")
+    ERROR("character loadout could not be revoked after login")
 } else {
     player setUnitLoadout _loadout;
 };

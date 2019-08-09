@@ -92,8 +92,8 @@
 		</Key>
 		<Key ID="str.coopr.character.newprofile.create">
 			<French>Créer un nouveau profil</French>
-			<German>Neues Profil erstellen</German>
-			<Original>Create a new profile</Original>
+			<German>Neuen Charakter erstellen</German>
+			<Original>Create a new character</Original>
 		</Key>
 		<Key ID="str.coopr.character.newprofile.name">
 			<French>Nom du soldat</French>

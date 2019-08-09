@@ -2,29 +2,29 @@
 /*
  * Author: xetra11 
  *
- * Removes the marker of a given task
+ * Removes the marker of a given mission
  *
  * Arguments:
- * 0: _taskId <STRING> - id of the task where the marker should be removed of
+ * 0: _missionId <STRING> - id of the mission where the marker should be removed of
  *
  * Return Value:
- * Boolean - if task was created successfully
+ * Boolean - if mission was created successfully
  *
  * Example:
- * ["coopr_task_recon"] call coopr_fn_removeTaskMarker.sqf;
+ * ["coopr_mission_recon"] call coopr_fn_removeMissionMarker.sqf;
  *
  * Public: No
  *
  * Scope: Server
  */
 
-params [["_taskId", ""]];
+params [["_missionId", ""]];
 
-if (_taskId isEqualTo "") exitWith { ERROR("_taskId was empty") };
+if (_missionId isEqualTo "") exitWith { ERROR("_missionId was empty") };
 
 if (isServer) then {
-    private _markerName = _taskId + "_task_marker";
-    DEBUG2("removing task marker: %1", _markerName);
+    private _markerName = _missionId + "_mission_marker";
+    DEBUG2("removing mission marker: %1", _markerName);
     deleteMarker _markerName;
 } else {
     SERVER_ONLY_ERROR(__FILE__);

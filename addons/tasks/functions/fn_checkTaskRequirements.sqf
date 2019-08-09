@@ -2,17 +2,17 @@
 /*
  * Author: xetra11 
  *
- * This function will check all predicates for a assigned task to be fulfilled so the after action report
+ * This function will check all predicates for a assigned mission to be fulfilled so the after action report
  * can be delivered succesfully
  *
  * Arguments:
- * 0: _unit <OBJECT> - the unit the task requirements should be checked for
+ * 0: _unit <OBJECT> - the unit the mission requirements should be checked for
  *
  * Return Value:
  * Boolean - if all requirements were fulfilled
  *
  * Example:
- * [_unit] call coopr_fn_checkTaskRequirements;
+ * [_unit] call coopr_fn_checkMissionRequirements;
  *
  * Public: No
  *
@@ -24,14 +24,14 @@ params [["_unit", objNull]];
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
 if (isServer) then {
-    private _activeTask = _unit getVariable [COOPR_KEY_ACTIVE_TASK, objNull];
-    private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];
-    if (_activeTask isEqualTo objNull) exitWith { ERROR("_activeTask was objNull"); false; };
-    private _type = [_taskTracker, COOPR_KEY_TASK_TRACKER_TYPE] call CBA_fnc_hashGet;
-    private _killCount = [_taskTracker, COOPR_KEY_TASK_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
+    private _activeMission = _unit getVariable [COOPR_KEY_ACTIVE_MISSION, objNull];
+    private _missionTracker = _player getVariable [COOPR_KEY_MISSION_TRACKER, []];
+    if (_activeMission isEqualTo objNull) exitWith { ERROR("_activeMission was objNull"); false; };
+    private _type = [_missionTracker, COOPR_KEY_MISSION_TRACKER_TYPE] call CBA_fnc_hashGet;
+    private _killCount = [_missionTracker, COOPR_KEY_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
 
     switch (_type) do {
-        case COOPR_TASK_TYPE_SNIPERTEAM: {
+        case COOPR_MISSION_TYPE_SNIPERTEAM: {
             if (_killCount > 0) then {
                 true;
             } else { false };

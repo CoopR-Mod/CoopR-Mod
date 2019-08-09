@@ -46,7 +46,7 @@ if (isServer) then {
 
     [_hash, COOPR_MISSION_REPORT_TYPE_INFANTRY, _infantryStrengths] call CBA_fnc_hashSet;
     [_hash, COOPR_MISSION_REPORT_TYPE_MOTORIZED, _motorizedStrengths] call CBA_fnc_hashSet;
-    [_hash, COOPR_TASK_REPORT_TYPE_ARMORED, _armoredStrengths] call CBA_fnc_hashSet;
+    [_hash, COOPR_MISSION_REPORT_TYPE_ARMORED, _armoredStrengths] call CBA_fnc_hashSet;
 
     _hash // return
 

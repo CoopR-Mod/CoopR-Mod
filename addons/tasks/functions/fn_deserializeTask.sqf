@@ -2,36 +2,36 @@
 /*
  * Author: xetra11
  *
- * Will deserialize a task into an array
+ * Will deserialize a mission into an array
  *
  * Arguments:
- * 0: _serializedTask <ARRAY> - serialized state of the task
- * 1: _unit <OBJECT> - the unit the task should be deserialized to
+ * 0: _serializedMission <ARRAY> - serialized state of the mission
+ * 1: _unit <OBJECT> - the unit the mission should be deserialized to
  *
  * Return Value:
- * _taskId <STRING> - ID of the deserialized task
+ * _missionId <STRING> - ID of the deserialized mission
  *
  * Example:
- * [_serializedTask, _player] call coopr_fnc_deserializeTask;
+ * [_serializedMission, _player] call coopr_fnc_deserializeMission;
  *
  * Public: No
  *
  * Scope: Global
  */
 
-params [["_serializedTask", []],["_unit", objNull]];
+params [["_serializedMission", []],["_unit", objNull]];
 
-if (_serializedTask isEqualTo []) exitWith { ERROR("_serializedTask was not defined") };
+if (_serializedMission isEqualTo []) exitWith { ERROR("_serializedMission was not defined") };
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was not defined") };
 
-private _taskId = _serializedTask select 0;
-private _description = _serializedTask select 1;
-private _state = _serializedTask select 2;
-private _serializedMarker = _serializedTask select 3;
+private _missionId = _serializedMission select 0;
+private _description = _serializedMission select 1;
+private _state = _serializedMission select 2;
+private _serializedMarker = _serializedMission select 3;
 
-private _task = [_unit, _taskId , _description, [], 1, 2, true] call BIS_fnc_taskCreate;
-[_task, _state, false] call BIS_fnc_taskSetState;
+private _mission = [_unit, _missionId , _description, [], 1, 2, true] call BIS_fnc_missionCreate;
+[_mission, _state, false] call BIS_fnc_missionSetState;
 [_serializedMarker] spawn coopr_fnc_deserializeMarker;
 
-DEBUG3("task %1 deserialized and assigned to %2", _task, _unit);
-_task;
+DEBUG3("mission %1 deserialized and assigned to %2", _mission, _unit);
+_mission;

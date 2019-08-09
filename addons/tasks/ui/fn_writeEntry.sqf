@@ -45,10 +45,10 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
        [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["No user marker found"]] call CBA_fnc_notify;
     };
 
-    private _reconTaskId = player getVariable [COOPR_KEY_ACTIVE_TASK, ""];
+    private _reconMissionId = player getVariable [COOPR_KEY_ACTIVE_MISSION, ""];
     private _markerPos = getMarkerPos _foundUserMarker;
-    if !(_markerPos inArea _reconTaskId + "_task_marker") exitWith {
-       [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker was not in recon task area"]] call CBA_fnc_notify;
+    if !(_markerPos inArea _reconMissionId + "_mission_marker") exitWith {
+       [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["Marker was not in recon mission area"]] call CBA_fnc_notify;
     };
 
     private _nameExists = false;

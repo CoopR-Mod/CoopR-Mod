@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Pushes one CoopR task into the persisted task queue on local
+ * Pushes one CoopR mission into the persisted mission queue on local
  *
  * Arguments:
- * 0: _cooprTask <CBA-HASH> - coopr task as cba hash
+ * 0: _cooprMission <CBA-HASH> - coopr mission as cba hash
  *
  * Return Value:
  * None
@@ -18,17 +18,17 @@
  * Scope: Server
  */
 
-params [["_cooprTask", []]];
+params [["_cooprMission", []]];
 
 if (isServer) then {
-    if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was not defined") };
-    if (not ([_cooprTask] call CBA_fnc_isHash)) exitWith { ERROR("_cooprTask has to be a cba hash"); };
+    if (_cooprMission isEqualTo []) exitWith { ERROR("_cooprMission was not defined") };
+    if (not ([_cooprMission] call CBA_fnc_isHash)) exitWith { ERROR("_cooprMission has to be a cba hash"); };
 
-    DEBUG("pushing coopr task to task queue");
-    private _currentCount = [] call coopr_fnc_getQueuedTasksCountLocal;
-    [_cooprTask, COOPR_KEY_TASK_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
-    private _taskToQueue = format["INSERT INTO task_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprTask];
-    _taskToQueue call coopr_fnc_extDB3sql;
+    DEBUG("pushing coopr mission to mission queue");
+    private _currentCount = [] call coopr_fnc_getQueuedMissionsCountLocal;
+    [_cooprMission, COOPR_KEY_MISSION_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
+    private _missionToQueue = format["INSERT INTO mission_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprMission];
+    _missionToQueue call coopr_fnc_extDB3sql;
 } else {
     SERVER_ONLY_ERROR(__FILE__);
 };

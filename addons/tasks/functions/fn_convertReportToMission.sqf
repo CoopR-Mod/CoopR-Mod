@@ -48,23 +48,23 @@ if (isServer) then {
         _entryAccuracy = _entryAccuracy + _accuracy; // add validation accuracy value
 
         if (_entryAccuracy > 50) then {
-            private _newCooprTask = EMPTY_HASH;
+            private _newCooprMission = EMPTY_HASH;
             // remove element to shrink down strength list for upcoming validations
             _strengthListForType deleteAt (_strengthListForType find _strength);
 
-            private _cooprTaskType = [_strength, _type, _behaviour] call coopr_fnc_determineTaskType;
-            DEBUG2("evaluated task type: %1", _cooprTaskType);
-            DEBUG("building coopr task hash");
-            [_newCooprTask, COOPR_KEY_TASK_TYPE, _cooprTaskType] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
-            [_newCooprTask, COOPR_KEY_TASK_REPORT_TIME, _time] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_ACCURACY, _entryAccuracy] call CBA_fnc_hashSet;
-            [_newCooprTask, COOPR_KEY_TASK_TARGET, [_type, _strength]] call CBA_fnc_hashSet;
+            private _cooprMissionType = [_strength, _type, _behaviour] call coopr_fnc_determineMissionType;
+            DEBUG2("evaluated mission type: %1", _cooprMissionType);
+            DEBUG("building coopr mission hash");
+            [_newCooprMission, COOPR_KEY_MISSION_TYPE, _cooprMissionType] call CBA_fnc_hashSet;
+            [_newCooprMission, COOPR_KEY_MISSION_DESCRIPTION, ""] call CBA_fnc_hashSet; // inactive
+            [_newCooprMission, COOPR_KEY_MISSION_REPORT_TIME, _time] call CBA_fnc_hashSet;
+            [_newCooprMission, COOPR_KEY_MISSION_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
+            [_newCooprMission, COOPR_KEY_MISSION_ACCURACY, _entryAccuracy] call CBA_fnc_hashSet;
+            [_newCooprMission, COOPR_KEY_MISSION_TARGET, [_type, _strength]] call CBA_fnc_hashSet;
 
-           ["defined task details:", _newCooprTask] call coopr_fnc_logHash;
+           ["defined mission details:", _newCooprMission] call coopr_fnc_logHash;
 
-            [_newCooprTask] call coopr_fnc_pushTaskQueue;
+            [_newCooprMission] call coopr_fnc_pushMissionQueue;
             DEBUG2("coopr mission created");
         } else {
             INFO("skipping convertion - recon report entry was not valid ");
@@ -74,18 +74,18 @@ if (isServer) then {
         [_scannedStrengths, _type, _strengthListForType] call CBA_fnc_hashSet;
     } forEach _reconEntries;
 
-    private _taskTracker = _unit getVariable [COOPR_KEY_TASK_TRACKER, []];
-    if (_taskTracker isEqualTo []) then {
-        ERROR("task tracker could not be fetched")
+    private _missionTracker = _unit getVariable [COOPR_KEY_MISSION_TRACKER, []];
+    if (_missionTracker isEqualTo []) then {
+        ERROR("mission tracker could not be fetched")
     } else {
 
-        private _infStrengths = [_scannedStrengths, COOPR_TASK_REPORT_TYPE_INFANTRY] call CBA_fnc_hashGet;
-        private _motorizedStrengths = [_scannedStrengths, COOPR_TASK_REPORT_TYPE_MOTORIZED] call CBA_fnc_hashGet;
-        private _armoredStrengths = [_scannedStrengths, COOPR_TASK_REPORT_TYPE_ARMORED] call CBA_fnc_hashGet;
+        private _infStrengths = [_scannedStrengths, COOPR_MISSION_REPORT_TYPE_INFANTRY] call CBA_fnc_hashGet;
+        private _motorizedStrengths = [_scannedStrengths, COOPR_MISSION_REPORT_TYPE_MOTORIZED] call CBA_fnc_hashGet;
+        private _armoredStrengths = [_scannedStrengths, COOPR_MISSION_REPORT_TYPE_ARMORED] call CBA_fnc_hashGet;
 
         if ((_infStrengths isEqualTo []) and (_motorizedStrengths isEqualTo []) and (_armoredStrengths isEqualTo [])) then {
-            [_taskTracker, COOPR_KEY_TASK_TRACKER_RECON_COMPLETE, true] call CBA_fnc_hashSet;
-            _unit setVariable [COOPR_KEY_TASK_TRACKER, _taskTracker];
+            [_missionTracker, COOPR_KEY_MISSION_TRACKER_RECON_COMPLETE, true] call CBA_fnc_hashSet;
+            _unit setVariable [COOPR_KEY_MISSION_TRACKER, _missionTracker];
             DEBUG("recon report has been completed");
         };
     };

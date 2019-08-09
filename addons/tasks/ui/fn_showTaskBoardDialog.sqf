@@ -2,8 +2,8 @@
 
 disableSerialization;
 
-createDialog "CoopR_TaskBoard_Dialog";
-waitUntil {!isNull findDisplay GUI_ID_TASKBOARD_DIALOG};
+createDialog "CoopR_MissionBoard_Dialog";
+waitUntil {!isNull findDisplay GUI_ID_MISSIONBOARD_DIALOG};
 
 DEBUG("initialising taskboard ui");
 

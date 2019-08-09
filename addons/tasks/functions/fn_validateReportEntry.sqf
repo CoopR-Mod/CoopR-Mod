@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * This is the validation logic for the recon report entries. This will decide if a recon report will be generated into a task
+ * This is the validation logic for the recon report entries. This will decide if a recon report will be generated into a mission
  * or not.
  *
  * Arguments:

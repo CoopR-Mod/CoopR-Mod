@@ -3,8 +3,8 @@
 disableSerialization;
 
 private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
-if !(player call coopr_fnc_isInTaskArea) exitWith {
-    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["You need to be in the recon task area"]] call CBA_fnc_notify;
+if !(player call coopr_fnc_isInMissionArea) exitWith {
+    [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["You need to be in the recon mission area"]] call CBA_fnc_notify;
 };
 
 createDialog "CoopR_ReconReport_Dialog";

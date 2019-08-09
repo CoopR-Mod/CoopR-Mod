@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Fetches all tasks from the queue for the global server id
+ * Fetches all missions from the queue for the global server id
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _tasks <ARRAY> - all found tasks for server id
+ * _missions <ARRAY> - all found missions for server id
  *
  * Example:
  * Trivial
@@ -19,8 +19,8 @@
  */
 
 if (isServer) then {
-    private _allTasksFromQueue = format["SELECT task FROM task_queues WHERE server_id = %1", COOPR_SERVER_ID];
-    (_allTasksFromQueue call coopr_fnc_extDB3sql);
+    private _allMissionsFromQueue = format["SELECT mission FROM mission_queues WHERE server_id = %1", COOPR_SERVER_ID];
+    (_allMissionsFromQueue call coopr_fnc_extDB3sql);
 } else {
     SERVER_ONLY_ERROR(__FILE__);
 };

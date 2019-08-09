@@ -1,4 +1,4 @@
-class CfgMissionDescriptions
+class CfgTaskDescriptions
 {
     class CoopR_Mission_Recon
     {

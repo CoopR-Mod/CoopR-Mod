@@ -28,9 +28,9 @@ _serializedMission pushBack _missionId;
 {
   _serializedMission pushBack (_missionId call _x);
 } forEach [
-    { _this call BIS_fnc_missionDescription },
+    { _this call BIS_fnc_taskDescription },
     //{ _this call BIS_fnc_missionDestination },
-    { _this call BIS_fnc_missionState }];
+    { _this call BIS_fnc_taskState }];
 
 private _serializedMissionMarker = [_missionId + "_mission_marker"] call coopr_fnc_serializeMarker;
 _serializedMission pushBack _serializedMissionMarker;

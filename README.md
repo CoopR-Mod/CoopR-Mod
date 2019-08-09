@@ -10,25 +10,26 @@ At the alpha testing phase there will be about two official servers hosted. Thes
 ## Can I use my created characters on other servers?
 Yes you can. The official CoopR-Servers will all be connected to the **CoopR-HQ**. The CoopR-HQ is the webservice that allows persistence of player created characters/soldiers. Every CoopR-Server is fetching the character list by a users Steam-ID from the CoopR-HQ. This allows players to switch between different servers and take part in different scenarios with their squads.
 
-## CoopR Mod Wiki 
+## Table of contents
 * [The Idea](https://github.com/CoopR-Mod/CoopR-Mod/wiki/The-Idea)
 * [Feature Roadmap](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Feature-Roadmap)
+* [Concepts](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts)
+  - [Character](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Character-Concepts)
+  - [Squad](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Squad-Concepts)
+  - [Headquarter](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Headquarter-Concepts)
+  - [Missions](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Mission-Concepts)
 * [How to setup a mission](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-setup-a-mission)
 * How to play 
-* [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing)
-  - [How to add a new feature](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#how-to-add-a-new-feature)
-  - [Addons](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#addons)
-  - [Contributing Guidelines](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contributing#contributing-guidelines)
-  - [Concepts for CoopR-Mod](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts-(CoopR-Mod))
-  - [Concepts for CoopR-Servers](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Concepts-(CoopR-Server))
+* [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contribution)
+  - [Setup Local](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Setup-(Local))
+  - [Addons Structure](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Addons-Structure)
+  - [How to add a new feature](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-add-a-new-feature)
+  - [Contributing Guidelines](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Contributing-Guidelines)
 * [Technical Documentation](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation)
   - [Macros](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#macros)
   - [Debugging and Logging](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#debugging-and-logging)
   
 # Feature Roadmap
-Here listed one can see all planned features and technical milestones as a roadmap.
-
-# Preface
 Here listed one can see all planned features and technical milestones as a roadmap.
 
 ## v0.9

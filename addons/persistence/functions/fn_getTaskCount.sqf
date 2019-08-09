@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Counts all tasks created
+ * Counts all missions created
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _count <NUMBER> - Amount of tasks created
+ * _count <NUMBER> - Amount of missions created
  *
  * Example:
  * Trivial
@@ -21,7 +21,7 @@
 if (isServer) then {
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_getTaskCountLocal;
+        call coopr_fnc_getMissionCountLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

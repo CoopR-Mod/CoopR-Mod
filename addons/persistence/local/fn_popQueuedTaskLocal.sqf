@@ -19,9 +19,9 @@
  */
 
 if (isServer) then {
-    private _selectLastTaskInQueue = format["SELECT task FROM task_queues WHERE server_id = %1 LIMIT 1;", COOPR_SERVER_ID];
-    private _deleteRow = "DELETE FROM task_queues LIMIT 1;";
-    private _result = _selectLastTaskInQueue call coopr_fnc_extDB3sql;
+    private _selectLastMissionInQueue = format["SELECT mission FROM mission_queues WHERE server_id = %1 LIMIT 1;", COOPR_SERVER_ID];
+    private _deleteRow = "DELETE FROM mission_queues LIMIT 1;";
+    private _result = _selectLastMissionInQueue call coopr_fnc_extDB3sql;
     _deleteRow call coopr_fnc_extDB3sql;
     _result select 0 select 0;
 } else {

@@ -2,10 +2,10 @@
 /*
  * Author: xetra11
  *
- * Pushes one CoopR task into the persisted task queue
+ * Pushes one CoopR mission into the persisted mission queue
  *
  * Arguments:
- * 0: _cooprTask <CBA-HASH> - coopr task as cba hash
+ * 0: _cooprMission <CBA-HASH> - coopr mission as cba hash
  *
  * Return Value:
  * None
@@ -18,14 +18,14 @@
  * Scope: Server
  */
 
-params [["_cooprTask", []]];
+params [["_cooprMission", []]];
 
 if (isServer) then {
-    if (_cooprTask isEqualTo []) exitWith { ERROR("_cooprTask was not defined") };
-    if (not ([_cooprTask] call CBA_fnc_isHash)) exitWith { ERROR("_cooprTask has to be a cba hash"); };
+    if (_cooprMission isEqualTo []) exitWith { ERROR("_cooprMission was not defined") };
+    if (not ([_cooprMission] call CBA_fnc_isHash)) exitWith { ERROR("_cooprMission has to be a cba hash"); };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_cooprTask] call coopr_fnc_pushTaskQueueLocal;
+        [_cooprMission] call coopr_fnc_pushMissionQueueLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

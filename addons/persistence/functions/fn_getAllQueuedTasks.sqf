@@ -2,13 +2,13 @@
 /*
  * Author: xetra11
  *
- * Fetches all tasks from the queue for the global server id
+ * Fetches all missions from the queue for the global server id
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _tasks <ARRAY> - all found tasks for server id
+ * _missions <ARRAY> - all found missions for server id
  *
  * Example:
  * Trivial
@@ -20,7 +20,7 @@
 
 if (isServer) then {
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        call coopr_fnc_getAllQueuedTasksLocal;
+        call coopr_fnc_getAllQueuedMissionsLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

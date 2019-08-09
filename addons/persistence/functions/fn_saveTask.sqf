@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Persists a serialized task to the persistence layer
+ * Persists a serialized mission to the persistence layer
  *
  * Arguments:
  * 0: _characterHash <ARRAY> - formatted as CBA hash
@@ -11,22 +11,22 @@
  * None
  *
  * Example:
- * player call coopr_fnc_saveTask
+ * player call coopr_fnc_saveMission
  *
  * Public: No
  *
  * Scope: Server
  */
 
-params [["_serializedTask", []]];
+params [["_serializedMission", []]];
 
 
 if (isServer) then {
 
-    if (_serializedTask isEqualTo []) exitWith { ERROR("_serializedTask was not defined") };
+    if (_serializedMission isEqualTo []) exitWith { ERROR("_serializedMission was not defined") };
 
     if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
-        [_serializedTask] call coopr_fnc_saveTaskLocal;
+        [_serializedMission] call coopr_fnc_saveMissionLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };

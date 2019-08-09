@@ -81,7 +81,7 @@ class CoopR_Login_Dialog_New {
                             controlBaseClassPath[] = {"RscText"};
                             columnX = (54 * safeZoneW) / 1920;
                             columnW = (86 * safeZoneW) / 1920;
-                            controlOffsetY = (12 * safeZoneH) / 1080;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
                         };
                         class WeaponMainPicture {
                             controlBaseClassPath[] = {"RscPictureKeepAspect"};
@@ -96,16 +96,16 @@ class CoopR_Login_Dialog_New {
                             controlOffsetY = 0;
                         };
                         class CreateNewButton {
-                            controlBaseClassPath[] = {"RscText"};
+                            controlBaseClassPath[] = {"EBA_Row_Button"};
                             columnX = (91 * safeZoneW) / 1920;
                             columnW = (172 * safeZoneW) / 1920;
-                            controlOffsetY = (12 * safeZoneH) / 1080;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
                         };
                         class Select {
-                            controlBaseClassPath[] = {"RscText"};
+                            controlBaseClassPath[] = {"EBA_Row_SelectButton"};
                             columnX = 0;
                             columnW = 1;
-                            controlOffsetY = (12 * safeZoneH) / 1080;
+                            controlOffsetY = (7 * safeZoneH) / 1080;
                         };
                     };
                 };

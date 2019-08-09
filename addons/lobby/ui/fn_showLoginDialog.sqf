@@ -19,10 +19,11 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
             private _characterSlot = _x;
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
             _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
-            _selectCharacterButton ctrlShow false;
             if (_characterSlot isEqualTo []) then {
                 _newCharacterButton ctrlSetText "Create new character";
                 _newCharacterButton ctrlAddEventHandler ["onClick", {[_i] call CoopR_fnc_createNewCharacterPanel}];
+                _selectCharacterButton ctrlShow false;
+                _selectCharacterButton ctrlShow false;
             } else {
                 private _name = [_characterSlot, COOPR_KEY_NAME] call CBA_fnc_hashGet;
                 private _reputation = [_characterSlot, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
@@ -39,9 +40,10 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
                 _roleColumn ctrlSetText _pathToImage;
                 _nameColumn ctrlSetText _name;
                 _mainWeaponPictureColumn ctrlSetText "MainText";
-                _secondaryWeaponPictureColumn ctrlAddEventHandler ["onClick", {[_i] call Coopr_fnc_playCharacterPanel}];
+                _secondaryWeaponPictureColumn ctrlSetText "SecondaryText";
+                _selectCharacterButton ctrlAddEventHandler ["onClick", {systemChat "Selected"}];
                 _newCharacterButton ctrlEnable false;
-                _selectCharacterButton ctrlShow true;
+                _newCharacterButton ctrlShow false;
             };
         } forEach _characterSlots;
     }

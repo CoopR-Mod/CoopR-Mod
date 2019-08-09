@@ -4,14 +4,14 @@
 
 #include "controls.hpp"
 
-#define EBA_TOCOLOR(r,g,b,a) {r / 255, g / 255, b / 255, a}
 #define EBA_COLOR_BACKGROUND {0, 0, 0, 0.5}
 #define EBA_COLOR_TRANSPARENT {0, 0, 0, 0}
-#define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
-#define EBA_COLOR_MAIN_HOVER EBA_TOCOLOR(28,153,199,0.5)
 #define EBA_COLOR_WHITE {1, 1, 1, 1}
 #define EBA_COLOR_BLACK {0, 0, 0, 1}
 #define EBA_COLOR_DISABLED {0.5, 0.5, 0.5, 1}
+#define EBA_TOCOLOR(r,g,b,a) {(r / 255), (g / 255), (b / 255), a}
+#define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
+#define EBA_COLOR_MAIN_HOVER EBA_TOCOLOR(28,153,199,0.5)
 
 #define EBA_POSITION(X,Y,W,H) \
     x = (X * safeZoneW) / 1920 + safeZoneX; \
@@ -173,4 +173,28 @@ class EBA_ControlsTable: EBA_CommonProperites {
     class RowTemplate {};
 
     class HeaderTemplate {};
+};
+
+class EBA_Row_Button: RscButton {
+    colorText[] = EBA_COLOR_WHITE;
+    colorBackground[] = EBA_COLOR_MAIN;
+    colorBackgroundActive[] = EBA_COLOR_MAIN_HOVER;
+    colorBackgroundDisabled[] = EBA_COLOR_DISABLED;
+    clorDisabled[] = EBA_COLOR_WHITE;
+    colorFocused[] = EBA_COLOR_MAIN_HOVER;
+    offsetPressedX = 0;
+    offsetPressedY = 0;
+    offsetX = 0;
+    offsetY = 0;
+    shadow = 0;
+    borderSize = 0; 
+};
+
+class EBA_Row_SelectButton: RscButton {
+    colorText[] = EBA_COLOR_TRANSPARENT;
+    colorBackground[] = EBA_COLOR_TRANSPARENT;
+    colorBackgroundActive[] = EBA_COLOR_TRANSPARENT;
+    colorBackgroundDisabled[] = EBA_COLOR_TRANSPARENT;
+    clorDisabled[] = EBA_COLOR_TRANSPARENT;
+    colorFocused[] = EBA_COLOR_TRANSPARENT;
 };

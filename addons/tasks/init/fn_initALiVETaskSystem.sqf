@@ -5,7 +5,7 @@
  * Initialized the mission system with ALiVE
  *
  * Arguments:
- * 1: _taskItems <ARRAY> - task items the action should be applied to
+ * 1: _missionItems <ARRAY> - mission items the action should be applied to
  *
  * Return Value:
  * None
@@ -18,13 +18,13 @@
  * Scope: Client
  */
 
-params [["_taskItems", []]];
+params [["_missionItems", []]];
 
-if (_taskItems isEqualTo []) exitWith { ERROR("_taskItems was not defined") };
+if (_missionItems isEqualTo []) exitWith { ERROR("_missionItems was not defined") };
 
-INFO("using ALiVE task system");
+INFO("using ALiVE mission system");
 
-COOPR_TASKS_ACTIVE = true;
+COOPR_MISSIONS_ACTIVE = true;
 
-[_taskItems] call coopr_fnc_initTaskItems;
+[_missionItems] call coopr_fnc_initMissionItems;
 

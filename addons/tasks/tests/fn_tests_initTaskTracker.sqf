@@ -3,35 +3,35 @@
 TSTART;
 private _actual;
 
-TEST("should assign task tracker to unit");
+TEST("should assign mission tracker to unit");
 
-player call coopr_fnc_initTaskTracker;
-private _actual = player getVariable [COOPR_KEY_TASK_TRACKER, EMPTY_HASH];
+player call coopr_fnc_initMissionTracker;
+private _actual = player getVariable [COOPR_KEY_MISSION_TRACKER, EMPTY_HASH];
 
-private _taskStart = [_actual, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
-private _visitedTaskArea = [_actual, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
+private _missionStart = [_actual, COOPR_KEY_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
+private _visitedMissionArea = [_actual, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
 
-TEXPECT(_taskStart, -1);
-TEXPECT(_visitedTaskArea, -1);
+TEXPECT(_missionStart, -1);
+TEXPECT(_visitedMissionArea, -1);
 
-TEST("should reset already defined task tracker");
+TEST("should reset already defined mission tracker");
 
-player call coopr_fnc_initTaskTracker;
-private _actual = player getVariable [COOPR_KEY_TASK_TRACKER, EMPTY_HASH];
+player call coopr_fnc_initMissionTracker;
+private _actual = player getVariable [COOPR_KEY_MISSION_TRACKER, EMPTY_HASH];
 
-private _taskStart = [_actual, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
-private _visitedTaskArea = [_actual, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
+private _missionStart = [_actual, COOPR_KEY_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
+private _visitedMissionArea = [_actual, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
 
-[_actual, COOPR_KEY_TASK_TRACKER_TASK_START, 100] call CBA_fnc_hashSet;
-[_actual, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA, 100] call CBA_fnc_hashSet;
-player setVariable [COOPR_KEY_TASK_TRACKER, _actual, true];
+[_actual, COOPR_KEY_MISSION_TRACKER_MISSION_START, 100] call CBA_fnc_hashSet;
+[_actual, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA, 100] call CBA_fnc_hashSet;
+player setVariable [COOPR_KEY_MISSION_TRACKER, _actual, true];
 
-player call coopr_fnc_initTaskTracker;
+player call coopr_fnc_initMissionTracker;
 
-_taskStart = [_actual, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
-_visitedTaskArea = [_actual, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
+_missionStart = [_actual, COOPR_KEY_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
+_visitedMissionArea = [_actual, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
 
-TEXPECT(_taskStart, -1);
-TEXPECT(_visitedTaskArea, -1);
+TEXPECT(_missionStart, -1);
+TEXPECT(_visitedMissionArea, -1);
 
 TEND;

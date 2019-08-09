@@ -19,11 +19,11 @@
  */
 
 INFO("reinit missions to character");
-private _activeTaskID = player getVariable [COOPR_KEY_ACTIVE_TASK, []];
-if (_activeTaskID isEqualTo []) exitWith { INFO("no active missions - skipping reinit"); };
+private _activeMissionID = player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+if (_activeMissionID isEqualTo []) exitWith { INFO("no active missions - skipping reinit"); };
 
-[[_activeTaskID], "coopr_fnc_getTask", [], {
+[[_activeMissionID], "coopr_fnc_getMission", [], {
     params ["_callbackArgs", "_promisedResult"];
-    [_promisedResult, player] call coopr_fnc_deserializeTask;
+    [_promisedResult, player] call coopr_fnc_deserializeMission;
 }] call coopr_fnc_promise;
 

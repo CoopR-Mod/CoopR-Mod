@@ -37,15 +37,15 @@ if (isServer) then {
         private _behaviour = [_entry, COOPR_KEY_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
 
         switch (_type) do {
-            case COOPR_TASK_REPORT_TYPE_INFANTRY : { _infantryStrengths pushBack _strength };
-            case COOPR_TASK_REPORT_TYPE_MOTORIZED : { _motorizedStrengths pushBack _strength };
-            case COOPR_TASK_REPORT_TYPE_ARMORED : { _armoredStrengths pushBack _strength };
+            case COOPR_MISSION_REPORT_TYPE_INFANTRY : { _infantryStrengths pushBack _strength };
+            case COOPR_MISSION_REPORT_TYPE_MOTORIZED : { _motorizedStrengths pushBack _strength };
+            case COOPR_MISSION_REPORT_TYPE_ARMORED : { _armoredStrengths pushBack _strength };
         };
 
     } forEach _reconEntries;
 
-    [_hash, COOPR_TASK_REPORT_TYPE_INFANTRY, _infantryStrengths] call CBA_fnc_hashSet;
-    [_hash, COOPR_TASK_REPORT_TYPE_MOTORIZED, _motorizedStrengths] call CBA_fnc_hashSet;
+    [_hash, COOPR_MISSION_REPORT_TYPE_INFANTRY, _infantryStrengths] call CBA_fnc_hashSet;
+    [_hash, COOPR_MISSION_REPORT_TYPE_MOTORIZED, _motorizedStrengths] call CBA_fnc_hashSet;
     [_hash, COOPR_TASK_REPORT_TYPE_ARMORED, _armoredStrengths] call CBA_fnc_hashSet;
 
     _hash // return

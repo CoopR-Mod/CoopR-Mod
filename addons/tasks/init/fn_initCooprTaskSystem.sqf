@@ -2,10 +2,10 @@
 /*
  * Author: xetra11 
  *
- * Initialized the task system with CoopR
+ * Initialized the mission system with CoopR
  *
  * Arguments:
- * 1: _taskItems <ARRAY> - task items the action should be applied to
+ * 1: _missionItems <ARRAY> - mission items the action should be applied to
  *
  * Return Value:
  * None
@@ -18,10 +18,10 @@
  * Scope: Client
  */
 
-params [["_taskItems", []]];
+params [["_missionItems", []]];
 
-if (_taskItems isEqualTo []) exitWith { ERROR("_taskItems was not defined") };
+if (_missionItems isEqualTo []) exitWith { ERROR("_missionItems was not defined") };
 
-INFO("using CoopR task system");
-ERROR("CoopR task system not yet implemented - task system disabled");
+INFO("using CoopR mission system");
+ERROR("CoopR mission system not yet implemented - mission system disabled");
 

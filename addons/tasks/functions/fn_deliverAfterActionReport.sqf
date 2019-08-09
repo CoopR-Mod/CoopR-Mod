@@ -2,7 +2,7 @@
 /*
  * Author: xetra11
  *
- * Ends the current task and evaluates reputation points and recon reports
+ * Ends the current mission and evaluates reputation points and recon reports
  *
  * Arguments:
  * 0: _target <OBJECT> - object the action is bound to
@@ -27,18 +27,18 @@ if (_caller isEqualTo objNull) exitWith { ERROR("_caller was objNull") };
 if (isServer) then {
     private _player = _caller;
 
-    private _currentTask = _player getVariable [COOPR_KEY_ACTIVE_TASK, []];
-    private _taskTracker = _player getVariable [COOPR_KEY_TASK_TRACKER, []];
+    private _currentMission = _player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+    private _missionTracker = _player getVariable [COOPR_KEY_MISSION_TRACKER, []];
 
-    if (_taskTracker isEqualTo []) exitWith { ERROR("_taskTracker was [] - something went wrong here"); };
+    if (_missionTracker isEqualTo []) exitWith { ERROR("_missionTracker was [] - something went wrong here"); };
 
-    private _validTaskExecution = [_taskTracker] call coopr_fnc_checkTaskTracking;
-    private _fulfilledRequirements = [_player] call coopr_fnc_checkTaskRequirements;
+    private _validMissionExecution = [_missionTracker] call coopr_fnc_checkMissionTracking;
+    private _fulfilledRequirements = [_player] call coopr_fnc_checkMissionRequirements;
     private _finalRep = 0;
 
     if (_fulfilledRequirements isEqualTo false) then {
-        DEBUG("task requirements not met");
-        [_currentTask, "FAILED"] call BIS_fnc_taskSetState;
+        DEBUG("mission requirements not met");
+        [_currentMission, "FAILED"] call BIS_fnc_taskSetState;
         _finalRep = -5;
         private _message = format ["You lost %1 reputation for failing", str _finalRep];
         [[COOPR_LOGO_SMALL], ["After Action Report:", 1.3, COOPR_BRAND_COLOR], [_message]] call CBA_fnc_notify;

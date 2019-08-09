@@ -2,16 +2,16 @@
 /*
  * Author: xetra11
  *
- * Creates a CoopR Recon Task
+ * Creates a CoopR Recon Mission
  *
  * Arguments:
- * 0: _player <OBJECT> - player this task is assigned to
+ * 0: _player <OBJECT> - player this mission is assigned to
  *
  * Return Value:
  * None
  *
  * Example:
- * call coopr_fnc_requestCooprTask;
+ * call coopr_fnc_requestCooprMission;
  *
  * Public: No
  *
@@ -32,14 +32,14 @@ if (isServer) then {
         if (not (isNil "_lowestPrioObjective")) then {
             COOPR_RECON_OBJECTIVE_CACHE pushBackUnique _lowestPrioObjective;
             private _position = [_lowestPrioObjective, "center"] call alive_fnc_hashGet;
-            [_player, _position] call coopr_fnc_createReconTask;
+            [_player, _position] call coopr_fnc_createReconMission;
         } else {
-            ERROR("no recon task could be generated");
+            ERROR("no recon mission could be generated");
         };
 
     } else {
-        ERROR("CoopR recon tasks can only be used in combination with ALiVE at the moment");
-        // TODO call recon task for coopr or other integration
+        ERROR("CoopR recon missions can only be used in combination with ALiVE at the moment");
+        // TODO call recon mission for coopr or other integration
     };
 } else {
     SERVER_ONLY_ERROR(__FILE__);

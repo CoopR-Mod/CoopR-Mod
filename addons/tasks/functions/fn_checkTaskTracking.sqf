@@ -30,22 +30,22 @@ if (isServer) then {
     DEBUG("mission tracker check:");
     private _valid = true;
 
-    private _taskStart = [_taskTracker, COOPR_KEY_TASK_TRACKER_TASK_START] call CBA_fnc_hashGet;
-    private _visitedTaskArea = [_taskTracker, COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA] call CBA_fnc_hashGet;
+    private _missionStart = [_missionTracker, COOPR_KEY_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
+    private _visitedMissionArea = [_missionTracker, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
 
-    if (_visitedTaskArea isEqualTo false) then {
+    if (_visitedMissionArea isEqualTo false) then {
         DEBUG("failed - was not in target area");
-        [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["Squad did not visited the task area"]] call CBA_fnc_notify;
+        [[COOPR_LOGO_SMALL], ["Missions:", 1.3, COOPR_BRAND_COLOR], ["Squad did not visited the mission area"]] call CBA_fnc_notify;
          _valid = false;
     };
 
     private _currentGameTime = call coopr_fnc_currentGameTime;
-    private _missionTime = _currentGameTime - _taskStart;
+    private _missionTime = _currentGameTime - _missionStart;
     DEBUG2("mission time was %1", _missionTime);
 
-    if (_missionTime < COOPR_TASK_MIN_TASK_TIME) then {
+    if (_missionTime < COOPR_MISSION_MIN_MISSION_TIME) then {
         DEBUG("failed - mission time was too short to be logical");
-        [[COOPR_LOGO_SMALL], ["Tasks:", 1.3, COOPR_BRAND_COLOR], ["Squad returned too fast from mission"]] call CBA_fnc_notify;
+        [[COOPR_LOGO_SMALL], ["Missions:", 1.3, COOPR_BRAND_COLOR], ["Squad returned too fast from mission"]] call CBA_fnc_notify;
         _valid = false;
     };
 

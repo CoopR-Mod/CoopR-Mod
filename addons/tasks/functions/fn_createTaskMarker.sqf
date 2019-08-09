@@ -2,18 +2,18 @@
 /*
  * Author: xetra11 
  *
- * This function will control the creation of markers in the context of tasks
+ * This function will control the creation of markers in the context of missions
  *
  * Arguments:
  * 0: _position <POSITION> - position of the marker
- * 1: _taskId <STRING> - id of the task this marker is created for
- * 2: _taskMarkerType <STRING> - what kind of task marker should be created
+ * 1: _missionId <STRING> - id of the mission this marker is created for
+ * 2: _missionMarkerType <STRING> - what kind of mission marker should be created
  *
  * Return Value:
  * _markerName <STRING> - name of the created marker
  *
  * Example:
- * [_position, "coopr_task_test_0", "RECON"] call coopr_fnc_createTaskMarker;
+ * [_position, "coopr_mission_test_0", "RECON"] call coopr_fnc_createMissionMarker;
  *
  * Public: No
  *
@@ -21,45 +21,45 @@
  */
 
 params [["_position", objNull],
-        ["_taskId", ""],
-        ["_taskMarkerType", []]];
+        ["_missionId", ""],
+        ["_missionMarkerType", []]];
 
 if (_position isEqualTo objNull) exitWith { ERROR("_position was objNull") };
-if (_taskId isEqualTo "") exitWith { ERROR("_taskId was empty string") };
-if (_taskMarkerType isEqualTo "") exitWith { ERROR("_taskMarkerType was empty string") };
+if (_missionId isEqualTo "") exitWith { ERROR("_missionId was empty string") };
+if (_missionMarkerType isEqualTo "") exitWith { ERROR("_missionMarkerType was empty string") };
 
 if (isServer) then {
 
-    switch (_taskMarkerType) do {
+    switch (_missionMarkerType) do {
         case "RECON": {
-            _reconTaskMarker = createMarker [_taskId + "_task_marker", _position];
-            _reconTaskMarker setMarkerSize [300, 300];
-            _reconTaskMarker setMarkerAlpha 0.5;
-            _reconTaskMarker setMarkerColor "ColorRed";
-            _reconTaskMarker setMarkerShape "ELLIPSE";
-            DEBUG2("recon task marker created: %1", _reconTaskMarker);
-            _reconTaskMarker;
+            _reconMissionMarker = createMarker [_missionId + "_mission_marker", _position];
+            _reconMissionMarker setMarkerSize [300, 300];
+            _reconMissionMarker setMarkerAlpha 0.5;
+            _reconMissionMarker setMarkerColor "ColorRed";
+            _reconMissionMarker setMarkerShape "ELLIPSE";
+            DEBUG2("recon mission marker created: %1", _reconMissionMarker);
+            _reconMissionMarker;
         };
         case "INVISIBLE": {
-            _invisibleTaskMarker = createMarker [_taskId + "_task_marker", _position];
-            _invisibleTaskMarker setMarkerSize [300, 300];
+            _invisibleMissionMarker = createMarker [_missionId + "_mission_marker", _position];
+            _invisibleMissionMarker setMarkerSize [300, 300];
             if (COOPR_DEV_MODE) then {
-                _invisibleTaskMarker setMarkerAlpha 0.5;
+                _invisibleMissionMarker setMarkerAlpha 0.5;
             } else {
-                _invisibleTaskMarker setMarkerAlpha 0;
+                _invisibleMissionMarker setMarkerAlpha 0;
             };
-            _invisibleTaskMarker setMarkerColor "ColorRed";
-            _invisibleTaskMarker setMarkerShape "ELLIPSE";
-            DEBUG2("invisible task marker created: %1", _invisibleTaskMarker);
-            _invisibleTaskMarker;
+            _invisibleMissionMarker setMarkerColor "ColorRed";
+            _invisibleMissionMarker setMarkerShape "ELLIPSE";
+            DEBUG2("invisible mission marker created: %1", _invisibleMissionMarker);
+            _invisibleMissionMarker;
         };
         default {
-            _otherMarker = createMarker [_taskId + "_task_marker", _position];
+            _otherMarker = createMarker [_missionId + "_mission_marker", _position];
             _otherMarker setMarkerSize [300, 300];
             _otherMarker setMarkerAlpha 0.5;
             _otherMarker setMarkerColor "ColorRed";
             _otherMarker setMarkerShape "ELLIPSE";
-            DEBUG2("other task marker created: %1", _otherMarker);
+            DEBUG2("other mission marker created: %1", _otherMarker);
             _otherMarker;
         }
     };

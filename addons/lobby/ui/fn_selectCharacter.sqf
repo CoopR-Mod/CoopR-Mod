@@ -13,10 +13,15 @@
  */
 
 params [["_ctrl", objNull]];
-DEBUG("select called");
 if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _characterSlot = _ctrl getVariable ["_characterSlot", objNull];
 if (_characterSlot isEqualTo objNull) exitWith { ERROR("_characterSlot was objNull") };
+
+// hide the creation control if open
+private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
+private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
+_characterCreationCtrl ctrlShow false;
+_characterCreationCtrl ctrlEnable false;
 
 private _loadout = [_characterSlot, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;
 

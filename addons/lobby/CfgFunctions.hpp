@@ -28,6 +28,7 @@ class CfgFunctions {
             class roleSelectionEH {};
             class getImageForRole {};
             class selectCharacter {};
+            class showCreationDialog {};
         }
     }
 }

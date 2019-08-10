@@ -12,6 +12,8 @@
 #define EBA_TOCOLOR(r,g,b,a) {(r / 255), (g / 255), (b / 255), a}
 #define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
 #define EBA_COLOR_MAIN_HOVER EBA_TOCOLOR(28,153,199,0.5)
+#define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
+
 
 #define EBA_POSITION(X,Y,W,H) \
     x = (X * safeZoneW) / 1920 + safeZoneX; \

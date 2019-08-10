@@ -15,6 +15,7 @@ _cam camCommit 0;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
+private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
     [_loginDialog, _characterListCtrl], {
@@ -27,7 +28,7 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
             _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
             if (_characterSlot isEqualTo []) then {
                 _newCharacterButton ctrlSetText "Create new character";
-                _newCharacterButton ctrlAddEventHandler ["click", {[_forEachIndex] call CoopR_fnc_createNewCharacterPanel}];
+                _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCreationDialog }];
                 _selectCharacterButton ctrlShow false;
             } else {
                 private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;

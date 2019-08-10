@@ -18,7 +18,7 @@ class CoopR_Login_Dialog_New {
 
         class CharacterDescription: EBA_ControlsGroup {
             EBA_POSITION(1171,187,375,534)
-            onLoad = "(_this#0) ctrlEnable false; (_this#0) ctrlShow false";
+            onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: EBA_Title {
                     //idc = 22305;
@@ -119,8 +119,9 @@ class CoopR_Login_Dialog_New {
         };
 
         class CharacterCreation: EBA_ControlsGroup {
+            idc = GUI_ID_LOGIN_CHARACTER_CREATION;
             EBA_POSITION(1171,187,375,534)
-            onLoad = "(_this#0) ctrlEnable false; (_this#0) ctrlShow false";
+            onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: EBA_Title {
                     EBA_POSITION_CT(0,0,340,35)

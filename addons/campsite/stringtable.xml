@@ -44,5 +44,8 @@
 		<Key ID="str.coopr.campsite.notif.cantspawntent">
 			<Original>Unable to place a tent in this position, find a better spot!</Original>
 		</Key>
+		<Key ID="str.coopr.campsite.action.disassembletent">
+			<Original>Disassemble tent</Original>
+		</Key>
 	</Package>
 </Project>

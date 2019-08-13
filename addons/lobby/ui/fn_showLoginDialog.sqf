@@ -27,7 +27,9 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
             _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
             if (_characterSlot isEqualTo []) then {
-                _newCharacterButton ctrlSetText "Create new character";
+                private _ctrlParams = [_forEachIndex];
+                _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
+                _newCharacterButton setVariable ["_params", _ctrlParams];
                 _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCreationDialog }];
                 _selectCharacterButton ctrlShow false;
             } else {

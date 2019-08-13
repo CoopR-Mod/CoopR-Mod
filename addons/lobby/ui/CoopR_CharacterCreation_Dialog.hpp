@@ -19,7 +19,7 @@ class CoopR_CharacterCreation_Dialog {
         class CoopR_CharacterCreation_Title: RscText
         {
             idc = GUI_ID_CHARACTER_TITLE;
-            text = $STR.coopr.character.newprofile.create;
+            text = $str.coopr.character.new.create;
             x = 0.396895 * safezoneW + safezoneX;
             y = 0.136838 * safezoneH + safezoneY;
             w = 0.190744 * safezoneW;

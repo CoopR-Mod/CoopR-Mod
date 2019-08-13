@@ -103,6 +103,7 @@ class CoopR_Login_Dialog_New {
                         };
                         class CreateNewButton {
                             controlBaseClassPath[] = {"EBA_Row_Button"};
+                            text = "Create New Character"; //ToDo: Localize
                             columnX = (91 * safeZoneW) / 1920;
                             columnW = (172 * safeZoneW) / 1920;
                             controlOffsetY = (7 * safeZoneH) / 1080;
@@ -132,28 +133,31 @@ class CoopR_Login_Dialog_New {
                     colorBackground[] = EBA_TOCOLOR(20,104,135,1);
                     colorBackgroundActive[] = EBA_TOCOLOR(20,104,135,0.5);
                     colorFocused[] = EBA_TOCOLOR(20,104,135,0.5);
-                    text = "\a3\ui_f\data\igui\cfg\revive\overlayicons\d100_ca.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
                 class Background: EBA_Background {
                     EBA_POSITION_CT(0,35,375,436)
                 };
                 class Create: EBA_Button_Center {
+                    idc = GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
                     EBA_POSITION_CT(0,471,375,72)
                     text = "Create"; //ToDo: Localize
                     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
                 };
-                class NameText: EBA_Text_Background {
+                class NameLabel: EBA_Text_Background {
                     EBA_POSITION_CT(22,61,147,19)
-                    text = "Name of the solider"; //ToDo: Localize
+                    text = "Name of Character"; //ToDo: Localize
                 };
                 class NameInput: RscEdit {
+                    idc = GUI_ID_LOGIN_CHARACTER_CREATION_NAME_INPUT;
                     EBA_POSITION_CT(22,80,311,30)
                 };
-                class RoleText: EBA_Text_Background {
+                class RoleLabel: EBA_Text_Background {
                     EBA_POSITION_CT(22,138,147,19)
                     text = "Specialization"; //ToDo: Localize
                 };
                 class RoleInput: RscCombo {
+                    idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
                     EBA_POSITION_CT(22,157,311,30)
                 };
             };

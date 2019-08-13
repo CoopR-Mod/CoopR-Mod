@@ -90,7 +90,7 @@
 			<German>Erstellen</German>
 			<Original>Create</Original>
 		</Key>
-		<Key ID="str.coopr.character.newprofile.create">
+		<Key ID="str.coopr.character.new.create">
 			<French>Créer un nouveau profil</French>
 			<German>Neuen Charakter erstellen</German>
 			<Original>Create a new character</Original>

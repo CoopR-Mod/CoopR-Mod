@@ -65,7 +65,7 @@ class cfgVehicles
         };
         class ModuleDescription: ModuleDescription
         {
-          description = "Sync this module to an unit to get instant acces to ArmA4";
+          description = "Sync this module to an unit to get instant acces to ArmA4";//TODO change this description
         };
     };
 };

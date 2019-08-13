@@ -7,6 +7,12 @@
 			<German>Campingartikel</German>
 			<French>Objet de camping</French>
 		</Key>
+		<Key ID="coopr.campsite.item.tent">
+			<Original>Camping tent</Original>
+			<Spanish>Tienda de campaña</Spanish>
+			<German>Campingartikel</German>
+			<French>Tente</French>
+		</Key>
 	</Package>
 	<Package name="actions">
 		<Key ID="str.coopr.campsite.action.startcampsite">

@@ -38,5 +38,8 @@
 			<Original>You can't carry more than one tent for mission</Original>
 			<Spanish>No puedes llevar más de una tienda de campaña por misión</Spanish>
 		</Key>
+		<Key ID="str.coopr.campsite.notif.tentspawned">
+			<Original>Tent placed in grid</Original>
+		</Key>
 	</Package>
 </Project>

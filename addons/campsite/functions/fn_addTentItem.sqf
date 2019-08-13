@@ -32,5 +32,9 @@ if (_unit getVariable ["coopr_campsite_hasTent", false]) exitWith{
 
 _unit setVariable ["coopr_campsite_hasTent", true];
 private _backPack = backpack _unit;
+
+/*
+//TODO momentarily disabled because attaching the tent to the player as first intended looks like shit
 _unit removeItem "coopr_item_foldedTent";
 [_unit, _backPack] call coopr_fnc_attachTentToPlayer;
+*/

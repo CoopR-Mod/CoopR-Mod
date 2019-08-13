@@ -18,6 +18,7 @@ class CfgFunctions {
             class buildCampsiteStructure {};
             class addTentItem {};
             class attachTentToPlayer {};
+            class spawnTent {};
         };
     };        
 };

@@ -39,6 +39,7 @@ switch _structure do{
 		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], [_campsitePos]] call CBA_fnc_notify;
 	};
 	case COOPR_CAMP_ITEM_TENT: {
-		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], ["str.coopr.campsite.notif.tentspawned"]] call CBA_fnc_notify;
+		[player] call coopr_fnc_spawnTent;
+		[[COOPR_LOGO_SMALL], ["INFO:", 1.3, COOPR_BRAND_COLOR], [localize "str.coopr.campsite.notif.tentspawned"]] call CBA_fnc_notify;
 	};
 };

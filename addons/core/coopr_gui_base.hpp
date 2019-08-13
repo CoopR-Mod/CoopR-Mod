@@ -8,6 +8,7 @@
 #define EBA_COLOR_TRANSPARENT {0, 0, 0, 0}
 #define EBA_COLOR_WHITE {1, 1, 1, 1}
 #define EBA_COLOR_BLACK {0, 0, 0, 1}
+#define EBA_COLOR_ERROR {255, 0, 0, 1}
 #define EBA_COLOR_DISABLED {0.5, 0.5, 0.5, 1}
 #define EBA_TOCOLOR(r,g,b,a) {(r / 255), (g / 255), (b / 255), a}
 #define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
@@ -125,10 +126,15 @@ class EBA_PictureRatio: EBA_Picture {
     style = 48 + 2048;
 };
 
+
 class EBA_Text: EBA_CommonProperites {
     type = 0;
     style = 0;
     colorBackground[] = EBA_COLOR_TRANSPARENT;
+};
+
+class EBA_Error: EBA_Text {
+    colorText[] = EBA_COLOR_ERROR;
 };
 
 class EBA_Text_Background: EBA_Text {

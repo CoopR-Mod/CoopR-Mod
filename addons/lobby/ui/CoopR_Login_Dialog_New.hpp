@@ -148,6 +148,10 @@ class CoopR_Login_Dialog_New {
                     EBA_POSITION_CT(22,61,147,19)
                     text = "Name of Character"; //ToDo: Localize
                 };
+                class Error: EBA_Error {
+                    idc = GUI_ID_LOGIN_CHARACTER_CREATION_ERROR;
+                    EBA_POSITION_CT(22,112,311,21)
+                };
                 class NameInput: RscEdit {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_NAME_INPUT;
                     EBA_POSITION_CT(22,80,311,30)

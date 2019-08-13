@@ -105,5 +105,10 @@
 			<German>Spezialisierung</German>
 			<Original>Specialization</Original>
 		</Key>
+		<Key ID="str.coopr.character.newprofile.error">
+			<Original>You need to enter a name!</Original>
+			<German>Du musst einen Namen angeben!</German>
+			<French>Vous devez entrer un nom</French>
+		</Key>
 	</Package>
 </Project>

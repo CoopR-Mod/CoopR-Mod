@@ -28,23 +28,19 @@ private _createAndAttachTent = {
 
 	private _newTent = "coopr_item_foldedTent" createVehicle [0,0,0];
 	_unit disableCollisionWith _newTent;
-	_newTent attachTo [_unit,_attachPoint, "pelvis"];
+	_newTent attachTo [_unit,_attachPoint, "Spine3"];
 	_newTent setVectorDirAndUp _vector;
 };
 
 switch _backpack do{
-	case "B_Carryall_ocamo": {
-		_attachPoint   = [-0.155,-0.25,0.967];
-		_vector= [[0.431,0.851,-0.301],[0.136,0.269,0.953]];
-		[_unit, _attachPoint, _vector] call _createAndAttachTent;
-	 };
+	// case "B_Carryall_ocamo": {
+	// 	_attachPoint   = [-0.155,-0.25,0.967];
+	// 	_vector= [[0.431,0.851,-0.301],[0.136,0.269,0.953]];
+	// 	[_unit, _attachPoint, _vector] call _createAndAttachTent;
+	//  };
 	 default {
-		_attachPoint   = [-0.155,-0.25,0.967];
-		_vector= [[0.431,0.851,-0.301],[0.136,0.269,0.953]];
+		_attachPoint   = [0.026,-0.175,-0.389];
+		_vector= [[0,1,0],[0,0,1]];
 		[_unit, _attachPoint, _vector] call _createAndAttachTent;
 	};
 };
-
-
-
-

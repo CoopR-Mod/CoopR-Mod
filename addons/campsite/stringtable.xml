@@ -34,5 +34,9 @@
 			<Spanish>Estás demasiado cerca a otra estructura</Spanish>
 			<French>Vous êtes trop proche d'une autre structure</French>
 		</Key>
+		<Key ID="str.coopr.campsite.notif.cantcarrymoretents">
+			<Original>You can't carry more than one tent for mission</Original>
+			<Spanish>No puedes llevar más de una tienda de campaña por misión</Spanish>
+		</Key>
 	</Package>
 </Project>

@@ -41,5 +41,8 @@
 		<Key ID="str.coopr.campsite.notif.tentspawned">
 			<Original>Tent placed in grid</Original>
 		</Key>
+		<Key ID="str.coopr.campsite.notif.cantspawntent">
+			<Original>Unable to place a tent in this position, find a better spot!</Original>
+		</Key>
 	</Package>
 </Project>

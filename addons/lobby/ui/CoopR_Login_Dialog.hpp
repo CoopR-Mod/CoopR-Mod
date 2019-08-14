@@ -17,14 +17,15 @@ class CoopR_Login_Dialog_New {
         };
 
         class CharacterDescription: EBA_ControlsGroup {
+            idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
             EBA_POSITION(1171,187,375,534)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: EBA_Title {
-                    //idc = 22305;
                     EBA_POSITION_CT(0,0,340,35)
                 };
                 class Delete: EBA_ButtonPicture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
                     EBA_POSITION_CT(340,0,35,35)
                     colorBackground[] = EBA_TOCOLOR(197,58,58,1);
                     colorBackgroundActive[] = EBA_TOCOLOR(197,58,58,0.5);
@@ -35,28 +36,28 @@ class CoopR_Login_Dialog_New {
                     EBA_POSITION_CT(0,35,375,436)
                 };
                 class Play: EBA_Button_Center {
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
                     EBA_POSITION_CT(0,471,375,72)
                     text = "Play"; //ToDo: Localize
                     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
                 };
                 class Description: EBA_StructuredText {
-                    //idc = 22300;
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
                     EBA_POSITION_CT(8,44,360,190)
                 };
-                class Role: EBA_Input {
-                    //idc = 22301;
+                class Role: EBA_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_ROLE;
                     EBA_POSITION_CT(24,241,100,100)
                 };
                 class Perks: EBA_Picture {
-                    //idc = 22302;
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PERKS;
                     EBA_POSITION_CT(138,241,100,100)
                 };
                 class Traits: EBA_Picture {
-                    //idc = 22303;
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
                     EBA_POSITION_CT(252,241,100,100)
                 };
                 class Main: EBA_Picture {
-                    //idc = 22304;
                     EBA_POSITION_CT(63,347,250,110)
                 };
             };

@@ -1,81 +1,81 @@
 class CoopR_Login_Dialog_New {
   idd = GUI_ID_LOGIN_DIALOG_NEW;
     class Controls {
-        class Title: EBA_Title_Center {
-            EBA_POSITION(0,0,554,80)
+        class Title: COOPR_Title_Center {
+            COOPR_POSITION(0,0,554,80)
             text = "Character Selection"; //ToDo: Localize
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2.5);
         };
-        class Help: EBA_Button {
-            EBA_POSITION(0,1048,128,32)
+        class Help: COOPR_Button {
+            COOPR_POSITION(0,1048,128,32)
             text = "Help";  //ToDo: Localize
         };
 
-        class Corner: EBA_Picture {
-            EBA_POSITION(553,0,80,80)
+        class Corner: COOPR_Picture {
+            COOPR_POSITION(553,0,80,80)
            text = "\x\coopr\addons\lobby\data\images\corner.paa";
         };
 
-        class CharacterDescription: EBA_ControlsGroup {
+        class CharacterDescription: COOPR_ControlsGroup {
             idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
-            EBA_POSITION(1171,187,375,534)
+            COOPR_POSITION(1171,187,375,534)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
-                class Title: EBA_Title {
-                    EBA_POSITION_CT(0,0,340,35)
+                class Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,340,35)
                 };
-                class Delete: EBA_ButtonPicture {
+                class Delete: COOPR_ButtonPicture {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
-                    EBA_POSITION_CT(340,0,35,35)
-                    colorBackground[] = EBA_TOCOLOR(197,58,58,1);
-                    colorBackgroundActive[] = EBA_TOCOLOR(197,58,58,0.5);
-                    colorFocused[] = EBA_TOCOLOR(197,58,58,0.5);
+                    COOPR_POSITION_CT(340,0,35,35)
+                    colorBackground[] = COOPR_TOCOLOR(197,58,58,1);
+                    colorBackgroundActive[] = COOPR_TOCOLOR(197,58,58,0.5);
+                    colorFocused[] = COOPR_TOCOLOR(197,58,58,0.5);
                     text = "\a3\ui_f\data\igui\cfg\revive\overlayicons\d100_ca.paa"; //ToDo: Change to the correct picture
                 };
-                class Background: EBA_Background {
-                    EBA_POSITION_CT(0,35,375,436)
+                class Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,375,436)
                 };
-                class Play: EBA_Button_Center {
+                class Play: COOPR_Button_Center {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
-                    EBA_POSITION_CT(0,471,375,72)
+                    COOPR_POSITION_CT(0,471,375,72)
                     text = "Play"; //ToDo: Localize
                     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
                 };
-                class Description: EBA_StructuredText {
+                class Description: COOPR_StructuredText {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
-                    EBA_POSITION_CT(8,44,360,190)
+                    COOPR_POSITION_CT(8,44,360,190)
                 };
-                class Role: EBA_Picture {
+                class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_ROLE;
-                    EBA_POSITION_CT(24,241,100,100)
+                    COOPR_POSITION_CT(24,241,100,100)
                 };
-                class Perks: EBA_Picture {
+                class Perks: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PERKS;
-                    EBA_POSITION_CT(138,241,100,100)
+                    COOPR_POSITION_CT(138,241,100,100)
                 };
-                class Traits: EBA_Picture {
+                class Traits: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
-                    EBA_POSITION_CT(252,241,100,100)
+                    COOPR_POSITION_CT(252,241,100,100)
                 };
-                class Main: EBA_Picture {
-                    EBA_POSITION_CT(63,347,250,110)
+                class Main: COOPR_Picture {
+                    COOPR_POSITION_CT(63,347,250,110)
                 };
             };
         };
 
-        class CharacterSelection: EBA_ControlsGroup {
-            EBA_POSITION(1566,187,354,234)
+        class CharacterSelection: COOPR_ControlsGroup {
+            COOPR_POSITION(1566,187,354,234)
             class Controls {
-                class CharacterSelection_Title: EBA_Title {
-                    EBA_POSITION_CT(0,0,354,35)
+                class CharacterSelection_Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,354,35)
                     text = "My Character"; //ToDo: Localize
                 };
-                class CharacterSelection_Background: EBA_Background {
-                    EBA_POSITION_CT(0,35,354,199)
+                class CharacterSelection_Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,354,199)
                 };
-                class CharacterSelection_List: EBA_ControlsTable {
+                class CharacterSelection_List: COOPR_ControlsTable {
                     idc = GUI_ID_LOGIN_CHARACTER_LIST;
-                    EBA_POSITION_CT(0,35,354,199)
+                    COOPR_POSITION_CT(0,35,354,199)
 
                     class RowTemplate {
                         class CharacterRole {
@@ -103,14 +103,14 @@ class CoopR_Login_Dialog_New {
                             controlOffsetY = 0;
                         };
                         class CreateNewButton {
-                            controlBaseClassPath[] = {"EBA_Row_Button"};
+                            controlBaseClassPath[] = {"COOPR_Row_Button"};
                             text = "Create New Character"; //ToDo: Localize
                             columnX = (91 * safeZoneW) / 1920;
                             columnW = (172 * safeZoneW) / 1920;
                             controlOffsetY = (7 * safeZoneH) / 1080;
                         };
                         class Select {
-                            controlBaseClassPath[] = {"EBA_Row_SelectButton"};
+                            controlBaseClassPath[] = {"COOPR_Row_SelectButton"};
                             columnX = 0;
                             columnW = 1;
                             controlOffsetY = (7 * safeZoneH) / 1080;
@@ -120,55 +120,55 @@ class CoopR_Login_Dialog_New {
             };
         };
 
-        class CharacterCreation: EBA_ControlsGroup {
+        class CharacterCreation: COOPR_ControlsGroup {
             idc = GUI_ID_LOGIN_CHARACTER_CREATION;
-            EBA_POSITION(1171,187,375,534)
+            COOPR_POSITION(1171,187,375,534)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
-                class Title: EBA_Title {
-                    EBA_POSITION_CT(0,0,340,35)
+                class Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,340,35)
                     text = "New Character"; //ToDo: Localize
                 };
-                class Back: EBA_ButtonPicture {
-                    EBA_POSITION_CT(340,0,35,35)
-                    colorBackground[] = EBA_TOCOLOR(20,104,135,1);
-                    colorBackgroundActive[] = EBA_TOCOLOR(20,104,135,0.5);
-                    colorFocused[] = EBA_TOCOLOR(20,104,135,0.5);
+                class Back: COOPR_ButtonPicture {
+                    COOPR_POSITION_CT(340,0,35,35)
+                    colorBackground[] = COOPR_TOCOLOR(20,104,135,1);
+                    colorBackgroundActive[] = COOPR_TOCOLOR(20,104,135,0.5);
+                    colorFocused[] = COOPR_TOCOLOR(20,104,135,0.5);
                     text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
-                class Background: EBA_Background {
-                    EBA_POSITION_CT(0,35,375,436)
+                class Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,375,436)
                 };
-                class Create: EBA_Button_Center {
+                class Create: COOPR_Button_Center {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
-                    EBA_POSITION_CT(0,471,375,72)
+                    COOPR_POSITION_CT(0,471,375,72)
                     text = "Create"; //ToDo: Localize
                     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
                 };
-                class NameLabel: EBA_Text_Background {
-                    EBA_POSITION_CT(22,61,147,19)
+                class NameLabel: COOPR_Text_Background {
+                    COOPR_POSITION_CT(22,61,147,19)
                     text = "Name of Character"; //ToDo: Localize
                 };
-                class Error: EBA_Error {
+                class Error: COOPR_Error {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ERROR;
-                    EBA_POSITION_CT(22,112,311,21)
+                    COOPR_POSITION_CT(22,112,311,21)
                 };
                 class NameInput: RscEdit {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_NAME_INPUT;
-                    EBA_POSITION_CT(22,80,311,30)
+                    COOPR_POSITION_CT(22,80,311,30)
                 };
-                class RoleLabel: EBA_Text_Background {
-                    EBA_POSITION_CT(22,138,147,19)
+                class RoleLabel: COOPR_Text_Background {
+                    COOPR_POSITION_CT(22,138,147,19)
                     text = "Specialization"; //ToDo: Localize
                 };
-                class RolePicture: EBA_Picture {
+                class RolePicture: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
                     text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
-                    EBA_POSITION_CT(22,175,311,311)
+                    COOPR_POSITION_CT(22,175,311,311)
                 };
                 class RoleInput: RscCombo {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
-                    EBA_POSITION_CT(22,157,311,30)
+                    COOPR_POSITION_CT(22,157,311,30)
                 };
             };
         };

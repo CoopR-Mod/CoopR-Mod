@@ -1,35 +1,38 @@
 /**
     CoopR GUI config credits go to Heyoxe (https://steamcommunity.com/id/Heyoxe/)
+    former prefix was EBA_
+    was changed to COOPR_ to be uniform with mod
+    allowed by original author "Heyoxe"
 **/
 
 #include "controls.hpp"
 
-#define EBA_COLOR_BACKGROUND {0, 0, 0, 0.5}
-#define EBA_COLOR_TRANSPARENT {0, 0, 0, 0}
-#define EBA_COLOR_WHITE {1, 1, 1, 1}
-#define EBA_COLOR_BLACK {0, 0, 0, 1}
-#define EBA_COLOR_ERROR {255, 0, 0, 1}
-#define EBA_COLOR_DISABLED {0.5, 0.5, 0.5, 1}
-#define EBA_TOCOLOR(r,g,b,a) {(r / 255), (g / 255), (b / 255), a}
-#define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
-#define EBA_COLOR_MAIN_HOVER EBA_TOCOLOR(28,153,199,0.5)
+#define COOPR_COLOR_BACKGROUND {0, 0, 0, 0.5}
+#define COOPR_COLOR_TRANSPARENT {0, 0, 0, 0}
+#define COOPR_COLOR_WHITE {1, 1, 1, 1}
+#define COOPR_COLOR_BLACK {0, 0, 0, 1}
+#define COOPR_COLOR_ERROR {255, 0, 0, 1}
+#define COOPR_COLOR_DISABLED {0.5, 0.5, 0.5, 1}
+#define COOPR_TOCOLOR(r,g,b,a) {(r / 255), (g / 255), (b / 255), a}
+#define COOPR_COLOR_MAIN COOPR_TOCOLOR(28,153,199,1)
+#define COOPR_COLOR_MAIN_HOVER COOPR_TOCOLOR(28,153,199,0.5)
 #define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
 #define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
 
 
-#define EBA_POSITION(X,Y,W,H) \
+#define COOPR_POSITION(X,Y,W,H) \
     x = (X * safeZoneW) / 1920 + safeZoneX; \
     y = (Y * safeZoneH) / 1080 + safeZoneY; \
     w = (W * safeZoneW) / 1920; \
     h = (H * safeZoneH) / 1080;
 
-#define EBA_POSITION_CT(X,Y,W,H) \
+#define COOPR_POSITION_CT(X,Y,W,H) \
     x = (X * safeZoneW) / 1920; \
     y = (Y * safeZoneH) / 1080; \
     w = (W * safeZoneW) / 1920; \
     h = (H * safeZoneH) / 1080;
 
-#define EBA_FULLSCREEN \
+#define COOPR_FULLSCREEN \
     x = safeZoneX; \
     y = safeZoneY; \
     w = safeZoneW; \
@@ -37,7 +40,7 @@
 
 class ScrollBar;
 
-class EBA_CommonProperites {
+class COOPR_CommonProperites {
     idc = -1;
     moving = false;
     x = 0;
@@ -46,15 +49,15 @@ class EBA_CommonProperites {
     h = 0;
     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
     font = "RobotoCondensed";
-    colorText[] = EBA_COLOR_WHITE;
-    colorBorder[] = EBA_COLOR_TRANSPARENT;
-    colorShadow[] = EBA_COLOR_TRANSPARENT;
+    colorText[] = COOPR_COLOR_WHITE;
+    colorBorder[] = COOPR_COLOR_TRANSPARENT;
+    colorShadow[] = COOPR_COLOR_TRANSPARENT;
     text = "";
     shadow = 0;
     tooltip = "";
-    tooltipColorShade[] = EBA_COLOR_BACKGROUND;
-    tooltipColorText[] = EBA_COLOR_WHITE;
-    tooltipColorBox[] = EBA_COLOR_MAIN;
+    tooltipColorShade[] = COOPR_COLOR_BACKGROUND;
+    tooltipColorText[] = COOPR_COLOR_WHITE;
+    tooltipColorBox[] = COOPR_COLOR_MAIN;
 };
 
 class NoScrollBar: ScrollBar {
@@ -63,16 +66,16 @@ class NoScrollBar: ScrollBar {
 };
 
 //Button
-class EBA_Button: EBA_CommonProperites {
+class COOPR_Button: COOPR_CommonProperites {
     type = 1;
     style = 0;
     borderSize = 0;
-    colorText[] = EBA_COLOR_WHITE;
-    colorBackground[] = EBA_COLOR_MAIN;
-    colorBackgroundActive[] = EBA_COLOR_MAIN_HOVER;
-    colorBackgroundDisabled[] = EBA_COLOR_DISABLED;
-    clorDisabled[] = EBA_COLOR_WHITE;
-    colorFocused[] = EBA_COLOR_MAIN_HOVER;
+    colorText[] = COOPR_COLOR_WHITE;
+    colorBackground[] = COOPR_COLOR_MAIN;
+    colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
+    colorBackgroundDisabled[] = COOPR_COLOR_DISABLED;
+    clorDisabled[] = COOPR_COLOR_WHITE;
+    colorFocused[] = COOPR_COLOR_MAIN_HOVER;
     offsetPressedX = 0;
     offsetPressedY = 0;
     offsetX = 0;
@@ -84,75 +87,75 @@ class EBA_Button: EBA_CommonProperites {
 	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 };
 
-class EBA_Button_Center: EBA_Button {
+class COOPR_Button_Center: COOPR_Button {
     style = 2;
 };
 
 //Misc
-class EBA_Background: EBA_CommonProperites {
+class COOPR_Background: COOPR_CommonProperites {
     type = 0;
     style = 128;
-    colorBackground[] = EBA_COLOR_BACKGROUND;
+    colorBackground[] = COOPR_COLOR_BACKGROUND;
 };
 
-class EBA_Title: EBA_CommonProperites {
+class COOPR_Title: COOPR_CommonProperites {
     type = 0;
     style = 0;
-    colorBackground[] = EBA_COLOR_MAIN;
+    colorBackground[] = COOPR_COLOR_MAIN;
 };
 
-class EBA_Title_Center: EBA_Title {
+class COOPR_Title_Center: COOPR_Title {
     style = 2;
 };
 
-class EBA_ButtonPicture: EBA_Button {
+class COOPR_ButtonPicture: COOPR_Button {
     style = 48;
     text = "#(argb,8,8,3)color(0,0,1,1)";
 };
 
-class EBA_StructuredText: EBA_CommonProperites {
+class COOPR_StructuredText: COOPR_CommonProperites {
     type = 13;
     style = 0;
     size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-    colorBackground[] = EBA_COLOR_TRANSPARENT;
+    colorBackground[] = COOPR_COLOR_TRANSPARENT;
 };
 
-class EBA_Picture: EBA_CommonProperites {
+class COOPR_Picture: COOPR_CommonProperites {
     type = 0;
     style = 48;
     text = "#(argb,8,8,3)color(1,0,1,1)";
 };
 
-class EBA_PictureRatio: EBA_Picture {
+class COOPR_PictureRatio: COOPR_Picture {
     style = 48 + 2048;
 };
 
 
-class EBA_Text: EBA_CommonProperites {
+class COOPR_Text: COOPR_CommonProperites {
     type = 0;
     style = 0;
-    colorBackground[] = EBA_COLOR_TRANSPARENT;
+    colorBackground[] = COOPR_COLOR_TRANSPARENT;
 };
 
-class EBA_Error: EBA_Text {
-    colorText[] = EBA_COLOR_ERROR;
+class COOPR_Error: COOPR_Text {
+    colorText[] = COOPR_COLOR_ERROR;
 };
 
-class EBA_Text_Background: EBA_Text {
-    colorBackground[] = EBA_COLOR_BACKGROUND;
+class COOPR_Text_Background: COOPR_Text {
+    colorBackground[] = COOPR_COLOR_BACKGROUND;
 };
 
-class EBA_Input: EBA_CommonProperites {
+class COOPR_Input: COOPR_CommonProperites {
     type = 2;
     style = 0;
     autocomplete = "";
-    colorBackground[] = EBA_COLOR_BLACK;
-    colorSelection[] = EBA_COLOR_MAIN;
-    colorDisabled[] = EBA_COLOR_DISABLED;
-    colorBorder[] = EBA_COLOR_MAIN;
+    colorBackground[] = COOPR_COLOR_BLACK;
+    colorSelection[] = COOPR_COLOR_MAIN;
+    colorDisabled[] = COOPR_COLOR_DISABLED;
+    colorBorder[] = COOPR_COLOR_MAIN;
 };
 
-class EBA_ControlsGroup: EBA_CommonProperites {
+class COOPR_ControlsGroup: COOPR_CommonProperites {
     type = 15;
     style = 16;
 
@@ -162,7 +165,7 @@ class EBA_ControlsGroup: EBA_CommonProperites {
     class Controls {};
 };
 
-class EBA_ControlsTable: EBA_CommonProperites {
+class COOPR_ControlsTable: COOPR_CommonProperites {
     type = 19;
     style = 16;
 
@@ -184,13 +187,13 @@ class EBA_ControlsTable: EBA_CommonProperites {
     class HeaderTemplate {};
 };
 
-class EBA_Row_Button: RscButton {
-    colorText[] = EBA_COLOR_WHITE;
-    colorBackground[] = EBA_COLOR_MAIN;
-    colorBackgroundActive[] = EBA_COLOR_MAIN_HOVER;
-    colorBackgroundDisabled[] = EBA_COLOR_DISABLED;
-    clorDisabled[] = EBA_COLOR_WHITE;
-    colorFocused[] = EBA_COLOR_MAIN_HOVER;
+class COOPR_Row_Button: RscButton {
+    colorText[] = COOPR_COLOR_WHITE;
+    colorBackground[] = COOPR_COLOR_MAIN;
+    colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
+    colorBackgroundDisabled[] = COOPR_COLOR_DISABLED;
+    clorDisabled[] = COOPR_COLOR_WHITE;
+    colorFocused[] = COOPR_COLOR_MAIN_HOVER;
     offsetPressedX = 0;
     offsetPressedY = 0;
     offsetX = 0;
@@ -199,11 +202,11 @@ class EBA_Row_Button: RscButton {
     borderSize = 0; 
 };
 
-class EBA_Row_SelectButton: RscButton {
-    colorText[] = EBA_COLOR_TRANSPARENT;
-    colorBackground[] = EBA_COLOR_TRANSPARENT;
-    colorBackgroundActive[] = EBA_COLOR_TRANSPARENT;
-    colorBackgroundDisabled[] = EBA_COLOR_TRANSPARENT;
-    clorDisabled[] = EBA_COLOR_TRANSPARENT;
-    colorFocused[] = EBA_COLOR_TRANSPARENT;
+class COOPR_Row_SelectButton: RscButton {
+    colorText[] = COOPR_COLOR_TRANSPARENT;
+    colorBackground[] = COOPR_COLOR_TRANSPARENT;
+    colorBackgroundActive[] = COOPR_COLOR_TRANSPARENT;
+    colorBackgroundDisabled[] = COOPR_COLOR_TRANSPARENT;
+    clorDisabled[] = COOPR_COLOR_TRANSPARENT;
+    colorFocused[] = COOPR_COLOR_TRANSPARENT;
 };

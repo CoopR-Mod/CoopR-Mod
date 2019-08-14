@@ -29,6 +29,10 @@ private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARAC
 _characterDescriptionCtrl ctrlShow true;
 _characterDescriptionCtrl ctrlEnable true;
 
+private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
+private _reputation = [_characterSlot, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
+private _tmpReputation = [_characterSlot, COOPR_KEY_TMP_REPUTATION] call CBA_fnc_hashGet;
+
 private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
@@ -37,18 +41,15 @@ private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION
 private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
 
 //set role picture for selected character
-private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-private _pathToImage = format ["\x\coopr\addons\lobby\data\images\%1", _roleImage];
-_roleCtrl ctrlSetText _pathToImage;
+_roleCtrl ctrlSetText _roleImage;
+
+private _reputationTxt = parseText (format ["<t>Reputation: %1</t>", _reputation]);
+private _tmpReputationTxt = parseText (format ["<t>Temp Reputation: %1</t>", _tmpReputation]);
+private _composedText = composeText [_reputationTxt, lineBreak, _tmpReputationTxt, lineBreak];
 
 //set character text
-_textCtrl ctrlSetStructuredText parseText
-"
-<t>
-
-"
-
+_textCtrl ctrlSetStructuredText _composedText;
 
 // set loadout on character preview
 private _loadout = [_characterSlot, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;

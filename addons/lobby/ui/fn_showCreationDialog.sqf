@@ -21,6 +21,12 @@ private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
 private _roleNames = [_rolesHash] call CBA_fnc_hashKeys;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
+
+// hide the description control if open
+private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
+_characterDescriptionCtrl ctrlShow false;
+_characterDescriptionCtrl ctrlEnable false;
+
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 private _createButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
 private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
@@ -32,8 +38,14 @@ _rolesCombo setVariable ["_params", [_loginDialog, _rolesHash]];
 _rolesCombo lbSetCurSel 0;
 _rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectRole}];
 
-_createButton setVariable ["_params", [_loginDialog, _slot]];
+// init role picture
+private _picture = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
+private _roleName = _rolesCombo lbText _selectedIndex;
+private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
+private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
+_picture ctrlSetText _roleImage;
 
+_createButton setVariable ["_params", [_loginDialog, _slot]];
 _createButton ctrlAddEventHandler ["MouseButtonDown", {
     params [["_ctrl", objNull]];
     private _params = _ctrl getVariable ["_params", []];

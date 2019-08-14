@@ -50,9 +50,8 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
                 private _woundedTimestamp = [_characterSlot, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
                 private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-                private _pathToImage = format ["\x\coopr\addons\lobby\data\images\%1", _roleImage];
 
-                _roleColumn ctrlSetText _pathToImage;
+                _roleColumn ctrlSetText _roleImage;
                 _nameColumn ctrlSetText _name;
                 _mainWeaponPictureColumn ctrlSetText "MainText";
                 _secondaryWeaponPictureColumn ctrlSetText "SecondaryText";

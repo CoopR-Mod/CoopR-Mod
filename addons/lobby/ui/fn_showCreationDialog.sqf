@@ -32,20 +32,20 @@ _rolesCombo setVariable ["_params", [_loginDialog, _rolesHash]];
 _rolesCombo lbSetCurSel 0;
 _rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectRole}];
 
-_createButton setVariable ["_params", [_loginDialog]];
+_createButton setVariable ["_params", [_loginDialog, _slot]];
 
 _createButton ctrlAddEventHandler ["MouseButtonDown", {
     params [["_ctrl", objNull]];
     private _params = _ctrl getVariable ["_params", []];
-    _params params ["_loginDialog"];
+    _params params ["_loginDialog", "_slot"];
 
     private _nameLabel = ctrlText (_loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_NAME_INPUT);
     private _errorText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ERROR;
     if (_nameLabel isEqualTo "") then {
         _errorText ctrlSetText (localize "str.coopr.character.newprofile.error");
     } else {
-        private _characterState = [player, 1, _nameLabel, COOPR_ROLE_LEADER] call coopr_fnc_getNewCharacterState;
-        [_characterState, 1] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
+        private _characterState = [player, _slot, _nameLabel, COOPR_ROLE_LEADER] call coopr_fnc_getNewCharacterState;
+        [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
     }
 }];
 

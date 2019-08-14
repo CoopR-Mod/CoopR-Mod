@@ -30,7 +30,7 @@ private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_R
 _rolesCombo setVariable ["_params", [_loginDialog, _rolesHash]];
 // set default selection to first item
 _rolesCombo lbSetCurSel 0;
-_rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_roleSelectionEH}];
+_rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectRole}];
 
 _createButton setVariable ["_params", [_loginDialog]];
 

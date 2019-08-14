@@ -6,6 +6,7 @@ disableSerialization;
 waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG_NEW};
 
 DEBUG("initialising login ui");
+// setup cam position in front of character
 private _playerDirection = getDir player;
 private _camPos = [COOPR_LOBBY, 5, _playerDirection] call BIS_fnc_relPos;
 private _cam = "camera" camCreate _camPos;
@@ -17,6 +18,7 @@ private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 
+//load characters for player
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
     [_loginDialog, _characterListCtrl], {
         params ["_args", "_result"];
@@ -26,12 +28,16 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
             private _characterSlot = _x;
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
             _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
+
+            // empty slot
             if (_characterSlot isEqualTo []) then {
                 private _ctrlParams = [_forEachIndex];
                 _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
                 _newCharacterButton setVariable ["_params", _ctrlParams];
                 _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCreationDialog }];
                 _selectCharacterButton ctrlShow false;
+
+            // occupied slot
             } else {
                 private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
 

@@ -5,11 +5,11 @@
  * Event handler if a character has been selected
  *
  * Arguments:
- * 0: _ctrl <CONTROL> - control of the button pressed
-
+ * 0: _characterSlot <NUMBER> - number of the slot
+ *
  * Public: No
  *
- * Scope: Client 
+ * Scope: MouseButtonDown Event
  */
 
 params [["_ctrl", objNull]];

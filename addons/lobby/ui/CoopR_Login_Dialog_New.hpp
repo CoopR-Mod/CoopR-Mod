@@ -160,6 +160,11 @@ class CoopR_Login_Dialog_New {
                     EBA_POSITION_CT(22,138,147,19)
                     text = "Specialization"; //ToDo: Localize
                 };
+                class RolePicture: EBA_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
+                    text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    EBA_POSITION_CT(22,175,311,311)
+                };
                 class RoleInput: RscCombo {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
                     EBA_POSITION_CT(22,157,311,30)

@@ -14,6 +14,7 @@
 #define EBA_COLOR_MAIN EBA_TOCOLOR(28,153,199,1)
 #define EBA_COLOR_MAIN_HOVER EBA_TOCOLOR(28,153,199,0.5)
 #define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
+#define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
 
 
 #define EBA_POSITION(X,Y,W,H) \

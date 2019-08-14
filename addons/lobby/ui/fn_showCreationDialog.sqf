@@ -8,7 +8,7 @@
  *
  * Public: No
  *
- * Scope: Client 
+ * Scope: MouseButtonDown Event
  */
 
 params [["_ctrl", objNull]];
@@ -16,9 +16,21 @@ if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _params = _ctrl getVariable ["_params", []];
 _params params ["_slot"];
 
+// converts the roles macro array into a cba_hash and picks out the names only
+private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
+private _roleNames = [_rolesHash] call CBA_fnc_hashKeys;
+
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 private _createButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
+private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
+
+// init the role selection combobox
+{_rolesCombo lbAdd _x} forEach _roleNames;
+_rolesCombo setVariable ["_params", [_loginDialog, _rolesHash]];
+// set default selection to first item
+_rolesCombo lbSetCurSel 0;
+_rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_roleSelectionEH}];
 
 _createButton setVariable ["_params", [_loginDialog]];
 

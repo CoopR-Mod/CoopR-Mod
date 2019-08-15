@@ -80,7 +80,7 @@ _playButton ctrlAddEventHandler ["MouseButtonDown", {
 
     private _loginText = format ["<t size='3' color='%1'>Entering CoopR Session</t>", COOPR_MAIN_COLOR_HEX];
     closeDialog GUI_ID_LOGIN_DIALOG;
-    cutText [_loginText, "WHITE OUT", 2, false, true];
+    cutText [_loginText, "BLACK OUT", 2, false, true];
     [_characterSlot] spawn {
         params ["_characterSlot"];
         sleep 3;

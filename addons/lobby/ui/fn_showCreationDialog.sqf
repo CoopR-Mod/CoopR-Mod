@@ -41,10 +41,12 @@ private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_R
 lbClear _rolesCombo;
 {_rolesCombo lbAdd _x} forEach _roleNames;
 // set default selection to first item
+_rolesCombo ctrlRemoveAllEventHandlers "LBSelChanged";
 _rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectRole}];
 _rolesCombo lbSetCurSel 0;
 
 _createButton setVariable ["_params", [_slot, _rolesCombo, _rolesHash]];
+_createButton ctrlRemoveAllEventHandlers "MouseButtonDown";
 _createButton ctrlAddEventHandler ["MouseButtonDown", {
     params [["_ctrl", objNull]];
     private _params = _ctrl getVariable ["_params", []];

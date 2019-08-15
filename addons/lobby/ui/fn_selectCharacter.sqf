@@ -71,7 +71,24 @@ if (count _loadout isEqualTo 0) then {
     [player, "GUARD", "FULL"] call BIS_fnc_ambientAnim;
 };
 
+_playButton setVariable ["_params", [_characterSlot]];
+_playButton ctrlRemoveAllEventHandlers "MouseButtonDown";
+_playButton ctrlAddEventHandler ["MouseButtonDown", {
+    params [["_ctrl", objNull]];
+    private _params = _ctrl getVariable ["_params", []];
+    _params params ["_characterSlot"];
 
+    private _loginText = format ["<t size='3' color='%1'>Entering CoopR Session</t>", COOPR_MAIN_COLOR_HEX];
+    closeDialog GUI_ID_LOGIN_DIALOG;
+    cutText [_loginText, "WHITE OUT", 2, false, true];
+    [_characterSlot] spawn {
+        params ["_characterSlot"];
+        sleep 3;
 
+        [_characterSlot] call coopr_fnc_login;
 
-
+        // destroy login camera
+        COOPR_LOBBY_CAM cameraEffect ["terminate","back"];
+        camDestroy COOPR_LOBBY_CAM;
+    };
+}];

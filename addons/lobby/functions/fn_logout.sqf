@@ -18,10 +18,13 @@
  * Scope: Client
  */
 
-cutText ["returning to character lobby.", "BLACK OUT", 0.5];
+private _lobbyText = format ["<t size='3' color='%1'>Return To Character Selection</t>", COOPR_MAIN_COLOR_HEX];
+0 cutText ["", "WHITE OUT", 0.5, false, true];
+1 cutText [_lobbyText, "WHITE OUT", 0.5, false, true];
 sleep 1;
-cutText ["saving character...", "BLACK OUT", 0.0001];
 INFO2("player with id %1 is logging out to lobby", getPlayerUid player);
+
+
 
 [] call coopr_fnc_cleanUp;
 
@@ -29,12 +32,29 @@ DEBUG("saving character state before logout...");
 player call coopr_fnc_updateState;
 [EXEC_SERVER, "coopr_fnc_updateCharacter", [player call coopr_fnc_serializeCoopR], //request-related
     [], {
-        sleep 4;
-        DEBUG("...saved");
-        cutText ["...saved!", "BLACK OUT", 0.0001];
+        1 cutText ["", "PLAIN", 0.1, false, true];
+        private _saveText1 = format ["<t size='3' color='%1'>Saving Character.</t>", COOPR_MAIN_COLOR_HEX];
+        private _saveText2 = format ["<t size='3' color='%1'>Saving Character..</t>", COOPR_MAIN_COLOR_HEX];
+        private _saveText3 = format ["<t size='3' color='%1'>Saving Character...</t>", COOPR_MAIN_COLOR_HEX];
+
+        2 cutText [_saveText1, "PLAIN", 1.0, false, true];
+        sleep 1;
+        2 cutText [_saveText2, "PLAIN", 1.0, false, true];
+        sleep 1;
+        2 cutText [_saveText3, "PLAIN", 1.0, false, true];
+        sleep 2;
+        2 cutText [_saveText3, "PLAIN", 1.0, false, true];
+        2 cutText ["", "PLAIN", 1.0, false, true];
+
+        { _x cutFadeOut 0.001 } forEach allCutLayers;
+
+        DEBUG("character saved");
         call coopr_fnc_spawnInLobby;
-        createDialog "coopr_Login_Dialog";
-        call coopr_fnc_showLoginDialog;
+        cutText ["", "WHITE IN", 1];
+        [] spawn {
+            createDialog COOPR_LOGIN_NEW;
+            call coopr_fnc_showLoginDialog
+        };
     }
 ] call Promise_Create;
 

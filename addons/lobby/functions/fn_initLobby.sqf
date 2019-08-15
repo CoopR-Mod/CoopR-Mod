@@ -6,6 +6,9 @@ if (_logic isEqualTo objNull) exitWith { SETUPERROR("Module is not defined") };
 
 COOPR_LOBBY = _logic;
 publicVariable "COOPR_LOBBY";
+
+COOPR_LOBBY_CAM = objNull;
+
 INFO("lobby initialized");
 
 

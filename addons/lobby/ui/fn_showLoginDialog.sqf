@@ -10,10 +10,10 @@ DEBUG("initialising login ui");
 private _playerDirection = getDir player;
 private _lobbyPos = getPos COOPR_LOBBY;
 private _camPos = [[_lobbyPos select 0, _lobbyPos select 1, 1], 4.6, _playerDirection] call BIS_fnc_relPos;
-private _cam = "camera" camCreate _camPos;
-_cam camSetTarget player;
-_cam cameraEffect ["External", "FRONT"];
-_cam camCommit 0;
+COOPR_LOBBY_CAM = "camera" camCreate _camPos;
+COOPR_LOBBY_CAM camSetTarget player;
+COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
+COOPR_LOBBY_CAM camCommit 0;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
@@ -35,6 +35,7 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
                 private _ctrlParams = [_forEachIndex];
                 _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
                 _newCharacterButton setVariable ["_params", _ctrlParams];
+                _newCharacterButton ctrlRemoveAllEventHandlers "MouseButtonDown";
                 _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCreationDialog }];
                 _selectCharacterButton ctrlShow false;
 
@@ -57,7 +58,8 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
                 _mainWeaponPictureColumn ctrlSetText "MainText";
                 _secondaryWeaponPictureColumn ctrlSetText "SecondaryText";
                 _selectCharacterButton setVariable ["_characterSlot", _characterSlot];
-                _selectCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectCharacter }];
+                _selectCharacterButton ctrlRemoveAllEventHandlers "MouseButtonDown";
+                _selectCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectCharacter; }];
                 _newCharacterButton ctrlEnable false;
                 _newCharacterButton ctrlShow false;
             };

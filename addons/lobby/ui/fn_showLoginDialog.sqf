@@ -8,7 +8,8 @@ waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 DEBUG("initialising login ui");
 // setup cam position in front of character
 private _playerDirection = getDir player;
-private _camPos = [COOPR_LOBBY, 5, _playerDirection] call BIS_fnc_relPos;
+private _lobbyPos = getPos COOPR_LOBBY;
+private _camPos = [[_lobbyPos select 0, _lobbyPos select 1, 1], 4.6, _playerDirection] call BIS_fnc_relPos;
 private _cam = "camera" camCreate _camPos;
 _cam camSetTarget player;
 _cam cameraEffect ["External", "FRONT"];

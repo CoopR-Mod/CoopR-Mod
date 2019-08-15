@@ -22,5 +22,8 @@ private _picture = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE
 private _roleName = _ctrl lbText _index;
 private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
 private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
+private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
+
+player setUnitLoadout _loadOut;
 
 _picture ctrlSetText _roleImage;

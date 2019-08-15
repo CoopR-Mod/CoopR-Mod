@@ -73,18 +73,24 @@ if (count _loadout isEqualTo 0) then {
 };
 
 private _slot = [_characterSlot, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+
+_deleteButton ctrlRemoveAllEventHandlers "MouseButtonDown";
 _deleteButton setVariable ["_params", [_slot]];
 _deleteButton ctrlAddEventHandler ["MouseButtonDown", {
     params [["_ctrl", objNull]];
     private _params = _ctrl getVariable ["_params", []];
     _params params ["_slot"];
-    [_slot] spawn {
-        params ["_slot"];
+    [_ctrl, _slot] spawn {
+        params ["_ctrl", "_slot"];
         private _warnText = "<t>Do you really want to <t underline='1'>DELETE</t> this character?</t>";
         private _isConfirmed = [_warnText, "Delete Character", "DELETE", "ABORT"] call BIS_fnc_guiMessage;
 
         if (_isConfirmed) then {
             [getPlayerUID player, _slot] remoteExec ["coopr_fnc_removeCharacter", EXEC_SERVER];
+             private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
+             private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
+             _characterDescriptionCtrl ctrlShow false;
+             _characterDescriptionCtrl ctrlEnable false;
         };
     };
 }];

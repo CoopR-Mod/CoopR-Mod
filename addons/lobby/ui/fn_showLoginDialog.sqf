@@ -2,6 +2,7 @@
 
 #define ARRAY 1
 
+createDialog COOPR_LOGIN_NEW;
 disableSerialization;
 waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
@@ -16,15 +17,32 @@ COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
 COOPR_LOBBY_CAM camCommit 0;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
+_loginDialog displayRemoveAllEventHandlers "Unload";
+_loginDialog displayAddEventHandler ["Unload", { [] spawn { call coopr_fnc_showLoginDialog; }}];
+
+// initial row setup
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
-private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
+{
+    private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
+    _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
+    _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
+} forEach [0,1,2];
+
 
 //load characters for player
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
-    [_loginDialog, _characterListCtrl], {
+    [_loginDialog], {
         params ["_args", "_result"];
         private _characterSlots = _result;
-        _args params ["_loginDialog", "_characterListCtrl"];
+        _args params ["_loginDialog"];
+
+        if (isNull findDisplay GUI_ID_LOGIN_DIALOG) exitWith { DEBUG("dialog closed before callback ready")};
+
+        private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
+        private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
+        // clear initial rows
+        ctClear _characterListCtrl;
+
         {
             private _characterSlot = _x;
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);

@@ -6,7 +6,6 @@ if(player getVariable [COOPR_KEY_STATE, COOPR_STATE_OK] isEqualTo COOPR_STATE_OK
         [], {
         sleep 5;
         call coopr_fnc_spawnInLobby;
-        createDialog COOPR_LOGIN_NEW;
         call coopr_fnc_showLoginDialog;
         }
     ] call Promise_Create;

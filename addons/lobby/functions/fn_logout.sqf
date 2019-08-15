@@ -51,10 +51,7 @@ player call coopr_fnc_updateState;
         DEBUG("character saved");
         call coopr_fnc_spawnInLobby;
         cutText ["", "BLACK IN", 1];
-        [] spawn {
-            createDialog COOPR_LOGIN_NEW;
-            call coopr_fnc_showLoginDialog
-        };
+        [] spawn { call coopr_fnc_showLoginDialog };
     }
 ] call Promise_Create;
 

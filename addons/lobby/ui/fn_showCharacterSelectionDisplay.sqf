@@ -103,7 +103,11 @@ _playButton ctrlAddEventHandler ["MouseButtonDown", {
     _params params ["_characterSlot"];
 
     private _loginText = format ["<t size='3' color='%1'>Entering CoopR Session</t>", COOPR_MAIN_COLOR_HEX];
+    // remove unload handler to prevent reinit of login dialog
+    private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
+    _loginDialog displayRemoveAllEventHandlers "Unload";
     closeDialog GUI_ID_LOGIN_DIALOG;
+
     cutText [_loginText, "BLACK OUT", 2, false, true];
     [_characterSlot] spawn {
         params ["_characterSlot"];

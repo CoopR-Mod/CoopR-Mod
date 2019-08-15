@@ -66,5 +66,6 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
     } else {
         private _characterState = [player, _slot, _nameLabel, _roleId] call coopr_fnc_getNewCharacterState;
         [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
+        closeDialog GUI_ID_LOGIN_DIALOG;
     }
 }];

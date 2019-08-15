@@ -59,7 +59,7 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
                 _secondaryWeaponPictureColumn ctrlSetText "SecondaryText";
                 _selectCharacterButton setVariable ["_characterSlot", _characterSlot];
                 _selectCharacterButton ctrlRemoveAllEventHandlers "MouseButtonDown";
-                _selectCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_selectCharacter; }];
+                _selectCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCharacterSelectionDisplay; }];
                 _newCharacterButton ctrlEnable false;
                 _newCharacterButton ctrlShow false;
             };

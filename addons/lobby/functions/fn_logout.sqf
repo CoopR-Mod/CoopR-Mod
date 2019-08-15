@@ -33,9 +33,9 @@ player call coopr_fnc_updateState;
 [EXEC_SERVER, "coopr_fnc_updateCharacter", [player call coopr_fnc_serializeCoopR], //request-related
     [], {
         1 cutText ["", "PLAIN", 0.1, false, true];
-        private _saveText1 = format ["<t size='3'>Saving Character.</t>"];
-        private _saveText2 = format ["<t size='3'>Saving Character..</t>"];
-        private _saveText3 = format ["<t size='3'>Saving Character...</t>"];
+        private _saveText1 = "<t size='3'>Saving Character.</t>";
+        private _saveText2 = "<t size='3'>Saving Character..</t>";
+        private _saveText3 = "<t size='3'>Saving Character...</t>";
 
         2 cutText [_saveText1, "PLAIN", 1.0, false, true];
         sleep 1;

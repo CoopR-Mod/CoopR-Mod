@@ -29,6 +29,7 @@ private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARAC
 _characterDescriptionCtrl ctrlShow true;
 _characterDescriptionCtrl ctrlEnable true;
 
+
 private _roleId = [_characterSlot, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
 private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
@@ -70,6 +71,23 @@ if (count _loadout isEqualTo 0) then {
     player setUnitLoadout _loadout;
     [player, "GUARD", "FULL"] call BIS_fnc_ambientAnim;
 };
+
+private _slot = [_characterSlot, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+_deleteButton setVariable ["_params", [_slot]];
+_deleteButton ctrlAddEventHandler ["MouseButtonDown", {
+    params [["_ctrl", objNull]];
+    private _params = _ctrl getVariable ["_params", []];
+    _params params ["_slot"];
+    [_slot] spawn {
+        params ["_slot"];
+        private _warnText = "<t>Do you really want to <t underline='1'>DELETE</t> this character?</t>";
+        private _isConfirmed = [_warnText, "Delete Character", "DELETE", "ABORT"] call BIS_fnc_guiMessage;
+
+        if (_isConfirmed) then {
+            [getPlayerUID player, _slot] remoteExec ["coopr_fnc_removeCharacter", EXEC_SERVER];
+        };
+    };
+}];
 
 _playButton setVariable ["_params", [_characterSlot]];
 _playButton ctrlRemoveAllEventHandlers "MouseButtonDown";

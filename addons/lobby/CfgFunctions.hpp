@@ -18,7 +18,7 @@ class CfgFunctions {
             class setCharacterInfo {};
             class selectRole {};
             class getImageForRole {};
-            class selectCharacter {};
+            class showCharacterSelectionDisplay {};
             class showCreationDialog {};
         }
     }

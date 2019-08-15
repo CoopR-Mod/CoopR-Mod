@@ -17,7 +17,7 @@ if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _characterSlot = _ctrl getVariable ["_characterSlot", objNull];
 if (_characterSlot isEqualTo objNull) exitWith { ERROR("_characterSlot was objNull") };
 
-private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
+private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
 // hide the creation control if open
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;

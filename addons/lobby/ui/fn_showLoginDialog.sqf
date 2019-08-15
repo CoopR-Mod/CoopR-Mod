@@ -3,7 +3,7 @@
 #define ARRAY 1
 
 disableSerialization;
-waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG_NEW};
+waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
 DEBUG("initialising login ui");
 // setup cam position in front of character
@@ -14,7 +14,7 @@ _cam camSetTarget player;
 _cam cameraEffect ["External", "FRONT"];
 _cam camCommit 0;
 
-private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG_NEW;
+private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 

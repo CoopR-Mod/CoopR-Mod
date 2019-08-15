@@ -1,5 +1,5 @@
 class CoopR_Login_Dialog_New {
-  idd = GUI_ID_LOGIN_DIALOG_NEW;
+  idd = GUI_ID_LOGIN_DIALOG;
     class Controls {
         class Title: COOPR_Title_Center {
             COOPR_POSITION(0,0,554,80)

@@ -2,7 +2,7 @@
 // makes it easier to have an overview and make changes
 
 // LOGIN
-#define GUI_ID_LOGIN_DIALOG_NEW 1000
+#define GUI_ID_LOGIN_DIALOG 1000
 #define GUI_ID_LOGIN_CHARACTER_LIST 1200
 
 #define GUI_ID_LOGIN_CHARACTER_CREATION 1300

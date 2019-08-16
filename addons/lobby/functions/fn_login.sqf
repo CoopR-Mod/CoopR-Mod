@@ -25,7 +25,7 @@ if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has t
 INFO2("%1 is logging in", player);
 ["logged in character:", _characterHash] call coopr_fnc_logHash;
 
-private _oldPlayerUnit = player;
+//private _oldPlayerUnit = player;
 private _playerGroup = createGroup [west, true];
 private _newLoginUnit =  _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_LOBBY, [], 0, "NONE"];
 
@@ -44,6 +44,7 @@ private _newLoginUnit =  _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_L
 DEBUG("new unit was created");
 selectPlayer _newLoginUnit;
 deleteVehicle _oldPlayerUnit;
+deleteVehicle COOPR_LOBBY_AGENT;
 DEBUG("assigned as player");
 [_characterHash, player] call coopr_fnc_deserializeCoopR;
 DEBUG("applied character state to new unit");

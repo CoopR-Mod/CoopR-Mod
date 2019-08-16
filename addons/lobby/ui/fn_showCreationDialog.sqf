@@ -16,8 +16,8 @@ if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _params = _ctrl getVariable ["_params", []];
 _params params ["_slot"];
 
-// strip player
-player setUnitLoadout EMPTY_LOADOUT;
+// strip COOPR_LOBBY_AGENT
+COOPR_LOBBY_AGENT setUnitLoadout EMPTY_LOADOUT;
 // converts the roles macro array into a cba_hash and picks out the names only
 private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
 private _roleNames = [_rolesHash] call CBA_fnc_hashKeys;

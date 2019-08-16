@@ -68,8 +68,8 @@ private _loadout = [_characterSlot, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;
 if (count _loadout isEqualTo 0) then {
     ERROR("character loadout could not be revoked after selection")
 } else {
-    player setUnitLoadout _loadout;
-    [player, "GUARD", "FULL"] call BIS_fnc_ambientAnim;
+    COOPR_LOBBY_AGENT setUnitLoadout _loadout;
+    [COOPR_LOBBY_AGENT, "LEAN_ON_TABLE", "ASIS"] call BIS_fnc_ambientAnim;
 };
 
 private _slot = [_characterSlot, COOPR_KEY_SLOT] call CBA_fnc_hashGet;

@@ -7,12 +7,12 @@ disableSerialization;
 waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
 DEBUG("initialising login ui");
-// setup cam position in front of character
-private _playerDirection = getDir player;
+// setup cam position in front of lobby agent
+private _lobbyAgentDirection = getDir COOPR_LOBBY_AGENT;
 private _lobbyPos = getPos COOPR_LOBBY;
-private _camPos = [[_lobbyPos select 0, _lobbyPos select 1, 1], 4.6, _playerDirection] call BIS_fnc_relPos;
+private _camPos = [[_lobbyPos select 0, _lobbyPos select 1, 1], 4.6, _lobbyAgentDirection] call BIS_fnc_relPos;
 COOPR_LOBBY_CAM = "camera" camCreate _camPos;
-COOPR_LOBBY_CAM camSetTarget player;
+COOPR_LOBBY_CAM camSetTarget COOPR_LOBBY_AGENT;
 COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
 COOPR_LOBBY_CAM camCommit 0;
 
@@ -29,7 +29,7 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
 } forEach [0,1,2];
 
 
-//load characters for player
+//load characters for current user/player
 [EXEC_SERVER, "coopr_fnc_getCharacters", [getPlayerUID player], //request-related
     [_loginDialog], {
         params ["_args", "_result"];

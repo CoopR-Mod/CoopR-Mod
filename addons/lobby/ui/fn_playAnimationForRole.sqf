@@ -22,14 +22,15 @@
  * Scope: Global
  */
 
-params [["_roleId", objNull]];
+params [["_roleId", "none"]];
 
-if (_roleId isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
+// reset position because of animation movement
+COOPR_LOBBY_AGENT setPos getPos COOPR_LOBBY;
 
 switch (_roleId) do {
     case COOPR_ROLE_MEDIC : {
-        //COOPR_LOBBY_AGENT switchMove "Acts_TreatingWounded_in";
-        COOPR_LOBBY_AGENT switchMove "Acts_TreatingWounded05";
+        COOPR_LOBBY_AGENT switchMove "Acts_TreatingWounded_in";
+        COOPR_LOBBY_AGENT playMove "Acts_TreatingWounded05";
     };
     case COOPR_ROLE_ENGINEER : {
         COOPR_LOBBY_AGENT switchMove "AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon";

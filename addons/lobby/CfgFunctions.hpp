@@ -20,6 +20,7 @@ class CfgFunctions {
             class showCharacterSelectionDisplay {};
             class showCreationDialog {};
             class playAnimationForRole {};
+            class initLobbyCam {};
         }
     }
 }

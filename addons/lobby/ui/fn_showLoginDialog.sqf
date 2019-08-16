@@ -8,15 +8,9 @@ waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
 DEBUG("initialising login ui");
 // setup cam position in front of lobby agent
-private _agentPos = getPos COOPR_LOBBY_AGENT;
-private _lobbyPos = getPos COOPR_LOBBY;
-private _offset = 3;
-private _agentPosModified = [_agentPos select 0, _agentPos select 1, (_agentPos select 2) + 1.5];
-private _camPos = [(_lobbyPos select 0), (_lobbyPos select 1) + _offset, 1.5];
-COOPR_LOBBY_CAM = "camera" camCreate _camPos;
-COOPR_LOBBY_CAM camSetDir (_camPos vectorFromTo _agentPosModified);
-COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
-COOPR_LOBBY_CAM camCommit 0;
+[] spawn { call coopr_fnc_initLobbyCam };
+// play default animation
+[] spawn { call coopr_fnc_playAnimationForRole ;};
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 _loginDialog displayRemoveAllEventHandlers "Unload";

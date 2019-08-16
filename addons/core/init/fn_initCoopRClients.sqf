@@ -22,8 +22,10 @@ if (hasInterface) then {
 
     [] spawn {
         waitUntil { !(isNull (findDisplay 46)) };
-        call coopr_fnc_spawnInLobby;
-        [] spawn { call coopr_fnc_showLoginDialog };
+        [] spawn {
+            call coopr_fnc_spawnInLobby;
+            call coopr_fnc_showLoginDialog
+        };
     };
 
     INFO("client initialized");

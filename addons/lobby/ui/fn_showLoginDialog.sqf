@@ -8,11 +8,13 @@ waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 
 DEBUG("initialising login ui");
 // setup cam position in front of lobby agent
-private _lobbyAgentDirection = getDir COOPR_LOBBY_AGENT;
+private _agentPos = getPos COOPR_LOBBY_AGENT;
 private _lobbyPos = getPos COOPR_LOBBY;
-private _camPos = [[_lobbyPos select 0, _lobbyPos select 1, 1], 4.6, _lobbyAgentDirection] call BIS_fnc_relPos;
+private _offset = 3;
+private _agentPosModified = [_agentPos select 0, _agentPos select 1, (_agentPos select 2) + 1.5];
+private _camPos = [(_lobbyPos select 0), (_lobbyPos select 1) + _offset, 1.5];
 COOPR_LOBBY_CAM = "camera" camCreate _camPos;
-COOPR_LOBBY_CAM camSetTarget COOPR_LOBBY_AGENT;
+COOPR_LOBBY_CAM camSetDir (_camPos vectorFromTo _agentPosModified);
 COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
 COOPR_LOBBY_CAM camCommit 0;
 

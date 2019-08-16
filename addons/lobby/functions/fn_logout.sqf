@@ -47,9 +47,11 @@ player call coopr_fnc_updateState;
         { _x cutFadeOut 0.001 } forEach allCutLayers;
 
         DEBUG("character saved");
-        call coopr_fnc_spawnInLobby;
         cutText ["", "BLACK IN", 1];
-        [] spawn { call coopr_fnc_showLoginDialog };
+        [] spawn {
+            call coopr_fnc_spawnInLobby;
+            call coopr_fnc_showLoginDialog;
+        };
     }
 ] call Promise_Create;
 

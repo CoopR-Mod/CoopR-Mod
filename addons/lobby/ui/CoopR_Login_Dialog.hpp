@@ -23,7 +23,7 @@ class CoopR_Login_Dialog {
 
         class CharacterDescription: COOPR_ControlsGroup {
             idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
-            COOPR_POSITION(1171,187,375,534)
+            COOPR_POSITION(1171,187,375,550)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: COOPR_Title {
@@ -128,7 +128,7 @@ class CoopR_Login_Dialog {
 
         class CharacterCreation: COOPR_ControlsGroup {
             idc = GUI_ID_LOGIN_CHARACTER_CREATION;
-            COOPR_POSITION(1171,187,375,534)
+            COOPR_POSITION(1171,187,375,550)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: COOPR_Title {

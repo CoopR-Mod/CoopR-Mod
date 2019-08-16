@@ -36,9 +36,9 @@ player call coopr_fnc_updateState;
         private _saveText3 = "<t size='3'>Saving Character...</t>";
 
         2 cutText [_saveText1, "PLAIN", 1.0, false, true];
-        sleep 1;
+        sleep 0.5;
         2 cutText [_saveText2, "PLAIN", 1.0, false, true];
-        sleep 1;
+        sleep 0.5;
         2 cutText [_saveText3, "PLAIN", 1.0, false, true];
         sleep 2;
         2 cutText [_saveText3, "PLAIN", 1.0, false, true];

@@ -47,6 +47,7 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
             private _characterHash = _x;
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
             _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
+            ctRowControls
 
             // empty slot
             if (_characterHash isEqualTo []) then {

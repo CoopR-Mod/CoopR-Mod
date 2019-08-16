@@ -24,8 +24,6 @@ private _lobbyText = format ["<t size='3' color='%1'>Return To Character Selecti
 sleep 1;
 INFO2("player with id %1 is logging out to lobby", getPlayerUid player);
 
-
-
 [] call coopr_fnc_cleanUp;
 
 DEBUG("saving character state before logout...");

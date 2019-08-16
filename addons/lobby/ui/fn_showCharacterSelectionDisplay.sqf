@@ -69,7 +69,7 @@ if (count _loadout isEqualTo 0) then {
     ERROR("character loadout could not be revoked after selection")
 } else {
     COOPR_LOBBY_AGENT setUnitLoadout _loadout;
-    [COOPR_LOBBY_AGENT, "LEAN_ON_TABLE", "ASIS"] call BIS_fnc_ambientAnim;
+    [_roleId] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; }
 };
 
 private _slot = [_characterSlot, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
@@ -88,6 +88,7 @@ _deleteButton ctrlAddEventHandler ["MouseButtonDown", {
         if (_isConfirmed) then {
             [getPlayerUID player, _slot] remoteExec ["coopr_fnc_removeCharacter", EXEC_SERVER];
             closeDialog GUI_ID_LOGIN_DIALOG;
+            COOPR_LOBBY_AGENT switchMove "AidlPercMstpSrasWrflDnon_G04";
         };
     };
 }];

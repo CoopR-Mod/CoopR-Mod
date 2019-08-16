@@ -19,6 +19,7 @@ class CfgFunctions {
             class getImageForRole {};
             class showCharacterSelectionDisplay {};
             class showCreationDialog {};
+            class playAnimationForRole {};
         }
     }
 }

@@ -13,4 +13,6 @@ COOPR_LOBBY_AGENT setPos getPos COOPR_LOBBY;
 // to prevent lobby players from syncing
 COOPR_LOBBY_AGENT setVariable [COOPR_KEY_PLAYER_LOGGEDIN, false, true];
 
+deleteVehicle _oldPlayerUnit;
+
 DEBUG2("lobby agent for %1 spawned in lobby", getPlayerUID player);

@@ -15,6 +15,11 @@
 
 params ["_ctrl", "_index"];
 
+detach COOPR_LOBBY_AGENT;
+COOPR_LOBBY_AGENT setDir 0;
+hideObject COOPR_LOBBY_PROP_STRETCHER;
+hideObject COOPR_LOBBY_PROP_BODYBAG;
+
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
 

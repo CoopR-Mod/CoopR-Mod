@@ -163,6 +163,8 @@ switch (_state) do {
     };
     case COOPR_STATE_KIA: {
         hideObject COOPR_LOBBY_AGENT;
+        COOPR_LOBBY_PROP_BODYBAG setDir 45;
+        COOPR_LOBBY_PROP_BODYBAG setPos [(getPos COOPR_LOBBY) select 0, ((getPos COOPR_LOBBY) select 1) - 1, 0];
         COOPR_LOBBY_PROP_BODYBAG hideObject false;
         _playButton ctrlRemoveAllEventHandlers "MouseButtonDown";
         _playButton ctrlSetText "KIA";

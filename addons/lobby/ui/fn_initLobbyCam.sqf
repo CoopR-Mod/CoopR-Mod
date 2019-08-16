@@ -28,3 +28,4 @@ COOPR_LOBBY_CAM camSetDir (_camPos vectorFromTo _agentPosModified);
 COOPR_LOBBY_CAM cameraEffect ["External", "FRONT"];
 COOPR_LOBBY_CAM camSetFocus [-1, -1];
 COOPR_LOBBY_CAM camCommit 0;
+showCinemaBorder false;

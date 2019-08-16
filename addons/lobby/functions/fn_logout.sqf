@@ -18,7 +18,7 @@
  * Scope: Client
  */
 
-private _lobbyText = format ["<t size='3' color='%1'>Return To Character Selection</t>", COOPR_MAIN_COLOR_HEX];
+private _lobbyText = format ["<t size='3' color='%1'>Return To Character Lobby</t>", COOPR_MAIN_COLOR_HEX];
 0 cutText ["", "BLACK OUT", 0.5, false, true];
 1 cutText [_lobbyText, "BLACK OUT", 0.5, false, true];
 sleep 1;

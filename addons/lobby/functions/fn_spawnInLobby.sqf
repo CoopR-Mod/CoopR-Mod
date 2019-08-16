@@ -25,8 +25,9 @@ COOPR_LOBBY_AGENT setVariable [COOPR_KEY_PLAYER_LOGGEDIN, false, true];
 
 // remove old character
 private _oldPlayerUnit = player;
-selectPlayer COOPR_LOBBY_AGENT;
+selectPlayer objNull;
 deleteVehicle _oldPlayerUnit;
+hideObject _oldPlayerUnit;
 DEBUG("old character has been destroyed");
 
 COOPR_LOBBY_AGENT setPos getPos COOPR_LOBBY;

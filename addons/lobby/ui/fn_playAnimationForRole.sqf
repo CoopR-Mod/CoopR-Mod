@@ -43,7 +43,11 @@ switch (_roleId) do {
     case COOPR_ROLE_MG : {
         COOPR_LOBBY_AGENT switchMove "Acts_CrouchingFiringLeftRifle04";
     };
+    case COOPR_ROLE_DMR : {
+        COOPR_LOBBY_AGENT switchMove "AmovPsitMstpSrasWrflDnon_WeaponCheck1";
+    };
     default {
         COOPR_LOBBY_AGENT switchMove "AidlPercMstpSrasWrflDnon_G04";
     };
+
 };

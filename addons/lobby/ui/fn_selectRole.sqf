@@ -25,5 +25,6 @@ private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
 private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
 
 COOPR_LOBBY_AGENT setUnitLoadout _loadOut;
+[_roleId] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; };
 
 _picture ctrlSetText _roleImage;

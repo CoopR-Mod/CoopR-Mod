@@ -69,7 +69,8 @@ if (count _loadout isEqualTo 0) then {
     ERROR("character loadout could not be revoked after selection")
 } else {
     COOPR_LOBBY_AGENT setUnitLoadout _loadout;
-    [_roleId] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; }
+    // reset default animation
+    [] spawn { call coopr_fnc_playAnimationForRole; }
 };
 
 private _slot = [_characterSlot, COOPR_KEY_SLOT] call CBA_fnc_hashGet;

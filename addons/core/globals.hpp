@@ -15,7 +15,6 @@
 
 //DIALOGS
 #define COOPR_LOGIN "CoopR_Login_Dialog"
-#define COOPR_LOGIN_NEW "CoopR_Login_Dialog_New"
 #define MP_MENU 49
 #define ABORT_BUTTON 104
 

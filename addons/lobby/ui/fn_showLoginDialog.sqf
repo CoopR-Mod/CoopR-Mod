@@ -2,7 +2,7 @@
 
 #define ARRAY 1
 
-createDialog COOPR_LOGIN_NEW;
+createDialog COOPR_LOGIN;
 disableSerialization;
 waitUntil {!isNull findDisplay GUI_ID_LOGIN_DIALOG};
 

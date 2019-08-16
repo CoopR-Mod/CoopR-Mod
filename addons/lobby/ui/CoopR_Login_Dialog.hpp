@@ -27,6 +27,7 @@ class CoopR_Login_Dialog {
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: COOPR_Title {
+                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TITLE;
                     COOPR_POSITION_CT(0,0,340,35)
                 };
                 class Delete: COOPR_ButtonPicture {

@@ -43,14 +43,17 @@ private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
 private _reputation = [_characterHash, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
 private _tmpReputation = [_characterHash, COOPR_KEY_TMP_REPUTATION] call CBA_fnc_hashGet;
 private _state = [_characterHash, COOPR_KEY_STATE] call CBA_fnc_hashGet;
+private _name = [_characterHash, COOPR_KEY_NAME] call CBA_fnc_hashGet;
 
-
+private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TITLE;
 private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_ROLE;
 private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PERKS;
 private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
+
+_titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
 private _roleImage = [_roleId] call coopr_fnc_getImageForRole;

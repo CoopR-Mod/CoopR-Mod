@@ -9,6 +9,7 @@
 
 #define COOPR_COLOR_BACKGROUND {0, 0, 0, 0.5}
 #define COOPR_COLOR_TRANSPARENT {0, 0, 0, 0}
+#define COOPR_COLOR_SEMI_TRANSPARENT {0, 0, 0, 0.5}
 #define COOPR_COLOR_WHITE {1, 1, 1, 1}
 #define COOPR_COLOR_BLACK {0, 0, 0, 1}
 #define COOPR_COLOR_ERROR {255, 0, 0, 1}
@@ -205,8 +206,8 @@ class COOPR_Row_Button: RscButton {
 class COOPR_Row_SelectButton: RscButton {
     colorText[] = COOPR_COLOR_TRANSPARENT;
     colorBackground[] = COOPR_COLOR_TRANSPARENT;
-    colorBackgroundActive[] = COOPR_COLOR_TRANSPARENT;
+    colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
     colorBackgroundDisabled[] = COOPR_COLOR_TRANSPARENT;
     clorDisabled[] = COOPR_COLOR_TRANSPARENT;
-    colorFocused[] = COOPR_COLOR_TRANSPARENT;
+    colorFocused[] = COOPR_COLOR_MAIN_HOVER;
 };

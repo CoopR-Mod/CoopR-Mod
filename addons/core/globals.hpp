@@ -24,6 +24,7 @@
 // Default Loadouts
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 #define HOSTAGE_LOADOUT [[],[],[],[],[],[],"","G_Blindfold_01_white_F",[],["","","","","",""]]
+#define WOUNDED_LOADOUT [[],[],[],["U_C_man_sport_3_F",[]],[],[],"","",[],["","","","","",""]]
 
 // Character Params
 #define COOPR_KEY_PLAYER_CHARACTERS "coopr_player_characters"

@@ -20,6 +20,7 @@ detach COOPR_LOBBY_AGENT;
 COOPR_LOBBY_AGENT setUnitLoadout EMPTY_LOADOUT;
 COOPR_LOBBY_AGENT switchMove "";
 COOPR_LOBBY_AGENT setDir 0;
+COOPR_LOBBY_AGENT hideObject false;
 hideObject COOPR_LOBBY_PROP_STRETCHER;
 hideObject COOPR_LOBBY_PROP_BODYBAG;
 
@@ -147,11 +148,11 @@ switch (_state) do {
             COOPR_LOBBY_AGENT setUnitLoadout _loadout;
             // reset default animation
             [] spawn { call coopr_fnc_playAnimationForRole; };
-            COOPR_LOBBY_AGENT hideObject false;
         };
     };
     case COOPR_STATE_WIA: {
         //[COOPR_LOBBY_AGENT, "PRONE_INJURED_U1", "NONE", _stretcher] call BIS_fnc_ambientAnim;
+        COOPR_LOBBY_AGENT setUnitLoadout WOUNDED_LOADOUT;
         COOPR_LOBBY_AGENT switchMove "Acts_LyingWounded_loop3";
         COOPR_LOBBY_AGENT attachTo [COOPR_LOBBY_PROP_STRETCHER, [0, 0, 0.2]];
         COOPR_LOBBY_PROP_STRETCHER setDir 45;
@@ -168,9 +169,10 @@ switch (_state) do {
         _playButton ctrlEnable false;
     };
     case COOPR_STATE_HOSTAGE: {
-        COOPR_LOBBY_AGENT setUnitLoadout HOSTAGE_LOADOUT;
         COOPR_LOBBY_AGENT switchMove "Acts_ExecutionVictim_Loop";
-        COOPR_LOBBY_AGENT setPos [(getPos COOPR_LOBBY_AGENT) select 0, (getPos COOPR_LOBBY_AGENT) select 1, 0];
+        COOPR_LOBBY_AGENT setPos (getPos COOPR_LOBBY);
+        COOPR_LOBBY_AGENT setUnitLoadout HOSTAGE_LOADOUT;
+        COOPR_LOBBY_AGENT setPos [(getPos COOPR_LOBBY_AGENT) select 0, ((getPos COOPR_LOBBY_AGENT) select 1) - 1, 0];
         _playButton ctrlSetText "DETAINED";
     };
 };

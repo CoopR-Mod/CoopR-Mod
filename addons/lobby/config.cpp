@@ -23,6 +23,7 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgCharacterRoles.hpp"
 
 // UI
 #include "\x\coopr\addons\core\coopr_gui_base.hpp"

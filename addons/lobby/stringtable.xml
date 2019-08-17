@@ -90,10 +90,10 @@
 			<German>Erstellen</German>
 			<Original>Create</Original>
 		</Key>
-		<Key ID="str.coopr.character.newprofile.create">
+		<Key ID="str.coopr.character.new.create">
 			<French>Créer un nouveau profil</French>
-			<German>Neues Profil erstellen</German>
-			<Original>Create a new profile</Original>
+			<German>Neuen Charakter erstellen</German>
+			<Original>Create a new character</Original>
 		</Key>
 		<Key ID="str.coopr.character.newprofile.name">
 			<French>Nom du soldat</French>
@@ -104,6 +104,11 @@
 			<French>Spécialisation</French>
 			<German>Spezialisierung</German>
 			<Original>Specialization</Original>
+		</Key>
+		<Key ID="str.coopr.character.newprofile.error">
+			<Original>You need to enter a name!</Original>
+			<German>Du musst einen Namen angeben!</German>
+			<French>Vous devez entrer un nom</French>
 		</Key>
 	</Package>
 </Project>

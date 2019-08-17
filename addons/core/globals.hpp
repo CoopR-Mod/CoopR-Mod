@@ -14,15 +14,19 @@
 #define WIA_CD 0.5
 
 //DIALOGS
+#define COOPR_LOGIN "CoopR_Login_Dialog"
 #define MP_MENU 49
 #define ABORT_BUTTON 104
 
 // Campaign Params
 #define COOPR_KEY_INTEL_PROGRESS "coopr_intel_progess"
 
-// Character Params
+// Default Loadouts
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
+#define HOSTAGE_LOADOUT [[],[],[],[],[],[],"","G_Blindfold_01_white_F",[],["","","","","",""]]
+#define WOUNDED_LOADOUT [[],[],[],["U_C_man_sport_3_F",[]],[],[],"","",[],["","","","","",""]]
 
+// Character Params
 #define COOPR_KEY_PLAYER_CHARACTERS "coopr_player_characters"
 #define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
 #define COOPR_KEY_TEAMKILLS "coopr_player_teamkills"
@@ -44,6 +48,7 @@
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
 #define COOPR_STATE_KIA "coopr_character_state_kia"
+#define COOPR_STATE_HOSTAGE "coopr_character_state_hostage"
 
 #define COOPR_ROLE_LEADER "coopr_role_leader"
 #define COOPR_ROLE_MEDIC "coopr_role_medic"

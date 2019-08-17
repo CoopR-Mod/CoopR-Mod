@@ -29,8 +29,8 @@ private _description = _serializedMission select 1;
 private _state = _serializedMission select 2;
 private _serializedMarker = _serializedMission select 3;
 
-private _mission = [_unit, _missionId , _description, [], 1, 2, true] call BIS_fnc_missionCreate;
-[_mission, _state, false] call BIS_fnc_missionSetState;
+private _mission = [_unit, _missionId , _description, [], 1, 2, true] call BIS_fnc_taskCreate;
+[_mission, _state, false] call BIS_fnc_taskSetState;
 [_serializedMarker] spawn coopr_fnc_deserializeMarker;
 
 DEBUG3("mission %1 deserialized and assigned to %2", _mission, _unit);

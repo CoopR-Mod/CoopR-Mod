@@ -29,6 +29,6 @@ class CfgPatches {
 #include "CfgTaskDescriptions.hpp"
 
 // UI
-#include "\x\coopr\addons\core\controls.hpp"
+#include "\x\coopr\addons\core\coopr_gui_base.hpp"
 #include "ui\CoopR_ReconReport_Dialog.hpp"
 #include "ui\CoopR_MissionBoard_Dialog.hpp"

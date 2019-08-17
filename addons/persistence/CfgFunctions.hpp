@@ -9,7 +9,6 @@ class CfgFunctions {
             class hasPlayerLocal {};
             class initPersistenceLocal {};
             class getCharactersLocal {};
-            class getAllCharactersLocal {};
             class createCharacterLocal{};
             class removeCharacterLocal {};
             class localDatabaseRefresh {};
@@ -35,13 +34,11 @@ class CfgFunctions {
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
             class setupPersistenceModule {};
-            class updateCharacterSlots {};
             class createCharacter {};
             class updateState {};
             class serializeCoopR {};
             class deserializeCoopR {};
             class getNewCharacterState {};
-            class getAllCharacters {};
             class characterStatePrettyLog {};
             class sync {};
             class syncPlayers {};

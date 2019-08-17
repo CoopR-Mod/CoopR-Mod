@@ -23,7 +23,7 @@ _loginDialog displayAddEventHandler ["Unload", { [] spawn { call coopr_fnc_showL
 private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIST;
 {
     private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
-    _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
+    _rowArray params ["_roleColumn", "_nameColumn", "_levelColumn", "_stateColumn", "_newCharacterButton", "_selectCharacterButton"];
     _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
 } forEach [0,1,2];
 
@@ -46,7 +46,7 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
         {
             private _characterHash = _x;
             private _rowArray = ((ctAddRow _characterListCtrl) select ARRAY);
-            _rowArray params ["_roleColumn", "_nameColumn", "_mainWeaponPictureColumn", "_secondaryWeaponPictureColumn", "_newCharacterButton", "_selectCharacterButton"];
+            _rowArray params ["_roleColumn", "_nameColumn", "_levelColumn", "_stateColumn", "_newCharacterButton", "_selectCharacterButton"];
 
             // empty slot
             if (_characterHash isEqualTo []) then {
@@ -73,8 +73,26 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
 
                 _roleColumn ctrlSetText _roleImage;
                 _nameColumn ctrlSetText _name;
-                _mainWeaponPictureColumn ctrlSetText "MainText";
-                _secondaryWeaponPictureColumn ctrlSetText "SecondaryText";
+                _levelColumn ctrlSetText (format ["Level: %1", 0]); // add level property to character
+
+                // determine state acrynoym
+                private _stateLabel = "none";
+                switch (_state) do {
+                    case COOPR_STATE_OK: {
+                       _stateLabel = "OK";
+                    };
+                    case COOPR_STATE_WIA: {
+                       _stateLabel = "WIA";
+                    };
+                    case COOPR_STATE_KIA: {
+                       _stateLabel = "KIA";
+                    };
+                    case COOPR_STATE_HOSTAGE: {
+                       _stateLabel = "HST";
+                    };
+                };
+
+                _stateColumn ctrlSetText (format ["State: %1", _stateLabel]);
                 _selectCharacterButton setVariable ["_characterHash", _characterHash];
                 _selectCharacterButton ctrlRemoveAllEventHandlers "MouseButtonDown";
                 _selectCharacterButton ctrlAddEventHandler ["MouseButtonDown", {

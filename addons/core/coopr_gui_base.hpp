@@ -75,7 +75,7 @@ class COOPR_Button: COOPR_CommonProperites {
     colorBackground[] = COOPR_COLOR_MAIN;
     colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
     colorBackgroundDisabled[] = COOPR_COLOR_DISABLED;
-    clorDisabled[] = COOPR_COLOR_WHITE;
+    colorDisabled[] = COOPR_COLOR_WHITE;
     colorFocused[] = COOPR_COLOR_MAIN_HOVER;
     offsetPressedX = 0;
     offsetPressedY = 0;
@@ -171,7 +171,7 @@ class COOPR_ControlsTable: COOPR_CommonProperites {
     style = 16;
 
     lineSpacing = 0;
-    rowHeight = 0.033 * safezoneH;
+    rowHeight = 0.06 * safezoneH;
     headerHeight = 0 * safezoneH;
 
     firstIDC = 26000;
@@ -193,7 +193,7 @@ class COOPR_Row_Button: RscButton {
     colorBackground[] = COOPR_COLOR_MAIN;
     colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
     colorBackgroundDisabled[] = COOPR_COLOR_DISABLED;
-    clorDisabled[] = COOPR_COLOR_WHITE;
+    colorDisabled[] = COOPR_COLOR_WHITE;
     colorFocused[] = COOPR_COLOR_MAIN_HOVER;
     offsetPressedX = 0;
     offsetPressedY = 0;
@@ -208,6 +208,6 @@ class COOPR_Row_SelectButton: RscButton {
     colorBackground[] = COOPR_COLOR_TRANSPARENT;
     colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
     colorBackgroundDisabled[] = COOPR_COLOR_TRANSPARENT;
-    clorDisabled[] = COOPR_COLOR_TRANSPARENT;
+    colorDisabled[] = COOPR_COLOR_TRANSPARENT;
     colorFocused[] = COOPR_COLOR_MAIN_HOVER;
 };

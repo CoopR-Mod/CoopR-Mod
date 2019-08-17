@@ -1,3 +1,5 @@
+#define COOPR_ROW_OFFSET 13
+
 class CoopR_Login_Dialog {
   idd = GUI_ID_LOGIN_DIALOG;
     class Controls {
@@ -87,39 +89,39 @@ class CoopR_Login_Dialog {
                         class CharacterRole {
                             controlBaseClassPath[] = {"RscPictureKeepAspect"};
                             columnX = (10 * safeZoneW) / 1920;
-                            columnW = (30 * safeZoneW) / 1920;
+                            columnW = (60 * safeZoneW) / 1920;
                             controlOffsetY = 0;
                         };
                         class CharacterName {
                             controlBaseClassPath[] = {"RscText"};
-                            columnX = (54 * safeZoneW) / 1920;
-                            columnW = (86 * safeZoneW) / 1920;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            columnX = (90 * safeZoneW) / 1920;
+                            columnW = (100 * safeZoneW) / 1920;
+                            controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
-                        class WeaponMainPicture {
-                            controlBaseClassPath[] = {"RscPictureKeepAspect"};
-                            columnX = (174 * safeZoneW) / 1920;
-                            columnW = (86 * safeZoneW) / 1920;
-                            controlOffsetY = 0;
+                        class Level {
+                            controlBaseClassPath[] = {"RscText"};
+                            columnX = (180 * safeZoneW) / 1920;
+                            columnW = (160 * safeZoneW) / 1920;
+                            controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
-                        class WeaponSecondaryPicture {
-                            controlBaseClassPath[] = {"RscPictureKeepAspect"};
-                            columnX = (260 * safeZoneW) / 1920;
-                            columnW = (86 * safeZoneW) / 1920;
-                            controlOffsetY = 0;
+                        class State {
+                            controlBaseClassPath[] = {"RscText"};
+                            columnX = (200 * safeZoneW) / 1920;
+                            columnW = (70 * safeZoneW) / 1920;
+                            controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                         class CreateNewButton {
                             controlBaseClassPath[] = {"COOPR_Row_Button"};
                             text = "Create New Character"; //ToDo: Localize
                             columnX = (91 * safeZoneW) / 1920;
                             columnW = (172 * safeZoneW) / 1920;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                         class Select {
                             controlBaseClassPath[] = {"COOPR_Row_SelectButton"};
                             columnX = 0;
                             columnW = 1;
-                            controlOffsetY = (7 * safeZoneH) / 1080;
+                            controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                     };
                 };

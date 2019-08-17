@@ -94,7 +94,7 @@ class CoopR_Login_Dialog {
                         };
                         class CharacterName {
                             controlBaseClassPath[] = {"RscText"};
-                            columnX = (90 * safeZoneW) / 1920;
+                            columnX = (75 * safeZoneW) / 1920;
                             columnW = (100 * safeZoneW) / 1920;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
@@ -106,8 +106,8 @@ class CoopR_Login_Dialog {
                         };
                         class State {
                             controlBaseClassPath[] = {"RscText"};
-                            columnX = (200 * safeZoneW) / 1920;
-                            columnW = (70 * safeZoneW) / 1920;
+                            columnX = (250 * safeZoneW) / 1920;
+                            columnW = (85 * safeZoneW) / 1920;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                         class CreateNewButton {

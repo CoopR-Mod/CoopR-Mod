@@ -8,5 +8,8 @@ class CfgFunctions {
         class coopr_rpg_ui {
             file = "x\coopr\addons\rpg\ui";
         }
+        class coopr_rpg_init {
+            file = "x\coopr\addons\rpg\init";
+        }
     }
 }

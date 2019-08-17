@@ -119,7 +119,7 @@ class CoopR_Login_Dialog {
                         };
                         class Select {
                             controlBaseClassPath[] = {"COOPR_Row_SelectButton"};
-                            columnX = 0;
+                            columnX = (75 * safeZoneW) / 1920;
                             columnW = 1;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };

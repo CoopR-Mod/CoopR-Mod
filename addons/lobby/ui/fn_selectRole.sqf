@@ -23,12 +23,21 @@ COOPR_LOBBY_AGENT hideObject false;
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _pictureCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
+private _descriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION;
+private _descriptionText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION_TEXT;
+
+// show description control
+_descriptionCtrl ctrlEnable true;
+_descriptionCtrl ctrlShow true;
+
 private _roleClass = _ctrl lbData _index;
 private _roleName = _ctrl lbText _index;
 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
+private _roleDescription = [_roleClass, "description"] call coopr_fnc_getRoleData;
 private _loadOut = _roleClass call coopr_fnc_getRoleLoadout;
 
 COOPR_LOBBY_AGENT setUnitLoadout _loadOut;
 [_roleClass] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; };
 
 _pictureCtrl ctrlSetText _roleIcon;
+_descriptionText ctrlSetText _roleDescription;

@@ -72,8 +72,23 @@ class CoopR_Login_Dialog {
         };
 
         class RoleDescription: COOPR_ControlsGroup {
-            COOPR_POSITION(1566 - 374,187,354,234)
+            COOPR_POSITION(776,187,354,234)
             idc = GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION;
+            onLoad = COOPR_DISABLE_CONTROL;
+            class Controls {
+                class RoleDescription_Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,354,35)
+                    text = "Role Details"; //ToDo: Localize
+                };
+                class RoleDescription_Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,354, 300)
+                };
+                class RoleDescription_Description: COOPR_StructuredText {
+                    idc = GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION_TEXT;
+                    COOPR_POSITION_CT(8,44,346, 252)
+                    text = "No Description";
+                };
+            };
         };
 
         class CharacterSelection: COOPR_ControlsGroup {

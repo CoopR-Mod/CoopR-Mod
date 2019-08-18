@@ -7,6 +7,7 @@
 
 class CfgCharacterRoles {
     class CoopR_BaseRole {
+        icon = "\x\coopr\addons\rpg\data\images\no-role-256-white.paa";
         lobbyAnimations[] = {
             "AidlPercMstpSrasWrflDnon_G04"
         };

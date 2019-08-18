@@ -23,17 +23,17 @@ class CoopR_Login_Dialog {
            text = "\x\coopr\addons\lobby\data\images\corner.paa";
         };
 
-        class CharacterDescription: COOPR_ControlsGroup {
-            idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
+        class CharacterDetails: COOPR_ControlsGroup {
+            idc = GUI_ID_LOGIN_CHARACTER_DETAILS;
             COOPR_POSITION(1171,187,375,550)
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Title: COOPR_Title {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TITLE;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
                     COOPR_POSITION_CT(0,0,340,35)
                 };
                 class Delete: COOPR_ButtonPicture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
                     COOPR_POSITION_CT(340,0,35,35)
                     colorBackground[] = COOPR_TOCOLOR(197,58,58,1);
                     colorBackgroundActive[] = COOPR_TOCOLOR(197,58,58,0.5);
@@ -44,31 +44,36 @@ class CoopR_Login_Dialog {
                     COOPR_POSITION_CT(0,35,375,436)
                 };
                 class Play: COOPR_Button_Center {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
                     COOPR_POSITION_CT(0,471,375,72)
                     text = "Play"; //ToDo: Localize
                     sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
                 };
                 class Description: COOPR_StructuredText {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
                     COOPR_POSITION_CT(8,44,360,190)
                 };
                 class Role: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_ROLE;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
                     COOPR_POSITION_CT(24,241,100,100)
                 };
                 class Perks: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PERKS;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
                     COOPR_POSITION_CT(138,241,100,100)
                 };
                 class Traits: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
                     COOPR_POSITION_CT(252,241,100,100)
                 };
                 class Main: COOPR_Picture {
                     COOPR_POSITION_CT(63,347,250,110)
                 };
             };
+        };
+
+        class RoleDescription: COOPR_ControlsGroup {
+            COOPR_POSITION(1566 - 374,187,354,234)
+            idc = GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION;
         };
 
         class CharacterSelection: COOPR_ControlsGroup {
@@ -142,7 +147,7 @@ class CoopR_Login_Dialog {
                     colorBackground[] = COOPR_TOCOLOR(20,104,135,1);
                     colorBackgroundActive[] = COOPR_TOCOLOR(20,104,135,0.5);
                     colorFocused[] = COOPR_TOCOLOR(20,104,135,0.5);
-                    text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
                 class Background: COOPR_Background {
                     COOPR_POSITION_CT(0,35,375,436)
@@ -171,7 +176,7 @@ class CoopR_Login_Dialog {
                 };
                 class RolePicture: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
-                    text = "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                     COOPR_POSITION_CT(22,175,311,311)
                 };
                 class RoleInput: RscCombo {

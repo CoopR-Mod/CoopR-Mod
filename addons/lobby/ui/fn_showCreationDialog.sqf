@@ -25,9 +25,9 @@ private _roleNames = [_rolesHash] call CBA_fnc_hashKeys;
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
 // hide the description control if open
-private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
-_characterDescriptionCtrl ctrlShow false;
-_characterDescriptionCtrl ctrlEnable false;
+private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS;
+_characterDetailsCtrl ctrlShow false;
+_characterDetailsCtrl ctrlEnable false;
 
 // enable character creation
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;

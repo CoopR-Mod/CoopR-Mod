@@ -25,11 +25,14 @@ if(_structure isEqualTo UNDEFINED) then{
 
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {
-		if(!isFormationLeader player) exitWith{false};
+		private _characterRole = player getVariable [COOPR_KEY_ROLE, COOPR_ROLE_LEADER ];
+		if!(_characterRole isEqualTo COOPR_ROLE_LEADER) exitWith {false};
 		true;
 	};
 	case COOPR_CAMP_ITEM_TENT: {
-		private _condition = call coopr_fnc_isInsideCampingArea;
-		_condition;
+		private _conditionA = call coopr_fnc_isInsideCampingArea;
+		private _conditionB = "coopr_item_foldedTent" in items player;
+		private _conditionC = player getVariable ["coopr_activeTent"];
+		if (_conditionA AND _conditionB AND _conditionC) then {true} else {false}; 
 		};
 };

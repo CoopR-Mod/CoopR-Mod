@@ -2,13 +2,13 @@
 /*
  * Author: xetra11 
  *
- * Return all configured character roles in the format [[<className>, <id>], ...]
+ * Return all configured character roles in the format [[<className>, <roleName>], ...]
  *
  * Arguments:
  * None
  *
  * Return Value:
- * _roles <ARRAY[ARRAY]> - roles data as [[<className>, <id>], ...]
+ * _roles <ARRAY[ARRAY]> - roles data as [[<className>, <roleName>], ...]
  *
  * Example:
  *
@@ -23,17 +23,16 @@ if (_allRoles isEqualTo []) then {
     DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
     _allRoles = "true" configClasses(configFile >> "CfgCharacterRoles");
     {
-        private _roleClass = configName _x;
-        private _roleId = [(configFile >> "CfgCharacterRoles" >> _roleClass), "id", objNull] call BIS_fnc_returnConfigEntry;
-        _result pushBack [_roleClass, _roleId];
+        private _className = configName _x;
+        private _roleName = [(configFile >> "CfgCharacterRoles" >> _className), "name", []] call BIS_fnc_returnConfigEntry;
+        _result pushBack [_className, _roleName];
     } forEach _allRoles;
 } else {
     {
-        private _roleClass = configName _x;
-        private _roleId = [(missionConfigFile >> "CfgCharacterRoles" >> _roleClass), "id", objNull] call BIS_fnc_returnConfigEntry;
-        _result pushBack [_roleClass, _roleId];
+        private _className = configName _x;
+        private _roleName = [(missionConfigFile >> "CfgCharacterRoles" >> _className), "name", []] call BIS_fnc_returnConfigEntry;
+        _result pushBack [_className, _roleName];
     } forEach _allRoles;
 };
-
 
 _result; // return

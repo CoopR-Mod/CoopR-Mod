@@ -27,9 +27,10 @@ if (_property isEqualTo "") then { ERROR("_property was not defined") };
 
 private _result = objNull;
 
-_result = [(missionConfigFile >> "CfgCharacterRoles" >> _roleClass), _property, objNull] call BIS_fnc_returnConfigEntry;
-if (isNull _result) then {
-    _result = [(configFile >> "CfgCharacterRoles" >> _roleClass), _property, objNull] call BIS_fnc_returnConfigEntry;
+_result = [(missionConfigFile >> "CfgCharacterRoles" >> _roleClass), _property, []] call BIS_fnc_returnConfigEntry;
+if (_result isEqualTo []) then {
+    DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
+    _result = [(configFile >> "CfgCharacterRoles" >> _roleClass), _property, []] call BIS_fnc_returnConfigEntry;
 };
 
 _result; // return

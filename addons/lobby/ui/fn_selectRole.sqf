@@ -23,12 +23,13 @@ COOPR_LOBBY_AGENT hideObject false;
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _pictureCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
-private _descriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION;
-private _descriptionText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION_TEXT;
+private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
+private _infoboxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
+private _infoboxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
 
 // show description control
-_descriptionCtrl ctrlEnable true;
-_descriptionCtrl ctrlShow true;
+_infobox ctrlEnable true;
+_infobox ctrlShow true;
 
 private _roleClass = _ctrl lbData _index;
 private _roleName = _ctrl lbText _index;
@@ -40,4 +41,5 @@ COOPR_LOBBY_AGENT setUnitLoadout _loadOut;
 [_roleClass] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; };
 
 _pictureCtrl ctrlSetText _roleIcon;
-_descriptionText ctrlSetText _roleDescription;
+_infoboxTitle ctrlSetText localize "str.coopr.character.new.infobox";
+_infoboxText ctrlSetText _roleDescription;

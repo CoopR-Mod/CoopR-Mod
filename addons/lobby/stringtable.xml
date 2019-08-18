@@ -95,19 +95,24 @@
 			<German>Neuen Charakter erstellen</German>
 			<Original>Create a new character</Original>
 		</Key>
-		<Key ID="str.coopr.character.newprofile.name">
+		<Key ID="str.coopr.character.new.name">
 			<French>Nom du soldat</French>
 			<German>Name des Soldaten</German>
 			<Original>Name of the soldier</Original>
 		</Key>
-		<Key ID="str.coopr.character.newprofile.role">
+		<Key ID="str.coopr.character.new.role">
 			<French>Spécialisation</French>
 			<German>Spezialisierung</German>
 			<Original>Specialization</Original>
 		</Key>
-		<Key ID="str.coopr.character.newprofile.error">
+		<Key ID="str.coopr.character.new.error">
 			<Original>You need to enter a name!</Original>
 			<German>Du musst einen Namen angeben!</German>
+			<French>Vous devez entrer un nom</French>
+		</Key>
+		<Key ID="str.coopr.character.new.infobox">
+			<Original>Role Description</Original>
+			<German>Rollenbeschreibung</German>
 			<French>Vous devez entrer un nom</French>
 		</Key>
 	</Package>

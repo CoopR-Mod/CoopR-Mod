@@ -15,5 +15,4 @@ params ["_roleClass"];
 
 private _roleLoadout = [_roleClass, "loadout"] call coopr_fnc_getRoleData;
 
-_roleLoadout;
-
+parseSimpleArray _roleLoadout;

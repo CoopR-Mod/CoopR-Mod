@@ -39,23 +39,27 @@ private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_R
 
 // init the role selection combobox
 lbClear _rolesCombo;
-{_rolesCombo lbAdd _x} forEach _roleNames;
+{
+    _rolesCombo lbSetData [_forEachIndex, _x select 0];
+    _rolesCombo lbAdd (_x select 1);
+} forEach (call coopr_fnc_getRoles);
+
 // set default selection to first item
 _rolesCombo ctrlRemoveAllEventHandlers "LBSelChanged";
 _rolesCombo ctrlAddEventHandler ["LBSelChanged", { call coopr_fnc_selectRole}];
 _rolesCombo lbSetCurSel 0;
 
-_createButton setVariable ["_params", [_slot, _rolesCombo, _rolesHash]];
+_createButton setVariable ["_params", [_slot, _rolesCombo]];
 _createButton ctrlRemoveAllEventHandlers "MouseButtonDown";
 _createButton ctrlAddEventHandler ["MouseButtonDown", {
     params [["_ctrl", objNull]];
     private _params = _ctrl getVariable ["_params", []];
-    _params params ["_slot", "_rolesCombo", "_rolesHash"];
+    _params params ["_slot", "_rolesCombo"];
 
     // init role picture
     private _selectedIndex = lbCurSel _rolesCombo;
     private _roleName = _rolesCombo lbText _selectedIndex;
-    private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
+    private _roleId = _rolesCombo lbData _selectedIndex;
     private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
 
     private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;

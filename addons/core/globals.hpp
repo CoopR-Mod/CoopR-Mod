@@ -14,15 +14,19 @@
 #define WIA_CD 0.5
 
 //DIALOGS
+#define COOPR_LOGIN "CoopR_Login_Dialog"
 #define MP_MENU 49
 #define ABORT_BUTTON 104
 
 // Campaign Params
 #define COOPR_KEY_INTEL_PROGRESS "coopr_intel_progess"
 
-// Character Params
+// Default Loadouts
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
+#define HOSTAGE_LOADOUT [[],[],[],[],[],[],"","G_Blindfold_01_white_F",[],["","","","","",""]]
+#define WOUNDED_LOADOUT [[],[],[],["U_C_man_sport_3_F",[]],[],[],"","",[],["","","","","",""]]
 
+// Character Params
 #define COOPR_KEY_PLAYER_CHARACTERS "coopr_player_characters"
 #define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
 #define COOPR_KEY_TEAMKILLS "coopr_player_teamkills"
@@ -44,6 +48,7 @@
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
 #define COOPR_STATE_KIA "coopr_character_state_kia"
+#define COOPR_STATE_HOSTAGE "coopr_character_state_hostage"
 
 #define COOPR_ROLE_LEADER "coopr_role_leader"
 #define COOPR_ROLE_MEDIC "coopr_role_medic"
@@ -68,41 +73,41 @@
 #define COOPR_STRENGTH_TYPE_PLATOON "Platoon"
 #define COOPR_STRENGTH_TYPE_COMPANY "Company"
 
-// Task Globals
-#define COOPR_KEY_ACTIVE_TASK "coopr_character_active_task"
-#define COOPR_KEY_TASK_TRACKER "coopr_squad_task_tracker"
+// Mission Globals
+#define COOPR_KEY_ACTIVE_MISSION "coopr_character_active_mission"
+#define COOPR_KEY_MISSION_TRACKER "coopr_squad_mission_tracker"
 
-#define COOPR_KEY_TASK_QUEUE_ID "coopr_task_queue_id"
-#define COOPR_KEY_TASK_TYPE "coopr_task_type"
-#define COOPR_KEY_TASK_DESCRIPTION "coopr_task_description"
-#define COOPR_KEY_TASK_REPORT_TIME "coopr_task_report_time"
-#define COOPR_KEY_TASK_MARKER "coopr_task_marker"
-#define COOPR_KEY_TASK_ACCURACY "coopr_task_accuracy"
-#define COOPR_KEY_TASK_TARGET "coopr_task_target"
+#define COOPR_KEY_MISSION_QUEUE_ID "coopr_mission_queue_id"
+#define COOPR_KEY_MISSION_TYPE "coopr_mission_type"
+#define COOPR_KEY_MISSION_DESCRIPTION "coopr_mission_description"
+#define COOPR_KEY_MISSION_REPORT_TIME "coopr_mission_report_time"
+#define COOPR_KEY_MISSION_MARKER "coopr_mission_marker"
+#define COOPR_KEY_MISSION_ACCURACY "coopr_mission_accuracy"
+#define COOPR_KEY_MISSION_TARGET "coopr_mission_target"
 
-#define COOPR_KEY_TASK_TRACKER_TASK_START "coopr_task_tracker_task_start"
-#define COOPR_KEY_TASK_TRACKER_VISITED_TASK_AREA "coopr_task_tracker_visited_task_area"
-#define COOPR_KEY_TASK_TRACKER_KILL_COUNT "coopr_task_tracker_kill_count"
-#define COOPR_KEY_TASK_TRACKER_TYPE "coopr_task_tracker_type"
-#define COOPR_KEY_TASK_TRACKER_TARGET "coopr_task_tracker_target"
-#define COOPR_KEY_TASK_TRACKER_RECON_COMPLETE "coopr_task_tracker_recon_complete"
+#define COOPR_KEY_MISSION_TRACKER_MISSION_START "coopr_mission_tracker_mission_start"
+#define COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA "coopr_mission_tracker_visited_mission_area"
+#define COOPR_KEY_MISSION_TRACKER_KILL_COUNT "coopr_mission_tracker_kill_count"
+#define COOPR_KEY_MISSION_TRACKER_TYPE "coopr_mission_tracker_type"
+#define COOPR_KEY_MISSION_TRACKER_TARGET "coopr_mission_tracker_target"
+#define COOPR_KEY_MISSION_TRACKER_RECON_COMPLETE "coopr_mission_tracker_recon_complete"
 
-#define COOPR_TASK_REPORT_TYPE_INFANTRY "Infantry"
-#define COOPR_TASK_REPORT_TYPE_MOTORIZED "Motorized"
-#define COOPR_TASK_REPORT_TYPE_MECHANIZED "Mechanized"
-#define COOPR_TASK_REPORT_TYPE_ARMORED "Armored"
+#define COOPR_MISSION_REPORT_TYPE_INFANTRY "Infantry"
+#define COOPR_MISSION_REPORT_TYPE_MOTORIZED "Motorized"
+#define COOPR_MISSION_REPORT_TYPE_MECHANIZED "Mechanized"
+#define COOPR_MISSION_REPORT_TYPE_ARMORED "Armored"
 
-#define COOPR_TASK_BEHAVIOUR_DEFENSIVE "Defensive"
-#define COOPR_TASK_BEHAVIOUR_PATROL "Patrol"
-#define COOPR_TASK_BEHAVIOUR_COMBAT "Combat"
+#define COOPR_MISSION_BEHAVIOUR_DEFENSIVE "Defensive"
+#define COOPR_MISSION_BEHAVIOUR_PATROL "Patrol"
+#define COOPR_MISSION_BEHAVIOUR_COMBAT "Combat"
 
-#define COOPR_TASK_TYPE_SNIPERTEAM "coopr_task_type_sniperteam"
-#define COOPR_TASK_TYPE_ASYMMETRIC "coopr_task_type_asymmetric"
-#define COOPR_TASK_TYPE_ASSAULT "coopr_task_type_assault"
-#define COOPR_TASK_TYPE_CONQUER "coopr_task_type_conquer"
-#define COOPR_TASK_TYPE_JTAC "coopr_task_type_jtac"
-#define COOPR_TASK_TYPE_AMBUSH "coopr_task_type_ambush"
-#define COOPR_TASK_TYPE_NONE "coopr_task_type_none"
+#define COOPR_MISSION_TYPE_SNIPERTEAM "coopr_mission_type_sniperteam"
+#define COOPR_MISSION_TYPE_ASYMMETRIC "coopr_mission_type_asymmetric"
+#define COOPR_MISSION_TYPE_ASSAULT "coopr_mission_type_assault"
+#define COOPR_MISSION_TYPE_CONQUER "coopr_mission_type_conquer"
+#define COOPR_MISSION_TYPE_JTAC "coopr_mission_type_jtac"
+#define COOPR_MISSION_TYPE_AMBUSH "coopr_mission_type_ambush"
+#define COOPR_MISSION_TYPE_NONE "coopr_mission_type_none"
 
 #define COOPR_STRENGTH_TYPE_FIRETEAM_MIN 1
 #define COOPR_STRENGTH_TYPE_FIRETEAM_MAX 4

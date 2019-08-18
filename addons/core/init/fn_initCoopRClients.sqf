@@ -22,9 +22,8 @@ if (hasInterface) then {
 
     [] spawn {
         waitUntil { !(isNull (findDisplay 46)) };
-        call coopr_fnc_spawnInLobby;
         [] spawn {
-            createDialog "coopr_Login_Dialog";
+            call coopr_fnc_spawnInLobby;
             call coopr_fnc_showLoginDialog
         };
     };

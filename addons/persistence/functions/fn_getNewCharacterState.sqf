@@ -1,8 +1,23 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Creates a new fresh character state
+ *
+ * Arguments:
+ * 0: _player <OBJECT> - the player this character will be created for
+ * 1: _slot <NUMBER> - the character slot
+ * 2: _characterName <String> - name of the character
+ * 3: _role <String> - role of the character
+ *
+ * Public: No
+ *
+ * Scope: Global
+ */
 
 params [["_player", objNull],
         ["_slot", -1],
-        ["_playerName","<NoName>" ],
+        ["_characterName","<NoName>" ],
         ["_role", COOPR_ROLE_NONE]];
 
 private _loadOut = _role call coopr_fnc_getLoadoutForRole;
@@ -11,14 +26,15 @@ private _characterID = floor (random [1000,5555,9999]);
 private _stateHash = [[COOPR_KEY_UID, getPlayerUID _player],
                       [COOPR_KEY_CHARACTER_ID, _characterID],
                       [COOPR_KEY_SLOT, _slot],
-                      [COOPR_KEY_NAME, _playerName],
+                      [COOPR_KEY_NAME, _characterName],
                       [COOPR_KEY_ROLE, _role],
                       [COOPR_KEY_STATE, COOPR_STATE_OK],
                       [COOPR_KEY_REPUTATION, 0],
+                      [COOPR_KEY_TMP_REPUTATION, 0],
                       [COOPR_KEY_MONEY, STARTING_MONEY],
                       [COOPR_KEY_POSITION, getPos COOPR_HQ_WEST],
                       [COOPR_KEY_WOUNDED_TIMESTAMP, 0],
-                      [COOPR_KEY_ACTIVE_TASK, []],
+                      [COOPR_KEY_ACTIVE_MISSION, []],
                       [COOPR_KEY_LOADOUT, _loadout]];
 
 DEBUG("character hash created");

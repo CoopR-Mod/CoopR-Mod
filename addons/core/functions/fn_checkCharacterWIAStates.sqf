@@ -19,6 +19,8 @@
  * Scope: Global
  */
 
+if (true) exitWith { ERROR("Implementation missing for __FILE__); };
+
 {
     private _character = _x;
 

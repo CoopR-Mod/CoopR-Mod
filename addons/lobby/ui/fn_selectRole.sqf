@@ -5,8 +5,7 @@
  * Handles the event of the selection of the role combo box in the creation screen
  *
  * Arguments:
- * 0: _loginDialog <CONTROL> - the login dialog
- * 1: _rolesHash <CBA_HASH> - the roles hash
+ * None
  *
  * Public: No
  *
@@ -22,15 +21,14 @@ hideObject COOPR_LOBBY_PROP_BODYBAG;
 COOPR_LOBBY_AGENT hideObject false;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
-private _rolesHash = [COOPR_CHARACTER_ROLES, []] call CBA_fnc_hashCreate;
 
-private _picture = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
+private _pictureCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
+private _roleClass = _ctrl lbData _index;
 private _roleName = _ctrl lbText _index;
-private _roleId = [_rolesHash, _roleName] call CBA_fnc_hashGet;
-private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-private _loadOut = _roleId call coopr_fnc_getLoadoutForRole;
+private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
+private _loadOut = _roleClass call coopr_fnc_getRoleLoadout;
 
 COOPR_LOBBY_AGENT setUnitLoadout _loadOut;
-[_roleId] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; };
+[_roleClass] spawn { [_this select 0] call coopr_fnc_playAnimationForRole; };
 
-_picture ctrlSetText _roleImage;
+_pictureCtrl ctrlSetText _roleIcon;

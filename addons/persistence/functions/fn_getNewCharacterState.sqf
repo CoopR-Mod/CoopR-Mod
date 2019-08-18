@@ -20,7 +20,7 @@ params [["_player", objNull],
         ["_characterName","<NoName>" ],
         ["_role", COOPR_ROLE_NONE]];
 
-private _loadOut = _role call coopr_fnc_getLoadoutForRole;
+private _loadOut = _role call coopr_fnc_getRoleLoadout;
 private _characterID = floor (random [1000,5555,9999]);
 
 private _stateHash = [[COOPR_KEY_UID, getPlayerUID _player],

@@ -40,7 +40,6 @@ class CfgFunctions {
             file = "x\coopr\addons\core\helper";
             class abortButtonEventHandler {};
             class initPromise {preInit = 1};
-            class getLoadoutForRole {};
             class getNearestLocation {};
             class countUnits {};
             class groupsByEntities {};

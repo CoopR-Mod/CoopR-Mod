@@ -56,10 +56,10 @@ private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTIO
 _titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
-private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-_roleCtrl ctrlSetText _roleImage;
-_perksCtrl ctrlSetText _roleImage; // TODO: change to perk icon
-_traitsCtrl ctrlSetText _roleImage; // TODO: change to trait icon
+private _roleIcon = [_roleId, "icon"] call coopr_fnc_getRoleData;
+_roleCtrl ctrlSetText _roleIcon;
+_perksCtrl ctrlSetText _roleIcon; // TODO: change to perk icon
+_traitsCtrl ctrlSetText _roleIcon; // TODO: change to trait icon
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);

@@ -16,7 +16,6 @@ class CfgFunctions {
             file = "x\coopr\addons\lobby\ui";
             class showLoginDialog {};
             class selectRole {};
-            class getImageForRole {};
             class showCharacterSelectionDisplay {};
             class showCreationDialog {};
             class playAnimationForRole {};

@@ -4,6 +4,7 @@ class CfgFunctions {
             file = "x\coopr\addons\rpg\functions";
             class getRoles {};
             class getRoleData {};
+            class getRoleLoadout {};
         }
         class coopr_rpg_ui {
             file = "x\coopr\addons\rpg\ui";

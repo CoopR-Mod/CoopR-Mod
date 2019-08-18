@@ -40,8 +40,8 @@ private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_R
 // init the role selection combobox
 lbClear _rolesCombo;
 {
-    _rolesCombo lbSetData [_forEachIndex, _x select 0];
-    _rolesCombo lbAdd (_x select 1);
+    private _index = _rolesCombo lbAdd (_x select 1);
+    _rolesCombo lbSetData [_index, _x select 0];
 } forEach (call coopr_fnc_getRoles);
 
 // set default selection to first item
@@ -56,19 +56,15 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
     private _params = _ctrl getVariable ["_params", []];
     _params params ["_slot", "_rolesCombo"];
 
-    // init role picture
-    private _selectedIndex = lbCurSel _rolesCombo;
-    private _roleName = _rolesCombo lbText _selectedIndex;
-    private _roleId = _rolesCombo lbData _selectedIndex;
-    private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-
+    private _roleClass = _rolesCombo lbData (lbCurSel _rolesCombo);
     private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
     private _nameLabel = ctrlText (_loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_NAME_INPUT);
     private _errorText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ERROR;
+
     if (_nameLabel isEqualTo "") then {
         _errorText ctrlSetText (localize "str.coopr.character.newprofile.error");
     } else {
-        private _characterState = [player, _slot, _nameLabel, _roleId] call coopr_fnc_getNewCharacterState;
+        private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
         [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
         closeDialog GUI_ID_LOGIN_DIALOG;
     }

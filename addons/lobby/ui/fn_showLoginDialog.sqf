@@ -69,9 +69,9 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
                 private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
                 private _woundedTimestamp = [_characterHash, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
-                private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
+                private _roleIcon = [_roleId, "icon"] call coopr_fnc_getRoleData;
 
-                _roleColumn ctrlSetText _roleImage;
+                _roleColumn ctrlSetText _roleIcon;
                 _nameColumn ctrlSetText _name;
                 _levelColumn ctrlSetText (format ["Level: %1", 0]); // add level property to character
 

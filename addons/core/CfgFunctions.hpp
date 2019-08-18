@@ -31,7 +31,6 @@ class CfgFunctions {
             class setupVehicleModule {};
             class setupHQModule {};
             class setupCoreModule {};
-            class setupBasicRoleLoadoutModule {};
 
             class initCoopRClients {};
             class initCoopRServer {postInit = 1;};

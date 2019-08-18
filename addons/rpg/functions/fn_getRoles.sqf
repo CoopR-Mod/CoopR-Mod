@@ -23,7 +23,7 @@ if (_allRoles isEqualTo []) then {
     DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
     _allRoles = "true" configClasses(configFile >> "CfgCharacterRoles");
     {
-        private _className = configName _x;
+        private _className = toLower (configName _x);
         private _roleName = [(configFile >> "CfgCharacterRoles" >> _className), "name", []] call BIS_fnc_returnConfigEntry;
         _result pushBack [_className, _roleName];
     } forEach _allRoles;

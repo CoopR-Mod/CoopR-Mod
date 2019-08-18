@@ -59,17 +59,14 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
 
             // occupied slot
             } else {
-                private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
-
                 private _name = [_characterHash, COOPR_KEY_NAME] call CBA_fnc_hashGet;
                 private _reputation = [_characterHash, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
                 private _money = [_characterHash, COOPR_KEY_MONEY] call CBA_fnc_hashGet;
                 private _state = [_characterHash, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-                private _roleId = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
-                private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
+                private _roleClass = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
                 private _woundedTimestamp = [_characterHash, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
-                private _roleIcon = [_roleId, "icon"] call coopr_fnc_getRoleData;
+                private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 
                 _roleColumn ctrlSetText _roleIcon;
                 _nameColumn ctrlSetText _name;

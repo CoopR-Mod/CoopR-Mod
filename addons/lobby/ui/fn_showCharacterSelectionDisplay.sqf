@@ -36,9 +36,8 @@ private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARAC
 _characterDescriptionCtrl ctrlShow true;
 _characterDescriptionCtrl ctrlEnable true;
 
-private _roleId = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
-private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
-private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
+private _roleClass = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
+private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
 
 private _reputation = [_characterHash, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
 private _tmpReputation = [_characterHash, COOPR_KEY_TMP_REPUTATION] call CBA_fnc_hashGet;
@@ -56,7 +55,7 @@ private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTIO
 _titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
-private _roleIcon = [_roleId, "icon"] call coopr_fnc_getRoleData;
+private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 _roleCtrl ctrlSetText _roleIcon;
 _perksCtrl ctrlSetText _roleIcon; // TODO: change to perk icon
 _traitsCtrl ctrlSetText _roleIcon; // TODO: change to trait icon

@@ -92,7 +92,7 @@ class CfgCharacterRoles {
         description = "The light machine gunner is in many ways the dominant soldier in an infantry battle. One well-placed machine gun can suppress enemy activity in a crucial area, and any enemy foolish enough to walk into it with be torn to shreds with in a hail of bullets.";
         loadout = "[[""MMG_02_sand_RCO_LP_F"","""",""acc_pointer_IR"",""optic_Hamr"",[""130Rnd_338_Mag"",130],[],""bipod_01_F_snd""],[],[""hgun_P07_F"","""","""","""",[""16Rnd_9x21_Mag"",17],[],""""],[""U_B_CombatUniform_mcam"",[[""FirstAidKit"",1],[""16Rnd_9x21_Mag"",2,17],[""SmokeShell"",1,1],[""SmokeShellGreen"",1,1],[""Chemlight_green"",2,1]]],[""V_PlateCarrier1_rgr"",[[""130Rnd_338_Mag"",2,130]]],[],""H_HelmetB"","""",[],[""ItemMap"","""",""ItemRadio"",""ItemCompass"",""ItemWatch"",""NVGoggles""]]";
         lobbyAnimations[] = {
-            "AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon"
+            "Acts_CrouchingFiringLeftRifle04"
         };
         authorized[] = {
             "defuse",
@@ -116,7 +116,7 @@ class CfgCharacterRoles {
         description = "The DM is a military marksman role in an infantry squad. The DM""s role is to supply rapid accurate fire on enemy targets at ranges up to a maximum of 660 yards (600 m) with a rifle capable of semi-automatic fire called a designated marksman rifle equipped with a telescopic sight. Like snipers, DMs are trained in quick and precise shooting, but unlike the more specialized ""true"" sniper, they are an intrinsic part of an infantry fireteam and intended to lay down accurate rapid fire at valuable targets as needed, thus extending the reach of the fireteam.";
         loadout = "[[""srifle_DMR_03_tan_AMS_LP_F"","""",""acc_pointer_IR"",""optic_AMS_snd"",[""20Rnd_762x51_Mag"",20],[],""bipod_01_F_snd""],[],[""hgun_P07_F"","""","""","""",[""16Rnd_9x21_Mag"",17],[],""""],[""U_B_CombatUniform_mcam"",[[""FirstAidKit"",1],[""20Rnd_762x51_Mag"",2,20]]],[""V_PlateCarrier1_rgr"",[[""20Rnd_762x51_Mag"",5,20],[""16Rnd_9x21_Mag"",2,17],[""SmokeShell"",1,1],[""SmokeShellGreen"",1,1],[""Chemlight_green"",2,1],[""HandGrenade"",2,1]]],[],""H_HelmetB"","""",[""Binocular"","""","""","""",[],[],""""],[""ItemMap"","""",""ItemRadio"",""ItemCompass"",""ItemWatch"",""NVGoggles""]]";
         lobbyAnimations[] = {
-            "AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon"
+            "AmovPsitMstpSrasWrflDnon_WeaponCheck1"
         };
         authorized[] = {
             "defuse",
@@ -139,9 +139,6 @@ class CfgCharacterRoles {
         icon = "\x\coopr\addons\rpg\data\images\radioman-256-white.paa";
         description = "A signaller in the armed forces is a specialist soldier, seaman or airman responsible for military communications. Signallers, a.k.a. Combat Signallers or signalmen or women, are commonly employed as radio or telephone operators, relaying messages for field commanders at the front line (Army units, Ships or Aircraft), through a chain of command which includes field headquarters and ultimately governments and non government organisations. Messages are transmitted and received via a communications infrastructure comprising fixed and mobile installations.""true"" sniper, they are an intrinsic part of an infantry fireteam and intended to lay down accurate rapid fire at valuable targets as needed, thus extending the reach of the fireteam.";
         loadout = "[[""arifle_MX_Black_ACO_Pointer_F"","""",""acc_pointer_IR"",""optic_Aco"",[""30Rnd_65x39_caseless_black_mag"",30],[],""""],[],[""hgun_P07_khk_F"","""","""","""",[""16Rnd_9x21_Mag"",17],[],""""],[""U_B_CombatUniform_vest_mcam_wdl_f"",[[""FirstAidKit"",1],[""30Rnd_65x39_caseless_black_mag"",2,30]]],[""V_PlateCarrier1_wdl"",[[""30Rnd_65x39_caseless_black_mag"",3,30],[""16Rnd_9x21_Mag"",2,17],[""HandGrenade"",2,1],[""SmokeShell"",1,1],[""SmokeShellGreen"",1,1],[""Chemlight_green"",2,1]]],[""B_RadioBag_01_wdl_F"",[]],""H_HelmetB"",""G_Tactical_Clear"",[],[""ItemMap"","""",""ItemRadio"",""ItemCompass"",""ItemWatch"",""NVGoggles_INDEP""]]";
-        lobbyAnimations[] = {
-            "AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon"
-        };
         authorized[] = {
             "defuse",
             "repair",

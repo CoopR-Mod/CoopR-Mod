@@ -39,7 +39,7 @@
 			<Spanish>No puedes llevar más de una tienda de campaña por misión</Spanish>
 		</Key>
 		<Key ID="str.coopr.campsite.notif.tentspawned">
-			<Original>Tent placed in grid</Original>
+			<Original>Tent placed</Original>
 		</Key>
 		<Key ID="str.coopr.campsite.notif.cantspawntent">
 			<Original>Unable to place a tent in this position, find a better spot!</Original>

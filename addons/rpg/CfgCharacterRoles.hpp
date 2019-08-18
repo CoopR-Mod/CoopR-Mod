@@ -6,8 +6,13 @@
  */
 
 class CfgCharacterRoles {
+    class CoopR_BaseRole {
+        lobbyAnimations[] = {
+            "AidlPercMstpSrasWrflDnon_G04"
+        };
+    };
 
-    class Squadleader {
+    class Squadleader : CoopR_BaseRole {
         name = "Squad Leader";
         icon = "\x\coopr\addons\rpg\data\images\group-leader-256-white.paa";
         description = "A squad leader takes responsibilities in combat and mission preparation. He is authorized to request missions and supplies for those. He also is authorized to report recon observations. He is the only one who is allowed to do an After Action Report at the HQ";
@@ -34,7 +39,7 @@ class CfgCharacterRoles {
             };
         };
     };
-    class Medic {
+    class Medic : CoopR_BaseRole {
         name = "Medic";
         icon = "\x\coopr\addons\rpg\data\images\medic-256-white.paa";
         description = "Combat medics are responsible for providing first aid and frontline trauma care on the battlefield. They are also responsible for providing continuous medical care in the absence of a readily available physician, including care for disease and battle injuries. Combat medics are normally co-located with the combat troops they serve in order to easily move with the troops and monitor ongoing health";
@@ -57,7 +62,7 @@ class CfgCharacterRoles {
             };
         };
     };
-    class Engineer {
+    class Engineer : CoopR_BaseRole {
         name = "Engineer";
         icon = "\x\coopr\addons\rpg\data\images\engineer-256-white.paa";
         description = "Combat engineers conduct demolition missions and clear minefields using specialized vehicles. Typical combat engineer missions include construction and breaching of trenches, tank traps and other fortifications";
@@ -81,7 +86,7 @@ class CfgCharacterRoles {
             };
         };
     };
-    class LightMachinegunner {
+    class LightMachinegunner : CoopR_BaseRole {
         name = "Light Machine Gunner";
         icon = "\x\coopr\addons\rpg\data\images\mg-gunner-256-white.paa";
         description = "The light machine gunner is in many ways the dominant soldier in an infantry battle. One well-placed machine gun can suppress enemy activity in a crucial area, and any enemy foolish enough to walk into it with be torn to shreds with in a hail of bullets.";
@@ -105,7 +110,7 @@ class CfgCharacterRoles {
             };
         };
     };
-    class DesignatedMarksman {
+    class DesignatedMarksman : CoopR_BaseRole {
         name = "Designated Marksman";
         icon = "\x\coopr\addons\rpg\data\images\designated-marksman-256-white.paa";
         description = "The DM is a military marksman role in an infantry squad. The DM""s role is to supply rapid accurate fire on enemy targets at ranges up to a maximum of 660 yards (600 m) with a rifle capable of semi-automatic fire called a designated marksman rifle equipped with a telescopic sight. Like snipers, DMs are trained in quick and precise shooting, but unlike the more specialized ""true"" sniper, they are an intrinsic part of an infantry fireteam and intended to lay down accurate rapid fire at valuable targets as needed, thus extending the reach of the fireteam.";
@@ -129,7 +134,7 @@ class CfgCharacterRoles {
             };
         };
     };
-    class Signaller {
+    class Signaller : CoopR_BaseRole {
         name = "Signaller";
         icon = "\x\coopr\addons\rpg\data\images\radioman-256-white.paa";
         description = "A signaller in the armed forces is a specialist soldier, seaman or airman responsible for military communications. Signallers, a.k.a. Combat Signallers or signalmen or women, are commonly employed as radio or telephone operators, relaying messages for field commanders at the front line (Army units, Ships or Aircraft), through a chain of command which includes field headquarters and ultimately governments and non government organisations. Messages are transmitted and received via a communications infrastructure comprising fixed and mobile installations.""true"" sniper, they are an intrinsic part of an infantry fireteam and intended to lay down accurate rapid fire at valuable targets as needed, thus extending the reach of the fireteam.";

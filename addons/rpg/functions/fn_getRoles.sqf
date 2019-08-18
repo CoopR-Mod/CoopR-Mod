@@ -20,18 +20,22 @@
 private _result = [];
 private _allRoles = "true" configClasses(missionConfigFile >> "CfgCharacterRoles");
 if (_allRoles isEqualTo []) then {
-    DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
+    //DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
     _allRoles = "true" configClasses(configFile >> "CfgCharacterRoles");
     {
         private _className = toLower (configName _x);
         private _roleName = [(configFile >> "CfgCharacterRoles" >> _className), "name", []] call BIS_fnc_returnConfigEntry;
-        _result pushBack [_className, _roleName];
+        if !(_className isEqualTo toLower("CoopR_BaseRole")) then {
+            _result pushBack [_className, _roleName];
+        }
     } forEach _allRoles;
 } else {
     {
         private _className = configName _x;
         private _roleName = [(missionConfigFile >> "CfgCharacterRoles" >> _className), "name", []] call BIS_fnc_returnConfigEntry;
-        _result pushBack [_className, _roleName];
+        if !(_className isEqualTo toLower("CoopR_BaseRole")) then {
+            _result pushBack [_className, _roleName];
+        }
     } forEach _allRoles;
 };
 

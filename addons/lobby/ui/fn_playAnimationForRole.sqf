@@ -9,45 +9,31 @@
  * (COOPR_LOBBY_AGENT switchMove "AidlPercMstpSrasWrflDnon_G04";)
  *
  * Arguments:
- * 0: _roleId <OBJECT> - unit this task is assigned to
+ * 0: _roleClass <OBJECT> - unit this task is assigned to
  *
  * Return Value:
  * None
  *
  * Example:
- * [_roleId] call coopr_fn_playAnimationForRole;
+ * [_roleClass] call coopr_fn_playAnimationForRole;
  *
  * Public: No
  *
  * Scope: Global
  */
 
-params [["_roleId", "none"]];
+params [["_roleClass", objNull]];
 
 // reset position because of animation movement
 COOPR_LOBBY_AGENT setPos getPos COOPR_LOBBY;
 
-switch (_roleId) do {
-    case COOPR_ROLE_MEDIC : {
-        COOPR_LOBBY_AGENT switchMove "Acts_TreatingWounded_in";
-        COOPR_LOBBY_AGENT playMove "Acts_TreatingWounded05";
-    };
-    case COOPR_ROLE_ENGINEER : {
-        COOPR_LOBBY_AGENT switchMove "AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon";
-    };
-    case COOPR_ROLE_LEADER : {
-        COOPR_LOBBY_AGENT switchMove "Acts_SignalToCheck";
-        COOPR_LOBBY_AGENT playMove "Acts_listeningToRadio_in";
-        COOPR_LOBBY_AGENT playMove "Acts_listeningToRadio_Loop";
-    };
-    case COOPR_ROLE_MG : {
-        COOPR_LOBBY_AGENT switchMove "Acts_CrouchingFiringLeftRifle04";
-    };
-    case COOPR_ROLE_DMR : {
-        COOPR_LOBBY_AGENT switchMove "AmovPsitMstpSrasWrflDnon_WeaponCheck1";
-    };
-    default {
-        COOPR_LOBBY_AGENT switchMove "AidlPercMstpSrasWrflDnon_G04";
-    };
-
+if (_roleClass isEqualTo objNull) then {
+    private _fallbackAnimation = ["CoopR_BaseRole", "lobbyAnimations"] call coopr_fnc_getRoleData;
+    COOPR_LOBBY_AGENT switchMove (_fallbackAnimation select 0);
+} else {
+    _roleAnimations = [_roleClass, "lobbyAnimations"] call coopr_fnc_getRoleData;
+    _initAnimation = _roleAnimations deleteAt 0;
+    COOPR_LOBBY_AGENT switchMove _initAnimation;
+    { COOPR_LOBBY_AGENT playMove _x } forEach _roleAnimations;
 };
+

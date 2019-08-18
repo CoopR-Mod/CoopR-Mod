@@ -29,7 +29,7 @@ private _result = objNull;
 
 _result = [(missionConfigFile >> "CfgCharacterRoles" >> _roleClass), _property, []] call BIS_fnc_returnConfigEntry;
 if (_result isEqualTo []) then {
-    DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
+    //DEBUG("no CfgCharactersRoles found in missionConfigFile - fallback to configFile");
     _result = [(configFile >> "CfgCharacterRoles" >> _roleClass), _property, []] call BIS_fnc_returnConfigEntry;
 };
 

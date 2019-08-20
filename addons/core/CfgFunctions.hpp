@@ -59,6 +59,7 @@ class CfgFunctions {
             class playerDroppedItem {};
             class promise {};
             class logHash {};
+            class isSquadLeader {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

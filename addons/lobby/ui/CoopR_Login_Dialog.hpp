@@ -56,14 +56,17 @@ class CoopR_Login_Dialog {
                 class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
                     COOPR_POSITION_CT(24,241,100,100)
+                    text = "\x\coopr\addons\rpg\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
                 class Perks: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
                     COOPR_POSITION_CT(138,241,100,100)
+                    text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
                 };
                 class Traits: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
                     COOPR_POSITION_CT(252,241,100,100)
+                    text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
                 };
                 class Main: COOPR_Picture {
                     COOPR_POSITION_CT(63,347,250,110)
@@ -71,9 +74,89 @@ class CoopR_Login_Dialog {
             };
         };
 
+        class PerkButton : COOPR_ButtonPictureNoBG {
+            soundClick[] = {"\x\coopr\addons\lobby\data\sounds\card_flip.ogg", 0.09, 1};
+            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+        };
+
+        class Perks: COOPR_ControlsGroup {
+            idc = GUI_ID_LOGIN_CHARACTER_PERKS;
+            COOPR_POSITION(381,187,375,550)
+            onLoad = COOPR_DISABLE_CONTROL;
+            class Controls {
+                class Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,375,436)
+                };
+                class Title: COOPR_Title {
+                    idc = GUI_ID_LOGIN_CHARACTER_PERKS_TITLE;
+                    COOPR_POSITION_CT(0,0,375,35)
+                    text = "Perks";
+                };
+                class Perks_Row_1: COOPR_ControlsGroup {
+                    COOPR_POSITION_CT(25,110,375,100)
+                    class Controls {
+                        class Perk_1: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_0;
+                            COOPR_POSITION_CT(0,0,100,100)
+                        };
+                        class Perk_2: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_1;
+                            COOPR_POSITION_CT(110,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                        class Perk_3: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_2;
+                            COOPR_POSITION_CT(220,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                    };
+                };
+                class Perks_Row_2: COOPR_ControlsGroup {
+                    COOPR_POSITION_CT(25,220,375,100)
+                    class Controls {
+                        class Perk_4: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_3;
+                            COOPR_POSITION_CT(0,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                        class Perk_5: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_4;
+                            COOPR_POSITION_CT(110,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                        class Perk_6: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_5;
+                            COOPR_POSITION_CT(220,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                    };
+                };
+                class Perks_Row_3: COOPR_ControlsGroup {
+                    COOPR_POSITION_CT(25,330,375,100)
+                    class Controls {
+                        class Perk_7: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_6;
+                            COOPR_POSITION_CT(0,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                        class Perk_8: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_7;
+                            COOPR_POSITION_CT(110,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                        class Perk_9: PerkButton {
+                            idc = GUI_ID_LOGIN_CHARACTER_PERK_8;
+                            COOPR_POSITION_CT(220,0,100,100)
+                            text = "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+                        };
+                    };
+                };
+            };
+        };
+
         class Infobox: COOPR_ControlsGroup {
             COOPR_POSITION(776,187,354,234)
-            idc = GUI_ID_LOGIN_CHARACTER_ROLE_DESCRIPTION;
+            idc = GUI_ID_LOGIN_CHARACTER_INFOBOX;
             onLoad = COOPR_DISABLE_CONTROL;
             class Controls {
                 class Infobox_Background: COOPR_Background {
@@ -157,13 +240,6 @@ class CoopR_Login_Dialog {
                 class Title: COOPR_Title {
                     COOPR_POSITION_CT(0,0,340,35)
                     text = "New Character"; //ToDo: Localize
-                };
-                class Back: COOPR_ButtonPicture {
-                    COOPR_POSITION_CT(340,0,35,35)
-                    colorBackground[] = COOPR_TOCOLOR(20,104,135,1);
-                    colorBackgroundActive[] = COOPR_TOCOLOR(20,104,135,0.5);
-                    colorFocused[] = COOPR_TOCOLOR(20,104,135,0.5);
-                    text = "\x\coopr\addons\rpg\data\images\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
                 class Background: COOPR_Background {
                     COOPR_POSITION_CT(0,35,375,436)

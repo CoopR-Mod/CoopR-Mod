@@ -62,54 +62,54 @@ private _perksCol3 = [_perks select 2, _perks select 5, _perks select 8];
      }];
 } forEach _perksCol1;
 
-//{
-//    _x ctrlAddEventHandler ["ButtonClick", {
-//        params ["_ctrl"];
-//        DEBUG2("debug perk %1", _ctrl);
-//        if !(_ctrl getVariable ["isSelected", false]) then {
-//            _ctrl setVariable ["isSelected", true];
-//            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256.paa";
-//            //_ctrl ctrlSetScale 1.1;
-//            _ctrl ctrlSetPosition [ (105 * safeZoneW) / 1920,
-//                                    (-5 * safeZoneH) / 1080,
-//                                    (110 * safeZoneW) / 1920,
-//                                    (110 * safeZoneH) / 1080];
-//            _ctrl ctrlCommit 0.2;
-//        } else {
-//            _ctrl setVariable ["isSelected", false];
-//            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
-//            //_ctrl ctrlSetScale 1.0;
-//            _ctrl ctrlSetPosition [(110 * safeZoneW) / 1920,
-//                                   (0 * safeZoneH) / 1080,
-//                                   (100 * safeZoneW) / 1920,
-//                                   (100 * safeZoneH) / 1080];
-//            _ctrl ctrlCommit 0.2;
-//        };
-//     }];
-//} forEach _perksCol2;
+{
+    _x ctrlAddEventHandler ["ButtonClick", {
+        params ["_ctrl"];
+        DEBUG2("debug perk %1", _ctrl);
+        if !(_ctrl getVariable ["isSelected", false]) then {
+            _ctrl setVariable ["isSelected", true];
+            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256.paa";
+            //_ctrl ctrlSetScale 1.1;
+            _ctrl ctrlSetPosition [ (105 * safeZoneW) / 1920,
+                                    (-5 * safeZoneH) / 1080,
+                                    (110 * safeZoneW) / 1920,
+                                    (110 * safeZoneH) / 1080];
+            _ctrl ctrlCommit 0.2;
+        } else {
+            _ctrl setVariable ["isSelected", false];
+            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+            //_ctrl ctrlSetScale 1.0;
+            _ctrl ctrlSetPosition [(110 * safeZoneW) / 1920,
+                                   (0 * safeZoneH) / 1080,
+                                   (100 * safeZoneW) / 1920,
+                                   (100 * safeZoneH) / 1080];
+            _ctrl ctrlCommit 0.2;
+        };
+     }];
+} forEach _perksCol2;
 
-//{
-//    _x ctrlAddEventHandler ["ButtonClick", {
-//        params ["_ctrl"];
-//        DEBUG2("debug perk %1", _ctrl);
-//        if !(_ctrl getVariable ["isSelected", false]) then {
-//            _ctrl setVariable ["isSelected", true];
-//            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256.paa";
-//            //_ctrl ctrlSetScale 1.1;
-//            _ctrl ctrlSetPosition [ (205 * safeZoneW) / 1920,
-//                                    (-5 * safeZoneH) / 1080,
-//                                    (110 * safeZoneW) / 1920,
-//                                    (110 * safeZoneH) / 1080];
-//            _ctrl ctrlCommit 0.2;
-//        } else {
-//            _ctrl setVariable ["isSelected", false];
-//            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
-//            //_ctrl ctrlSetScale 1.0;
-//            _ctrl ctrlSetPosition [(210 * safeZoneW) / 1920,
-//                                   (0 * safeZoneH) / 1080,
-//                                   (100 * safeZoneW) / 1920,
-//                                   (100 * safeZoneH) / 1080];
-//            _ctrl ctrlCommit 0.2;
-//        };
-//     }];
-//} forEach _perksCol3;
+{
+    _x ctrlAddEventHandler ["ButtonClick", {
+        params ["_ctrl"];
+        DEBUG2("debug perk %1", _ctrl);
+        if !(_ctrl getVariable ["isSelected", false]) then {
+            _ctrl setVariable ["isSelected", true];
+            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256.paa";
+            //_ctrl ctrlSetScale 1.1;
+            _ctrl ctrlSetPosition [ (215 * safeZoneW) / 1920,
+                                    (-5 * safeZoneH) / 1080,
+                                    (110 * safeZoneW) / 1920,
+                                    (110 * safeZoneH) / 1080];
+            _ctrl ctrlCommit 0.2;
+        } else {
+            _ctrl setVariable ["isSelected", false];
+            _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa";
+            //_ctrl ctrlSetScale 1.0;
+            _ctrl ctrlSetPosition [(220 * safeZoneW) / 1920,
+                                   (0 * safeZoneH) / 1080,
+                                   (100 * safeZoneW) / 1920,
+                                   (100 * safeZoneH) / 1080];
+            _ctrl ctrlCommit 0.2;
+        };
+     }];
+} forEach _perksCol3;

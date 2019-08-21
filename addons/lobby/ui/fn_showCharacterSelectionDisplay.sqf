@@ -26,16 +26,20 @@ hideObject COOPR_LOBBY_PROP_BODYBAG;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
-// hide the creation control if open
+// hide the other control
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 _characterCreationCtrl ctrlShow false;
 _characterCreationCtrl ctrlEnable false;
+private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
+_infobox ctrlShow true;
+_infobox ctrlEnable true;
 
 // show the description control if open
 private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS;
 _characterDetailsCtrl ctrlShow true;
 _characterDetailsCtrl ctrlEnable true;
 
+private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
 private _roleClass = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
 
@@ -49,16 +53,17 @@ private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
 private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
+
+call coopr_fnc_initPerks;
 
 _titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 _roleCtrl ctrlSetText _roleIcon;
-_perksCtrl ctrlSetText _roleIcon; // TODO: change to perk icon
-_traitsCtrl ctrlSetText _roleIcon; // TODO: change to trait icon
+_perksCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa"; // TODO: change to perk icon
+_traitsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa"; // TODO: change to trait icon
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);

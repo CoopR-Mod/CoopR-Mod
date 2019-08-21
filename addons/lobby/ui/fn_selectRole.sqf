@@ -24,12 +24,15 @@ private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
 private _pictureCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
 private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
+private _perks = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 private _infoboxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
-private _infoboxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
+private _infoboxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TITLE;
 
 // show description control
 _infobox ctrlEnable true;
 _infobox ctrlShow true;
+_perks ctrlEnable true;
+_perks ctrlShow true;
 
 private _roleClass = _ctrl lbData _index;
 private _roleName = _ctrl lbText _index;

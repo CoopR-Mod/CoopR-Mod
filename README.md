@@ -3,7 +3,7 @@
  ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/CoopR-Mod/CoopR-Mod?include_prereleases&sort=semver&style=for-the-badge)
 
 ![Discord](https://img.shields.io/discord/503863654710771723)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/CoopR-Mod/CoopR-Mod)
+
 ![TeamCity Full Build Status](https://img.shields.io/teamcity/http/ci.coopr-hq.com/e/CoopRModDevelopment_CoopRModDevBuildDeployment)
 
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fcooprmod)

@@ -22,5 +22,9 @@ class CfgFunctions {
             class initLobbyCam {};
             class initPerks {};
         }
+        class coopr_lobby_helper {
+            file = "x\coopr\addons\lobby\helper";
+            class togglePerkSelection {};
+        }
     }
 }

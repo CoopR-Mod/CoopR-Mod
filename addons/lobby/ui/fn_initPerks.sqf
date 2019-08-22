@@ -18,8 +18,6 @@
  * Scope: Client 
  */
 
-#define PERK(var) (GUI_ID_LOGIN_CHARACTER_PERK_0 + var)
-
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _perks = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 

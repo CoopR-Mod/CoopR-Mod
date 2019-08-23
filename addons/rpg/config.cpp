@@ -23,6 +23,7 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgCharacterRoles.hpp"
+#include "CfgPerks.hpp"
 #include "Cfg3DEN.hpp"
 
 // UI

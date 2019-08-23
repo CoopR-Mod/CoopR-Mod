@@ -62,8 +62,8 @@ _titleCtrl ctrlSetText _name;
 //set role picture for selected character
 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 _roleCtrl ctrlSetText _roleIcon;
-_perksCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa"; // TODO: change to perk icon
-_traitsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perk-sixth-256.paa"; // TODO: change to trait icon
+_perksCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to perk icon
+_traitsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to trait icon
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);

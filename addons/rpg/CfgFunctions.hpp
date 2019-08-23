@@ -11,7 +11,7 @@ class CfgFunctions {
         }
         class coopr_rpg_init {
             file = "x\coopr\addons\rpg\init";
-            class setupRPGModule {};
+            class initRPGAddon {};
         }
     }
 }

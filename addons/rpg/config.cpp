@@ -22,7 +22,6 @@ class CfgPatches {
 }
 
 #include "CfgFunctions.hpp"
-#include "CfgVehicles.hpp"
 #include "CfgCharacterRoles.hpp"
 #include "Cfg3DEN.hpp"
 

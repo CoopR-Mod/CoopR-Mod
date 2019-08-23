@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 class Combo;
 class ctrlMenuStrip;
 
@@ -13,7 +15,7 @@ class Cfg3DEN {
                             property = "CoopRRPGLogLevel";
                             displayName = "Log Level";
                             description = "The log level to use for this addon";
-                            expression = "_this setVariable [""coopr_%s_rpg"", _value];";
+                            expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
                             defaultValue = 0;
                             typeName = "NUMBER";
                             class Values {

@@ -2,25 +2,6 @@ class Combo;
 class ctrlMenuStrip;
 
 class Cfg3DEN {
-    class Attributes {
-        class LogLevelCombo: Combo {
-            class Items {
-                class None {
-                    text = "None";
-                    data = 0;
-                };
-                class Info {
-                    text = "Info";
-                    data = 1;
-                };
-                class Debug {
-                    text = "Debug";
-                    data = 2;
-                };
-            };
-        };
-    };
-
     class Mission {
         class CoopR_RPG {
             displayName = "CoopR RPG Attributes";
@@ -28,13 +9,27 @@ class Cfg3DEN {
                 class Logging {
                     class Attributes {
                         class LogLevel {
-                              control = "LogLevelCombo";
-                              property = "CoopRRPGLogLevel";
-                              displayName = "Log Level";
-                              description = "The log level to use for this addon";
-                              expression = "_this setVariable [""coopr_%s_rpg"", _value];";
-                              defaultValue = 0;
-                              typeName = "NUMBER";
+                            control = "combo";
+                            property = "CoopRRPGLogLevel";
+                            displayName = "Log Level";
+                            description = "The log level to use for this addon";
+                            expression = "_this setVariable [""coopr_%s_rpg"", _value];";
+                            defaultValue = 0;
+                            typeName = "NUMBER";
+                            class Values {
+                                class None {
+                                    name = "None";
+                                    value = 0;
+                                };
+                                class Info {
+                                    name = "Info";
+                                    value = 1;
+                                };
+                                class Debug {
+                                    name = "Debug";
+                                    value = 2;
+                                };
+                            };
                         };
                     };
                 };

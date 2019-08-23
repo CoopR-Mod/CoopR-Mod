@@ -1,31 +1,32 @@
 class Combo;
 class ctrlMenuStrip;
 
-class LogLevelCombo: Combo {
-    class Items {
-        class None {
-            text = "None";
-            data = 0;
-        };
-        class Info {
-            text = "Info";
-            data = 1;
-        };
-        class Debug {
-            text = "Debug";
-            data = 2;
+class Cfg3DEN {
+    class Attributes {
+        class LogLevelCombo: Combo {
+            class Items {
+                class None {
+                    text = "None";
+                    data = 0;
+                };
+                class Info {
+                    text = "Info";
+                    data = 1;
+                };
+                class Debug {
+                    text = "Debug";
+                    data = 2;
+                };
+            };
         };
     };
-};
 
-class Cfg3DEN {
     class Mission {
         class CoopR_RPG {
             displayName = "CoopR RPG Attributes";
             class AttributeCategories {
                 class Logging {
                     class Attributes {
-                        class LogLevelCombo;
                         class LogLevel {
                               control = "LogLevelCombo";
                               property = "CoopRRPGLogLevel";
@@ -41,6 +42,7 @@ class Cfg3DEN {
         };
     };
 };
+
 
 class display3DEN {
     class Controls {

@@ -12,7 +12,7 @@
  * _propertyValue <STRING | NUMBER | ARRAY> - role data
  *
  * Example:
- * ["Groupleader", "coopr_task_type_assault", _cooprTaskInfo] call coopr_fn_getRoles;
+ * ["Groupleader", "description"] call coopr_fn_getRoleData;
  *
  * Public: No
  *

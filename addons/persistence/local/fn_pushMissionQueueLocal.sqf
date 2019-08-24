@@ -26,7 +26,7 @@ if (isServer) then {
 
     DEBUG("pushing coopr mission to mission queue");
     private _currentCount = [] call coopr_fnc_getQueuedMissionsCountLocal;
-    [_cooprMission, COOPR_CHAR_MISSION_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
+    [_cooprMission, COOPR_MISSION_QUEUE_ID, _currentCount + 1] call CBA_fnc_hashSet;
     private _missionToQueue = format["INSERT INTO mission_queues VALUES(%1, %2, '%3')", _currentCount + 1, COOPR_SERVER_ID, _cooprMission];
     _missionToQueue call coopr_fnc_extDB3sql;
 } else {

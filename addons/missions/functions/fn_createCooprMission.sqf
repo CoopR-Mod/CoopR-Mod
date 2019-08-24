@@ -26,10 +26,10 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (_cooprMissionInfo isEqualTo []) exitWith { ERROR("_cooprMissionInfo was []") };
 
 if (isServer) then {
-    private _missionType = [_cooprMissionInfo, COOPR_CHAR_MISSION_TYPE] call CBA_fnc_hashGet;
-    private _description = [_cooprMissionInfo, COOPR_CHAR_MISSION_DESCRIPTION] call CBA_fnc_hashGet;
-    private _target = [_cooprMissionInfo, COOPR_CHAR_MISSION_TARGET] call CBA_fnc_hashGet;
-    private _serializedMarkers = [_cooprMissionInfo, COOPR_CHAR_MISSION_MARKER] call CBA_fnc_hashGet;
+    private _missionType = [_cooprMissionInfo, COOPR_MISSION_TYPE] call CBA_fnc_hashGet;
+    private _description = [_cooprMissionInfo, COOPR_MISSION_DESCRIPTION] call CBA_fnc_hashGet;
+    private _target = [_cooprMissionInfo, COOPR_MISSION_TARGET] call CBA_fnc_hashGet;
+    private _serializedMarkers = [_cooprMissionInfo, COOPR_MISSION_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _missionType, _unit);
     private _missionId = format ["%1_%2", _missionType, (call coopr_fnc_getMissionCount) + 1];
     private _cooprMission = [_unit, _missionId , _missionType, [], 1, 2, true] call BIS_fnc_taskCreate;

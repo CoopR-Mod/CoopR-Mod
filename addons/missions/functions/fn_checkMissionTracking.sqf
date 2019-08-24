@@ -30,8 +30,8 @@ if (isServer) then {
     DEBUG("mission tracker check:");
     private _valid = true;
 
-    private _missionStart = [_missionTracker, COOPR_CHAR_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
-    private _visitedMissionArea = [_missionTracker, COOPR_CHAR_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
+    private _missionStart = [_missionTracker, COOPR_MISSION_TRACKER_MISSION_START] call CBA_fnc_hashGet;
+    private _visitedMissionArea = [_missionTracker, COOPR_MISSION_TRACKER_VISITED_MISSION_AREA] call CBA_fnc_hashGet;
 
     if (_visitedMissionArea isEqualTo false) then {
         DEBUG("failed - was not in target area");

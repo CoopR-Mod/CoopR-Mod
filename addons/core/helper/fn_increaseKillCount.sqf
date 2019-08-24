@@ -24,12 +24,12 @@ params[["_unit", objNull], ["_amount", 1]];
 
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
-private _missionTracker = player getVariable [COOPR_CHAR_MISSION_TRACKER, []];
+private _missionTracker = player getVariable [COOPR_MISSION_TRACKER, []];
 
 if (_missionTracker isEqualTo []) exitWith { ERROR("_missionTracker was empty") };
 
-private _actualKillCount = [_missionTracker, COOPR_CHAR_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
+private _actualKillCount = [_missionTracker, COOPR_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
 private _newKillCount = _actualKillCount + _amount;
-[_missionTracker, COOPR_CHAR_MISSION_TRACKER_KILL_COUNT, _newKillCount] call CBA_fnc_hashSet;
+[_missionTracker, COOPR_MISSION_TRACKER_KILL_COUNT, _newKillCount] call CBA_fnc_hashSet;
 DEBUG2("raising kill count by %1", _amount);
-_unit setVariable [COOPR_CHAR_MISSION_TRACKER, _missionTracker];
+_unit setVariable [COOPR_MISSION_TRACKER, _missionTracker];

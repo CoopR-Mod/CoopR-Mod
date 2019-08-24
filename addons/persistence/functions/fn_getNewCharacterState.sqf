@@ -14,11 +14,10 @@
  *
  * Scope: Global
  */
-
 params [["_player", objNull],
         ["_slot", -1],
         ["_characterName","<NoName>" ],
-        ["_role", COOPR_ROLE_NONE]];
+        ["_role", "coopr_role_none"]];
 
 private _loadOut = _role call coopr_fnc_getRoleLoadout;
 private _characterID = floor (random [1000,5555,9999]);

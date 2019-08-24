@@ -56,7 +56,7 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
     // check if marker name already has been defined
     {
         private _entry = _x;
-        private _serMarkers = [_entry, COOPR_CHAR_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+        private _serMarkers = [_entry, COOPR_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
         DEBUG2("serMarker %1", _serMarkers);
         private _entryMarkerDescription = (_serMarkers select 0) select 5; // markerText index
         _nameExists = _entryMarkerDescription isEqualTo markerText (_foundUserMarker select 0);
@@ -71,13 +71,13 @@ if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was undefined") };
 
     // build hash for entry
     private _entryHash = EMPTY_HASH;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_OWNER, _characterID] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundUserMarker select 0), ""]) ] call CBA_fnc_hashSet;
-    [_entryHash, COOPR_CHAR_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_OWNER, _characterID] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_TYPE, _type] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_STRENGTH, _strength] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_BEHAVIOUR, _behaviour] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_MARKER, _serializedMarkers] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_LOCATION, str (nearestLocation [getMarkerPos (_foundUserMarker select 0), ""]) ] call CBA_fnc_hashSet;
+    [_entryHash, COOPR_RECON_ENTRY_TIME, call coopr_fnc_currentGameTime] call CBA_fnc_hashSet;
 
     [[_entryHash], "coopr_fnc_saveReconEntry", [_entryHash, _ctrl], {
         params ["_callbackArgs", "_promisedResult"];

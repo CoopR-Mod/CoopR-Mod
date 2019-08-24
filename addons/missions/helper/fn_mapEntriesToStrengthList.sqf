@@ -32,9 +32,9 @@ if (isServer) then {
 
     {
         private _entry = _x;
-        private _type = [_entry, COOPR_CHAR_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
-        private _strength = [_entry, COOPR_CHAR_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
-        private _behaviour = [_entry, COOPR_CHAR_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
+        private _type = [_entry, COOPR_RECON_ENTRY_TYPE] call CBA_fnc_hashGet;
+        private _strength = [_entry, COOPR_RECON_ENTRY_STRENGTH] call CBA_fnc_hashGet;
+        private _behaviour = [_entry, COOPR_RECON_ENTRY_BEHAVIOUR] call CBA_fnc_hashGet;
 
         switch (_type) do {
             case COOPR_MISSION_REPORT_TYPE_INFANTRY : { _infantryStrengths pushBack _strength };

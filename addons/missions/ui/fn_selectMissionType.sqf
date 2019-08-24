@@ -37,8 +37,8 @@ params ["_ctrl"];
 
     {
         private _cooprMission = _x select 0;
-        private _typeLabel = [[_cooprMission, COOPR_CHAR_MISSION_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
-        private _accuracy = [_cooprMission, COOPR_CHAR_MISSION_ACCURACY] call CBA_fnc_hashGet;
+        private _typeLabel = [[_cooprMission, COOPR_MISSION_TYPE] call CBA_fnc_hashGet] call coopr_fnc_getLabelByMissionType;
+        private _accuracy = [_cooprMission, COOPR_MISSION_ACCURACY] call CBA_fnc_hashGet;
         private _accuracyLabel = "Accuracy: " + (_accuracy call coopr_fnc_getLabelForAccuracy);
         private _missionSelection = _allMissionSelections select _forEachIndex;
 

@@ -21,11 +21,11 @@ if !(_isLoggedIn) exitWith { DEBUG("skipping mission routine - not logged in"); 
 
 if ([player] call coopr_fnc_hasActiveMission) then {
     //DEBUG("mission routine running");
-    private _missionTracker = player getVariable [COOPR_CHAR_MISSION_TRACKER, EMPTY_HASH];
+    private _missionTracker = player getVariable [COOPR_MISSION_TRACKER, EMPTY_HASH];
     //DEBUG2("missiontracker state: %1", _missionTracker);
     if ([player] call coopr_fnc_isInMissionArea) then {
         private _timeStamp = call coopr_fnc_currentGameTime;
-        [_missionTracker, COOPR_CHAR_MISSION_TRACKER_VISITED_MISSION_AREA, true] call CBA_fnc_hashSet;
-        player setVariable [COOPR_CHAR_MISSION_TRACKER, _missionTracker, true];
+        [_missionTracker, COOPR_MISSION_TRACKER_VISITED_MISSION_AREA, true] call CBA_fnc_hashSet;
+        player setVariable [COOPR_MISSION_TRACKER, _missionTracker, true];
     }
 };

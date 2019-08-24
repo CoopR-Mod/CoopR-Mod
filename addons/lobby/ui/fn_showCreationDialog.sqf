@@ -37,6 +37,8 @@ _characterCreationCtrl ctrlEnable true;
 private _createButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
 private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
 
+call coopr_fnc_initPerks;
+
 // init the role selection combobox
 lbClear _rolesCombo;
 {

@@ -9,6 +9,7 @@ class Cfg3DEN {
             displayName = "CoopR RPG";
             class AttributeCategories {
                 class Logging {
+                    displayName = "Logging";
                     class Attributes {
                         class LogLevel {
                             control = "combo";
@@ -33,6 +34,20 @@ class Cfg3DEN {
                                 };
                             };
                         };
+                    };
+                };
+                class Perks {
+                    displayName = "Perks";
+                    class Attributes {
+                        class MaxPerks {
+                            control = "edit";
+                            property = "CoopRRPGMaxPerks";
+                            displayName = "Maximum Perks per Character";
+                            description = "The maximum of mounts of perks allowed to select on character creation";
+                            expression = "missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
+                            defaultValue = 3;
+                            typeName = "NUMBER";
+                        }
                     };
                 };
             };

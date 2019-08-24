@@ -19,8 +19,6 @@
  * Scope: Client 
  */
 
-#define MAX_PERKS 2
-
 params [["_ctrl", objNull],
         ["_offsetX", 0]];
 

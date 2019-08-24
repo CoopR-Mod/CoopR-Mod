@@ -22,6 +22,9 @@
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
+private _perkInfoText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS_TEXT;
+
+_perkInfoText ctrlSetText format ["You are allowed to choose a maxmium of %1 perks for this character", MAX_PERKS];
 
 private _allPerks = call coopr_fnc_getPerks;
 private _perkAmount = count _allPerks;

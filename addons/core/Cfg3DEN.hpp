@@ -9,6 +9,7 @@ class Cfg3DEN {
             displayName = "CoopR Core";
             class AttributeCategories {
                 class Logging {
+                    displayName = "Logging";
                     class Attributes {
                         class LogLevel {
                             control = "combo";

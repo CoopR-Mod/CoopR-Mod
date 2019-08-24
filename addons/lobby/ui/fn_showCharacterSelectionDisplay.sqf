@@ -55,7 +55,6 @@ private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PL
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
 private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
 
-call coopr_fnc_initPerks;
 
 _titleCtrl ctrlSetText _name;
 

@@ -34,13 +34,12 @@ _perkDisplay ctrlEnable true;
 
 private _perkControls = [];
 for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDialog displayCtrl PERK(_i)) };
+{_x setVariable ["perkClass", (_allPerks select _forEachIndex) select 0]} forEach _perkControls;
 
 // show perk in GUI
 {_x ctrlShow true; _x ctrlEnable true} forEach _perkControls;
 
-{
-    if !(isNil "_x") then { _x ctrlRemoveAllEventHandlers "MouseButtonDown" };
-} forEach _perkControls;
+{ if !(isNil "_x") then { _x ctrlRemoveAllEventHandlers "MouseButtonDown" }; } forEach _perkControls;
 
 // use the index per perkCol iteration to multiply offset of col (see CoopR_Login_Dialog.hpp for perk x-axis offsets)
 {
@@ -48,6 +47,7 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
     _x ctrlAddEventHandler ["ButtonClick", {
         params ["_ctrl"];
         private _index = _ctrl getVariable "index";
+        private _perkClass = _ctrl getVariable "perkClass";
         private _offsetMultiplier = 0;
         if (_index in [1,4,7]) then { _offsetMultiplier = 1};
         if (_index in [2,5,8]) then { _offsetMultiplier = 2};
@@ -56,8 +56,8 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
         private _infoBoxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
         private _infoBoxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TITLE;
 
-        _infoBoxTitle ctrlSetText "Perk Description";
-        _infoBoxText ctrlSetText "This is a perk";
+        _infoBoxTitle ctrlSetText ([_perkClass, "name"] call coopr_fnc_getPerkData);
+        _infoBoxText ctrlSetText ([_perkClass, "description"] call coopr_fnc_getPerkData);
      }];
 } forEach _perkControls;
 

@@ -17,7 +17,6 @@
  * Scope: Global
  */
 
-DEBUG("in here");
 private _result = [];
 private _allPerks = "true" configClasses(missionConfigFile >> "CfgPerks");
 if (_allPerks isEqualTo []) then {

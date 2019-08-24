@@ -18,39 +18,46 @@
  * Scope: Client 
  */
 
+#define PERK_NAME 1
+
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
-private _perks = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
+private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 
-_perks ctrlShow true;
-_perks ctrlEnable true;
+private _allPerks = call coopr_fnc_getPerks;
+private _perkAmount = count _allPerks;
+private _perkNames = _allPerks apply { _x select PERK_NAME };
 
-private _perks = [];
-for "_i" from 0 to 8 do { _perks pushBackUnique (_loginDialog displayCtrl PERK(_i)) };
+if (_perkAmount <= 0 ) exitWith { DEBUG("no perks found to initialize") };
 
-private _perksCol1 = [_perks select 0, _perks select 3, _perks select 6];
-private _perksCol2 = [_perks select 1, _perks select 4, _perks select 7];
-private _perksCol3 = [_perks select 2, _perks select 5, _perks select 8];
+_perkDisplay ctrlShow true;
+_perkDisplay ctrlEnable true;
+
+private _perkControls = [];
+for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDialog displayCtrl PERK(_i)) };
+
+// show perk in GUI
+{_x ctrlShow true; _x ctrlEnable true} forEach _perkControls;
 
 {
-    { _x ctrlRemoveAllEventHandlers "MouseButtonDown"; } forEach _x;
-} forEach [_perksCol1, _perksCol2, _perksCol3];
+    if !(isNil "_x") then { _x ctrlRemoveAllEventHandlers "MouseButtonDown" };
+} forEach _perkControls;
 
+// use the index per perkCol iteration to multiply offset of col (see CoopR_Login_Dialog.hpp for perk x-axis offsets)
 {
-    // use the index per perkCol iteration to multiply offset of col (see CoopR_Login_Dialog.hpp for perk x-axis offsets)
-    private _col = _forEachIndex;
-    {
-        _x setVariable ["_col", _col];
-        _x ctrlAddEventHandler ["ButtonClick", {
-            params ["_ctrl"];
-            private _col = _ctrl getVariable "_col";
-            [_ctrl, 110 * _col] call coopr_fnc_togglePerkSelection;
-            private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
-            private _infoBoxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
-            private _infoBoxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TITLE;
+    _x setVariable ["index", _forEachIndex];
+    _x ctrlAddEventHandler ["ButtonClick", {
+        params ["_ctrl"];
+        private _index = _ctrl getVariable "index";
+        private _offsetMultiplier = 0;
+        if (_index in [1,4,7]) then { _offsetMultiplier = 1};
+        if (_index in [2,5,8]) then { _offsetMultiplier = 2};
+        [_ctrl, 110 * _offsetMultiplier] call coopr_fnc_togglePerkSelection;
+        private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
+        private _infoBoxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;
+        private _infoBoxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TITLE;
 
-            _infoBoxTitle ctrlSetText "Perk Description";
-            _infoBoxText ctrlSetText "This is a perk";
-         }];
-    } forEach _x;
-} forEach [_perksCol1, _perksCol2, _perksCol3];
+        _infoBoxTitle ctrlSetText "Perk Description";
+        _infoBoxText ctrlSetText "This is a perk";
+     }];
+} forEach _perkControls;
 

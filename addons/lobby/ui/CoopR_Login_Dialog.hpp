@@ -98,15 +98,18 @@ class CoopR_Login_Dialog {
                         class Perk_1: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_0;
                             COOPR_POSITION_CT(0,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                         };
                         class Perk_2: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_1;
                             COOPR_POSITION_CT(110,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                         class Perk_3: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_2;
                             COOPR_POSITION_CT(220,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                     };
@@ -117,16 +120,19 @@ class CoopR_Login_Dialog {
                         class Perk_4: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_3;
                             COOPR_POSITION_CT(0,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                         class Perk_5: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_4;
                             COOPR_POSITION_CT(110,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                         class Perk_6: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_5;
                             COOPR_POSITION_CT(220,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                     };
@@ -137,16 +143,19 @@ class CoopR_Login_Dialog {
                         class Perk_7: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_6;
                             COOPR_POSITION_CT(0,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                         class Perk_8: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_7;
                             COOPR_POSITION_CT(110,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                         class Perk_9: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_8;
                             COOPR_POSITION_CT(220,0,100,100)
+                            onLoad = COOPR_DISABLE_CONTROL;
                             text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                         };
                     };

@@ -40,7 +40,7 @@ class Cfg3DEN {
                     displayName = "Perks";
                     class Attributes {
                         class MaxPerks {
-                            control = "edit";
+                            control = "editshort";
                             property = "CoopRRPGMaxPerks";
                             displayName = "Maximum Perks per Character";
                             description = "The maximum of mounts of perks allowed to select on character creation";

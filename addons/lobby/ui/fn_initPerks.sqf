@@ -42,18 +42,22 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
 // show perk in GUI
 {_x ctrlShow true; _x ctrlEnable true} forEach _perkControls;
 
-{ if !(isNil "_x") then { _x ctrlRemoveAllEventHandlers "MouseButtonDown" }; } forEach _perkControls;
+{ _x ctrlRemoveAllEventHandlers "MouseButtonDown" } forEach _perkControls;
 
 // use the index per perkCol iteration to multiply offset of col (see CoopR_Login_Dialog.hpp for perk x-axis offsets)
 {
-    _x setVariable ["index", _forEachIndex];
+    private _offsetMultiplier = 0;
+    if (_forEachIndex in [1,4,7]) then { _offsetMultiplier = 1};
+    if (_forEachIndex in [2,5,8]) then { _offsetMultiplier = 2};
+
+    _x setVariable ["offsetMultiplier", _offsetMultiplier];
+    DEBUG2("control %1", _x);
+
     _x ctrlAddEventHandler ["ButtonClick", {
         params ["_ctrl"];
-        private _index = _ctrl getVariable "index";
+        DEBUG("clicked");
         private _perkClass = _ctrl getVariable "perkClass";
-        private _offsetMultiplier = 0;
-        if (_index in [1,4,7]) then { _offsetMultiplier = 1};
-        if (_index in [2,5,8]) then { _offsetMultiplier = 2};
+        private _offsetMultiplier = _ctrl getVariable "offsetMultiplier";
         [_ctrl, 110 * _offsetMultiplier] call coopr_fnc_togglePerkSelection;
         private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
         private _infoBoxText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TEXT;

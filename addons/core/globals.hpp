@@ -43,6 +43,7 @@
 #define COOPR_CHAR_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
 #define COOPR_CHAR_IN_RECON "coopr_character_in_recon"
 #define COOPR_CHAR_ACTIVE_MISSION "coopr_character_active_mission"
+#define COOPR_CHAR_PERKS "coopr_character_perks"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"

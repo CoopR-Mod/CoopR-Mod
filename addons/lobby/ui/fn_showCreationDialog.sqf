@@ -67,6 +67,7 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
         _errorText ctrlSetText (localize "str.coopr.character.newprofile.error");
     } else {
         private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
+        [_characterState, COOPR_CHAR_PERKS, call coopr_fnc_getSelected]
         [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
         closeDialog GUI_ID_LOGIN_DIALOG;
     }

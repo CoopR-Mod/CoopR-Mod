@@ -47,14 +47,14 @@ private _reputation = [_characterHash, COOPR_CHAR_REPUTATION] call CBA_fnc_hashG
 private _tmpReputation = [_characterHash, COOPR_CHAR_TMP_REPUTATION] call CBA_fnc_hashGet;
 private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
 private _name = [_characterHash, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
+private _perks = [_characterHash, COOPR_CHAR_PERKS] call CBA_fnc_hashGet;
 
 private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
 private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
-
+private _skillsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILLS;
 
 _titleCtrl ctrlSetText _name;
 
@@ -62,12 +62,12 @@ _titleCtrl ctrlSetText _name;
 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 _roleCtrl ctrlSetText _roleIcon;
 _perksCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to perk icon
-_traitsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to trait icon
+_skillsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to trait icon
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);
-private _perksText = parseText (format ["<t>Perks:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Perk"]);
-private _traitsText = parseText (format ["<t>Traits:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Trait"]);
+private _perksText = parseText (format ["<t>Perks:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _perks]);
+private _skills = parseText (format ["<t>Role Skills:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Skill"]);
 
 private _stateLabel = "None";
 switch (_state) do {
@@ -88,7 +88,7 @@ switch (_state) do {
 private _reputationText = parseText (format ["<t>Reputation:</t><t color='%1'> %2</t>", COOPR_POSITIVE_COLOR_HEX, _reputation]);
 private _tmpReputationText = parseText (format ["<t>Temp Reputation:</t><t color='%1'> %2</t>", COOPR_POSITIVE_COLOR_HEX, _tmpReputation]);
 
-private _composedText = composeText [_roleText, lineBreak, _levelText, lineBreak, _perksText, lineBreak, _traitsText,
+private _composedText = composeText [_roleText, lineBreak, _levelText, lineBreak, _perksText, lineBreak, _skills,
                                      lineBreak, lineBreak, _stateLabel, lineBreak, _reputationText, lineBreak, _tmpReputationText];
 
 //set character text

@@ -63,8 +63,8 @@ class CoopR_Login_Dialog {
                     COOPR_POSITION_CT(138,241,100,100)
                     text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                 };
-                class Traits: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TRAITS;
+                class Skills: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILLS;
                     COOPR_POSITION_CT(252,241,100,100)
                     text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                 };

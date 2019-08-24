@@ -37,7 +37,7 @@ _perkDisplay ctrlEnable true;
 
 private _perkControls = [];
 for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDialog displayCtrl PERK(_i)) };
-{_x setVariable ["perkClass", (_allPerks select _forEachIndex) select 0]} forEach _perkControls;
+{_x setVariable ["perk", _allPerks select _forEachIndex]} forEach _perkControls;
 
 // show perk in GUI
 {_x ctrlShow true; _x ctrlEnable true} forEach _perkControls;
@@ -56,7 +56,8 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
     _x ctrlAddEventHandler ["ButtonClick", {
         params ["_ctrl"];
         DEBUG("clicked");
-        private _perkClass = _ctrl getVariable "perkClass";
+        private _perk = _ctrl getVariable "perk";
+        private _perkClass = _perk select 0;
         private _offsetMultiplier = _ctrl getVariable "offsetMultiplier";
         [_ctrl, 110 * _offsetMultiplier] call coopr_fnc_togglePerkSelection;
         private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;

@@ -2,7 +2,7 @@
 
 #define COMPONENT core
 
-#define DEBUG_CTX "COOPR.CORE"
+#define DEBUG_CTX 'COOPR.CORE'
 
 #define SYNC_RATE_MIN 3
 

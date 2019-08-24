@@ -5,14 +5,14 @@ class ctrlMenuStrip;
 
 class Cfg3DEN {
     class Mission {
-        class CoopR_RPG {
-            displayName = "CoopR RPG";
+        class CoopR_Core {
+            displayName = "CoopR Core";
             class AttributeCategories {
                 class Logging {
                     class Attributes {
                         class LogLevel {
                             control = "combo";
-                            property = "CoopRRPGLogLevel";
+                            property = "CoopRCoreLogLevel";
                             displayName = "Log Level";
                             description = "The log level to use for this addon";
                             expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
@@ -45,12 +45,16 @@ class display3DEN {
     class Controls {
         class MenuStrip: ctrlMenuStrip {
             class Items {
-                class CoopR_Addon_Attributes {
-                    items[] += {"CoopR_RPG_Attributes"};
+                class Attributes {
+                    items[] += {"CoopR_Addon_Attributes"};
                 };
-                class CoopR_RPG_Attributes {
-                    text = "CoopR RPG";
-                    action = "edit3DENMissionAttributes 'CoopR_RPG';";
+                class CoopR_Addon_Attributes {
+                    text = "CoopR Addon Attributes";
+                    items[] += {"CoopR_Core_Attributes"};
+                };
+                class CoopR_Core_Attributes {
+                    text = "CoopR Core";
+                    action = "edit3DENMissionAttributes 'CoopR_Core';";
                 };
             };
         };

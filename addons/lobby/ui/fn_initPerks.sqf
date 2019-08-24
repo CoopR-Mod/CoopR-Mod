@@ -57,7 +57,16 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
         private _infoBoxTitle = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX_TITLE;
 
         _infoBoxTitle ctrlSetText ([_perkClass, "name"] call coopr_fnc_getPerkData);
-        _infoBoxText ctrlSetText ([_perkClass, "description"] call coopr_fnc_getPerkData);
+        private _description = [_perkClass, "description"] call coopr_fnc_getPerkData;
+        private _advantage = [_perkClass, "advantage"] call coopr_fnc_getPerkData;
+        private _disadvantage = [_perkClass, "disadvantage"] call coopr_fnc_getPerkData;
+        private _infoText = format ["%1<br/>
+                            <br/><t color='%2'>%3</t>
+                            <br/><t color='%4'>%5</t>", _description,
+                            COOPR_POSITIVE_COLOR_HEX, _advantage,
+                            COOPR_ERROR_COLOR_HEX, _disadvantage];
+
+        _infoBoxText ctrlSetStructuredText (parseText _infoText);
      }];
 } forEach _perkControls;
 

@@ -94,7 +94,7 @@ class CoopR_Login_Dialog {
                 };
                 class Infobox_Description: COOPR_StructuredText {
                     idc = GUI_ID_LOGIN_CHARACTER_PERKS_TEXT;
-                    COOPR_POSITION_CT(8,44,346, 150)
+                    COOPR_POSITION_CT(8,44,346, 65)
                     text = "No Text";
                 };
                 class Perks_Row_1: COOPR_ControlsGroup {

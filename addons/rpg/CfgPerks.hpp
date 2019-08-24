@@ -32,24 +32,24 @@ class CfgPerks {
         onAdvantage = "";
         onDisadvantage = "";
     };
-  //class Armwrestler : CoopR_BasePerk {
-  //    name = "Armswrestler";
-  //    icon = "\x\coopr\addons\rpg\data\images\perk-sixth-256";
-  //    iconSelected = "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256";
-  //    description = "Can pick up heavy things faster and stay steadfast when using heavy weapons";
-  //    advantage = "Less recoil with heavy weapons, faster pickup of heavy items and persons";
-  //    disadvantage = "Less precise on long ranges";
-  //    onAdvantage = "";
-  //    onDisadvantage = "";
-  //};
-  //class Cautious : CoopR_BasePerk {
-  //    name = "Cautious";
-  //    icon = "\x\coopr\addons\rpg\data\images\perk-sixth-256";
-  //    iconSelected = "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256";
-  //    description = "A quiet and cautious mover. Perfect to blend into the environment";
-  //    advantage = "Hard to see and hear by enemies, can go invisible in PvP at long range";
-  //    disadvantage = "Less precise on long distances";
-  //    onAdvantage = "";
-  //    onDisadvantage = "";
-  //};
+  class Armwrestler : CoopR_BasePerk {
+      name = "Armswrestler";
+      icon = "\x\coopr\addons\rpg\data\images\perk-sixth-256";
+      iconSelected = "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256";
+      description = "Can pick up heavy things faster and stay steadfast when using heavy weapons";
+      advantage = "Less recoil with heavy weapons, faster pickup of heavy items and persons";
+      disadvantage = "Less precise on long ranges";
+      onAdvantage = "";
+      onDisadvantage = "";
+  };
+  class Cautious : CoopR_BasePerk {
+      name = "Cautious";
+      icon = "\x\coopr\addons\rpg\data\images\perk-sixth-256";
+      iconSelected = "\x\coopr\addons\rpg\data\images\perk-sixth-selected-256";
+      description = "A quiet and cautious mover. Perfect to blend into the environment";
+      advantage = "Hard to see and hear by enemies, can go invisible in PvP at long range";
+      disadvantage = "Less precise on long distances";
+      onAdvantage = "";
+      onDisadvantage = "";
+  };
 };

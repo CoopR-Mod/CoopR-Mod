@@ -10,7 +10,7 @@ private _listBox = _vendorDisplay displayCtrl GUI_ID_ARMORY_LISTBOX;
 private _textboxReputation = _vendorDisplay displayCtrl GUI_ID_ARMORY_REPUTATION_TEXTBOX;
 private _textboxInfos = _vendorDisplay displayCtrl GUI_ID_ARMORY_INFO_TEXTBOX;
 private _buttonEquip = _vendorDisplay displayCtrl GUI_ID_ARMORY_BUTTON_EQUIP;
-private _currentReputation = player getVariable [COOPR_KEY_REPUTATION, 0];
+private _currentReputation = player getVariable [COOPR_CHAR_REPUTATION, 0];
 
 private _itemsHash = [COOPR_REP_ITEMS_WEST, []] call CBA_fnc_hashCreate;
 private _itemKeys = [_itemsHash] call CBA_fnc_hashKeys; // ids

@@ -19,7 +19,7 @@
 #define ABORT_BUTTON 104
 
 // Campaign Params
-#define COOPR_KEY_INTEL_PROGRESS "coopr_intel_progess"
+#define COOPR_CHAR_INTEL_PROGRESS "coopr_intel_progess"
 
 // Default Loadouts
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
@@ -27,23 +27,21 @@
 #define WOUNDED_LOADOUT [[],[],[],["U_C_man_sport_3_F",[]],[],[],"","",[],["","","","","",""]]
 
 // Character Params
-#define COOPR_KEY_PLAYER_CHARACTERS "coopr_player_characters"
-#define COOPR_KEY_PLAYER_LOGGEDIN "coopr_login_state"
-#define COOPR_KEY_TEAMKILLS "coopr_player_teamkills"
-
-#define COOPR_KEY_SLOT "coopr_character_slot"
-#define COOPR_KEY_NAME "coopr_character_name"
-#define COOPR_KEY_UID "coopr_character_user_id"
-#define COOPR_KEY_CHARACTER_ID "coopr_character_id"
-#define COOPR_KEY_STATE "coopr_character_state"
-#define COOPR_KEY_REPUTATION "coopr_character_reputation"
-#define COOPR_KEY_TMP_REPUTATION "coopr_character_tmp_reputation"
-#define COOPR_KEY_MONEY "coopr_character_money"
-#define COOPR_KEY_ROLE "coopr_character_role"
-#define COOPR_KEY_POSITION "coopr_character_position"
-#define COOPR_KEY_LOADOUT "coopr_character_loadout"
-#define COOPR_KEY_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
-#define COOPR_KEY_IN_RECON "coopr_character_in_recon"
+#define COOPR_CHAR_PLAYER_LOGGEDIN "coopr_character_isloggedin"
+#define COOPR_CHAR_TEAMKILLS "coopr_character_teamkills"
+#define COOPR_CHAR_SLOT "coopr_character_slot"
+#define COOPR_CHAR_NAME "coopr_character_name"
+#define COOPR_CHAR_UID "coopr_character_user_id"
+#define COOPR_CHAR_CHARACTER_ID "coopr_character_id"
+#define COOPR_CHAR_STATE "coopr_character_state"
+#define COOPR_CHAR_REPUTATION "coopr_character_reputation"
+#define COOPR_CHAR_TMP_REPUTATION "coopr_character_tmp_reputation"
+#define COOPR_CHAR_MONEY "coopr_character_money"
+#define COOPR_CHAR_ROLE "coopr_character_role"
+#define COOPR_CHAR_POSITION "coopr_character_position"
+#define COOPR_CHAR_LOADOUT "coopr_character_loadout"
+#define COOPR_CHAR_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"
+#define COOPR_CHAR_IN_RECON "coopr_character_in_recon"
 
 #define COOPR_STATE_OK "coopr_character_state_ok"
 #define COOPR_STATE_WIA "coopr_character_state_wia"
@@ -58,14 +56,14 @@
 #define COOPR_ROLE_NONE "coopr_role_none"
 
 // Recon Entry Keys
-#define COOPR_KEY_RECON_ENTRY_ID "coopr_recon_entry_id"
-#define COOPR_KEY_RECON_ENTRY_OWNER "coopr_recon_entry_owner"
-#define COOPR_KEY_RECON_ENTRY_TYPE "coopr_recon_entry_type"
-#define COOPR_KEY_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"
-#define COOPR_KEY_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"
-#define COOPR_KEY_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
-#define COOPR_KEY_RECON_ENTRY_TIME "coopr_recon_entry_time"
-#define COOPR_KEY_RECON_ENTRY_LOCATION "coopr_recon_entry_location"
+#define COOPR_CHAR_RECON_ENTRY_ID "coopr_recon_entry_id"
+#define COOPR_CHAR_RECON_ENTRY_OWNER "coopr_recon_entry_owner"
+#define COOPR_CHAR_RECON_ENTRY_TYPE "coopr_recon_entry_type"
+#define COOPR_CHAR_RECON_ENTRY_STRENGTH "coopr_recon_entry_strength"
+#define COOPR_CHAR_RECON_ENTRY_BEHAVIOUR "coopr_recon_entry_behaviour"
+#define COOPR_CHAR_RECON_ENTRY_MARKER "coopr_recon_entry_marker"
+#define COOPR_CHAR_RECON_ENTRY_TIME "coopr_recon_entry_time"
+#define COOPR_CHAR_RECON_ENTRY_LOCATION "coopr_recon_entry_location"
 
 // Recon Report Params
 #define COOPR_STRENGTH_TYPE_FIRETEAM "Fireteam"
@@ -74,23 +72,23 @@
 #define COOPR_STRENGTH_TYPE_COMPANY "Company"
 
 // Mission Globals
-#define COOPR_KEY_ACTIVE_MISSION "coopr_character_active_mission"
-#define COOPR_KEY_MISSION_TRACKER "coopr_squad_mission_tracker"
+#define COOPR_CHAR_ACTIVE_MISSION "coopr_character_active_mission"
+#define COOPR_CHAR_MISSION_TRACKER "coopr_squad_mission_tracker"
 
-#define COOPR_KEY_MISSION_QUEUE_ID "coopr_mission_queue_id"
-#define COOPR_KEY_MISSION_TYPE "coopr_mission_type"
-#define COOPR_KEY_MISSION_DESCRIPTION "coopr_mission_description"
-#define COOPR_KEY_MISSION_REPORT_TIME "coopr_mission_report_time"
-#define COOPR_KEY_MISSION_MARKER "coopr_mission_marker"
-#define COOPR_KEY_MISSION_ACCURACY "coopr_mission_accuracy"
-#define COOPR_KEY_MISSION_TARGET "coopr_mission_target"
+#define COOPR_CHAR_MISSION_QUEUE_ID "coopr_mission_queue_id"
+#define COOPR_CHAR_MISSION_TYPE "coopr_mission_type"
+#define COOPR_CHAR_MISSION_DESCRIPTION "coopr_mission_description"
+#define COOPR_CHAR_MISSION_REPORT_TIME "coopr_mission_report_time"
+#define COOPR_CHAR_MISSION_MARKER "coopr_mission_marker"
+#define COOPR_CHAR_MISSION_ACCURACY "coopr_mission_accuracy"
+#define COOPR_CHAR_MISSION_TARGET "coopr_mission_target"
 
-#define COOPR_KEY_MISSION_TRACKER_MISSION_START "coopr_mission_tracker_mission_start"
-#define COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA "coopr_mission_tracker_visited_mission_area"
-#define COOPR_KEY_MISSION_TRACKER_KILL_COUNT "coopr_mission_tracker_kill_count"
-#define COOPR_KEY_MISSION_TRACKER_TYPE "coopr_mission_tracker_type"
-#define COOPR_KEY_MISSION_TRACKER_TARGET "coopr_mission_tracker_target"
-#define COOPR_KEY_MISSION_TRACKER_RECON_COMPLETE "coopr_mission_tracker_recon_complete"
+#define COOPR_CHAR_MISSION_TRACKER_MISSION_START "coopr_mission_tracker_mission_start"
+#define COOPR_CHAR_MISSION_TRACKER_VISITED_MISSION_AREA "coopr_mission_tracker_visited_mission_area"
+#define COOPR_CHAR_MISSION_TRACKER_KILL_COUNT "coopr_mission_tracker_kill_count"
+#define COOPR_CHAR_MISSION_TRACKER_TYPE "coopr_mission_tracker_type"
+#define COOPR_CHAR_MISSION_TRACKER_TARGET "coopr_mission_tracker_target"
+#define COOPR_CHAR_MISSION_TRACKER_RECON_COMPLETE "coopr_mission_tracker_recon_complete"
 
 #define COOPR_MISSION_REPORT_TYPE_INFANTRY "Infantry"
 #define COOPR_MISSION_REPORT_TYPE_MOTORIZED "Motorized"

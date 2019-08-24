@@ -34,16 +34,16 @@ if (isServer) then {
     // init mission tracker
     private _timeStamp = call coopr_fnc_currentGameTime;
     DEBUG2("mission started at %1", _timeStamp);
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_MISSION_START, _timeStamp] call CBA_fnc_hashSet;
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_VISITED_MISSION_AREA, false] call CBA_fnc_hashSet;
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_KILL_COUNT, 0] call CBA_fnc_hashSet;
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_TYPE, _type] call CBA_fnc_hashSet;
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_TARGET, _target] call CBA_fnc_hashSet;
-    [_missionTracker, COOPR_KEY_MISSION_TRACKER_RECON_COMPLETE, false] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_MISSION_START, _timeStamp] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_VISITED_MISSION_AREA, false] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_KILL_COUNT, 0] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_TYPE, _type] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_TARGET, _target] call CBA_fnc_hashSet;
+    [_missionTracker, COOPR_CHAR_MISSION_TRACKER_RECON_COMPLETE, false] call CBA_fnc_hashSet;
 
     ["missiontracker init state:", _missionTracker] call coopr_fnc_logHash;
 
-    _unit setVariable [COOPR_KEY_MISSION_TRACKER, _missionTracker, true];
+    _unit setVariable [COOPR_CHAR_MISSION_TRACKER, _missionTracker, true];
     DEBUG2("assigned mission tracker to %1", _unit);
 } else {
     SERVER_ONLY_ERROR(__FILE__);

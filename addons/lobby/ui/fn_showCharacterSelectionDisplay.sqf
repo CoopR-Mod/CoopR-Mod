@@ -40,13 +40,13 @@ _characterDetailsCtrl ctrlShow true;
 _characterDetailsCtrl ctrlEnable true;
 
 private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
-private _roleClass = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
+private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
 
-private _reputation = [_characterHash, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
-private _tmpReputation = [_characterHash, COOPR_KEY_TMP_REPUTATION] call CBA_fnc_hashGet;
-private _state = [_characterHash, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-private _name = [_characterHash, COOPR_KEY_NAME] call CBA_fnc_hashGet;
+private _reputation = [_characterHash, COOPR_CHAR_REPUTATION] call CBA_fnc_hashGet;
+private _tmpReputation = [_characterHash, COOPR_CHAR_TMP_REPUTATION] call CBA_fnc_hashGet;
+private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
+private _name = [_characterHash, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
 
 private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
 private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
@@ -94,7 +94,7 @@ private _composedText = composeText [_roleText, lineBreak, _levelText, lineBreak
 //set character text
 _textCtrl ctrlSetStructuredText _composedText;
 
-private _slot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+private _slot = [_characterHash, COOPR_CHAR_SLOT] call CBA_fnc_hashGet;
 
 _deleteButton ctrlRemoveAllEventHandlers "MouseButtonDown";
 _deleteButton setVariable ["_params", [_slot]];
@@ -147,7 +147,7 @@ switch (_state) do {
         _playButton ctrlEnable true;
         _playButton ctrlSetText "Play";
         // set loadout on character preview
-        private _loadout = [_characterHash, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;
+        private _loadout = [_characterHash, COOPR_CHAR_LOADOUT] call CBA_fnc_hashGet;
         if (count _loadout isEqualTo 0) then {
             ERROR("character loadout could not be revoked after selection")
         } else {

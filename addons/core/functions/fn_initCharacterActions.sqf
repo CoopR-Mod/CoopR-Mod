@@ -19,8 +19,8 @@
 if (INTEGRATE_ACE3) then {
     call coopr_fnc_ace3_addCharacterActions;
 } else {
-    private _finishReportCondition = { player getVariable [COOPR_KEY_IN_RECON, false] };
-    private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveMission and (player getVariable [COOPR_KEY_IN_RECON, false])};
+    private _finishReportCondition = { player getVariable [COOPR_CHAR_IN_RECON, false] };
+    private _reconReportActionCondition = { [player] call coopr_fnc_hasActiveMission and (player getVariable [COOPR_CHAR_IN_RECON, false])};
     private _buildCampsiteCondition = {[COOPR_CAMP_ITEM_AREA] call coopr_fnc_canBuildCampsiteStructure };
     private _buildTentCondition = {[COOPR_CAMP_ITEM_TENT] call coopr_fnc_canBuildCampsiteStructure };
 

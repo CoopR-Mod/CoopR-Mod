@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 private _ctrl = _this select 0;
-private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+private _characterID = player getVariable [COOPR_CHAR_CHARACTER_ID, -1];
 
 [[_characterID], "coopr_fnc_getEntriesForCharacter", [_ctrl], {
     params ["_callbackArgs", "_promisedResult"];
@@ -20,7 +20,7 @@ private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
 
     DEBUG2("removing entry at %1", _selectedEntry);
     private _entryToRemove = _reconEntries select (parseNumber _selectedEntry);
-    private _idToRemove = [_entryToRemove, COOPR_KEY_RECON_ENTRY_ID] call CBA_fnc_hashGet;
+    private _idToRemove = [_entryToRemove, COOPR_CHAR_RECON_ENTRY_ID] call CBA_fnc_hashGet;
     [_idToRemove] remoteExec ["coopr_fnc_removeReconEntry", EXEC_SERVER];
     lbClear _entryRemoveCombo;
     { _entryRemoveCombo lbAdd str (_forEachIndex + 1); _entryRemoveCombo lbSetData [_forEachIndex, str _forEachIndex] } forEach _reconEntries;

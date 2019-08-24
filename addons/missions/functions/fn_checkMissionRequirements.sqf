@@ -24,11 +24,11 @@ params [["_unit", objNull]];
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
 if (isServer) then {
-    private _activeMission = _unit getVariable [COOPR_KEY_ACTIVE_MISSION, objNull];
-    private _missionTracker = _player getVariable [COOPR_KEY_MISSION_TRACKER, []];
+    private _activeMission = _unit getVariable [COOPR_CHAR_ACTIVE_MISSION, objNull];
+    private _missionTracker = _player getVariable [COOPR_CHAR_MISSION_TRACKER, []];
     if (_activeMission isEqualTo objNull) exitWith { ERROR("_activeMission was objNull"); false; };
-    private _type = [_missionTracker, COOPR_KEY_MISSION_TRACKER_TYPE] call CBA_fnc_hashGet;
-    private _killCount = [_missionTracker, COOPR_KEY_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
+    private _type = [_missionTracker, COOPR_CHAR_MISSION_TRACKER_TYPE] call CBA_fnc_hashGet;
+    private _killCount = [_missionTracker, COOPR_CHAR_MISSION_TRACKER_KILL_COUNT] call CBA_fnc_hashGet;
 
     switch (_type) do {
         case COOPR_MISSION_TYPE_SNIPERTEAM: {

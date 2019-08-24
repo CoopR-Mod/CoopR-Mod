@@ -28,7 +28,7 @@ private _userMarkers = allMapMarkers select { (_x find "_USER_DEFINED") == 0};
 DEBUG2("removing %1 user markers", _userMarkers);
 { deleteMarkerLocal _x } forEach _userMarkers;
 
-private _currentMission = player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+private _currentMission = player getVariable [COOPR_CHAR_ACTIVE_MISSION, []];
 if !(_currentMission isEqualTo []) then {
     [(_currentMission call coopr_fnc_serializeMission)] remoteExec ["coopr_fnc_saveMission", EXEC_SERVER];
     [_currentMission] spawn coopr_fnc_removeMissionMarker;

@@ -25,9 +25,9 @@ params [["_unit", objNull],
 if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 
 if (isServer) then {
-    private _currentReputation = _unit getVariable [COOPR_KEY_REPUTATION, 0];
-    private _charSlot = _unit getVariable [COOPR_KEY_SLOT, -1];
-    _unit setVariable [COOPR_KEY_REPUTATION, _currentReputation + _reputation];
+    private _currentReputation = _unit getVariable [COOPR_CHAR_REPUTATION, 0];
+    private _charSlot = _unit getVariable [COOPR_CHAR_SLOT, -1];
+    _unit setVariable [COOPR_CHAR_REPUTATION, _currentReputation + _reputation];
 
     _unit call coopr_fnc_updateState;
     [_unit call coopr_fnc_serializeCoopR] call coopr_fnc_updateCharacter;

@@ -46,7 +46,7 @@ deleteVehicle COOPR_LOBBY_AGENT;
 DEBUG("assigned as player");
 [_characterHash, player] call coopr_fnc_deserializeCoopR;
 DEBUG("applied character state to new unit");
-player setVariable [COOPR_KEY_PLAYER_LOGGEDIN, true, true];
+player setVariable [COOPR_CHAR_PLAYER_LOGGEDIN, true, true];
 INFO2("player with id %1 logged in", getPlayerUID player);
 
 call coopr_fnc_initCharacter;

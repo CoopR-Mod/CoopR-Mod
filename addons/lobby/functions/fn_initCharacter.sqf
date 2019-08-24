@@ -15,8 +15,8 @@
  * Scope: Client
  */
 
-private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
-private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
+private _oldPos = player getVariable [COOPR_CHAR_POSITION, []];
+private _loadout = player getVariable [COOPR_CHAR_LOADOUT, []];
 
 DEBUG("post login init...");
 

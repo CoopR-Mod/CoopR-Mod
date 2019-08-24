@@ -8,7 +8,7 @@
         };
         ((findDisplay MP_MENU) displayCtrl ABORT_BUTTON) ctrlAddEventHandler ["ButtonClick", {
             [] spawn {
-                private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+                private _isLoggedIn = player getVariable [COOPR_CHAR_PLAYER_LOGGEDIN, false];
 
                 if(_isLoggedIn) then {
                     INFO("saving character state before mission end...");

@@ -29,9 +29,9 @@ private _victimIsPerson = _victim call CBA_fnc_isPerson;
 private _playerName = name player;
 
 if (_victimWasEnemy isEqualTo false) then {
-      private _lastTK = player getVariable [COOPR_KEY_TEAMKILLS, 0];
+      private _lastTK = player getVariable [COOPR_CHAR_TEAMKILLS, 0];
       private _newTK = _lastTK + 1;
-      player setVariable [COOPR_KEY_TEAMKILLS, _newTK, true];
+      player setVariable [COOPR_CHAR_TEAMKILLS, _newTK, true];
       DEBUG3("%1 adding TK - actual %2", _playerName, _newTk);
 
       if(_newTK >= MAX_TK) then {

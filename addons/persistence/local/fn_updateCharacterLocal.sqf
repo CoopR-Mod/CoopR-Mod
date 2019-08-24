@@ -24,11 +24,11 @@ if (isServer) then {
     if (_characterHash isEqualTo []) exitWith { ERROR("_characters was empty array") };
     if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has to be a cba hash"); };
 
-    private _playerUID = [_characterHash, COOPR_KEY_UID] call CBA_fnc_hashGet;
+    private _playerUID = [_characterHash, COOPR_CHAR_UID] call CBA_fnc_hashGet;
 
     if (_playerUID call coopr_fnc_hasPlayer) then {
         INFO("updating character...");
-        private _characterSlot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+        private _characterSlot = [_characterHash, COOPR_CHAR_SLOT] call CBA_fnc_hashGet;
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 
         private _updateCharacter = format["UPDATE characters SET character_%1 = '%2' WHERE id = %3", _characterSlot, _characterHash, _charactersID];

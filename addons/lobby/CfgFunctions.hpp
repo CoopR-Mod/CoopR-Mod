@@ -28,6 +28,5 @@ class CfgFunctions {
             class togglePerkSelection {};
             class getSelectedPerksCtrl {};
         }
-        }
     }
 }

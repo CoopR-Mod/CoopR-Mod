@@ -11,7 +11,6 @@ class CfgFunctions {
             class initLobby {};
             class cleanUp {};
             class redrawCharacterMarker {};
-            class getSelectedPerksCtrl {};
         }
         class coopr_lobby_ui {
             file = "x\coopr\addons\lobby\ui";

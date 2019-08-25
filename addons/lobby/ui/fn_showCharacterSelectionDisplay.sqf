@@ -66,7 +66,7 @@ _skillsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.pa
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);
-private _perksText = parseText (format ["<t>Perks:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _perks]);
+private _perksText = parseText (format ["<t>Perks:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _perks apply { _x select 1}]);
 private _skills = parseText (format ["<t>Role Skills:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Skill"]);
 
 private _stateLabel = "None";

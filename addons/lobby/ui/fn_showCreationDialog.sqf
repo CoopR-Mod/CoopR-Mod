@@ -67,7 +67,7 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
         _errorText ctrlSetText (localize "str.coopr.character.newprofile.error");
     } else {
         private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
-        private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { _x select 0 };
+        private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { _x getVariable ["perk", []] };
         [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
         [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
         closeDialog GUI_ID_LOGIN_DIALOG;

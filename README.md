@@ -19,7 +19,7 @@ Yes you can. The official CoopR-Servers will all be connected to the **CoopR-HQ*
   - [Headquarter](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Headquarter-Concepts)
   - [Missions](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Mission-Concepts)
 * [How to setup a mission](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-setup-a-mission)
-* How to play 
+* How to play
 * [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contribution)
   - [Setup Local](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Setup-(Local))
   - [Addons Structure](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Addons-Structure)
@@ -28,7 +28,7 @@ Yes you can. The official CoopR-Servers will all be connected to the **CoopR-HQ*
 * [Technical Documentation](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation)
   - [Macros](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#macros)
   - [Debugging and Logging](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#debugging-and-logging)
-  
+
 # Feature Roadmap
 Here listed one can see all planned features and technical milestones as a roadmap.
 
@@ -57,4 +57,10 @@ Here listed one can see all planned features and technical milestones as a roadm
 | Gameplay| Filler Missions| Side missions to prevent boredom if no real mission missions are available | 0/? |
 | Technical| Enhance HQ Webapp| HQ Webapp MVP completion. Player can manage their characters and squads online | 0/? |
 
+### Web Links
 
+Youtrack: https://xetra11-portfolio.myjetbrains.com/youtrack/agiles/91-8/95-34?p=91-8%2F95-29
+CI Server: http://ci.coopr-hq.com/overview (guest access available)
+BI Forum: https://forums.bohemia.net/forums/topic/225021-coopr-mod-v08-wip-a-coop-gameplay-enhancement/
+Patreon: https://www.patreon.com/cooprmod
+YT Channel: https://www.youtube.com/channel/UC5G3xlcem6zhuGmFOY-nmrw

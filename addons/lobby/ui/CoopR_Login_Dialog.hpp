@@ -55,21 +55,74 @@ class CoopR_Login_Dialog {
                 };
                 class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-                    COOPR_POSITION_CT(24,241,100,100)
+                    COOPR_POSITION_CT(24,241,50,50)
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
-                class Perks: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
-                    COOPR_POSITION_CT(138,241,100,100)
+                class Skill_0: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0;
+                    COOPR_POSITION_CT(81,241,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                 };
-                class Skills: COOPR_Picture {
-                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILLS;
-                    COOPR_POSITION_CT(252,241,100,100)
+                class Skill_1: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_1;
+                    COOPR_POSITION_CT(138,241,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
                 };
-                class Main: COOPR_Picture {
-                    COOPR_POSITION_CT(63,347,250,110)
+                class Perk_0: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_1;
+                    COOPR_POSITION_CT(195,241,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_1: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_2;
+                    COOPR_POSITION_CT(252,241,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_2: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_3;
+                    COOPR_POSITION_CT(24,347,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_3: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_3;
+                    COOPR_POSITION_CT(81,347,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_4: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_4;
+                    COOPR_POSITION_CT(138,347,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_5: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_5;
+                    COOPR_POSITION_CT(195,347,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_6: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_6;
+                    COOPR_POSITION_CT(252,347,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_7: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_7;
+                    COOPR_POSITION_CT(24,559,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                };
+                class Perk_8: COOPR_Picture {
+                    idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_8;
+                    COOPR_POSITION_CT(81,559,50,50)
+                    //onLoad = COOPR_DISABLE_CONTROL;
+                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
             };
         };

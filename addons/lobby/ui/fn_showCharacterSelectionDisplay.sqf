@@ -39,30 +39,38 @@ private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_
 _characterDetailsCtrl ctrlShow true;
 _characterDetailsCtrl ctrlEnable true;
 
-private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PERKS;
 private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
 
+// fetch character stats
 private _reputation = [_characterHash, COOPR_CHAR_REPUTATION] call CBA_fnc_hashGet;
 private _tmpReputation = [_characterHash, COOPR_CHAR_TMP_REPUTATION] call CBA_fnc_hashGet;
 private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
 private _name = [_characterHash, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
 private _perks = [_characterHash, COOPR_CHAR_PERKS] call CBA_fnc_hashGet;
 
+//{
+//    private _perkOfCharacter = _x;
+//    private _perkCtrl = _loginDialog displayCtrl DETAIL_PERK(_forEachIndex);
+//    _perkCtrl ctrlEnable true;
+//    _perkCtrl ctrlShow true;
+//    _perkCtrl ctrlSetText ([_perkOfCharacter select 0, "icon"] call coopr_fnc_getPerkData)
+//} forEach _perks;
+
+// init standard character description controls
 private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
 private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-private _skillsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILLS;
+private _skill1Ctrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0;
+private _skill2Ctrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_1;
 
 _titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 _roleCtrl ctrlSetText _roleIcon;
-_perksCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to perk icon
-_skillsCtrl ctrlSetText "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa"; // TODO: change to trait icon
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
 private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);

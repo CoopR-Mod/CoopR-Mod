@@ -23,4 +23,4 @@ mkdir %keys%
 %armake64% build -p addons\campsite %dest%\campsite.pbo
 
 copy mod.cpp @CoopR\mod.cpp
-copy keys\* @CoopR\keys\
+copy keys\cooprlight.bikey @CoopR\keys\

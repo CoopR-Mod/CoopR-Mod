@@ -18,4 +18,3 @@ mkdir %keys%
 %armake64% build -p addons\lobby %dest%\lobby.pbo
 
 copy mod.cpp @CoopRLight\mod.cpp
-copy keys\cooprlight.bikey @CoopRLight\keys\

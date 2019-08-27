@@ -17,4 +17,3 @@ $ARMAKE build -p -f addons/integration $DEST/integration.pbo
 $ARMAKE build -p -f addons/lobby $DEST/lobby.pbo
 
 cp mod.cpp @CoopRLight/mod.cpp
-cp keys/cooprlight.bikey @CoopRLight/keys/

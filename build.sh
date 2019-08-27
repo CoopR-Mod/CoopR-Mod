@@ -22,4 +22,3 @@ $ARMAKE build -p -f addons/missions $DEST/missions.pbo
 $ARMAKE build -p -f addons/campsite $DEST/campsite.pbo
 
 cp mod.cpp @CoopR/mod.cpp
-cp keys/cooprlight.bikey @CoopR/keys/

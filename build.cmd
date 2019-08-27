@@ -4,11 +4,13 @@
 SET armake64="tools\armake_w64.exe"
 SET validator="tools\sqf_validator.py"
 SET dest="@CoopR\addons"
+SET keys="@CoopR\keys"
 
 python %validator%
 
 rmdir /Q /S "@CoopR"
 mkdir %dest%
+mkdir %keys%
 
 %armake64% build -p addons\persistence %dest%\persistence.pbo
 %armake64% build -p addons\core %dest%\core.pbo
@@ -21,3 +23,4 @@ mkdir %dest%
 %armake64% build -p addons\campsite %dest%\campsite.pbo
 
 copy mod.cpp @CoopR\mod.cpp
+copy keys\* @CoopR\keys\

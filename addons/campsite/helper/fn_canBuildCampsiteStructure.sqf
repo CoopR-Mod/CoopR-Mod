@@ -26,7 +26,7 @@ if(_structure isEqualTo UNDEFINED) then{
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {
 		private _isSquadLeader = player call coopr_fnc_isSquadLeader;
-		private _isInMission   = true;//TODO fnc to check if player is in mission.
+		private _isInMission   = player call coopr_fnc_hasActiveMission;
 
 		if(_isInMission AND _isSquadLeader) then {true} else {false};
 	};

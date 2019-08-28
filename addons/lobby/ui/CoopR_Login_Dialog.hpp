@@ -55,7 +55,7 @@ class CoopR_Login_Dialog {
                 };
                 class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-                    COOPR_POSITION_CT(24,241,50,50)
+                    COOPR_POSITION_CT(265,50,100,100)
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
                 };
                 class Skill_0: COOPR_Picture {

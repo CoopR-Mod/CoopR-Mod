@@ -34,7 +34,7 @@ class CfgCharacterRoles {
         class Skills {
             class Overseer {
                 name = "Overseer";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";
@@ -57,7 +57,7 @@ class CfgCharacterRoles {
         class Skills {
             class SixthSense {
                 name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";
@@ -81,7 +81,7 @@ class CfgCharacterRoles {
         class Skills {
             class SixthSense {
                 name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";
@@ -105,7 +105,7 @@ class CfgCharacterRoles {
         class Skills {
             class SixthSense {
                 name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";
@@ -129,7 +129,7 @@ class CfgCharacterRoles {
         class Skills {
             class SixthSense {
                 name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";
@@ -150,7 +150,7 @@ class CfgCharacterRoles {
         class Skills {
             class SixthSense {
                 name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\perks\perk-sixth.paa";
+                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
                 description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
                 levelRequirement[] = {1,3,5,7,10};
                 //onTrigger = "call coopr_fnc_skillLogic.sqf";

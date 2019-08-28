@@ -40,7 +40,12 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
 {_x setVariable ["perk", _allPerks select _forEachIndex]} forEach _perkControls;
 
 // show perk in GUI
-{_x ctrlShow true; _x ctrlEnable true} forEach _perkControls;
+{
+    _x ctrlShow true;
+    _x ctrlEnable true;
+    private _perk = _x getVariable "perk";
+    _x ctrlSetText ([(_perk select 0), "icon"] call coopr_fnc_getPerkData);
+ } forEach _perkControls;
 
 { _x ctrlRemoveAllEventHandlers "MouseButtonDown" } forEach _perkControls;
 

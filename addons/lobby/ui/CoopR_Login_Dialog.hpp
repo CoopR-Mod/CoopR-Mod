@@ -58,98 +58,98 @@ class CoopR_Login_Dialog {
                 class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
                     COOPR_POSITION_CT(255,45,100,100)
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\roles\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Skill_0: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0;
                     COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(2),80,80)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                    text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                 };
                 class Skill_1: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_1;
                     COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(2),80,80)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                    text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                 };
                 class Skill_2: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_2;
                     COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(2),80,80)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                    text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                 };
                 class Skill_3: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_3;
                     COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(2),80,80)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                    text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                 };
                 class Skill_4: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_4;
                     COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(2),80,80)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                    text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                 };
                 class Perk_0: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_1;
                     COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(2.5),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_1: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_2;
                     COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(2.5),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_2: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_3;
                     COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(2.5),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_3: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_3;
                     COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(2.5),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_4: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_4;
                     COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(2.5),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_5: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_5;
-                    COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(0.5),ROW_OFFSET(3),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_6: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_6;
-                    COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(1.5),ROW_OFFSET(3),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_7: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_7;
-                    COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(2.5),ROW_OFFSET(3),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
                 class Perk_8: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_8;
-                    COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(3.5),ROW_OFFSET(3),75,75)
                     //onLoad = COOPR_DISABLE_CONTROL;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                 };
             };
         };
 
         class PerkButton : COOPR_ButtonPictureNoBG {
             soundClick[] = {"\x\coopr\addons\lobby\data\sounds\card_flip.ogg", 0.09, 1};
-            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
         };
 
         class Perks: COOPR_ControlsGroup {
@@ -182,13 +182,13 @@ class CoopR_Login_Dialog {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_1;
                             COOPR_POSITION_CT(110,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                         class Perk_3: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_2;
                             COOPR_POSITION_CT(220,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                     };
                 };
@@ -199,19 +199,19 @@ class CoopR_Login_Dialog {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_3;
                             COOPR_POSITION_CT(0,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                         class Perk_5: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_4;
                             COOPR_POSITION_CT(110,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                         class Perk_6: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_5;
                             COOPR_POSITION_CT(220,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                     };
                 };
@@ -222,19 +222,19 @@ class CoopR_Login_Dialog {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_6;
                             COOPR_POSITION_CT(0,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                         class Perk_8: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_7;
                             COOPR_POSITION_CT(110,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                         class Perk_9: PerkButton {
                             idc = GUI_ID_LOGIN_CHARACTER_PERK_8;
                             COOPR_POSITION_CT(220,0,100,100)
                             onLoad = COOPR_DISABLE_CONTROL;
-                            text = "\x\coopr\addons\rpg\data\images\perks\perk-sixth-256.paa";
+                            text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
                         };
                     };
                 };
@@ -355,7 +355,7 @@ class CoopR_Login_Dialog {
                 };
                 class RolePicture: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_PICTURE;
-                    text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa"; //ToDo: Change to the correct picture
+                    text = "\x\coopr\addons\rpg\data\images\perks\sprinter-256.paa"; //ToDo: Change to the correct picture
                     COOPR_POSITION_CT(22,175,311,311)
                 };
                 class RoleInput: RscCombo {

@@ -57,7 +57,8 @@ if !(_ctrl getVariable ["isSelected", false]) then {
 } else {
     // deselect perk
     _ctrl setVariable ["isSelected", false];
-    _ctrl ctrlSetText "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
+    private _perk = _ctrl getVariable "perk";
+    _ctrl ctrlSetText ([(_perk select 0), "icon"] call coopr_fnc_getPerkData);
     //_ctrl ctrlSetScale 1.0;
     _ctrl ctrlSetPosition [(_offsetX * safeZoneW) / 1920,
                            (0 * safeZoneH) / 1080,

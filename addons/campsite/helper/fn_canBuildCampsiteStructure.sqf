@@ -25,14 +25,16 @@ if(_structure isEqualTo UNDEFINED) then{
 
 switch _structure do{
 	case COOPR_CAMP_ITEM_AREA: {
-		private _characterRole = player getVariable [COOPR_KEY_ROLE, COOPR_ROLE_LEADER ];
-		if!(_characterRole isEqualTo COOPR_ROLE_LEADER) exitWith {false};
-		true;
+		private _isSquadLeader = player call coopr_fnc_isSquadLeader;
+		private _isInMission   = true;//TODO fnc to check if player is in mission.
+
+		if(_isInMission AND _isSquadLeader) then {true} else {false};
 	};
 	case COOPR_CAMP_ITEM_TENT: {
-		private _conditionA = call coopr_fnc_isInsideCampingArea;
-		private _conditionB = "coopr_item_foldedTent" in items player;
-		private _conditionC = player getVariable ["coopr_activeTent"];
-		if (_conditionA AND _conditionB AND _conditionC) then {true} else {false}; 
+		private _isInsideCampingArea = call coopr_fnc_isInsideCampingArea; //TODO check if player is inside his leader camping area
+		private _hasTentItem = "coopr_item_foldedTent" in items player;
+		private _isOnlyTent = true; //TODO check among all the tents in the world and see if this dude owns any of them _tent getVariable ["coopr_tent_owner", -1];
+
+		if (_isInsideCampingArea AND _hasTentItem AND _isOnlyTent) then {true} else {false}; 
 		};
 };

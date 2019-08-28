@@ -23,4 +23,4 @@
 
  params ["_unit", "_container", "_item"];
 
- if (_item isEqualTo "coopr_item_foldedTent") exitWith {[_unit, _container] call coopr_fnc_addTentItem};
+ 

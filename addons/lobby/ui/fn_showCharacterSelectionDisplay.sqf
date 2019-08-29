@@ -63,11 +63,11 @@ for "_i" from 0 to 8 do { (_loginDialog displayCtrl DETAIL_PERK(_i)) ctrlSetText
 
 // show character perks
 {
-    private _perkOfCharacter = _x;
+    private _perkClass = _x;
     private _perkCtrl = _loginDialog displayCtrl DETAIL_PERK(_forEachIndex);
     _perkCtrl ctrlEnable true;
     _perkCtrl ctrlShow true;
-    _perkCtrl ctrlSetText ([_perkOfCharacter select 0, "icon"] call coopr_fnc_getPerkData)
+    _perkCtrl ctrlSetText ([_perkClass, "icon"] call coopr_fnc_getPerkData)
 } forEach _perks;
 
 // show character skills

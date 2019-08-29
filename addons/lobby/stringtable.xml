@@ -110,6 +110,11 @@
 			<German>Du musst einen Namen angeben!</German>
 			<French>Vous devez entrer un nom</French>
 		</Key>
+		<Key ID="str.coopr.character.perkamount.error">
+			<Original>Too few perks selected!</Original>
+			<German>Zu wenig Perks ausgewaehlt!</German>
+			<French>Trop peu d'avantages sélectionnés!</French>
+		</Key>
 		<Key ID="str.coopr.character.new.infobox">
 			<Original>Role Description</Original>
 			<German>Rollenbeschreibung</German>

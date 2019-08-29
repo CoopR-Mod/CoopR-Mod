@@ -58,7 +58,6 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
 
     _x ctrlRemoveAllEventHandlers "ButtonClick";
     _x ctrlAddEventHandler ["ButtonClick", {
-        DEBUG("click perk");
         params ["_ctrl"];
         private _perk = _ctrl getVariable "perk";
         private _perkClass = _perk select 0;

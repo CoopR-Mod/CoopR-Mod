@@ -15,7 +15,6 @@ params [["_ctrl", objNull]];
 if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _params = _ctrl getVariable ["_params", []];
 _params params ["_slot"];
-DEBUG("click create new");
 
 // strip COOPR_LOBBY_AGENT
 COOPR_LOBBY_AGENT setUnitLoadout EMPTY_LOADOUT;
@@ -69,15 +68,22 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
     private _errorText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ERROR;
 
     if (_nameLabel isEqualTo "") then {
-        _errorText ctrlSetText (localize "str.coopr.character.newprofile.error");
+        _errorText ctrlSetText (localize "str.coopr.character.new.error");
     } else {
-        private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
-        private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { _x getVariable ["perk", []] };
-        private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
-        [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
-        [_characterState, COOPR_CHAR_SKILLS, _starterSkills] call CBA_fnc_hashSet;
+        _errorText ctrlSetText "";
+        private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { (_x getVariable ["perk", []]) select 0 };
+        if ((count _selectedPerkClasses) >= MAX_PERKS) then {
+            DEBUG("1");
+            private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
+            private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
+            [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
+            [_characterState, COOPR_CHAR_SKILLS, _starterSkills] call CBA_fnc_hashSet;
 
-        [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
-        closeDialog GUI_ID_LOGIN_DIALOG;
+            [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
+            closeDialog GUI_ID_LOGIN_DIALOG;
+        } else {
+            DEBUG("2");
+            _errorText ctrlSetText (localize "str.coopr.character.perkamount.error");
+        };
     }
 }];

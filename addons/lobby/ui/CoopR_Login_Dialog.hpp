@@ -1,6 +1,9 @@
 #define COOPR_ROW_OFFSET 13
 #define ICON_OFFSET(multi) (75 * multi)
-#define ROW_OFFSET(multi) (130 * multi)
+#define ROW_OFFSET(multi) (96 * multi)
+#define SKILL_ROW 2
+#define PERK_ROW_1 3
+#define PERK_ROW_2 4
 
 class CoopR_Login_Dialog {
   idd = GUI_ID_LOGIN_DIALOG;
@@ -57,90 +60,90 @@ class CoopR_Login_Dialog {
                 };
                 class Role: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-                    COOPR_POSITION_CT(255,45,100,100)
+                    COOPR_POSITION_CT(200,45,100,100)
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Skill_0: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0;
-                    COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(2),80,80)
+                    COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(SKILL_ROW),80,80)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Skill_1: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_1;
-                    COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(2),80,80)
+                    COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(SKILL_ROW),80,80)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Skill_2: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_2;
-                    COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(2),80,80)
+                    COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(SKILL_ROW),80,80)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Skill_3: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_3;
-                    COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(2),80,80)
+                    COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(SKILL_ROW),80,80)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Skill_4: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_4;
-                    COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(2),80,80)
+                    COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(SKILL_ROW),80,80)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_0: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_0;
-                    COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(2.5),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(0),ROW_OFFSET(PERK_ROW_1),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_1: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_1;
-                    COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(2.5),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(1),ROW_OFFSET(PERK_ROW_1),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_2: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_2;
-                    COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(2.5),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(2),ROW_OFFSET(PERK_ROW_1),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_3: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_3;
-                    COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(2.5),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(3),ROW_OFFSET(PERK_ROW_1),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_4: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_4;
-                    COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(2.5),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(4),ROW_OFFSET(PERK_ROW_1),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_5: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_5;
-                    COOPR_POSITION_CT(ICON_OFFSET(0.5),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(0.5),ROW_OFFSET(PERK_ROW_2),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_6: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_6;
-                    COOPR_POSITION_CT(ICON_OFFSET(1.5),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(1.5),ROW_OFFSET(PERK_ROW_2),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_7: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_7;
-                    COOPR_POSITION_CT(ICON_OFFSET(2.5),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(2.5),ROW_OFFSET(PERK_ROW_2),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };
                 class Perk_8: COOPR_Picture {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_8;
-                    COOPR_POSITION_CT(ICON_OFFSET(3.5),ROW_OFFSET(3),75,75)
+                    COOPR_POSITION_CT(ICON_OFFSET(3.5),ROW_OFFSET(PERK_ROW_2),75,75)
                     onLoad = COOPR_DISABLE_CONTROL;
                     text = "\x\coopr\addons\rpg\data\images\roles\no-role-256-white.paa";
                 };

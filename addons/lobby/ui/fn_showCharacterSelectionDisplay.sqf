@@ -41,23 +41,38 @@ private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_
 _characterDetailsCtrl ctrlShow true;
 _characterDetailsCtrl ctrlEnable true;
 
+// fetch character stats
 private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;
 private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
-
-// fetch character stats
 private _reputation = [_characterHash, COOPR_CHAR_REPUTATION] call CBA_fnc_hashGet;
 private _tmpReputation = [_characterHash, COOPR_CHAR_TMP_REPUTATION] call CBA_fnc_hashGet;
 private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
 private _name = [_characterHash, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
 private _perks = [_characterHash, COOPR_CHAR_PERKS] call CBA_fnc_hashGet;
+private _skills = [_characterHash, COOPR_CHAR_SKILLS] call CBA_fnc_hashGet;
 
-//{
-//    private _perkOfCharacter = _x;
-//    private _perkCtrl = _loginDialog displayCtrl DETAIL_PERK(_forEachIndex);
-//    _perkCtrl ctrlEnable true;
-//    _perkCtrl ctrlShow true;
-//    _perkCtrl ctrlSetText ([_perkOfCharacter select 0, "icon"] call coopr_fnc_getPerkData)
-//} forEach _perks;
+// initially hide perks and skills (can't do in gui config)
+for "_i" from 0 to (SKILL_AMOUNT - 1) do { (_loginDialog displayCtrl SKILL(_i)) ctrlShow false };
+for "_i" from 0 to 8 do { (_loginDialog displayCtrl DETAIL_PERK(_i)) ctrlShow false };
+
+// show character perks
+{
+    private _perkOfCharacter = _x;
+    private _perkCtrl = _loginDialog displayCtrl DETAIL_PERK(_forEachIndex);
+    DEBUG("perk show");
+    _perkCtrl ctrlEnable true;
+    _perkCtrl ctrlShow true;
+    _perkCtrl ctrlSetText ([_perkOfCharacter select 0, "icon"] call coopr_fnc_getPerkData)
+} forEach _perks;
+
+// show character skills
+{
+    private _skillOfCharacter = _x;
+    private _skillCtrl = _loginDialog displayCtrl SKILL(_forEachIndex);
+    _skillCtrl ctrlEnable true;
+    _skillCtrl ctrlShow true;
+    _skillCtrl ctrlSetText (["no", "icon"] call coopr_fnc_getPerkData)
+} forEach _skills;
 
 // init standard character description controls
 private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
@@ -65,8 +80,6 @@ private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT
 private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
 private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
 private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
-private _skill1Ctrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0;
-private _skill2Ctrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_1;
 
 _titleCtrl ctrlSetText _name;
 

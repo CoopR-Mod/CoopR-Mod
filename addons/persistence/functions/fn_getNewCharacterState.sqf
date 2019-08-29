@@ -34,6 +34,8 @@ private _stateHash = [[COOPR_CHAR_UID, getPlayerUID _player],
                       [COOPR_CHAR_POSITION, getPos COOPR_HQ_WEST],
                       [COOPR_CHAR_WOUNDED_TIMESTAMP, 0],
                       [COOPR_CHAR_ACTIVE_MISSION, []],
+                      [COOPR_CHAR_PERKS, []],
+                      [COOPR_CHAR_SKILLS, []],
                       [COOPR_CHAR_LOADOUT, _loadout]];
 
 DEBUG("character hash created");

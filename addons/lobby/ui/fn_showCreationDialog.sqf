@@ -15,6 +15,7 @@ params [["_ctrl", objNull]];
 if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _params = _ctrl getVariable ["_params", []];
 _params params ["_slot"];
+DEBUG("click create new");
 
 // strip COOPR_LOBBY_AGENT
 COOPR_LOBBY_AGENT setUnitLoadout EMPTY_LOADOUT;

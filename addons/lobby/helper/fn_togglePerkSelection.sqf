@@ -24,7 +24,6 @@ params [["_ctrl", objNull],
 
 if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was undefined") };
 
-
 if !(_ctrl getVariable ["isSelected", false]) then {
     // too many perks - just highlight the perk up shortly
     if (count (call coopr_fnc_getSelectedPerksCtrl) >= MAX_PERKS) then {

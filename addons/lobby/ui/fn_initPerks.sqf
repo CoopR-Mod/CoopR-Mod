@@ -23,6 +23,7 @@
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 private _perkInfoText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS_TEXT;
+DEBUG("init perks");
 
 _perkDisplay ctrlShow true;
 _perkDisplay ctrlEnable true;
@@ -35,30 +36,29 @@ private _perkNames = _allPerks apply { _x select PERK_NAME };
 
 if (_perkAmount <= 0 ) exitWith { DEBUG("no perks found to initialize") };
 
-
 private _perkControls = [];
 for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDialog displayCtrl PERK(_i)) };
 {_x setVariable ["perk", _allPerks select _forEachIndex]} forEach _perkControls;
 
-// show perk in GUI
 {
+    // show perk in GUI
     _x ctrlShow true;
     _x ctrlEnable true;
     private _perk = _x getVariable "perk";
     _x ctrlSetText ([(_perk select 0), "icon"] call coopr_fnc_getPerkData);
- } forEach _perkControls;
 
-{ _x ctrlRemoveAllEventHandlers "MouseButtonDown" } forEach _perkControls;
-
-// use the index per perkCol iteration to multiply offset of col (see CoopR_Login_Dialog.hpp for perk x-axis offsets)
-{
     private _offsetMultiplier = 0;
     if (_forEachIndex in [1,4,7]) then { _offsetMultiplier = 1};
     if (_forEachIndex in [2,5,8]) then { _offsetMultiplier = 2};
 
+    _x setVariable ["isSelected", true];
     _x setVariable ["offsetMultiplier", _offsetMultiplier];
+    // initially reset offset position
+    [_x, 110 * _offsetMultiplier] call coopr_fnc_togglePerkSelection;
 
+    _x ctrlRemoveAllEventHandlers "ButtonClick";
     _x ctrlAddEventHandler ["ButtonClick", {
+        DEBUG("click perk");
         params ["_ctrl"];
         private _perk = _ctrl getVariable "perk";
         private _perkClass = _perk select 0;

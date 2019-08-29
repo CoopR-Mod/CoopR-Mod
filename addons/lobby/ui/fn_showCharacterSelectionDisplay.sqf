@@ -12,6 +12,8 @@
  * Scope: Client
  */
 
+#define SKILL_AMOUNT 5
+
 params [["_characterHash", []]];
 if (_characterHash isEqualTo []) exitWith { ERROR("_characterHash was not defined") };
 

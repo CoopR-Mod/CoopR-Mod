@@ -12,7 +12,7 @@
  * _propertyValue <STRING | NUMBER | ARRAY> - perk data
  *
  * Example:
- * ["SixthSense", "description"] call coopr_fn_getPerkData;
+ * ["Sprinter", "description"] call coopr_fn_getPerkData;
  *
  * Public: No
  *

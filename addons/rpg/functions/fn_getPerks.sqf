@@ -8,7 +8,7 @@
  * None
  *
  * Return Value:
- * _roles <ARRAY[ARRAY]> - roles data as [[<className>, <perkName>], ...]
+ * _perks <ARRAY[ARRAY]> - perks data as [[<className>, <perkName>], ...]
  *
  * Example:
  *

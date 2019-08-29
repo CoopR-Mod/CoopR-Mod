@@ -53,8 +53,8 @@ private _perks = [_characterHash, COOPR_CHAR_PERKS] call CBA_fnc_hashGet;
 private _skills = [_characterHash, COOPR_CHAR_SKILLS] call CBA_fnc_hashGet;
 
 // initially hide perks and skills (can't do in gui config)
-for "_i" from 0 to (SKILL_AMOUNT - 1) do { (_loginDialog displayCtrl SKILL(_i)) ctrlShow false };
-for "_i" from 0 to 8 do { (_loginDialog displayCtrl DETAIL_PERK(_i)) ctrlShow false };
+for "_i" from 0 to (SKILL_AMOUNT - 1) do { (_loginDialog displayCtrl SKILL(_i)) ctrlSetText "\x\coopr\addons\rpg\data\images\roles\no-role-256.paa" };
+for "_i" from 0 to 8 do { (_loginDialog displayCtrl DETAIL_PERK(_i)) ctrlSetText "\x\coopr\addons\rpg\data\images\roles\no-role-256.paa" };
 
 // show character perks
 {

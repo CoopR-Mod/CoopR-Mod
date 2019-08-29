@@ -10,6 +10,7 @@ class CfgFunctions {
             class getSkills {};
             class getSkillData {};
             class getRoleSkills {};
+            class getSkillForLevel {};
         }
         class coopr_rpg_ui {
             file = "x\coopr\addons\rpg\ui";

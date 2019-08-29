@@ -24,6 +24,9 @@ private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 private _perkInfoText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS_TEXT;
 
+_perkDisplay ctrlShow true;
+_perkDisplay ctrlEnable true;
+
 _perkInfoText ctrlSetStructuredText parseText (format ["You are allowed to choose a maxmium of <t color='%1'>%2</t> perks for this character", COOPR_MAIN_COLOR_HEX, MAX_PERKS]);
 
 private _allPerks = call coopr_fnc_getPerks;
@@ -32,8 +35,6 @@ private _perkNames = _allPerks apply { _x select PERK_NAME };
 
 if (_perkAmount <= 0 ) exitWith { DEBUG("no perks found to initialize") };
 
-_perkDisplay ctrlShow true;
-_perkDisplay ctrlEnable true;
 
 private _perkControls = [];
 for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDialog displayCtrl PERK(_i)) };

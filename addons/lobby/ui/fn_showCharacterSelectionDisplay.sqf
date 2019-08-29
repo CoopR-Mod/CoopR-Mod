@@ -32,14 +32,19 @@ private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 _characterCreationCtrl ctrlShow false;
 _characterCreationCtrl ctrlEnable false;
+
 private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
-_infobox ctrlShow true;
-_infobox ctrlEnable true;
+_infobox ctrlShow false;
+_infobox ctrlEnable false;
 
 // show the description control if open
 private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS;
 _characterDetailsCtrl ctrlShow true;
 _characterDetailsCtrl ctrlEnable true;
+
+private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
+_perkDisplay ctrlShow false;
+_perkDisplay ctrlEnable false;
 
 // fetch character stats
 private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;

@@ -34,6 +34,10 @@ private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER
 _characterCreationCtrl ctrlShow true;
 _characterCreationCtrl ctrlEnable true;
 
+private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
+_infobox ctrlShow true;
+_infobox ctrlEnable true;
+
 private _createButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
 private _rolesCombo = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION_ROLE_COMBO;
 

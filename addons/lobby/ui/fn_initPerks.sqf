@@ -56,11 +56,9 @@ for "_i" from 0 to (_perkAmount - 1) do { _perkControls pushBackUnique (_loginDi
     if (_forEachIndex in [2,5,8]) then { _offsetMultiplier = 2};
 
     _x setVariable ["offsetMultiplier", _offsetMultiplier];
-    DEBUG2("control %1", _x);
 
     _x ctrlAddEventHandler ["ButtonClick", {
         params ["_ctrl"];
-        DEBUG("clicked");
         private _perk = _ctrl getVariable "perk";
         private _perkClass = _perk select 0;
         private _offsetMultiplier = _ctrl getVariable "offsetMultiplier";

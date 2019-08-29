@@ -38,6 +38,7 @@
 #define COOPR_CHAR_TMP_REPUTATION "coopr_character_tmp_reputation"
 #define COOPR_CHAR_MONEY "coopr_character_money"
 #define COOPR_CHAR_ROLE "coopr_character_role"
+#define COOPR_CHAR_ROLE_LEVEL "coopr_character_role_level"
 #define COOPR_CHAR_POSITION "coopr_character_position"
 #define COOPR_CHAR_LOADOUT "coopr_character_loadout"
 #define COOPR_CHAR_WOUNDED_TIMESTAMP "coopr_character_wounded_timestamp"

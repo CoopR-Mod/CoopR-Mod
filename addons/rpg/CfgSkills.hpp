@@ -16,11 +16,11 @@ class CfgSkills {
 
     class SixthSense : CoopR_BaseSkill {
         name = "Sixth Sense";
-        icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
+        icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
         description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
         unlockedBy[] = {
             // { <role>, { {<required role level>, <skill rank>}, {...} }}
-            {"Medic", { {3, 1}, {7, 2}, {9, 3}, {11, 4} } }, // unlocks skill rank 1 at level 3, rank 2 at level 7, etc.
+            {"Medic", { {1, 1}, {4, 2}, {9, 3}, {11, 4} } }, // unlocks skill rank 1 at level 3, rank 2 at level 7, etc.
             {"Squadleader", { {5, 1}, {9, 2} } },
             {"Engineer", { {9, 1} } },
         };

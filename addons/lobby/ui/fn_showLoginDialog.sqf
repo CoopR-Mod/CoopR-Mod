@@ -64,13 +64,14 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
                 private _money = [_characterHash, COOPR_CHAR_MONEY] call CBA_fnc_hashGet;
                 private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
                 private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;
+                private _roleLevel = [_characterHash, COOPR_CHAR_ROLE_LEVEL] call CBA_fnc_hashGet;
                 private _woundedTimestamp = [_characterHash, COOPR_CHAR_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
 
                 private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
 
                 _roleColumn ctrlSetText _roleIcon;
                 _nameColumn ctrlSetText _name;
-                _levelColumn ctrlSetText (format ["Level: %1", 0]); // add level property to character
+                _levelColumn ctrlSetText (format ["Level: %1", _roleLevel]); // add level property to character
 
                 // determine state acrynoym
                 private _stateLabel = "none";

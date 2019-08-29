@@ -27,6 +27,7 @@ if (_property isEqualTo "") then { ERROR("_property was not defined") };
 
 private _result = objNull;
 
+DEBUG2("skillclass %1", _skillClass);
 _result = [(missionConfigFile >> "CfgSkills" >> _skillClass), _property, []] call BIS_fnc_returnConfigEntry;
 if (_result isEqualTo []) then {
     _result = [(configFile >> "CfgSkills" >> _skillClass), _property, []] call BIS_fnc_returnConfigEntry;

@@ -14,14 +14,16 @@ class CfgSkills {
         onTrigger = "";
     };
 
-    class Skills : CoopR_BaseSkill {
-        class SixthSense {
-            name = "Sixth Sense";
-            icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-            description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-            levelRequirement[] = {1,3,5,7,10};
-            allowedRoles = {"Medic", "Engineer", "Squadleader"};
-            //onTrigger = "call coopr_fnc_skillLogic.sqf";
+    class SixthSense : CoopR_BaseSkill {
+        name = "Sixth Sense";
+        icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
+        description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
+        unlockedBy[] = {
+            // { <role>, { {<required role level>, <skill rank>}, {...} }}
+            {"Medic", { {3, 1}, {7, 2}, {9, 3}, {11, 4} } }, // unlocks skill rank 1 at level 3, rank 2 at level 7, etc.
+            {"Squadleader", { {5, 1}, {9, 2} } },
+            {"Engineer", { {9, 1} } },
         };
+        //onTrigger = "call coopr_fnc_skillLogic.sqf";
     };
 };

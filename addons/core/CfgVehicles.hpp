@@ -15,32 +15,6 @@ class CfgVehicles
             class AnyBrain;
         };
     };
-    class CoopR_ModuleSetupCore: Module_F
-    {
-        scope = 2;
-        displayName = "CoopR Core";
-        //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
-        function = "coopr_fnc_setupCoreModule";
-        functionPriority = 1;
-        isGlobal = 1;
-        isTriggerActivated = 1;
-        isDisposable = 1;
-        is3DEN = 0;
-
-        class Arguments {
-              class DeveloperMode {
-                  displayName = "Developer Mode";
-                  description = "When developer mode is active debug functions can be used to provide debug gameplay states"
-                  typeName = "BOOL";
-              }
-        }
-
-        class ModuleDescription: ModuleDescription
-        {
-            description = "The core of power";
-        };
-    }
     class CoopR_ModuleSetupCommander: Module_F
     {
         scope = 2;

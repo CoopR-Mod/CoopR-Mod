@@ -1,7 +1,7 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
 #define COMPONENT missions
-#define DEBUG_CTX "COOPR.MISSIONS"
+#define DEBUG_CTX 'COOPR.MISSIONS'
 
 #define COOPR_ACCURACY_THRESHOLD 65
 #define COOPR_MISSION_MIN_MISSION_TIME 5

@@ -29,28 +29,6 @@ class CfgVehicles
         is3DEN = 0;
 
         class Arguments {
-              class Logging {
-                  displayName = "Logging Level";
-                  description = "The Logging level to use for this module";
-                  typeName = "NUMBER";
-                  class Values {
-                      class opt_1 {name = "None"; value = 0;};
-                      class opt_2 {name = "Info"; value = 1; default = 1;};
-                      class opt_3 {name = "Debug"; value = 2;};
-                  }
-              }
-              class ReputationMan {
-                  displayName = "Reputation per enemy (infantry)";
-                  description = "The amount of reputation points a player will receive for eliminating an enemy infantry unit"
-                  typeName = "NUMBER";
-                  defaultvalue = 1;
-              }
-              class WIAReputation {
-                  displayName = "Wounded in Action malus multiplier";
-                  description = "When a player is killed in action during a mission he will only receive a lowered amount of reputaton"
-                  typeName = "NUMBER";
-                  defaultvalue = 0.2;
-              }
               class DeveloperMode {
                   displayName = "Developer Mode";
                   description = "When developer mode is active debug functions can be used to provide debug gameplay states"

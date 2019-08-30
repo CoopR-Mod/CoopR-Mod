@@ -8,4 +8,4 @@ if (isNil "COOPR_LOG_CONFIG") then {
     SETUPERROR("log level was not initialized")
 };
 
-[COOPR_LOG_CONFIG, _context ] call CBA_fnc_hashGet;
+[COOPR_LOG_CONFIG, _context] call CBA_fnc_hashGet;

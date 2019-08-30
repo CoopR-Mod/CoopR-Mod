@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
 class Combo;
+class CheckBoxState;
 class ctrlMenuStrip;
 
 class Cfg3DEN {
@@ -8,6 +9,20 @@ class Cfg3DEN {
         class CoopR_Core {
             displayName = "CoopR Core";
             class AttributeCategories {
+                class Development {
+                    displayName = "Development";
+                    class Attributes {
+                        class DevMode {
+                            control = "checkboxstate";
+                            property = "CoopRCoreDevMode";
+                            displayName = "Development Mode";
+                            tooltip = "When developer mode is active debug functions can be used to provide debug gameplay states";
+                            expression = "missionNamespace setVariable ['coopr_core_dev_mode', _value]";
+                            defaultValue = false;
+                            typeName = "BOOL";
+                        };
+                    };
+                };
                 class Logging {
                     displayName = "Logging";
                     class Attributes {
@@ -23,6 +38,7 @@ class Cfg3DEN {
                                 class None {
                                     name = "None";
                                     value = 0;
+                                    default = 1;
                                 };
                                 class Info {
                                     name = "Info";

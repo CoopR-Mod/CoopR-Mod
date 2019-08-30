@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=654;
+		nextID=659;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=556;
+		nextID=627;
 	};
 	class Camera
 	{
-		pos[]={3903.396,48.402653,954.07288};
-		dir[]={0.021109335,-0.71416813,0.69965601};
-		up[]={0.02153738,0.69997418,0.71384335};
-		aside[]={0.99954504,-1.8189894e-011,-0.030157296};
+		pos[]={3918.7078,30,955.21222};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -68,7 +68,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=28;
 		class Item0
 		{
 			className="coopr_core";
@@ -221,46 +221,39 @@ class AddonsMetaData
 		};
 		class Item22
 		{
-			className="A3_Sounds_F";
-			name="Arma 3 - Sound Effects";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item23
-		{
 			className="ace_medical";
 			name="ACE3 - Medical";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item24
+		class Item23
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item24
 		{
 			className="ALiVE_MIL_C2ISTAR";
 			name="alive_mil_c2istar";
 			author="ALiVE Mod Team";
 		};
-		class Item26
+		class Item25
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item26
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item27
 		{
 			className="coopr_missions";
 			name="CoopR Mod";
@@ -283,8 +276,8 @@ class CustomAttributes
 		name="CoopR_RPG";
 		class Attribute0
 		{
-			property="CoopRRPGMaxPerks";
-			expression="missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
+			property="CoopRRPGRepPerInf";
+			expression="missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
 			class Value
 			{
 				class data
@@ -296,7 +289,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=2;
+					value=15;
 				};
 			};
 		};
@@ -319,15 +312,10 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
-	};
-	class Category1
-	{
-		name="CoopR_Core";
-		class Attribute0
+		class Attribute2
 		{
-			property="CoopRCoreLogLevel";
-			expression="[_value,  'COOPR.CORE'] call coopr_fnc_setLogLevel";
+			property="CoopRRPGWIARepReduction";
+			expression="missionNamespace setVariable ['coopr_rpg_wia_rep_reduction', _value]";
 			class Value
 			{
 				class data
@@ -339,11 +327,30 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=2;
+					value=0.1;
 				};
 			};
 		};
-		nAttributes=1;
+		class Attribute3
+		{
+			property="CoopRRPGMaxPerks";
+			expression="missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=3;
+				};
+			};
+		};
+		nAttributes=4;
 	};
 	class Category2
 	{
@@ -434,7 +441,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=40;
+		items=39;
 		class Item0
 		{
 			dataType="Logic";
@@ -872,96 +879,6 @@ class Mission
 		};
 		class Item8
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3907.96,5,999.76898};
-			};
-			id=88;
-			type="CoopR_ModuleSetupCore";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="CoopR_ModuleSetupCore_DeveloperMode";
-					expression="_this setVariable ['DeveloperMode',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="CoopR_ModuleSetupCore_WIAReputation";
-					expression="_this setVariable ['WIAReputation',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0.2;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="CoopR_ModuleSetupCore_ReputationMan";
-					expression="_this setVariable ['ReputationMan',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="CoopR_ModuleSetupCore_Logging";
-					expression="_this setVariable ['Logging',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=2;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item9
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -989,7 +906,7 @@ class Mission
 			};
 			id=89;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1060,7 +977,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1245,7 +1162,7 @@ class Mission
 				nAttributes=9;
 			};
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1335,7 +1252,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Group";
 			side="West";
@@ -1364,7 +1281,7 @@ class Mission
 			};
 			id=97;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Group";
 			side="West";
@@ -1393,7 +1310,7 @@ class Mission
 			};
 			id=99;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1403,7 +1320,7 @@ class Mission
 			id=101;
 			type="CoopR_ModuleSetupCommander";
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1436,7 +1353,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1446,7 +1363,7 @@ class Mission
 			id=103;
 			type="CoopR_ModuleSetupVehicle";
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Marker";
 			position[]={3911.9292,5,996.13818};
@@ -1457,7 +1374,7 @@ class Mission
 			b=50;
 			id=112;
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1680,7 +1597,7 @@ class Mission
 				nAttributes=11;
 			};
 		};
-		class Item20
+		class Item19
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1922,7 +1839,7 @@ class Mission
 				nAttributes=12;
 			};
 		};
-		class Item21
+		class Item20
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -2240,7 +2157,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item22
+		class Item21
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -2558,7 +2475,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item23
+		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -2838,7 +2755,7 @@ class Mission
 				nAttributes=14;
 			};
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3118,7 +3035,7 @@ class Mission
 				nAttributes=14;
 			};
 		};
-		class Item25
+		class Item24
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3436,7 +3353,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item26
+		class Item25
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3754,7 +3671,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item27
+		class Item26
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -4072,7 +3989,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item28
+		class Item27
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -4390,7 +4307,7 @@ class Mission
 				nAttributes=16;
 			};
 		};
-		class Item29
+		class Item28
 		{
 			dataType="Layer";
 			name="Tables and Shelves";
@@ -4434,7 +4351,7 @@ class Mission
 			};
 			id=345;
 		};
-		class Item30
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4451,7 +4368,7 @@ class Mission
 			id=405;
 			type="Land_FilePhotos_F";
 		};
-		class Item31
+		class Item30
 		{
 			dataType="Group";
 			side="West";
@@ -4598,7 +4515,7 @@ class Mission
 			};
 			id=406;
 		};
-		class Item32
+		class Item31
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -5201,7 +5118,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item33
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5216,7 +5133,7 @@ class Mission
 			id=409;
 			type="Item_Laserdesignator_02_ghex_F";
 		};
-		class Item34
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5231,7 +5148,7 @@ class Mission
 			id=410;
 			type="Item_Laserdesignator_02";
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5246,7 +5163,7 @@ class Mission
 			id=411;
 			type="Item_Laserdesignator_03";
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5262,7 +5179,7 @@ class Mission
 			id=618;
 			type="Land_OfficeCabinet_01_F";
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -5333,7 +5250,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Group";
 			side="West";
@@ -5404,7 +5321,7 @@ class Mission
 			};
 			id=630;
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Group";
 			side="West";

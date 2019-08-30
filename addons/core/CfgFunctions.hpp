@@ -24,11 +24,10 @@ class CfgFunctions {
             class initCommanderNPC {};
             class initVehicleNPC {};
             class initHQ {};
-            class initCore {};
             class setupCommanderModule {};
             class setupVehicleModule {};
             class setupHQModule {};
-            class setupCoreModule {};
+            class initCoreAddon {postInit = 1};
 
             class initCoopRClients {};
             class initCoopRServer {postInit = 1;};

@@ -3,6 +3,7 @@
 #define EXEC_SERVER  2
 #define EXEC_GLOBAL  0
 #define EMPTY_HASH ([[],[]] call CBA_fnc_hashCreate)
+#define EMPTY_HASH2 ([[],0] call CBA_fnc_hashCreate)
 #define UNDEFINED "undefined"
 
 // NEW CHARACTER

@@ -11,6 +11,8 @@
  * Scope: MouseButtonDown Event
  */
 
+#define MAX_CHARS 11
+
 params [["_ctrl", objNull]];
 if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was objNull") };
 private _params = _ctrl getVariable ["_params", []];
@@ -70,18 +72,22 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
     if (_nameLabel isEqualTo "") then {
         _errorText ctrlSetText (localize "str.coopr.character.new.error");
     } else {
-        _errorText ctrlSetText "";
-        private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { (_x getVariable ["perk", []]) select 0 };
-        if ((count _selectedPerkClasses) >= MAX_PERKS) then {
-            private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
-            private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
-            [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
-            [_characterState, COOPR_CHAR_SKILLS, _starterSkills] call CBA_fnc_hashSet;
-
-            [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
-            closeDialog GUI_ID_LOGIN_DIALOG;
+        if (count _nameLabel > MAX_CHARS) then {
+            _errorText ctrlSetText (localize "str.coopr.character.length.error");
         } else {
-            _errorText ctrlSetText (localize "str.coopr.character.perkamount.error");
+            _errorText ctrlSetText "";
+            private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { (_x getVariable ["perk", []]) select 0 };
+            if ((count _selectedPerkClasses) >= MAX_PERKS) then {
+                private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
+                private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
+                [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
+                [_characterState, COOPR_CHAR_SKILLS, _starterSkills] call CBA_fnc_hashSet;
+
+                [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
+                closeDialog GUI_ID_LOGIN_DIALOG;
+            } else {
+                _errorText ctrlSetText (localize "str.coopr.character.perkamount.error");
+            };
         };
     }
 }];

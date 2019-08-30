@@ -105,6 +105,11 @@
 			<German>Spezialisierung</German>
 			<Original>Specialization</Original>
 		</Key>
+		<Key ID="str.coopr.character.length.error">
+			<Original>Only 11 characters allowed for the name</Original>
+			<German>Nur 11 Zeichen fuer den Namen erlaubt</German>
+			<French>Seulement 11 caractères autorisés pour le nom</French>
+		</Key>
 		<Key ID="str.coopr.character.new.error">
 			<Original>You need to enter a name!</Original>
 			<German>Du musst einen Namen angeben!</German>

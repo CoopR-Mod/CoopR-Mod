@@ -5,8 +5,8 @@
  * Converts the temp reputation of a unit to fixed reputation by a multiplier
  *
  * Arguments:
- * 0: _target <OBJECT> - object the action is bound to
- * 1: _caller <OBJECT> - action caller
+ * 0: _unit <OBJECT> - unit the reputation will be added to
+ * 1: _multiplier <NUMBER> - reputation multiplier for the final reputation gain
  *
  * Return Value:
  * None

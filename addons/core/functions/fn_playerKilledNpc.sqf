@@ -41,7 +41,7 @@ if (_victimWasEnemy isEqualTo false) then {
 } else {
     DEBUG2("player %1 killed an enemy", _playerName);
     [player] call coopr_fnc_increaseKillCount;
-    DEBUG2("reputation per man: %1", COOPR_REP_MAN);
-    COOPR_REP_MAN call coopr_fnc_updateTempReputation;
+    DEBUG2("reputation per man: %1", COOPR_REP_INF);
+    COOPR_REP_INF call coopr_fnc_updateTempReputation;
 };
 

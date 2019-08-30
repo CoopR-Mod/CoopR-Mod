@@ -8,7 +8,7 @@ player setVariable [COOPR_CHAR_STATE, COOPR_STATE_WIA, true];
 player setVariable [COOPR_CHAR_WOUNDED_TIMESTAMP, call coopr_fnc_currentGameTime, true];
 player setVariable [COOPR_CHAR_POSITION, getPos COOPR_HQ_WEST, true];
 
-COOPR_REP_WIA_MULTIPLIER_WEST call coopr_fnc_convertTempToReputation;
+COOPR_WIA_REDUCTION call coopr_fnc_convertTempToReputation;
 
 
 

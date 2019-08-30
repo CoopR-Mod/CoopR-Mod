@@ -26,7 +26,7 @@ if (_ctrl isEqualTo objNull) exitWith { ERROR("_ctrl was undefined") };
 
 if !(_ctrl getVariable ["isSelected", false]) then {
     // too many perks - just highlight the perk up shortly
-    if (count (call coopr_fnc_getSelectedPerksCtrl) >= MAX_PERKS) then {
+    if (count (call coopr_fnc_getSelectedPerksCtrl) >= COOPR_MAX_PERKS) then {
         [_ctrl, _offsetX] spawn {
             params ["_ctrl", "_offsetX"];
             _ctrl ctrlSetPosition [ ((_offsetX -5) * safeZoneW) / 1920,

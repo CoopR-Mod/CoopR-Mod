@@ -27,7 +27,7 @@ private _perkInfoText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS_TE
 _perkDisplay ctrlShow true;
 _perkDisplay ctrlEnable true;
 
-_perkInfoText ctrlSetStructuredText parseText (format ["You are allowed to choose a maxmium of <t color='%1'>%2</t> perks for this character", COOPR_MAIN_COLOR_HEX, MAX_PERKS]);
+_perkInfoText ctrlSetStructuredText parseText (format ["You are allowed to choose a maxmium of <t color='%1'>%2</t> perks for this character", COOPR_MAIN_COLOR_HEX, COOPR_MAX_PERKS]);
 
 private _allPerks = call coopr_fnc_getPerks;
 private _perkAmount = count _allPerks;

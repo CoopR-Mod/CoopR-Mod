@@ -77,7 +77,7 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
         } else {
             _errorText ctrlSetText "";
             private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { (_x getVariable ["perk", []]) select 0 };
-            if ((count _selectedPerkClasses) >= MAX_PERKS) then {
+            if ((count _selectedPerkClasses) >= COOPR_MAX_PERKS) then {
                 private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
                 private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
                 [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;

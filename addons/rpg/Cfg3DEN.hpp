@@ -59,7 +59,7 @@ class Cfg3DEN {
                             displayName = "Reputation per infantry";
                             tooltip = "The reputation gained per character on hostile infantry elimination (default = 10)";
                             expression = "missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
-                            defaultValue = 10;
+                            defaultValue = "missionNamespace setVariable ['coopr_rpg_rep_inf', 10]";
                             typeName = "NUMBER";
                         }
                         class WoundedRepReduction {
@@ -68,7 +68,7 @@ class Cfg3DEN {
                             displayName = "Reputation reduction if WIA";
                             tooltip = "The reduction modifier if a character is wounded in a mission (i.e. '0.2' means 20% of reputation gained)";
                             expression = "missionNamespace setVariable ['coopr_rpg_wia_rep_reduction', _value]";
-                            defaultValue = 0.2;
+                            defaultValue = "missionNamespace setVariable ['coopr_rpg_wia_rep_reduction', 0.2]";
                             typeName = "NUMBER";
                         }
                     };

@@ -31,15 +31,6 @@ class CfgCharacterRoles {
             "aar"
         };
 
-        class Skills {
-            class Overseer {
-                name = "Overseer";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
-        };
     };
     class Medic : CoopR_BaseRole {
         name = "Medic";
@@ -54,15 +45,6 @@ class CfgCharacterRoles {
             "medic"
         };
 
-        class Skills {
-            class SixthSense {
-                name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
-        };
     };
     class Engineer : CoopR_BaseRole {
         name = "Engineer";
@@ -78,15 +60,6 @@ class CfgCharacterRoles {
             "at_launcher"
         };
 
-        class Skills {
-            class SixthSense {
-                name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
-        };
     };
     class LightMachinegunner : CoopR_BaseRole {
         name = "Light Machine Gunner";
@@ -100,16 +73,6 @@ class CfgCharacterRoles {
             "defuse",
             "repair",
             "at_launcher"
-        };
-
-        class Skills {
-            class SixthSense {
-                name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
         };
     };
     class DesignatedMarksman : CoopR_BaseRole {
@@ -125,36 +88,21 @@ class CfgCharacterRoles {
             "repair",
             "at_launcher"
         };
-
-        class Skills {
-            class SixthSense {
-                name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
-        };
     };
     class Signaller : CoopR_BaseRole {
         name = "Signaller";
         icon = "\x\coopr\addons\rpg\data\images\roles\radioman-256-white.paa";
         description = "A signaller in the armed forces is a specialist soldier, seaman or airman responsible for military communications. Signallers, a.k.a. Combat Signallers or signalmen or women, are commonly employed as radio or telephone operators, relaying messages for field commanders at the front line (Army units, Ships or Aircraft), through a chain of command which includes field headquarters and ultimately governments and non government organisations. Messages are transmitted and received via a communications infrastructure comprising fixed and mobile installations.""true"" sniper, they are an intrinsic part of an infantry fireteam and intended to lay down accurate rapid fire at valuable targets as needed, thus extending the reach of the fireteam.";
         loadout = "[[""arifle_MX_Black_ACO_Pointer_F"","""",""acc_pointer_IR"",""optic_Aco"",[""30Rnd_65x39_caseless_black_mag"",30],[],""""],[],[""hgun_P07_khk_F"","""","""","""",[""16Rnd_9x21_Mag"",17],[],""""],[""U_B_CombatUniform_vest_mcam_wdl_f"",[[""FirstAidKit"",1],[""30Rnd_65x39_caseless_black_mag"",2,30]]],[""V_PlateCarrier1_wdl"",[[""30Rnd_65x39_caseless_black_mag"",3,30],[""16Rnd_9x21_Mag"",2,17],[""HandGrenade"",2,1],[""SmokeShell"",1,1],[""SmokeShellGreen"",1,1],[""Chemlight_green"",2,1]]],[""B_RadioBag_01_wdl_F"",[]],""H_HelmetB"",""G_Tactical_Clear"",[],[""ItemMap"","""",""ItemRadio"",""ItemCompass"",""ItemWatch"",""NVGoggles_INDEP""]]";
+        lobbyAnimations[] = {
+            "Acts_listeningToRadio_in",
+            "Acts_listeningToRadio_Loop"
+        };
         authorized[] = {
             "defuse",
             "repair",
             "at_launcher"
         };
-
-        class Skills {
-            class SixthSense {
-                name = "Sixth Sense";
-                icon = "\x\coopr\addons\rpg\data\images\skills\perk-sixth.paa";
-                description = "Grants the character the ability to ""feel"" where his squadmembers are located. Range will increase by skill level";
-                levelRequirement[] = {1,3,5,7,10};
-                //onTrigger = "call coopr_fnc_skillLogic.sqf";
-            };
-        };
     };
+
 };

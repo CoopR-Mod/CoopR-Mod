@@ -23,7 +23,6 @@
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
 private _perkInfoText = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS_TEXT;
-DEBUG("init perks");
 
 _perkDisplay ctrlShow true;
 _perkDisplay ctrlEnable true;

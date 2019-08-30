@@ -73,7 +73,6 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
         _errorText ctrlSetText "";
         private _selectedPerkClasses = (call coopr_fnc_getSelectedPerksCtrl) apply { (_x getVariable ["perk", []]) select 0 };
         if ((count _selectedPerkClasses) >= MAX_PERKS) then {
-            DEBUG("1");
             private _characterState = [player, _slot, _nameLabel, _roleClass] call coopr_fnc_getNewCharacterState;
             private _starterSkills = [_roleClass, 1] call coopr_fnc_getSkillForLevel;
             [_characterState, COOPR_CHAR_PERKS, _selectedPerkClasses] call CBA_fnc_hashSet;
@@ -82,7 +81,6 @@ _createButton ctrlAddEventHandler ["MouseButtonDown", {
             [_characterState, _slot] remoteExec ["coopr_fnc_createCharacter", EXEC_SERVER];
             closeDialog GUI_ID_LOGIN_DIALOG;
         } else {
-            DEBUG("2");
             _errorText ctrlSetText (localize "str.coopr.character.perkamount.error");
         };
     }

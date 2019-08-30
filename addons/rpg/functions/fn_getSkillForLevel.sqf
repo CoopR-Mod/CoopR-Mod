@@ -37,6 +37,8 @@ _searchLevel = {
     };
 };
 
+if (([_skillsForRole] call CBA_fnc_hashSize) == 0) exitWith { _skillsForLevel };
+
 [_skillsForRole, _searchLevel] call CBA_fnc_hashEachPair;
 
 _skillsForLevel; // return

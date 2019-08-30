@@ -24,8 +24,6 @@ private _allSkills = call coopr_fnc_getSkills;
     private _skillData = _x;
     private _skillClass = _skillData select 0;
     private _unlockedBy = [_skillClass, "unlockedBy"] call coopr_fnc_getSkillData;
-    [_skillSet, _skillClass] call CBA_fnc_hashSet;
-
     {
         private _unlockEntry = _x;
         private _role = _unlockEntry select 0;

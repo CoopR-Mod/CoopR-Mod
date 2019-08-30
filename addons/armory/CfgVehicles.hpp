@@ -29,16 +29,6 @@ class CfgVehicles
         is3DEN = 0;
 
         class Arguments {
-            class Logging {
-                displayName = "Logging Level";
-                description = "The Logging level to use for this module";
-                typeName = "NUMBER";
-                class Values {
-                    class opt_1 {name = "None"; value = 0;};
-                    class opt_2 {name = "Info"; value = 1; default = 1;};
-                    class opt_3 {name = "Debug"; value = 2;};
-                }
-            }
             class Item_1 {
                 displayName = "Item 1 (Array)";
                 description = "The item/weapon config name. (['<config_name>', '<reputation_price>', '<dialog_name>', '<dialog_description>']"

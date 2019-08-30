@@ -9,8 +9,6 @@ class CfgFunctions {
             class playerKilledNpc {};
             class addVehicleKeyWest {};
             class initCharacterActions {};
-            class updateReputation {};
-            class updateTempReputation {};
             class convertTempToReputation {};
             class showReputation {};
             class currentGameTime {};

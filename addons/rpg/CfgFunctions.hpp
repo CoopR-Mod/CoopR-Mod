@@ -11,6 +11,8 @@ class CfgFunctions {
             class getSkillData {};
             class getRoleSkills {};
             class getSkillForLevel {};
+            class updateReputation {};
+            class updateTempReputation {};
         }
         class coopr_rpg_ui {
             file = "x\coopr\addons\rpg\ui";

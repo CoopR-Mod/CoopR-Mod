@@ -15,7 +15,7 @@ class Cfg3DEN {
                             control = "combo";
                             property = "CoopRRPGLogLevel";
                             displayName = "Log Level";
-                            description = "The log level to use for this addon";
+                            tooltip = "The log level to use for this addon";
                             expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
                             defaultValue = 0;
                             typeName = "NUMBER";
@@ -42,10 +42,33 @@ class Cfg3DEN {
                         class MaxPerks {
                             control = "editshort";
                             property = "CoopRRPGMaxPerks";
-                            displayName = "Maximum Perks per Character";
-                            description = "The maximum of mounts of perks allowed to select on character creation";
+                            displayName = "Maximum perks per character";
+                            tooltip = "The maximum  perks allowed to select on character creation";
                             expression = "missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
                             defaultValue = 3;
+                            typeName = "NUMBER";
+                        }
+                    };
+                };
+                class Reputation {
+                    displayName = "Reputation";
+                    class Attributes {
+                        class ReputationPerInfantry {
+                            control = "editshort";
+                            property = "CoopRRPGRepPerInf";
+                            displayName = "Reputation per infantry";
+                            tooltip = "The reputation gained per character on hostile infantry elimination (default = 10)";
+                            expression = "missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
+                            defaultValue = 10;
+                            typeName = "NUMBER";
+                        }
+                        class WoundedRepReduction {
+                            control = "editshort";
+                            property = "CoopRRPGWIARepReduction";
+                            displayName = "Reputation reduction if WIA";
+                            tooltip = "The reduction modifier if a character is wounded in a mission (i.e. '0.2' means 20% of reputation gained)";
+                            expression = "missionNamespace setVariable ['coopr_rpg_wia_rep_reduction', _value]";
+                            defaultValue = 0.2;
                             typeName = "NUMBER";
                         }
                     };

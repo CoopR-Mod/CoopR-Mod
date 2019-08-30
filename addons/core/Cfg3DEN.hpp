@@ -15,7 +15,7 @@ class Cfg3DEN {
                             control = "combo";
                             property = "CoopRCoreLogLevel";
                             displayName = "Log Level";
-                            description = "The log level to use for this addon";
+                            tooltip = "The log level to use for this addon";
                             expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
                             defaultValue = 0;
                             typeName = "NUMBER";

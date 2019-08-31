@@ -28,4 +28,5 @@ class CfgPatches {
 
 // UI
 #include "\x\coopr\addons\core\coopr_gui_base.hpp"
+#include "Cfg3DEN.hpp"
 #include "ui\CoopR_Login_Dialog.hpp"

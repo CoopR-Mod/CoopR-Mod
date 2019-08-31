@@ -4,11 +4,23 @@ params [["_logic", objNull]];
 
 if(isServer) then {
 
-    private _syncedObjects = synchronizedObjects _logic;
-    DEBUG2("Commander NPC Module - synced units: %1", _syncedObjects);
+    private _commander = synchronizedObjects _logic;
+    if (_commander isEqualTo objNull) exitWith { ERROR("_commander was not defined") };
+    if(count _commander == 0) exitWith { SETUPERROR("Commander Module has no synced units!") };
 
-    if(count _syncedObjects == 0) exitWith { SETUPERROR("Commander Module has no synced units!") };
-    { [_x] remoteExec ["coopr_fnc_initCommanderNPC", EXEC_GLOBAL]; } forEach _syncedObjects;
+    {
+        if (COOPR_MISSIONS_ACTIVE) then {
+            if (COOPR_ACE3) then {
+                _commander call coopr_fnc_ace3_initCommander;
+            } else {
+                // after action report action
+                private _aarActionCondition = { _this call coopr_fnc_hasActiveMission };
+                _commander addAction [localize "str.coopr.aar.action.commander", { call coopr_fnc_deliverAfterActionReport }, [], 1.5, true, true, "", _aarActionCondition call coopr_fnc_codeAsString, 3];
+
+                DEBUG2("initialized %1 as hq commander", _commander);
+            };
+        };
+    } forEach _commander;
 
     true;
 } else {

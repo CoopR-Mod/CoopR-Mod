@@ -44,7 +44,9 @@ cutText ["", "BLACK IN", 0.1];
 call coopr_fnc_initCharacterEvents;
 call coopr_fnc_initCharacterRoutines;
 call coopr_fnc_initCharacterActions;
-call coopr_fnc_initCharacterMissions;
+if (COOPR_MISSIONS_ACTIVE) then {
+    call coopr_fnc_initCharacterMissions;
+};
 call coopr_fnc_redrawCharacterMarker;
 
 DEBUG("...post login init done");

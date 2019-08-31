@@ -40,7 +40,7 @@ class CfgVehicles
         displayName = "CoopR Headquarter";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Mission_Framework";
-        function = "coopr_fnc_initHQ";
+        function = "coopr_fnc_initHQAddon";
         functionPriority = 2;
         isGlobal = 1;
         isTriggerActivated = 1;

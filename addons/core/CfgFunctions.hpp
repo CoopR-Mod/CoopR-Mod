@@ -23,8 +23,6 @@ class CfgFunctions {
             class initServerRoutines {};
             class initCommanderNPC {};
             class initVehicleNPC {};
-            class initHQ {};
-            class setupCommanderModule {};
             class setupVehicleModule {};
             class initCoreAddon {postInit = 1};
 

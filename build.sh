@@ -13,9 +13,9 @@ mkdir -p $KEYS
 
 $ARMAKE build -p -f addons/persistence $DEST/persistence.pbo
 $ARMAKE build -p -f addons/core $DEST/core.pbo
-$ARMAKE build -p -f addons/armory $DEST/armory.pbo
+#$ARMAKE build -p -f addons/armory $DEST/armory.pbo
 $ARMAKE build -p -f addons/integration $DEST/integration.pbo
-$ARMAKE build -p -f addons/intelligence $DEST/intelligence.pbo
+#$ARMAKE build -p -f addons/intelligence $DEST/intelligence.pbo
 $ARMAKE build -p -f addons/rpg $DEST/rpg.pbo
 $ARMAKE build -p -f addons/lobby $DEST/lobby.pbo
 $ARMAKE build -p -f addons/supply $DEST/supply.pbo

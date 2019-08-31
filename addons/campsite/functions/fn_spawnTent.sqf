@@ -31,14 +31,20 @@ if(_safePos isEqualTo [worldSize / 2, worldsize / 2, 0]) exitWith{
 private _newTent = "Land_TentA_F" createVehicle [0,0,0];
 _newTent setPosATL [_safePos select 0, _safePos select 2, 0];
 
-_hasTentCondition = player getVariable ["coopr_campsite_hasTent", false];
+//Adding tent to database 
+private _characterID = _player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+if(_characterID isEqualTo -1) exitWith {
+    ERROR("For whatever reason, character has no ID")
+};
+_newTent setVariable ["coopr_tent_owner", _characterID];
+
+
 _newTent addAction 
 [
     localize "str.coopr.campsite.action.disassembletent", 
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 		deleteVehicle _target;
-		_caller setVariable ["coopr_campsite_hasTent", true];
 		_caller addItemToBackpack "coopr_item_foldedTent";
     },
     [],
@@ -46,7 +52,7 @@ _newTent addAction
     true, 
     true, 
     "",
-    !_hasTentCondition call coopr_fnc_codeAsString,
+    "true",
     3,
     false,
     "",

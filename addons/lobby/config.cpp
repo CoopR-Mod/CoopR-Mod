@@ -10,7 +10,9 @@ class CfgPatches {
 
         requiredVersion = 1.80;
         requiredAddons[] = {
-            "coopr_core"
+            "coopr_core",
+            "coopr_rpg",
+            "coopr_hq"
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
@@ -23,7 +25,9 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgSounds.hpp"
 
 // UI
 #include "\x\coopr\addons\core\coopr_gui_base.hpp"
+#include "Cfg3DEN.hpp"
 #include "ui\CoopR_Login_Dialog.hpp"

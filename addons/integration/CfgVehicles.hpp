@@ -20,7 +20,7 @@ class CfgVehicles
         scope = 2;
         displayName = "CoopR Integration";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
+        category = "CoopR_Mission_Framework";
         function = "coopr_fnc_setupIntegration";
         functionPriority = 1;
         isGlobal = 1;

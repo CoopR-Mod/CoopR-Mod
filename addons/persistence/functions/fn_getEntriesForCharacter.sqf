@@ -23,7 +23,7 @@ params [["_characterID", -1]];
 if (isServer) then {
     if (_characterID isEqualTo -1) exitWith { ERROR("_characterID was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         call coopr_fnc_getEntriesForCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

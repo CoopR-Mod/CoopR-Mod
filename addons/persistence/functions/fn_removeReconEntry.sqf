@@ -23,7 +23,7 @@ params [["_id", -1]];
 if (isServer) then {
     if (_id isEqualTo -1) exitWith { ERROR("_id was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_id] call coopr_fnc_removeReconEntryLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

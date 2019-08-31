@@ -1,10 +1,12 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT lobby
+#define ADDON lobby
+#define DEBUG_CTX 'COOPR.LOBBY'
 
-#define DEBUG_CTX "COOPR.LOBBY"
+#define PERK(var) (GUI_ID_LOGIN_CHARACTER_PERK_0 + var)
+#define DETAIL_PERK(var) (GUI_ID_LOGIN_CHARACTER_DETAILS_PERK_0 + var)
+#define SKILL(var) (GUI_ID_LOGIN_CHARACTER_DETAILS_SKILL_0 + var)
 
-#define COOPR_CHARACTER_ROLES [[(localize "str.coopr.character.role.leader"), "coopr_role_leader"], [(localize "str.coopr.character.role.medic"), "coopr_role_medic"], [(localize "str.coopr.character.role.engineer"), "coopr_role_engineer"], [(localize "str.coopr.character.role.marksman"), "coopr_role_marksman"], [(localize "str.coopr.character.role.mg"), "coopr_role_mg"]]
-#define COOPR_ROLE_NAMES [["coopr_role_leader", (localize "str.coopr.character.role.leader")], ["coopr_role_medic", (localize "str.coopr.character.role.medic")], ["coopr_role_engineer", (localize "str.coopr.character.role.engineer")], ["coopr_role_marksman", (localize "str.coopr.character.role.marksman")], ["coopr_role_mg", (localize "str.coopr.character.role.mg")]]
+#define COOPR_MAX_PERKS (missionNamespace getVariable ["coopr_rpg_max_perks", 0])
 
 #include "\x\coopr\addons\core\script_macros.hpp"

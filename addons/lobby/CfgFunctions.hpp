@@ -7,8 +7,6 @@ class CfgFunctions {
             class login {};
             class logout {};
             class initCharacter {};
-            class setupLobbyModule {};
-            class initLobby {};
             class cleanUp {};
             class redrawCharacterMarker {};
         }
@@ -16,11 +14,20 @@ class CfgFunctions {
             file = "x\coopr\addons\lobby\ui";
             class showLoginDialog {};
             class selectRole {};
-            class getImageForRole {};
             class showCharacterSelectionDisplay {};
             class showCreationDialog {};
             class playAnimationForRole {};
             class initLobbyCam {};
+            class initPerks {};
+        }
+        class coopr_lobby_init {
+            file = "x\coopr\addons\lobby\init";
+            class initLobbyAddon {};
+        }
+        class coopr_lobby_helper {
+            file = "x\coopr\addons\lobby\helper";
+            class togglePerkSelection {};
+            class getSelectedPerksCtrl {};
         }
     }
 }

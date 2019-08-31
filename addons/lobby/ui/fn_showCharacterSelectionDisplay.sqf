@@ -12,6 +12,8 @@
  * Scope: Client
  */
 
+#define SKILL_AMOUNT 5
+
 params [["_characterHash", []]];
 if (_characterHash isEqualTo []) exitWith { ERROR("_characterHash was not defined") };
 
@@ -26,45 +28,72 @@ hideObject COOPR_LOBBY_PROP_BODYBAG;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
-// hide the creation control if open
+// hide the other control
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 _characterCreationCtrl ctrlShow false;
 _characterCreationCtrl ctrlEnable false;
 
+private _infobox = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_INFOBOX;
+_infobox ctrlShow false;
+_infobox ctrlEnable false;
+
 // show the description control if open
-private _characterDescriptionCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION;
-_characterDescriptionCtrl ctrlShow true;
-_characterDescriptionCtrl ctrlEnable true;
+private _characterDetailsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS;
+_characterDetailsCtrl ctrlShow true;
+_characterDetailsCtrl ctrlEnable true;
 
-private _roleId = [_characterHash, COOPR_KEY_ROLE] call CBA_fnc_hashGet;
-private _roleNamesHash = [COOPR_ROLE_NAMES, []] call CBA_fnc_hashCreate;
-private _roleName = [_roleNamesHash, _roleId] call CBA_fnc_hashGet;
+private _perkDisplay = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_PERKS;
+_perkDisplay ctrlShow false;
+_perkDisplay ctrlEnable false;
 
-private _reputation = [_characterHash, COOPR_KEY_REPUTATION] call CBA_fnc_hashGet;
-private _tmpReputation = [_characterHash, COOPR_KEY_TMP_REPUTATION] call CBA_fnc_hashGet;
-private _state = [_characterHash, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-private _name = [_characterHash, COOPR_KEY_NAME] call CBA_fnc_hashGet;
+// fetch character stats
+private _roleClass = [_characterHash, COOPR_CHAR_ROLE] call CBA_fnc_hashGet;
+private _roleLevel = [_characterHash, COOPR_CHAR_ROLE_LEVEL] call CBA_fnc_hashGet;
+private _roleName = [_roleClass, "name"] call coopr_fnc_getRoleData;
+private _reputation = [_characterHash, COOPR_CHAR_REPUTATION] call CBA_fnc_hashGet;
+private _tmpReputation = [_characterHash, COOPR_CHAR_TMP_REPUTATION] call CBA_fnc_hashGet;
+private _state = [_characterHash, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
+private _name = [_characterHash, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
+private _perks = [_characterHash, COOPR_CHAR_PERKS] call CBA_fnc_hashGet;
+private _skills = [_characterHash, COOPR_CHAR_SKILLS] call CBA_fnc_hashGet;
 
-private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TITLE;
-private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TEXT;
-private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_DELETE_BUTTON;
-private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PLAY_BUTTON;
-private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_ROLE;
-private _perksCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_PERKS;
-private _traitsCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DESCRIPTION_TRAITS;
+// initially hide perks and skills (can't do in gui config)
+for "_i" from 0 to (SKILL_AMOUNT - 1) do { (_loginDialog displayCtrl SKILL(_i)) ctrlSetText "\x\coopr\addons\rpg\data\images\roles\no-role-256.paa" };
+for "_i" from 0 to 8 do { (_loginDialog displayCtrl DETAIL_PERK(_i)) ctrlSetText "\x\coopr\addons\rpg\data\images\roles\no-role-256.paa" };
+
+// show character perks
+{
+    private _perkClass = _x;
+    private _perkCtrl = _loginDialog displayCtrl DETAIL_PERK(_forEachIndex);
+    _perkCtrl ctrlEnable true;
+    _perkCtrl ctrlShow true;
+    _perkCtrl ctrlSetText ([_perkClass, "icon"] call coopr_fnc_getPerkData)
+} forEach _perks;
+
+// show character skills
+{
+    private _skillOfCharacter = _x;
+    private _skillCtrl = _loginDialog displayCtrl SKILL(_forEachIndex);
+    _skillCtrl ctrlEnable true;
+    _skillCtrl ctrlShow true;
+    _skillCtrl ctrlSetText ([_skillOfCharacter, "icon"] call coopr_fnc_getSkillData)
+} forEach _skills;
+
+// init standard character description controls
+private _titleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
+private _textCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
+private _deleteButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
+private _playButton = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
+private _roleCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_DETAILS_ROLE;
 
 _titleCtrl ctrlSetText _name;
 
 //set role picture for selected character
-private _roleImage = [_roleId] call coopr_fnc_getImageForRole;
-_roleCtrl ctrlSetText _roleImage;
-_perksCtrl ctrlSetText _roleImage; // TODO: change to perk icon
-_traitsCtrl ctrlSetText _roleImage; // TODO: change to trait icon
+private _roleIcon = [_roleClass, "icon"] call coopr_fnc_getRoleData;
+_roleCtrl ctrlSetText _roleIcon;
 
 private _roleText = parseText (format ["<t>Role:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleName]);
-private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, 0]);
-private _perksText = parseText (format ["<t>Perks:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Perk"]);
-private _traitsText = parseText (format ["<t>Traits:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, "No Trait"]);
+private _levelText = parseText (format ["<t>Level:</t><t color='%1'> %2</t>", COOPR_MAIN_COLOR_HEX, _roleLevel]);
 
 private _stateLabel = "None";
 switch (_state) do {
@@ -85,13 +114,13 @@ switch (_state) do {
 private _reputationText = parseText (format ["<t>Reputation:</t><t color='%1'> %2</t>", COOPR_POSITIVE_COLOR_HEX, _reputation]);
 private _tmpReputationText = parseText (format ["<t>Temp Reputation:</t><t color='%1'> %2</t>", COOPR_POSITIVE_COLOR_HEX, _tmpReputation]);
 
-private _composedText = composeText [_roleText, lineBreak, _levelText, lineBreak, _perksText, lineBreak, _traitsText,
-                                     lineBreak, lineBreak, _stateLabel, lineBreak, _reputationText, lineBreak, _tmpReputationText];
+private _composedText = composeText [_roleText, lineBreak, _levelText, lineBreak, lineBreak, _stateLabel,
+                                     lineBreak, _reputationText, lineBreak, _tmpReputationText];
 
 //set character text
 _textCtrl ctrlSetStructuredText _composedText;
 
-private _slot = [_characterHash, COOPR_KEY_SLOT] call CBA_fnc_hashGet;
+private _slot = [_characterHash, COOPR_CHAR_SLOT] call CBA_fnc_hashGet;
 
 _deleteButton ctrlRemoveAllEventHandlers "MouseButtonDown";
 _deleteButton setVariable ["_params", [_slot]];
@@ -144,7 +173,7 @@ switch (_state) do {
         _playButton ctrlEnable true;
         _playButton ctrlSetText "Play";
         // set loadout on character preview
-        private _loadout = [_characterHash, COOPR_KEY_LOADOUT] call CBA_fnc_hashGet;
+        private _loadout = [_characterHash, COOPR_CHAR_LOADOUT] call CBA_fnc_hashGet;
         if (count _loadout isEqualTo 0) then {
             ERROR("character loadout could not be revoked after selection")
         } else {

@@ -26,10 +26,10 @@ if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
 if (_cooprMissionInfo isEqualTo []) exitWith { ERROR("_cooprMissionInfo was []") };
 
 if (isServer) then {
-    private _missionType = [_cooprMissionInfo, COOPR_KEY_MISSION_TYPE] call CBA_fnc_hashGet;
-    private _description = [_cooprMissionInfo, COOPR_KEY_MISSION_DESCRIPTION] call CBA_fnc_hashGet;
-    private _target = [_cooprMissionInfo, COOPR_KEY_MISSION_TARGET] call CBA_fnc_hashGet;
-    private _serializedMarkers = [_cooprMissionInfo, COOPR_KEY_MISSION_MARKER] call CBA_fnc_hashGet;
+    private _missionType = [_cooprMissionInfo, COOPR_MISSION_TYPE] call CBA_fnc_hashGet;
+    private _description = [_cooprMissionInfo, COOPR_MISSION_DESCRIPTION] call CBA_fnc_hashGet;
+    private _target = [_cooprMissionInfo, COOPR_MISSION_TARGET] call CBA_fnc_hashGet;
+    private _serializedMarkers = [_cooprMissionInfo, COOPR_MISSION_MARKER] call CBA_fnc_hashGet;
     DEBUG3("assigning %1 to unit %2", _missionType, _unit);
     private _missionId = format ["%1_%2", _missionType, (call coopr_fnc_getMissionCount) + 1];
     private _cooprMission = [_unit, _missionId , _missionType, [], 1, 2, true] call BIS_fnc_taskCreate;
@@ -38,7 +38,7 @@ if (isServer) then {
         [_unit, _missionType, _target] call coopr_fnc_initMissionTracker;
         DEBUG2("%1 assigned", _cooprMission);
         // TODO: need to be shifted to group/squads
-        _unit setVariable [COOPR_KEY_ACTIVE_MISSION, _missionId, true];
+        _unit setVariable [COOPR_CHAR_ACTIVE_MISSION, _missionId, true];
         private _newMarkerName = _missionId + "_recon_marker_";
         { [_x, _newMarkerName + (str _forEachIndex)] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
         // get the position of the first marker of the mission

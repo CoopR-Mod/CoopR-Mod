@@ -88,6 +88,28 @@ class COOPR_Button: COOPR_CommonProperites {
 	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 };
 
+class COOPR_ButtonPictureNoBG: COOPR_CommonProperites {
+    style = 48;
+    type = 1;
+    borderSize = 0;
+    colorBackground[] = COOPR_COLOR_TRANSPARENT;
+    colorBackgroundActive[] = COOPR_COLOR_TRANSPARENT;
+    colorBackgroundDisabled[] = COOPR_COLOR_TRANSPARENT;
+    colorDisabled[] = COOPR_COLOR_TRANSPARENT;
+    colorFocused[] = COOPR_COLOR_TRANSPARENT;
+    offsetPressedX = 0;
+    offsetPressedY = 0;
+    offsetX = 0;
+    offsetY = 0;
+
+    //text = "#(argb,8,8,3)color(0,0,1,1)";
+
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
+};
+
 class COOPR_Button_Center: COOPR_Button {
     style = 2;
 };
@@ -130,7 +152,6 @@ class COOPR_Picture: COOPR_CommonProperites {
 class COOPR_PictureRatio: COOPR_Picture {
     style = 48 + 2048;
 };
-
 
 class COOPR_Text: COOPR_CommonProperites {
     type = 0;

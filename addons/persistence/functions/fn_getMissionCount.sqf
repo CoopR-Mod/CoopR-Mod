@@ -20,7 +20,7 @@
 
 if (isServer) then {
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         call coopr_fnc_getMissionCountLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

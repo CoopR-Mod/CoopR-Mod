@@ -6,6 +6,7 @@
 #include "helper.hpp"
 #include "constants.hpp"
 #include "globals.hpp"
+#include "mission_attributes.hpp"
 
 
 

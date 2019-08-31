@@ -20,7 +20,7 @@ params[["_player", objNull]];
 if (_player isEqualTo objNull) exitWith { ERROR("_player was objNull") };
 if !(isPlayer _player) exitWith { ERROR("_player is not a player") };
 
-private _currentMission = _player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+private _currentMission = _player getVariable [COOPR_CHAR_ACTIVE_MISSION, []];
 
 // return boolean
 !(_currentMission isEqualTo [])

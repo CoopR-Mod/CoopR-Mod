@@ -17,16 +17,16 @@
  */
 
 if (COOPR_RECON_ROUTINE_TOGGLE) then {
-    private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+    private _isLoggedIn = player getVariable [COOPR_CHAR_PLAYER_LOGGEDIN, false];
     if !(_isLoggedIn) exitWith { DEBUG("skipping recon routine - not logged in"); };
-    private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+    private _characterID = player getVariable [COOPR_CHAR_CHARACTER_ID, -1];
 
-    private _isInRecon = player getVariable [COOPR_KEY_IN_RECON, false];
+    private _isInRecon = player getVariable [COOPR_CHAR_IN_RECON, false];
     private _isInMissionArea = [player] call coopr_fnc_isInMissionArea;
 
     if (_isInRecon and _isInMissionArea) then {
         DEBUG2("running recon routine for character %1", _characterID);
-        private _reconMissionId = player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+        private _reconMissionId = player getVariable [COOPR_CHAR_ACTIVE_MISSION, []];
         private _reconMissionMarker = _reconMissionId + "_mission_marker";
         private _areaStrengths = [_reconMissionMarker] call coopr_fnc_parseStrengthsInArea;
         private _reportID = [_characterID] call coopr_fnc_getReportIdForCharacterLocal;

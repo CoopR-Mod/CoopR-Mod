@@ -24,7 +24,7 @@ if (isServer) then {
     if (_unit isEqualTo objNull) exitWith { ERROR("_unit was objNull") };
     if (not (isPlayer _unit)) exitWith { ERROR("_unit was not a player") };
 
-    private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
+    private _characterID = _unit getVariable [COOPR_CHAR_CHARACTER_ID, -1];
 
     [[_characterID], "coopr_fnc_getEntriesForCharacter", [_unit, _characterID], {
       params ["_callbackArgs", "_promisedResult"];
@@ -39,7 +39,7 @@ if (isServer) then {
       [[COOPR_LOGO_SMALL], ["Recon Reports:", 1.3, COOPR_BRAND_COLOR], ["recon report completed"]] call CBA_fnc_notify;
       [_reconEntries] call coopr_fnc_convertReportToMission;
       [_characterID, true] call coopr_fnc_setReportState;
-      _unit setVariable [COOPR_KEY_IN_RECON, false, true];
+      _unit setVariable [COOPR_CHAR_IN_RECON, false, true];
 
     }] call coopr_fnc_promise; // coopr_fnc_getEntriesForCharacter
 

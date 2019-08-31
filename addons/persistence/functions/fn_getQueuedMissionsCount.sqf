@@ -20,7 +20,7 @@
 params [["_serverID", -1]];
 
 if (isServer) then {
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_serverID] call coopr_fnc_getQueuedMissionsCountLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

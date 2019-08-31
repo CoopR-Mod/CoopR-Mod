@@ -23,7 +23,7 @@ params [["_reconEntry", []]];
 if (isServer) then {
     if (_reconEntry isEqualTo []) exitWith { ERROR("_reconEntry was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_reconEntry] call coopr_fnc_saveReconEntryLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

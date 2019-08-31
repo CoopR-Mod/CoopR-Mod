@@ -19,7 +19,7 @@ params [["_player", objNull]];
 
 if (_player isEqualTo objNull) exitWith { ERROR("_player was objNull"); };
 
-private _currentMission = player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+private _currentMission = player getVariable [COOPR_CHAR_ACTIVE_MISSION, []];
 if !(_currentMission isEqualTo []) then {
     private _missionAreaMarker = _currentMission + "_mission_marker";
     DEBUG2("checking is in mission area for %1", _missionAreaMarker);

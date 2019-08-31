@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT example
+#define ADDON example
 
 #define DEBUG_CTX "COOPR.EXAMPLE"
 

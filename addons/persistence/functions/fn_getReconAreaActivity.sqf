@@ -23,7 +23,7 @@ params [["_reportID", -1]];
 if (isServer) then {
   if (_reportID isEqualTo -1) exitWith { ERROR("_reportID was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_reportID] call coopr_fnc_getReconAreaActivityLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

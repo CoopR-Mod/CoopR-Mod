@@ -25,7 +25,7 @@ params [["_player", objNull]];
 if (_player isEqualTo objNull) exitWith { ERROR("_player was objNull") };
 
 if (isServer) then {
-    if (INTEGRATE_ALIVE) then {
+    if (COOPR_ALIVE) then {
         DEBUG2("current objective cache: %1", COOPR_RECON_OBJECTIVE_CACHE);
         private _lowestPrioObjective = ["WEST", ["attacking", "attack"], COOPR_RECON_OBJECTIVE_CACHE] call coopr_fnc_alive_getLowestPriorityObjective;
 

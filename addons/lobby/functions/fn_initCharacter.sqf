@@ -15,8 +15,8 @@
  * Scope: Client
  */
 
-private _oldPos = player getVariable [COOPR_KEY_POSITION, []];
-private _loadout = player getVariable [COOPR_KEY_LOADOUT, []];
+private _oldPos = player getVariable [COOPR_CHAR_POSITION, []];
+private _loadout = player getVariable [COOPR_CHAR_LOADOUT, []];
 
 DEBUG("post login init...");
 
@@ -35,7 +35,7 @@ if (count _loadout isEqualTo 0) then {
 };
 
 // temporary workaround until health persistence is implemented
-if(call coopr_fnc_isACE3Active and INTEGRATE_ACE3) then {
+if(call coopr_fnc_isACE3Active and COOPR_ACE3) then {
     [objNull, player] call ace_medical_fnc_treatmentAdvanced_fullHealLocal;
 };
 

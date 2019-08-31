@@ -21,7 +21,7 @@ class CfgVehicles
         displayName = "CoopR Lobby";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
         category = "CoopR_Setup";
-        function = "coopr_fnc_initLobby";
+        function = "coopr_fnc_initLobbyAddon";
         functionPriority = 2;
         isGlobal = 1;
         isTriggerActivated = 1;

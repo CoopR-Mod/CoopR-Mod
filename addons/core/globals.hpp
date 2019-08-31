@@ -6,6 +6,11 @@
 #define EMPTY_HASH2 ([[],0] call CBA_fnc_hashCreate)
 #define UNDEFINED "undefined"
 
+// Persistance Locations
+#define PERS_LOCAL 0
+#define PERS_OFFICIAL 1
+#define PERS_CUSTOM 2
+
 // NEW CHARACTER
 #define STARTING_MONEY 500
 

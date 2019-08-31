@@ -22,7 +22,7 @@ class CfgFunctions {
         }
         class coopr_lobby_init {
             file = "x\coopr\addons\lobby\init";
-            class initLobby {};
+            class initLobbyAddon {};
         }
         class coopr_lobby_helper {
             file = "x\coopr\addons\lobby\helper";

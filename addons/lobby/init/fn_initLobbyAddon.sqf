@@ -13,3 +13,4 @@ COOPR_LOBBY_PROP_STRETCHER = "Land_Stretcher_01_F" createVehicle (getPos COOPR_L
 COOPR_LOBBY_PROP_BODYBAG = "Land_Bodybag_01_black_F" createVehicle (getPos COOPR_LOBBY);
 
 INFO("lobby initialized");
+

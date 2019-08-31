@@ -24,7 +24,7 @@ if (isServer) then {
     if (_cooprMission isEqualTo []) exitWith { ERROR("_cooprMission was not defined") };
     if (not ([_cooprMission] call CBA_fnc_isHash)) exitWith { ERROR("_cooprMission has to be a cba hash"); };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_cooprMission] call coopr_fnc_pushMissionQueueLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

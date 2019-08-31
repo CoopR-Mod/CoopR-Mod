@@ -22,12 +22,13 @@ if (isServer) then {
         //call coopr_fnc_staticData;
         true call coopr_fnc_sync;
         //wait until the persistence module finished its setup
-        waitUntil {!(isNil "COOPR_PERSISTENCE_LOCATION")};
-        call coopr_fnc_initPersistence;
-        call coopr_fnc_initServerMeta;
-        [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_GLOBAL, true];
-        call coopr_fnc_initServerRoutines;
-        INFO("server initialized");
+        [] spawn {
+            call coopr_fnc_initPersistence;
+            call coopr_fnc_initServerMeta;
+            [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_GLOBAL, true];
+            call coopr_fnc_initServerRoutines;
+            INFO("server initialized");
+        };
     } else {
         ERROR("Server was not initialized. Setup verification failed");
     };

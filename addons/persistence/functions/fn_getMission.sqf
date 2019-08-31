@@ -25,7 +25,7 @@ if (isServer) then {
 
     if (_missionId isEqualTo "") exitWith { ERROR("_missionId was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_missionId] call coopr_fnc_getMissionLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

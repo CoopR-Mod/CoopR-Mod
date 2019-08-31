@@ -22,5 +22,6 @@ mkdir %keys%
 %armake64% build -p addons\supply %dest%\supply.pbo
 %armake64% build -p addons\missions %dest%\missions.pbo
 %armake64% build -p addons\campsite %dest%\campsite.pbo
+%armake64% build -p addons\hq %dest%\hq.pbo
 
 copy mod.cpp @CoopR\mod.cpp

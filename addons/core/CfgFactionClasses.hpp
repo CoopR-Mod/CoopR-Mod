@@ -1,8 +1,8 @@
 class CfgFactionClasses
 {
     class NO_CATEGORY;
-    class CoopR_Setup: NO_CATEGORY
+    class CoopR_Mission_Framework: NO_CATEGORY
     {
-        displayName = "CoopR Setup Modules";
+        displayName = "CoopR Mission Framework";
     };
 };

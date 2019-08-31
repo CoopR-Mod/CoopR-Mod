@@ -46,7 +46,7 @@ class Cfg3DEN {
                             displayName = "Maximum perks per character";
                             tooltip = "The maximum  perks allowed to select on character creation";
                             expression = "missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
-                            defaultValue = "missionNamespace setVariable ['coopr_rpg_max_perks', 3]";
+                            defaultValue = 2;
                             typeName = "NUMBER";
                         }
                     };

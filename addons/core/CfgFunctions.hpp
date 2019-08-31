@@ -24,7 +24,7 @@ class CfgFunctions {
             class initCommanderNPC {};
             class initVehicleNPC {};
             class setupVehicleModule {};
-            class initCoreAddon {postInit = 1};
+            class initCoreAddon {preInit = 1};
 
             class initCoopRClients {};
             class initCoopRServer {postInit = 1;};

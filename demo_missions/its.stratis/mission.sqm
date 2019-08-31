@@ -1,0 +1,286 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=9;
+	class ItemIDProvider
+	{
+		nextID=7;
+	};
+	class Camera
+	{
+		pos[]={1963.3962,13.960912,3520.5762};
+		dir[]={0.87805694,-0.47618821,0.048337352};
+		up[]={0.47548521,0.87932384,0.026175106};
+		aside[]={0.054969449,-1.8643186e-007,-0.99852675};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"coopr_lobby",
+	"coopr_core",
+	"coopr_hq",
+	"A3_Characters_F_Exp"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="coopr_lobby";
+			name="CoopR Mod";
+			author="xetra11";
+			url="https://github.com/CoopR-Mod/CoopR-Mod";
+		};
+		class Item1
+		{
+			className="coopr_core";
+			name="CoopR Mod";
+			author="xetra11";
+			url="https://github.com/CoopR-Mod/CoopR-Mod";
+		};
+		class Item2
+		{
+			className="coopr_hq";
+			name="CoopR Mod";
+			author="xetra11";
+			url="https://github.com/CoopR-Mod/CoopR-Mod";
+		};
+		class Item3
+		{
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=4584233;
+class ScenarioData
+{
+	author="xetra11";
+	disabledAI=1;
+	joinUnassigned=0;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=4;
+		class Item0
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1985.0215,2.6771269,3528.2974};
+				angles[]={6.2606897,0,0.019996032};
+			};
+			id=0;
+			type="CoopR_ModuleSetupLobby";
+			atlOffset=6.4373016e-006;
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1973.053,2.744036,3509.4099};
+			};
+			id=1;
+			type="CoopR_ModuleSetupHQ";
+			atlOffset=0.00033760071;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CoopR_ModuleSetupHQ_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="West";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CoopR_ModuleSetupHQ_HQ_Bounds";
+					expression="_this setVariable ['HQ_Bounds',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="hq";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item2
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1980.8571,2.3427291,3517.416};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=4;
+					type="B_CTRG_Soldier_Exp_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3;
+		};
+		class Item3
+		{
+			dataType="Trigger";
+			position[]={1980.861,2.4751809,3522.0249};
+			class Attributes
+			{
+				name="hq";
+			};
+			id=6;
+			type="EmptyDetectorAreaR50";
+		};
+	};
+};

@@ -3,6 +3,7 @@
 // core addon
 #define COOPR_DEV_MODE (missionNamespace getVariable ["coopr_core_dev_mode", DEFAULT_VAL(CoopR_Core,CoopRCoreDevMode)])
 // rpg addon
+#define COOPR_MAX_PERKS (missionNamespace getVariable ["coopr_rpg_max_perks", DEFAULT_VAL(CoopR_RPG,CoopRRPGMaxPerks)])
 #define COOPR_REP_INF (missionNamespace getVariable ["coopr_rpg_rep_inf", DEFAULT_VAL(CoopR_RPG,CoopRRPGRepPerInf)])
 #define COOPR_WIA_REDUCTION (missionNamespace getVariable ["coopr_rpg_wia_rep_reduction", DEFAULT_VAL(CoopR_RPG,CoopRRPGWIARepReduction)])
 // persistence addon

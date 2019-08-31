@@ -18,11 +18,7 @@
  * Scope: Server
  */
 
-params [["_characterId", -1]];
-
 if (isServer) then {
-    if (_characterId isEqualTo -1) exitWith { ERROR("_characterId was not defined") };
-
     if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         call coopr_fnc_initServerMetaLocal;
     } else {

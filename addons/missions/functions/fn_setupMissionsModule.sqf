@@ -13,9 +13,7 @@ if(isServer) then {
     [_loggingLevel, DEBUG_CTX] call coopr_fnc_setLogLevel;
     [_loggingLevel, DEBUG_CTX] remoteExec ["coopr_fnc_setLogLevel", EXEC_GLOBAL];
 
-    COOPR_MISSIONS_ACTIVE = false;
     COOPR_RECON_OBJECTIVE_CACHE = [];
-    publicVariable "COOPR_MISSIONS_ACTIVE";
     publicVariable "COOPR_RECON_OBJECTIVE_CACHE";
 
     if (isNil "_missionItems") exitWith {SETUPERROR("no mission items have been defined") };

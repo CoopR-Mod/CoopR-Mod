@@ -16,6 +16,7 @@ mkdir %keys%
 %armake64% build -p addons\persistence %dest%\persistence.pbo
 %armake64% build -p addons\integration %dest%\integration.pbo
 %armake64% build -p addons\lobby %dest%\lobby.pbo
+%armake64% build -p addons\rpg %dest%\rpg.pbo
 %armake64% build -p addons\hq %dest%\hq.pbo
 
 copy mod.cpp @CoopRLight\mod.cpp

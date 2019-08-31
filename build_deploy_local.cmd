@@ -3,4 +3,5 @@
 :: to your local arma3 mod directory
 
 call build
+call build_light
 call deploy_local

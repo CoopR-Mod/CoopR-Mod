@@ -22,7 +22,6 @@ binarizationWanted=0;
 addons[]=
 {
 	"coopr_lobby",
-	"coopr_core",
 	"coopr_hq",
 	"A3_Characters_F_Exp"
 };
@@ -30,7 +29,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=3;
 		class Item0
 		{
 			className="coopr_lobby";
@@ -40,19 +39,12 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="coopr_core";
-			name="CoopR Mod";
-			author="xetra11";
-			url="https://github.com/CoopR-Mod/CoopR-Mod";
-		};
-		class Item2
-		{
 			className="coopr_hq";
 			name="CoopR Mod";
 			author="xetra11";
 			url="https://github.com/CoopR-Mod/CoopR-Mod";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";

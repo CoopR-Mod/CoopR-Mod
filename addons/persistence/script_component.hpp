@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT persistence
+#define ADDON persistence
 
 #define DEBUG_CTX 'COOPR.PERSISTENCE'
 

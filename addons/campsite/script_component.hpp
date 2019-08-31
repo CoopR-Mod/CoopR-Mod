@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT campsite
+#define ADDON campsite
 
 #define DEBUG_CTX 'COOPR.CAMPSITE'
 

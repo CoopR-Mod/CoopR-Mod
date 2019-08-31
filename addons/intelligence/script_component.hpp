@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT intelligence
+#define ADDON intelligence
 
 #define DEBUG_CTX 'COOPR.INTEL'
 

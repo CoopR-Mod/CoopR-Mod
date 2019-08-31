@@ -1,6 +1,6 @@
 #include "\x\coopr\addons\core\script_mod.hpp"
 
-#define COMPONENT integration
+#define ADDON integration
 
 #define DEBUG_CTX 'COOPR.INTEGRATION'
 

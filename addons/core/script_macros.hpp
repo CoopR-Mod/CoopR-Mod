@@ -1,4 +1,4 @@
-#define ADDON DOUBLES(PREFIX,COMPONENT)
+#define ADDON DOUBLES(PREFIX,ADDON)
 
 // internal macros
 #define DOUBLES(var1,var2) ##var1##_##var2

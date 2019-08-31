@@ -4,7 +4,7 @@ params [["_commander", objNull]];
 if (_commander isEqualTo objNull) exitWith { ERROR("_commander variable was not set") };
 
 if (COOPR_MISSIONS_ACTIVE) then {
-    if (INTEGRATE_ACE3) then {
+    if (COOPR_ACE3) then {
         _commander call coopr_fnc_ace3_initCommander;
     } else {
         // after action report action

@@ -29,7 +29,7 @@ private _playerGroup = createGroup [west, true];
 private _newLoginUnit =  _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_LOBBY, [], 0, "NONE"];
 
 // hack to get ALiVE actions back on new player control unit
-//if (INTEGRATE_ALIVE) then {
+//if (COOPR_ALIVE) then {
     //DEBUG("resetting lost ALiVE actions");
     //{
         //private _newActionParams = player actionParams _x;

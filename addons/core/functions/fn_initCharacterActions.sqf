@@ -16,7 +16,7 @@
  */
 
 
-if (INTEGRATE_ACE3) then {
+if (COOPR_ACE3) then {
     call coopr_fnc_ace3_addCharacterActions;
 } else {
     private _finishReportCondition = { player getVariable [COOPR_CHAR_IN_RECON, false] };

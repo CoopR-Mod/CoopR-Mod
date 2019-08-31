@@ -14,12 +14,7 @@ class CfgPatches {
             "cba_diagnostic"
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
-        units[] = {
-            "CoopR_ModuleSetupCommander",
-            "CoopR_ModuleSetupVehicle",
-            "CoopR_ModuleSetupHQ",
-            "CoopR_ModuleBasicRoleLoadouts",
-        };
+        units[] = { };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
     };

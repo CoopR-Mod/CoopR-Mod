@@ -62,6 +62,7 @@ class CfgFunctions {
             class isSquadLeader {};
             class findVariables {};
             class serializeWorldObject {};
+            class deserializeWorldObject {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

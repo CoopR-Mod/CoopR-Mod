@@ -26,7 +26,6 @@ class CfgFunctions {
             class initHQ {};
             class setupCommanderModule {};
             class setupVehicleModule {};
-            class setupHQModule {};
             class initCoreAddon {postInit = 1};
 
             class initCoopRClients {};

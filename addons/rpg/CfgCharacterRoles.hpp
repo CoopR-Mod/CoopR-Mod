@@ -11,7 +11,6 @@ class CfgCharacterRoles {
         lobbyAnimations[] = {
             "AidlPercMstpSrasWrflDnon_G04"
         };
-        onTrigger = "";
     };
 
     class Squadleader : CoopR_BaseRole {

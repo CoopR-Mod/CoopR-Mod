@@ -17,7 +17,7 @@ class Cfg3DEN {
                             displayName = "Log Level";
                             tooltip = "The log level to use for this addon";
                             expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
-                            defaultValue = 0;
+                            defaultValue = 0;// defined in mission_attributes.hpp
                             typeName = "NUMBER";
                             class Values {
                                 class None {
@@ -46,7 +46,7 @@ class Cfg3DEN {
                           property = "CoopRPersistenceLocation";
                           tooltip = "Configure the persistence location either to local, official CoopR connection or a customized. If a connection to 'Official' or 'Custom' fails this will fallback to 'Local'. Therefore be sure to have the local persistence always ready to use";
                           expression = "missionNamespace setVariable ['coopr_persistence_location', _value]";
-                          defaultValue = 0;
+                          defaultValue = 0;// defined in mission_attributes.hpp
                           typeName = "NUMBER";
                           class Values {
                               class local {name = "Local"; value = 0; default = 1;};
@@ -65,7 +65,7 @@ class Cfg3DEN {
                           property = "CoopRPersistenceServerId";
                           tooltip = "The identifier for this Coopr Server instance";
                           expression = "missionNamespace setVariable ['coopr_persistence_serverid', _value]";
-                          defaultValue = 0;
+                          defaultValue = 0;// defined in mission_attributes.hpp
                           typeName = "NUMBER";
                       }
                    };

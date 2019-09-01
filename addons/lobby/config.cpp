@@ -16,7 +16,7 @@ class CfgPatches {
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = {
-            "CoopR_ModuleSetupLobby";
+            "CoopR_ModuleSetupLobby",
         };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};

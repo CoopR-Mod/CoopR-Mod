@@ -11,7 +11,9 @@ class CfgPatches {
         requiredVersion = 1.80;
         requiredAddons[] = {
             "A3_3DEN",
-            "cba_diagnostic"
+            "cba_common",
+            "cba_diagnostic",
+            "cba_hashes",
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
         units[] = { };

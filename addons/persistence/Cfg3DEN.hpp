@@ -49,8 +49,8 @@ class Cfg3DEN {
                           defaultValue = 0;
                           typeName = "NUMBER";
                           class Values {
-                              class local {name = "Local"; value = 0; default = 1};
-                              //class official {name = "Official"; value = 1; default = 1};
+                              class local {name = "Local"; value = 0; default = 1;};
+                              //class official {name = "Official"; value = 1; default = 1;};
                               //class custom {name = "Custom"; value = 2;};
                           }
                       };

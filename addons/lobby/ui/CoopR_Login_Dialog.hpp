@@ -20,7 +20,7 @@ class CoopR_Login_Dialog {
         class StopReload: COOPR_Button {
             COOPR_POSITION(140,1048,140,32)
             text = "Disable GUI Reload";  //ToDo: Localize
-            onMouseButtonDown = "(findDisplay 1000) displayRemoveAllEventHandlers 'Unload'; [] spawn {sleep 5; call coopr_fnc_showLoginDialog;}"
+            onMouseButtonDown = "(findDisplay 1000) displayRemoveAllEventHandlers 'Unload'; [] spawn {sleep 5; call coopr_fnc_showLoginDialog;}";
         };
 
         class Corner: COOPR_Picture {

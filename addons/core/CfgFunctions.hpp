@@ -24,7 +24,7 @@ class CfgFunctions {
             class initCommanderNPC {};
             class initVehicleNPC {};
             class setupVehicleModule {};
-            class initCoreAddon {preInit = 1};
+            class initCoreAddon {preInit = 1;};
 
             class initCoopRClients {};
             class initCoopRServer {postInit = 1;};
@@ -32,7 +32,7 @@ class CfgFunctions {
         class coopr_core_helper {
             file = "x\coopr\addons\core\helper";
             class abortButtonEventHandler {};
-            class initPromise {preInit = 1};
+            class initPromise {preInit = 1;};
             class getNearestLocation {};
             class countUnits {};
             class groupsByEntities {};

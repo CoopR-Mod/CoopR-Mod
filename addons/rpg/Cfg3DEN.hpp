@@ -17,7 +17,7 @@ class Cfg3DEN {
                             displayName = "Log Level";
                             tooltip = "The log level to use for this addon";
                             expression = QUOTE([ARR_2(_value, DEBUG_CTX)] call coopr_fnc_setLogLevel);
-                            defaultValue = 0;
+                            defaultValue = 0;// defined in mission_attributes.hpp
                             typeName = "NUMBER";
                             class Values {
                                 class None {
@@ -46,7 +46,7 @@ class Cfg3DEN {
                             displayName = "Maximum perks per character";
                             tooltip = "The maximum  perks allowed to select on character creation";
                             expression = "missionNamespace setVariable ['coopr_rpg_max_perks', _value]";
-                            defaultValue = 2;
+                            defaultValue = 2;// defined in mission_attributes.hpp
                             typeName = "NUMBER";
                         }
                     };
@@ -60,7 +60,7 @@ class Cfg3DEN {
                             displayName = "Reputation per infantry";
                             tooltip = "The reputation gained per character on hostile infantry elimination (default = 10)";
                             expression = "missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
-                            defaultValue = 10;
+                            defaultValue = 10; // defined in mission_attributes.hpp
                             typeName = "NUMBER";
                         }
                         class WoundedRepReduction {
@@ -69,7 +69,7 @@ class Cfg3DEN {
                             displayName = "Reputation reduction if WIA";
                             tooltip = "The reduction modifier if a character is wounded in a mission (i.e. '0.2' means 20% of reputation gained)";
                             expression = "missionNamespace setVariable ['coopr_rpg_wia_rep_reduction', _value]";
-                            defaultValue = 0.2;
+                            defaultValue = 0.2;// defined in mission_attributes.hpp
                             typeName = "NUMBER";
                         }
                     };

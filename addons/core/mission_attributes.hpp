@@ -8,5 +8,5 @@
 #define COOPR_PERSISTENCE_LOCATION (missionNamespace getVariable ["coopr_persistence_location", 0])
 #define COOPR_SERVER_ID (missionNamespace getVariable ["coopr_persistence_serverid", 0])
 // integration addon
-#define COOPR_ACE3 (missionNamespace getVariable ["coopr_integration_ace", DEFAULT_VAL(CoopR_Integration,CoopRIntegrateACE3)])
-#define COOPR_ALIVE (missionNamespace getVariable ["coopr_integration_alive", DEFAULT_VAL(CoopR_Integration,CoopRIntegrateALiVE)])
+#define COOPR_ACE3 (missionNamespace getVariable ["coopr_integration_ace", false])
+#define COOPR_ALIVE (missionNamespace getVariable ["coopr_integration_alive", false])

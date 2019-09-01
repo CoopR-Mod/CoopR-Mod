@@ -1,5 +1,5 @@
 // core addon
-#define COOPR_DEV_MODE (missionNamespace getVariable ["coopr_core_dev_mode", DEFAULT_VAL(CoopR_Core,CoopRCoreDevMode)])
+#define COOPR_DEV_MODE (missionNamespace getVariable ["coopr_core_dev_mode", false])
 // rpg addon
 #define COOPR_MAX_PERKS (missionNamespace getVariable ["coopr_rpg_max_perks", 2])
 #define COOPR_REP_INF (missionNamespace getVariable ["coopr_rpg_rep_inf", 10])

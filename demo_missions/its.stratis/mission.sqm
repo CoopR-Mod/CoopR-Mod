@@ -8,14 +8,14 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=8;
+		nextID=23;
 	};
 	class Camera
 	{
-		pos[]={1949.0585,19.550566,3520.3813};
-		dir[]={0.87805694,-0.47618821,0.048337352};
-		up[]={0.47548521,0.87932384,0.026175106};
-		aside[]={0.054969449,-1.8643186e-007,-0.99852675};
+		pos[]={1947.2073,23.95005,3527.3621};
+		dir[]={0.928334,-0.36552402,-0.068355642};
+		up[]={0.36456341,0.93078035,-0.026843904};
+		aside[]={-0.073435709,-2.4336623e-007,-0.99734223};
 	};
 };
 binarizationWanted=0;
@@ -177,25 +177,6 @@ class CustomAttributes
 		name="CoopR_RPG";
 		class Attribute0
 		{
-			property="CoopRRPGLogLevel";
-			expression="[_value,  'COOPR.RPG'] call coopr_fnc_setLogLevel";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=2;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="CoopRRPGRepPerInf";
 			expression="missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
 			class Value
@@ -209,7 +190,26 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=15;
+					value=11;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="CoopRRPGLogLevel";
+			expression="[_value,  'COOPR.RPG'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
 				};
 			};
 		};

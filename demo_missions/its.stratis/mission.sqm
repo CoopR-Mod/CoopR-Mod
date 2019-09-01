@@ -175,7 +175,26 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		class Attribute1
+		{
+			property="CoopRRPGRepPerInf";
+			expression="missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=15;
+				};
+			};
+		};
+		nAttributes=2;
 	};
 	class Category4
 	{

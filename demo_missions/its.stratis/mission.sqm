@@ -8,11 +8,11 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={1963.3962,13.960912,3520.5762};
+		pos[]={1949.0585,19.550566,3520.3813};
 		dir[]={0.87805694,-0.47618821,0.048337352};
 		up[]={0.47548521,0.87932384,0.026175106};
 		aside[]={0.054969449,-1.8643186e-007,-0.99852675};
@@ -63,6 +63,169 @@ class ScenarioData
 class CustomAttributes
 {
 	class Category0
+	{
+		name="CoopR_Persistence";
+		class Attribute0
+		{
+			property="CoopRPersistenceLogLevel";
+			expression="[_value,  'COOPR.PERSISTENCE'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category1
+	{
+		name="CoopR_Core";
+		class Attribute0
+		{
+			property="CoopRCoreDevMode";
+			expression="missionNamespace setVariable ['coopr_core_dev_mode', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="CoopRCoreLogLevel";
+			expression="[_value,  'COOPR.CORE'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=2;
+	};
+	class Category2
+	{
+		name="CoopR_Integration";
+		class Attribute0
+		{
+			property="CoopRIntegrationLogLevel";
+			expression="[_value,  'COOPR.INTEGRATION'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category3
+	{
+		name="CoopR_RPG";
+		class Attribute0
+		{
+			property="CoopRRPGLogLevel";
+			expression="[_value,  'COOPR.RPG'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category4
+	{
+		name="CoopR_Lobby";
+		class Attribute0
+		{
+			property="CoopRLobbyLogLevel";
+			expression="[_value,  'COOPR.LOBBY'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category5
+	{
+		name="CoopR_HQ";
+		class Attribute0
+		{
+			property="CoopRHQLogLevel";
+			expression="[_value,  'COOPR.HQ'] call coopr_fnc_setLogLevel";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category6
 	{
 		name="Multiplayer";
 		class Attribute0

@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=665;
+		nextID=666;
 	};
 	class Camera
 	{
@@ -58,14 +58,13 @@ addons[]=
 	"A3_Weapons_F_Exp",
 	"A3_Structures_F_Heli_Furniture",
 	"coopr_missions",
-	"coopr_core",
 	"coopr_hq"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=25;
+		items=24;
 		class Item0
 		{
 			className="A3_Props_F_Exp";
@@ -223,13 +222,6 @@ class AddonsMetaData
 			url="https://github.com/CoopR-Mod/CoopR-Mod";
 		};
 		class Item23
-		{
-			className="coopr_core";
-			name="CoopR Mod";
-			author="xetra11";
-			url="https://github.com/CoopR-Mod/CoopR-Mod";
-		};
-		class Item24
 		{
 			className="coopr_hq";
 			name="CoopR Mod";
@@ -441,7 +433,26 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		class Attribute1
+		{
+			property="CoopRIntegrateALiVE";
+			expression="missionNamespace setVariable ['coopr_integration_alive', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=2;
 	};
 	class Category5
 	{
@@ -4781,7 +4792,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3906.123,5,996.7699};
+				position[]={3906.123,5,996.77002};
 			};
 			id=621;
 			type="CoopR_MissionsModule";

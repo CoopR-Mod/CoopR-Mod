@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=666;
+		nextID=672;
 	};
 	class Camera
 	{
-		pos[]={3925.7346,32.32214,948.2254};
-		dir[]={-0.0083489968,-0.54906315,0.83575219};
-		up[]={-0.0054847738,0.83577824,0.54904139};
-		aside[]={0.99996191,3.7357495e-010,0.0099892002};
+		pos[]={3917.5923,32.32214,944.85303};
+		dir[]={-0.0071914759,-0.48983642,0.87179905};
+		up[]={-0.0040405467,0.87181163,0.48982814};
+		aside[]={0.99998093,-5.2523319e-008,0.0082485359};
 	};
 };
 binarizationWanted=0;
@@ -325,25 +325,6 @@ class CustomAttributes
 		name="CoopR_Core";
 		class Attribute0
 		{
-			property="CoopRCoreDevMode";
-			expression="missionNamespace setVariable ['coopr_core_dev_mode', _value]";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"BOOL"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="CoopRCoreLogLevel";
 			expression="[_value,  'COOPR.CORE'] call coopr_fnc_setLogLevel";
 			class Value
@@ -361,7 +342,45 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		class Attribute1
+		{
+			property="CoopRCoreCallStack";
+			expression="missionNamespace setVariable ['coopr_core_call_stack', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="CoopRCoreDevMode";
+			expression="missionNamespace setVariable ['coopr_core_dev_mode', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=3;
 	};
 	class Category2
 	{

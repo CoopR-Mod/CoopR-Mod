@@ -49,6 +49,7 @@ class CfgFunctions {
             class isGroupStatic {};
             class promise {};
             class logHash {};
+            class recordFuncCall {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

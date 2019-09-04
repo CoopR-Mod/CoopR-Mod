@@ -60,7 +60,7 @@ class CfgFunctions {
             class promise {};
             class logHash {};
             class isSquadLeader {};
-            class findVariables {};
+            class getVariables {};
             class serializeWorldObject {};
             class deserializeWorldObject {};
         }

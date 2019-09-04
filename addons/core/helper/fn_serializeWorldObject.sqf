@@ -32,7 +32,7 @@ private _serializedObj = [];
 	{typeOf _this},
 	{getPosATL _this},
 	{getDir _this},
-	{["coopr_", obj] call coopr_fnc_findVariables}];
+	{["coopr_", obj] call coopr_fnc_getVariables}];
 
 DEBUG("Object serialized");
 if (_deleteObj) then { deleteVehicle _obj };

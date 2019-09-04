@@ -13,6 +13,10 @@ class CfgFunctions {
             class showReputation {};
             class currentGameTime {};
         }
+        class coopr_core_ui {
+            file = "x\coopr\addons\core\ui";
+            class initGUIPositions {};
+        }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";
             class verifySetup {};

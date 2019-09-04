@@ -21,17 +21,31 @@
 #define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
 
 
-#define COOPR_POSITION(X,Y,W,H) \
-    x = (X * safeZoneW) / 1920 + safeZoneX; \
-    y = (Y * safeZoneH) / 1080 + safeZoneY; \
-    w = (W * safeZoneW) / 1920; \
-    h = (H * safeZoneH) / 1080;
+/*
+#define COOPR_POSITION(X_POS,Y_POS,W_POS,H_POS) \
+    x = __EVAL((((X_POS * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0) + safeZoneX); \
+    y = __EVAL((((Y_POS * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1) + safeZoneY); \
+    w = __EVAL((((W_POS * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    h = __EVAL((((Y_POS * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
 
 #define COOPR_POSITION_CT(X,Y,W,H) \
-    x = (X * safeZoneW) / 1920; \
-    y = (Y * safeZoneH) / 1080; \
-    w = (W * safeZoneW) / 1920; \
-    h = (H * safeZoneH) / 1080;
+    x = __EVAL((((X * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    y = __EVAL((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1)); \
+    w = __EVAL((((W * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    h = __EVAL((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
+*/
+
+#define COOPR_POSITION(X,Y,W,H) \
+    x = X; \
+    y = Y; \
+    w = W; \
+    h = H;
+
+#define COOPR_POSITION_CT(X,Y,W,H) \
+    x = X; \
+    y = Y; \
+    w = W; \
+    h = H;
 
 #define COOPR_FULLSCREEN \
     x = safeZoneX; \
@@ -232,3 +246,8 @@ class COOPR_Row_SelectButton: RscButton {
     colorDisabled[] = COOPR_COLOR_TRANSPARENT;
     colorFocused[] = COOPR_COLOR_MAIN_HOVER;
 };
+
+#define COOPR_INIT_GUI_POSITIONS \
+	class COOPR_INIT_POSITIONS: COOPR_Text { \
+		onLoad = "_this spawn CoopR_fnc_initGUIPositions"; \
+	};

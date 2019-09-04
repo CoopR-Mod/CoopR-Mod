@@ -6,8 +6,9 @@
 #define PERK_ROW_2 4
 
 class CoopR_Login_Dialog {
-  idd = GUI_ID_LOGIN_DIALOG;
+    idd = GUI_ID_LOGIN_DIALOG;
     class Controls {
+        COOPR_INIT_GUI_POSITIONS
         class Title: COOPR_Title_Center {
             COOPR_POSITION(0,0,554,80)
             text = "Character Selection"; //ToDo: Localize

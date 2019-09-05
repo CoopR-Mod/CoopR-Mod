@@ -8,11 +8,10 @@
 class CoopR_Login_Dialog {
     idd = GUI_ID_LOGIN_DIALOG;
     class Controls {
-        COOPR_INIT_GUI_POSITIONS
         class Title: COOPR_Title_Center {
             COOPR_POSITION(0,0,554,80)
             text = "Character Selection"; //ToDo: Localize
-            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2.5);
+            sizeEx = COOPR_FONTZSIZE(48);
         };
         class Help: COOPR_Button {
             COOPR_POSITION(0,1048,128,32)
@@ -53,7 +52,7 @@ class CoopR_Login_Dialog {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_PLAY_BUTTON;
                     COOPR_POSITION_CT(0,471,375,72)
                     text = "Play"; //ToDo: Localize
-                    sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
+                    sizeEx = COOPR_FONTZSIZE(48);
                 };
                 class Description: COOPR_StructuredText {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TEXT;
@@ -288,19 +287,19 @@ class CoopR_Login_Dialog {
                             controlOffsetY = 0;
                         };
                         class CharacterName {
-                            controlBaseClassPath[] = {"RscText"};
+                            controlBaseClassPath[] = {"COOPR_CT_Text"};
                             columnX = (75 * safeZoneW) / 1920;
                             columnW = (100 * safeZoneW) / 1920;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                         class Level {
-                            controlBaseClassPath[] = {"RscText"};
+                            controlBaseClassPath[] = {"COOPR_CT_Text"};
                             columnX = (180 * safeZoneW) / 1920;
                             columnW = (160 * safeZoneW) / 1920;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
                         };
                         class State {
-                            controlBaseClassPath[] = {"RscText"};
+                            controlBaseClassPath[] = {"COOPR_CT_Text"};
                             columnX = (250 * safeZoneW) / 1920;
                             columnW = (85 * safeZoneW) / 1920;
                             controlOffsetY = ((7 + COOPR_ROW_OFFSET) * safeZoneH) / 1080;
@@ -339,7 +338,7 @@ class CoopR_Login_Dialog {
                     idc = GUI_ID_LOGIN_CHARACTER_CREATION_CREATE;
                     COOPR_POSITION_CT(0,471,375,72)
                     text = "Create"; //ToDo: Localize
-                    sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2);
+                    sizeEx = COOPR_FONTZSIZE(48);
                 };
                 class NameLabel: COOPR_Text_Background {
                     COOPR_POSITION_CT(22,61,147,19)

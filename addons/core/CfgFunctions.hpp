@@ -50,6 +50,7 @@ class CfgFunctions {
             class promise {};
             class logHash {};
             class recordFuncCall {};
+            class addFunctionAspects {};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";

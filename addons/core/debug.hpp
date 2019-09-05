@@ -1,7 +1,7 @@
 #define DEBUG_CFG [true, true, false]
 
 #define SETUPERROR(var1) private _machine = "[Client] "; if (isServer) then { _machine = "[Server] "; }; [var1, _machine + "COOPR.SETUP.ERROR", DEBUG_CFG] call CBA_fnc_debug
-#define ERROR(var1) private _machine = "[Client] "; if (isServer) then { _machine = "[Server] "; }; [var1, _machine + DEBUG_CTX + ".error", DEBUG_CFG] call CBA_fnc_debug; diag_log __FILE__;
+#define ERROR(var1) private _machine = "[Client] "; if (isServer) then { _machine = "[Server] "; }; [var1, _machine + DEBUG_CTX + ".error", DEBUG_CFG] call CBA_fnc_debug; diag_log "Error occured in: " + __FILE__;
 #define ERROR2(var1,var2) private _machine = "[Client] "; if (isServer) then { _machine = "[Server] "; };[format [var1, var2], _machine + DEBUG_CTX + ".error", DEBUG_CFG] call CBA_fnc_debug                                                                                                         
 #define SERVER_ONLY_ERROR(var1) [(format ["The script %1 can only be executed on the server side machine", var1]) + "[Client]" + DEBUG_CTX + ".error", DEBUG_CFG] call CBA_fnc_debug
 

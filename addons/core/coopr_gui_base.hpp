@@ -111,6 +111,10 @@ class COOPR_ButtonPictureNoBG: COOPR_CommonProperites {
 	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 };
 
+class COOPR_ButtonPictureNoBG_Ratio: COOPR_ButtonPictureNoBG {
+    style = 48 + 2048;
+};
+
 class COOPR_Button_Center: COOPR_Button {
     style = 2;
 };
@@ -135,6 +139,10 @@ class COOPR_Title_Center: COOPR_Title {
 class COOPR_ButtonPicture: COOPR_Button {
     style = 48;
     text = "#(argb,8,8,3)color(0,0,1,1)";
+};
+
+class COOPR_ButtonPicture_Ratio: COOPR_ButtonPicture {
+    style = 48 + 2048;
 };
 
 class COOPR_StructuredText: COOPR_CommonProperites {

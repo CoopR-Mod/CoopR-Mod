@@ -37,7 +37,7 @@ class CoopR_Login_Dialog {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_TITLE;
                     COOPR_POSITION_CT(0,0,340,35)
                 };
-                class Delete: COOPR_ButtonPicture {
+                class Delete: COOPR_ButtonPicture_Ratio {
                     idc = GUI_ID_LOGIN_CHARACTER_DETAILS_DELETE_BUTTON;
                     COOPR_POSITION_CT(340,0,35,35)
                     colorBackground[] = COOPR_TOCOLOR(197,58,58,1);
@@ -150,7 +150,7 @@ class CoopR_Login_Dialog {
             };
         };
 
-        class PerkButton : COOPR_ButtonPictureNoBG {
+        class PerkButton : COOPR_ButtonPictureNoBG_Ratio {
             soundClick[] = {"\x\coopr\addons\lobby\data\sounds\card_flip.ogg", 0.09, 1};
             text = "\x\coopr\addons\rpg\data\images\skills\perk-sixth-256.paa";
         };

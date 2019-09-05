@@ -29,22 +29,22 @@
 #define FUNCS_BY_TAG 0
 #define FUNC_NAME 1
 
+params [["_beforeAspect", {}],
+        ["_afterAspect", {}],
+        ["_enrichmentMode", [], [[0, ""]]]];
+
 if (isNil "ALREADY_ENRICHED") then {
     ALREADY_ENRICHED = [];
 };
 
-params [["_beforeAspect", objNull],
-        ["_afterAspect", objNull],
-        ["_enrichmentMode", [], [[0, ""]]]];
-
-if (_beforeAspect isEqualTo objNull) then { ERROR("_beforeAspect was not defined") };
-if (_afterAspect isEqualTo objNull) then { ERROR("_afterAspect was not defined") };
-if (_enrichmentMode isEqualTo []) then { ERROR("_enrichmentMode was not defined") };
+if (_beforeAspect isEqualTo {}) exitWith { ERROR("_beforeAspect was not defined") };
+if (_afterAspect isEqualTo {}) exitWith { ERROR("_afterAspect was not defined") };
+if (_enrichmentMode isEqualTo []) exitWith { ERROR("_enrichmentMode was not defined") };
 
 if (typeName _afterAspect isEqualTo "STRING") then { _beforeAspect = compile _afterAspect };
-if !(typeName _afterAspect isEqualTo "CODE") then { ERROR("_afterAspect is not code") };
+if !(typeName _afterAspect isEqualTo "CODE") exitWith { ERROR("_afterAspect is not code") };
 if (typeName _beforeAspect isEqualTo "STRING") then { _beforeAspect = compile _beforeAspect };
-if !(typeName _beforeAspect isEqualTo "CODE") then { ERROR("_beforeAspect is not code") };
+if !(typeName _beforeAspect isEqualTo "CODE") exitWith { ERROR("_beforeAspect is not code") };
 
 private _mode = _enrichmentMode select 0;
 private _functionNameOrTags = _enrichmentMode select 1;
@@ -63,20 +63,15 @@ if (_mode isEqualTo FUNCS_BY_TAG) then {
             _returnValue;
         };
 
-        missionNamespace setVariable [_x, _enrichedFunction];
+        missionNamespace setVariable [_x, _erichedFunction];
     } forEach _taggedFunctionNames;
 };
 
 if (_mode isEqualTo FUNC_NAME) then {
-    DEBUG2("enriching function: %1", _functionNameOrTags);
     private _function = missionNamespace getVariable _functionNameOrTags;
-    private _enrichedFunction = {
-        call _beforeAspect;
-        private _returnValue = call _function;
-        call _afterAspect;
-        _returnValue;
-    };
-    missionNamespace setVariable [_functionNameOrTags, _enrichedFunction];
+    DEBUG2("enriching function: %1", _functionNameOrTags);
+    private _enrichedFunction = format ["call %1; private _returnValue = call %2; call %3, _returnValue;", _beforeAspect, _function, _afterAspect];
+    missionNamespace setVariable [_functionNameOrTags, compile _enrichedFunction];
 };
 
 ALREADY_ENRICHED pushBackUnique _functionNameOrTags;

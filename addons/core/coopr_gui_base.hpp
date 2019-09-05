@@ -147,6 +147,7 @@ class COOPR_StructuredText: COOPR_CommonProperites {
 class COOPR_Picture: COOPR_CommonProperites {
     type = 0;
     style = 48;
+    colorBackground[] = COOPR_COLOR_TRANSPARENT;
     text = "#(argb,8,8,3)color(1,0,1,1)";
 };
 

@@ -18,7 +18,7 @@
  * Scope: Client
  */
 
-private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
+private _characterID = player getVariable [COOPR_CHAR_CHARACTER_ID, -1];
 
 [[_characterID], "coopr_fnc_getEntriesForCharacter", [], {
     params ["_callbackArgs", "_promisedResult"];
@@ -27,7 +27,7 @@ private _characterID = player getVariable [COOPR_KEY_CHARACTER_ID, -1];
     DEBUG2("redrawing markers for entries: %1", _reconEntries);
     {
       private _entry = _x;
-      private _serializedMarkers = [_entry, COOPR_KEY_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
+      private _serializedMarkers = [_entry, COOPR_RECON_ENTRY_MARKER] call CBA_fnc_hashGet;
       { [_x] call coopr_fnc_deserializeMarker } forEach _serializedMarkers;
     } forEach _reconEntries;
 

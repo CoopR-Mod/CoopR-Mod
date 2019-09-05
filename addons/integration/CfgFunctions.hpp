@@ -2,7 +2,6 @@ class CfgFunctions {
     class coopr {
         class coopr_integration_functions {
             file = "x\coopr\addons\integration\functions";
-            class setupIntegration;
         }
         class coopr_integration_ace3_functions {
             file = "x\coopr\addons\integration\functions\ace3";

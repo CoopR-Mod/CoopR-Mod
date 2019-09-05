@@ -23,5 +23,5 @@ params [["_character", objNull]];
 if(_character isEqualTo objNull) exitWith { ERROR("given _character object was null") };
 
 DEBUG("updating character state");
-player setVariable [COOPR_KEY_POSITION, getPos player, true];
-player setVariable [COOPR_KEY_LOADOUT, getUnitLoadout player, true];
+player setVariable [COOPR_CHAR_POSITION, getPos player, true];
+player setVariable [COOPR_CHAR_LOADOUT, getUnitLoadout player, true];

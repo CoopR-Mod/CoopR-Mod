@@ -19,7 +19,7 @@
  */
 
 INFO("reinit missions to character");
-private _activeMissionID = player getVariable [COOPR_KEY_ACTIVE_MISSION, []];
+private _activeMissionID = player getVariable [COOPR_CHAR_ACTIVE_MISSION, []];
 if (_activeMissionID isEqualTo []) exitWith { INFO("no active missions - skipping reinit"); };
 
 [[_activeMissionID], "coopr_fnc_getMission", [], {

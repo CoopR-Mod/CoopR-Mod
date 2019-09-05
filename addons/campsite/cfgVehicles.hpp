@@ -42,7 +42,7 @@ class cfgVehicles
         scope = 2;
         displayName = "CoopR Campsite";
         //icon = "\myTag_addonName\data\iconNuke_ca.paa"; // Map icon. Delete this entry to use the default icon
-        category = "CoopR_Setup";
+        category = "CoopR_Mission_Framework";
         function = "coopr_fnc_setupCampsiteModule"; // initially called
         functionPriority = 2;
         isGlobal = 1;

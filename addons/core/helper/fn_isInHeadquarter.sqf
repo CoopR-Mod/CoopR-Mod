@@ -21,7 +21,7 @@ params[["_player", objNull]];
 if (_player isEqualTo "") exitWith { ERROR("_player was empty string") };
 if !(isPlayer _player) exitWith { ERROR("_player is not a player") };
 
-private _isLoggedIn = _player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+private _isLoggedIn = _player getVariable [COOPR_CHAR_PLAYER_LOGGEDIN, false];
 
 // return boolean
 _player inArea COOPR_HQ_WEST_BOUNDS and _isLoggedIn;

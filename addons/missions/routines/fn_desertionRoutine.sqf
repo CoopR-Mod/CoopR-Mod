@@ -17,7 +17,7 @@
  * Scope: Client
  */
 
-private _isLoggedIn = player getVariable [COOPR_KEY_PLAYER_LOGGEDIN, false];
+private _isLoggedIn = player getVariable [COOPR_CHAR_PLAYER_LOGGEDIN, false];
 if !(_isLoggedIn) exitWith { DEBUG("skipping desertion routine - not logged in"); };
 
 if !([player] call coopr_fnc_isInHeadquarter) then {

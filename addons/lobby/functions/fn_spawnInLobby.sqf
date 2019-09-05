@@ -21,7 +21,7 @@ COOPR_LOBBY_AGENT = _playerGroup createUnit ["B_diver_TL_F", getPos COOPR_LOBBY,
 DEBUG("lobby agent was created");
 COOPR_LOBBY_AGENT setUnitLoadout EMPTY_LOADOUT;
 // to prevent lobby players from syncing
-COOPR_LOBBY_AGENT setVariable [COOPR_KEY_PLAYER_LOGGEDIN, false, true];
+COOPR_LOBBY_AGENT setVariable [COOPR_CHAR_PLAYER_LOGGEDIN, false, true];
 
 // remove old character
 private _oldPlayerUnit = player;

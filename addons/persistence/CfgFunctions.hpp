@@ -1,5 +1,9 @@
 class CfgFunctions {
     class coopr {
+        class coopr_persistence_init {
+            file = "x\coopr\addons\persistence\init";
+            class initPersistenceAddon { postInit = 1; };
+        }
         class coopr_persistence_local {
             file = "x\coopr\addons\persistence\local";
             class extDB3sql {};
@@ -33,7 +37,6 @@ class CfgFunctions {
         }
         class coopr_persistence_functions {
             file = "x\coopr\addons\persistence\functions";
-            class setupPersistenceModule {};
             class createCharacter {};
             class updateState {};
             class serializeCoopR {};

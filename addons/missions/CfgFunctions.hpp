@@ -61,7 +61,7 @@ class CfgFunctions {
         }
         class coopr_missions_tests {
             file = "x\coopr\addons\missions\tests";
-            class tests_missions_runSuite { postInit = 1 };
+            class tests_missions_runSuite { postInit = 1; };
             class tests_strengthAccuracy {};
             class tests_minMaxForStrength {};
             class tests_determineMissionType {};

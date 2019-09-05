@@ -33,12 +33,12 @@ if (isServer) then {
     if !(isNil "_reconMission") then {
         DEBUG2("%1 assigned", _reconMission);
         [_unit, "coopr_mission_recon"] call coopr_fnc_initMissionTracker;
-        _unit setVariable [COOPR_KEY_ACTIVE_MISSION, _missionId, true];
+        _unit setVariable [COOPR_CHAR_ACTIVE_MISSION, _missionId, true];
         [_reconDestination, _missionId, "RECON"] call coopr_fnc_createMissionMarker;
         [(_missionId call coopr_fnc_serializeMission)] spawn coopr_fnc_saveMission;
-        private _characterID = _unit getVariable [COOPR_KEY_CHARACTER_ID, -1];
+        private _characterID = _unit getVariable [COOPR_CHAR_CHARACTER_ID, -1];
         [_characterID, _missionId] call coopr_fnc_initReconReport;
-        _unit setVariable [COOPR_KEY_IN_RECON, true, true];
+        _unit setVariable [COOPR_CHAR_IN_RECON, true, true];
         COOPR_RECON_ROUTINE_TOGGLE = true;
         true;
     } else {

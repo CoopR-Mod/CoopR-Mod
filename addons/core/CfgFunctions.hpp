@@ -9,8 +9,6 @@ class CfgFunctions {
             class playerKilledNpc {};
             class addVehicleKeyWest {};
             class initCharacterActions {};
-            class updateReputation {};
-            class updateTempReputation {};
             class convertTempToReputation {};
             class showReputation {};
             class currentGameTime {};
@@ -25,13 +23,8 @@ class CfgFunctions {
             class initServerRoutines {};
             class initCommanderNPC {};
             class initVehicleNPC {};
-            class initHQ {};
-            class initCore {};
-            class setupCommanderModule {};
             class setupVehicleModule {};
-            class setupHQModule {};
-            class setupCoreModule {};
-            class setupBasicRoleLoadoutModule {};
+            class initCoreAddon {preInit = 1;};
 
             class initCoopRClients {};
             class initCoopRServer {postInit = 1;};
@@ -39,8 +32,7 @@ class CfgFunctions {
         class coopr_core_helper {
             file = "x\coopr\addons\core\helper";
             class abortButtonEventHandler {};
-            class initPromise {preInit = 1};
-            class getLoadoutForRole {};
+            class initPromise {preInit = 1;};
             class getNearestLocation {};
             class countUnits {};
             class groupsByEntities {};

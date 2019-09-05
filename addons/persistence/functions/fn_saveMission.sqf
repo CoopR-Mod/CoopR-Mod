@@ -25,7 +25,7 @@ if (isServer) then {
 
     if (_serializedMission isEqualTo []) exitWith { ERROR("_serializedMission was not defined") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_serializedMission] call coopr_fnc_saveMissionLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");

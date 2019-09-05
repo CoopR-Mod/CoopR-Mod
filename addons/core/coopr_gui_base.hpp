@@ -20,32 +20,19 @@
 #define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
 #define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
 
-
-/*
-#define COOPR_POSITION(X_POS,Y_POS,W_POS,H_POS) \
-    x = __EVAL((((X_POS * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0) + safeZoneX); \
-    y = __EVAL((((Y_POS * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1) + safeZoneY); \
-    w = __EVAL((((W_POS * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
-    h = __EVAL((((Y_POS * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
-
-#define COOPR_POSITION_CT(X,Y,W,H) \
-    x = __EVAL((((X * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
-    y = __EVAL((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1)); \
-    w = __EVAL((((W * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
-    h = __EVAL((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
-*/
+#define COOPR_FONTZSIZE(SIZE) #(((SIZE * 0.00222222) * (getResolution select 1)) / 1080)
 
 #define COOPR_POSITION(X,Y,W,H) \
-    x = X; \
-    y = Y; \
-    w = W; \
-    h = H;
+    x = #((((X * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0) + safeZoneX); \
+    y = #((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1) + safeZoneY); \
+    w = #((((W * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    h = #((((H * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
 
 #define COOPR_POSITION_CT(X,Y,W,H) \
-    x = X; \
-    y = Y; \
-    w = W; \
-    h = H;
+    x = #((((X * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    y = #((((Y * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1)); \
+    w = #((((W * (getResolution select 0)) / 1920) * safeZoneW) / (getResolution select 0)); \
+    h = #((((H * (getResolution select 1)) / 1080) * safeZoneH) / (getResolution select 1));
 
 #define COOPR_FULLSCREEN \
     x = safeZoneX; \
@@ -62,7 +49,7 @@ class COOPR_CommonProperites {
     y = 0;
     w = 0;
     h = 0;
-    sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+    sizeEx = COOPR_FONTZSIZE(18);
     font = "RobotoCondensed";
     colorText[] = COOPR_COLOR_WHITE;
     colorBorder[] = COOPR_COLOR_TRANSPARENT;
@@ -153,7 +140,7 @@ class COOPR_ButtonPicture: COOPR_Button {
 class COOPR_StructuredText: COOPR_CommonProperites {
     type = 13;
     style = 0;
-    size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+    size = COOPR_FONTZSIZE(18);
     colorBackground[] = COOPR_COLOR_TRANSPARENT;
 };
 
@@ -224,6 +211,7 @@ class COOPR_ControlsTable: COOPR_CommonProperites {
 };
 
 class COOPR_Row_Button: RscButton {
+    sizeEx = COOPR_FONTZSIZE(18);
     colorText[] = COOPR_COLOR_WHITE;
     colorBackground[] = COOPR_COLOR_MAIN;
     colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
@@ -239,6 +227,7 @@ class COOPR_Row_Button: RscButton {
 };
 
 class COOPR_Row_SelectButton: RscButton {
+    sizeEx = COOPR_FONTZSIZE(18);
     colorText[] = COOPR_COLOR_TRANSPARENT;
     colorBackground[] = COOPR_COLOR_TRANSPARENT;
     colorBackgroundActive[] = COOPR_COLOR_MAIN_HOVER;
@@ -247,7 +236,6 @@ class COOPR_Row_SelectButton: RscButton {
     colorFocused[] = COOPR_COLOR_MAIN_HOVER;
 };
 
-#define COOPR_INIT_GUI_POSITIONS \
-	class COOPR_INIT_POSITIONS: COOPR_Text { \
-		onLoad = "_this spawn CoopR_fnc_initGUIPositions"; \
-	};
+class COOPR_CT_Text: RscText {
+    sizeEx = COOPR_FONTZSIZE(18);
+};

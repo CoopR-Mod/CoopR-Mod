@@ -38,23 +38,26 @@ if(_characterID isEqualTo -1) exitWith {
 };
 _newTent setVariable ["coopr_tent_owner", _characterID];
 
+private _foldAction = {
+    params["_object"];
+    _object addAction [
+        localize "str.coopr.campsite.action.disassembletent", 
+        {
+            params ["_target", "_caller", "_actionId", "_arguments"];
+            deleteVehicle _target;
+            _caller addItemToBackpack "coopr_item_foldedTent";
+        },
+        [],
+        9, 
+        true, 
+        true, 
+        "",
+        "true",
+        3,
+        false,
+        "",
+        ""
+    ];
+};
 
-_newTent addAction 
-[
-    localize "str.coopr.campsite.action.disassembletent", 
-    {
-        params ["_target", "_caller", "_actionId", "_arguments"];
-		deleteVehicle _target;
-		_caller addItemToBackpack "coopr_item_foldedTent";
-    },
-    [],
-    9, 
-    true, 
-    true, 
-    "",
-    "true",
-    3,
-    false,
-    "",
-    ""
-];
+_newTent call _foldAction;

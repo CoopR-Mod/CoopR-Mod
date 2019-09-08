@@ -11,13 +11,13 @@ if(isServer) then {
     {
         if (COOPR_MISSIONS_ACTIVE) then {
             if (COOPR_ACE3) then {
-                _commander call coopr_fnc_ace3_initCommander;
+                _x call coopr_fnc_ace3_initCommander;
             } else {
                 // after action report action
                 private _aarActionCondition = { _this call coopr_fnc_hasActiveMission };
-                _commander addAction [localize "str.coopr.aar.action.commander", { call coopr_fnc_deliverAfterActionReport }, [], 1.5, true, true, "", _aarActionCondition call coopr_fnc_codeAsString, 3];
+                _x addAction [localize "str.coopr.aar.action.commander", { call coopr_fnc_deliverAfterActionReport }, [], 1.5, true, true, "", _aarActionCondition call coopr_fnc_codeAsString, 3];
 
-                DEBUG2("initialized %1 as hq commander", _commander);
+                DEBUG2("initialized %1 as hq commander", _x);
             };
         };
     } forEach _commander;

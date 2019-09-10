@@ -14,8 +14,8 @@
  * 1: _afterAspect <STRING | CODE> - after aspect code as string
  * 2: _functionTargets <ARRAY> - [<enrichmentMode> (, <functionName> | <tagPrefix> )]
 
- * enrichmentMode : 0 = all functions in with <tagPrefix>
- * enrichmentMode : 1 = only function as <functionName>
+ * enrichmentMode : 0 = all functions that start with <tagPrefix>
+ * enrichmentMode : 1 = only one function as <functionName>
  *
  * Return Value:
  *
@@ -35,14 +35,6 @@ params [["_beforeAspect", {}],
 
 if (isNil "IGNORE_FUNCTIONS") then {
     IGNORE_FUNCTIONS = [];
-    private _funcCategories = ("true" configClasses(configFile >> "CfgFunctions" >> "coopr")) apply { configName _x };
-
-    {
-        private _category = _x;
-        private _classNames = ("true" configClasses(configFile >> "CfgFunctions" >> "coopr" >> _category)) apply { configName _x };
-        IGNORE_FUNCTIONS append (_classNames select { ([(configFile >> "CfgFunctions" >> "coopr" >> _category >> _x), "ignoreAspect", 0] call BIS_fnc_returnConfigEntry) > 0 });
-    } forEach _funcCategories;
-    IGNORE_FUNCTIONS apply {"coopr_fnc_" +_x};
 };
 
 if (_beforeAspect isEqualTo {}) exitWith { ERROR("_beforeAspect was not defined") };
@@ -57,15 +49,14 @@ if !(typeName _beforeAspect isEqualTo "CODE") exitWith { ERROR("_beforeAspect is
 private _mode = _enrichmentMode select 0;
 private _functionNameOrTags = _enrichmentMode select 1;
 
-
 private _enrichFunction = {
     params ["_functionSignature"];
     if (_functionSignature in IGNORE_FUNCTIONS) then {
         DEBUG2("ignore function enrichment for %1", _functionSignature);
     } else {
         // preprocess special keywords
-        _processedBeforeAspect = [str _beforeAspect, "FILE_NAME", _functionSignature] call coopr_fnc_stringReplace;
-        _processedAfterAspect = [str _afterAspect, "FILE_NAME", _functionSignature] call coopr_fnc_stringReplace;
+        _processedBeforeAspect = [str _beforeAspect, "__FILE_NAME__", _functionSignature] call coopr_fnc_stringReplace;
+        _processedAfterAspect = [str _afterAspect, "__FILE_NAME__", _functionSignature] call coopr_fnc_stringReplace;
 
         private _function = missionNamespace getVariable _functionSignature;
         DEBUG2("enriching function: %1", _functionSignature);
@@ -84,13 +75,25 @@ private _enrichFunction = {
 };
 
 if (_mode isEqualTo FUNCS_BY_TAG) then {
-    private _tag = _functionNameOrTags + "_fnc";
-    DEBUG2("enriching functions for tag: %1", _tag);
-    private _taggedFunctionSignatures = allVariables missionNamespace select {[_tag, _x] call BIS_fnc_inString };
+    private _tag = _functionNameOrTags;
+    private _fullPrefix = _tag + "_fnc_";
+
+    private _funcCategories = ("true" configClasses(configFile >> "CfgFunctions" >> _tag)) apply { configName _x };
+    {
+        private _category = _x;
+        private _classNames = ("true" configClasses(configFile >> "CfgFunctions" >> _tag >> _category)) apply { configName _x };
+        IGNORE_FUNCTIONS append (_classNames select { ([(configFile >> "CfgFunctions" >> _tag >> _category >> _x), "ignoreAspect", 0] call BIS_fnc_returnConfigEntry) > 0 });
+    } forEach _funcCategories;
+    IGNORE_FUNCTIONS = IGNORE_FUNCTIONS apply { toLower (_fullPrefix + _x) };
+    DEBUG2("aspects won't be applied to following functions: %1", IGNORE_FUNCTIONS);
+
+    DEBUG2("enriching functions for tag: %1", (toUpper _tag));
+    private _taggedFunctionSignatures = allVariables missionNamespace select {[_fullPrefix, _x] call BIS_fnc_inString };
     { _x call _enrichFunction; } forEach _taggedFunctionSignatures;
 };
 
 if (_mode isEqualTo FUNC_NAME) then {
-    _functionNameOrTags call _enrichFunction;
+    private _funcName = _functionNameOrTags;
+    _funcName call _enrichFunction;
 };
 

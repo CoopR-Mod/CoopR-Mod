@@ -61,12 +61,12 @@ class CfgFunctions {
         }
         class coopr_missions_tests {
             file = "x\coopr\addons\missions\tests";
-            class tests_missions_runSuite { postInit = 1; };
-            class tests_strengthAccuracy {};
-            class tests_minMaxForStrength {};
-            class tests_determineMissionType {};
-            class tests_checkMissionTracking {};
-            class tests_initMissionTracker {};
+            class tests_missions_runSuite { postInit = 1;ignoreAspect = 1; };
+            class tests_strengthAccuracy {ignoreAspect = 1;};
+            class tests_minMaxForStrength {ignoreAspect = 1;};
+            class tests_determineMissionType {ignoreAspect = 1;};
+            class tests_checkMissionTracking {ignoreAspect = 1;};
+            class tests_initMissionTracker {ignoreAspect = 1;};
         }
         class coopr_missions_debug {
             file = "x\coopr\addons\missions\debug";

@@ -6,11 +6,11 @@ COOPR_RECON_ROUTINE_TOGGLE = false;
 publicVariable "COOPR_RECON_ROUTINE_TOGGLE";
 publicVariable "COOPR_MISSIONS_ACTIVE";
 
-//if (COOPR_CALL_STACK) then {
-    //[{ diag_log "FILE_NAME"},
-     //{diag_log "after"},
-//     [0,"coopr"]] call coopr_fnc_addFunctionAspects;
-//};
+if (COOPR_CALL_STACK) then {
+  [{ diag_log ">> __FILE_NAME__"},
+   {diag_log "<< __FILE_NAME__"},
+   [0,"coopr"]] call coopr_fnc_addFunctionAspects;
+};
 
 if (isServer) then {
     call coopr_fnc_initCoopRServer;

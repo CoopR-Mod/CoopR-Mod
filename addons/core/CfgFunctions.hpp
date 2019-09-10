@@ -4,7 +4,7 @@ class CfgFunctions {
             file = "x\coopr\addons\core\functions";
             class checkCharacterWIAStates {};
             class wounded {};
-            class playerKilledHandler {};
+            class playerKilledHandler {ignoreAspect = 1;};
             class onKilled {};
             class playerKilledNpc {};
             class addVehicleKeyWest {};
@@ -15,7 +15,7 @@ class CfgFunctions {
         }
         class coopr_core_init {
             file = "x\coopr\addons\core\init";
-            class verifySetup {};
+            class verifySetup {ignoreAspect = 1;};
 
             class initEventsServer {};
             class initCharacterEvents {};
@@ -24,22 +24,22 @@ class CfgFunctions {
             class initCommanderNPC {};
             class initVehicleNPC {};
             class setupVehicleModule {};
-            class initCoreAddon {postInit = 1;};
+            class initCoreAddon {postInit = 1; ignoreAspect = 1; };
 
             class initCoopRClients {};
             class initCoopRServer {};
         }
         class coopr_core_helper {
             file = "x\coopr\addons\core\helper";
-            class abortButtonEventHandler {};
-            class initPromise {preInit = 1;};
+            class abortButtonEventHandler {ignoreAspect = 1;};
+            class initPromise {preInit = 1;ignoreAspect = 1;};
             class getNearestLocation {};
             class countUnits {};
-            class groupsByEntities { ignoreAspect = 1; };
-            class stringReplace {};
-            class setLogLevel {};
-            class getLogLevel {};
-            class codeAsString {};
+            class groupsByEntities { };
+            class stringReplace {ignoreAspect = 1;};
+            class setLogLevel {ignoreAspect = 1;};
+            class getLogLevel {ignoreAspect = 1;};
+            class codeAsString {ignoreAspect = 1;};
             class isInHeadquarter {};
             class increaseKillCount {};
             class serializeMarker {};
@@ -47,16 +47,16 @@ class CfgFunctions {
             class markerOverlaps {};
             class debugMarker {};
             class isGroupStatic {};
-            class promise {};
-            class logHash {};
-            class recordFuncCall {};
-            class addFunctionAspects {};
+            class promise {ignoreAspect = 1;};
+            class logHash {ignoreAspect = 1;};
+            class recordFuncCall {ignoreAspect = 1;};
+            class addFunctionAspects {ignoreAspect = 1;};
         }
         class coopr_core_tests {
             file = "x\coopr\addons\core\tests";
-            class tests_reputation {};
-            class tests_markerSerialization {};
-            class tests_core_runSuite {};
+            class tests_reputation {ignoreAspect = 1;};
+            class tests_markerSerialization {ignoreAspect = 1;};
+            class tests_core_runSuite {ignoreAspect = 1;};
         }
     }
 }

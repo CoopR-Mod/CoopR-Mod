@@ -5,16 +5,16 @@ class CfgFunctions {
             class spawnAtOldPosition {};
             class spawnInLobby {};
             class login {};
-            class logout {};
+            class logout {ignoreAspect = 1;};
             class initCharacter {};
             class cleanUp {};
             class redrawCharacterMarker {};
         }
         class coopr_lobby_ui {
             file = "x\coopr\addons\lobby\ui";
-            class showLoginDialog {};
+            class showLoginDialog { ignoreAspect = 1; };
             class selectRole {};
-            class showCharacterSelectionDisplay {};
+            class showCharacterSelectionDisplay {ignoreAspect = 1;};
             class showCreationDialog {};
             class playAnimationForRole {};
             class initLobbyCam {};

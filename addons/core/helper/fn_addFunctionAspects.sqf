@@ -33,8 +33,16 @@ params [["_beforeAspect", {}],
         ["_afterAspect", {}],
         ["_enrichmentMode", [], [[0, ""]]]];
 
-if (isNil "ALREADY_ENRICHED") then {
-    ALREADY_ENRICHED = [];
+if (isNil "IGNORE_FUNCTIONS") then {
+    IGNORE_FUNCTIONS = [];
+    private _funcCategories = ("true" configClasses(configFile >> "CfgFunctions" >> "coopr")) apply { configName _x };
+
+    {
+        private _category = _x;
+        private _classNames = ("true" configClasses(configFile >> "CfgFunctions" >> "coopr" >> _category)) apply { configName _x };
+        IGNORE_FUNCTIONS append (_classNames select { ([(configFile >> "CfgFunctions" >> "coopr" >> _category >> _x), "ignoreAspect", 0] call BIS_fnc_returnConfigEntry) > 0 });
+    } forEach _funcCategories;
+    IGNORE_FUNCTIONS apply {"coopr_fnc_" +_x};
 };
 
 if (_beforeAspect isEqualTo {}) exitWith { ERROR("_beforeAspect was not defined") };
@@ -49,29 +57,40 @@ if !(typeName _beforeAspect isEqualTo "CODE") exitWith { ERROR("_beforeAspect is
 private _mode = _enrichmentMode select 0;
 private _functionNameOrTags = _enrichmentMode select 1;
 
-if (_functionNameOrTags in ALREADY_ENRICHED) exitWith { ERROR("can not enrich same function multiple times") };
+
+private _enrichFunction = {
+    params ["_functionSignature"];
+    if (_functionSignature in IGNORE_FUNCTIONS) then {
+        DEBUG2("ignore function enrichment for %1", _functionSignature);
+    } else {
+        // preprocess special keywords
+        _processedBeforeAspect = [str _beforeAspect, "FILE_NAME", _functionSignature] call coopr_fnc_stringReplace;
+        _processedAfterAspect = [str _afterAspect, "FILE_NAME", _functionSignature] call coopr_fnc_stringReplace;
+
+        private _function = missionNamespace getVariable _functionSignature;
+        DEBUG2("enriching function: %1", _functionSignature);
+
+        if !(isNil "_function") then {
+            private _enrichedFunction = format ["
+                call %1;
+                private _returnValue = [nil] apply {_this call %2} param [0, false];
+                call %3;
+                _returnValue;
+            ", _processedBeforeAspect, _function, _processedAfterAspect];
+            missionNamespace setVariable [_functionSignature, compile _enrichedFunction];
+            IGNORE_FUNCTIONS pushBackUnique _functionSignature;
+        };
+    }
+};
 
 if (_mode isEqualTo FUNCS_BY_TAG) then {
-    DEBUG2("enriching functions by tag: %1", _functionNameOrTags);
-    private _taggedFunctionNames = allVariables missionNamespace select {[_functionNameOrTags, _x] call BIS_fnc_inString };
-    {
-        private _function = missionNamespace getVariable _x;
-        private _enrichedFunction = {
-            call _beforeAspect;
-            private _returnValue = call _function;
-            call _afterAspect;
-            _returnValue;
-        };
-
-        missionNamespace setVariable [_x, _erichedFunction];
-    } forEach _taggedFunctionNames;
+    private _tag = _functionNameOrTags + "_fnc";
+    DEBUG2("enriching functions for tag: %1", _tag);
+    private _taggedFunctionSignatures = allVariables missionNamespace select {[_tag, _x] call BIS_fnc_inString };
+    { _x call _enrichFunction; } forEach _taggedFunctionSignatures;
 };
 
 if (_mode isEqualTo FUNC_NAME) then {
-    private _function = missionNamespace getVariable _functionNameOrTags;
-    DEBUG2("enriching function: %1", _functionNameOrTags);
-    private _enrichedFunction = format ["call %1; private _returnValue = call %2; call %3, _returnValue;", _beforeAspect, _function, _afterAspect];
-    missionNamespace setVariable [_functionNameOrTags, compile _enrichedFunction];
+    _functionNameOrTags call _enrichFunction;
 };
 
-ALREADY_ENRICHED pushBackUnique _functionNameOrTags;

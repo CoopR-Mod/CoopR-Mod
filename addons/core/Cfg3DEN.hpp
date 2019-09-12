@@ -12,6 +12,15 @@ class Cfg3DEN {
                 class Development {
                     displayName = "Development";
                     class Attributes {
+                        class CallStack {
+                            control = "checkbox";
+                            property = "CoopRCoreCallStack";
+                            displayName = "Function Call Stack";
+                            tooltip = "If active this will show the callstack of functions in the log";
+                            expression = "missionNamespace setVariable ['coopr_core_call_stack', _value]";
+                            defaultValue = false;
+                            typeName = "BOOL";
+                        };
                         class DevMode {
                             control = "checkboxstate";
                             property = "CoopRCoreDevMode";

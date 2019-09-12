@@ -7,8 +7,8 @@ publicVariable "COOPR_RECON_ROUTINE_TOGGLE";
 publicVariable "COOPR_MISSIONS_ACTIVE";
 
 if (COOPR_CALL_STACK) then {
-  [{ diag_log ">> __FILE_NAME__"},
-   {diag_log "<< __FILE_NAME__"},
+  [{ diag_log ">> __FUNC_NAME__"},
+   {diag_log "<< __FUNC_NAME__"},
    [0,"coopr"]] call coopr_fnc_addFunctionAspects;
 };
 

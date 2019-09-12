@@ -55,8 +55,9 @@ private _enrichFunction = {
         DEBUG2("ignore function enrichment for %1", _functionSignature);
     } else {
         // preprocess special keywords
-        _processedBeforeAspect = [str _beforeAspect, "__FILE_NAME__", _functionSignature] call coopr_fnc_stringReplace;
-        _processedAfterAspect = [str _afterAspect, "__FILE_NAME__", _functionSignature] call coopr_fnc_stringReplace;
+        // replace __FUNC_NAME__ with function name
+        _processedBeforeAspect = [str _beforeAspect, "__FUNC_NAME__", _functionSignature] call coopr_fnc_stringReplace;
+        _processedAfterAspect = [str _afterAspect, "__FUNC_NAME__", _functionSignature] call coopr_fnc_stringReplace;
 
         private _function = missionNamespace getVariable _functionSignature;
         DEBUG2("enriching function: %1", _functionSignature);

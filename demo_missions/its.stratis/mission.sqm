@@ -110,25 +110,6 @@ class CustomAttributes
 		name="CoopR_Core";
 		class Attribute0
 		{
-			property="CoopRCoreDevMode";
-			expression="missionNamespace setVariable ['coopr_core_dev_mode', _value]";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"BOOL"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="CoopRCoreLogLevel";
 			expression="[_value,  'COOPR.CORE'] call coopr_fnc_setLogLevel";
 			class Value
@@ -146,7 +127,45 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		class Attribute1
+		{
+			property="CoopRCoreCallStack";
+			expression="missionNamespace setVariable ['coopr_core_call_stack', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="CoopRCoreDevMode";
+			expression="missionNamespace setVariable ['coopr_core_dev_mode', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=3;
 	};
 	class Category2
 	{
@@ -177,25 +196,6 @@ class CustomAttributes
 		name="CoopR_RPG";
 		class Attribute0
 		{
-			property="CoopRRPGRepPerInf";
-			expression="missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=11;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="CoopRRPGLogLevel";
 			expression="[_value,  'COOPR.RPG'] call coopr_fnc_setLogLevel";
 			class Value
@@ -210,6 +210,25 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="CoopRRPGRepPerInf";
+			expression="missionNamespace setVariable ['coopr_rpg_rep_inf', _value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=11;
 				};
 			};
 		};

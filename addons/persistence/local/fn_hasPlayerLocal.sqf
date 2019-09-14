@@ -26,6 +26,7 @@ if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
 if (isServer) then {
     private _selectUserByID = format["SELECT * FROM users WHERE steam_id = '%1'", _steamID];
     private _payload = _selectUserByID call coopr_fnc_extDB3sql;
+    if (isNil "_payload") exitWith { ERROR("_payload was not defined"); false};
 
     if(_payload isEqualTo []) then {
         false;

@@ -21,7 +21,7 @@
 params[["_steamID", ""]];
 
 if(_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
-if(_steamID call coopr_fnc_hasPlayer) exitWith { INFO2("user %1 already defined", _steamID)};
+if(_steamID call coopr_fnc_hasPlayer) exitWith { INFO2("user %1 already defined", _steamID); false};
 
 if (isServer) then {
     INFO("initializing new user entry");
@@ -33,6 +33,7 @@ if (isServer) then {
     _insertUser call coopr_fnc_extDB3sql;
 
     INFO2("user for steam id %1 initialized", _steamID);
+    true;
 } else {
     SERVER_ONLY_ERROR(__FILE__);
 };

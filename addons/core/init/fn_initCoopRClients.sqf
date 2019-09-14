@@ -18,15 +18,18 @@
 if (hasInterface) then {
     //TODO: can be removed?
     call coopr_fnc_initPromise;
-    [getPlayerUID player] remoteExec ["coopr_fnc_initPlayerPersistence", EXEC_SERVER];
-
-    [] spawn {
-        waitUntil { !(isNull (findDisplay 46)) };
-        [] spawn {
-            call coopr_fnc_spawnInLobby;
-            call coopr_fnc_showLoginDialog
-        };
-    };
-
-    INFO("client initialized");
+    DEBUG("initializing client");
+    [EXEC_SERVER, "coopr_fnc_initPlayerPersistence", [getPlayerUID player], //request-related
+        [], {
+            INFO("client initialized");
+            DEBUG("calling lobby logic");
+            [] spawn {
+                waitUntil { !(isNull (findDisplay 46)) };
+                [] spawn {
+                    call coopr_fnc_spawnInLobby;
+                    call coopr_fnc_showLoginDialog
+                };
+            };
+        }
+    ] call Promise_Create;
 };

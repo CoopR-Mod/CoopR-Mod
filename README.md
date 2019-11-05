@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/discord/503863654710771723)](https://discord.gg/mpqqkhg)
 [![TeamCity Full Build Status](https://img.shields.io/teamcity/http/ci.coopr-hq.com/e/CoopRModDevelopment_CoopRModDevBuildDeployment)](http://ci.coopr-hq.com/buildConfiguration/CoopRModDevelopment_CoopRModDevBuildDeployment)
 [![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fcooprmod)](https://patreon.com/cooprmod)
-## made friendly support from [Jetbrains](https://www.jetbrains.com/?from=CoopR-Mod)
+## made with friendly support from [Jetbrains](https://www.jetbrains.com/?from=CoopR-Mod)
 
 
 # What is CoopR?

@@ -19,18 +19,21 @@
  * Scope: Global
  */
 
+if (true) exitWith { DEBUG2("Implementation missing for %1", __FILE__); };
+
 {
     private _character = _x;
 
     if (_character isEqualTo []) exitWith { DEBUG("skipping empty character") };
 
-    private _name = [_character, COOPR_KEY_NAME] call CBA_fnc_hashGet;
-    private _state = [_character, COOPR_KEY_STATE] call CBA_fnc_hashGet;
-    private _timestamp = [_character, COOPR_KEY_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
-    private _timeOver = serverTime >= _timestamp + (WIA_CD * 60);
+    private _name = [_character, COOPR_CHAR_NAME] call CBA_fnc_hashGet;
+    private _state = [_character, COOPR_CHAR_STATE] call CBA_fnc_hashGet;
+    private _timestamp = [_character, COOPR_CHAR_WOUNDED_TIMESTAMP] call CBA_fnc_hashGet;
+    private _currentGameTime = call coopr_fnc_currentGameTime;
+    private _timeOver =  _currentGameTime >= _timestamp + (WIA_CD * 60);
 
     if (_state isEqualTo COOPR_STATE_WIA and _timeOver) then {
-        [_character, COOPR_KEY_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
+        [_character, COOPR_CHAR_STATE, COOPR_STATE_OK] call CBA_fnc_hashSet;
         [_character] call coopr_fnc_updateCharacterLocal;
         DEBUG2("player %1 was set back to state OK", _name);
     };

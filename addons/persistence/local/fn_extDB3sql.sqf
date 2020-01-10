@@ -31,9 +31,11 @@ if (isServer) then {
     private _payload = _result select 1;
 
     if(_returnCode isEqualTo 0) exitWith {
-        ERROR("there was an error with the extDB3 sql statement call");
+        DEBUG("there was an error with the extDB3 sql statement call");
         DEBUG2("statement used: %1", _statement);
     };
 
     _payload;
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };

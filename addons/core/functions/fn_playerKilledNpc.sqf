@@ -1,6 +1,26 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Handles logic when a player killed a NPC unit
+ *
+ * Arguments:
+ * 0: _victim <OBJECT> - unit that has been killed by the player
+ *
+ * Return Value:
+ * Boolean - if mission was created successfully
+ *
+ * Example:
+ * [_victim] call coopr_fnc_playerKilledNpc;
+ *
+ * Public: No
+ *
+ * Scope: Client
+ */
 
-params ["_victim"];
+params [["_victim", objNull]];
+
+if (_victim isEqualTo objNull) exitWith { ERROR("_victim was objNull") };
 
 private _sideKiller = side group player;
 private _sideVictim = side group _victim;
@@ -9,9 +29,9 @@ private _victimIsPerson = _victim call CBA_fnc_isPerson;
 private _playerName = name player;
 
 if (_victimWasEnemy isEqualTo false) then {
-      private _lastTK = player getVariable [COOPR_KEY_TEAMKILLS, 0];
+      private _lastTK = player getVariable [COOPR_CHAR_TEAMKILLS, 0];
       private _newTK = _lastTK + 1;
-      player setVariable [COOPR_KEY_TEAMKILLS, _newTK, true];
+      player setVariable [COOPR_CHAR_TEAMKILLS, _newTK, true];
       DEBUG3("%1 adding TK - actual %2", _playerName, _newTk);
 
       if(_newTK >= MAX_TK) then {
@@ -20,7 +40,8 @@ if (_victimWasEnemy isEqualTo false) then {
       };
 } else {
     DEBUG2("player %1 killed an enemy", _playerName);
-    DEBUG2("reputation per man: %1", COOPR_REP_MAN);
-    COOPR_REP_MAN call coopr_fnc_updateTempReputation;
-}
+    [player] call coopr_fnc_increaseKillCount;
+    DEBUG2("reputation per man: %1", COOPR_REP_INF);
+    COOPR_REP_INF call coopr_fnc_updateTempReputation;
+};
 

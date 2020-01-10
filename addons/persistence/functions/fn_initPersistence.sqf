@@ -18,10 +18,12 @@
  * Scope: Server
  */
 
-if(isServer) then {
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+if (isServer) then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         "Database" call coopr_fnc_initPersistenceLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };

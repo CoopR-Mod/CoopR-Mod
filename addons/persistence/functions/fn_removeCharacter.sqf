@@ -26,11 +26,14 @@ if (isServer) then {
     if (_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
     if (_slot isEqualTo -1) exitWith { ERROR("_slot was -1") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_steamID, _slot] call coopr_fnc_removeCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping removal routine");
-    }
+    };
+    true;
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
+    false;
 };
 
-true;

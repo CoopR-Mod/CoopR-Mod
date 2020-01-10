@@ -26,7 +26,7 @@ if (isServer) then {
     if (_steamID isEqualTo "") exitWith { ERROR("_steamID was empty string") };
     if (_slot isEqualTo -1) exitWith { ERROR("_slot was -1") };
 
-    if (_steamID call coopr_fnc_hasUser) then {
+    if (_steamID call coopr_fnc_hasPlayer) then {
         INFO("removing character...");
         private _charactersID = _steamID call coopr_fnc_getCharactersID;
 
@@ -37,4 +37,6 @@ if (isServer) then {
     } else {
         INFO2("skipping character removal - no user for id %1 in database", _steamID);
     };
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };

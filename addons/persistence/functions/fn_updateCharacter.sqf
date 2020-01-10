@@ -25,11 +25,13 @@ if (isServer) then {
     if (_characterHash isEqualTo []) exitWith { ERROR("_characters was empty array") };
     if (not ([_characterHash] call CBA_fnc_isHash)) exitWith { ERROR("argument has to be a cba hash"); };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_characterHash] call coopr_fnc_updateCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
-    }
+    };
+    true;
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };
 
-true;

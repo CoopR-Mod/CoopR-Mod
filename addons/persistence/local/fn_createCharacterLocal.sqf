@@ -28,10 +28,10 @@ if (_characterState isEqualTo []) exitWith { ERROR("_characterState was empty") 
 if (isServer) then {
 
     DEBUG2("state is %1", _characterState);
-    private _playerUID = [_characterState, COOPR_KEY_UID] call CBA_fnc_hashGet;
+    private _playerUID = [_characterState, COOPR_CHAR_UID] call CBA_fnc_hashGet;
     DEBUG2("uid is %1", _playerUID);
 
-    if(_playerUID call coopr_fnc_hasUser) then {
+    if(_playerUID call coopr_fnc_hasPlayer) then {
         INFO("creating character...");
         private _charactersID = _playerUID call coopr_fnc_getCharactersID;
 
@@ -42,6 +42,8 @@ if (isServer) then {
     } else {
         INFO2("skipping character creation - no user for id %1 in database", _playerUID);
     };
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };
 
 

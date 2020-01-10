@@ -26,11 +26,14 @@ if (isServer) then {
 
     if (_characterState isEqualTo []) exitWith { ERROR("_characterState was empty") };
 
-    if(COOPR_PERSISTENCE_LOCATION isEqualTo "Local") then {
+    if(COOPR_PERSISTENCE_LOCATION isEqualTo PERS_LOCAL) then {
         [_characterState, _slot] call coopr_fnc_createCharacterLocal;
     } else {
         INFO("no persistence location defined - skipping persistence routine");
     };
+    true;
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
+    false;
 };
 
-true;

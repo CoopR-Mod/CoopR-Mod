@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 //
 // PX_fnc_stringReplace :: Replace substrings
 // Author: Colin J.D. Stewart

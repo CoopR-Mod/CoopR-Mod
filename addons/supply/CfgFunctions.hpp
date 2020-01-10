@@ -6,11 +6,14 @@ class CfgFunctions {
             class initSupply {};
 
             class requestSupply {};
-            class showSupplyMenu {};
         }
         class coopr_supply_helper {
             file = "x\coopr\addons\supply\helper";
             class hasEmptyCargo {};
+        }
+        class coopr_supply_ui {
+            file = "x\coopr\addons\supply\ui";
+            class showSupplyDialog {};
         }
     }
 }

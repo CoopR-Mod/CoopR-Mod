@@ -10,16 +10,13 @@ class CfgPatches {
 
         requiredVersion = 1.80;
         requiredAddons[] = {
-             // CBA
-            "cba_diagnostic"
+            "A3_3DEN",
+            "cba_common",
+            "cba_diagnostic",
+            "cba_hashes",
         };
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content unlocking.
-        units[] = {
-            "CoopR_ModuleSetupCommander",
-            "CoopR_ModuleSetupVehicle",
-            "CoopR_ModuleSetupHQ",
-            "CoopR_ModuleBasicRoleLoadouts",
-        };
+        units[] = { };
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
     };
@@ -27,5 +24,4 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgFactionClasses.hpp"
-#include "CfgVehicles.hpp"
-#include "CfgTaskDescription.hpp"
+#include "Cfg3DEN.hpp"

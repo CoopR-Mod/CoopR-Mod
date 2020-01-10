@@ -1,19 +1,35 @@
 #include "script_component.hpp"
+/*
+ * Author: xetra11
+ *
+ * Script to run at every client machine at JIP
+ *
+ * Arguments:
+ * None
+ *
+ * Return Value:
+ * None
+ *
+ * Public: No
+ *
+ * Scope: Server
+ */
 
-if(hasInterface) then {
+if (hasInterface) then {
+    //TODO: can be removed?
     call coopr_fnc_initPromise;
-    //TODO: refactor to more abstract init flag
-    // only call if persistence init was successful
-    [getPlayerUID player] remoteExec ["coopr_fnc_initUser", EXEC_SERVER];
-
-    [] spawn {
-        waitUntil { !(isNull (findDisplay 46)) };
-        call coopr_fnc_spawnInLobby;
-        [] spawn {
-            createDialog "coopr_Login_Dialog";
-            call coopr_fnc_initLoginDialog
-        };
-    };
-
-    INFO("client initialized");
+    DEBUG("initializing client");
+    [EXEC_SERVER, "coopr_fnc_initPlayerPersistence", [getPlayerUID player], //request-related
+        [], {
+            INFO("client initialized");
+            DEBUG("calling lobby logic");
+            [] spawn {
+                waitUntil { !(isNull (findDisplay 46)) };
+                [] spawn {
+                    call coopr_fnc_spawnInLobby;
+                    call coopr_fnc_showLoginDialog
+                };
+            };
+        }
+    ] call Promise_Create;
 };

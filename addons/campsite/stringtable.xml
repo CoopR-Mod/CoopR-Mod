@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="CoopR Mod">
+	<Package name="items">
+		<Key ID="str.coopr.campsite.item.campsite">
+			<Original>Camping item</Original>
+			<Spanish>Objeto de camping</Spanish>
+			<German>Campingartikel</German>
+			<French>Objet de camping</French>
+		</Key>
+	</Package>
+	<Package name="actions">
+		<Key ID="str.coopr.campsite.action.startcampsite">
+			<Original>Start a campsite</Original>
+			<Spanish>Preparar campamento</Spanish>
+			<German>Campingplatz starten</German>
+			<French>Créer un camping</French>
+		</Key>
+	</Package>
+	<Package name="notifications">
+		<Key ID="str.coopr.campsite.notif.campsiteposition">
+			<Original>You started a campsite in grid</Original>
+			<Spanish>Campamento en coordenadas</Spanish>
+			<German>Campingplatz bei Koordinaten</German>
+			<French>Vous avez créer un camping dans la grille</French>
+		</Key>
+		<Key ID="str.coopr.campsite.notif.cantbuildinsidemarker">
+			<Original>You're too close to another structure</Original>
+			<Spanish>Estás demasiado cerca a otra estructura</Spanish>
+			<French>Vous êtes trop proche d'une autre structure</French>
+		</Key>
+	</Package>
+</Project>

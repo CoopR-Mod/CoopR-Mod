@@ -28,8 +28,9 @@
 
 params[["_dbName", ""]];
 
-if(isServer) then {
-    if(_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
+if (_dbName isEqualTo "") exitWith { ERROR("_dbName was empty string") };
+
+if (isServer) then {
 
     INFO("initializing local persistence layer");
     private _protocolName = "coopr";
@@ -45,6 +46,37 @@ if(isServer) then {
                                    characters_id int,
                                    PRIMARY KEY (steam_id),
                                    FOREIGN KEY (characters_id) REFERENCES characters(id));";
+
+    private _createMissionsTable = "CREATE TABLE missions (
+                                   mission_id varchar(255) NOT NULL,
+                                   missionHash TEXT,
+                                   PRIMARY KEY (mission_id));";
+
+    private _createServerMetaTable = "CREATE TABLE server_meta (
+                                   server_id int NOT NULL,
+                                   PRIMARY KEY (server_id));";
+
+    private _createMissionQueuesTable = "CREATE TABLE mission_queues (
+                                   id int NOT NULL AUTO_INCREMENT,
+                                   server_id int,
+                                   mission TEXT,
+                                   PRIMARY KEY (id));";
+
+    private _createReconReportsTable = "CREATE TABLE recon_reports (
+                                       id int NOT NULL AUTO_INCREMENT,
+                                       character_id int,
+                                       mission_id varchar(255),
+                                       activity TEXT,
+                                       finished boolean,
+                                       PRIMARY KEY (id));";
+
+    private _createReconEntriesTable = "CREATE TABLE recon_entries (
+                                       id int NOT NULL AUTO_INCREMENT,
+                                       report_id int,
+                                       entry TEXT,
+                                       PRIMARY KEY (id),
+                                       FOREIGN KEY (report_id) REFERENCES recon_reports(id));";
+
 
     // test connection
     private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);
@@ -71,4 +103,11 @@ if(isServer) then {
     // init tables
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
+    _createMissionsTable call coopr_fnc_extDB3sql;
+    _createServerMetaTable call coopr_fnc_extDB3sql;
+    _createMissionQueuesTable call coopr_fnc_extDB3sql;
+    _createReconReportsTable call coopr_fnc_extDB3sql;
+    _createReconEntriesTable call coopr_fnc_extDB3sql;
+} else {
+    SERVER_ONLY_ERROR(__FILE__);
 };

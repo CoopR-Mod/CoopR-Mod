@@ -1,44 +1,129 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="CoopR Mod">
-    <Package name="Lobby">
-        <Key ID="str.coopr.profiles.validator">
-            <Original>Fields can not be empty!</Original>
-            <German>Alle Felder muessen ausgefuellt sein!</German>
-        </Key>
-        <Key ID="str.coopr.profiles.fetch">
-            <Original>Fetching profiles...</Original>
-            <German>Frage Profile ab...</German>
-        </Key>
-        <Key ID="str.coopr.profiles.noprofile">
-            <Original>No Profile</Original>
-            <German>Kein Profil</German>
-        </Key>
-        <Key ID="str.coopr.character.state.kia">
-            <Original>Killed in Action</Original>
-            <German>Ausfall</German>
-        </Key>
-        <Key ID="str.coopr.character.state.wia">
-            <Original>Wounded in Action</Original>
-            <German>Verwundet</German>
-        </Key>
-        <Key ID="str.coopr.profile.info.name">
-            <Original>Name:</Original>
-        </Key>
-        <Key ID="str.coopr.profile.info.reputation">
-            <Original>Reputation:</Original>
-            <German>Ruf:</German>
-        </Key>
-        <Key ID="str.coopr.profile.info.money">
-            <Original>Money:</Original>
-            <German>Sold:</German>
-        </Key>
-        <Key ID="str.coopr.profile.info.role">
-            <Original>Role:</Original>
-            <German>Rolle:</German>
-        </Key>
-        <Key ID="str.coopr.profile.info.wia.timeleft">
-            <Original>Hospilitized:</Original>
-            <German>Im Lazarett:</German>
-        </Key>
-    </Package>
+	<Package name="Lobby">
+		<Key ID="str.coopr.characters.validator">
+			<Original>Fields can not be empty!</Original>
+			<German>Alle Felder muessen ausgefuellt sein!</German>
+			<French>Le champ ne peut pas être vide!</French>
+		</Key>
+		<Key ID="str.coopr.characters.fetch">
+			<Original>Fetching characters...</Original>
+			<German>Frage Character ab...</German>
+			<French>Récupération des profils...</French>
+		</Key>
+		<Key ID="str.coopr.characters.nocharacter">
+			<Original>No Character</Original>
+			<German>Kein Profil</German>
+			<French>Aucun profil</French>
+		</Key>
+		<Key ID="str.coopr.character.state.kia">
+			<Original>Killed in Action</Original>
+			<German>Ausfall</German>
+			<French>Tué au combat</French>
+		</Key>
+		<Key ID="str.coopr.character.state.wia">
+			<Original>Wounded in Action</Original>
+			<German>Verwundet</German>
+			<French>Blessé au combat</French>
+		</Key>
+		<Key ID="str.coopr.character.info.name">
+			<Original>Name:</Original>
+			<French>Nom:</French>
+		</Key>
+		<Key ID="str.coopr.character.info.reputation">
+			<Original>Reputation:</Original>
+			<German>Ruf:</German>
+			<French>Réputation:</French>
+		</Key>
+		<Key ID="str.coopr.character.info.money">
+			<Original>Money:</Original>
+			<German>Sold:</German>
+			<French>Solde:</French>
+		</Key>
+		<Key ID="str.coopr.character.info.role">
+			<Original>Role:</Original>
+			<German>Rolle:</German>
+			<French>Rôle:</French>
+		</Key>
+		<Key ID="str.coopr.character.info.wia.timeleft">
+			<Original>Hospilitized:</Original>
+			<German>Im Lazarett:</German>
+			<French>Hospitalisé:</French>
+		</Key>
+		<Key ID="str.coopr.character.role.leader">
+			<German>Gruppenfuehrer</German>
+			<Original>Groupleader</Original>
+			<French>Chef d'équipe</French>
+		</Key>
+		<Key ID="str.coopr.character.role.medic">
+			<German>Sanitaeter</German>
+			<Original>Paramedic</Original>
+			<French>Médecin</French>
+		</Key>
+		<Key ID="str.coopr.character.role.engineer">
+			<German>Pionier</German>
+			<Original>Engineer</Original>
+			<French>Sapeur</French>
+		</Key>
+		<Key ID="str.coopr.character.role.marksman">
+			<German>Praezisionsschuetze</German>
+			<Original>Designated Marksman</Original>
+			<French>Tireur de précision</French>
+		</Key>
+		<Key ID="str.coopr.character.role.mg">
+			<German>MG-Schuetze</German>
+			<Original>Light Machinegunner</Original>
+			<French>Fusiller Auto</French>
+		</Key>
+		<Key ID="str.coopr.character.delete">
+			<French>Supprimer</French>
+			<German>Entfernen</German>
+			<Original>Delete</Original>
+		</Key>
+		<Key ID="str.coopr.character.profile1">
+			<French>Profil 1</French>
+			<German>Profil 1</German>
+			<Original>Profile 1</Original>
+		</Key>
+		<Key ID="str.coopr.character.create">
+			<French>Créer</French>
+			<German>Erstellen</German>
+			<Original>Create</Original>
+		</Key>
+		<Key ID="str.coopr.character.new.create">
+			<French>Créer un nouveau profil</French>
+			<German>Neuen Charakter erstellen</German>
+			<Original>Create a new character</Original>
+		</Key>
+		<Key ID="str.coopr.character.new.name">
+			<French>Nom du soldat</French>
+			<German>Name des Soldaten</German>
+			<Original>Name of the soldier</Original>
+		</Key>
+		<Key ID="str.coopr.character.new.role">
+			<French>Spécialisation</French>
+			<German>Spezialisierung</German>
+			<Original>Specialization</Original>
+		</Key>
+		<Key ID="str.coopr.character.length.error">
+			<Original>Only 11 characters allowed for the name</Original>
+			<German>Nur 11 Zeichen fuer den Namen erlaubt</German>
+			<French>Seulement 11 caractères autorisés pour le nom</French>
+		</Key>
+		<Key ID="str.coopr.character.new.error">
+			<Original>You need to enter a name!</Original>
+			<German>Du musst einen Namen angeben!</German>
+			<French>Vous devez entrer un nom</French>
+		</Key>
+		<Key ID="str.coopr.character.perkamount.error">
+			<Original>Too few perks selected!</Original>
+			<German>Zu wenig Perks ausgewaehlt!</German>
+			<French>Trop peu d'avantages sélectionnés!</French>
+		</Key>
+		<Key ID="str.coopr.character.new.infobox">
+			<Original>Role Description</Original>
+			<German>Rollenbeschreibung</German>
+			<French>Description du rôle</French>
+		</Key>
+	</Package>
 </Project>

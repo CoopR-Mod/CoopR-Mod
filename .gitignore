@@ -2,3 +2,6 @@
 /.idea
 *.iml
 @CoopR
+@CoopRLight
+.vscode
+its_logs

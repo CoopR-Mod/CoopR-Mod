@@ -56,4 +56,34 @@ many more in concept...
   - [Debugging and Logging](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Technical-Documentation#debugging-and-logging)
   
 
+# Feature Roadmap
+Here listed one can see all planned features and technical milestones as a roadmap.
+
+## v0.9
+| Type|Name | Description  | Tasks Completed|
+| ------------- |------------- |:-------------|-------------:|
+| Gameplay|[Recon Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#recon-tasks) | Squads can be assigned to recon tasks and report enemy positions and movement | 2/3 |
+| Gameplay|[Combat Tasks](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#combat-tasks) | Squads can be assigned to attack tasks. These are beforehand created through recon task results | 1/5 |
+| Concept|Campsites | Defining the concepts of the Campsites module/addon| 0/1 |
+| Gameplay| Campsites | Squads can build up campsites when outside of the HQ to build temporary shelter for logging out | 0/? |
+
+## v0.10
+| Type|Name | Description  | Tasks Completed|
+| ------------- |------------- |:-------------|-------------:|
+| Technical|CoopR HQ Connection | The persistence layer can be setup to use the CoopR HQ webservices. This gives the option to have CoopR management features controlled with the browser | 0/1 |
+| Gameplay| Equipment Manager | Players can manage their stash and change equiptment and loadouts | 0/? |
+| Gameplay| Squad Creation | Players can manage squads. The squad creator is therefore the squad leader | 0/? |
+| Gameplay| Nutrition | Players can die due starvation if no nutrition supplements are in their inventory | 0/? |
+| Technical| Character Stats Overhaul | Revision of the CoopR character stats | 0/? |
+| Gameplay|[Supply Requests](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Task-Concepts#resources--supplements) | Squads can call for supplies to prepare mission resources | 0/2 |
+| Visual| Supply Request GUI Overhaul | Revision of the CoopR supply requests GUI | 0/? |
+
+## v0.11
+| Type|Name | Description  | Tasks Completed|
+| ------------- |------------- |:-------------|-------------:|
+| Gameplay| Equipment Manager | Players can manage their stash and change equiptment and loadouts | 0/? |
+| Gameplay| Campsites | Squads can build up campsites when outside of the HQ to build temporary shelter for logging out | 0/? |
+| Gameplay| Nutrition | Players can die due starvation if no nutrition supplements are in their inventory | 0/? |
+| Technical| Enhance HQ Webapp| HQ Webapp MVP completion. Player can manage their characters and squads online | 0/? |
+
 

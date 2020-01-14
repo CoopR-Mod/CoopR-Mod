@@ -25,7 +25,7 @@ if (isServer) then {
         [] spawn {
             call coopr_fnc_initPersistence;
             call coopr_fnc_initServerMeta;
-            [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_CLIENTS, true];
+            [] remoteExec ["coopr_fnc_initCoopRClients", EXEC_GLOBAL, true];
             call coopr_fnc_initServerRoutines;
             INFO("server initialized");
         };

@@ -1,4 +1,5 @@
 // System Globals
+#define COOPR_VERSION "v0.9.0-dev-3"
 #define EXEC_CLIENTS -2
 #define EXEC_SERVER  2
 #define EXEC_GLOBAL  0
@@ -117,6 +118,6 @@
 #define COOPR_STRENGTH_TYPE_COMPANY_MIN 46
 #define COOPR_STRENGTH_TYPE_COMPANY_MAX 150
 
-// Campsite globals 
+// Campsite globals
 #define COOPR_CAMP_ITEM_AREA "coopr_camp_item_area"
 #define COOPR_CAMP_ITEM_TENT "coopr_camp_item_tent"

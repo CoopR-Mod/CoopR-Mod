@@ -16,18 +16,19 @@
  */
 
 if (hasInterface) then {
+    INFO2("CoopR Version: %1 ", COOPR_VERSION);
     //TODO: can be removed?
     call coopr_fnc_initPromise;
     DEBUG("initializing client");
     [EXEC_SERVER, "coopr_fnc_initPlayerPersistence", [getPlayerUID player], //request-related
         [], {
             INFO("client initialized");
-            DEBUG("calling lobby logic");
             [] spawn {
                 waitUntil { !(isNull (findDisplay 46)) };
                 [] spawn {
+                    call coopr_fnc_initLobby;
                     call coopr_fnc_spawnInLobby;
-                    call coopr_fnc_showLoginDialog
+                    call coopr_fnc_showLoginDialog;
                 };
             };
         }

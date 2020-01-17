@@ -16,6 +16,7 @@
  */
 
 if (isServer) then {
+    INFO2("CoopR Version: %1 ", COOPR_VERSION);
     private _setupValid = call coopr_fnc_verifySetup;
     if(_setupValid) then {
         call coopr_fnc_initEventsServer;

@@ -19,7 +19,9 @@
  * Scope: Global
  */
 
-if (true) exitWith { DEBUG2("Implementation missing for %1", __FILE__); };
+if (true) exitWith { 
+ // DEBUG2("Implementation missing for %1", __FILE__);
+ };
 
 {
     private _character = _x;

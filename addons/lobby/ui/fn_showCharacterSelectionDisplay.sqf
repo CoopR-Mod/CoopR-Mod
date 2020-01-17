@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: xetra11 
+ * Author: xetra11
  *
  * Event handler if a character has been selected
  *

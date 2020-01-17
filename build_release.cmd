@@ -3,12 +3,12 @@
 
 SET armake64="tools\armake_w64.exe"
 SET validator="tools\sqf_validator.py"
-SET dest="@CoopRLight\addons"
-SET keys="@CoopRLight\keys"
+SET dest="@CoopR\addons"
+SET keys="@CoopR\keys"
 
 python %validator%
 
-rmdir /Q /S "@CoopRLight"
+rmdir /Q /S "@CoopR"
 mkdir %dest%
 mkdir %keys%
 
@@ -19,4 +19,4 @@ mkdir %keys%
 %armake64% build -p addons\rpg %dest%\rpg.pbo
 %armake64% build -p addons\hq %dest%\hq.pbo
 
-copy mod.cpp @CoopRLight\mod.cpp
+copy mod.cpp @CoopR\mod.cpp

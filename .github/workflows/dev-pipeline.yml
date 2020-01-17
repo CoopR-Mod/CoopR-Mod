@@ -1,6 +1,9 @@
 name: Deploy to Development
 
-on: [push]
+on:
+  push:
+    branches: 
+      - development
 
 jobs:
   build:
@@ -10,4 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build Testing Release
-      run: ./build_release.sh
+      run: |
+        chmod +x ./build_release.sh
+        ./build_release.sh

@@ -2,12 +2,12 @@
 
 ARMAKE="tools/armake";
 VALIDATOR="tools/sqf_validator.py";
-DEST="@CoopRLight/addons"
-KEYS="@CoopRLight/keys"
+DEST="@CoopR/addons"
+KEYS="@CoopR/keys"
 
 python $VALIDATOR
 
-rm -rf @CoopRLight
+rm -rf @CoopR
 mkdir -p $DEST
 mkdir -p $KEYS
 
@@ -18,4 +18,4 @@ $ARMAKE build -p -f addons/rpg $DEST/rpg.pbo
 $ARMAKE build -p -f addons/lobby $DEST/lobby.pbo
 $ARMAKE build -p -f addons/hq $DEST/hq.pbo
 
-cp mod.cpp @CoopRLight/mod.cpp
+cp mod.cpp @CoopR/mod.cpp

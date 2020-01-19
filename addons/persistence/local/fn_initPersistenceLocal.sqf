@@ -47,6 +47,12 @@ if (isServer) then {
                                    PRIMARY KEY (steam_id),
                                    FOREIGN KEY (characters_id) REFERENCES characters(id));";
 
+    private _createSquadsTable = "CREATE TABLE squads (
+                                   id int NOT NULL,
+                                   squad_callsign varchar(5) NOT NULL,
+                                   squad_name varchar(255) NOT NULL,
+                                   PRIMARY KEY (id)
+
     private _createMissionsTable = "CREATE TABLE missions (
                                    mission_id varchar(255) NOT NULL,
                                    missionHash TEXT,
@@ -103,6 +109,7 @@ if (isServer) then {
     // init tables
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
+    _createSquadTable call coopr_fnc_extDB3sql;
     _createMissionsTable call coopr_fnc_extDB3sql;
     _createServerMetaTable call coopr_fnc_extDB3sql;
     _createMissionQueuesTable call coopr_fnc_extDB3sql;

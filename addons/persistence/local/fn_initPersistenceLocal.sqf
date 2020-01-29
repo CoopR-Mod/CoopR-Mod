@@ -34,12 +34,21 @@ if (isServer) then {
 
     INFO("initializing local persistence layer");
     private _protocolName = "coopr";
+
+    private _createSquadTable = "CREATE TABLE squads (
+                                   id int NOT NULL AUTO_INCREMENT,
+                                   squad_name varchar(255),
+                                   PRIMARY KEY (id),
+                                   squad_callsign varchar(10));";
+
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
                                         character_0 TEXT,
                                         character_1 TEXT,
                                         character_2 TEXT,
-                                        PRIMARY KEY (id));";
+                                        squad_id int,
+                                        PRIMARY KEY (id),
+                                        FOREIGN KEY (squad_id) REFERENCES squads(id));";
 
     private _createUsersTable = "CREATE TABLE users (
                                    steam_id varchar(255) NOT NULL,
@@ -101,6 +110,7 @@ if (isServer) then {
     };
 
     // init tables
+    _createSquadTable call coopr_fnc_extDB3sql;
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;
     _createMissionsTable call coopr_fnc_extDB3sql;
@@ -108,6 +118,7 @@ if (isServer) then {
     _createMissionQueuesTable call coopr_fnc_extDB3sql;
     _createReconReportsTable call coopr_fnc_extDB3sql;
     _createReconEntriesTable call coopr_fnc_extDB3sql;
+
 } else {
     SERVER_ONLY_ERROR(__FILE__);
 };

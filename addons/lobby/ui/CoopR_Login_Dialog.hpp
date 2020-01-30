@@ -372,12 +372,12 @@ class CoopR_Login_Dialog {
             COOPR_POSITION(1172,737,373,36)
             text = "Squad";
             sizeEx = COOPR_FONTZSIZE(24);
-            onLoad = COOPR_BINDCONTROL("missionNamespace","characterSelected","true");
-            onButtonClick = "missionNamespace setVariable ['squadCreate', false];";
+            onLoad = COOPR_BINDCONTROL("missionNamespace","coopr_characterSelected","true");
+            onButtonClick = "missionNamespace setVariable ['coopr_squadCreate', false];";
         };
         class noCreate: COOPR_ControlsGroup {
             COOPR_POSITION(778,187,373,134)
-            onLoad = COOPR_BINDCONTROL2("missionNamespace","squadCreate","false","missionNamespace","characterSelected","true");
+            onLoad = COOPR_BINDCONTROL2("missionNamespace","coopr_squadCreate","false","missionNamespace","coopr_characterSelected","true");
             class Controls {
                 class Title: COOPR_Title {
                     COOPR_POSITION_CT(0,0,373,35)
@@ -387,11 +387,11 @@ class CoopR_Login_Dialog {
                 class Background: COOPR_Background {
                     COOPR_POSITION_CT(0,35,373,99)
                 };
-                class hasSquad: COOPR_ControlsGroup {
+                class coopr_hasSquad: COOPR_ControlsGroup {
                     COOPR_POSITION_CT(0,0,373,134)
-                    onLoad = COOPR_BINDCONTROL("missionNamespace","hasSquad","true");
+                    onLoad = COOPR_BINDCONTROL("missionNamespace","coopr_hasSquad","true");
                     class Controls {
-                        // if (hasSquad)
+                        // if (coopr_hasSquad)
                         class Data: COOPR_StructuredText {
                             COOPR_POSITION_CT(17,43,258,49)
                             sizeEx = COOPR_FONTZSIZE(12);
@@ -401,15 +401,15 @@ class CoopR_Login_Dialog {
                             colorBackground[] = COOPR_TOCOLOR(208,56,55,1);
                             text = "Leave";
                             sizeEx = COOPR_FONTZSIZE(16);
-                            onButtonClick = "missionNamespace setVariable ['hasSquad', false];";
+                            onButtonClick = "missionNamespace setVariable ['coopr_hasSquad', false];";
                         };
                     };
                 };
                 class hasNoSquad: COOPR_ControlsGroup {
                     COOPR_POSITION_CT(0,0,373,134)
-                    onLoad = COOPR_BINDCONTROL("missionNamespace","hasSquad","false");
+                    onLoad = COOPR_BINDCONTROL("missionNamespace","coopr_hasSquad","false");
                     class Controls {
-                        // if (!hasSquad)
+                        // if (!coopr_hasSquad)
                         class NoSquad: COOPR_Text {
                             COOPR_POSITION_CT(96,55,172,24)
                             colorText[] = COOPR_TOCOLOR(217,217,217,1);
@@ -420,7 +420,7 @@ class CoopR_Login_Dialog {
                             COOPR_POSITION_CT(103,96,172,22)
                             text = "Create";
                             sizeEx = COOPR_FONTZSIZE(16);
-                            onButtonClick = "missionNamespace setVariable ['squadCreate', true];";
+                            onButtonClick = "missionNamespace setVariable ['coopr_squadCreate', true];";
                         };
                     };
                 };
@@ -428,7 +428,7 @@ class CoopR_Login_Dialog {
         };
         class create: COOPR_ControlsGroup {
             COOPR_POSITION(778,187,373,234)
-            onLoad = COOPR_BINDCONTROL2("missionNamespace","squadCreate","true","missionNamespace","characterSelected","true");
+            onLoad = COOPR_BINDCONTROL2("missionNamespace","coopr_squadCreate","true","missionNamespace","coopr_characterSelected","true");
             class Controls {
                 class Title: COOPR_Title {
                     COOPR_POSITION_CT(0,0,373,35)
@@ -463,7 +463,7 @@ class CoopR_Login_Dialog {
                     COOPR_POSITION_CT(31,165,317,45)
                     text = "Create Squad";
                     sizeEx = COOPR_FONTZSIZE(23);
-                    onButtonClick = "missionNamespace setVariable ['hasSquad', true]; missionNamespace setVariable ['squadCreate', false];";
+                    onButtonClick = "missionNamespace setVariable ['coopr_hasSquad', true]; missionNamespace setVariable ['coopr_squadCreate', false];";
                 };
             };
         };

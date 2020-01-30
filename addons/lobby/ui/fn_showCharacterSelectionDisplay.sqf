@@ -28,6 +28,9 @@ hideObject COOPR_LOBBY_PROP_BODYBAG;
 
 private _loginDialog = findDisplay GUI_ID_LOGIN_DIALOG;
 
+// Gui variables
+missionNamespace setVariable ['characterSelected', true];
+
 // hide the other control
 private _characterCreationCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_CREATION;
 _characterCreationCtrl ctrlShow false;

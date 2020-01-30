@@ -367,6 +367,106 @@ class CoopR_Login_Dialog {
                 };
             };
         };
+
+        class SquadButton: COOPR_Button_Center {
+            COOPR_POSITION(1172,737,373,36)
+            text = "Squad";
+            sizeEx = COOPR_FONTZSIZE(24);
+            onLoad = COOPR_BINDCONTROL("missionNamespace","characterSelected","true");
+            onButtonClick = "missionNamespace setVariable ['squadCreate', false];";
+        };
+        class noCreate: COOPR_ControlsGroup {
+            COOPR_POSITION(778,187,373,134)
+            onLoad = COOPR_BINDCONTROL2("missionNamespace","squadCreate","false","missionNamespace","characterSelected","true");
+            class Controls {
+                class Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,373,35)
+                    text = "Squad";
+                    sizeEx = COOPR_FONTZSIZE(18);
+                };
+                class Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,373,99)
+                };
+                class hasSquad: COOPR_ControlsGroup {
+                    COOPR_POSITION_CT(0,0,373,134)
+                    onLoad = COOPR_BINDCONTROL("missionNamespace","hasSquad","true");
+                    class Controls {
+                        // if (hasSquad)
+                        class Data: COOPR_StructuredText {
+                            COOPR_POSITION_CT(17,43,258,49)
+                            sizeEx = COOPR_FONTZSIZE(12);
+                        };
+                        class Leave: COOPR_Button_Center {
+                            COOPR_POSITION_CT(103,96,172,22)
+                            colorBackground[] = COOPR_TOCOLOR(208,56,55,1);
+                            text = "Leave";
+                            sizeEx = COOPR_FONTZSIZE(16);
+                            onButtonClick = "missionNamespace setVariable ['hasSquad', false];";
+                        };
+                    };
+                };
+                class hasNoSquad: COOPR_ControlsGroup {
+                    COOPR_POSITION_CT(0,0,373,134)
+                    onLoad = COOPR_BINDCONTROL("missionNamespace","hasSquad","false");
+                    class Controls {
+                        // if (!hasSquad)
+                        class NoSquad: COOPR_Text {
+                            COOPR_POSITION_CT(96,55,172,24)
+                            colorText[] = COOPR_TOCOLOR(217,217,217,1);
+                            text = "There is no squad yet";
+                            sizeEx = COOPR_FONTZSIZE(20);
+                        };
+                        class Create: COOPR_Button_Center {
+                            COOPR_POSITION_CT(103,96,172,22)
+                            text = "Create";
+                            sizeEx = COOPR_FONTZSIZE(16);
+                            onButtonClick = "missionNamespace setVariable ['squadCreate', true];";
+                        };
+                    };
+                };
+            };
+        };
+        class create: COOPR_ControlsGroup {
+            COOPR_POSITION(778,187,373,234)
+            onLoad = COOPR_BINDCONTROL2("missionNamespace","squadCreate","true","missionNamespace","characterSelected","true");
+            class Controls {
+                class Title: COOPR_Title {
+                    COOPR_POSITION_CT(0,0,373,35)
+                    text = "Create a Squad";
+                    sizeEx = COOPR_FONTZSIZE(18);
+                };
+                class Background: COOPR_Background {
+                    COOPR_POSITION_CT(0,35,373,199)
+                };
+
+                class NameLabel: COOPR_Text_Background {
+                    COOPR_POSITION_CT(31,52,70,22)
+                    text = "Name";
+                    colorBackground[] = COOPR_TOCOLOR(64,64,64,1);
+                };
+                class Name: RscEdit {
+                    idc = 29382;
+                    COOPR_POSITION_CT(31,72,311,22)
+                };
+
+                class CallsignLabel: COOPR_Text_Background {
+                    COOPR_POSITION_CT(31,104,70,22)
+                    text = "Callsign";
+                    colorBackground[] = COOPR_TOCOLOR(64,64,64,1);
+                };
+                class Callsign: RscEdit {
+                    idc = 29383;
+                    COOPR_POSITION_CT(31,126,88,22)
+                };
+
+                class SquadButton: COOPR_Button_Center {
+                    COOPR_POSITION_CT(31,165,317,45)
+                    text = "Create Squad";
+                    sizeEx = COOPR_FONTZSIZE(23);
+                    onButtonClick = "missionNamespace setVariable ['hasSquad', true]; missionNamespace setVariable ['squadCreate', false];";
+                };
+            };
+        };
     };
 };
 

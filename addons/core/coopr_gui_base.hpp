@@ -19,6 +19,48 @@
 #define COOPR_COLOR_MAIN_HOVER COOPR_TOCOLOR(28,153,199,0.5)
 #define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
 #define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
+#define COOPR_FONTZSIZE(SIZE) #(((SIZE * 0.00222222) * (getResolution select 1)) / 1080)
+#define COOPR_BINDCONTROL(NAMESPACE,VARIABLE,VALUE) \
+"(_this#0) ctrlEnable false; (_this#0) ctrlSetFade 1; (_this#0) ctrlCommit 0; \
+_this spawn { \
+	private _namespace = call compile "##NAMESPACE##"; \
+	private _variable = call compile '"##VARIABLE##"'; \
+	private _value = call compile "##VALUE##"; \
+	while { dialog } do { \
+		private _control = _this#0; \
+		private _state = (_namespace getVariable [_variable, false]) isEqualTo _value; \
+		private _fade = [1, 0] select _state; \
+		if !(_state isEqualTo (_control getVariable ['state', false])) then { \
+			_control ctrlEnable _state; \
+			_control ctrlSetFade _fade; \
+			_control ctrlCommit 0.3; \
+			_control setVariable ['state', _state]; \
+		}; \
+		uiSleep 0.1; \
+	}; \
+};"
+#define COOPR_BINDCONTROL2(NAMESPACE,VARIABLE,VALUE,NAMESPACE2,VARIABLE2,VALUE2) \
+"(_this#0) ctrlEnable false; (_this#0) ctrlSetFade 1; (_this#0) ctrlCommit 0; \
+_this spawn { \
+	private _namespace = call compile "##NAMESPACE##"; \
+	private _variable = call compile '"##VARIABLE##"'; \
+	private _value = call compile "##VALUE##"; \
+	private _namespace2 = call compile "##NAMESPACE2##"; \
+	private _variable2 = call compile '"##VARIABLE2##"'; \
+	private _value2 = call compile "##VALUE2##"; \
+	while { dialog } do { \
+		private _control = _this#0; \
+		private _state = ((_namespace getVariable [_variable, false]) isEqualTo _value) && (_namespace2 getVariable [_variable2, false]) isEqualTo _value2; \
+		private _fade = [1, 0] select _state; \
+		if !(_state isEqualTo (_control getVariable ['state', false])) then { \
+			_control ctrlEnable _state; \
+			_control ctrlSetFade _fade; \
+			_control ctrlCommit 0.3; \
+			_control setVariable ['state', _state]; \
+		}; \
+		uiSleep 0.1; \
+	}; \
+};"
 
 
 #define COOPR_POSITION(X,Y,W,H) \

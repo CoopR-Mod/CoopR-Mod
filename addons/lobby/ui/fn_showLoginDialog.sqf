@@ -54,7 +54,7 @@ private _characterListCtrl = _loginDialog displayCtrl GUI_ID_LOGIN_CHARACTER_LIS
                 _newCharacterButton ctrlSetText localize "str.coopr.character.new.create";
                 _newCharacterButton setVariable ["_params", _ctrlParams];
                 _newCharacterButton ctrlRemoveAllEventHandlers "MouseButtonDown";
-                _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { call coopr_fnc_showCreationDialog }];
+                _newCharacterButton ctrlAddEventHandler ["MouseButtonDown", { missionNamespace setVariable ['characterSelected', false]; call coopr_fnc_showCreationDialog }];
                 _selectCharacterButton ctrlShow false;
 
             // occupied slot

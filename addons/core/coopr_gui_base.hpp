@@ -20,6 +20,14 @@
 #define COOPR_DISABLE_CONTROL "(_this#0) ctrlEnable false; (_this#0) ctrlShow false"
 #define COOPR_NO_ROLE_PICTURE "\x\coopr\addons\lobby\data\images\no-role-256-white.paa"
 #define COOPR_FONTZSIZE(SIZE) #(((SIZE * 0.00222222) * (getResolution select 1)) / 1080)
+
+/*
+    @COOPR_BINDCONTROL
+    "Listen" to changes to a variables and show/hide the assigned control with a fade-in-out animation of 0.3s.
+        0 - Namespace<Namespace>: Namespace in which the `getVariable` will operate.
+        1 - Variable<String>: Name of the variable.
+        2 - Value<Any>: Check the variable against this value with `{Variable} isEqualTo {Value}`.
+*/
 #define COOPR_BINDCONTROL(NAMESPACE,VARIABLE,VALUE) \
 "(_this#0) ctrlEnable false; (_this#0) ctrlSetFade 1; (_this#0) ctrlCommit 0; \
 _this spawn { \
@@ -39,6 +47,11 @@ _this spawn { \
 		uiSleep 0.1; \
 	}; \
 };"
+
+/*
+    @COOPR_BINDCONTROL
+    Same as the above macro put will check both variables `({Variable1} isEqualTo {Value1}) && ({Variable2} isEqualTo {Value2})`
+*/
 #define COOPR_BINDCONTROL2(NAMESPACE,VARIABLE,VALUE,NAMESPACE2,VARIABLE2,VALUE2) \
 "(_this#0) ctrlEnable false; (_this#0) ctrlSetFade 1; (_this#0) ctrlCommit 0; \
 _this spawn { \

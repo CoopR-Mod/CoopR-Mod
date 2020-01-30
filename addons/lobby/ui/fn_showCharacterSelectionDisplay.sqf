@@ -139,6 +139,7 @@ _deleteButton ctrlAddEventHandler ["MouseButtonDown", {
         if (_isConfirmed) then {
             [getPlayerUID player, _slot] remoteExec ["coopr_fnc_removeCharacter", EXEC_SERVER];
             closeDialog GUI_ID_LOGIN_DIALOG;
+            missionNamespace setVariable ['characterSelected', false];
             // reset to default animation
             [] spawn { call coopr_fnc_playAnimationForRole ;};
         };

@@ -38,8 +38,16 @@ if (isServer) then {
     private _createSquadTable = "CREATE TABLE squads (
                                    id int NOT NULL AUTO_INCREMENT,
                                    squad_name varchar(255),
+                                   squad_members_id int,
+                                   squad_callsign varchar(10),
                                    PRIMARY KEY (id),
-                                   squad_callsign varchar(10));";
+                                   FOREIGN KEY (squad_members_id) REFERENCES squads_members(id));";
+
+    private _createSquadMembersTable = "CREATE TABLE squads_members (
+                                   id int NOT NULL AUTO_INCREMENT,
+                                   character_id int,
+                                   PRIMARY KEY (id),
+                                   FOREIGN KEY (character_id) REFERENCES characters(id));";
 
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
@@ -110,6 +118,7 @@ if (isServer) then {
     };
 
     // init tables
+    _createSquadMembersTable call coopr_fnc_extDB3sql;
     _createSquadTable call coopr_fnc_extDB3sql;
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;

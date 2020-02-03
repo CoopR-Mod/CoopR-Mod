@@ -38,25 +38,15 @@ if (isServer) then {
     private _createSquadTable = "CREATE TABLE squads (
                                    id int NOT NULL AUTO_INCREMENT,
                                    squad_name varchar(255),
-                                   squad_members_id int,
                                    squad_callsign varchar(10),
-                                   PRIMARY KEY (id),
-                                   FOREIGN KEY (squad_members_id) REFERENCES squads_members(id));";
-
-    private _createSquadMembersTable = "CREATE TABLE squads_members (
-                                   id int NOT NULL AUTO_INCREMENT,
-                                   character_id int,
-                                   PRIMARY KEY (id),
-                                   FOREIGN KEY (character_id) REFERENCES characters(id));";
+                                   PRIMARY KEY (id));";
 
     private _createCharactersTable = "CREATE TABLE characters (
                                         id int NOT NULL AUTO_INCREMENT,
                                         character_0 TEXT,
                                         character_1 TEXT,
                                         character_2 TEXT,
-                                        squad_id int,
-                                        PRIMARY KEY (id),
-                                        FOREIGN KEY (squad_id) REFERENCES squads(id));";
+                                        PRIMARY KEY (id));";
 
     private _createUsersTable = "CREATE TABLE users (
                                    steam_id varchar(255) NOT NULL,
@@ -118,7 +108,6 @@ if (isServer) then {
     };
 
     // init tables
-    _createSquadMembersTable call coopr_fnc_extDB3sql;
     _createSquadTable call coopr_fnc_extDB3sql;
     _createCharactersTable call coopr_fnc_extDB3sql;
     _createUsersTable call coopr_fnc_extDB3sql;

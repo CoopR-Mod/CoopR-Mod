@@ -18,7 +18,7 @@ The following conditions need to be met so an addon is a candidate to be release
 ## Table of contents
 * [How to setup a mission](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-setup-a-mission)
 * [Development & Contributing](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Development-&-Contribution)
-  - [Setup Local](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Setup-(Local)
+  - [Setup Local](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Setup-Local)
   - [Addons Structure](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Addons-Structure)
   - [How to add a new feature](https://github.com/CoopR-Mod/CoopR-Mod/wiki/How-to-add-a-new-feature)
   - [Contributing Guidelines](https://github.com/CoopR-Mod/CoopR-Mod/wiki/Contributing-Guidelines)

@@ -84,6 +84,16 @@ if (isServer) then {
                                        PRIMARY KEY (id),
                                        FOREIGN KEY (report_id) REFERENCES recon_reports(id));";
 
+    private _createJoinRequestsTable = "CREATE TABLE join_requests (
+                                        id int NOT NULL AUTO_INCREMENT,
+                                        request_issuer int,
+                                        request_squad int,
+                                        status varchar(8),
+                                        CONSTRAINT CHECK (status IN('accepted','pending', 'declined')),
+                                        PRIMARY KEY (id),
+                                        FOREIGN KEY (request_issuer) REFERENCES characters(id),
+                                        FOREIGN KEY (request_squad) REFERENCES squads (id));";
+
 
     // test connection
     private _result = call compile ("extDB3" callExtension format["9:ADD_DATABASE:%1", _dbName]);

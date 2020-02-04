@@ -13,7 +13,8 @@ class CfgFunctions {
             class hasPlayerLocal {};
             class initPersistenceLocal {};
             class getCharactersLocal {};
-            class createCharacterLocal{};
+            class createCharacterLocal {};
+            class createSquadLocal {};
             class removeCharacterLocal {};
             class localDatabaseRefresh {};
             class saveMissionLocal {};
@@ -39,6 +40,7 @@ class CfgFunctions {
             file = "x\coopr\addons\persistence\functions";
             class createCharacter {};
             class updateState {};
+            class createSquad {};
             class serializeCoopR {};
             class deserializeCoopR {};
             class getNewCharacterState {};

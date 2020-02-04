@@ -39,6 +39,7 @@ if (isServer) then {
                                    id int NOT NULL AUTO_INCREMENT,
                                    squad_name varchar(255),
                                    squad_callsign varchar(10),
+                                   owner_id int,
                                    PRIMARY KEY (id));";
 
     private _createCharactersTable = "CREATE TABLE characters (

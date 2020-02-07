@@ -126,6 +126,7 @@ if (isServer) then {
     _createMissionQueuesTable call coopr_fnc_extDB3sql;
     _createReconReportsTable call coopr_fnc_extDB3sql;
     _createReconEntriesTable call coopr_fnc_extDB3sql;
+    _createJoinRequestsTable call coopr_fnc_extDB3sql;
 
 } else {
     SERVER_ONLY_ERROR(__FILE__);

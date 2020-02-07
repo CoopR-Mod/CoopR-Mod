@@ -6,14 +6,14 @@
  * has already done a join requests to the squad and fails to do so if true 
  *
  * Arguments:
- * 0: _characterID - <STRING> character's id whos trying to create a join request
- * 1: _squadID - <STRING> squad's id the character is trying to create a join request for
+ * 0: _characterID - <INTEGER> character's id whos trying to create a join request
+ * 1: _squadID - <INTEGER> squad's id the character is trying to create a join request for
  *
  * Return Value:
  * None
  *
  * Example:
- * example
+ * ["123", 456] call coopr_fnc_createSquadJoinRequest
  *
  * Public: No
  *
@@ -44,7 +44,11 @@ if (_characterRequests findIf{
 };
 
 DEBUG("Inserting squad request into join_requests table");
-private _joinRequest = format ["INSERT INTO join_requests (request_issuer, request_squad, status) VALUES (%1, %2, 'pending')", _characterID, _squadID];
+
+private _joinRequest = format ["INSERT INTO join_requests 
+								(request_issuer, request_squad, status) 
+								VALUES (%1, %2, 'pending')", _characterID, _squadID];
+
 _joinRequest call coopr_fnc_extDB3sql;
 
 DEBUG("Join requests created");

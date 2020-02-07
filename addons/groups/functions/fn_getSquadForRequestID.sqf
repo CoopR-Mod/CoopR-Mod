@@ -5,13 +5,13 @@
  * Finds and returns squad_id of a particular join_request
  *
  * Arguments:
- * 0: _requestID - <STRING> request you're querying for
+ * 0: _requestID - <INTEGER> request you're querying for
  *
  * Return Value:
- * _squadID <STRING> string that represents squad.
+ * _squadID <INTEGER> string that represents squad.
  *
  * Example:
- * example
+ * 123 call coopr_fnc_getSquadForRequestID
  *
  * Public: No
  *
@@ -28,7 +28,10 @@ if (_requestID isEqualTo "") exitWith{
 	ERROR("_requestID is a required argument");
 };
 
-private _squadID = format["SELECT request_squad FROM join_requests WHERE id = %1", _requestID];
+private _squadID = format["SELECT request_squad 
+						FROM join_requests 
+						WHERE id = %1", _requestID];
+
 _squadID = _squadID call coopr_fnc_extDB3sql;
 
 _squadID;

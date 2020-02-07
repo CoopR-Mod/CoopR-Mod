@@ -2,33 +2,36 @@
 /*
  * Author: Gilles
  *
- * Finds and returns all join requests a character has done
+ * Finds and returns all join_requests a character has done
  *
  * Arguments:
- * 0: _character - <STRING> character id you're querying for
+ * 0: _characterID - <INTEGER> character id you're querying for
  *
  * Return Value:
  * _allRequestByCharacter <ARRAY> list of requests id's
  *
  * Example:
- * example
+ * 123 call coopr_fnc_getAllJoinRequestsbyCharacter
  *
  * Public: No
  *
  * Scope: Server
  */
 
-params[["_character", objNull]];
+params[["_characterID", objNull]];
 
 if !(isServer) exitWith {
 	SERVER_ONLY_ERROR(__FILE__);
 };
 
 if (_character isEqualTo objNull) exitWith{
-	ERROR("_character is a required argument")
+	ERROR("_characterID is a required argument")
 };
 
-private _allRequestByCharacter = format["SELECT request_id FROM join_requests WHERE request_issuer = %1", _character];
+private _allRequestByCharacter = format["SELECT request_id 
+										FROM join_requests 
+										WHERE request_issuer = %1", _characterID];
+
 _allRequestByCharacter = _allRequestByCharacter call coopr_fnc_extDB3sql;
 
 _allRequestByCharacter;

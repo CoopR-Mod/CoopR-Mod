@@ -11,18 +11,20 @@
  * None
  *
  * Example:
- * example
+ * call coopr_fnc_cleanAcceptedJoinRequests
  *
  * Public: No
  *
  * Scope: Server
  */
 
- if !(isServer) exitWith {
+if !(isServer) exitWith {
 	SERVER_ONLY_ERROR(__FILE__);
 };
 
-private _garbageRequests = "SELECT id FROM join_requests WHERE status = 'accepted'";
+private _garbageRequests = "SELECT id FROM join_requests 
+							WHERE status = 'accepted'";
+
 _garbageRequests = _garbageRequests call coopr_fnc_extDB3sql;
 
 _garbageRequests apply{

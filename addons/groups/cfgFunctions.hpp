@@ -11,7 +11,7 @@ class CfgFunctions {
             class getAllJoinRequestsForSquad{};
             class getAllJoinRequestsByCharacter{};
             class getSquadForRequestID{};
-            class cleanAcceptedJoinRequestsInDB {};
+            class cleanAcceptedJoinRequests {};
         };
     };        
 };

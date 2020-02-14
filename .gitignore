@@ -5,3 +5,9 @@
 @CoopRLight
 .vscode
 its_logs
+# Python environment
+/.env 
+# File that stores your build preferences
+build_config.json
+# python cached files, they are generated when you execute some shit
+*.pyc

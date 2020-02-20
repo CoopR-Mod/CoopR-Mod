@@ -9,7 +9,7 @@ from platform import system
 import subprocess
 
 # GLOBALS
-THIS_FILE_PATH = os.path.dirname(os.path.abspath(__file__))
+THIS_FILE_PATH = os.path.dirname(os.path.realpath(sys.argv[0]))
 BUILD_PREFRENCES = dict()
 USER_OS = system()
 ARMAKE = None
@@ -88,6 +88,12 @@ def build_pbos():
     addons = os.listdir(os.path.join(THIS_FILE_PATH, "addons"))
     dest = os.path.join(THIS_FILE_PATH, "@CoopR", "addons")
 
+    if not os.path.isdir(os.path.join(THIS_FILE_PATH, "addons")):
+        raise FileNotFoundError("ERROR: I couldn't find your addons folder!")
+
+    if not os.path.isdir(dest):
+        raise FileNotFoundError("ERROR: I couldn't find your destination folder!")
+
     total_builds = 0
     
     for addon in addons:
@@ -95,19 +101,29 @@ def build_pbos():
         built = os.path.abspath(os.path.join(dest, f"{addon}.pbo"))
 
         if USER_OS == "Windows":
-            build_order = f"{ARMAKE} build -p {origin} {built}"
+            build_order = f"{ARMAKE} build -p -f {origin} {built}"
         elif USER_OS == "Linux":
             build_order = f"{ARMAKE} build -p -f {origin} {built}"
         
         print(f"Building {addon}.pbo...")
         try:
-            subprocess.run(build_order, capture_output=True)
+            result = subprocess.run(build_order, capture_output=True)
+            result.stdout = result.stdout.decode("UTF-8")
+            result.stderr = result.stderr.decode("UTF-8")
+
+            if result.stdout != "" or result.stderr != "":
+                print(result.stderr)
+                raise Exception(f"\nArmake silently broke trying to perform this order:\n{build_order}\n\n")
+
         except Exception as e:
-            print(f"Something went wrong while trying to build {addon}!")
+            print(f"\nSomething went wrong while trying to build {addon}!")
             print(str(e))
         else:
             total_builds +=1
     print(f"\n{total_builds}/{len(addons)} Addons built!\n")
+    total_errors = len(addons) - total_builds
+    
+    return total_errors
 
 def copy_modcpp():
     """Copy mod.cpp to built mod folder"""
@@ -139,24 +155,39 @@ def main():
     validator.main()
     clean_mod_folder()
     create_mod_folders()
-    build_pbos()
+    errors = build_pbos()
     copy_modcpp()
     copy_to_preference_folder()
 
     print()
+    
+    if errors <= 0:
+        cow = """
+        __________________________
+        / Build is done! Now go 
+        do something with your life /
+        ----------------------------
+            \   ^__^
+             \  (oo)\_______
+                (__)\       )\/\\
+                    ||----w |
+                    ||     ||
 
-    cow = """
-     __________________________
-    / Build is done! Now go 
-    do something with your life /
-    ----------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\\
-                ||----w |
-                ||     ||
+    """
+    else:
 
-"""
+        cow = """
+        __________________________
+        / Woops, we might have a 
+        problem...                  /
+        ----------------------------
+            \   ^__^
+             \  (oo)\_______
+                (__)\       )\/\\
+                    ||----w |
+                    ||     ||
+
+    """
     print(cow)
 
 if __name__ == "__main__":

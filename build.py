@@ -99,27 +99,20 @@ def build_pbos():
     for addon in addons:
         origin = os.path.abspath(os.path.join(THIS_FILE_PATH, "addons", addon))
         built = os.path.abspath(os.path.join(dest, f"{addon}.pbo"))
-
-        if USER_OS == "Windows":
-            build_order = f"{ARMAKE} build -p -f {origin} {built}"
-        elif USER_OS == "Linux":
-            build_order = f"{ARMAKE} build -p -f {origin} {built}"
         
+        build_order = f"{ARMAKE} build -p -f {origin} {built}"
+
         print(f"Building {addon}.pbo...")
         try:
-            result = subprocess.run(build_order, capture_output=True)
+            result = subprocess.run(build_order, capture_output=True, check=True)
             result.stdout = result.stdout.decode("UTF-8")
             result.stderr = result.stderr.decode("UTF-8")
-
-            if result.stdout != "" or result.stderr != "":
-                print(result.stderr)
-                raise Exception(f"\nArmake silently broke trying to perform this order:\n{build_order}\n\n")
-
         except Exception as e:
             print(f"\nSomething went wrong while trying to build {addon}!")
             print(str(e))
         else:
             total_builds +=1
+
     print(f"\n{total_builds}/{len(addons)} Addons built!\n")
     total_errors = len(addons) - total_builds
     

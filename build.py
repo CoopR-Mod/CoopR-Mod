@@ -100,7 +100,7 @@ def build_pbos():
         origin = os.path.abspath(os.path.join(THIS_FILE_PATH, "addons", addon))
         built = os.path.abspath(os.path.join(dest, f"{addon}.pbo"))
         
-        build_order = f"{ARMAKE} build -p -f {origin} {built}"
+        build_order = f'"{ARMAKE}" build -p -f "{origin}" "{built}"'
 
         print(f"Building {addon}.pbo...")
         try:

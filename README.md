@@ -1,5 +1,10 @@
 
 ![CoopR Mod](https://i.imgur.com/2rmPBhF.png)
+
+# Project Stopped!
+## Sorry but the vision was too big and the resources to make it happen too little.
+## Maybe a second try with ArmA4 and its hopefully new script engine ;)
+
  [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/CoopR-Mod/CoopR-Mod?include_prereleases&sort=semver&style=for-the-badge)](https://github.com/CoopR-Mod/CoopR-Mod/releases)
 [![Discord](https://img.shields.io/discord/503863654710771723)](https://discord.gg/mpqqkhg)
 [![TeamCity Full Build Status](https://img.shields.io/teamcity/http/ci.coopr-hq.com/e/CoopRModDevelopment_CoopRModDevBuildDeployment)](http://ci.coopr-hq.com/buildConfiguration/CoopRModDevelopment_CoopRModDevBuildDeployment)
